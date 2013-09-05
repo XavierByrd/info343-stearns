@@ -7,3 +7,6 @@ table {
 .pull-left {
 	float: left;
 }
+.two-column > img {
+	width: 40%;
+}
