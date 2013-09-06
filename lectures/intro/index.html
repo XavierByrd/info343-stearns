@@ -46,23 +46,26 @@
               
             <section>
                 <h2>Today</h2>
+                <p class="pull-right"><img src="beginning.jpg" alt="The beginning"></p>
                 <ul>
                     <li>Introduce the Course</li>
                     <li>How the Web Works (Part I)</li>
                     <li>Your First Web Page</li>
-                    <li>Managing Your Files (Git and FTP)</li>
+                    <li>Managing Your Files</li>
                 </ul>
             </section>
 
             <section>
-                <h2>But first, introduce yourselves!</h2>
+                <p>But first, introduce yourselves!</p>
                 <p><em>Ask the person next to you...</em></p>
                 <ul>
                     <li>What's your name?</li>
-                    <li>What your major and year in school?</li>
+                    <li>What's your major and year in school?</li>
                     <li>Where are you from (hometown)?</li>
+                    <li>What do you most want to learn in this class?</li>
                     <li>What is your greatest fear about this class?</li>
                 </ul>
+                <p><img src="students-talking.jpg" alt="students talking"></p>
             </section>
 
             <section>
@@ -82,6 +85,7 @@
             <section>
                 <h2>What's this course about?</h2>
                 <p>This course will teach you how to build the client-side parts of web sites and applications. You'll learn all the technical bits you need to know, but you'll also learn how to design pages that are intuitive, effective, and engaging.</p>
+                <p><img src="web-development.jpg" alt="web development"></p>
             </section>
 
             <section>
@@ -174,20 +178,20 @@
                 <h2>How hard do I need to work?</h2>
                 <p class="fragment">Very hard! (Duh!)</p>
                 <p class="fragment">You will be graded on the <em>quality of your finished work</em>, not on how hard your tried, nor how much you improved.</p>
-                <p class="fragment">I will expect a lot from you, and will help you become a professional.</p>
+                <p class="fragment">I will expect a lot from you; by the end you should be ready to do professional web development work.</p>
             </section>
 
             <section>
                 <h2>What do I need to get/have?</h2>
                 <p>There are <strong>no required books!</strong></p>
-                <p class="fragment">But, there will be online articles to read for each class <br> (see Course Schedule in <a href="https://canvas.uw.edu/courses/">Canvas</a>).</p>
+                <p class="fragment">But, there will be online articles to read for each class <br> (see Course Schedule in <a href="https://canvas.uw.edu/courses/" target="_blank">Canvas</a>).</p>
             </section>
 
             <section>
                 <h2>Recommended Books</h2>
                 <div class="two-column">
-                    <img src="../../img/css-mcfarland.jpg" alt="Cover of book CSS3: The Missing Manual by McFarland">
-                    <img src="../../img/js-flanagan.png" alt="Cover of book JavaScript: The Definitive Guide by Flanagan">
+                    <a href="http://amzn.com/1449325947" target="_blank"><img src="../../img/css-mcfarland.png" alt="Cover of book CSS3: The Missing Manual by McFarland"></a>
+                    <a href="http://amzn.com/0596805527" target="_blank"><img src="../../img/js-flanagan.png" alt="Cover of book JavaScript: The Definitive Guide by Flanagan"></a>
                 </div>
             </section>
 
@@ -208,8 +212,8 @@
             <section>
                 <h2>Who are you?</h2>
                 <div class="fragment">
-                    <p><img src="../../img/batman.jpg" alt="I'm not Batman"></p>
                     <p>I'm <em>not</em> Batman</p>
+                    <p><img src="../../img/batman.jpg" alt="I'm not Batman"></p>
                 </div>
             </section>
 
@@ -239,7 +243,7 @@
             </section>
 
             <section>
-                <p>The Web is only one type of application that utilizes the Internet.</p>
+                <p>The Web is only one of many applications that utilize the Internet.</p>
                 <p><img src="internet-vs-web.png" alt="Box diagram showing the Web as an application using the Internet"></p>
             </section>
 
@@ -253,15 +257,15 @@
                     <li>TCP/IP (Transmission Control Protocol/Internet Protocol) enables computers to exchange messages across the network.</li>
                     <li>Each message needs:
                         <ul>
-                            <li>IP Address: a unique number assigned to each computer by the network</li>
-                            <li>Port Number: a number on which the target service is listening</li>
+                            <li><span class="term">IP Address</span> = a unique number assigned to each computer by the network</li>
+                            <li><span class="term">Port Number</span> = a number on which the target service is listening</li>
                         </ul>
                     </li>
                 </ul>
             </section>
 
             <section>
-                <p>For example, the IP address of the UW web server is 128.95.155.134, and it is listening for web requests on port 80.</p>
+                <p>For example, the IP address of the UW web server is 128.95.155.134, and it's listening for web requests on port 80.</p>
                 <p>Try entering this at the command line:</p>
                 <pre><code>telnet 128.95.155.134 80</code></pre>
                 <p>And after you connect, enter this and hit return twice:</p>
@@ -274,7 +278,7 @@ Host: www.washington.edu</code></pre>
             </section>
 
             <section>
-                <h2>Problems with IP Addresses</h2>
+                <h2>IP Addresses</h2>
                 <ul>
                     <li>Machine-oriented, not human-oriented (what was that UW IP address?)</li>
                     <li>Tied to geography, so moving to a server in another location necessitates a different IP</li>
@@ -285,7 +289,7 @@ Host: www.washington.edu</code></pre>
                 <h2>The Solution: DNS</h2>
                 <ul>
                     <li>The Domain Name System (DNS) acts like a telephone book, translating human-oriented "domain names" into machine-oriented IP addresses.</li>
-                    <li>Domains are hierarhical from right to left</li>
+                    <li>Domains are hierarchical from right to left</li>
                     <li><code>www.washington.edu</code>
                         <ul>
                             <li>edu = top-level domain for educational institutions</li>
@@ -301,6 +305,7 @@ Host: www.washington.edu</code></pre>
                 <ul>
                     <li>New domains (e.g., <code>iloveinfo343.com</code>) can be purchased from an "accredited registrar" (e.g., Name Cheap, Go Daddy).</li>
                     <li>Purchaser then updates the DNS records with the IP address of target server.</li>
+                    <li>After changes replicate, browsers can now find the server.</li>
                 </ul>
             </section>
 
@@ -308,7 +313,7 @@ Host: www.washington.edu</code></pre>
                 <h2>HTTP</h2>
                 <p>The Internet allows computer to talk, but it doesn't specify what they talk <em>about</em>.</p>
                 <p class="fragment">HTTP (Hypertext Transfer Protocol) defines a language for sending and receiving "resources" managed by a web server.</p>
-                <p class="fragment">Resources are identified using Uniform Resource Locators (URLs).</p>
+                <p class="fragment">Resources are identified using <span class="term">Uniform Resource Locators</span> (URLs).</p>
             </section>
 
             <section>
@@ -348,8 +353,9 @@ Host: www.washington.edu</code></pre>
 
             <section>
                 <h2>Doctype Directive</h2>
-                <p>Tells your browser what kind of document this is (HTML 5).</p>
+                <p>Tells your browser what kind of document this is.</p>
                 <pre><code data-trim>&lt;!doctype html&gt;</code></pre>
+                <p>This is the doctype for HTML5 documents.</p>
             </section>
 
             <section>
@@ -373,9 +379,9 @@ Host: www.washington.edu</code></pre>
                 <h2>Attributes</h2>
                 <p>Some attributes are merely markers, and don't need a value</p>
                 <pre><code data-trim>
-&lt;name marker-attribute&gt;
+&lt;button id="mybutton" disabled&gt;
     ...content...
-&lt;/name&gt;</code></pre>
+&lt;/button&gt;</code></pre>
             </section>
 
             <section>
@@ -390,6 +396,7 @@ Host: www.washington.edu</code></pre>
 &lt;html lang=&quot;en&quot;&gt;
     &lt;head&gt;
         ... non-visible info about the page ...
+        ... links to supporting files ...
     &lt;/head&gt;
     &lt;body&gt;
         ... visible content ...
@@ -431,12 +438,17 @@ Host: www.washington.edu</code></pre>
 
             <section>
                 <h2>Try it Yourself!</h2>
-                <p>Download the <a href="template.html" target="_blank">template.html</a> file and try adding some content.</p>
+                <p>Download the <a href="template.html" target="_blank">template.html</a> file, add some content, and view it in a browser.</p>
             </section>
 
             <section>
                 <h2>Managing Your Files</h2>
                 <p>Web projects generate <em>a lot</em> of files, so you need tools and techniques for managing them.</p>
+                <ul>
+                    <li>A good text editor</li>
+                    <li>A version control system (VCS)</li>
+                    <li>A clear directory structure</li>
+                </ul>
             </section>
 
             <section>
@@ -449,16 +461,81 @@ Host: www.washington.edu</code></pre>
             </section>
 
             <section>
-                <h2>A Version Control System</h2>
-                <p>Even the simplest projects can benefit from a version control system.</p>
-                <figure>
-                    <a href="http://www.sourcetreeapp.com/" target="_blank"><img src="sourcetree.png" alt="SourceTree icon"></a>
-                    <figcaption>SourceTree</figcaption>
-                </figure>
-                <figure>
-                    <a href="http://www.github.com/" target="_blank"><img src="github.png" alt="GitHub Logo"></a>
-                    <figcaption>GitHub</figcaption>
-                </figure>
+                <h2>A Version Control System (VCS)</h2>
+                <p>Critical for team projects, but also useful for individual work.</p>
+                <div class="three-column">
+                    <figure>
+                        <a href="http://git-scm.com"><img src="git.png" alt="Git logo"></a>
+                        <figcaption>Git</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="http://www.github.com/" target="_blank"><img src="github.png" alt="GitHub Logo"></a>
+                        <figcaption>GitHub</figcaption>
+                    </figure>
+                    <figure>
+                        <a href="http://www.sourcetreeapp.com/" target="_blank"><img src="sourcetree.png" alt="SourceTree icon"></a>
+                        <figcaption>SourceTree</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section>
+                <h2>VCS Concepts</h2>
+                <ul>
+                    <li><span class="term">Repository</span> = database of files and changes to those files</li>
+                    <li><span class="term">Working Copy</span> = private working version of repository files on your computer</li>
+                    <li><span class="term">Commit</span> = a set of changes applied to repository files that you think are ready for others to use</li>
+                    <li><span class="term">Branch</span> = a separate set of committed versions in the repository, useful for separating in-process feature work from release/master versions</li>
+                </ul>
+            </section>
+
+            <section>
+                <p>A VCS captures each change to a file and can recreate any previous version on demand.</p>
+                <p><img src="vcs-deltas.png" alt="picture showing delta approach to version control"></p>
+            </section>
+
+            <section>
+                <p>Git makes a complete snapshot of each changed file; it consumes more disk space, but it's also much faster to switch between different branches or rollback.</p>
+                <p><img src="vcs-snapshots.png" alt="picture showing snapshot approach to version control"></p>
+            </section>
+
+            <section>
+                <p>Git also has a "staging" area, which is helpful when doing partial commits</p>
+                <p><img src="vcs-staging.png" alt="Git's staging area"></p>
+            </section>
+
+            <section>
+                <p>Git is also decentralized, but can be used with a central cloud repository (like GitHub)</p>
+                <p><img src="vcs-distributed.png" alt="Git's staging area"></p>
+            </section>
+
+            <section>
+                <h2>Simple Single-Developer Workflow</h2>
+                <ul>
+                    <li>Create a new repository on GitHub</li>
+                    <li class="fragment">Clone the repository to your local computer</li>
+                    <li class="fragment">Add files, commit them to the repository, and push them to GitHub</li>
+                    <li class="fragment">Edit files, commit changes, push to GitHub</li>
+                    <li class="fragment">Lather, rinse, repeat...</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Typical Team Workflow</h2>
+                <ul>
+                    <li>Create a new repository on GitHub</li>
+                    <li class="fragment">Everyone clones the repository to their local computers</li>
+                    <li class="fragment">Team Lead creates a branch for product version</li>
+                    <li class="fragment">Developers create branches for each feature</li>
+                    <li class="fragment">Add/edit fiiles, commit to feature branch, sync with GitHub</li>
+                    <li class="fragment">When feature is done, merge feature branch into version branch</li>
+                    <li class="fragment">When version is done, merge version branch into master with version tag</li>
+                    <li class="fragment">"Hot-fixes" made in hot-fix branch, merged into master when tested</li>
+                </ul>
+            </section>
+
+            <section>
+                <p><a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank"><img src="git-flow.png" alt="The git-flow workflow"></a></p>
             </section>
 
             <section>
@@ -467,6 +544,7 @@ Host: www.washington.edu</code></pre>
                     <li>project/
                         <ul>
                             <li>index.html <em>(home page)</em></li>
+                            <li>...other html files...</li>
                             <li>img/ <em>(images)</em></li>
                             <li>css/ <em>(stylesheets)</em></li>
                             <li>js/ <em>(scripts)</em></li>
@@ -474,6 +552,16 @@ Host: www.washington.edu</code></pre>
                             <li>lib/ <em>(external libraries)</em></li>
                         </ul>
                     </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>For Friday's Lab...</h2>
+                <ul>
+                    <li>Create a <a href="https://github.com/" target="_blank">GitHub Account</a></li>
+                    <li>Create an <a href="https://ischool.uw.edu/technology/web-hosting/student" target="_blank">iSchool Student Web Hosting Account</a></li>
+                    <li>Consider downloading <a href="http://www.sublimetext.com/" target="_blank">Sublime Text</a> and watching the <a href="https://tutsplus.com/course/improve-workflow-in-sublime-text-2/" target="_blank">tutorial videos</a>.</li>
+                    <li>Read <a href="http://git-scm.com/book/en/Getting-Started-About-Version-Control" target="_blank">About Version Control</a>, <a href="http://git-scm.com/book/en/Getting-Started-A-Short-History-of-Git" target="_blank">a Short History of Git</a>, and <a href="http://git-scm.com/book/en/Getting-Started-Git-Basics" target="_blank">Git Basics</a>.</li>
                 </ul>
             </section>
 
