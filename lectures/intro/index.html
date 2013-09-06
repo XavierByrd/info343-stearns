@@ -37,7 +37,7 @@
       <div class="reveal">
           <div class="slides">
 
-            <section>
+            <section data-background="background.jpg">
                 <h1>INFO 343</h1>
                 <h2>Web Technologies</h2>
                 <p>Autumn 2013</p>
@@ -81,8 +81,7 @@
 
             <section>
                 <h2>What's this course about?</h2>
-                <h3>Short Answer</h3>
-                <p>Building the client-side portions of effective and engaging web sites/applications that solve real people's problems.</p>
+                <p>This course will teach you how to build the client-side parts of web sites and applications. You'll learn all the technical bits you need to know, but you'll also learn how to design pages that are intuitive, effective, and engaging.</p>
             </section>
 
             <section>
@@ -98,6 +97,8 @@
                     <li>Handy Web Development Tools</li>
                     <li>Popular CSS/JS Frameworks</li>
                     <li>Content Management Systems</li>
+                    <li>Version Control Systems</li>
+                    <li>Automated Testing</li>
                 </ul>
             </section>
 
@@ -105,6 +106,7 @@
                 <h2>Techniques</h2>
                 <ul>
                     <li>Responsive Web Design</li>
+                    <li>Progressive Enhancement and Graceful Degredation</li>
                     <li>AJAX and Mashups</li>
                     <li>Reusable JavaScript libraries</li>
                     <li>Project Organization and Management</li>
@@ -130,7 +132,7 @@
 
             <section>
                 <h2>Why Should I Take This Course?</h2>
-                <p class="fragment">If you're an Informatics major, <strong>it's required!</strong></p>
+                <p class="fragment">If you're an Informatics major, <strong>you have to!</strong></p>
                 <p class="fragment">But even if you didn't have to take it, you really should.</p>
                 <p class="fragment">Web technologies will increasingly be an integral part of nearly every job, as well as everyday life.</p>
                 <p class="fragment">There are currently more web development jobs than talented web developers.</p>
@@ -172,12 +174,13 @@
                 <h2>How hard do I need to work?</h2>
                 <p class="fragment">Very hard! (Duh!)</p>
                 <p class="fragment">You will be graded on the <em>quality of your finished work</em>, not on how hard your tried, nor how much you improved.</p>
+                <p class="fragment">I will expect a lot from you, and will help you become a professional.</p>
             </section>
 
             <section>
                 <h2>What do I need to get/have?</h2>
                 <p>There are <strong>no required books!</strong></p>
-                <p class="fragment">But, there will be online articles to read for each class <br> (see <a href="https://canvas.uw.edu/courses/">Canvas</a>)</p>
+                <p class="fragment">But, there will be online articles to read for each class <br> (see Course Schedule in <a href="https://canvas.uw.edu/courses/">Canvas</a>).</p>
             </section>
 
             <section>
@@ -220,7 +223,7 @@
             </section>                
 
             <section>
-                <h2>Questions?</h2>
+                <h2>Questions About the Course?</h2>
                 <p><img src="../../img/question.jpg" alt="Questions?"></p>
             </section>
 
@@ -232,10 +235,11 @@
             <section>
                 <p><em>Ask the person next to you...</em></p>
                 <p>What's the difference between "the Internet" and "the World Wide Web?"</p>
+                <p><img src="../../img/www.jpg" alt="WWW image" title="Digital World Map Circuit by Nutdanai Apikhomboonwaroot / FreeDigitalPhotos.net"></p>
             </section>
 
             <section>
-                <p>The Web is only one type of application that utilizes the Internet</p>
+                <p>The Web is only one type of application that utilizes the Internet.</p>
                 <p><img src="internet-vs-web.png" alt="Box diagram showing the Web as an application using the Internet"></p>
             </section>
 
@@ -250,7 +254,7 @@
                     <li>Each message needs:
                         <ul>
                             <li>IP Address: a unique number assigned to each computer by the network</li>
-                            <li>Port: a number on which the target service is listening</li>
+                            <li>Port Number: a number on which the target service is listening</li>
                         </ul>
                     </li>
                 </ul>
@@ -285,8 +289,8 @@ Host: www.washington.edu</code></pre>
                     <li><code>www.washington.edu</code>
                         <ul>
                             <li>edu = top-level domain for educational institutions</li>
-                            <li>washington = sub-domain of edu</li>
-                            <li>www = sub-domain of washington.edu</li>
+                            <li>washington = sub-domain of edu, registered to UW</li>
+                            <li>www = sub-domain of washington.edu, defined by UW</li>
                         </ul>
                     </li>
                 </ul>
@@ -295,7 +299,7 @@ Host: www.washington.edu</code></pre>
             <section>
                 <h2>DNS</h2>
                 <ul>
-                    <li>New domains (e.g., iloveinfo343.com) can be purchased from an "accredited registrar" (e.g., Name Cheap, Go Daddy) for a period of time.</li>
+                    <li>New domains (e.g., <code>iloveinfo343.com</code>) can be purchased from an "accredited registrar" (e.g., Name Cheap, Go Daddy).</li>
                     <li>Purchaser then updates the DNS records with the IP address of target server.</li>
                 </ul>
             </section>
@@ -304,24 +308,134 @@ Host: www.washington.edu</code></pre>
                 <h2>HTTP</h2>
                 <p>The Internet allows computer to talk, but it doesn't specify what they talk <em>about</em>.</p>
                 <p class="fragment">HTTP (Hypertext Transfer Protocol) defines a language for sending and receiving "resources" managed by a web server.</p>
-                <p class="fragment">By convention, web servers listen for HTTP messages on port 80.</p>
                 <p class="fragment">Resources are identified using Uniform Resource Locators (URLs).</p>
             </section>
 
             <section>
                 <h2>URLs</h2>
                 <p><img src="url.png" alt="URL diagram showing various parts"></p>
-                <p class="fragment"><img src="url-port.png" alt="URL diagram with port number added"></p>
             </section>
 
             <section>
-                <h2>URLs</h2>
+                <p>By convention, web servers listen for HTTP messages on port 80, but if the server has been configured differently, you can specify the port number in the URL as well.</p>
+                <p><img src="url-port.png" alt="URL diagram with port number added"></p>
+            </section>
+
+            <section>
+                <h2>Are you Tracking?</h2>
                 <p>So what does your browser do when you enter <code>http://www.google.com/</code> in the address bar?</p>
+                <p>What steps does it go through?</p>
             </section>
 
             <section>
                 <h2>Let's Take a Break!</h2>
                 <div><img src="../../img/take-a-break.jpg" alt="Take a break!"></div>
+            </section>
+
+            <section>
+                <h2>Your First Web Page</h2>
+                <p>Web pages are written in the HyperText Markup Language (HTML)</p>
+                <pre><code data-trim>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;title&gt;My First Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Hello World!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Doctype Directive</h2>
+                <p>Tells your browser what kind of document this is (HTML 5).</p>
+                <pre><code data-trim>&lt;!doctype html&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Elements</h2>
+                <p>Marks content as being of a particular type.</p>
+                <p>Encodes meaning into otherwise plain text.</p>
+                <p>Content can be text and/or other elements.</p>
+                <pre><code>&lt;name&gt;...content...&lt;/name&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Attributes</h2>
+                <p>Extends the element with additional information or options.</p>
+                <pre><code data-trim>
+&lt;name attribute="value" attribute="value"&gt;
+    ...content...
+&lt;/name&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Attributes</h2>
+                <p>Some attributes are merely markers, and don't need a value</p>
+                <pre><code data-trim>
+&lt;name marker-attribute&gt;
+    ...content...
+&lt;/name&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Comments</h2>
+                <p>Downloaded to client, but not displayed.</p>
+                <pre><code>&lt;!-- this is a comment --&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Basic Document Structure</h2>
+                <pre><code data-trim>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        ... non-visible info about the page ...
+    &lt;/head&gt;
+    &lt;body&gt;
+        ... visible content ...
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>The Head Section</h2>
+                <p>Lots of elements can go in here, but this is a very basic set.</p>
+                <pre><code>&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;...short page description...&quot;&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;...your name...&quot;&gt;
+    &lt;title&gt;My Page Title&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>The Body Section</h2>
+                <p>Lots and lots of elements can go in here.</p>
+                <pre><code>&lt;h1&gt;Top-Level Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+
+&lt;h2&gt;Second-Level Heading&lt;/h2&gt;
+&lt;p&gt;Another paragraph&lt;/p&gt;
+
+&lt;!-- an image --&gt;
+&lt;p&gt;&lt;img src=&quot;mycat.jpg&quot; alt=&quot;cute cat&quot;&gt;&lt;/p&gt;
+
+&lt;!-- an unordered list --&gt;
+&lt;p&gt;Grocery List:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Pizza&lt;/li&gt;
+    &lt;li&gt;Chips&lt;/li&gt;
+    &lt;li&gt;Beer&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Try it Yourself!</h2>
+                <p>Download the <a href="template.html" target="_blank">template.html</a> file and try adding some content.</p>
+            </section>
+
+            <section>
+                <h2>Managing Your Files</h2>
             </section>
 
           </div> <!-- .slides -->
@@ -345,12 +459,12 @@ Host: www.washington.edu</code></pre>
 
                 // Optional libraries used to extend on reveal.js
                 dependencies: [
-                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    { src: '../../lib/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../../lib/reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../../lib/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../../lib/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../../lib/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: '../../lib/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
                 ]
             });
 
