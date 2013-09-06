@@ -24,19 +24,21 @@ table {
 .pull-left {
 	float: left;
 }
-.two-column img,
-.two-column ul {
-	width: 40%;
-}
-.two-column figure {
+.two-column > div,
+.two-column > figure,
+.two-column > ul,
+.two-column > ol,
+.two-column > img,
+.two-column > p {
 	width: 40%;
 	display: inline-block;
 }
-.three-column img,
-.three-column ul {
-	width: 30%;
-}
-.three-column figure {
+.three-column > div,
+.three-column > figure,
+.three-column > ul,
+.three-column > ol,
+.three-column > img,
+.three-column > p {
 	width: 30%;
 	display: inline-block;
 }
