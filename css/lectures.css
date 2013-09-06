@@ -10,3 +10,9 @@ table {
 .two-column > img {
 	width: 40%;
 }
+ul.no-bullets {
+	list-style: none;
+}
+ul.no-bullets ul {
+	list-style: none;
+}
