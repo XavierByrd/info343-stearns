@@ -1,0 +1,21 @@
+ul.slides, 
+ul.examples {
+	list-style: none;
+}
+
+ul.slides li,
+ul.examples li {
+	padding-left: 40px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	margin: 3px 0;
+	font-size: 18px;
+}
+
+ul.slides li {
+	background: url(../img/bullet-slides.png) no-repeat left center;
+}
+
+ul.examples li {
+	background: url(../img/bullet-example.png) no-repeat left center;
+}
