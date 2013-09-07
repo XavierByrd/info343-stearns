@@ -1,20 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic);
-
-.reveal {
-  font-family: "Open Sans", sans-serif;
-  font-size: 36px;
-}
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-  font-family: "Open Sans", Impact, sans-serif;
-  font-weight: 600;
-  text-transform: none;
-}
-
 .reveal table {
 	width: 100%;
 	border-collapse: collapse;
@@ -54,5 +37,5 @@ ul.no-bullets ul {
 	list-style: none;
 }
 .term {
-	color: #AECAF2;
+	color: #DB8002;
 }
