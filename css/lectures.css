@@ -15,8 +15,13 @@
   text-transform: none;
 }
 
-table {
+.reveal table {
 	width: 100%;
+	border-collapse: collapse;
+}
+.reveal table th {
+	border-bottom: 1px solid;
+	line-height: 1.5;
 }
 .pull-right {
 	float: right;

@@ -43,7 +43,13 @@
         <ul class="examples">
           <li><a href="slides/intro/template.html">Basic HTML Template</a></li>
         </ul>
+
+        <h2>Lab Instructions</h2>
       
+        <ul class="labs">
+          <li><a href="labs/filemgmt/">Managing Your Files</a></li>
+        </ul>
+
       </article>      
 
 
