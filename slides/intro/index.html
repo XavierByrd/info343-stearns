@@ -364,10 +364,16 @@ Host: www.washington.edu</code></pre>
 
             <section>
                 <h2>Elements</h2>
-                <p>Marks content as being of a particular type.</p>
                 <p>Encodes meaning into otherwise plain text.</p>
+                <p>Marked by start-tag and end-tag</p>
                 <p>Content can be text and/or other elements.</p>
                 <pre><code>&lt;name&gt;...content...&lt;/name&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Elements</h2>
+                <p>Some elements do not require an end tag because they can't have any content</p>
+                <pre><code>&lt;br&gt; &lt;!-- manual line break --&gt;</code></pre>
             </section>
 
             <section>
@@ -426,7 +432,7 @@ Host: www.washington.edu</code></pre>
 &lt;p&gt;This is a paragraph&lt;/p&gt;
 
 &lt;h2&gt;Second-Level Heading&lt;/h2&gt;
-&lt;p&gt;Another paragraph&lt;/p&gt;
+&lt;p&gt;A link to &lt;a href="google.com"&gt;Google&lt;/a&gt;&lt;/p&gt;
 
 &lt;!-- an image --&gt;
 &lt;p&gt;&lt;img src=&quot;mycat.jpg&quot; alt=&quot;cute cat&quot;&gt;&lt;/p&gt;
@@ -494,12 +500,12 @@ Host: www.washington.edu</code></pre>
             </section>
 
             <section>
-                <p>A VCS captures each change to a file and can recreate any previous version on demand.</p>
+                <p>A VCS captures each change to a file and can recreate any version of any file in any branch.</p>
                 <p><img src="img/vcs-deltas.png" alt="picture showing delta approach to version control"></p>
             </section>
 
             <section>
-                <p>Git makes a complete snapshot of each changed file; it consumes more disk space, but it's also much faster to switch between different branches or rollback.</p>
+                <p>Git makes a complete snapshot of each changed file; it consumes more disk space, but it's also much faster to switch between different branches or rollback to a previous version.</p>
                 <p><img src="img/vcs-snapshots.png" alt="picture showing snapshot approach to version control"></p>
             </section>
 
