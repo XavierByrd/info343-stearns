@@ -23,6 +23,13 @@
   <body>
 
     <div class="container">
+
+      <nav>
+        <ol class="breadcrumb">
+          <li><a href="..">INFO 343</a></li>
+          <li>Sections A &amp; B</li>
+        </ol>
+      </nav>
       
       <article>
         <div class="page-header">
@@ -30,7 +37,7 @@
           <p class="lead">Links to teaching materials used in Dr Stearns's sections</p>
         </div>
 
-        <h2>Slides</h2>
+        <h2 id="slides">Slides</h2>
 
         <ul class="slides">
           <li><a href="slides/intro/">Course Introduction</a></li>
@@ -38,13 +45,13 @@
           <li>Adding Some Style: Intro to CSS</li>
         </ul>
 
-        <h2>Example Pages</h2>
+        <h2 id="examples">Example Pages</h2>
 
         <ul class="examples">
           <li><a href="slides/intro/template.html">Basic HTML Template</a></li>
         </ul>
 
-        <h2>Lab Instructions</h2>
+        <h2 id="labs">Lab Instructions</h2>
       
         <ul class="labs">
           <li><a href="labs/filemgmt/">Managing Your Files</a></li>
