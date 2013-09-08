@@ -342,14 +342,15 @@ Host: www.washington.edu</code></pre>
             <section>
                 <h2>Elements</h2>
                 <p>Encodes meaning into otherwise plain text.</p>
-                <p>Marked by start-tag and end-tag</p>
+                <p>Marked by start-tag and end-tag.</p>
                 <p>Content can be text and/or other elements.</p>
                 <pre><code>&lt;name&gt;...content...&lt;/name&gt;</code></pre>
             </section>
 
             <section>
                 <h2>Elements</h2>
-                <p>Some elements do not require an end tag because they can't have any content</p>
+                <p>Some elements do not require an end tag because they can't have any content.</p>
+                <p>These are often called "self-closing" or "quick-close" tags.</p>
                 <pre><code>&lt;br&gt; &lt;!-- manual line break --&gt;</code></pre>
             </section>
 

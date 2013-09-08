@@ -11,12 +11,12 @@
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" href="css/main.css" media="screen">
     
-    <link rel="shortcut icon" href="http://ischool.uw.edu/favicon-small.png">
+    <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src="lib/html5shiv/html5shiv.js"></script>
+      <script src="lib/respond/respond.min.js"></script>
     <![endif]-->
 
   </head>
@@ -47,10 +47,19 @@
 
         <h2 id="examples">Example Pages</h2>
 
+        <h3>Templates</h3>
+
         <ul class="examples">
-          <li><a href="slides/intro/template.html">Basic HTML Template</a></li>
+          <li><a href="examples/templates/template.html">Basic HTML Template</a></li>
         </ul>
 
+        <h3>HTML</h3>
+
+        <ul class="examples">
+          <li><a href="examples/html/elements.html">Visual HTML Reference</a></li>
+        </ul>
+
+        
         <h2 id="labs">Lab Instructions</h2>
       
         <ul class="labs">
