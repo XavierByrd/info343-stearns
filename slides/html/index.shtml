@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>INFO 343 HTML</title>
+        <meta name="description" content="HTML Lecture">
+        <meta name="author" content="David Stearns">
+
+        <!--#include virtual="../inc/common-head.html" -->
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+                <section>
+                    <h2>Coming Up...</h2>
+                    <ul>
+                        <li>Thursday: Overview of CSS
+                            <ul>
+                                <li>Read These:</li>
+                                <li><a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/the-best-way-to-learn-css-2/">The Best Way to Learn CSS</a></li>
+                                <li><a href="http://alistapart.com/article/understandingprogressiveenhancement">Understanding Progressive Enhancement</a></li>
+                                <li><a href="http://www.smashingmagazine.com/2010/01/28/color-theory-for-designers-part-1-the-meaning-of-color/">Color Theory for Designers</a></li>
+                            </ul>
+                        </li>
+                        <li>Friday Lab: Building a Basic Web Site</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Today...</h2>
+                    <h2>Saying What You Mean</h2>
+                    <h3>An Overview of HTML</h3>
+                    <ul>
+                        <li>A Bit of History</li>
+                        <li>Tour of HTML</li>
+                        <li>Segmenting and Reusing Common Content</li>
+                        <li>Configuring the Web Server</li>
+                    </ul>
+                </section>
+               
+
+            </div> <!-- .slides -->
+        </div> <!-- .reveal -->
+
+       <!--#include virtual="../inc/common-scripts.html" -->
+    </body>
+</html>

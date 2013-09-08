@@ -41,7 +41,7 @@
 
         <ul class="slides">
           <li><a href="slides/intro/">Course Introduction</a></li>
-          <li>Saying What You Mean: Diving into HTML</li>
+          <li><a href="slides/html/">Saying What You Mean: An Overview of HTML</a></li>
           <li>Adding Some Style: Intro to CSS</li>
         </ul>
 
