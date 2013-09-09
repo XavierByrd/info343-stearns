@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="INFO 343 HTML Visual Reference">
+        <meta name="author" content="David Stearns">
+        <link rel="shortcut icon" href="http://ischool.uw.edu/favicon-small.png">
+
+        <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css" media="screen">
+
+        <!-- highligh.js for code highlighting -->
+        <link rel="stylesheet" href="../../lib/highlight/styles/zenburn.css">
+
+        <title>HTML Visual Reference</title>
+
+        <!--[if lt IE 9]>
+            <script src="../../lib/html5shiv/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+            .reference {
+                /*display: none;*/
+            }
+            .reference .entry {
+                border-top: 1px solid #EEE;
+            }
+            .reference .entry:first-of-type {
+                border-top: 0;
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <div class="container">
+
+            <div class="page-header">
+                <h1>HTML Visual Reference</h1>
+                <p class="lead">Dr David Stearns, The Information School, University of Washington</p>
+            </div>
+
+            <div class="reference">
+
+                <h2>Most Commonly Used</h2>
+
+                    <div class="entry">
+                        <div class="entry-title">h1&ndash;6</div>
+                        <div class="entry-description">Content is a section heading</div>
+                        <div class="entry-example">
+                            <h1>Heading 1</h1>
+                            <h2>Heading 2</h2>
+                            <h3>Heading 3</h3>
+                            <h4>Heading 4</h4>
+                            <h5>Heading 5</h5>
+                            <h6>Heading 6</h6>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">p</div>
+                        <div class="entry-description">Content is normal paragraph text</div>
+                        <div class="entry-example">
+                            <p>This is a paragraph.</p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">ul, ol, li</div>
+                        <div class="entry-description">Unordered and ordered lists</div>
+                        <div class="entry-example">
+                            <p>Shopping List:</p>
+                            <ul>
+                                <li>Pizza</li>
+                                <li>Chips</li>
+                                <li>Beer</li>
+                            </ul>
+                        </div>
+                    </div>
+
+            </div> <!-- .reference -->
+        </div> <!-- .container -->
+
+
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+
+        <!-- for highlight.js -->
+        <script src="../../lib/highlight/highlight.pack.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+
+        <script>
+            //on doc ready...
+            $(function(){
+                //for each entry...
+                $('.reference .entry').each(function() {
+                    //typeset the title and description
+                    var jqthis = $(this);
+
+                    var title = jqthis.children('.entry-title').html();
+                    var description = jqthis.children('.entry-description').html();
+                    var html = '<h3>' + title + '</h3>';
+                    html += '<p class="lead">' + description + '</p>';
+
+                    jqthis.children('.entry-example').each(function() {
+                        html += '<div class="row">'; //start new row
+
+                        //first col is html-encoded version of entry example
+                        html += '<div class="col-md-6"><pre><code>';
+                        html += htmlEncode(this.innerHTML).trim();
+                        html += '</code></pre></div>';
+
+                        //second col is the unecoded example
+                        html += '<div class="col-md-6">' + this.innerHTML + '</div>';
+                        
+                        html += '</div>' //end row
+                    });
+
+                    jqthis.html(html);
+                });
+
+            });
+
+            function htmlEncode(value){
+                //split into lines
+                var lines = value.split('\n');
+
+                //ignore empty lines
+                while (lines.length > 0 && -1 == lines[0].search(/\S/))
+                    lines.shift();
+
+                if (lines.length > 1) {
+                    //count spaces on frist line before first non-space char
+                    var numSpaces = lines[0].search(/\S/);
+                    if (numSpaces > 0) {
+                        //remove that many spaces from the start of each line
+                        for (var idx = 0; idx < lines.length; ++idx) {
+                            lines[idx] = lines[idx].slice(numSpaces);
+                        }
+                    }
+                }
+
+                //trim and encode
+                return $('<div/>').text(lines.join('\n').trim()).html();
+            }
+
+        </script>
+    </body>
+</html>
