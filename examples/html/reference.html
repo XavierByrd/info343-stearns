@@ -24,9 +24,13 @@
             }
             .reference .entry {
                 border-top: 1px solid #EEE;
+                padding-bottom: 10px;
             }
             .reference .entry:first-of-type {
                 border-top: 0;
+            }
+            .reference .entry img {
+                width: 100%;
             }
         </style>
 
@@ -45,7 +49,7 @@
                 <h2>Most Commonly Used</h2>
 
                     <div class="entry">
-                        <div class="entry-title">h1&ndash;6</div>
+                        <div class="entry-title">h1 &ndash; h6</div>
                         <div class="entry-description">Content is a section heading</div>
                         <div class="entry-example">
                             <h1>Heading 1</h1>
@@ -66,14 +70,53 @@
                     </div>
 
                     <div class="entry">
-                        <div class="entry-title">ul, ol, li</div>
-                        <div class="entry-description">Unordered and ordered lists</div>
+                        <div class="entry-title">img</div>
+                        <div class="entry-description">The specified image should be displayed here</div>
+                        <div class="entry-notes">Use the <code>alt</code> attribute to specify an alternate textural description. This is used by screen readers, and displayed if the image file cannot be found.</div>
+                        <div class="entry-example">
+                            <img src="kitten.jpg" alt="cute kitten">
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">ol, ul, li</div>
+                        <div class="entry-description">Ordered and Unordered lists</div>
+                        <div class="entry-example">
+                            <p>Best Sci-Fi Movies:</p>
+                            <ol>
+                                <li>Star Wars</li>
+                                <li>Blade Runner</li>
+                                <li>The Terminator</li>
+                            </ol>
+                        </div>
                         <div class="entry-example">
                             <p>Shopping List:</p>
                             <ul>
                                 <li>Pizza</li>
                                 <li>Chips</li>
                                 <li>Beer</li>
+                            </ul>
+                        </div>
+                        <div class="entry-example">
+                            <p>Nested Lists:</p>
+                            <ul>
+                                <li>Pizza
+                                    <ol>
+                                        <li>Pepperoni</li>
+                                        <li>Mushroom</li>
+                                    </ol>
+                                </li>
+                                <li>Chips
+                                    <ol>
+                                        <li>Doritos</li>
+                                        <li>Lays</li>
+                                    </ol>
+                                </li>
+                                <li>Beer
+                                    <ul>
+                                        <li>More Beer!</li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -101,8 +144,13 @@
 
                     var title = jqthis.children('.entry-title').html();
                     var description = jqthis.children('.entry-description').html();
+                    var notes = jqthis.children('.entry-notes').html()
+
                     var html = '<h3>' + title + '</h3>';
                     html += '<p class="lead">' + description + '</p>';
+                    
+                    if (notes)
+                        html += '<p>' + notes + '</p>';
 
                     jqthis.children('.entry-example').each(function() {
                         html += '<div class="row">'; //start new row
