@@ -47,13 +47,13 @@
 
         <h2 id="examples">Example Pages</h2>
 
-        <h3>Templates</h3>
+        <h3><small>Templates</small></h3>
 
         <ul class="examples">
           <li><a href="examples/templates/template.html">Basic HTML Template</a></li>
         </ul>
 
-        <h3>HTML</h3>
+        <h3><small>HTML</small></h3>
 
         <ul class="examples">
           <li><a href="examples/html/reference.html">Visual HTML Reference</a></li>

@@ -19,8 +19,15 @@
         <![endif]-->
 
         <style>
+            .loading {
+                min-height: 100px;
+                background-color: #CCC;
+                background-image: url(../../img/loading.gif);
+                background-position: center;
+                background-repeat: no-repeat;
+            }
             .reference {
-                /*display: none;*/
+                display: none;
             }
             .reference .entry {
                 border-top: 1px solid #EEE;
@@ -44,9 +51,11 @@
                 <p class="lead">Dr David Stearns, The Information School, University of Washington</p>
             </div>
 
-            <div class="reference">
+            <div class="reference-container loading">
+                <div class="reference">
 
-                <h2>Most Commonly Used</h2>
+                    <h2>Most Commonly Used Body Elements</h2>
+                    <p>When writing body content, these are the elements you'll use the most</p>
 
                     <div class="entry">
                         <div class="entry-title">h1 &ndash; h6</div>
@@ -70,11 +79,23 @@
                     </div>
 
                     <div class="entry">
+                        <div class="entry-title">a</div>
+                        <div class="entry-description">Content is a hyperlink to the URL specified in the <code>href</code> attribute.</div>
+                        <div class="entry-notes">The content may contain other elements (e.g., <a href="#img">img</a>), and all elements will be part of the link. Set the <code>target</code> attribute to "_blank" to automatically open the URL in a new browser tab.</div>
+                        <div class="entry-example">
+                            <a href="http://google.com">Google</a>
+                        </div>
+                        <div class="entry-example">
+                            <a href="http://google.com" target="_blank">Google in new tab</a>
+                        </div>
+                    </div>
+
+                    <div class="entry">
                         <div class="entry-title">img</div>
                         <div class="entry-description">The specified image should be displayed here</div>
                         <div class="entry-notes">Use the <code>alt</code> attribute to specify an alternate textural description. This is used by screen readers, and displayed if the image file cannot be found.</div>
                         <div class="entry-example">
-                            <img src="kitten.jpg" alt="cute kitten">
+                            <p><img src="kitten.jpg" alt="cute kitten"></p>
                         </div>
                     </div>
 
@@ -101,6 +122,7 @@
                             <p>Nested Lists:</p>
                             <ul>
                                 <li>Pizza
+                                    <!-- note: sublist goes inside li -->
                                     <ol>
                                         <li>Pepperoni</li>
                                         <li>Mushroom</li>
@@ -121,7 +143,78 @@
                         </div>
                     </div>
 
-            </div> <!-- .reference -->
+                    <div class="entry">
+                        <div class="entry-title">em</div>
+                        <div class="entry-description">Content should be emphasized</div>
+                        <div class="entry-notes">Although most agents will simply display the content in italics, use this for the meaning it conveys, not the default formatting it achieves.</div>
+                        <div class="entry-example">
+                            <p>HTML should convey <em>meaning</em> not desired formatting.</p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">strong</div>
+                        <div class="entry-description">Content is important</div>
+                        <div class="entry-notes">Although most agents will simply display the content in bold text, use this for the meaning it conveys, not the default formatting it achieves.</div>
+                        <div class="entry-example">
+                            <p>When getting dressed, remember this rule: <strong>socks, then shoes</strong>!</p>
+                        </div>
+                    </div>
+
+                    <h2>Sectioning Elements</h2>
+                    <p>These elements are used to indicate major sections of the document. They affect the outline generated for a page, which is used by screen readers, and may be used by other agents to provide a table of contents. They don't typically receive any default formatting, but you can use CSS to format these sections in different ways.</p>
+
+                    <div class="entry">
+                        <div class="entry-title">article</div>
+                        <div class="entry-description">Content is a cohesive unit that could be syndicated or displayed outside this page</div>
+                        <div class="entry-notes">Use this for the main part of your page, especially if that content is like an article that could be syndicated and appear on its own.</div>
+                        <div class="entry-example">
+                            <article>
+                                <h1>My Content</h1>
+                                <p>This is my article.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">nav</div>
+                        <div class="entry-description">Content is a set of navigation links</div>
+                        <div class="entry-notes">Use this for your navigation links so that they don't become part of the outline, and screen readers can skip over them if desired.</div>
+                        <div class="entry-example">
+                            <nav>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">aside</div>
+                        <div class="entry-description">Content is a side comment, or not part of the main article</div>
+                        <div class="entry-notes">Use this for pull-quotes, or other content that is tangential or unrelated to the main article.</div>
+                        <div class="entry-example">
+                            <aside>
+                                <p><q>"I don't think I'm quoted very accurately on the Internet"</q> - Abraham Lincoln</p>
+                            </aside>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">section</div>
+                        <div class="entry-description">Content is a separate section of the main article</div>
+                        <div class="entry-notes">The meaning of this is rather vague in the HTML specification, so most people use this only for significant sections that you might want to treat separately. Sections should have a heading element.</div>
+                        <div class="entry-example">
+                            <section>
+                                <h2>A New Section</h2>
+                                <p>blah blah blah.</p>
+                            </section>
+                        </div>
+                    </div>
+
+                </div> <!-- .reference -->
+            </div> <!-- .reference-container -->
         </div> <!-- .container -->
 
 
@@ -137,6 +230,7 @@
         <script>
             //on doc ready...
             $(function(){
+
                 //for each entry...
                 $('.reference .entry').each(function() {
                     //typeset the title and description
@@ -146,7 +240,7 @@
                     var description = jqthis.children('.entry-description').html();
                     var notes = jqthis.children('.entry-notes').html()
 
-                    var html = '<h3>' + title + '</h3>';
+                    var html = '<h4 id="' + title + '">' + title + '</h4>';
                     html += '<p class="lead">' + description + '</p>';
                     
                     if (notes)
@@ -168,6 +262,11 @@
 
                     jqthis.html(html);
                 });
+
+                //remove the loading class on the container and
+                //show the reference
+                $('.reference-container').removeClass('loading');
+                $('.reference').show();
 
             });
 
