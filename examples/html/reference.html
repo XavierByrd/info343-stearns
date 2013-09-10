@@ -21,7 +21,7 @@
         <style>
             .loading {
                 min-height: 100px;
-                background-color: #CCC;
+                background-color: #DDD;
                 background-image: url(../../img/loading.gif);
                 background-position: center;
                 background-repeat: no-repeat;
@@ -161,57 +161,40 @@
                         </div>
                     </div>
 
-                    <h2>Sectioning Elements</h2>
-                    <p>These elements are used to indicate major sections of the document. They affect the outline generated for a page, which is used by screen readers, and may be used by other agents to provide a table of contents. They don't typically receive any default formatting, but you can use CSS to format these sections in different ways.</p>
-
                     <div class="entry">
-                        <div class="entry-title">article</div>
-                        <div class="entry-description">Content is a cohesive unit that could be syndicated or displayed outside this page</div>
-                        <div class="entry-notes">Use this for the main part of your page, especially if that content is like an article that could be syndicated and appear on its own.</div>
+                        <div class="entry-title">br</div>
+                        <div class="entry-description">Inserts a manual line break</div>
+                        <div class="entry-notes">A <code>br</code> will cause a manual line break within the current block, but not the start of a new block. This is useful when you don't want to start a new paragraph, but you need a line break to occur.</div>
                         <div class="entry-example">
-                            <article>
-                                <h1>My Content</h1>
-                                <p>This is my article.</p>
-                            </article>
+                            <p>David Stearns <br> The Information School <br> University of Washington</p>
                         </div>
                     </div>
 
                     <div class="entry">
-                        <div class="entry-title">nav</div>
-                        <div class="entry-description">Content is a set of navigation links</div>
-                        <div class="entry-notes">Use this for your navigation links so that they don't become part of the outline, and screen readers can skip over them if desired.</div>
+                        <div class="entry-title">blockquote, q</div>
+                        <div class="entry-description">Content is a lengthy, or short quote</div>
+                        <div class="entry-notes">Use <code>blockquote</code> for long quotes that should be set off from the main content, and <code>q</code> for short, inline quotes.</div>
                         <div class="entry-example">
-                            <nav>
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About</a></li>
-                                </ul>
-                            </nav>
+                            <p>Abraham Lincoln once said, <q>"I don't think people quote me correctly on the Internet."</q></p>
+                        </div>
+                        <div class="entry-example">
+                            <p>As Ben Franklin was fond of saying:</p>
+                            <blockquote>
+                                We are all born ignorant, but one must work hard to remain stupid.
+                            </blockquote>
                         </div>
                     </div>
 
                     <div class="entry">
-                        <div class="entry-title">aside</div>
-                        <div class="entry-description">Content is a side comment, or not part of the main article</div>
-                        <div class="entry-notes">Use this for pull-quotes, or other content that is tangential or unrelated to the main article.</div>
+                        <div class="entry-title">&lt;!-- --&gt;</div>
+                        <div class="entry-description">Content is a comment and should be ignored</div>
+                        <div class="entry-notes">Use this to add comments to your markup, or to quicky comment out markup that you want to suppress for debugging.</div>
                         <div class="entry-example">
-                            <aside>
-                                <p><q>"I don't think I'm quoted very accurately on the Internet"</q> - Abraham Lincoln</p>
-                            </aside>
+                            <!-- this is a comment -->
                         </div>
                     </div>
 
-                    <div class="entry">
-                        <div class="entry-title">section</div>
-                        <div class="entry-description">Content is a separate section of the main article</div>
-                        <div class="entry-notes">The meaning of this is rather vague in the HTML specification, so most people use this only for significant sections that you might want to treat separately. Sections should have a heading element.</div>
-                        <div class="entry-example">
-                            <section>
-                                <h2>A New Section</h2>
-                                <p>blah blah blah.</p>
-                            </section>
-                        </div>
-                    </div>
+
 
                 </div> <!-- .reference -->
             </div> <!-- .reference-container -->
