@@ -39,3 +39,22 @@ ul.no-bullets ul {
 .term {
 	color: #DB8002;
 }
+ul.file-tree,
+ul.file-tree ul {
+	list-style: none;
+}
+ul.file-tree li {
+	padding-left: 40px;
+	background-position: left center;
+	background-repeat: no-repeat;
+}
+ul.file-tree li.file {
+	background-image: url(../img/file.png);
+}
+ul.file-tree li.folder {
+	background-image: url(../img/folder.png);
+}
+ul.file-tree li.folder-open {
+	background-image: url(../img/folder-open.png);
+	background-position: 0 0.3em;
+}
