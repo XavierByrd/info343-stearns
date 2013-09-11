@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>...title...</title>
+
+        <meta name="description" content="...description...">
+        <meta name="author" content="David Stearns">
+
+        <!--#include virtual="../inc/common-head.html" -->
+    </head>
+  <body>
+      <div class="reveal">
+          <div class="slides">
+
+            <section>
+                <h1>Your First Web Page</h1>
+                <p>Dr David Stearns</p>
+                <p>INFO 343 Autumn 2013</p>
+            </section>
+            <section>
+                <h2>Your First Web Page</h2>
+                <p>Web pages are written in the HyperText Markup Language (HTML)</p>
+                <pre><code data-trim>&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+    &lt;head&gt;
+        &lt;title&gt;My First Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Hello World!&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Doctype Directive</h2>
+                <p>Tells your browser what kind of document this is.</p>
+                <pre><code data-trim>&lt;!doctype html&gt;</code></pre>
+                <p>This is the doctype for HTML5 documents.</p>
+            </section>
+
+            <section>
+                <h2>Elements</h2>
+                <p>Encodes meaning into otherwise plain text.</p>
+                <p>Marked by start-tag and end-tag.</p>
+                <p>Content can be text and/or other elements.</p>
+                <pre><code>&lt;name&gt;...content...&lt;/name&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Elements</h2>
+                <p>Some elements do not require an end tag because they can't have any content.</p>
+                <p>These are often called "self-closing" or "quick-close" tags.</p>
+                <pre><code>&lt;br&gt; &lt;!-- manual line break --&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Attributes</h2>
+                <p>Extends the element with additional information or options.</p>
+                <pre><code data-trim>
+&lt;name attribute="value" attribute="value"&gt;
+    ...content...
+&lt;/name&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Attributes</h2>
+                <p>Some attributes are merely markers, and don't need a value</p>
+                <pre><code data-trim>
+&lt;button id="mybutton" disabled&gt;
+    ...content...
+&lt;/button&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Comments</h2>
+                <p>Downloaded to client, but not displayed.</p>
+                <pre><code>&lt;!-- this is a comment --&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Basic Document Structure</h2>
+                <pre><code data-trim>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+    &lt;head&gt;
+        ... non-visible info about the page ...
+        ... links to supporting files ...
+    &lt;/head&gt;
+    &lt;body&gt;
+        ... visible content ...
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>The Head Section</h2>
+                <p>Lots of elements can go in here, but this is a very basic set.</p>
+                <pre><code>&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;...short page description...&quot;&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;...your name...&quot;&gt;
+    &lt;title&gt;My Page Title&lt;/title&gt;
+&lt;/head&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>The Body Section</h2>
+                <p>Lots and lots of elements can go in here.</p>
+                <pre><code>&lt;h1&gt;Top-Level Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+
+&lt;h2&gt;Second-Level Heading&lt;/h2&gt;
+&lt;p&gt;A link to &lt;a href="google.com"&gt;Google&lt;/a&gt;&lt;/p&gt;
+
+&lt;!-- an image --&gt;
+&lt;p&gt;&lt;img src=&quot;mycat.jpg&quot; alt=&quot;cute cat&quot;&gt;&lt;/p&gt;
+
+&lt;!-- an unordered list --&gt;
+&lt;p&gt;Grocery List:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Pizza&lt;/li&gt;
+    &lt;li&gt;Chips&lt;/li&gt;
+    &lt;li&gt;Beer&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+            </section>
+
+            <section>
+                <h2>Try it Yourself!</h2>
+                <p>Download the <a href="template.html" target="_blank">template.html</a> file, add some content, and view it in a browser.</p>
+            </section>
+
+
+          </div> <!-- .slides -->
+      </div> <!-- .reveal -->
+
+        <!--#include virtual="../inc/common-scripts.html" -->  
+    </body>
+</html>
