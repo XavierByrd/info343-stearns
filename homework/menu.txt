@@ -1,0 +1,40 @@
+Dawg Pizza Menu
+-----------------
+Pizzas:
+    All our pizzas are made with hand-thrown thin crust, baked in real wood ovens. Choose from one of these sizes:
+        Small (12")         $15
+        Medium (14")        $17
+        Large (17")         $22
+        Gargantuan (25")    $29
+
+    [make this line really obvious somehow]
+    All pizzas can be customized--add a few ingredients, or take a few off--for an extra $2.
+
+    Meat Pies:
+
+        Classic Pepperoni
+            Pepperoni and Mozzarella on our Spicy Tomato Sauce.
+
+        The Hawaiian
+            Canadian Bacon and Pineapple with Mozzarella on a rich Tomato Sauce.
+
+        Death by Meat
+            Pepperoni, Bacon, Canadian Bacon, Chicken, Duck, Goose, and Ground Beef with Smoked Mozzarella on our Spicy Tomato Sauce. Add Venison or Horse for an extra $2!
+
+    Vegetarian Pies:
+
+        Forest Floor
+            Three kinds of mushrooms with Mozzarella on a herb Tomato Sauce.
+
+        Green Monster
+            Roasted chicken with Romano on a Basil Pesto sauce.
+
+        Purple Monster
+            Roasted Eggplant and Cabbage stir fried in sesame oil on a rich Plum Sauce
+
+Drinks:
+    Coke, Diet Coke, Sprite, Root Beer, or Irn Bru by the can ($4)
+    Ranier Beer by the can ($4)
+
+Dessert:
+    Chocolate, Vanilla, or Lemon Gelato ($8)

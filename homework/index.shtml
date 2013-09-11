@@ -37,23 +37,23 @@
                     <p class="lead">Requirements and supporting materials</p>
                 </div>
 
-                <p>Congratulations! You've just been hired by the hottest new <abbr title="A restaurant that specializes in making pizza">pizzeria</abbr>, <strong>Dawg Pizza</strong>, to build their web site. You will be working with the owner and founder, Michael Chen, to build a site that will both he and his target customers will love.</p>
+                <p>Congratulations! You've just been hired by the hottest new pizzeria, <strong>Dawg Pizza</strong>, to build their web site. You will be working with the owner and founder, Michael Chen, to build a site that will both he and his target customers will love.</p>
 
-                <p>You will build this site in four phases, adding new features and capabilities each time. We will assign these phases the version numbers 1.0, 2.0, 3.0, and 4.0. The requirements and due-dates for each version are listed below, and you'll submit your completed versions via the respective <a href="https://canvas.uw.edu/courses">Canvas assignment</a>.</p>
+                <p>You will build this site in four phases, adding complexity and features each time. We will assign these phases the version numbers 1.0, 2.0, 3.0, and 4.0. The requirements and due-dates for each version are listed below, and you'll submit your completed versions via the respective <a href="https://canvas.uw.edu/courses">Canvas assignment</a>.</p>
 
-                <p>For each of these versions, Michael will supply you with his list of must-have and optional requirements, plus some images and text copy you should include in the pages. If you want to ask him to clarify any of these requirements, feel free to post a question to our <a href="https://canvas.uw.edu/courses">"Questions for Pizzeria Owner" discussion board in Canvas</a>. The design of the pages will be up to you, however, so be creative and design something that both the owner and his target customers will find engaging, intuitive, and accessible. There is no one right way to build these sites, but we will examine your source to make sure you've used the appropriate HTML, CSS and JavaScript given your solutions.</p>
+                <p>For each of these versions, Michael will supply you with his list of must-have and optional requirements, plus some images and text copy you should include in the pages. If you want to ask clarifying questions, feel free to post them to our <a href="https://canvas.uw.edu/courses">"Questions for Pizzeria Owner" discussion board in Canvas</a>. The design of the pages will be up to you, however, so be creative and design something that both the owner and his target customers will find engaging, intuitive, and accessible. There is no one right way to build these sites, but we will examine your source to make sure you've used the appropriate HTML, CSS and JavaScript constructs for your particular solutions.</p>
 
                 <p class="alert alert-warning">In order to get a full 10 points for the "completeness" portion of your grade, you must meet all the "must-have" requirements and at least one of the optional requirements. If you only do the must-have requirements, you'll get only 9 points on that portion of your grade. See the rubric displayed below each homework assignment in Canvas.</p>
 
-                <p>When you complete a version of your site, publish it to your iSchool student web server and submit the URL via the Canvas assignment.</p>
+                <p>When you complete a version of your site, publish it to a new folder on your iSchool student web server and submit the URL via the Canvas assignment. If you don't link to the new folder from anywhere, it will remain an "island" on the web and no one else besides your instructor and TA will be able to find it. If you want to publish a link to the folder on the Internet, feel free to do so, but there is no requirement to do so.</p>
 
-                <p>Although you are not explicitly required to use a version control system while developing this site, I would strongly recommend that you do so. A version control system like Git/GitHub will not only help you manage changes and recover from serious mistakes, but also keep your code backed-up in an offsite location. This is also a great opportunity to practice using these tools so that you are ready to jump into a professional web development team.</p>
+                <p>Although you are not explicitly required to use a version control system while developing this site, I would strongly recommend that you do so. A version control system like Git/GitHub will not only help you manage changes and recover from serious mistakes, but also keep your code backed-up in an offsite location in case your computer is lost, stolen, or broken. This is also a great opportunity to practice using these tools so that you are ready to jump into a professional web development team.</p>
 
-                <p class="alert alert-danger">These are <em>individual</em> homework assignments, and this should be entirely your own work. Do not work on these sites together, and do not share code with each other. You may use open-source CSS frameworks and JavaScript libraries, but your own code must be your own code.</p>
+                <p class="alert alert-danger">These are <em>individual</em> homework assignments, and this should be entirely your own work. Do not work on these sites together, and do not share code with each other. You may use open-source CSS frameworks and JavaScript libraries developed by others, but your own code must be your own code. If you get stuck on a technical question, you may ask for help on our "Technical Help" Canvas discussion board, but don't expect anyone to reply at 10pm on the night before the assignment is due.</p>
 
                 <h2>Version 1.0 <small>Due by Oct 8</small></h2>
 
-                <p>Michael is working hard to get his pizzeria ready for their grand opening on October 8<sup>th</sup>, and he wants some kind of web presence by then. Here are his specific instructions. Remember that he isn't a web developer, so you'll need to interpret what he says and use the appropriate markup and styles.</p>
+                <p>Michael is working hard to get his pizzeria ready for their grand opening on October 8<sup>th</sup>, and he wants some kind of web presence by then. Below are his specific instructions. Remember that he isn't a web developer, so you'll need to interpret what he says and use the appropriate markup and styles. Color choices and page layout are entirely up to you unless otherwise stated. If you draw a blank on how it should look, check out some <a target="_blank" href="https://www.google.com/search?q=pizzeria">other pizzeria web sites</a> and see what they did.</p>
 
                 <blockquote>
                     <p>Hey there! I'm excited that you're going to build my site. We're set to open on October 8<sup>th</sup>, and I'd like to have something up on the web by then. I know that doesn't give you much time, so for this first version, let's keep it kind of simple.</p>
@@ -64,39 +64,40 @@
                     <ul>
                         <li>There should be three pages: home, menu, and about us.</li>
                         <li>All pages should have the same set of navigation links to get from one page to the other.</li>
-                        <li>All pages need to include our logo.</li>
+                        <li>All pages need to include a small version of <a target="_blank" href="img/logo.png">our logo</a>, and clicking on it should take you back to the home page.</li>
                         <li>The home page should have this on it:
                             <ul>
                                 <li>The name of our restaurant (Dawg Pizza) prominently displayed</li>
-                                <li>This short description: "Awesome pizza with fresh ingredients baked to order. Come in and eat, or call us for delivery!"</li>
-                                <li>Our phone number (206-555-1212) and address (99 University Way, Seattle, WA 98195)</li>
+                                <li>This short description: "Awesome wood-fired pizza with fresh ingredients baked to order. Come in and eat, or call us for delivery!"</li>
+                                <li>Our phone number (206-555-1212) and address (4306 University Way NE, Seattle, WA 98105)</li>
+                                <li>Our email address (dawgpizzaseattle@gmail.com) and make it so that when you click it, it opens a new email message to us.</li>
                                 <li>A link to our twitter feed (@DawgPizzaSea)</li>
-                                <li>This picture of our pizza</li>
+                                <li>This <a target="_blank" href="img/pizza1.jpg">picture of our pizza</a> (it's big, so you might need to make it smaller)</li>
                             </ul>
                         </li>
-                        <li>The menu page should list out our various menu options.</li>
+                        <li>The menu page should list out <a target="_blank" href="menu.txt">our various menu options</a>, and have this <a target="_blank" href="img/pizza2.jpg">picture of our pizza</a> on it.</li>
                         <li>The "about us" page should have this on it:
                             <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+                                <li>This <a target="_blank" href="about.txt">text about our restaurant</a></li>
+                                <li>A picture of <a target="_blank" href="img/pizza-oven.jpg">our wood-fired pizza oven</a></li>
                             </ul>
                         </li>
                     </ul>
 
                     <p>And if you get time, I'd also love to have one or more of these added:</p>
                     <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li>Add a "Jobs" page that says we are now hiring kitchen staff as well as delivery drivers.</li>
+                        <li>Make it so that if someone clicks on our address, it takes them to Google Maps showing that address.</li>
+                        <li>Add a footer to all the pages with this content: "Call us for delivery: 206-555-1212"</li>
                     </ul>
                 </blockquote>
 
-                <h2>Version 2.0 <small>Due by Oct 22</small></h2>
+                <h2 id="v2">Version 2.0 <small>Due by Oct 22</small></h2>
 
-                <h2>Version 3.0 <small>Due by Nov 5</small></h2>
 
-                <h2>Version 4.0 <small>Due by Nov 19</small></h2>
+                <h2 id="v3">Version 3.0 <small>Due by Nov 5</small></h2>
+
+                <h2 id="v4">Version 4.0 <small>Due by Nov 19</small></h2>
 
 
             </article>

@@ -1,12 +1,14 @@
 ul.slides, 
 ul.examples,
-ul.labs {
+ul.labs,
+ul.homework {
 	list-style: none;
 }
 
 ul.slides li,
 ul.examples li,
-ul.labs li {
+ul.labs li,
+ul.homework li {
 	padding-left: 40px;
 	padding-bottom: 5px;
 	padding-top: 5px;
@@ -24,4 +26,8 @@ ul.examples li {
 
 ul.labs li {
 	background: url(../img/bullet-lab.png) no-repeat left center;
+}
+
+ul.homework li {
+	background: url(../img/bullet-homework.png) no-repeat left center;
 }

@@ -34,7 +34,7 @@
       <article>
         <div class="page-header">
           <h1>INFO 343 Sections A &amp; B</h1>
-          <p class="lead">Links to teaching materials used in Dr Stearns's sections</p>
+          <p class="lead">Teaching materials used in Dr Stearns's sections</p>
         </div>
 
         <h2 id="slides">Slides &amp; Notes</h2>
@@ -68,6 +68,13 @@
         <ul class="labs">
           <li><a href="labs/filemgmt/">Managing Your Files</a></li>
         </ul>
+
+        <h2 id="homework">Homework Instructions</h2>
+
+        <ul class="homework">
+          <li><a href="homework/">Homework Assignments</a></li>
+        </ul>
+
 
       </article>      
 
