@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homework assignments for INFO 343">
+    <meta name="author" content="David Stearns">
+
+    <title>INFO 343 Homework</title>
+
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="../css/homework.css" media="screen">
+
+    <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../lib/html5shiv/html5shiv.js"></script>
+      <script src="../lib/respond/respond.min.js"></script>
+    <![endif]-->
+
+    </head>
+    <body>
+
+        <div class="container">
+            <nav>
+              <ol class="breadcrumb">
+                <li><a href="../..">INFO 343</a></li>
+                <li><a href="..">Sections A &amp; B</a></li>
+                <li>Homework Assignments</li>
+              </ol>
+            </nav>
+
+            <article>
+                <div class="page-header homework-title">
+                    <h1>Homework Assignments</h1>
+                    <p class="lead">Requirements and supporting materials</p>
+                </div>
+
+                <p>Congratulations! You've just been hired by the hottest new <abbr title="A restaurant that specializes in making pizza">pizzeria</abbr>, <strong>Dawg Pizza</strong>, to build their web site. You will be working with the owner and founder, Michael Chen, to build a site that will both he and his target customers will love.</p>
+
+                <p>You will build this site in four phases, adding new features and capabilities each time. We will assign these phases the version numbers 1.0, 2.0, 3.0, and 4.0. The requirements and due-dates for each version are listed below, and you'll submit your completed versions via the respective <a href="https://canvas.uw.edu/courses">Canvas assignment</a>.</p>
+
+                <p>For each of these versions, Michael will supply you with his list of must-have and optional requirements, plus some images and text copy you should include in the pages. If you want to ask him to clarify any of these requirements, feel free to post a question to our <a href="https://canvas.uw.edu/courses">"Questions for Pizzeria Owner" discussion board in Canvas</a>. The design of the pages will be up to you, however, so be creative and design something that both the owner and his target customers will find engaging, intuitive, and accessible. There is no one right way to build these sites, but we will examine your source to make sure you've used the appropriate HTML, CSS and JavaScript given your solutions.</p>
+
+                <p class="alert alert-warning">In order to get a full 10 points for the "completeness" portion of your grade, you must meet all the "must-have" requirements and at least one of the optional requirements. If you only do the must-have requirements, you'll get only 9 points on that portion of your grade. See the rubric displayed below each homework assignment in Canvas.</p>
+
+                <p>When you complete a version of your site, publish it to your iSchool student web server and submit the URL via the Canvas assignment.</p>
+
+                <p>Although you are not explicitly required to use a version control system while developing this site, I would strongly recommend that you do so. A version control system like Git/GitHub will not only help you manage changes and recover from serious mistakes, but also keep your code backed-up in an offsite location. This is also a great opportunity to practice using these tools so that you are ready to jump into a professional web development team.</p>
+
+                <p class="alert alert-danger">These are <em>individual</em> homework assignments, and this should be entirely your own work. Do not work on these sites together, and do not share code with each other. You may use open-source CSS frameworks and JavaScript libraries, but your own code must be your own code.</p>
+
+                <h2>Version 1.0 <small>Due by Oct 8</small></h2>
+
+                <p>Michael is working hard to get his pizzeria ready for their grand opening on October 8<sup>th</sup>, and he wants some kind of web presence by then. Here are his specific instructions. Remember that he isn't a web developer, so you'll need to interpret what he says and use the appropriate markup and styles.</p>
+
+                <blockquote>
+                    <p>Hey there! I'm excited that you're going to build my site. We're set to open on October 8<sup>th</sup>, and I'd like to have something up on the web by then. I know that doesn't give you much time, so for this first version, let's keep it kind of simple.</p>
+
+                    <p>Since you're the expert on this stuff, I'll leave the page design to you. Make it look as cool as you can. My target customers are university students like you, so put together something that would make you want to order pizza from us!</p>
+
+                    <p>Here are my must-haves:</p>
+                    <ul>
+                        <li>There should be three pages: home, menu, and about us.</li>
+                        <li>All pages should have the same set of navigation links to get from one page to the other.</li>
+                        <li>All pages need to include our logo.</li>
+                        <li>The home page should have this on it:
+                            <ul>
+                                <li>The name of our restaurant (Dawg Pizza) prominently displayed</li>
+                                <li>This short description: "Awesome pizza with fresh ingredients baked to order. Come in and eat, or call us for delivery!"</li>
+                                <li>Our phone number (206-555-1212) and address (99 University Way, Seattle, WA 98195)</li>
+                                <li>A link to our twitter feed (@DawgPizzaSea)</li>
+                                <li>This picture of our pizza</li>
+                            </ul>
+                        </li>
+                        <li>The menu page should list out our various menu options.</li>
+                        <li>The "about us" page should have this on it:
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <p>And if you get time, I'd also love to have one or more of these added:</p>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </blockquote>
+
+                <h2>Version 2.0 <small>Due by Oct 22</small></h2>
+
+                <h2>Version 3.0 <small>Due by Nov 5</small></h2>
+
+                <h2>Version 4.0 <small>Due by Nov 19</small></h2>
+
+
+            </article>
+
+
+        </div> <!-- .container -->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="../lib/bootstrap/js/bootstrap.min.js"></script>
+
+
+    </body>
+</html>
