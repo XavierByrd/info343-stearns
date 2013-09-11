@@ -18,16 +18,25 @@ Pizzas:
         The Hawaiian
             Canadian Bacon and Pineapple with Mozzarella on a rich Tomato Sauce.
 
-        Death by Meat
-            Pepperoni, Bacon, Canadian Bacon, Chicken, Duck, Goose, and Ground Beef with Smoked Mozzarella on our Spicy Tomato Sauce. Add Venison or Horse for an extra $2!
+        Duck, Duck, Goose
+            Roasted Duck and Goose with Bacon, Chestnus on a ruch Plum Sauce.
+
+        The Bambi
+            Slow-cooked Venison with Red Cabbage on our famous Black Cherry Sauce.
+
+        The Ultimate
+            Pepperoni, Bacon, Canadian Bacon, Chicken, Duck, Goose, and Ground Beef with Smoked Mozzarella on our Spicy Tomato Sauce. Add Venison or Elk for an extra $2!
 
     Vegetarian Pies:
+
+        Veggie Maddness
+            Mushroom, Black Olive, Onions, Roasted Garlic, Squash and Roasted Eggplant on our Spicy Tomato Sauce.
 
         Forest Floor
             Three kinds of mushrooms with Mozzarella on a herb Tomato Sauce.
 
-        Green Monster
-            Roasted chicken with Romano on a Basil Pesto sauce.
+        Mr Green
+            Roasted Chicken with Romano on a Basil Pesto sauce.
 
         Purple Monster
             Roasted Eggplant and Cabbage stir fried in sesame oil on a rich Plum Sauce
@@ -35,6 +44,7 @@ Pizzas:
 Drinks:
     Coke, Diet Coke, Sprite, Root Beer, or Irn Bru by the can ($4)
     Ranier Beer by the can ($4)
+    House Red Wine by the glass or bottle ($10 / $40)
 
 Dessert:
     Chocolate, Vanilla, or Lemon Gelato ($8)
