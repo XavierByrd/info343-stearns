@@ -37,11 +37,11 @@
                     <p class="lead">Requirements and supporting materials</p>
                 </div>
 
-                <p>Congratulations! You've just been hired by the hottest new pizzeria, <strong>Dawg Pizza</strong>, to build their web site. You will be working with the owner and founder, Michael Chen, to build a site that both he and his target customers will love.</p>
+                <p>Congratulations! You've just been hired by the hottest new pizzeria, <strong>Dawg Pizza</strong>, to build their web site. You will be working with the owner and founder, Tony Pizzarelli, to build a site that both he and his target customers will love.</p>
 
                 <p>You will build this site in four phases, adding complexity and features each time. We will assign these phases the version numbers 1.0, 2.0, 3.0, and 4.0. The requirements and due-dates for each version are listed below, and you'll submit your completed versions via the respective <a href="https://canvas.uw.edu/courses">Canvas assignment</a>.</p>
 
-                <p>For each of these versions, Michael will supply you with his list of must-have and optional requirements, plus some images and text copy you should include in the pages. If you want to ask clarifying questions, feel free to post them to our <a href="https://canvas.uw.edu/courses">"Questions for Pizzeria Owner" discussion board in Canvas</a>. The design of the pages will be up to you, however, so be creative and design something that both the owner and his target customers will find engaging, intuitive, and accessible. There is no one right way to build these sites, but we will examine your source to make sure you've used the appropriate HTML, CSS and JavaScript constructs for your particular solutions.</p>
+                <p>For each of these versions, Tony will supply you with his list of must-have and optional requirements, plus some images and text copy you should include in the pages. If you want to ask clarifying questions, feel free to post them to our <a href="https://canvas.uw.edu/courses">"Questions for Pizzeria Owner" discussion board in Canvas</a>. The design of the pages will be up to you, however, so be creative and design something that both the owner and his target customers will find engaging, intuitive, and accessible. There is no one right way to build these sites, but we will examine your source to make sure you've used the appropriate HTML, CSS and JavaScript constructs for your particular solutions.</p>
 
                 <p class="alert alert-warning">In order to get a full 10 points for the "completeness" portion of your grade, you must meet all the "must-have" requirements and at least one of the optional requirements. If you only do the must-have requirements, you'll get only 9 points on that portion of your grade. See the rubric displayed below each homework assignment in Canvas.</p>
 
@@ -53,7 +53,7 @@
 
                 <h2>Version 1.0 <small>Due by Oct 8</small></h2>
 
-                <p>Michael is working hard to get his pizzeria ready for their grand opening on October 8<sup>th</sup>, and he wants some kind of web presence by then. Below are his specific instructions. Remember that he isn't a web developer, so you'll need to interpret what he says and use the appropriate markup and styles. Color choices and page layout are entirely up to you unless otherwise stated. You can also include additional images, background textures, or icons wherever you think they'd be helpful.</p>
+                <p>Tony is working hard to get his pizzeria ready for their grand opening on October 8<sup>th</sup>, and he wants some kind of web presence by then. Below are his specific instructions. Remember that he isn't a web developer, so you'll need to interpret what he says and use the appropriate markup and styles. Color choices and page layout are entirely up to you unless otherwise stated. You can also include additional images, background textures, or icons wherever you think they'd be helpful.</p>
 
                 <p>If you draw a blank on how it should look, check out some <a target="_blank" href="https://www.google.com/search?q=pizzeria">other pizzeria web sites</a> and see what they did.</p>
 
@@ -64,7 +64,7 @@
 
                     <p>Here are my must-haves:</p>
                     <ul>
-                        <li>There should be three pages: home, menu, and about us.</li>
+                        <li>There should be three pages: Home, Menu, and About Us.</li>
                         <li>All pages should have the same set of navigation links to get from one page to the other.</li>
                         <li>All pages need to include a small version of <a target="_blank" href="img/logo.png">our logo</a>, and clicking on it should take you back to the home page.</li>
                         <li>The home page should have this on it:
@@ -97,9 +97,9 @@
 
                 <h2 id="v2">Version 2.0 <small>Due by Oct 22</small></h2>
 
-                <p>That quick site you built is the doing the job, but now that Dawg Pizza is open for business, Michael wants you to refresh the site with some better page layout and visual effects. He also wants to make the site accessible to people with disabilities (they love pizza too), and that it looks good on smaller-screen devices like mobile phones and tablets. Lastly, he really wants the page to include the right meta-data so that Google and other search engines understand that this site is for a <a href="http://schema.org/Restaurant">restaurant</a>, and display it in search results with extra helpful information.</p>
+                <p>That quick site you built is the doing the job, but now that Dawg Pizza is open for business, Tony wants you to refresh the site with some better page layout and visual effects. He also wants to make the site accessible to people with disabilities (they love pizza too), and that it looks good on smaller-screen devices like mobile phones and tablets. Lastly, he really wants the page to include the right meta-data so that Google and other search engines understand that this site is for a <a href="http://schema.org/Restaurant">restaurant</a>, and display it in search results with extra helpful information.</p>
 
-                <p>For this version, Michael has requested a few specific page layouts, but other design elements like <a href="http://www.google.com/fonts">fonts</a>, text styling, box styling, transforms, transitions, animations, etc. are up to you. Remember that your goal is to build a site that his target customers (university students) would love. So be creative and utilize those skills you learned and practiced over the last few weeks.</p>
+                <p>For this version, Tony has requested a few specific page layouts, but other design elements like <a href="http://www.google.com/fonts">fonts</a>, text styling, box styling, transforms, transitions, animations, etc. are up to you. Remember that your goal is to build a site that his target customers (university students) would love. So be creative and utilize those skills you learned and practiced over the last few weeks.</p>
 
                 <p>If you want to use a CSS framework (e.g., Bootstrap or Foundation) for this version, feel free to do so, but remember to follow their licensing requirements.</p>
 
@@ -110,7 +110,7 @@
                     <ul>
                         <li>On the home and about pages, I want our logo to be off to the left with the rest of the text next to it on the right.</li>
                         <li>On the menu page, I'd like a two-column layout for the various pizzas, with the meat ones on the left and the veggie ones on the right. The drinks and desserts should be below that in just one column.</li>
-                        <li>I want the whole site to look great on a mobile phone or tablet. The text needs to adjust size, pictures need to scale, etc. Also on pages like the menu, it needs to flip to a single-column layout when viewed on a small screen so that customers don't have to scroll to the right to see the veggie pies.</li>
+                        <li>I want the whole site to look great on a mobile phone or tablet. The text needs to adjust size, pictures need to scale, etc. Also on pages like the menu, it needs to flip to a single-column layout when viewed on a phone screen so that customers don't have to scroll to the right to see the veggie pies.</li>
                         <li>I want the whole site to be accessible to people with disabilities.</li>
                         <li>I want Google and other search engines to know that this site is for a <a href="http://schema.org/Restaurant">restaurant</a>, so that they'll show extra helpful info in the search results (map, logo, phone number, hours, cuisine, link to menu, etc.)</li>
                     </ul>
@@ -122,11 +122,56 @@
                         <li>It would be cool if the footer on all the pages was fixed on the bottom so that it stayed in place as you scrolled down the page.</li>
                         <li>Add a "Follow Us on Twitter" button that would automatically add the customer as a follower (provided the customer has a Twitter account of course).</li>
                     </ul>
+                </blockquote>
+
+                <h2 id="v3">Version 3.0 <small>Due by Nov 5</small></h2>
+
+                <p>Your redesigned site really helped attract customers to Tony's restaurant! He's now getting so busy that he wants to enable customers to place their delivery orders via the web site instead of having to call. For this version, you'll add some forms and scripting to make that possible.</p>
+
+                <p>Since we don't get into building databases and server-side processing in this course, you'll need a URL to post your form fields to. TODO: create an echo page.</p>
+
+                <p>Here are your instructions from Tony:</p>
+
+                <blockquote>
+                    <p>Hey I need another feature added to the site. I want our customers to be able to submit a new delivery order right from the site. Here's how I want it to work:</p>
+
+                    <ul>
+                        <li>I want a new page named "Order". It should be part of the main site navigation along with the existing pages.</li>
+                        <li>That page should start with some text saying that we only deliver within the Seattle city limits, and only from noon to 11:00pm. We accept cash or credit cards on delivery.</li>
+
+                        <li>It should then let the customer specify an order. The customer can order up to 5 pizzas, but each one has to be one of our standard options on the menu (no topping subsitutions).</li>
+
+                        <li>For each pizza, the customer needs to choose one of our standard sizes.</li>
+
+                        <li>In addition to pizzas, the customer should also be able to order any number and combination of our soft drinks (no alcohol for delivery).</li>
+
+                        <li>The customer should also be able to order any number and combination of our desserts.</li>
+
+                        <li>The customer must choose at least one pizza to place an order (no orders for just drinks).</li>
+                        
+                        <li>Below the food and drink choices, you should show a sub-total that dynamically updates based on what the customer chooses (see the menu for prices). Under that, you should show the standard delivery fee of $5. Below that you should show the tax amount, which is 9.5% of the sub-total + delivery. At the bottom, display the total charge (sub-total + delivery + tax).</li>
+                        
+                        <li>Below the food and drink selection, there should be a second set of fields that let the customer specify the delivery address and phone number. The delivery address is required and must be within the city of Seattle.</li>
+
+                        <li>Below the delivery address, the customer should be able to specify whether the pizza should be delivered as soon as possible, or at a specific time later in the day or evening. If the customer specifies a time, it has to be at least 30 minutes from the current time, no earlier than noon, and no later than 11:00pm that same day.</li>
+                        
+                        <li>Below the delivery time, there should be a field for them to enter any special delivery instructions they might need (like, "come around back," or "please knock instead of ringing doorbell.") Limit this to only 140 characters though, since that's all we can print on our delivery tickets. As the customer types, show how many characters are left, and stop them when they get to 140.</li>
+
+                        <li>At the bottom should be a button to place the order, and another to cancel and return to the home page [see note above about what submit URL to use for your form].</li>
+
+                    </ul>
+
+                    <p>If you have the time, add one or more of the following:</p>
+
+                    <ul>
+                        <li>Disable "place order" button until the customer has chosen at least one pizza, and provided a delivery address. Also disable the button after it is clicked so that the cusotmer doesn't click it multiple times and submit multiple orders.</li>
+                        <li>Store the customer's address locally and auto-populate it on their next order.</li>
+                        <li>Store the customer's entire order locally, and offer a UI element that the customer can click to place the same order as last time.</li>
+                    </ul>
 
                 </blockquote>
 
 
-                <h2 id="v3">Version 3.0 <small>Due by Nov 5</small></h2>
 
                 <h2 id="v4">Version 4.0 <small>Due by Nov 19</small></h2>
 
