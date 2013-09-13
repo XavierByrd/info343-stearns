@@ -47,13 +47,15 @@
 
                 <p>When you complete a version of your site, publish it to a new folder on your iSchool student web server and submit the URL via the Canvas assignment. If you don't link to the new folder from anywhere, it will remain an "island" on the web and no one else besides your instructor and TA will be able to find it. If you want to publish a link to the folder on the Internet, feel free to do so, but there is no requirement to do so.</p>
 
-                <p>Although you are not explicitly required to use a version control system while developing this site, I would strongly recommend that you do so. A version control system like Git/GitHub will not only help you manage changes and recover from serious mistakes, but also keep your code backed-up in an offsite location in case your computer is lost, stolen, or broken. This is also a great opportunity to practice using these tools so that you are ready to jump into a professional web development team.</p>
+                <p>Although you are not explicitly required to use a version control system while developing the various versions of this site, I would strongly recommend that you do so. A version control system like Git/GitHub will not only help you manage changes and recover from serious mistakes, but also keep your code backed-up in an offsite location in case your computer is lost, stolen, or broken. This is also a great opportunity to practice using these tools so that you are ready to jump into a professional web development team.</p>
 
                 <p class="alert alert-danger">These are <em>individual</em> homework assignments, and this should be entirely your own work. Do not work on these sites together, and do not share code with each other. You may use open-source CSS frameworks and JavaScript libraries developed by others, but your own code must be your own code. If you get stuck on a technical question, you may ask for help on our "Technical Help" Canvas discussion board, but don't expect anyone to reply at 10pm on the night before the assignment is due.</p>
 
                 <h2>Version 1.0 <small>Due by Oct 8</small></h2>
 
-                <p>Michael is working hard to get his pizzeria ready for their grand opening on October 8<sup>th</sup>, and he wants some kind of web presence by then. Below are his specific instructions. Remember that he isn't a web developer, so you'll need to interpret what he says and use the appropriate markup and styles. Color choices and page layout are entirely up to you unless otherwise stated. If you draw a blank on how it should look, check out some <a target="_blank" href="https://www.google.com/search?q=pizzeria">other pizzeria web sites</a> and see what they did.</p>
+                <p>Michael is working hard to get his pizzeria ready for their grand opening on October 8<sup>th</sup>, and he wants some kind of web presence by then. Below are his specific instructions. Remember that he isn't a web developer, so you'll need to interpret what he says and use the appropriate markup and styles. Color choices and page layout are entirely up to you unless otherwise stated. You can also include additional images, background textures, or icons wherever you think they'd be helpful.</p>
+
+                <p>If you draw a blank on how it should look, check out some <a target="_blank" href="https://www.google.com/search?q=pizzeria">other pizzeria web sites</a> and see what they did.</p>
 
                 <blockquote>
                     <p>Hey there! I'm excited that you're going to build my site. We're set to open on October 8<sup>th</sup>, and I'd like to have something up on the web by then. I know that doesn't give you much time, so for this first version, let's keep it kind of simple.</p>
@@ -69,6 +71,7 @@
                             <ul>
                                 <li>The name of our restaurant (Dawg Pizza) prominently displayed</li>
                                 <li>This short description: "Awesome wood-fired pizza with fresh ingredients baked to order. Come in and eat, or call us for delivery!"</li>
+                                <li>Our business hours: 10:00am to 11:00pm, Monday through Saturday.</li>
                                 <li>Our phone number (206-555-1212) and address (4306 University Way NE, Seattle, WA 98105)</li>
                                 <li>Our email address (dawgpizzaseattle@gmail.com) and make it so that when you click it, it opens a new email message to us.</li>
                                 <li>A link to our twitter feed (@DawgPizzaSea)</li>
@@ -88,11 +91,39 @@
                     <ul>
                         <li>Add a "Jobs" page that says we are now hiring kitchen staff as well as delivery drivers.</li>
                         <li>Make it so that if someone clicks on our address, it takes them to Google Maps showing that address.</li>
-                        <li>Add a footer to all the pages with this content: "Call us for delivery: 206-555-1212"</li>
+                        <li>Add a footer to all the pages with a copyright declaration, and "Call us for delivery: 206-555-1212"</li>
                     </ul>
                 </blockquote>
 
                 <h2 id="v2">Version 2.0 <small>Due by Oct 22</small></h2>
+
+                <p>That quick site you built is the doing the job, but now that Dawg Pizza is open for business, Michael wants you to refresh the site with some better page layout and visual effects. He also wants to make the site accessible to people with disabilities (they love pizza too), and that it looks good on smaller-screen devices like mobile phones and tablets. Lastly, he really wants the page to include the right meta-data so that Google and other search engines understand that this site is for a <a href="http://schema.org/Restaurant">restaurant</a>, and display it in search results with extra helpful information.</p>
+
+                <p>For this version, Michael has requested a few specific page layouts, but other design elements like <a href="http://www.google.com/fonts">fonts</a>, text styling, box styling, transforms, transitions, animations, etc. are up to you. Remember that your goal is to build a site that his target customers (university students) would love. So be creative and utilize those skills you learned and practiced over the last few weeks.</p>
+
+                <p>If you want to use a CSS framework (e.g., Bootstrap or Foundation) for this version, feel free to do so, but remember to follow their licensing requirements.</p>
+
+                <p>Here is the message from the owner:</p>
+
+                <blockquote>
+                    <p>Hey, that first site was great, but I want you to do a couple of things to make it more engaging and useful. Here are my must-haves:</p>
+                    <ul>
+                        <li>On the home and about pages, I want our logo to be off to the left with the rest of the text next to it on the right.</li>
+                        <li>On the menu page, I'd like a two-column layout for the various pizzas, with the meat ones on the left and the veggie ones on the right. The drinks and desserts should be below that in just one column.</li>
+                        <li>I want the whole site to look great on a mobile phone or tablet. The text needs to adjust size, pictures need to scale, etc. Also on pages like the menu, it needs to flip to a single-column layout when viewed on a small screen so that customers don't have to scroll to the right to see the veggie pies.</li>
+                        <li>I want the whole site to be accessible to people with disabilities.</li>
+                        <li>I want Google and other search engines to know that this site is for a <a href="http://schema.org/Restaurant">restaurant</a>, so that they'll show extra helpful info in the search results (map, logo, phone number, hours, cuisine, link to menu, etc.)</li>
+                    </ul>
+
+                    <p>If you get time, I'd also love one or more of these:</p>
+
+                    <ul>
+                        <li>Some cool visual effects when people hover their mouse over various things.</li>
+                        <li>It would be cool if the footer on all the pages was fixed on the bottom so that it stayed in place as you scrolled down the page.</li>
+                        <li>Add a "Follow Us on Twitter" button that would automatically add the customer as a follower (provided the customer has a Twitter account of course).</li>
+                    </ul>
+
+                </blockquote>
 
 
                 <h2 id="v3">Version 3.0 <small>Due by Nov 5</small></h2>

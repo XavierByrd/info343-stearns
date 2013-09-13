@@ -1,0 +1,10 @@
+/* TEAM */
+David Stearns
+The Information School
+University of Washington
+Seattle, WA, USA
+
+/* SITE */
+Standards: HTML5, CSS3
+Components: Twitter Bootstrap 3.0, jQuery, Reveal.js, highlight.js, html5shiv.js, respond.js
+Software: SublimeText 2, Git, GitHub
