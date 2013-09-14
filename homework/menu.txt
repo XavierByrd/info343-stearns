@@ -50,4 +50,6 @@ Drinks:
     House Red Wine by the glass or bottle ($10/$40)
 
 Dessert:
-    Chocolate, Vanilla, or Lemon Gelato ($8)
+    Chocolate Gelato ($8)
+    Lemon Sorbet ($7)
+    Ricotta Cheese Cake ($10)

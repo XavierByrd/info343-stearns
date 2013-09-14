@@ -128,7 +128,7 @@
                             <li class="folder">js/ <em>(scripts)</em></li>
                             <li class="folder">inc/ <em>(included snippets)</em></li>
                             <li class="folder">lib/ <em>(external libraries)</em></li>
-                            <li class="folder">...sub-site.../</li>
+                            <li class="folder">test/ <em>(test pages/scripts)</em></li>
                         </ul>
                     </li>
                 </ul>
