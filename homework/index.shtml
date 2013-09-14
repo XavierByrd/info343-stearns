@@ -128,7 +128,7 @@
 
                 <p>Your redesigned site really helped attract customers to Tony's restaurant! He's now getting so busy that he wants to enable customers to place their delivery orders via the web site instead of having to call. For this version, you'll add some forms and scripting to make that possible.</p>
 
-                <p>Since we don't get into building databases and server-side processing in this course, you'll need a URL to post your form fields to. TODO: create an echo page.</p>
+                <p>Since we don't get into building databases and server-side processing in this course, you'll need to configure your page to post to a page I've already built for you on the server. See the instructions below the owner's message for details.</p>
 
                 <p>Here are your instructions from Tony:</p>
 
@@ -141,11 +141,11 @@
 
                         <li>It should then let the customer specify an order. The customer can order up to 5 pizzas, but each one has to be one of our standard options on the menu (no topping subsitutions).</li>
 
-                        <li>For each pizza, the customer needs to choose one of our standard sizes.</li>
+                        <li>For each pizza ordered, the customer needs to choose one of our standard sizes.</li>
 
-                        <li>In addition to pizzas, the customer should also be able to order any number and combination of our soft drinks (no alcohol for delivery).</li>
+                        <li>In addition to pizzas, the customer should also be able to order up to 10 of our soft drinks (no alcohol for delivery).</li>
 
-                        <li>The customer should also be able to order any number and combination of our desserts.</li>
+                        <li>The customer should also be able to order up to 10 of our desserts.</li>
 
                         <li>The customer must choose at least one pizza to place an order (no orders for just drinks).</li>
                         
@@ -170,6 +170,41 @@
                     </ul>
 
                 </blockquote>
+
+                <p>Since this class is limited to the client side, I've supplied a server-side page for you that can receive the data posted by your form, and echo back to the customer an order confirmation and receipt. The URL for this page is <code>https://courses.washington.edu/info343/stearns/homework/placeorder.php</code>.</p>
+
+                <p>This page accepts the following form field names:</p>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Field Name</th>
+                            <th>Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>pizza-name-<em>N</em></td>
+                            <td>The name of a pizza to order, exactly as it appears on the menu (e.g., 'Classic Pepperoni'). Replace <em>N</em> with the ordinal number, 0 through 4. For example, the first pizza ordered should be specified in the form field named 'pizza-name-0'. Specify at least one, and up to five pizzas.</td>
+                        </tr>
+                        <tr>
+                            <td>pizza-size-<em>N</em></td>
+                            <td>The size of the pizza, specified in inches. Valid values are 12, 14, 17, and 25. Replace <em>N</em> with the ordinal number, 0 through 4. For example, the size of the first pizza ordered should be specified in the form field named 'pizza-size-0'. The number of these fields should match the number of pizza-name-<em>N</em> fields you send.</td>
+                        </tr>
+                        <tr>
+                            <td>drink-name-<em>N</em></td>
+                            <td>The name of a soft drink to order, exactly as it appears on the menu (e.g., 'Coke'). Replace <em>N</em> with the ordinal number, 0 through 9. For example, the first soft drink ordered should be specified in the form field named 'drink-name-0'. These fields are optional (no drinks), but you can specify up to 10 of them.</td>
+                        </tr>
+                        <tr>
+                            <td>dessert-name-<em>N</em></td>
+                            <td>The name of a dessert to order, exactly as it appears on the menu (e.g., 'Gelato'). Replace <em>N</em> with the ordinal number, 0 through 9. For example, the first dessert ordered should be specified in the form field named 'dessert-name-0'. These fields are optional (no desserts), but you can specify up to 10 of them.</td>
+                        </tr>
+                        <tr>
+                            <td>dessert-flavor-<em>N</em></td>
+                            <td>The flavor of a dessert to order, exactly as it appears on the menu (e.g., 'Chocolate'). Replace <em>N</em> with the ordinal number, 0 through 9. For example, the flavor for the first dessert ordered should be specified in the form field named 'dessert-name-0'. The number of these fields should match the number of dessert-name-<em>N</em> fields you send.</td>
+                        </tr>
+                    </tbody>
+                </table>
 
 
 
