@@ -44,7 +44,7 @@
           <li><a href="slides/howwebworks">How the Web Works (Part I)</a></li>
           <li><a href="slides/firstpage">Your First Web Page</a></li>
           <li><a href="slides/vcs/">Managing Your Files</a></li>
-          <li><a href="slides/html/">Saying What You Mean: An Overview of HTML</a></li>
+          <li>Saying What You Mean: An Overview of HTML</li>
           <li>Adding Some Style: Intro to CSS</li>
         </ul>
 
@@ -66,13 +66,13 @@
         <h2 id="labs">Lab Instructions</h2>
       
         <ul class="labs">
-          <li><a href="labs/filemgmt/">Managing Your Files</a></li>
+          <li>Managing Your Files</li>
         </ul>
 
         <h2 id="homework">Homework Instructions</h2>
 
         <ul class="homework">
-          <li><a href="homework/">Homework Assignments</a></li>
+          <li>Homework Assignments</li>
         </ul>
 
 
