@@ -1,0 +1,26 @@
+{
+	"pizza" : {
+		"Classic Pepperoni": [10,13,16],
+		"The Hawaiian": [12,14,17],
+		"Duck, Duck, Goose": [15,17,19],
+		"The Bambi": [15,17,19],
+		"The Ultimate": [15,19,23],
+		"Margherita": [10,13,16],
+		"Veggie Maddness": [11,14,17],
+		"Forest Floor": [11,14,17],
+		"Mr Green": [13,16,19],
+		"Purple Monster": [11,14,17]
+	},
+	"drink": {
+		"Coke": 4,
+		"Diet Coke": 4,
+		"Sprite": 4,
+		"Root Beer": 4,
+		"Irn Bru": 4
+	},
+	"dessert": {
+		"Chocolate Gelato": 8,
+		"Lemon Sorbet": 7,
+		"Ricotta Cheese Cake": 10
+	}
+}
