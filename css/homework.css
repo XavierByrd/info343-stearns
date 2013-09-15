@@ -10,10 +10,10 @@
 	background-repeat: no-repeat;
 	padding-left: 85px;
 }
-.money {
+.money, .qty {
 	text-align: right;
 }
-.label-sub-total, .label-tax, .label-total, .label-money {
+.label-sub-total, .label-tax, .label-total, .label-money, .label-qty {
 	text-align: right;
 }
 .label-sub-total, .label-tax {

@@ -1,4 +1,8 @@
 <?php
+
+//TODO: add support for 'quantity' property on items
+
+
 //do some error checking
 //method must be post
 if (strtolower($_SERVER['REQUEST_METHOD']) != "post")
@@ -33,6 +37,8 @@ if (NULL == $prices)
 	die('Unable to load the prices.json file on the server. Please report this to your instructor.');
 
 //check each item
+//also ensure that subtotal is at least $20
+$subtotal = 0;
 foreach ($cart->items as $item) {
 	//must have a name
 	if (NULL == $item->name)
@@ -42,17 +48,52 @@ foreach ($cart->items as $item) {
 	if (NULL == $prices[$item->type])
 		die ("'$item->type' is not a valid item type! Must be 'pizza', 'drink', or 'dessert'.");
 
-	//validate name against price list
-	if (NULL == $prices[$item->type][$item->name])
-		die ("'$item->name' is not a valid item name for the type $item->type!");
-
 	//if size prop, make sure it is 'small', 'medium', or 'large'
 	if ($item->size && 'small' != $item->size && 'medium' != $item->size && 'large' != $item->size)
 		die ("Size '$item->size' specified for item '$item->name' is not valid! Must be 'small', 'medium', or 'large'.");
+
+	//validate name against price list
+	$price = $prices[$item->type][$item->name];
+	if (NULL == $price)
+		die ("'$item->name' is not a valid item name for the type $item->type!");
+
+	//if item type was pizza, $price is an array
+	//get right entry based on size
+	if ('pizza' == $item->type) {
+
+		switch (strtolower($item->size)) {
+			case 'small':
+				$price = $price[0];
+				break;
+			case 'medium':
+				$price = $price[1];
+				break;
+			case 'large':
+				$price = $price[2];
+				break;
+		}
+	}
+
+	//default quantity to 1
+	if (NULL == $item->quantity || 0 == $item->quantity)
+		$item->quantity = 1;
+
+	//no fractional quantities
+	$item->quantity = round($item->quantity, 0);
+
+	//calc extended price
+	$extendedPrice = $price * $item->quantity;
+
+	//add extended price to subtotal
+	$subtotal += $extendedPrice;
+
+	//add extendedPrice to item so that we don't have to look it up again
+	$item->price = $price;
+	$item->extendedPrice = $extendedPrice;
 }
 
-//running sub-total amount
-$subtotal = 0;
+if ($subtotal < 20)
+	die ("Minimum order amount is $20! Your subtotal is $subtotal");
 
 ?>
 
@@ -83,12 +124,12 @@ $subtotal = 0;
 					<tr>
 						<th>Item</th>
 						<th class="label-money">Price</th>
+						<th class="label-qty">Qty</th>
+						<th class="label-money">Ext Price</th>
 					</tr>
 				</thead>
 				<tbody>
 					<?php 
-					$pizzaPrices = NULL;
-					$price = 0;
 					foreach ($cart->items as $item) {
 						echo '<tr>';
 						echo '<td>' . htmlentities($item->name);
@@ -96,50 +137,32 @@ $subtotal = 0;
 							echo ' (' . htmlentities($item->size) . ')';
 						echo '</td>';
 
-						//get the price of the item
-						//if it's a pizza, need to key on size
-						if ('pizza' == $item->type) {
-							$pizzaPrices = $prices['pizza'][$item->name];
+						echo '<td class="money">$' . $item->price . '</td>';
 
-							switch (strtolower($item->size)) {
-								case 'small':
-									$price = $pizzaPrices[0];
-									break;
-								case 'medium':
-									$price = $pizzaPrices[1];
-									break;
-								case 'large':
-									$price = $pizzaPrices[2];
-									break;
-							}
-						} 
-						else {
-							$price = $prices[$item->type][$item->name];
-						}
+						echo '<td class="qty">' . $item->quantity . '</td>';
 
-						//add to subtotal and display
-						$subtotal += $price;
+						//we already looked up and stored the extended price of each item
+						//when we validated above, so just use that stored price
+						//we also calc'd the subtotal, so no need to recalc that again here
 
-						echo '<td class="money">$' . number_format($price, 2) . '</td>';
+						echo '<td class="money">$' . number_format($item->extendedPrice, 2) . '</td>';
 						echo '</tr>';
 					}
 					?>		
 					<tr>
-						<td class="label-sub-total">Sub-Total:</td>
+						<td colspan="3" class="label-sub-total">Sub-Total:</td>
 						<td class="money">$<?php echo number_format($subtotal, 2) ?></td>
 					</tr>
 					<tr>
-						<td class="label-tax">Tax:</td>
+						<td colspan="3" class="label-tax">Tax:</td>
 						<td class="money">$<?php echo number_format(round($subtotal * 0.095, 2), 2) ?></td>
 					</tr>
 					<tr>
-						<td class="label-total">Total:</td>
+						<td colspan="3" class="label-total">Total:</td>
 						<td class="money total">$<?php echo number_format(round($subtotal * 1.095, 2), 2) ?></td>
 					</tr>
 				</tbody>
 			</table>
-
-
 
 			<?php
 			if (NULL != $cart->nextUrl) {

@@ -195,7 +195,8 @@
         {
             "type": "...can be 'pizza', 'drink', or 'dessert'...",
             "name": "...pizza, drink, or dessert name, as it appears on menu...",
-            "size": "...if pizza, 'small', 'medium', or 'large'..."
+            "size": "...if pizza, 'small', 'medium', or 'large'...",
+            "quantity": 1
         },
         {
             ...next item...
