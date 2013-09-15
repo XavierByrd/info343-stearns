@@ -18,7 +18,7 @@ Pizzas:
             Canadian Bacon and Pineapple with Mozzarella on a rich Tomato Sauce.  $12/$14/$17
 
         Duck, Duck, Goose
-            Roasted Duck and Goose with Bacon, Chestnus on a ruch Plum Sauce.  $15/$17/$19
+            Roasted Duck and Goose with Bacon, Chestnuts on a rich Plum Sauce.  $15/$17/$19
 
         The Bambi
             Slow-cooked Venison with Red Cabbage on our famous Black Cherry Sauce.  $15/$17/$19
@@ -29,9 +29,9 @@ Pizzas:
     Vegetarian Pies:
 
         Margherita
-            Mozzarella, Basi, Salt on an Olive Oil Base.  $10/$13/$16
+            Mozzarella, Basil, Salt on an Olive Oil Base.  $10/$13/$16
 
-        Veggie Maddness
+        Veggie Madness
             Mushroom, Black Olive, Onions, Roasted Garlic, Squash and Roasted Eggplant on our Spicy Tomato Sauce.  $11/$14/$17
 
         Forest Floor
