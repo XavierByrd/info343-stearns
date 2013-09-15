@@ -162,7 +162,7 @@
 
                     <p>Luckily, we don't need to collect credit card or other payment info when they order. Our delivery guys can process a card payment at the door using <a href="https://squareup.com/">Square</a>, or take cash.</p>
 
-                    <p>We do, however, need to get their delivery address and phone number before they place their order. Don't let them place the order until they've supplied at least one line of their address and a phone number. Since we deliver only in Seattle, we only need their street address and zip code.</p>
+                    <p>We do, however, need to get their name, delivery address, and phone number before they place their order. Don't let them place the order until they've supplied a name, at least one line of their address, their zip code, and a phone number. Since we deliver only in Seattle, we only need their street address and zip code (no city or state).</p>
 
                     <p>If you have the time, here are some optional things I'd love to have:</p>
 
@@ -177,21 +177,25 @@
 
                 <p>Since this class is limited to the client side of web development, I've supplied a server-side page for you that can receive the data posted by your form, and echo back to the customer an order confirmation and receipt. The URL for this page is <code>https://courses.washington.edu/info343/stearns/homework/placeorder.php</code>. It will only accept an HTTP POST (not a GET) so make sure you set the method on your form correctly.</p>
 
-                <p>Shopping carts are typically too complicated for traditional HTML forms, so instead of building a <code>form</code> with lots of <code>input</code> and <code>select</code> elements, we will instead use a different technique that has become quite common now. You will maintain the shopping cart in JavaScript objects/arrays, and when you're ready to submit the order, you'll serialize those objects/arrays into a data-interchange format known as <a href="http://www.json.org/">JSON</a>. You'll then put this JSON into a single hidden <code>input</code> and submit the form.</p>
+                <p>Shopping carts are typically too complicated for traditional HTML forms, so instead of building a <code>form</code> with lots of <code>input</code> and <code>select</code> elements, we will instead use a different technique that has become quite common now. You will maintain the shopping cart in JavaScript objects/arrays, and when you're ready to submit the order, you'll serialize those objects/arrays into a data-interchange format known as <a href="http://www.json.org/">JSON</a>. You'll then put this JSON into a single hidden <code>input</code> named <code>"cart"</code> and submit the form.</p>
 
                 <p>This technique works well because it allows us to post a very complicated data structure with relative ease. HTML forms have a flat namespace, so it's often difficult to represent complex structures in separate form fields. JSON is a convenient interchange format, as it's easy to generate and parse in just about any language.</p>
 
                 <p>But in order for this to work, we need to agree on the data structure used for the shopping cart. Here is what it needs to look like in JSON:</p>
 
                 <pre><code>{
+    "name": "...customer name...",
     "address1": "...street address...",
     "address2": "...optional second line...",
+    "zip": "...zip code...",
     "phone": "...phone number...",
+    "nextUrl": "...url to go to next...",
+    "nextText": "...optional text for next link...",
     "items": [
         {
             "type": "...can be 'pizza', 'drink', or 'dessert'...",
             "name": "...pizza, drink, or dessert name, as it appears on menu...",
-            "size": "...if pizza, the size in inches..."
+            "size": "...if pizza, 'small', 'medium', or 'large'..."
         },
         {
             ...next item...
@@ -206,7 +210,7 @@
 
                 <p>The <code>json</code> variable would now contain a JSON-encoded string of your entire shopping cart, which should look like the sample above. Note that it's OK if there are other properties included in your JSON (e.g., price). Those extra properties will just be ignored on the server.</p>
 
-                <p>I'll leave it to you to figure out how to put that JSON string into a hidden <code>input</code> and submit the form.</p>
+                <p>I'll leave it to you to figure out how to put that JSON string into an <code>&lt;input type="hidden" name="cart"&gt;</code> and submit the form.</p>
 
 
                 <div class="page-header">

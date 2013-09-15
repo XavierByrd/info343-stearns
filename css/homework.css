@@ -4,3 +4,24 @@
 	background-repeat: no-repeat;
 	padding-left: 80px;
 }
+.order-confirm-title {
+	background-image: url(../homework/img/logo.png);
+	background-size: 72px 72px;
+	background-repeat: no-repeat;
+	padding-left: 85px;
+}
+.money {
+	text-align: right;
+}
+.label-sub-total, .label-tax, .label-total, .label-money {
+	text-align: right;
+}
+.label-sub-total, .label-tax {
+	font-style: italic;
+}
+.label-total, .total {
+	font-weight: bold;
+}
+.next-url {
+	text-align: right;
+}

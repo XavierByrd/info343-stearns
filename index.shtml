@@ -37,6 +37,12 @@
           <p class="lead">Teaching materials used in Dr Stearns's sections</p>
         </div>
 
+        <h2 id="homework">Homework Instructions</h2>
+
+        <ul class="homework">
+          <li><a href="homework/">Homework Assignments</a></li>
+        </ul>
+
         <h2 id="slides">Slides &amp; Notes</h2>
 
         <ul class="slides">
@@ -67,12 +73,6 @@
       
         <ul class="labs">
           <li>Managing Your Files</li>
-        </ul>
-
-        <h2 id="homework">Homework Instructions</h2>
-
-        <ul class="homework">
-          <li>Homework Assignments</li>
         </ul>
 
 

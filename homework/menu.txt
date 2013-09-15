@@ -5,7 +5,6 @@ Pizzas:
         Small (12")
         Medium (14")
         Large (17")
-        Gargantuan (25")
 
     [make this line really obvious somehow]
     All pizzas can be customized--add a few ingredients, or take a few off--for an extra $2.
@@ -13,36 +12,36 @@ Pizzas:
     Meat Pies:
 
         Classic Pepperoni
-            Pepperoni and Mozzarella on our Spicy Tomato Sauce. $10/$13/$16/$19
+            Pepperoni and Mozzarella on our Spicy Tomato Sauce. $10/$13/$16
 
         The Hawaiian
-            Canadian Bacon and Pineapple with Mozzarella on a rich Tomato Sauce.  $12/$14/$17/$20
+            Canadian Bacon and Pineapple with Mozzarella on a rich Tomato Sauce.  $12/$14/$17
 
         Duck, Duck, Goose
-            Roasted Duck and Goose with Bacon, Chestnus on a ruch Plum Sauce.  $15/$17/$19/$21
+            Roasted Duck and Goose with Bacon, Chestnus on a ruch Plum Sauce.  $15/$17/$19
 
         The Bambi
-            Slow-cooked Venison with Red Cabbage on our famous Black Cherry Sauce.  $15/$17/$19/$21
+            Slow-cooked Venison with Red Cabbage on our famous Black Cherry Sauce.  $15/$17/$19
 
         The Ultimate
-            Pepperoni, Bacon, Canadian Bacon, Chicken, Duck, Goose, and Ground Beef with Smoked Mozzarella on our Spicy Tomato Sauce. Add Venison or Elk for an extra $2!  $15/$19/$23/$27
+            Pepperoni, Bacon, Canadian Bacon, Chicken, Duck, Goose, and Ground Beef with Smoked Mozzarella on our Spicy Tomato Sauce. Add Venison or Elk for an extra $2!  $15/$19/$23
 
     Vegetarian Pies:
 
         Margherita
-            Mozzarella, Basi, Salt on an Olive Oil Base.  $10/$13/$16/$19
+            Mozzarella, Basi, Salt on an Olive Oil Base.  $10/$13/$16
 
         Veggie Maddness
-            Mushroom, Black Olive, Onions, Roasted Garlic, Squash and Roasted Eggplant on our Spicy Tomato Sauce.  $11/$14/$17/$20
+            Mushroom, Black Olive, Onions, Roasted Garlic, Squash and Roasted Eggplant on our Spicy Tomato Sauce.  $11/$14/$17
 
         Forest Floor
-            Three kinds of mushrooms with Mozzarella on a herb Tomato Sauce.  $11/$14/$17/$20
+            Three kinds of mushrooms with Mozzarella on a herb Tomato Sauce.  $11/$14/$17
 
         Mr Green
-            Roasted Chicken with Romano on a Basil Pesto sauce. $13/$16/$19/$22
+            Roasted Chicken with Romano on a Basil Pesto sauce. $13/$16/$19
 
         Purple Monster
-            Roasted Eggplant and Cabbage stir fried in sesame oil on a rich Plum Sauce.  $11/$14/$17/$20
+            Roasted Eggplant and Cabbage stir fried in sesame oil on a rich Plum Sauce.  $11/$14/$17
 
 Drinks:
     Coke, Diet Coke, Sprite, Root Beer, or Irn Bru by the can ($4)
