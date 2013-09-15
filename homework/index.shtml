@@ -226,6 +226,8 @@
 
                 <p>I'll leave it to you to figure out how to put that JSON string into an <code>&lt;input type="hidden" name="cart"&gt;</code> and submit the form.</p>
 
+                <p>Lastly, I've also built a helpful script file that you can use to quickly get the menu items into a convenient JavaScript data structure. This structure will make it easier not only to build your ordering user interface, but also to maintain the contents of the shopping cart. To use this file, <a href="menu.js">download it</a>, and include it in your project.</p>
+
 
                 <div class="page-header">
                     <h2 id="v4">Version 4.0 <small>Due by Nov 19</small></h2>
