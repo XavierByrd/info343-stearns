@@ -184,26 +184,39 @@
                 <p>But in order for this to work, we need to agree on the data structure used for the shopping cart. Here is what it needs to look like in JSON:</p>
 
                 <pre><code>{
-    "name": "...customer name...",
-    "address1": "...street address...",
-    "address2": "...optional second line...",
-    "zip": "...zip code...",
-    "phone": "...phone number...",
+    "name": "Jane Student",
+    "address1": "123 University Ave",
+    "address2": "Apt 555",
+    "zip": "98999",
+    "phone": "206-999-9999",
     "nextUrl": "...url to go to next...",
-    "nextText": "...optional text for next link...",
+    "nextCaption": "...optional text for next link...",
     "items": [
         {
-            "type": "...can be 'pizza', 'drink', or 'dessert'...",
-            "name": "...pizza, drink, or dessert name, as it appears on menu...",
-            "size": "...if pizza, 'small', 'medium', or 'large'...",
-            "quantity": 1
+            "type": "pizza",
+            "name": "Classic Pepperoni",
+            "size": "large"
         },
         {
-            ...next item...
-            ...you can include as many items as you want...
+            "type": "drink",
+            "name": "Coke",
+            "quantity": 4
+        },
+        {
+            "type": "drink",
+            "name": "Irn Bru"
+        },
+        {
+            "type": "dessert",
+            "name": "Lemon Sorbet",
+            "quantity": 2
         }
     ]
 }</code></pre>
+
+                <p>The <code>name</code>, <code>address1</code>, <code>zip</code>, and <code>phone</code> properties are required, but <code>address2</code>, <code>nextUrl</code>, and <code>nextCaption</code> are optional. If you supply a url in the <code>nextUrl</code> property, the confirmation page will show a button at the bottom that when clicked will take the customer to that url. The default caption for that button is "Back to Home Page," but you can override that by including a <code>nextCaption</code> property.</p>
+
+                <p>The <code>items</code> array may contain any number of items, but you can include a <code>quantity</code> property on any item to order multiple of that same thing (e.g., 4 Cokes in the example above). Note that the <code>quantity</code> property is a number, and thus should not be in quotes. Each item needs to have a <code>type</code> property set to 'pizza', 'drink', or 'dessert'. The <code>name</code> property should match the menu item exactly (case sensitive). For pizzas, you must also include a <code>size</code> property set to 'small', 'medium', or 'large'.</p>
 
                 <p>This JSON is easily built from JavaScript objects and arrays that have the same property names as are listed in the JSON (e.g., "address1", "address2", "phone", etc). So if you have a JavaScript object named <code>myCart</code> with properties named "address1", "address2", "phone", and "items" (containing an array of other objects), you can serialize this to JSON in one line of code:</p>
 

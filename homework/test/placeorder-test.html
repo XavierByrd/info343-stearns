@@ -5,6 +5,10 @@
 		<title>Place Order Test Page</title>
 
 		<style>
+			.cart-json {
+				width: 100%;
+				height: 400px;
+			}
 
 		</style>
 	
@@ -13,11 +17,13 @@
 		<h1>Place Order Test Page</h1>
 
 		<form action="../placeorder.php" method="POST" name="order">
-			<input type="hidden" name="cart">
+			<input type="hidden" name="cart" class='cart-input'>
 		</form>
 
+		<p>Cart JSON:</p>
+		<textarea class="cart-json"></textarea>
+
 		<button class="button-place-order">Place Order</button>
-		<button class="button-place-bad-order">Place Bad Order</button>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
@@ -31,7 +37,7 @@
 					zip: "98999",
 					phone: "206-999-9999",
 					nextUrl: document.URL,
-					nextText: 'Me Want More Pizza!',
+					nextCaption: 'Me Want More Pizza!',
 					items: [
 						{
 							type: "pizza",
@@ -50,37 +56,10 @@
 					]
 				};
 
-				var badCart = {
-					name: "Mickey Mouse",
-					address1: "1 UW Way",
-					address2: "Apt 422",
-					zip: "98999",
-					phone: "206-999-9999",
-					nextUrl: "&lt;script&gt;alert(&quot;if you see this, you need to html encode!&quot;)&lt;/script&gt;",
-					items: [
-						// {
-						// 	type: "pizza",
-						// 	name: "Duck, Duck, Goosey",
-						// 	size: "medium"
-						// },
-						// {
-						// 	type: "drink",
-						// 	name: "Irn Bru"
-						// },
-						{
-							type: "dessert",
-							name: "Lemon Sorbet"
-						}
-					]
-				};
+				$('.cart-json').val(JSON.stringify(cart, null, 4));
 
 				$('.button-place-order').click(function(){
-					document.forms[0].cart.value = JSON.stringify(cart);
-					document.forms[0].submit();
-				});
-
-				$('.button-place-bad-order').click(function(){
-					document.forms[0].cart.value = JSON.stringify(badCart);
+					$('.cart-input').val($('.cart-json').val());
 					document.forms[0].submit();
 				});
 

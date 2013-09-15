@@ -1,40 +1,43 @@
 <?php
 
-//TODO: add support for 'quantity' property on items
-
+function reportError($msg, $status = 400) {
+	header('Content-Type: text/plain', true, $status);
+	echo $msg;
+	exit();
+}
 
 //do some error checking
 //method must be post
 if (strtolower($_SERVER['REQUEST_METHOD']) != "post")
-	die('You must POST to this page!');
+	reportError('You must POST to this page!');
 
 //post params must include a 'cart' parameter
 if (NULL == $_POST['cart'])
-	die("You must post JSON in a form field named 'cart'!");
+	reportError("You must post JSON in a form field named 'cart'!");
 
 //try to decode the cart
 $cart = json_decode(stripslashes($_POST['cart']));
 if (NULL == $cart)
-	die("Couldn't decode the JSON passed in the 'cart' field. This is what you passed: " . $_POST['cart']);
+	reportError("Couldn't parse JSON in 'cart' field. Check for syntax errors.\n\nHere is what you sent:\n" . stripslashes($_POST['cart']));
 
 //cart must have name, address1, zip, phone, and items
 if (NULL == $cart->name)
-	die("Cart must have a 'name' property!");
+	reportError("Cart must have a 'name' property!");
 if (NULL == $cart->address1)
-	die("Cart must have an 'address1' property!");
+	reportError("Cart must have an 'address1' property!");
 if (NULL == $cart->zip)
-	die("Cart must have a 'zip' property!");
+	reportError("Cart must have a 'zip' property!");
 if (NULL == $cart->phone)
-	die("Cart must have a 'phone' property!");
+	reportError("Cart must have a 'phone' property!");
 if (NULL == $cart->items)
-	die("Cart must have a 'items' property!");
+	reportError("Cart must have a 'items' property!");
 if (0 == count($cart->items))
-	die("No items passed in the 'items' property!");
+	reportError("No items passed in the 'items' property!");
 
 //load our prices.json into an assoc array
 $prices = json_decode(file_get_contents('prices.json'), true);
 if (NULL == $prices)
-	die('Unable to load the prices.json file on the server. Please report this to your instructor.');
+	reportError('Unable to load the prices.json file on the server. Please report this to your instructor.');
 
 //check each item
 //also ensure that subtotal is at least $20
@@ -42,20 +45,24 @@ $subtotal = 0;
 foreach ($cart->items as $item) {
 	//must have a name
 	if (NULL == $item->name)
-		die ("All items must have a name property!");
+		reportError("All items must have a name property!");
 
 	//type needs to be in prices list
 	if (NULL == $prices[$item->type])
-		die ("'$item->type' is not a valid item type! Must be 'pizza', 'drink', or 'dessert'.");
+		reportError ("'$item->type' is not a valid item type! Must be 'pizza', 'drink', or 'dessert'.");
+
+	//if type is pizza, there must be a size prop
+	if ('pizza' == $item->type && NULL == $item->size)
+		reportError("You must specify a size for pizza '$item->name'!");
 
 	//if size prop, make sure it is 'small', 'medium', or 'large'
 	if ($item->size && 'small' != $item->size && 'medium' != $item->size && 'large' != $item->size)
-		die ("Size '$item->size' specified for item '$item->name' is not valid! Must be 'small', 'medium', or 'large'.");
+		reportError("Size '$item->size' specified for item '$item->name' is not valid! Must be 'small', 'medium', or 'large'.");
 
 	//validate name against price list
 	$price = $prices[$item->type][$item->name];
 	if (NULL == $price)
-		die ("'$item->name' is not a valid item name for the type $item->type!");
+		reportError("'$item->name' is not a valid item name for the type $item->type!");
 
 	//if item type was pizza, $price is an array
 	//get right entry based on size
@@ -93,7 +100,7 @@ foreach ($cart->items as $item) {
 }
 
 if ($subtotal < 20)
-	die ("Minimum order amount is $20! Your subtotal is $subtotal");
+	reportError("Minimum order amount is $20! Your subtotal is only $ $subtotal");
 
 ?>
 
@@ -166,12 +173,12 @@ if ($subtotal < 20)
 
 			<?php
 			if (NULL != $cart->nextUrl) {
-				$nextText = $cart->nextText;
-				if (NULL == $nextText)
-					$nextText = 'Back to Home Page';
+				$nextCaption = $cart->nextCaption;
+				if (NULL == $nextCaption)
+					$nextCaption = 'Back to Home Page';
 
 				echo '<div class="next-url"><a class="btn btn-primary" href="' . $cart->nextUrl . '">';
-				echo htmlentities($nextText) . '</a></div>';
+				echo htmlentities($nextCaption) . '</a></div>';
 			}
 			?>
 		</div> <!-- .container -->
