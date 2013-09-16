@@ -109,8 +109,8 @@ if ($subtotal < 20)
 	<head>
 		<meta charset="UTF-8">
 		<title>Order Confirmation</title>
-		<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../css/homework.css">
+		<link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../../css/homework.css">
 	</head>
 	<body>
 		<div class="container">
