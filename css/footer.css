@@ -1,0 +1,14 @@
+footer {
+	margin-top: 50px;
+	border-top: 1px solid #CCC;
+}
+
+.i343-copy-notice {
+	font-style: italic;
+}
+
+.i343-footer-logo {
+	background: url(../img/ischool-logo-small.png) no-repeat right center;
+	background-origin: content-box;
+	min-height: 40px;
+}

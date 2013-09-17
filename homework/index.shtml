@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css" media="screen">
     <link rel="stylesheet" href="../css/homework.css" media="screen">
+    <link rel="stylesheet" href="../css/footer.css" media="screen">
 
     <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
 
@@ -253,6 +254,7 @@
 
             </article>
 
+            <!--#include virtual="../inc/footer.html" -->
 
         </div> <!-- .container -->
 
