@@ -73,7 +73,7 @@
         <h2 id="labs">Lab Instructions</h2>
       
         <ul class="labs">
-          <li>Managing Your Files</li>
+          <li><a href="labs/filemgmt">Managing Your Files</a></li>
         </ul>
 
 

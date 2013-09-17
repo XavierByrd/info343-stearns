@@ -8,7 +8,9 @@ footer {
 }
 
 .i343-footer-logo {
-	background: url(../img/ischool-logo-small.png) no-repeat right center;
+	background-image: url(../img/ischool-logo-small.png);
+	background-position: right center;
+	background-repeat: no-repeat;
 	background-origin: content-box;
 	min-height: 40px;
 }
