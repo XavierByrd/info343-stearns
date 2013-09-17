@@ -175,7 +175,7 @@
 
                 <h3 id="order-post">Order Posting Instructions</h3>
 
-                <p>Since this class is limited to the client side of web development, I've supplied a server-side page for you that can receive the data posted by your form, and echo back to the customer an order confirmation and receipt. The URL for this page is <code>https://courses.washington.edu/info343/stearns/homework/placeorder.php</code>. It will only accept an HTTP POST (not a GET) so make sure you set the method on your form correctly.</p>
+                <p>Since this class is limited to the client side of web development, I've supplied a server-side page for you that can receive the data posted by your form, and echo back to the customer an order confirmation and receipt. The URL for this page is <code>http://dawgpizza.com/orders/</code>. It will only accept an HTTP POST (not a GET) so make sure you set the method on your form correctly.</p>
 
                 <p>Shopping carts are typically too complicated for traditional HTML forms, so instead of building a <code>form</code> with lots of <code>input</code> and <code>select</code> elements, we will instead use a different technique that has become quite common now. You will maintain the shopping cart in JavaScript objects/arrays, and when you're ready to submit the order, you'll serialize those objects/arrays into a data-interchange format known as <a href="http://www.json.org/">JSON</a>. You'll then put this JSON into a single hidden <code>input</code> named <code>"cart"</code> and submit the form.</p>
 
@@ -226,12 +226,29 @@
 
                 <p>I'll leave it to you to figure out how to put that JSON string into an <code>&lt;input type="hidden" name="cart"&gt;</code> and submit the form.</p>
 
-                <p>Lastly, I've also built a helpful script file that you can use to quickly get the menu items into a convenient JavaScript data structure. This structure will make it easier not only to build your ordering user interface, but also to maintain the contents of the shopping cart. To use this file, <a href="menu.js">download it</a>, and include it in your project.</p>
+                <p>Lastly, I've also built a helpful script file that you can use to quickly get the menu items into a convenient JavaScript data structure. This structure will make it easier not only to build your ordering user interface, but also to maintain the contents of the shopping cart. To use this file, <a href="placeorder/menu.js">download it</a>, and include it in your project.</p>
 
 
                 <div class="page-header">
                     <h2 id="v4">Version 4.0 <small>Due by Nov 19</small></h2>
                 </div>
+
+                <p>Your online delivery order page was a huge success, so much so that Tony now wants increase his engagement with his online customers. Here are your instructions:</p>
+
+                <blockquote>
+                    <p>Hey, I loved how your order page made it easy for our cusotmers to interact with us via the site. Now I'd like to add a few more features to that ordering process, as well as some other kinds of interaction.</p>
+
+                    <p>We've been having some probems with customers entering invalid street addresses. Could you dynamically <a href="https://www.usps.com/business/web-tools-apis/address-information.htm">check the address they entered against the postal service records</a>? If the postal service doesn't think the address is valid, or has a cannonical suggestion, show that to the customer and have them verify the official version before you place the order.</p>
+
+                    <p>It would also be great to just fill out the customer's zip code for them based on the street address they enter. The postal service should be able to give you that. If you can't get the zip from the postal service, let the customer enter it.</p>
+
+                    <p>We already maintain a Twitter feed (@DawgPizzaSea), but I'd love to have those tweets <a href="https://dev.twitter.com/docs/embedded-timelines">displaying and updating live right on the home page</a>.</p>
+
+                    <p>I'd also love one of those <a href="https://developers.google.com/maps/documentation/javascript/tutorial">interactive Google maps</a> right on the home page that shows where we are located.</p>
+
+                    <p>Lastly, I'd like to include an interactive game on the site....details TBD.</p>
+
+                </blockquote>
 
 
             </article>
