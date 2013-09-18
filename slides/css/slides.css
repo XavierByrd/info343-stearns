@@ -52,12 +52,12 @@ ul.file-tree li {
 	background-repeat: no-repeat;
 }
 ul.file-tree li.file {
-	background-image: url(../img/file.png);
+	background-image: url(../../img/file.png);
 }
 ul.file-tree li.folder {
-	background-image: url(../img/folder.png);
+	background-image: url(../../img/folder.png);
 }
 ul.file-tree li.folder-open {
-	background-image: url(../img/folder-open.png);
+	background-image: url(../../img/folder-open.png);
 	background-position: 0 0.3em;
 }
