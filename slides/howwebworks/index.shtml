@@ -30,10 +30,6 @@
             </section>
 
             <section>
-                <p>OK, great, but what's with all those acronyms that end in "P" like "TCP/IP?"</p>
-            </section>
-
-            <section>
                 <h2>TCP/IP</h2>
                 <ul>
                     <li>TCP/IP (Transmission Control Protocol/Internet Protocol) enables computers to exchange messages across the network.</li>
@@ -93,7 +89,7 @@ Host: www.washington.edu</code></pre>
 
             <section>
                 <h2>HTTP</h2>
-                <p>The Internet allows computer to talk, but it doesn't specify what they talk <em>about</em>.</p>
+                <p>The Internet allows computers to talk, but it doesn't specify what they talk <em>about</em>.</p>
                 <p class="fragment">HTTP (Hypertext Transfer Protocol) defines a language for sending and receiving "resources" managed by a web server.</p>
                 <p class="fragment">Resources are identified using <span class="term">Uniform Resource Locators</span> (URLs).</p>
             </section>
@@ -110,7 +106,7 @@ Host: www.washington.edu</code></pre>
 
             <section>
                 <h2>Are you Tracking?</h2>
-                <p>So what does your browser do when you enter <code>http://www.google.com/</code> in the address bar?</p>
+                <p>So what does your browser do when you enter <code>http://www.google.com/maps/</code> in the address bar?</p>
                 <p>What steps does it go through?</p>
             </section>
 

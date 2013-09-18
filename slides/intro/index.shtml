@@ -38,7 +38,7 @@
                     <li>What's your name?</li>
                     <li>What's your major and year in school?</li>
                     <li>Where are you from (hometown)?</li>
-                    <li>What do you most want to learn in this class?</li>
+                    <li>What is your favorite web site?</li>
                     <li>What is your greatest fear about this class?</li>
                 </ul>
                 <p><img src="img/students-talking.jpg" alt="students talking"></p>
@@ -54,7 +54,7 @@
             </section>
 
             <section>
-                <p>You can read <a href="https://canvas.uw.edu/courses">the syllabus</a> later; I'll answer the questions you really want answered now:</p>
+                <p>You can read <a target="_blank" href="https://canvas.uw.edu/courses">the syllabus</a> later; I'll answer the questions you really want answered now:</p>
                 <ul>
                     <li class="fragment">What's this course about?</li>
                     <li class="fragment">Why should I take it?</li>
@@ -197,7 +197,7 @@
             </section>
 
             <section>
-                <h2>Get These Before Friday Lab</h2>
+                <h2>Get These Before Friday's Lab</h2>
                 <ul>
                     <li>A <a href="https://github.com/" target="_blank">GitHub Account</a></li>
                     <li>An <a href="https://ischool.uw.edu/technology/web-hosting/student" target="_blank">iSchool Student Web Hosting Account</a></li>
@@ -213,7 +213,7 @@
                         <li>Contact Dr Stearns
                             <ul>
                                 <li><a href="dlsinfo@uw.edu">dlsinfo@uw.edu</a></li>
-                                <li>Office Hours: TBD</li>
+                                <li>Office Hours: TTh 2:00&ndash;3:00 in MGH 330N</li>
                             </ul>
                         </li>
                     </ul>
@@ -229,11 +229,9 @@
 
             <section>
                 <h2>Who are you?</h2>
-                <ul>
-                    <li>Software developer since 1991</li>
-                    <li>Started developing for the web in 1996</li>
-                    <li>PhD in History/Sociology of Technology <br> (University of Edinburgh, 2008)</li>
-                </ul>
+                <p>Software developer since 1991.</p>
+                <p class="fragment">Started developing for the web in 1996.</p>
+                <p class="fragment">PhD in the History/Sociology of Technology from the University of Edinburgh in 2008.</p>
             </section>                
 
             <section>
