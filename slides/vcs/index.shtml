@@ -14,19 +14,21 @@
       <div class="reveal">
           <div class="slides">
 
-            <section>
+            <section data-background="../img/subtle_grunge.png" data-background-size="400px" data-background-repeat="repeat">
               <h1>Managing Files</h1>
               <h2>Dr David Stearns</h2>
               <p>Autumn 2013</p>
             </section>
 
-            <section>
-                <p>Web projects generate <em>a lot</em> of files, so you need tools and techniques for managing them.</p>
-                <ul>
-                    <li>A good text editor</li>
-                    <li>A version control system (VCS)</li>
-                    <li>A clear directory structure</li>
-                </ul>
+            <section data-background="../../img/example.png" data-background-size="64px" data-background-repeat="repeat">
+                <div class="overlay">
+                    <p>Web projects generate <em>a lot</em> of files, so you need tools and techniques for managing them.</p>
+                    <ul>
+                        <li>A good text editor</li>
+                        <li>A version control system (VCS)</li>
+                        <li>A clear directory structure</li>
+                    </ul>
+                </div>
             </section>
 
             <section>
@@ -39,7 +41,7 @@
             </section>
 
             <section>
-                <h2>A Version Control System (VCS)</h2>
+                <h2>A Version Control System</h2>
                 <p>Critical for team projects, but also useful for individual work.</p>
                 <div class="three-column">
                     <figure>
@@ -58,80 +60,64 @@
             </section>
 
             <section>
-                <h2>VCS Concepts</h2>
-                <ul>
-                    <li><span class="term">Repository</span> = database of files and changes to those files</li>
-                    <li><span class="term">Working Copy</span> = private working version of repository files on your computer</li>
-                    <li><span class="term">Commit</span> = a set of changes applied to repository files that you think are ready for others to use</li>
-                    <li><span class="term">Branch</span> = a separate set of committed versions in the repository, useful for separating in-process feature work from release/master versions</li>
-                </ul>
+                <p class="pull-left"><img src="img/diff.png" alt="A typical diff"></p>
+                <p>Git tracks <span class="term">changes</span> to the files in your project</p>
+                <p class="fragment">Can recreate the state of any file at any point in time</p>
+                <p class="fragment">Can <span class="term">merge</span> multiple changes made by multiple people to the same file</p>
             </section>
 
             <section>
-                <p>A VCS captures each change to a file and can recreate any version of any file in any branch.</p>
-                <p><img src="img/vcs-deltas.png" alt="picture showing delta approach to version control"></p>
+                <p class="pull-left"><img src="img/vcs-distributed.png" alt="Distributed VCS"></p>
+                <p>GitHub provides cloud-based server repositories</p>
+                <p class="fragment">Enables parallel team development</p>
+                <p class="fragment">Provides offsite backup</p>
             </section>
 
             <section>
-                <p>Git makes a complete snapshot of each changed file; it consumes more disk space, but it's also much faster to switch between different branches or rollback to a previous version.</p>
-                <p><img src="img/vcs-snapshots.png" alt="picture showing snapshot approach to version control"></p>
+                <p><img src="img/dog-ate-website.jpg" alt="My Dog Ate My Website!"></p>
             </section>
 
             <section>
-                <p>Git also has a "staging" area, which is helpful when doing partial commits</p>
-                <p><img src="img/vcs-staging.png" alt="Git's staging area"></p>
+                <p>Git manages files well, but doesn't dictate a particular file organization</p>
+                
+                <p class="fragment">Most web projects use a file structure like this:</p>
+                
+                <div class="two-column fragment">
+                    <ul class="file-tree">
+                        <li class="folder folder-open">project/
+                            <ul>
+                                <li class="file">index.html</li>
+                                <li class="file">other.html</li>
+                                <li class="folder">img/</li>
+                                <li class="folder">css/</li>
+                                <li class="folder">js/</li>
+                                <li class="folder">inc/</li>
+                                <li class="folder">lib/</li>
+                                <li class="folder">test/</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <ul>
+                        <li>project root
+                            <ul>
+                                <li>home page</li>
+                                <li>other pages</li>
+                                <li>images</li>
+                                <li>stylesheets</li>
+                                <li>javascript</li>
+                                <li>includes</li>
+                                <li>external libraries</li>
+                                <li>test scripts</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <section>
-                <p>Git is also decentralized, but can be used with a central cloud repository (like GitHub)</p>
-                <p><img src="img/vcs-distributed.png" alt="Git's staging area"></p>
-            </section>
-
-            <section>
-                <h2>Simple Single-Developer Workflow</h2>
-                <ul>
-                    <li>Create a new repository on GitHub</li>
-                    <li class="fragment">Clone the repository to your local computer</li>
-                    <li class="fragment">Add files, commit them to the repository, and push them to GitHub</li>
-                    <li class="fragment">Edit files, commit changes, push to GitHub</li>
-                    <li class="fragment">Lather, rinse, repeat...</li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Typical Team Workflow</h2>
-                <ul>
-                    <li>Create a new repository on GitHub (or private host)</li>
-                    <li class="fragment">Everyone clones the repository to their local computers</li>
-                    <li class="fragment">Team Lead creates a branch for next version</li>
-                    <li class="fragment">Developers create branches for each feature</li>
-                    <li class="fragment">Add/edit files, commit to feature branch, and sync</li>
-                    <li class="fragment">When feature is done, merge feature branch into version branch</li>
-                    <li class="fragment">When version is done, merge version branch into master with version tag</li>
-                    <li class="fragment">"Hot-fixes" made in hot-fix branch off master, merged back into master when tested</li>
-                </ul>
-            </section>
-
-            <section>
-                <p><a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank"><img src="img/git-flow.png" alt="The git-flow workflow"></a></p>
-            </section>
-
-            <section>
-                <h2>A Clear Directory Structure</h2>
-                <ul class="file-tree">
-                    <li class="folder folder-open">project/
-                        <ul>
-                            <li class="file">index.html <em>(home page)</em></li>
-                            <li class="file">...other html files...</li>
-                            <li class="folder">img/ <em>(images)</em></li>
-                            <li class="folder">css/ <em>(stylesheets)</em></li>
-                            <li class="folder">js/ <em>(scripts)</em></li>
-                            <li class="folder">inc/ <em>(included snippets)</em></li>
-                            <li class="folder">lib/ <em>(external libraries)</em></li>
-                            <li class="folder">test/ <em>(test pages/scripts)</em></li>
-                        </ul>
-                    </li>
-                </ul>
+                <p>OK, so how do I use Git/GitHub?</p>
+                <p class="fragment">Glad you asked! Let's do <a href="../../labs/filemgmt/">the lab</a>...</p>
             </section>
 
 

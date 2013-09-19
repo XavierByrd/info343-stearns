@@ -62,7 +62,9 @@
 
                 <p>Tony is working hard to get his pizzeria ready for their grand opening on October 8<sup>th</sup>, and he wants some kind of web presence by then. Below are his specific instructions. Remember that he isn't a web developer, so you'll need to interpret what he says and use the appropriate markup and styles. Color choices and page layout are entirely up to you unless otherwise stated. You can also include additional images, background textures, or icons wherever you think they'd be helpful.</p>
 
-                <p>If you need design inspiration, check out some <a target="_blank" href="https://www.google.com/search?q=pizzeria">other pizzeria web sites</a> and see what they did. Copying bits of designs you like from other sites is a time-honored tradition in the web-development world, but if you do that, make it your own in some way.</p>
+                <p>If you need design inspiration, check out some <a target="_blank" href="https://www.google.com/search?q=pizzeria">other pizzeria web sites</a> and see what they did. Locally, <a href="http://www.pagliacci.com/">Pagliacci</a> has a very nice site, as does <a href="http://ballardpizzacompany.com/">The Ballard Pizza Company</a>. Copying bits of designs you like from other sites is a time-honored tradition in the web-development world, but if you do that, make it your own in some way.</p>
+
+                <p>Here is the message from Tony:</p>
 
                 <blockquote>
                     <p>Hey there! I'm excited that you're going to build my site. We're set to open on October 8<sup>th</sup>, and I'd like to have something up on the web by then. I know that doesn't give you much time, so for this first version, let's keep it kind of simple.</p>
@@ -101,6 +103,12 @@
                         <li>Add a footer to all the pages with a copyright declaration, and "Call us for delivery: 206-555-1212"</li>
                     </ul>
                 </blockquote>
+
+                <h3>Implementation Notes</h3>
+
+                <p>It's generally best to start by sketching out your page designs on paper or a whiteboard before you start writing HTML and CSS. Start with the parts that would be common to all pages: where the logo should go; where the site navigation links should be and what they should look like; and any other info or design elements that you think should be on all the pages. Then sketch out the specifics for each page, laying out the page-specific elements so that they fit with the common elements, and offer the customer visual cues that help the customer find what he or she is looking for.</p>
+
+                <p>There is no one right way to layout these pages, but remember that a quarter of your grade is based on the quality of the site's user experience. If the site is looks sloppy, simplistic, unintuitive, or amateurish, you will get a low grade. This is your opportunity to build something that you can include in a portfolio you send to prospective employers, so take it seriously, be professional, and do good work.</p>
 
                 <div class="page-header">
                     <h2 id="v2">Version 2.0 <small>Due by Oct 22</small></h2>
@@ -145,7 +153,7 @@
                 <p>Here are your instructions from Tony:</p>
 
                 <blockquote>
-                    <p>Hey I need another feature added to the site: I want to let customers place a delivery order right throug the site. I want it to work like a shopping cart, where they can add various things from the menu, and then place the entire order when they're ready. To see what I mean, check out the <a href="http://www.dinerwareonlineordering.com/dolo/order/ballardpizzacompany/menu/">online order page</a> for one of our competitors. It doesn't need to look exactly like this or do everything it does, but I want something similar.</p>
+                    <p>Hey I need another feature added to the site: I want to let customers place a delivery order right through the site. I want it to work like a shopping cart, where they can add various things from the menu, and then place the entire order when they're ready. To see what I mean, check out the <a href="http://www.dinerwareonlineordering.com/dolo/order/ballardpizzacompany/menu/">online order page</a> for one of our competitors. It doesn't need to look exactly like this or do everything it does, but I want something similar.</p>
 
                     <p>Let's put this on a new page called "Order." Include a link to it on the home page, as well as the menu page.</p>
 

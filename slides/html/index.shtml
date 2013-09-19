@@ -18,7 +18,7 @@
                     <ul>
                         <li>Thursday: Overview of CSS
                             <ul>
-                                <li>Read These:</li>
+                                <li>Read these before:</li>
                                 <li><a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/the-best-way-to-learn-css-2/">The Best Way to Learn CSS</a></li>
                                 <li><a href="http://alistapart.com/article/understandingprogressiveenhancement">Understanding Progressive Enhancement</a></li>
                                 <li><a href="http://www.smashingmagazine.com/2010/01/28/color-theory-for-designers-part-1-the-meaning-of-color/">Color Theory for Designers</a></li>
@@ -50,11 +50,26 @@
                 </section>
 
                 <section>
-                    <p>In the late 1980s, Tim Berners-Lee was working at CERN and looking for a way to keep track of all the prople there, what projects they were working on, and how they all related.</p>
+                    <p>In the late 1980s, Tim Berners-Lee was working at CERN and looking for a way to keep track of all the people there, what projects they were working on, and how they all related.</p>
                     <p class="fragment">Hypertext seemed like a great idea, but existing tools were too static and centralized.</p>
                     <p class="fragment">What if pages were simple text files on on multiple hosts, with an easy way to link between them?</p>
                 </section>
+
+                <section>
+                    <div class="pic-quote">
+                        <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
+                        <blockquote>"Suppose all the information stored on computers everywhere were linked.... Suppose I could program my computer to create a space in which everything could be linked to anything. All the bits of information in every computer at CERN, and on the planet, would be available to me and to anyone else. There would be a single global information space."</blockquote>
+                    </div>
+                </section>
                
+                <section>
+                    <div class="pic-quote">
+                        <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
+                        <blockquote>"Once a bit of information in that space was labeled with an address, I could tell my computer to get it. By being able to reference anything with equal ease, a computer could represent associations between things that might seem unrelated but somehow did, in fact, share a relationship. A web of information would form."</blockquote>
+                        <p class="source">Time Berners-Lee, <cite>Weaving the Web</cite>, p 4</p>
+                    </div>                    
+                </section>
+
                 <section>
                     <p>Tim Berners-Lee with an early web browser (CERN 1991)</p>
                     <p><img src="img/bernerslee.jpg" alt="Tim Berners-Lee"></p>

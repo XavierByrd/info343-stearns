@@ -48,6 +48,14 @@
       
         <ul class="labs">
           <li><a href="labs/filemgmt">Managing Your Files</a></li>
+          <li>Building a Basic Web Site</li>
+          <li>Skinning Your Site in Different Ways</li>
+          <li>Skinning Your Site with Bootstrap</li>
+          <li>Interacting with teh Customer via Scripts</li>
+          <li>Gathering Information via Forms</li>
+          <li>Leveraging Existing Services and Content</li>
+          <li>Configuring and Customizing WordPress</li>
+          <li>Making Data Visible</li>
         </ul>
 
         <h2 id="slides">Slides &amp; Notes</h2>
@@ -59,6 +67,23 @@
           <li><a href="slides/vcs/">Managing Your Files</a></li>
           <li>Saying What You Mean: An Overview of HTML</li>
           <li>Adding Some Style: Intro to CSS</li>
+          <li>Getting all Semantic: Microdata and Accessibility</li>
+          <li>Adding your "37 Pieces of Flair": Advanced Styling</li>
+          <li>Responding to the Device: Responsive Web Design</li>
+          <li>Don't Reinvent the Wheel: CSS Tools and Frameworks</li>
+          <li>JavaScript: The Good Parts</li>
+          <li>Your Friend, the jQuery Library</li>
+          <li>A Form of Madness: HTML5 Forms and Inputs</li>
+          <li>You can do that? Advanced HTML5 Scripting Features</li>
+          <li>The Brave New World: AJAX and Web 2.0</li>
+          <li>Standing on the Shoulders of Giants: Building Mashups</li>
+          <li>Putting it all Together: Web Applications</li>
+          <li>The Self-Service Web Site: Content Management Systems</li>
+          <li>Making Data Visible: Data Analysis and Visualization Apps</li>
+          <li>Tracking Records: Transactions Processing Apps</li>
+          <li>Special Topics</li>
+          <li>Going Mobile: Transforming a Web App into a Mobile App</li>
+          <li>Don't Break the Build! Automated Testing using Selenium</li>
         </ul>
 
         <h2 id="examples">Example Pages</h2>

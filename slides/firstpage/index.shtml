@@ -70,6 +70,7 @@
             <section>
                 <h2>Attributes</h2>
                 <p>Extends the element with additional information or options</p>
+                <p>Syntax: name="value"</p>
                 <pre><code data-trim>
 &lt;name attribute="value" attribute="value"&gt;
     ...content...
