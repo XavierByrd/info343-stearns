@@ -239,6 +239,11 @@
                 <p><img src="../../img/question.jpg" alt="Questions?"></p>
             </section>
 
+            <section>
+                <h2>Are You Ready?</h2>
+                <img src="img/monks-roller-coaster.jpg" alt="Buddhist Monks on a Roller Coaster">
+            </section>
+
 
           </div> <!-- .slides -->
       </div> <!-- .reveal -->
