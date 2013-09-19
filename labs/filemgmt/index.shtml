@@ -152,11 +152,11 @@
 
 <p>There are many graphical FTP tools to choose from, but the one we will use today is the one already installed on your lab machines: FileZilla.</p>
 
-<p class="alert alert-warning">If you haven't already signed up for a free iSchool student web hosting account, do so now by going to the <a href="https://ischool.uw.edu/technology/web-hosting/manage">iSchool student web hosting management page</a>, and following the signup instructions. Note that you will need access to your UW email to complete the process.</p>
+<p class="alert alert-warning">If you haven't already activated your free UW student web hosting account, do so now by <a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/activating-shared-web-hosting/">following these instructions</a>.</p>
 
 <p>I will now walk you through using FileZilla to upload your files. Follow along, and do what I do....</p>
 
-<p>To verify that the files got to the server, open a web browser and enter the following URL into the address field, replacing <code><span class="token">your-netid</span></code> with your UW NetID: <code>http://webhost.ischool.uw.edu/~<span class="token">your-netid</span>/lab1/</code>. If you've done everything correctly, you should see your web page, including the image you added to the page.</p>
+<p>To verify that the files got to the server, open a web browser and enter the following URL into the address field, replacing <code><span class="token">your-netid</span></code> with your UW NetID: <code>http://students.washington.edu/<span class="token">your-netid</span>/info343/lab1/</code>. If you've done everything correctly, you should see your web page, including the image you added to the page.</p>
 
 <h3 id="step-submit">Submit Your Site URL via Canvas</h3>
 
@@ -218,15 +218,22 @@
 <p>If your web server allows you SFTP access, it probably also allows you secure shell (SSH) access. SSH allows you to work at the command line on the web server itself, which opens up a number of interesting possibilities. One of those is the ability to update your web server by pulling the most recent files directly from your GitHub repository. You can use one quick command to update all the files on your web server to their most recent versions.</p>
 
 <ol>
-    <li>Go to your repository on the <a href="https://github.com/">GitHub web site</a>. On your repository home page, there should be a box on the right entitled 'HTTPS clone URL'. Click the copy to clipboard button, or select the URL and copy it to your clipboard. You'll need this later so you might want to paste it into a new text editor window.</li>
+    <li>Go to your repository on the <a href="https://github.com/">GitHub web site</a>. On your repository home page, there should be a box on the right entitled 'HTTPS clone URL'. Click the copy to clipboard button, or select the URL and copy it to your clipboard.</li>
 
-    <li>At the command line, SSH to the web server by entering the command <code>ssh <span class="token">your-netid</span >@webhost.ischool.uw.edu -p7822</code>, replacing <code><span class="token">your-netid</span></code> with your UW Net ID. The -p7822 part tells SSH to use port 7822 instead of the default port 22, which is what the iSchool student web hosts listen on.</li>
+    <li>Unfortunately, the UW student web hosting servers currently have out-of-date root security certificates, so we need to make one adjustment to that URL you just copied. Paste that URL into a new text editor window, and remove the 's' from the 'https://' part of the URL, so that it now reads 'http://github.com/...'. Copy this adjusted URL to your clipboard so we can use it later. (I've reported this to UW IT and they are actively working on fixing this, but for now, just use an http link and it will all work)</li>
 
-    <li>Enter your password at the prompt. This is your iSchool Student Web Hosting password, not your UW NetID password.</li>
-    <li>Once connected, change to the public_html/ directory (<code>cd public_html/</code>).</li>
-    <li>Now use git to clone your repository into a new sub-directory of public_html. To do that, Execute this command: <code>git clone <em>your-clone-url</em> lab1-git</code>, replacing <em>your-clone-url</em> with the URL you copied on the GitHub site. By default, git clone will create a directory with the same name as your GitHub repository, but since we've already created a directory with that name when FTPing the files, we use that last parameter to tell git to use a different directory name. In this case <code>lab1-git</code>.</li>
+    <li>At the command line, SSH to the web server by entering the command <code>ssh <span class="token">your-netid</span >@vergil.u.washington.edu</code>, replacing <code><span class="token">your-netid</span></code> with your UW Net ID.</li>
+
+    <li>Enter your UW NetID password at the prompt.</li>
+    
+    <li>Once connected, change to the public_html/info343/ directory (<code>cd public_html/info343/</code>).</li>
+    
+    <li>Now use git to clone your repository into a new sub-directory of public_html. To do that, Execute this command: <code>git clone <span class="token">your-clone-url</span> lab1-git</code>, replacing <span class="token">your-clone-url</span> with the URL you copied on the GitHub site. By default, git clone will create a directory with the same name as your GitHub repository, but since we've already created a directory with that name when FTPing the files, we use that last parameter to tell git to use a different directory name. In this case <code>lab1-git</code>.</li>
+
     <li>You should see a number of messages fly by, with the final one being 'Resolving deltas: 100% ... done.'</li>
-    <li>To make sure everything worked, view your page in the browser by going to the following URL (where <code><span class="token">your-netid</span></code> is replaced with your UW NetID): <code>http://webhost.ischool.uw.edu/~<span class="token">your-netid</span>/lab1-git/</code></li>
+    
+    <li>To make sure everything worked, view your page in the browser by going to the following URL (where <code><span class="token">your-netid</span></code> is replaced with your UW NetID): <code>http://students.washington.edu/<span class="token">your-netid</span>/info343/lab1-git/</code></li>
+
 </ol>
 
 <p>Your repository is now cloned to the web server. After you make, commit, and push any changes to GitHub, you can then SSH over to the web server and run the command <code>git pull</code> from within the project directory. Any changes you've made since the last pull will be applied to the files, and your web site will be up to date!</p>
