@@ -62,7 +62,7 @@
             <section>
                 <p class="pull-left"><img src="img/diff.png" alt="A typical diff"></p>
                 <p>Git tracks <span class="term">changes</span> to the files in your project</p>
-                <p class="fragment">Can recreate the state of any file at any point in time</p>
+                <p class="fragment">Can recreate any previous <span class="term">version</span> of any file</p>
                 <p class="fragment">Can <span class="term">merge</span> multiple changes made by multiple people to the same file</p>
             </section>
 
@@ -98,17 +98,17 @@
                         </li>
                     </ul>
 
-                    <ul>
+                    <ul class="file-tree-description">
                         <li>project root
                             <ul>
                                 <li>home page</li>
                                 <li>other pages</li>
                                 <li>images</li>
                                 <li>stylesheets</li>
-                                <li>javascript</li>
+                                <li>JavaScript</li>
                                 <li>includes</li>
                                 <li>external libraries</li>
-                                <li>test scripts</li>
+                                <li>test pages/scripts</li>
                             </ul>
                         </li>
                     </ul>

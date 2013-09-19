@@ -46,7 +46,9 @@ ul.no-bullets ul {
 	color: #DB8002;
 }
 ul.file-tree,
-ul.file-tree ul {
+ul.file-tree ul,
+ul.file-tree-description,
+ul.file-tree-description ul {
 	list-style: none;
 }
 ul.file-tree li {
@@ -63,6 +65,9 @@ ul.file-tree li.folder {
 ul.file-tree li.folder-open {
 	background-image: url(../../img/folder-open.png);
 	background-position: 0 0.3em;
+}
+ul.file-tree-description li {
+	font-style: italic;
 }
 
 .pic-quote img {
