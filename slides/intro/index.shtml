@@ -14,14 +14,14 @@
       <div class="reveal">
           <div class="slides">
 
-            <section>
+            <section data-background="../img/retina_wood.png" data-background-size="512px" data-background-repeat="repeat">
                 <h1>INFO 343</h1>
                 <h2>Web Technologies</h2>
                 <p>Dr David Stearns</p>
                 <p>Autumn 2013</p>
             </section>
               
-            <section>
+            <section data-background="../img/subtle_grunge.png" data-background-size="400px" data-background-repeat="repeat">
                 <h2>Today</h2>
                 <p class="pull-right"><img src="img/beginning.jpg" alt="The beginning"></p>
                 <ul>
@@ -31,15 +31,15 @@
                 </ul>
             </section>
 
-            <section>
+            <section data-background="../img/subtle_grunge.png" data-background-size="400px" data-background-repeat="repeat">
                 <p>But first, introduce yourselves!</p>
                 <p><em>Ask the person next to you...</em></p>
                 <ul>
                     <li>What's your name?</li>
-                    <li>What's your major and year in school?</li>
                     <li>Where are you from (hometown)?</li>
-                    <li>What is your favorite web site?</li>
+                    <li>What is the coolest web site you've ever seen?</li>
                     <li>What is your greatest fear about this class?</li>
+                    <li>What do you most want to learn in this class?</li>
                 </ul>
                 <p><img src="img/students-talking.jpg" alt="students talking"></p>
             </section>
@@ -48,7 +48,7 @@
                 <h2>The Course Sites</h2>
                 <p>All syllabus information, course schedule, assignments, grades, discussions, etc. are in <a href="https://canvas.uw.edu/courses" target="_blank">Canvas</a></p>
                 <div class="fragment">
-                    <p>Slides, examples, and detailed lab instructions are on the <a href="http://courses.washington.edu/info343" target="_blank">course companion site</a>.</p>
+                    <p>Slides, examples, and detailed homework and lab instructions are on the <a href="http://courses.washington.edu/info343" target="_blank">course companion site</a>.</p>
                     <p><code><a href="http://courses.washington.edu/info343" target="_blank">http://courses.washington.edu/info343</a></code></p>
                 </div>
             </section>
