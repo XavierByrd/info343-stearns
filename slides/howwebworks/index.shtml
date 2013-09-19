@@ -30,15 +30,12 @@
             </section>
 
             <section>
-                <h2>TCP/IP</h2>
-                <ul>
-                    <li>TCP/IP (Transmission Control Protocol/Internet Protocol) enables computers to exchange messages across the network.</li>
-                    <li>Each message needs:
-                        <ul>
-                            <li><span class="term">IP Address</span> = a unique number assigned to each computer by the network</li>
-                            <li><span class="term">Port Number</span> = a number on which the target service is listening</li>
-                        </ul>
-                    </li>
+                <p>The Internet allows millions of devices to reliably exchange messages with each other</p>
+                <p class="fragment">This is possible because all these devices speak a common language: <abbr title="Transmission Control Protocol/Internet Protocol">TCP/IP</abbr></p>
+                <p class="fragment">To send a message to another device on the network, you need two things:</p>
+                <ul class="fragment">
+                    <li><span class="term">IP Address</span> = a unique number assigned to each device by the network</li>
+                    <li><span class="term">Port Number</span> = a number on which the target service is listening</li>
                 </ul>
             </section>
 
@@ -59,39 +56,56 @@ Host: www.washington.edu</code></pre>
                 <h2>IP Addresses</h2>
                 <ul>
                     <li>Machine-oriented, not human-oriented (what was that UW IP address?)</li>
-                    <li>Tied to geography, so moving to a server in another location necessitates a different IP</li>
+                    <li>Tied to geography, so moving to a server in another location typically necessitates a different IP</li>
                 </ul>
             </section>
 
             <section>
                 <h2>The Solution: DNS</h2>
-                <ul>
-                    <li>The Domain Name System (DNS) acts like a telephone book, translating human-oriented "domain names" into machine-oriented IP addresses.</li>
-                    <li>Domains are hierarchical from right to left</li>
-                    <li><code>www.washington.edu</code>
-                        <ul>
-                            <li>edu = top-level domain for educational institutions</li>
-                            <li>washington = sub-domain of edu, registered to UW</li>
-                            <li>www = sub-domain of washington.edu, defined by UW</li>
-                        </ul>
-                    </li>
-                </ul>
+                <p><img src="img/dns-phonebook.jpg" alt="DSN as a phonebook"></p>
             </section>
 
             <section>
-                <h2>DNS</h2>
-                <ul>
-                    <li>New domains (e.g., <code>iloveinfo343.com</code>) can be purchased from an "accredited registrar" (e.g., Name Cheap, Go Daddy).</li>
-                    <li>Purchaser then updates the DNS records with the IP address of target server.</li>
-                    <li>After changes replicate, browsers can now find the server.</li>
+                <p>The <span class="term">Domain Name System</span> (DNS) acts like a telephone book, translating human-oriented "domain names" into machine-oriented IP addresses</p>
+
+                <p class="fragment">Domain names are hierarchical, from right to left, with periods separating levels</p>
+
+                <div class="fragment">
+                    <pre><code>www.washington.edu</code></pre>
+                </div>
+
+                <ul class="fragment">
+                    <li>edu = top-level domain for educational institutions</li>
+                    <li>washington = sub-domain of edu, registered to UW</li>
+                    <li>www = sub-domain of washington.edu, defined by UW</li>
                 </ul>
+
+            </section>
+
+            <section>
+                <p>Cool. So how do I get my own domain?</p>
+            </section>
+
+            <section>
+                <p>New domains can be purchased from an <a href="http://www.icann.org/registrar-reports/accredited-list.html">ICANN "accredited registrar"</a></p>
+
+                <p class="fragment">Popular registrars include <a href="http://en.gandi.net/">Gandi</a>, <a href="http://www.namecheap.com/">Name Cheap</a>, <a href="http://www.godaddy.com/">Go Daddy</a>, and <a href="https://www.hover.com/">Hover</a></p>
+
+                <p class="fragment">After purchasing, you update the DNS records with the IP address of target server</p>
+
+                <p class="fragment">After changes replicate, browsers can then find the server</p>
+
             </section>
 
             <section>
                 <h2>HTTP</h2>
-                <p>The Internet allows computers to talk, but it doesn't specify what they talk <em>about</em>.</p>
-                <p class="fragment">HTTP (Hypertext Transfer Protocol) defines a language for sending and receiving "resources" managed by a web server.</p>
+                
+                <p>The Internet allows devices to exchange messages, but it doesn't specify what those messages <em>contain</em>.</p>
+                
+                <p class="fragment"><span class="term">HTTP</span> (Hypertext Transfer Protocol) defines a message format for sending and receiving "resources" managed by a web server.</p>
+
                 <p class="fragment">Resources are identified using <span class="term">Uniform Resource Locators</span> (URLs).</p>
+
             </section>
 
             <section>
@@ -105,9 +119,24 @@ Host: www.washington.edu</code></pre>
             </section>
 
             <section>
+                <p>After looking up the IP for <code>courses.washington.edu</code> and connecting to the server, the browser would then send this HTTP message</p>
+                <pre><code>GET /info343/stearns/ HTTP/1.1
+Host: courses.washington.edu
+                </code></pre>
+            </section>
+
+            <section>
                 <h2>Are you Tracking?</h2>
-                <p>So what does your browser do when you enter <code>http://www.google.com/maps/</code> in the address bar?</p>
-                <p>What steps does it go through?</p>
+                <p>So what does your browser do when you enter</p>
+                <p><code>http://www.google.com/maps/</code></p>
+                <p>in the address bar? What steps does it go through?</p>
+            </section>
+
+            <section>
+                <h2>Review</h2>
+                <p>Devices connect to each other by specifying an IP Address (or Domain Name), and a port number</p>
+                <p class="fragment">Once connected, devices can exchange messages in particular formats</p>
+                <p class="fragment">Web clients and servers exchange HTTP messages through port 80</p>
             </section>
 
           </div> <!-- .slides -->
