@@ -44,6 +44,12 @@
           <li><a href="homework/">Homework Assignments</a></li>
         </ul>
 
+        <h2 id="labs">Lab Instructions</h2>
+      
+        <ul class="labs">
+          <li><a href="labs/filemgmt">Managing Your Files</a></li>
+        </ul>
+
         <h2 id="slides">Slides &amp; Notes</h2>
 
         <ul class="slides">
@@ -70,12 +76,6 @@
         </ul>
 
         
-        <h2 id="labs">Lab Instructions</h2>
-      
-        <ul class="labs">
-          <li><a href="labs/filemgmt">Managing Your Files</a></li>
-        </ul>
-
 
       </article>      
 

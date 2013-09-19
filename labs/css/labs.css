@@ -12,7 +12,11 @@
 .double-black-diamond {
 	background-image: url(../img/dbd.jpg);
 	background-repeat: no-repeat;
-	background-position: left center;
+	background-position: left top;
 	padding-left: 80px;
 	min-height: 90px;
+}
+.token {
+	font-style: italic;
+	background-color: #FFFF00;
 }

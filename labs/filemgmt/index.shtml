@@ -110,9 +110,9 @@
 
         <li>Add a picture to the page:
             <ol>
-                <li>Create a sub-folder in your local repository directory called 'img'.</li>
+                <li>Create a sub-folder in your local repository directory called <code>img</code>.</li>
 
-                <li><a href="http://www.google.com/imghp">Find a picture of your character</a>, and download that picture file to your newly-created 'img' directory.</li>
+                <li><a href="http://www.google.com/imghp">Find a picture of your character</a>, and download that picture file to your newly-created <code>img</code> directory.</li>
 
                 <li>Now <a href="http://www.w3schools.com/tags/tag_img.asp">add the picture</a> to your HTML page. If the picture is particularly large, add a <code>width</code> or <code>height</code> attribute to make it more appropriately-sized.</li>
             </ol>
@@ -125,6 +125,7 @@
     <li>Save the page, and open it in a web browser to view it. You can simply double-click the file in the file explorer, and the operating system will open it in the default browser. To open it in another browser (e.g., Firefox or Chrome), launch that browser, choose File &rarr; Open..., and select your file.</li>
 
     <li>If everything looks OK, move on to the next step. If something doesn't look right, return to your text editor and figure out what's wrong. Ask your friends or the TA for help if you get stuck.</li>
+
 </ol>
 
 <h3 id="step-validate">Validate Your Page</h3>
@@ -151,11 +152,11 @@
 
 <p>There are many graphical FTP tools to choose from, but the one we will use today is the one already installed on your lab machines: FileZilla.</p>
 
-<p class="alert alert-warning">If you haven't already signed up for a free iSchool student web hosting account, do so now by going to the <a href="https://ischool.uw.edu/technology/web-hosting/manage">iSchool student web hosting management page</a>, and following the signup instructions. Note that you will need access to your UW email to complete the process, and you should <strong>use a different password than you use for your UW NetID</strong>.</p>
+<p class="alert alert-warning">If you haven't already signed up for a free iSchool student web hosting account, do so now by going to the <a href="https://ischool.uw.edu/technology/web-hosting/manage">iSchool student web hosting management page</a>, and following the signup instructions. Note that you will need access to your UW email to complete the process.</p>
 
 <p>I will now walk you through using FileZilla to upload your files. Follow along, and do what I do....</p>
 
-<p>To verify that the files got to the server, open a web browser and enter the following URL into the address field, replacing <em>your-netid</em> with your UW NetID: <code>http://webhost.ischool.uw.edu/~<em>your-netid</em>/lab1/</code>. If you've done everything correctly, you should see your web page, including the image you added to the page.</p>
+<p>To verify that the files got to the server, open a web browser and enter the following URL into the address field, replacing <code><span class="token">your-netid</span></code> with your UW NetID: <code>http://webhost.ischool.uw.edu/~<span class="token">your-netid</span>/lab1/</code>. If you've done everything correctly, you should see your web page, including the image you added to the page.</p>
 
 <h3 id="step-submit">Submit Your Site URL via Canvas</h3>
 
@@ -167,30 +168,6 @@
 
 <p>These steps are optional, but try them if you have extra time. You might learn something new.</p>
 
-<h3>Branching and Merging</h3>
-
-<p>One of Git's more powerful features is branching. So far, you've been working on what is known as the 'master' branch in repository, but you can actually create many other branches from this master one, and merge changes between them.</p>
-
-<p>Branching is useful when you are working on a new feature that might take some time to compete, but you also need to periodically do something on the master branch (quick bug fix, testing, etc). As you switch back and forth between your branches, Git updates your local files accordingly.</p>
-
-<p>Let's practice creating a branch, making some changes, and merging those changes back into the master branch:</p>
-
-<ol>
-    <li>Return to SourceTree.</li>
-
-    <li>Create a new branch in your repository named 'feature'. All changes to your files will now be done on this new branch, leaving the master branch as it was before you branched.</li>
-
-    <li>Return to your text editor and make some changes to your index.html file. You might want to do the changes suggested in the <a href="#step-more-content">Adding More Content to Your Page</a> step below.</li>
-
-    <li>When you're finished with your changes, save the file, close your text editor and return to SourceTree.</li>
-
-    <li>Stage and commit your changes. The commit will be made on the 'feature' branch, leaving the master branch alone.</li>
-
-    <li>To verify this, switch back to the master branch, and open index.html in your text editor. It should have reverted to the way it was before you branched. Switch back to the feature branch, and verify that your changes have re-appeared. (Note: you may need to close and reopen the file to see the changes if your text editor is not watching for external changes to the file)</li>
-
-    <li>Now assume that your work on the new feature is done. Merge your changes made to the feature branch back into the master branch, and delete the feature branch.</li>
-
-</ol>
 
 <h3 id="step-more-content">Adding More Content to Your Page</h3>
 
@@ -200,26 +177,56 @@
     <li>A <a href="http://www.w3schools.com/html/html_lists.asp">list</a> of adjectives that describe your character.</li>
     <li>Emphasize a word or two in your text using the <code>&lt;em&gt;</code> tag.</li>
     <li>Make a few of your words strong using the <code>&lt;strong&gt;</code> tag.</li>
-    <li>Add a copyright notice using the <a href="http://www.w3schools.com/html/html_entities.asp">HTML character entity</a> for the copyright symbol (&copy;).</li>
+    <li>Add a copyright notice using the <a href="http://www.w3schools.com/html/html_entities.asp">HTML character entity</a> for the copyright symbol (&copy; 2013 Your Name).</li>
     <li>Add a comment to your page source using the <a href="http://www.w3schools.com/tags/tag_comment.asp">comment tag</a>.</li>
 </ul>
 
+
+<h3>Branching and Merging</h3>
+
+<p>One of Git's more powerful features is branching. So far, you've been working on what is known as the 'master' branch in repository, but you can actually create many other branches from this master one, and merge changes between them.</p>
+
+<p>Branching is useful when you are working on a new feature that might take some time to compete, but you also need to periodically do something on the master branch (quick bug fix, testing, etc). As you switch back and forth between your branches, Git updates your local files accordingly.</p>
+
+<p>Let's practice creating a branch, making some changes, and merging those changes back into the master branch. If you get stuck on this, ask your TA or Dr Stearns for help.</p>
+
+<ol>
+    <li>Return to SourceTree.</li>
+
+    <li>Click the "Branch" button at the top of the SourceTree window, and create a new branch in your repository named 'feature'. All changes to your files will now be done on this new branch, leaving the master branch as it was before you branched.</li>
+
+    <li>Return to your text editor and make some changes to your index.html file. You might want to do the changes suggested in the <a href="#step-more-content">Adding More Content to Your Page</a> step.</li>
+
+    <li>When you're finished with your changes, save the file, close your text editor and return to SourceTree.</li>
+
+    <li>Stage and commit your changes. The commit will be made on the 'feature' branch, leaving the master branch alone.</li>
+
+    <li>To verify this, switch back to the master branch by double-clicking it in the "Branches" list on the left. Now open index.html in your text editor. It should have reverted to the way it was before you branched. Now switch back to the feature branch (double-click it in the Branches list ont he left), and verify that your changes have re-appeared. (Note: you may need to close and reopen the file to see the changes if your text editor is not watching for external changes to the file)</li>
+
+    <li>Assuming that your work on the new feature is done, it's now time to merge the feature branch commits into the master branch. <strong>Switch back to the master branch again</strong>, and click the Merge button at the top of the SourceTree window. At the top of the dialog, select the commit(s) you did on the feature branch that are not yet in the master branch. Click OK, and those changes will now also be applied to your master branch.</li>
+
+    <li>Finally, delete the feature branch, since you don't need it anymore. Right-click on the feature branch in the Branches list and choose </li>
+
+</ol>
+
 <h3>Using Git and SSH to Synchronize the Web Server</h3>
 
-<p class="alert alert-danger double-black-diamond">If you are comfortable using the command line, you can try this step. Be careful though! Like Spiderman's Uncle reminded us, with great power comes great responsibility.</p>
+<div class="double-black-diamond">
+    <p class="alert alert-danger">If you are comfortable using the command line, you can try this step. Be careful though! Like Spiderman's Uncle reminded us, with great power comes great responsibility.</p>
+</div>
 
 <p>If your web server allows you SFTP access, it probably also allows you secure shell (SSH) access. SSH allows you to work at the command line on the web server itself, which opens up a number of interesting possibilities. One of those is the ability to update your web server by pulling the most recent files directly from your GitHub repository. You can use one quick command to update all the files on your web server to their most recent versions.</p>
 
 <ol>
     <li>Go to your repository on the <a href="https://github.com/">GitHub web site</a>. On your repository home page, there should be a box on the right entitled 'HTTPS clone URL'. Click the copy to clipboard button, or select the URL and copy it to your clipboard. You'll need this later so you might want to paste it into a new text editor window.</li>
 
-    <li>At the command line, SSH to the web server by entering the command <code>ssh <em>your-netid</em>@webhost.ischool.uw.edu -p7822</code>, replacing <code><em>your-netid</em></code> with your UW Net ID. The -p7822 part tells SSH to use port 7822 instead of the default port 22, which is what the iSchool student web hosts listen on.</li>
+    <li>At the command line, SSH to the web server by entering the command <code>ssh <span class="token">your-netid</span >@webhost.ischool.uw.edu -p7822</code>, replacing <code><span class="token">your-netid</span></code> with your UW Net ID. The -p7822 part tells SSH to use port 7822 instead of the default port 22, which is what the iSchool student web hosts listen on.</li>
 
     <li>Enter your password at the prompt. This is your iSchool Student Web Hosting password, not your UW NetID password.</li>
     <li>Once connected, change to the public_html/ directory (<code>cd public_html/</code>).</li>
     <li>Now use git to clone your repository into a new sub-directory of public_html. To do that, Execute this command: <code>git clone <em>your-clone-url</em> lab1-git</code>, replacing <em>your-clone-url</em> with the URL you copied on the GitHub site. By default, git clone will create a directory with the same name as your GitHub repository, but since we've already created a directory with that name when FTPing the files, we use that last parameter to tell git to use a different directory name. In this case <code>lab1-git</code>.</li>
     <li>You should see a number of messages fly by, with the final one being 'Resolving deltas: 100% ... done.'</li>
-    <li>To make sure everything worked, view your page in the browser by going to the following URL (where your-netid is replaced with your UW NetID): <code>http://webhost.ischool.uw.edu/~<em>your-netid</em>/lab1-git/</code></li>
+    <li>To make sure everything worked, view your page in the browser by going to the following URL (where <code><span class="token">your-netid</span></code> is replaced with your UW NetID): <code>http://webhost.ischool.uw.edu/~<span class="token">your-netid</span>/lab1-git/</code></li>
 </ol>
 
 <p>Your repository is now cloned to the web server. After you make, commit, and push any changes to GitHub, you can then SSH over to the web server and run the command <code>git pull</code> from within the project directory. Any changes you've made since the last pull will be applied to the files, and your web site will be up to date!</p>
