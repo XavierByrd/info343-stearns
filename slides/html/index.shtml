@@ -14,7 +14,7 @@
 
                 <section>
                     <h2>Coming Up...</h2>
-                    <p><img src="../../img/css3.png" alt="CSS3 Logo" class="pull-right"></p>
+                    <p class="pull-right"><img src="../../img/css3.png" alt="CSS3 Logo"></p>
                     <ul>
                         <li>Thursday: Overview of CSS
                             <ul>
@@ -30,8 +30,8 @@
 
                 <section>
                     <h2>Saying What You Mean</h2>
-                    <h3>An Overview of HTML 5</h3>
-                    <p><img src="../../img/html5.png" alt="HTML5 Logo" class="pull-right"></p>
+                    <h3>Diving into HTML 5</h3>
+                    <p class="pull-right"><img src="../../img/html5.png" alt="HTML5 Logo"></p>
                     <ul>
                         <li>A Bit of History</li>
                         <li>Tour of HTML 5</li>
