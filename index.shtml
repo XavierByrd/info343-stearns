@@ -94,13 +94,7 @@
           <li><a href="examples/templates/template.html">Basic HTML Template</a></li>
         </ul>
 
-        <h3><small>HTML</small></h3>
-
-        <ul class="examples">
-          <li><a href="examples/html/reference.html">Visual HTML Reference</a></li>
-        </ul>
-
-        
+       
 
       </article>      
 

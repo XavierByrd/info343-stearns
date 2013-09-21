@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notes for Saying What You Mean Lecture">
+    <meta name="author" content="David Stearns">
+    <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
+
+    <title>Saying What You Mean: Diving into HTML 5</title>
+
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/notes.css">
+
+</head>
+<body>
+
+    <div class="container">
+        
+    <div class="page-header notes-header">
+        <h1>Saying What You Mean: Diving into HTML 5</h1>
+        <p class="lead">Dr David Stearns, Autumn 2013</p>    
+    </div>
+
+    <ol class="lecture-outline">
+        <li>Introduction
+            <ol>
+                <li>Last week, we concentrated on how to manage your files effectively, but we also learned basic HTML syntax and a few of the most commonly-used elements</li>
+                
+                <li>Today we're going to dive into HTML and become proficient at saying what you <em>mean</em>; that is, we're going to focus on encoding <em>semantics</em> using HTML, not the default visual effects those semantics produce might happen to produce in a given browser or user agent</li>
+                
+                <li>On Thursday, we'll learn how to make your pages look cool; that is, how to completely alter the default appearance of those semantic elements</li>
+
+                <li>This separation between semantics and presentation (the structured information and the various ways it gets visualized) is a fundamental technique in computer programing and information system design, but it often doesn't come naturally
+                    <ol>
+                        <li>My story of learning this as a newbie programmer; PowerBuilder and VB encouraged 1-1 mapping of data to form controls</li>
+                        <li>This separation enables flexible user interfaces&mdash;same data can be visualized in different ways (list, cards, cross-tab, chart, time line)</li>
+                    </ol>
+                </li>
+
+                <li>This separation was also embedded in the original design of the Web, but it didn't stay that way</li>
+
+                <li>Let me tell you a story about how the Web came to be, and how HTML drifted away from semantics for a time, but eventually returned to it</li>
+            </ol>
+        </li>
+        
+        <li>A Brief History of HTML and the Web
+            <ol>
+                <li>In the 1980s, Tim Berners-Lee was working at CERN (the European particle physics research center in Geneva), and he wanted a tool that would help him keep track of all the people, projects, equipment, computers, and software programs that were at CERN</li>
+
+                <li>Tim recognized that these entities were not related to each other in a hierarchical fashion, which was the common way at that time of representing information in a computer. Instead, they were related to each other in a web-like fashion: each entity was linked to other entities in multiple ways. [quote]</li>
+                
+                <li>Tim had heard of hypertext, a system for representing text with links that took the reader to related text in the same file, but he wanted something that could link to any document on any computer on the network</li>
+
+                <li>By 1989, he had a design for a system he called (somewhat ambitiously) the "World Wide Web," which included a few key components
+                    <ol>
+                        <li>A scheme for identifying every resource on every computer on the network (URLs)</li>
+                        <li>A simple markup language for encoding meaning into text, especially links to other resources (HTML, based on SGML)</li>
+                        <li>A simple protocol for exchanging representations of those resources over TCP/IP (HTTP)</li>
+                    </ol>
+                </li>
+
+                <li>First web browser was written on a NeXT computer in 1990, as an extension to the word processor. It could request any URL via HTTP, display the HTML with appropriate formatting, and follow links when you clicked them</li>
+
+                <li>The first version of HTML was very simple, and focused mostly on meaning and structure: headings, paragraphs, lists, glossaries, and postal addresses. Documents looked very plain, but they could be rendered on many different kinds of devices (even plain text terminals)</li>
+
+                <li>But as the web caught on and more graphical browsers were built, people wanted to take advantage of new typographic capabilities: different fonts and decorations; colors; lines and separators; images and animations</li>
+
+                <li>They also wanted a bit more control over the default typographic settings: font sizes; line height and inter-line spacing; margins and padding; etc.</li>
+
+                <li>And thus was born a whole slew of HTML elements and attributes that were purely for dictating formatting, with no semantic value at all: <code>bgcolor</code>, <code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code>, <code>&lt;strike&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;center&gt;</code>, and worst of all, the dreaded <code>&lt;font&gt;</code> tag!</li>
+
+                <li>People also started using some of the semantic elements (especially <code>&lt;table&gt;</code>) to achieve particular formatting effects, even though the content within didn't mean what the element said it should mean</li>
+
+                <li>The distinction between semantics and presentation started to blur, and the web fell into CHAOS...well, not really, but it made it rather difficult to maintain a consistent site design, and search engines couldn't extract as much meaning from the page</li>
+
+                <li>In the mid 1990s, a movement started to separate formatting instructions from semantic HTML, which resulted in the Cascading Style Sheets (CSS) language. Wasn't supported in all browsers until the late 1990s, but it went a long way to re-establishing a separation between semantics and presentation</li>
+
+                <li>Around the same time, there was also a movement to define an extensible markup language that would allow anyone to define a new vocabulary (new set of elements and attributes and their relations) and keep them separated using name spaces; thus was born the eXtensible Markup Language, XML</li>
+
+                <li>Soon the information architects of the world suggested that XML replace HTML, or more precisely, that HTML become an XML vocabulary; web pages would now be authored in what was known as XHTML; great idea on paper, but not so good in practice
+                    <ol>
+                        <li>XHTML was architecturally pure and beautiful, but also verbose, merciless, and unforgiving</li>
+                        <li>Doctype was long and complex</li>
+                        <li>Element and attribute names were case-sensitive</li>
+                        <li>All elements had to have close tags or be self-closing</li>
+                        <li>All attributes had to have values, even markers (resulting in stupidity like <code>disabled="disabled"</code>)</li>
+                        <li>And if one character was out of place, your page simply didn't render!</li>
+                    </ol>
+                </li>
+
+                <li>Proponents of XHTML took over the W3C (standards body that defines HTML and other web-related things); browser makers revolted and formed their own group that would recapture the simplicity and semantic nature of HTML, as well as standardize features already implemented&mdash;they called it "HTML 5"</li>
+
+                <li>Developers slowly abandoned XHTML in favor of HTML 5, and the W3C eventually capitulated, ushering in a new era of simplicity and standardization&mdash;lucky you!</li>
+
+                <li>Key Takeaways
+                    <ol>
+                        <li>Semantics should be separated from presentation, information from representation, data from formatting</li>
+                        <li>HTML is for encoding <em>meaning</em> (semantics) into otherwise plain text</li>
+                        <li>CSS is for specifying the presentation</li>
+                        <li>HTML 5 is the current standard, but you might encounter legacy XHTML documents on the job, so be aware of the differences</li>
+                    </ol>
+                </li>
+
+            </ol>
+        </li> <!-- history of HTML -->
+        
+        <li>A Tour of HTML 5
+            <ol>
+                <li>Note that this tour will be of the semantic elements, and not those used purely for formatting hooks or scripting (e.g., <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;canvas&gt;</code>, etc.)</li>
+                <li>Review of Document Structure and Syntax
+                    <ol>
+                        <li>Hierarchical set of elements, each of which may have attributes and content, which may include sub-elements</li>
+                        <li>Document divided into <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections</li>
+                        <li>Non-visible meta-data goes in <code>&lt;head&gt;</code></li>
+                        <li>Visible content goes in <code>&lt;body&gt;</code></li>
+                        <li>Older standards made a distinction between "block" and "inline" content, but with CSS 3, those distinctions are merely default layout behavior that you can change, so these aren't really useful distinctions anymore</li>
+                        <li>Rather, HTML 5 defines a few different kinds of semantic body content: paragraphs, phrasing, embedded, sectioning, and interactive</li>
+                    </ol>
+                </li>
+                <li>Run through <a href="../../examples/html/reference.html">HTML Semantic Reference</a> Page</li>
+                <li>Run through HTML Meta-Data Reference Page</li>
+                <li>HTML character entities</li>
+            </ol>
+        </li> <!-- tour of HTML 5 -->
+
+
+        <li>Segmenting and Re-Using Content
+        </li> <!-- segmenting and re-using content -->
+    </ol>
+
+    </div> <!-- .container -->
+
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+.notes-header {
+	background-image: url(../../img/notes.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	padding-left: 80px;
+	min-height: 32px;
+}
+
+.lecture-outline li {
+	font-size: 20px;
+	line-height: 1.5;
+}
+
+.lecture-outline {
+	list-style: upper-roman;
+}
+
+.lecture-outline > li > ol {
+	list-style: decimal;
+}
+
+.lecture-outline > li > ol > li > ol {
+	list-style: lower-alpha;
+}

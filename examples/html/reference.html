@@ -3,16 +3,16 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="INFO 343 HTML Visual Reference">
+        <meta name="description" content="INFO 343 HTML Semantic Reference">
         <meta name="author" content="David Stearns">
-        <link rel="shortcut icon" href="http://ischool.uw.edu/favicon-small.png">
+        <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
 
-        <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
 
         <!-- highligh.js for code highlighting -->
         <link rel="stylesheet" href="../../lib/highlight/styles/zenburn.css">
 
-        <title>HTML Visual Reference</title>
+        <title>HTML Semantic Reference</title>
 
         <!--[if lt IE 9]>
             <script src="../../lib/html5shiv/html5shiv.js"></script>
@@ -40,6 +40,10 @@
                 max-width: 100%;
                 height: auto;
             }
+
+            .reference cite {
+                font-style: italic;
+            }
         </style>
 
     </head>
@@ -48,57 +52,196 @@
         <div class="container">
 
             <div class="page-header">
-                <h1>HTML Visual Reference</h1>
+                <h1>HTML Semantic Reference</h1>
                 <p class="lead">Dr David Stearns, The Information School, University of Washington</p>
             </div>
 
             <div class="reference-container loading">
                 <div class="reference">
 
-                    <h2>Most Commonly Used Body Elements</h2>
-                    <p>When writing body content, these are the elements you'll use the most</p>
-
-                    <div class="entry">
-                        <div class="entry-title">h1 &ndash; h6</div>
-                        <div class="entry-description">Content is a section heading</div>
-                        <div class="entry-example">
-                            <h1>Heading 1</h1>
-                            <h2>Heading 2</h2>
-                            <h3>Heading 3</h3>
-                            <h4>Heading 4</h4>
-                            <h5>Heading 5</h5>
-                            <h6>Heading 6</h6>
-                        </div>
-                    </div>
+                    <h2>Paragraphs</h2>
+                    <p>These elements define paragraphs within the body of the document</p>
 
                     <div class="entry">
                         <div class="entry-title">p</div>
-                        <div class="entry-description">Content is normal paragraph text</div>
+                        <div class="entry-description">Content is normal paragraph text (whitespace is collapsed)</div>
                         <div class="entry-example">
-                            <p>This is a paragraph.</p>
+                            <p>This   is a    
+                                paragraph.  </p>
                         </div>
                     </div>
+
+                    <div class="entry">
+                        <div class="entry-title">pre</div>
+                        <div class="entry-description">Content is pre-formatted paragraph text (whitespace is preserved)</div>
+                        <div class="entry-example">
+<pre>
+This     is 
+a 
+pre-formatted 
+paragraph.</pre>
+                        </div>
+                    </div>
+
+                    <h2>Links</h2>
+                    <p>These elements define hyperlinks to other resources on the web</p>
 
                     <div class="entry">
                         <div class="entry-title">a</div>
                         <div class="entry-description">Content is a hyperlink to the URL specified in the <code>href</code> attribute.</div>
-                        <div class="entry-notes">The content may contain other elements (e.g., <a href="#img">img</a>), and all elements will be part of the link. Set the <code>target</code> attribute to "_blank" to automatically open the URL in a new browser tab.</div>
+                        <div class="entry-notes">The content may contain other elements (e.g., <a href="#img">img</a>), and all elements will be part of the link. Set the <code>target</code> attribute to "_blank" to automatically open the URL in a new browser tab. Note that you can use URLs with other schemes as well (ftp:, mailto:)</div>
                         <div class="entry-example">
                             <a href="http://google.com">Google</a>
                         </div>
                         <div class="entry-example">
                             <a href="http://google.com" target="_blank">Google in new tab</a>
                         </div>
+                        <div class="entry-example">
+                            <a href="mailto:help@uw.edu">New email to UW IT help</a>
+                        </div>
+                    </div>
+
+                    <h2>Phrasing</h2>
+                    <p>These elements add specific meaning to runs of text within paragraphs</p>
+
+                    <div class="entry">
+                        <div class="entry-title">em</div>
+                        <div class="entry-description">Content should be emphasized</div>
+                        <div class="entry-notes">Although most agents will simply display the content in italics, use this for the meaning it conveys, not the default formatting it achieves.</div>
+                        <div class="entry-example">
+                            <p><em>Nobody</em> expects the Spanish Inquisition!</p>
+                        </div>
                     </div>
 
                     <div class="entry">
-                        <div class="entry-title">img</div>
-                        <div class="entry-description">The specified image should be displayed here</div>
-                        <div class="entry-notes">Use the <code>alt</code> attribute to specify an alternate textural description. This is used by screen readers, and displayed if the image file cannot be found.</div>
+                        <div class="entry-title">strong</div>
+                        <div class="entry-description">Content is important</div>
+                        <div class="entry-notes">Although most agents will simply display the content in bold text, use this for the meaning it conveys, not the default formatting it achieves.</div>
                         <div class="entry-example">
-                            <p><img src="kitten.jpg" alt="cute kitten"></p>
+                            <p>This is an <strong>ex-parrot</strong>!</p>
                         </div>
                     </div>
+
+                    <div class="entry">
+                        <div class="entry-title">sup, sub</div>
+                        <div class="entry-description">Content is superscript or subscript text</div>
+                        <div class="entry-example">
+                            <p>Classes begin on September 24<sup>th</sup>. Water is H<sub>2</sub>O.</p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">small</div>
+                        <div class="entry-description">Contents are "smaller" than surrounding content</div>
+                        <div class="entry-notes">This is a bit of a hold-over from the bad days of HTML, but it's still legal in HTML 5 and is used by several CSS frameworks.</div>
+                        <div class="entry-example">
+                            <h1>INFO 343 <small>Autumn 2013</small></h1>
+                        </div>
+                    </div>
+
+
+                    <div class="entry">
+                        <div class="entry-title">blockquote, q</div>
+                        <div class="entry-description">Content is a lengthy, or short quote</div>
+                        <div class="entry-notes">Use <code>blockquote</code> for long quotes that should be set off from the main content, and <code>q</code> for short, inline quotes. Browsers typically won't display short quotes any differently, but you can add CSS to highlight them in some way.</div>
+                        <div class="entry-example">
+                            <p>Abraham Lincoln once said, <q>"I don't think people quote me correctly on the Internet."</q></p>
+                        </div>
+                        <div class="entry-example">
+                            <p>As Ben Franklin was fond of saying:</p>
+                            <blockquote>
+                                We are all born ignorant, but one must work hard to remain stupid.
+                            </blockquote>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">dfn</div>
+                        <div class="entry-description">Content is a term</div>
+                        <div class="entry-notes">Use CSS to highlight new terms in some particular way.</div>
+                        <div class="entry-example">
+                            <p>HTML should be all about <dfn>semantics</dfn>.</p>
+                        </div>
+                    </div>
+
+
+                    <div class="entry">
+                        <div class="entry-title">code</div>
+                        <div class="entry-description">Content is source code</div>
+                        <div class="entry-notes">Use this for inline code in a normal paragraph, or code listing in a pre-formatted paragraph.</div>
+                        <div class="entry-example">
+                            <p>Use the <code>&lt;code&gt;</code> element to highlight bits of code.</p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">del, ins, mark</div>
+                        <div class="entry-description">Content is deleted, inserted, or marked text</div>
+                        <div class="entry-notes">These are useful for indicating how a document has been revised</div>
+                        <div class="entry-example">
+                            <p>This text has been <del>deleted</del>, and this text has been <ins>inserted</ins>.</p>
+                            <p>And I've <mark>marked this text for some reason</mark>.</p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">cite</div>
+                        <div class="entry-description">Content is the title of a work</div>
+                        <div class="entry-notes">Although you might assume this should go around an entire citation, the spec says it should only go around the title of the work. Typically, you'd use CSS to italicize it.</div>
+                        <div class="entry-example">
+                            <!--
+                            ...in css stylesheet...
+                            cite {font-style: italic;}
+                            -->
+                            <p>Tim Berners-Lee, <cite>Weaving the Web</cite>, p 4.</p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">address</div>
+                        <div class="entry-description">Content is contact information for the author</div>
+                        <div class="entry-example">
+                            <address>
+                                David Stearns
+                                MGH 330N
+                                University of Washington
+                                <a href="mailto:dlsinfo@uw.edu">dlsinfo@uw.edu</a>
+                            </address>    
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">time</div>
+                        <div class="entry-description">Content is a date/time value</div>
+                        <div class="entry-notes">This is new in HTML 5, and provides a convenient way to supply a full date-time value for a contextual date/time description.</div>
+                        <div class="entry-example">
+                            <p>Classes begin on <time datetime="2013-09-25">September 25th</time></p>
+                        </div>
+                    </div>
+
+                    <h2>Line Breaking</h2>
+                    <p>These elements control or suggest line breaking within a paragraph</p>
+
+                    <div class="entry">
+                        <div class="entry-title">br</div>
+                        <div class="entry-description">Inserts a manual line break</div>
+                        <div class="entry-notes">Use this when you want to force a line break to occur within the current paragraph</div>
+                        <div class="entry-example">
+                            <p>David Stearns <br> The Information School <br> University of Washington</p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">wbr</div>
+                        <div class="entry-description">Indicates a line-breaking opportunity</div>
+                        <div class="entry-notes">Use this to let the browser known that it could break a line here if needed; mostly useful when you have a long run of text without whitespace, but could break it at meaningful places.</div>
+                        <div class="entry-example">
+                            <p>http://some.really.long.domain.com/<wbr>and/a/very/long/path/to/some/resource/way/way/way/down/</p>
+                        </div>
+                    </div>
+
+                    <h2>Lists and Glossaries</h2>
+                    <p>These elements define lists of related items</p>
 
                     <div class="entry">
                         <div class="entry-title">ol, ul, li</div>
@@ -145,57 +288,105 @@
                     </div>
 
                     <div class="entry">
-                        <div class="entry-title">em</div>
-                        <div class="entry-description">Content should be emphasized</div>
-                        <div class="entry-notes">Although most agents will simply display the content in italics, use this for the meaning it conveys, not the default formatting it achieves.</div>
+                        <div class="entry-title">dl, dt, dd</div>
+                        <div class="entry-description">Glossary or dictionary entries</div>
                         <div class="entry-example">
-                            <p>HTML should convey <em>meaning</em> not desired formatting.</p>
+                            <dl>
+                                <dt>HTML</dt>
+                                <dd>Hypertext Markup Language</dd>
+                                <dt>CSS</dt>
+                                <dd>Cascading Style Sheets</dd>
+                                <dt>HTTP</dt>
+                                <dd>Hypertext Transfer Protocol</dd>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <h2>Embedded Content</h2>
+                    <p>These elements embed other kinds of content into the page</p>
+
+                    <div class="entry">
+                        <div class="entry-title">img</div>
+                        <div class="entry-description">Inserts an image into the document where the element appears</div>
+                        <div class="entry-notes">Use the <code>alt</code> attribute to specify an alternate textural description. This is used by screen readers, and displayed if the image file cannot be found.</div>
+                        <div class="entry-example">
+                            <p><img src="kitten.jpg" alt="cute kitten"></p>
                         </div>
                     </div>
 
                     <div class="entry">
-                        <div class="entry-title">strong</div>
-                        <div class="entry-description">Content is important</div>
-                        <div class="entry-notes">Although most agents will simply display the content in bold text, use this for the meaning it conveys, not the default formatting it achieves.</div>
+                        <div class="entry-title">figure, figcaption</div>
+                        <div class="entry-description">Inserts a figure and related caption</div>
+                        <div class="entry-notes">This is useful when you need to supply a caption for an image</div>
                         <div class="entry-example">
-                            <p>When getting dressed, remember this rule: <strong>socks, then shoes</strong>!</p>
+                            <figure>
+                                <img src="kitten.jpg" alt="cute kitten">
+                                <figcaption>Fig 1. Kittenus Increadibly Cutenus</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <h2>Sectioning</h2>
+                    <p>These elements define major sections of the document and their related headings</p>
+
+                    <div class="entry">
+                        <div class="entry-title">h1 &ndash; h6</div>
+                        <div class="entry-description">Content is a section heading</div>
+                        <div class="entry-example">
+                            <h1>Heading 1</h1>
+                            <h2>Heading 2</h2>
+                            <h3>Heading 3</h3>
+                            <h4>Heading 4</h4>
+                            <h5>Heading 5</h5>
+                            <h6>Heading 6</h6>
+                        </div>
+                    </div>
+
+                    <h2>Interactivity</h2>
+                    <p>These elements define interactive components</p>
+
+                    <div class="entry">
+                        <div class="entry-title">progress</div>
+                        <div class="entry-description">Represents some amount of progress</div>
+                        <div class="entry-notes">This is new in HTML 5, and not supported in IE 9 or earlier.</div>
+                        <div class="entry-example">
+                            <progress value="50" max="100"></progress>
                         </div>
                     </div>
 
                     <div class="entry">
-                        <div class="entry-title">br</div>
-                        <div class="entry-description">Inserts a manual line break</div>
-                        <div class="entry-notes">A <code>br</code> will cause a manual line break within the current block, but not the start of a new block. This is useful when you don't want to start a new paragraph, but you need a line break to occur.</div>
+                        <div class="entry-title">meter</div>
+                        <div class="entry-description">Represents a meter or gauge</div>
+                        <div class="entry-notes">This is new in HTML 5, and not supported yet in IE</div>
                         <div class="entry-example">
-                            <p>David Stearns <br> The Information School <br> University of Washington</p>
+                            <meter value="50" min="0" max="100" optimum="80"></progress>
                         </div>
                     </div>
 
-                    <div class="entry">
-                        <div class="entry-title">blockquote, q</div>
-                        <div class="entry-description">Content is a lengthy, or short quote</div>
-                        <div class="entry-notes">Use <code>blockquote</code> for long quotes that should be set off from the main content, and <code>q</code> for short, inline quotes.</div>
-                        <div class="entry-example">
-                            <p>Abraham Lincoln once said, <q>"I don't think people quote me correctly on the Internet."</q></p>
-                        </div>
-                        <div class="entry-example">
-                            <p>As Ben Franklin was fond of saying:</p>
-                            <blockquote>
-                                We are all born ignorant, but one must work hard to remain stupid.
-                            </blockquote>
-                        </div>
-                    </div>
+
+
+
+                    <h2>Comments</h2>
 
                     <div class="entry">
                         <div class="entry-title">&lt;!-- --&gt;</div>
                         <div class="entry-description">Content is a comment and should be ignored</div>
-                        <div class="entry-notes">Use this to add comments to your markup, or to quicky comment out markup that you want to suppress for debugging.</div>
+                        <div class="entry-notes">Use this to add comments to your markup, or to quicky comment out something for testing purposes.</div>
                         <div class="entry-example">
                             <!-- this is a comment -->
                         </div>
                     </div>
 
-
+<!-- template
+                    <div class="entry">
+                        <div class="entry-title"></div>
+                        <div class="entry-description"></div>
+                        <div class="entry-notes"></div>
+                        <div class="entry-example">
+                            
+                        </div>
+                    </div>
+-->
 
                 </div> <!-- .reference -->
             </div> <!-- .reference-container -->
