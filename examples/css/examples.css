@@ -1,0 +1,7 @@
+.example-header {
+	background-image: url(../../img/example.png);
+	background-position: left top;
+	background-repeat: no-repeat;
+	padding-left: 80px;
+	min-height: 64px;
+}

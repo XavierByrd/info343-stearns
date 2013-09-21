@@ -12,6 +12,8 @@
         <!-- highligh.js for code highlighting -->
         <link rel="stylesheet" href="../../lib/highlight/styles/zenburn.css">
 
+        <link rel="stylesheet" href="../css/examples.css">
+
         <title>HTML Semantic Reference</title>
 
         <!--[if lt IE 9]>
@@ -44,6 +46,12 @@
             .reference cite {
                 font-style: italic;
             }
+
+            .reference p[contenteditable="true"] {
+                border: 1px solid #CCC;
+                padding: 5px;
+            }
+
         </style>
 
     </head>
@@ -51,7 +59,7 @@
 
         <div class="container">
 
-            <div class="page-header">
+            <div class="page-header example-header">
                 <h1>HTML Semantic Reference</h1>
                 <p class="lead">Dr David Stearns, The Information School, University of Washington</p>
             </div>
@@ -219,6 +227,27 @@ paragraph.</pre>
                         </div>
                     </div>
 
+                    <div class="entry">
+                        <div class="entry-title">ruby, rt, rp</div>
+                        <div class="entry-description">Content is a ruby annotation</div>
+                        <div class="entry-notes">Ruby annotations are used in East Asian typography to show pronunciation. Use the <code>&lt;rp&gt;</code> element to specify what should be shown in browsers that don't support ruby annotations (i.e., IE 8 and earlier).</div>
+                        <div class="entry-example">
+                            <ruby>
+                                漢 <rt> ㄏㄢˋ </rt>
+                            </ruby>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">bdo</div>
+                        <div class="entry-description">Content should be rendered in a new direction</div>
+                        <div class="entry-notes">Use the bi-directional override element to switch between left-to-right and right-to-left scripts within the same paragrpah.</div>
+                        <div class="entry-example">
+                            <p>This is some left-to-right text, and <bdo dir="rtl">זה טקסט מימין לשמאל</bdo>.</p>
+                        </div>
+                    </div>
+
+
                     <h2>Line Breaking</h2>
                     <p>These elements control or suggest line breaking within a paragraph</p>
 
@@ -321,13 +350,105 @@ paragraph.</pre>
                         <div class="entry-example">
                             <figure>
                                 <img src="kitten.jpg" alt="cute kitten">
-                                <figcaption>Fig 1. Kittenus Increadibly Cutenus</figcaption>
+                                <figcaption>Fig 1. An Increadibly Cute Kitten</figcaption>
                             </figure>
                         </div>
                     </div>
 
                     <h2>Sectioning</h2>
                     <p>These elements define major sections of the document and their related headings</p>
+
+                    <div class="entry">
+                        <div class="entry-title">article</div>
+                        <div class="entry-description">Content is a stand-alone article that could be syndicated</div>
+                        <div class="entry-notes">Use this for the main body content of your page, especially if that content is like an article that could be syndicated in an RSS feed, or email message, etc.</div>
+                        <div class="entry-example">
+                            <article>
+                                <p>I'd like to talk about why cats are awesome...</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">header</div>
+                        <div class="entry-description">Content is a header for the document or section</div>
+                        <div class="entry-notes">Use this to wrap content that you consider to be the header of your document or a section of the document.</div>
+                        <div class="entry-example">
+                            <article>
+                                <header>
+                                    <h1>Why Cats are Awesome</h1>
+                                    <p>by David Stearns</p>
+                                </header>
+                                <p>I want to talk about why cats are awesome...</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">nav</div>
+                        <div class="entry-description">Content is a set of navigation links</div>
+                        <div class="entry-notes">Use this to wrap navigation links. Screen readers for the blind can then know to skip over them or treat them in a different way.</div>
+                        <div class="entry-example">
+                            <nav>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Menu</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+
+                    <div class="entry">
+                        <div class="entry-title">aside</div>
+                        <div class="entry-description">Content is a side comment, related to an article</div>
+                        <div class="entry-notes">Use this for pull-quotes or other side comments that are related to the main article, but not within it.</div>
+                        <div class="entry-example">
+                            <article>
+                                <p>I want to talk about why cats are awesome...</p>
+                            </article>
+                            <aside>"...cats are awesome..."</aside>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">footer</div>
+                        <div class="entry-description">Content is a footer for the document</div>
+                        <div class="entry-notes">Use this for footer content shown after the article or at the bottom of the page.</div>
+                        <div class="entry-example">
+                            <article>
+                                <p>...</p>
+                            </article>
+                            <footer>
+                                <address>
+                                    David Stearns
+                                    MGH 330N
+                                    University of Washington
+                                    <a href="mailto:dlsinfo@uw.edu">dlsinfo@uw.edu</a>
+                                </address>
+                            </footer>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">section</div>
+                        <div class="entry-description">Content is a major section of the document or article</div>
+                        <div class="entry-notes">The exact meaning of this element is somewhat unclear, but most people tend to use it to mark significant sections of a document. In general, every section should have a heading associated with it.</div>
+                        <div class="entry-example">
+                            <article>
+                                <h1>Why Cats are Awesome</h1>
+                                <section>
+                                    <h2>Cats Can Paint</h2>
+                                    <p>...</p>
+                                </section>
+                                <section>
+                                    <h2>Cats Can Be Painted</h2>
+                                    <p>...</p>
+                                </section>
+                            </article>
+                        </div>
+                    </div>
 
                     <div class="entry">
                         <div class="entry-title">h1 &ndash; h6</div>
@@ -342,29 +463,17 @@ paragraph.</pre>
                         </div>
                     </div>
 
-                    <h2>Interactivity</h2>
-                    <p>These elements define interactive components</p>
-
                     <div class="entry">
-                        <div class="entry-title">progress</div>
-                        <div class="entry-description">Represents some amount of progress</div>
-                        <div class="entry-notes">This is new in HTML 5, and not supported in IE 9 or earlier.</div>
+                        <div class="entry-title">details, summary</div>
+                        <div class="entry-description">Content are details that can be shown or hidden by the user</div>
+                        <div class="entry-notes">The contents of the <code>&lt;summary&gt;</code> element are shown by default, and the rest can be shown by the user if desired. The only browsers that currently support these are Chrome and Safari.</div>
                         <div class="entry-example">
-                            <progress value="50" max="100"></progress>
+                            <details>
+                                <summary>INFO 343: Web Technologies</summary>
+                                <p>This course provides an introduction to client side web development including markup, programming languages, protocols, libraries, frameworks, and techniques for creating effective, usable, dynamic, and responsive sites/applications that meet user needs. We will also discuss web development roles within an organization, content management systems, and other popular tools to build and manage web sites and applications.</p>
+                            </details>
                         </div>
                     </div>
-
-                    <div class="entry">
-                        <div class="entry-title">meter</div>
-                        <div class="entry-description">Represents a meter or gauge</div>
-                        <div class="entry-notes">This is new in HTML 5, and not supported yet in IE</div>
-                        <div class="entry-example">
-                            <meter value="50" min="0" max="100" optimum="80"></progress>
-                        </div>
-                    </div>
-
-
-
 
                     <h2>Comments</h2>
 
@@ -374,6 +483,86 @@ paragraph.</pre>
                         <div class="entry-notes">Use this to add comments to your markup, or to quicky comment out something for testing purposes.</div>
                         <div class="entry-example">
                             <!-- this is a comment -->
+                        </div>
+                    </div>
+
+                    <h2>Global Attributes</h2>
+                    <p>The following attributes may be used on any HTML element in the <code>&lt;body&gt;</code> section</p>
+
+                    <div class="entry">
+                        <div class="entry-title">id</div>
+                        <div class="entry-description">Unique id for the element</div>
+                        <div class="entry-notes">Use this to assign a unique ID, which can not only be used when writing script, but also in links that jump to that element when clicked.</div>
+                        <div class="entry-example">
+                            <p id="instructions">These are some important instructions.</p>
+
+                            <!-- ...somewhere else in the document... -->
+                            <p>See the <a href="#instructions">important instructions</a> above</p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">class</div>
+                        <div class="entry-description">Style class for the element</div>
+                        <div class="entry-notes">Specifies a style class that you can refer to in your style sheets</div>
+                        <div class="entry-example">
+                            <p class="lead">This is a lead line of text</p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">lang</div>
+                        <div class="entry-description">Specifies what language the element's content is written in</div>
+                        <div class="entry-notes">This can be used by auto-translators or spell checkers. Use the two-character <a href="http://www.w3schools.com/tags/ref_language_codes.asp">ISO language code</a>.</div>
+                        <div class="entry-example">
+                            <p lang="en">
+                                This paragraph is in English.
+                            </p>
+                            <p lang="es">
+                                Este párrafo está en español.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">contenteditable</div>
+                        <div class="entry-description">The contents of the element should be editable by the user</div>
+                        <div class="entry-notes">This is useful when you want to enable user-editing of an elements content, but the editing features are rather limited. Add <code>spellcheck="true"</code> to enable spell checking.</div>
+                        <div class="entry-example">
+                            <p contenteditable="true" lang="en" spellcheck="true">
+                                You can edit this paragraph--try it!
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">dir</div>
+                        <div class="entry-description">Specifies which direction the text should flow in the element</div>
+                        <div class="entry-notes">This is useful for scripts that flow from right-to-left</div>
+                        <div class="entry-example">
+                            <p dir="rtl">הנה טקסט לעברית</p>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">title</div>
+                        <div class="entry-description">Specifies extra information about the element</div>
+                        <div class="entry-notes">Most browsers will display the contents of this attribute in a tip when you hover over the element. Useful for giving the user some extra information about clickable items, abbreviations, etc.</div>
+                        <div class="entry-example">
+                            <button title="Click to see lab instructions">
+                                <img src="../../img/bullet-lab.png" alt="lab button">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">draggable</div>
+                        <div class="entry-description">Indicates that the element is draggable</div>
+                        <div class="entry-notes">Use this in conjunction with <a href="http://www.w3schools.com/html/html5_draganddrop.asp">drag-and-drop scripting</a></div>
+                        <div class="entry-example">
+                            <p>
+                                <img draggable="true" src="../../img/bullet-lab.png">
+                            </p>
                         </div>
                     </div>
 
@@ -396,7 +585,6 @@ paragraph.</pre>
 
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 
         <!-- for highlight.js -->
         <script src="../../lib/highlight/highlight.pack.js"></script>
@@ -415,7 +603,7 @@ paragraph.</pre>
                     var description = jqthis.children('.entry-description').html();
                     var notes = jqthis.children('.entry-notes').html()
 
-                    var html = '<h4 id="' + title + '">' + title + '</h4>';
+                    var html = '<h3 id="' + title + '">' + title + '</h3>';
                     html += '<p class="lead">' + description + '</p>';
                     
                     if (notes)
