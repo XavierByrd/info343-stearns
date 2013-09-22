@@ -33,15 +33,10 @@
                     <h3>Diving into HTML 5</h3>
                     <p class="pull-right"><img src="../../img/html5.png" alt="HTML5 Logo"></p>
                     <ul>
-                        <li>A Bit of History</li>
-                        <li>Tour of HTML 5</li>
+                        <li>A Bit of Historical Context</li>
+                        <li>Tour of the Semantic Parts of HTML 5</li>
                         <li>Segmenting and Reusing Common Content</li>
                     </ul>
-                </section>
-
-                <section>
-                    <p><em>Ask the person next to you...</em></p>
-                    <p>...something...</p>
                 </section>
 
                 <section>
@@ -50,9 +45,8 @@
                 </section>
 
                 <section>
-                    <p>In the late 1980s, Tim Berners-Lee was working at CERN and looking for a way to keep track of all the people there, what projects they were working on, and how they all related.</p>
-                    <p class="fragment">Hypertext seemed like a great idea, but existing tools were too static and centralized.</p>
-                    <p class="fragment">What if pages were simple text files on on multiple hosts, with an easy way to link between them?</p>
+                    <p>Tim Berners-Lee with an early web browser (CERN 1991)</p>
+                    <p><img src="img/bernerslee.jpg" alt="Tim Berners-Lee"></p>
                 </section>
 
                 <section>
@@ -71,68 +65,55 @@
                 </section>
 
                 <section>
-                    <p>Tim Berners-Lee with an early web browser (CERN 1991)</p>
-                    <p><img src="img/bernerslee.jpg" alt="Tim Berners-Lee"></p>
+                    <h2>Semantics &ne; Presentation</h2>
                 </section>
 
                 <section>
-                    <p>First web browser was an augmented version of the NeXT word processor; browsing and editing in the same tool.</p>
-                    <p class="fragment">Simple markup language (HTML) was intended to encode <em>meaning</em> into otherwise plain text.</p>
-                    <p class="fragment">Multipe types of "agents" could display HTML in context-appropriate ways (graphical, console text, print).</p>
-                    <p class="fragment">Semantics &ne; Presentation</p>
-                </section>
-
-                <section>
-                    <p>But as the web caught on, people started using HTML elements to achieve particular visual effects, even if the semantics were all wrong.</p>
-                    <p class="fragment">Presentaiton-oriented tags were added (<code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;font&gt;</code>).</p>
-                    <p class="fragment">Semantics and presentation started to meld...</p>
-                    <p class="fragment">...and HTML descended into <strong>CHAOS</strong>...</p>
-                </section>
-
-                <section>
-                    <p>CSS came along in the late-1990s to re-separate semantics and presentation (hooray!).</p>
-                    <p class="fragment">Meanwhile, the eXtensible Markup Language (XML) was gaining popularity, and some thought it was a better solution for semantic markup than HTML.</p>
-                    <p class="fragment">Thus was born the beast...<strong>XHTML</strong>...</p>
-                    <p class="fragment">...great idea, but too many arbitrary rules....</p>
-                </section>
-
-                <section>
-                    <p>HTML</p>
-                    <pre><code data-trim>&lt;!doctype html&gt;
-&lt;html&gt;
-    &lt;head&gt; ... &lt;head&gt;
-    &lt;body&gt;
-        &lt;p&gt;case-insensitive, end tags sometimes optional,
-        marker attrs OK
-        &lt;img src=&quot;mycat.jpg&quot;&gt;
-        &lt;button disabled&gt;Click Me!&lt;/button&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-                    </code></pre>
-                    
-                    <p>XHTML</p>
-                    <pre><code data-trim>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;
-&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
-&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-    &lt;head&gt; ... &lt;/head&gt;
-    &lt;body&gt;
-        &lt;p&gt;case-sensitive, end tags or self-close required,
-        attrs must have a value&lt;/p&gt;
-        &lt;img src=&quot;mycat.jpg&quot; /&gt;
-        &lt;button disabled=&quot;disabled&quot;&gt;Click Me!&lt;/button&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
+                    <pre><code>
+&lt;font face=&quot;Comic Sans&quot; size=&quot;3&quot; color=&quot;blue&quot;&gt;
+    And how exactly do I change the font on all my pages?
+&lt;/font&gt;
                     </code></pre>
                 </section>
 
                 <section>
-                    <p>XHTML never really caught on, mostly because it was such a pain to write!</p>
-                    <p class="fragment">An alternative plan was hatched by a group of renegades, which soon became known as "HTML 5."</p>
-                    <p class="fragment">Intent was to clean up HTML, keep it simple, and return to a focus on semantics.</p>
+                    <pre><code>
+&lt;font face=&quot;Comic Sans&quot; size=&quot;3&quot; color=&quot;blue&quot;&gt;
+    &lt;blink&gt;Arrrrrrgggggghhhhhh!!!!!&lt;/blink&gt;
+&lt;/font&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <p><img src="img/css.jpg" alt="CSS Logo"></p>
+                </section>
+
+                <section>
+                    <p><img src="img/xhtml.jpg" alt="XHTML Logo"></p>
                 </section>
 
                 <section>
                     <p><img src="../../img/html5.png" alt="HTML5 Logo"></p>
+                </section>
+
+                <section>
+                    <h2>HTML 5 Semantics</h2>
+                    <p><a target="_blank" href="../../examples/html/reference.html">HTML Semantic Reference</a></p>
+                </section>
+
+                <section>
+                    <h2>HTML 5 Meta-Data</h2>
+                    <p><a target="_blank" href="../../examples/html/meta-data.html">HTML Meta-Data Reference</a></p>
+                </section>
+
+                <section>
+                    <h2>HTML 5 Character Entities</h2>
+                    <p><a target="_blank" href="http://dev.w3.org/html5/html-author/charref">HTML Character Entities Reference</a></p>
+                </section>
+
+                <section>
+                    <h2>Segmenting and Reusing Common Content</h2>
+                    <p><a target="_blank" href="http://httpd.apache.org/docs/2.2/howto/ssi.html">Apache Server-Side Includes</a></p>
                 </section>
 
 

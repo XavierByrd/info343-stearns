@@ -70,10 +70,11 @@ ul.file-tree-description li {
 	font-style: italic;
 }
 
-.pic-quote img {
+.reveal section .pic-quote img {
 	float: left;
+	margin-right: 20px;
 }
-.pic-quote blockquote {
+.reveal section .pic-quote blockquote {
 	text-align: left;
 	border: 0;
 	width: 100%;
@@ -84,10 +85,10 @@ ul.file-tree-description li {
 	background: inherit;
 	box-shadow: none;
 }
-.pic-quote .source {
+.reveal section .pic-quote .source {
 	text-align: right;
 	font-size: 80%;
 }
-.pic-quote .source cite {
+.reveal section .pic-quote .source cite {
 	font-style: italic;
 }

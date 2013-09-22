@@ -14,7 +14,7 @@
       <div class="reveal">
           <div class="slides">
 
-            <section data-background="../img/retina_wood.png" data-background-size="512px" data-background-repeat="repeat">
+            <section data-background="../img/subtle_grunge.png" data-background-size="512px" data-background-repeat="repeat">
                 <h1>INFO 343</h1>
                 <h2>Web Technologies</h2>
                 <p>Dr David Stearns</p>
@@ -37,6 +37,7 @@
                 <ul>
                     <li>What's your name?</li>
                     <li>Where are you from (hometown)?</li>
+                    <li>What's your major and year in school?</li>
                     <li>What is the coolest web site you've ever seen?</li>
                     <li>What is your greatest fear about this class?</li>
                     <li>What do you most want to learn in this class?</li>

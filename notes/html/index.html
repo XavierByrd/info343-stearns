@@ -107,15 +107,20 @@
         
         <li>A Tour of HTML 5
             <ol>
-                <li>Note that this tour will be of the semantic elements, and not those used purely for formatting hooks or scripting (e.g., <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;canvas&gt;</code>, etc.)</li>
+                <li>Note that this tour will be of the semantic elements, and not those used purely for formatting hooks or scripting (e.g., <code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>, <code>&lt;canvas&gt;</code>, <code>&lt;progress&gt;</code>, etc.)</li>
 
                 <li>Review of Document Structure and Syntax
                     <ol>
                         <li>Hierarchical set of elements, each of which may have attributes and content, which may include sub-elements</li>
+                        
                         <li>Document divided into <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> sections</li>
+                        
                         <li>Non-visible meta-data goes in <code>&lt;head&gt;</code></li>
+                        
                         <li>Visible content goes in <code>&lt;body&gt;</code></li>
+                        
                         <li>Older standards made a distinction between "block" and "inline" content, but with CSS 3, those distinctions are merely default layout behavior that you can change, so these aren't really useful distinctions anymore</li>
+                        
                         <li>Rather, HTML 5 defines a few different kinds of semantic body content: paragraphs, phrasing, embedded, sectioning, and interactive</li>
                     </ol>
                 </li>
@@ -130,6 +135,32 @@
 
 
         <li>Segmenting and Re-Using Content
+            <ol>
+                <li>When web sites are broken into several pages, you often find yourself putting the same header and footer content into all your pages.</li>
+
+                <li>But this introduces a duplication of content that you now need to keep in sync. What happens when you want to change something in the footer? You'd have to go and change every file.</li>
+
+                <li>If you find yourself copying and pasting content between pages, stop and use a different technique: <a href="http://httpd.apache.org/docs/2.2/howto/ssi.html">server-side includes (SSIs)</a>:
+
+                    <ol>
+                        <li>Server-side includes are special comments interpreted by the server <em>before</em> the page is returned to the client</li>
+
+                        <li>You can use them to do a few different things (include current date-time, file info), but the thing we'll focus on here is including common markup into multiple pages</li>
+
+                        <li>You need to do 2 things to make them work:
+                            <ol>
+                                <li>change your page file extension to <code>.shtml</code> instead of <code>.html</code>. This tells the server that it should look inside your file for SSIs. This helps overall server performance, since it won't look inside other files.</li>
+                                <li>Add this to the spot where you want the contents of your include file to go: <code>&lt;!--#include virtual=&quot;inc/footer.html&quot; --&gt;</code>. This includes the contents of <code>inc/footer.html</code> at the spot where the SSI was.</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+
+                <li>Use SSIs for common headers, footers, scripts, stylesheet links, etc.</li>
+
+                <li>SSIs enable you to uphold another key programming principle: Don't Repeat Yourself (DRY). Content should only appear once in your sources, unless there is a legitimate performance need to repeat it in several places.</li>
+
+            </ol>
         </li> <!-- segmenting and re-using content -->
     </ol>
 
