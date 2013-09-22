@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notes for Adding Some Style Lecture">
+    <meta name="author" content="David Stearns">
+    <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
+
+    <title>Adding Some Style: Intro to CSS 3</title>
+
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/notes.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+    <!--#include virtual="../inc/crumbtrail.html" -->
+        
+    <div class="page-header notes-header">
+        <h1>Adding Some Style: Intro to CSS 3</h1>
+        <p class="lead">Dr David Stearns, Autumn 2013</p>    
+    </div>
+
+    <ol class="lecture-outline">
+        <li>Introduction
+        </li>
+
+        <li>Three Ways of Adding Styles
+        </li>
+
+        <li>CSS Syntax
+        </li>
+
+        <li>CSS Selectors
+        </li>
+
+        <li>Styling Text
+        </li>
+
+        <li>Styling Lists
+        </li>
+
+        <li>Styling Links
+        </li>        
+
+        <li>Styling Boxes
+        </li>
+
+        <li>Styling Tables
+        </li>
+
+    </ol>
+
+    </div> <!-- .container -->
+
+    
+</body>
+</html>

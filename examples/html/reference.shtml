@@ -278,7 +278,7 @@ paragraph.</pre>
                         </div>
                     </div>
 
-                    <h2>Lists and Glossaries</h2>
+                    <h2>Lists, Glossaries, and Tables</h2>
                     <p>These elements define lists of related items</p>
 
                     <div class="entry">
@@ -337,6 +337,35 @@ paragraph.</pre>
                                 <dt>HTTP</dt>
                                 <dd>Hypertext Transfer Protocol</dd>
                             </dl>
+                        </div>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-title">table, tbody, thead, tr, th, td</div>
+                        <div class="entry-description">Tabular information</div>
+                        <div class="entry-notes">Tables should be used only for tabular information, not for page layout.</div>
+                        <div class="entry-example">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Height</th>
+                                        <th>Weight</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Mary Somebody</td>
+                                        <td>5' 2"</td>
+                                        <td>130 lbs</td>
+                                    </tr>
+                                    <tr>
+                                        <td>John Otherperson</td>
+                                        <td>6' 5"</td>
+                                        <td>200 lbs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
