@@ -66,6 +66,8 @@
 
         <div class="container">
 
+            <!--#include virtual="../inc/crumbtrail.html" -->
+
             <div class="page-header example-header">
                 <h1>HTML Semantic Reference</h1>
                 <p class="lead">Dr David Stearns, The Information School, University of Washington</p>

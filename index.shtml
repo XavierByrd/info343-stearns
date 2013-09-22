@@ -97,8 +97,8 @@
         <h3><small>HTML</small></h3>
 
         <ul class="examples">
-          <li><a href="examples/html/reference.html">HTML Semantic Reference</a></li>
-          <li><a href="examples/html/meta-data.html">HTML Meta-Data Reference</a></li>
+          <li><a href="examples/html/reference.shtml">HTML Semantic Reference</a></li>
+          <li><a href="examples/html/meta-data.shtml">HTML Meta-Data Reference</a></li>
         </ul>
        
 
