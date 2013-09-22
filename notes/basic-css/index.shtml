@@ -26,15 +26,123 @@
 
     <ol class="lecture-outline">
         <li>Introduction
+            <ol>
+                <li>In our last class, we learned that HTML is for encoding meaning into otherwise plain text, and CSS is for specifying how those semantics should actually appear on screen</li>
+
+                <li>Today we'll dive into CSS and learn how to alter the appearance of text, lists, links, boxes, and tables</li>
+
+                <li>But we'll also learn a bit about graphic design in general; CSS lets you do anything you want, so its up to you to use it <em>tastefully</em></li>
+
+                <li>We'll touch on page layout when we discuss design principles, but we'll wait to cover page layout in CSS until next week, as it can get pretty complicated</li>
+            </ol>
+        </li>
+
+        <li>Basic Graphic Design Principles
+            <ol>
+                <li>Color
+                </li>
+                <li>Typography
+                </li>
+                <li>Whitespace
+                </li>
+                <li>Layout
+                </li>
+            </ol>
+        </li>
+
+        <li>Element Sub-Classes
+            <ol>
+                <li>HTML elements encode meaning, but sometimes you need to define a few subtle shades of that meaning</li>
+                
+                <li>For example, a <code>&lt;p&gt;</code> element denotes a paragraph, but you might need to make a distinction between a paragraph containing normal text, and a paragraph containing the name of a company, or a copyright declaration, or whatever; in essence, you want to define a sub-class of paragraph</li>
+
+                <li>Furthermore, the set of HTML elements is limited, and you may find yourself wanting to mark a block or run of text as having a meaning other than one of the built-in HTML semantics (e.g., the name of a software program, an organizational motto, a customer name, etc.)</li>
+
+                <li>HTML provides three things that help you do both of these:
+                    <ol>
+                        <li>a <code>class</code> attribute, which can be added to any HTML element to specify its sub-class</li>
+
+                        <li>the <code>&lt;div class=&quot;...class...&quot;&gt;</code> element, which can be used to mark a block of content that has a meaning other than one of the built-in HTML block elements</li>
+
+                        <li>the <code>&lt;span class=&quot;...class...&quot;&gt;</code> element, which can be used to make a run of content that has a meaning other than one of the built-in HTML phrasing elements</li>
+
+                        <li>Although most browsers will let you use non-standard elements (e.g., <code>&lt;customer&gt;</code>, the HTML 5 spec prohibits that, and validation tools will consider that an error; it's also a dangerous practice, as the W3C may decide to define a new element by that name in the future, but assign it a different meaning</li>
+                    </ol>
+                </li>
+
+                <li>Once you've assigned a style class to an element, you can then provide specific formatting instructions for that class in your CSS</li>
+
+                <li>You can also refer to all elements of that class in your scripts (more on that later in the course)</li>
+            </ol>
         </li>
 
         <li>Three Ways of Adding Styles
+            <ol>
+                <li>External Style Sheet(s)
+                    <ol>
+                        <li>Generally the best option, as it keeps styles in a separate file from semantic HTML</li>
+                        
+                        <li>Site formatting is defined in only one place, making it easy to change and keep consistent (DRY principle)</li>
+
+                        <li>Establishes separate domains for designers vs developers</li>
+                        
+                        <li>Pages can include multiple style sheets, enabling you to break less-used styles into separate, optional files</li>
+                        
+                        <li>Pages link to style sheets using <code>&lt;link&gt;</code> tag in <code>&lt;head&gt;</code>
+                            <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;</code></pre>
+                        </li>
+
+                        <li>External style sheets typically go in a <code>css/</code> sub-directory</li>
+
+                        <li>Style sheets from third-party CSS frameworks typically go in <code>lib/</code> sub-directory</li>
+                    </ol>
+                </li>
+
+                <li>Internal Style Block
+                    <ol>
+                        <li>Useful for pages that are meant to travel (e.g., HTML email) or be viewed off-line from the local file system; since styles are in the same file, no network access needed</li>
+
+                        <li>Specified in <code>&lt;style&gt;</code> element in <code>&lt;head&gt;</code> section
+                            <pre><code>&lt;head&gt;
+    ...other head tags...
+    &lt;style&gt;
+        ...style rules go here...    
+    &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+                        </li>
+
+                    </ol>
+                </li>
+
+                <li>Individual Element Style
+                    <ol>
+                        <li>Avoid this if you can; use only as a last resort!</li>
+                        <li>Specified in <code>style</code> attribute of the element
+                            <pre><code>&lt;p style=&quot;font-family: &#039;Times New Roman&#039;;&quot;&gt;...&lt;/p&gt;</code></pre>
+                        </li>
+                        <li>Value contains only property/value declarations that are directly applied to the element; no selector needed.</li>
+                    </ol>
+                </li>
+            </ol>
         </li>
 
         <li>CSS Syntax
+            <ol>
+                <li>Expressed as a set of rules</li>
+                <li>Each rule starts with one or more selectors, which define what the rule applies to</li>
+                <li>Followed by one or more property/value declarations, each ending with a semi-colon, which provide specific formatting instructions:
+                    <pre><code>body 
+{
+    font-family: Helvetica, Arial, sans-serif;
+}</code></pre>
+                </li>
+            </ol>
         </li>
 
         <li>CSS Selectors
+        </li>
+
+        <li>CSS Units
         </li>
 
         <li>Styling Text
@@ -50,6 +158,9 @@
         </li>
 
         <li>Styling Tables
+        </li>
+
+        <li>Inheritance and the Cascade
         </li>
 
     </ol>
