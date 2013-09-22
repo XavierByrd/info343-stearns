@@ -65,6 +65,14 @@
                 </section>
 
                 <section>
+                    <div class="pic-quote">
+                        <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
+                        <blockquote>"In an extreme view, the world can be seen as only connections, nothing else. We think of a dictionary as the repository of meaning, but it defines words only in terms of other words. I liked the idea that a piece of information is really defined only by what it's related to, and how it's related. There really is little else to meaning. The structure is everything.</blockquote>
+                        <p class="source">Time Berners-Lee, <cite>Weaving the Web</cite>, p 12</p>
+                    </div>                    
+                </section>
+
+                <section>
                     <h2>Semantics &ne; Presentation</h2>
                 </section>
 
@@ -86,6 +94,10 @@
 
                 <section>
                     <p><img src="img/css.jpg" alt="CSS Logo"></p>
+                </section>
+
+                <section>
+                    <p><img src="img/xml.png" alt="XML Logo"></p>
                 </section>
 
                 <section>
