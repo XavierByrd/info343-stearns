@@ -1,28 +1,130 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Styling Links</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Styling Links</title>
 
-		<style>
-		/* normally, this should go into a separate file, but I've 
-		included it here so that it's easier to see in conjunction
-		with the HTML markup */
-		
-		/* a very common link styling is to make them dark blue
-		and show the underline only when hovering over the link */
-		a:link, a:visited {
-			color: #000099;
-			text-decoration: none;
-		}
-		a:hover {
-			text-decoration: underline;
-		}
-		</style>
-	</head>
-	<body>
-		<p>A common styling for links is to make both visited and non-visited links dark blue, and underlined only when the mouse is hovering over them. View the source of this page to see how that is done.</p>
+        <style>
+        /* normally, this should go into a separate file, but I've 
+        included it here so that it's easier to see in conjunction
+        with the HTML markup */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+        }
 
-		<p>A sample link to the <a href="http://courses.washington.edu/info343">INFO 343 Course Companion Site</a>.</p>
-	</body>
+        /* browsers underlne links by default, but its common for 
+        designers to make them a color a bit lighter than black
+        and not underlined until you hover over or activate the link */
+        a:link, 
+        a:visited {
+            color: #573B8E;
+            text-decoration: none;
+        }
+
+        a:hover, 
+        a:active,
+        a:focus {
+            text-decoration: underline;
+            color: #724EBA;
+        }
+
+        /* links in a ul in the nav element are you main site navigation 
+        and they can be displayed in a few different ways. The styles here
+        support two different looks: a solid navbar, and individual tabs. */
+        /* first the things that are common:
+        - the li elements should be displayed as inline blocks, as opposed
+        to their normal stacked appearance
+        - we also set the list style to none so we don't see bullets 
+        - center-aligned text, with some padding */
+        nav li {
+            display: inline-block;
+            list-style: none;
+            text-align: center;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        /* remove the underline from the links and keep them the same color */
+        nav a:visited,
+        nav a:link,
+        nav a:hover {
+            color: #D7A900;
+            text-decoration: none;
+        }
+
+        /* now the things specific to the navbar style
+        - ul gets a background color so it looks like a bar across the screen
+        - margin and padding set to 0 so that when we highlight the li on hover
+          it looks like the entire section of the navbar is highlighted */
+        nav.navbar ul {
+            width: 100%;
+            background-color: #39275B;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* for the tabs style, no background color, but do include
+        a border on the bottom */
+        nav.tabs ul {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            border-bottom: 1px solid #39275B;
+        }
+
+        /* and the li elements should have rounded corners on the
+        top-left and top-right so they look like tabs */
+        nav.tabs li {
+            background-color: #39275B;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        /* finally, the li elements in both the navbar and tabs 
+        should get a lighter background shade on hover */
+        nav li:hover {
+            background-color: #573B8E;
+        }
+        </style>
+    </head>
+    <body>
+
+        <h1>Styling Links</h1>
+
+        <p>This page shows a few of the common ways in which you might want to style links. To see how each is accomplished, right click on the page and select "View Page Source" on the context menu.</p>
+
+        <h2>Site Navigation</h2>
+
+        <p>Your main site navigation links are typically marked up as links inside an unordered list, inside a nav element. Using CSS, we can transform those into something that looks like a navigation bar.</p>
+
+        <nav class="navbar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Jobs</a></li>
+            </ul>
+        </nav>
+
+        <p>And here's the same nav, but with a tab look rather than a navbar look. The only change in the markup is a class attribute set to "tabs" instad of "navbar" and some CSS that uses the class to apply different effects.</p>
+
+        <nav class="tabs">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Jobs</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <h2>Nicer Links in the Body</h2>
+
+            <p>A common styling for links is to make both visited and non-visited links a slightly lighter color than black, and underlined only when the mouse is hovering over them or when activated. View the source of this page to see how that is done.</p>
+
+            <p>A sample link to the <a href="http://courses.washington.edu/info343">INFO 343 Course Companion Site</a>.</p>
+            
+        </article>
+    </body>
 </html>
