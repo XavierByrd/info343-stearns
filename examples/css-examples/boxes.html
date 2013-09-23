@@ -84,7 +84,18 @@
             border: 1px solid #CCC;
         }
 
-        /* an box offset from the left by 150px */
+        /* boxes can be made semi-transparent */
+        .textured-brick {
+            background-image: url(img/brick.jpg);
+            padding: 10px;
+        }
+
+        .overlay {
+            background-color: rgba(255,255,255,0.7);
+            padding: 10px;
+        }
+
+        /* a box offset from the left by 150px */
         .offset {
             margin-left: 150px;
             padding: 10px;
@@ -144,6 +155,14 @@
         <p class="textured">This box has an interesting background texture. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, officia, ab ad cum voluptate harum ratione atque modi vitae voluptates minima ea quidem odio ipsum veniam libero saepe inventore earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, aliquam, atque sint molestias laudantium fugiat rem minima nobis explicabo ullam qui labore incidunt ipsa facilis illum dolor soluta optio a!</p>
 
         <p class="icon-left">This box has an icon displayed on the left to help the user understand what it's about. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, molestias obcaecati libero dolorem quam neque optio voluptate ducimus mollitia illum quo odit sequi et hic quidem reprehenderit accusamus veniam nobis.</p>
+
+        <h2>Overlays</h2>
+        <p>Sometimes you'll want to overlay some text on an image. Use an rgba() background color to create a semi-transparent overlay.</p>
+
+        <div class="textured-brick">
+            <p class="overlay">This text is in a box inside the box with the brick background. It uses an rgba() background color of white, with a partial transparency so that you can see the bricks through it, but still also read the black text on top. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, nemo, in, reprehenderit esse excepturi cumque quae architecto quibusdam commodi nam eos iusto delectus animi fugit optio explicabo eaque minus molestiae!</p>            
+        </div>
+
 
         <h2>Offsets</h2>
 
