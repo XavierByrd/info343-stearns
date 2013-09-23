@@ -275,7 +275,7 @@ body > p:first-of-type:first-letter {...}
 
         <li><a href="../../examples/css-examples/lists.html">Styling Lists</a></li>
 
-        <li>Styling Tables</li>
+        <li><a href="../../examples/css-examples/tables.html">Styling Tables</a></li>
 
         <li>Inheritance and the Cascade
         </li>

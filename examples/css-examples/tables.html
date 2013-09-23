@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Styling Tables</title>
+        <style>
+        /* normally, this should go into a separate file, but I've 
+        included it here so that it's easier to see in conjunction
+        with the HTML markup */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            margin: 10px;
+            margin-bottom: 100px;
+        }
+
+        /* a few common settings for both light and heavy looks 
+        make the table 100% wide rather than just wide enough to fit
+        the content*/ 
+        table.light, table.heavy {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* add a bit of padding to ths and tds */
+        table.light th, 
+        table.light td,
+        table.heavy th,
+        table.heavy td {
+            padding: 5px;
+        }
+
+        /* for the light look, we only use lightly-colored bottom borders */ 
+        table.light th {
+            text-align: left;
+            border-bottom: 1px solid #CCC;
+        }
+
+        table.light td {
+            border-bottom: 1px solid #EEE;
+        }
+
+        /* row striping is easily done using the :nth-child pseudo selector */
+        table.striped tr:nth-child(even) {
+            background-color: #EEE;
+        }
+
+        /* row hover highlighting */
+        table.hover-highlight tbody tr:hover {
+            background-color: #DDF;
+            cursor: pointer;
+        }
+
+        /* and for the heavy look, use thicker, darker borders
+        and shading on the ths */
+        table.heavy th {
+            background-color: #AAA;
+            text-align: left;
+            border: 2px solid #999;
+        }
+
+        table.heavy td {
+            border: 2px solid #AAA;
+        }
+
+        </style>
+    </head>
+    <body>
+        <h1>Styling Tables</h1>
+
+        <p>By default, browsers don't do much when formatting tables. Table headings (th) are usually centered and rendered in bold, but that's about it. But you can make your tables look much nicer by applying a bit of CSS. Like the other example pages, right click and choose "View Page Source" to see how this is done.</p>
+
+        <h2>Browser Default</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Heading 1</th>
+                    <th>Heading 2</th>
+                    <th>Heading 3</th>
+                    <th>Heading 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1 Col 1</td>
+                    <td>Row 1 Col 2</td>
+                    <td>Row 1 Col 3</td>
+                    <td>Row 1 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 2 Col 1</td>
+                    <td>Row 2 Col 2</td>
+                    <td>Row 2 Col 3</td>
+                    <td>Row 2 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 3 Col 1</td>
+                    <td>Row 3 Col 2</td>
+                    <td>Row 3 Col 3</td>
+                    <td>Row 3 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 4 Col 1</td>
+                    <td>Row 4 Col 2</td>
+                    <td>Row 4 Col 3</td>
+                    <td>Row 4 Col 4</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Light Look</h2>
+        <table class="light">
+            <thead>
+                <tr>
+                    <th>Heading 1</th>
+                    <th>Heading 2</th>
+                    <th>Heading 3</th>
+                    <th>Heading 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1 Col 1</td>
+                    <td>Row 1 Col 2</td>
+                    <td>Row 1 Col 3</td>
+                    <td>Row 1 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 2 Col 1</td>
+                    <td>Row 2 Col 2</td>
+                    <td>Row 2 Col 3</td>
+                    <td>Row 2 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 3 Col 1</td>
+                    <td>Row 3 Col 2</td>
+                    <td>Row 3 Col 3</td>
+                    <td>Row 3 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 4 Col 1</td>
+                    <td>Row 4 Col 2</td>
+                    <td>Row 4 Col 3</td>
+                    <td>Row 4 Col 4</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Heavier Look</h2>
+        <table class="heavy">
+            <thead>
+                <tr>
+                    <th>Heading 1</th>
+                    <th>Heading 2</th>
+                    <th>Heading 3</th>
+                    <th>Heading 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1 Col 1</td>
+                    <td>Row 1 Col 2</td>
+                    <td>Row 1 Col 3</td>
+                    <td>Row 1 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 2 Col 1</td>
+                    <td>Row 2 Col 2</td>
+                    <td>Row 2 Col 3</td>
+                    <td>Row 2 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 3 Col 1</td>
+                    <td>Row 3 Col 2</td>
+                    <td>Row 3 Col 3</td>
+                    <td>Row 3 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 4 Col 1</td>
+                    <td>Row 4 Col 2</td>
+                    <td>Row 4 Col 3</td>
+                    <td>Row 4 Col 4</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Light with Row Striping</h2>
+        <table class="light striped">
+            <thead>
+                <tr>
+                    <th>Heading 1</th>
+                    <th>Heading 2</th>
+                    <th>Heading 3</th>
+                    <th>Heading 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1 Col 1</td>
+                    <td>Row 1 Col 2</td>
+                    <td>Row 1 Col 3</td>
+                    <td>Row 1 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 2 Col 1</td>
+                    <td>Row 2 Col 2</td>
+                    <td>Row 2 Col 3</td>
+                    <td>Row 2 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 3 Col 1</td>
+                    <td>Row 3 Col 2</td>
+                    <td>Row 3 Col 3</td>
+                    <td>Row 3 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 4 Col 1</td>
+                    <td>Row 4 Col 2</td>
+                    <td>Row 4 Col 3</td>
+                    <td>Row 4 Col 4</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Light with Striping and Row Hover Highlighting</h2>
+        <table class="light striped hover-highlight">
+            <thead>
+                <tr>
+                    <th>Heading 1</th>
+                    <th>Heading 2</th>
+                    <th>Heading 3</th>
+                    <th>Heading 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1 Col 1</td>
+                    <td>Row 1 Col 2</td>
+                    <td>Row 1 Col 3</td>
+                    <td>Row 1 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 2 Col 1</td>
+                    <td>Row 2 Col 2</td>
+                    <td>Row 2 Col 3</td>
+                    <td>Row 2 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 3 Col 1</td>
+                    <td>Row 3 Col 2</td>
+                    <td>Row 3 Col 3</td>
+                    <td>Row 3 Col 4</td>
+                </tr>
+                <tr>
+                    <td>Row 4 Col 1</td>
+                    <td>Row 4 Col 2</td>
+                    <td>Row 4 Col 3</td>
+                    <td>Row 4 Col 4</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </body>
+</html>
