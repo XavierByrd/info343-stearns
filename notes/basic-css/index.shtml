@@ -29,7 +29,7 @@
             <ol>
                 <li>In our last class, we learned that HTML is for encoding meaning into otherwise plain text, and CSS is for specifying how those semantics should actually appear on screen</li>
 
-                <li>Today we'll dive into CSS and learn how to alter the appearance of text, lists, links, boxes, and tables</li>
+                <li>Today we'll dive into CSS and learn how to alter the appearance of boxes, text, links, lists, and tables</li>
 
                 <li>But we'll also learn a bit about graphic design in general; CSS lets you do anything you want, so its up to you to use it <em>tastefully</em></li>
 
@@ -41,12 +41,67 @@
         <li>Basic Graphic Design Principles
             <ol>
                 <li>Color
+                    <ol>
+                        <li>Unless you are confident as a graphic artist, use one of the thousands of <a href="http://www.colourlovers.com/palettes">color palettes</a> <a href="https://kuler.adobe.com/explore/newest/">already defined</a> by talented graphic designers.</li>
+                        
+                        <li>In general, you use one color for headlines; one color for body text; one or two colors for backgrounds; and one or two accent colors that stand out compared to the others. Backgrounds and body text can also be reversed.</li>
+                        
+                        <li>The meaning and appropriate use of color is cultural: some cultures favor stark, simple and clean colors, while others prefer bold, saturated, and dynamic colors. Use colors that are appropriate for your target audience. Look at sites they are already frequenting.</li>
+                    </ol>
                 </li>
                 <li>Typography
+                    <ol>
+                        <li>Two basic categories of fonts: serif and sans-serif</li>
+                        <li>The former is generally better for screens, while the latter can be better for print</li>
+                        <li>Sans-Serif is generally good for headings if using serifed font in body</li>
+                        <li>Browsers guarantee something for 'serif' and 'sans-serif'; Helvetica and Arial are also pretty safe</li>
+                        <li>Other fonts are not guaranteed (esp. on Linux clients), so it's best to be explicit and use a custom font</li>
+                        <li><a href="http://www.google.com/fonts">Google Fonts</a> is an easy source for free, custom fonts</li>
+                    </ol>
                 </li>
                 <li>Whitespace
+                    <ol>
+                        <li>Graphic whitespace is like resting in music; if you never stop playing, it gets monotonous</li>
+                        
+                        <li>A healthy use of whitespace will draw attention to what really matters on the page; set off what's important from the details</li>
+
+                        <li>Browsers have an inconsistent amount of default whitespace, so it's best to use a <a href="http://meyerweb.com/eric/tools/css/reset/">reset CSS block</a> to reset all defaults back to zero, and then define your own margins and padding from there.</li>
+                    </ol>
+                </li>
+                <li>Graphics
+                    <ol>
+                        <li>Icons
+                            <ol>
+                                <li>Icons can help users understand the meaning of something, or help them find what they are looking for quickly</li>
+                                <li>Lots of <a href="https://www.iconfinder.com/">free icon libraries</a> out there.</li>
+                            </ol>
+                        </li>
+                        <li>Background textures and images
+                            <ol>
+                                <li><a href="http://subtlepatterns.com/">Subtle background textures</a> add depth and interest, but make sure you can still read the text!</li>
+                                <li>Use overlays or opaque boxes on top of richly colored backgrounds (I'll show you that later)</li>
+                            </ol>
+                        </li>
+
+                        <li>Featured images
+                            <ol>
+                                <li>People are drawn to high-quality images so use them to pull their eyes toward important parts of the page</li>
+                                
+                                <li>Picture style says a lot about your site&mdash;hire a pro and talk about how you want people to feel when they look at your featured images</li>
+
+                                <li>Or buy some stock photography if you find something that fits your aesthetic</li>
+                            </ol>
+                        </li>
+                    </ol>
                 </li>
                 <li>Layout
+                    <ol>
+                        <li>Readers tend to scan pages by looking across the top, and then down the left side of the page, so put your important stuff there, especially site navigation</li>
+
+                        <li>Commonly, site-wide nav goes across the top, while sub or page-level nav goes on the left, or occasionally right side</li>
+                        
+                        <li>Follow conventions established by leading sites in your general arena</li>
+                    </ol>
                 </li>
             </ol>
         </li>
@@ -65,15 +120,15 @@
 
                         <li>the <code>&lt;div class=&quot;...class...&quot;&gt;</code> element, which can be used to mark a block of content that has a meaning other than one of the built-in HTML block elements</li>
 
-                        <li>the <code>&lt;span class=&quot;...class...&quot;&gt;</code> element, which can be used to make a run of content that has a meaning other than one of the built-in HTML phrasing elements</li>
+                        <li>the <code>&lt;span class=&quot;...class...&quot;&gt;</code> element, which can be used to mark a run of content that has a meaning other than one of the built-in HTML phrasing elements</li>
 
-                        <li>Although most browsers will let you use non-standard elements (e.g., <code>&lt;customer&gt;</code>, the HTML 5 spec prohibits that, and validation tools will consider that an error; it's also a dangerous practice, as the W3C may decide to define a new element by that name in the future, but assign it a different meaning</li>
+                        <li>Although most browsers will let you use non-standard elements (e.g., <code>&lt;customer&gt;</code>), the HTML 5 spec prohibits that, and validation tools will consider that an error; it's also a dangerous practice, as the W3C may decide to define a new element by that name in the future, but assign it a different meaning</li>
                     </ol>
                 </li>
 
-                <li>Once you've assigned a style class to an element, you can then provide specific formatting instructions for that class in your CSS</li>
+                <li>Once you've assigned a style class to an element, you can then provide specific formatting instructions for that class in your CSS; this is the generally preferred way to specify formatting rules that apply to only some elements of a given type</li>
 
-                <li>Note that you can assign more than one class to an element; when you do so, the element conceptually belongs to both classes, and will recieve both sets of formatting instructions.</li>
+                <li>Note that you can assign more than one class to an element; when you do so, the element conceptually belongs to both classes, and browsers will apply both sets of formatting instructions (in the order they are defined).</li>
 
                 <li>You can also refer to all elements of that class in your scripts (more on that later in the course)</li>
             </ol>
@@ -120,10 +175,14 @@
                 <li>Individual Element Style
                     <ol>
                         <li>Avoid this if you can; use only as a last resort!</li>
+                        
                         <li>Specified in <code>style</code> attribute of the element
                             <pre><code>&lt;p style=&quot;font-family: &#039;Times New Roman&#039;;&quot;&gt;...&lt;/p&gt;</code></pre>
                         </li>
+                        
                         <li>Value contains only property/value declarations that are directly applied to the element; no selector needed.</li>
+
+                        <li>Almost impossible to manage in a large project</li>
                     </ol>
                 </li>
             </ol>
@@ -147,7 +206,7 @@
 
         <li>CSS Selectors
             <ol>
-                <li>There are many, many types of selectors, but most projects only require a few of them. I'll show you those, and you can refer to the <a href="http://www.w3schools.com/cssref/css_selectors.asp">w3cschools CSS selector reference for a full list</a>.</li>
+                <li>There are many, many types of selectors, but most projects only require a few of them. I'll show you those, and you can refer to the <a href="http://www.w3schools.com/cssref/css_selectors.asp">w3cschools CSS selector reference</a> for a full list.</li>
 
                 <li>Basic Selectors
                     <ol>
@@ -166,7 +225,7 @@ p.motto {...}</code></pre>
                         
                         <li>Attribute selectors
 <pre><code>/* applies to all &lt;a&gt; elements with target="_blank"
-a[target=_blank] {}</code></pre>
+a[target='_blank'] {}</code></pre>
                         </li>
                     </ol>
                 </li>
@@ -217,7 +276,10 @@ a:visited {...}
 a:link {...}
 
 /* applies to links the user is actively selecting */
-a:active {...}</code></pre>
+a:active {...}
+
+/* applies to links that have keyboard focus */
+a:focus {...}</code></pre>
                         </li>
                         
                         <li>Child pseudo selectors
@@ -227,9 +289,9 @@ body > p:first-of-type {...}
 /* applies to the last &lt;p&gt; in the &lt;body&gt; */
 body > p:last-of-type {...}
 
-/* applies to every other table row 
+/* applies to even rows in a table 
 (useful for striping rows) */
-table tr:nth-of-type(2) {...}</code></pre>
+table tr:nth-of-type(even) {...}</code></pre>
                         </li>
                         
                         <li>Text pseudo selectors

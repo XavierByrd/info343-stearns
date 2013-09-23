@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="INFO 343 Basic Site Lab">
+    <meta name="author" content="David Stearns">
+    <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
+
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css" media="screen">
+    <link rel="stylesheet" href="../../css/footer.css">
+
+    <link rel="stylesheet" href="../css/labs.css">
+
+    <title>Lab 1: Managing Your Files</title>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../lib/html5shiv/html5shiv.js"></script>
+      <script src="../../lib/respond/respond.min.js"></script>
+    <![endif]-->
+
+    
+</head>
+<body>
+    <div class="container">
+
+    <!--#include virtual="../inc/crumbtrail.html" -->
+
+    <article class="lab">
+
+        <div class="page-header lab-title">
+            <h1>Lab 2: Building a Basic Web Site</h1>
+            <p class="lead">HTML, CSS, and Server-Side Includes</p>
+        </div>
+
+        <p>In our previous lab, we practiced using various tools and techniques to manage our files, but we didn't worry all that much about what was <em>inside</em> those files. In this lab, you will practice the following skills, which we learned this week:</p>
+
+        <ul>
+            <li>Writing a well-formed, semantically-correct series of related HTML files</li>
+            <li>Segmenting content that is common to all pages into server-side includes</li>
+            <li>Styling your HTML with basic CSS</li>
+        </ul>
+
+        <h2>General Instructions</h2>
+        <ol>
+            <li>If you get stuck at any point, search the Internet, ask your neighbor, or ask the TA for help.</li>
+            <li>At the end of the lab, submit your published site URL via the <a href="https://canvas.uw.edu/courses">Canvas assignment</a> for this lab.</li>
+            <li>If you don't finish all the required tasks during our lab time, finish them over the weekend and submit your published site URL before 8:00am on Monday morning.</li>
+            <li>If you finish all the required steps, go on and try some of the optional ones.</li>
+        </ol>
+
+        <h2>Required Steps</h2>
+        <ol>
+            <li>Build your html pages, utilizing server-side includes where appropriate</li>
+            <li>Style your pages to look like the target screen shot</li>
+            <li>Publish your site to your student web hosting server and submit the site URL via Canvas</li>
+        </ol>
+
+        <h3>Building the Pages</h3>
+
+        <h3>Style your Pages</h3>
+
+        <h3>Publish your Site and Submit via Canvas</h3>
+
+
+        <h2>Optional Steps</h2>
+        <ol>
+            <li></li>
+            <li></li>
+        </ol>
+
+
+    </article>
+    </div> <!-- .conatiner -->
+
+</body>
+</html>
