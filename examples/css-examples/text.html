@@ -62,7 +62,7 @@
         blockquote .source {
             text-align: right;
         }
-        blockquote cite {
+        cite {
             font-style: italic;
         }
 
@@ -88,6 +88,7 @@
         /* use our custom google font */
         .fancy {
             font-family: 'Bubbler One', sans-serif;
+            font-size: 20px;
         }
 
         /* make inserted text dark blue and deleted text dark red */
@@ -96,6 +97,14 @@
         }
         del {
             color: #990000;
+        }
+
+        /* hanging indents are accomplished by padding all the text
+        on the left by some amount, and then using text-indent to 
+        un-indent the first line by the same amount */
+        .bib-entry {
+            padding-left: 22px;
+            text-indent: -22px;
         }
 
 
@@ -125,21 +134,19 @@
 
     <p lang="fr" class="example">Comme Abraham Lincoln était souvent coutume de dire, <q>je ne pense pas que les gens me citer correctement sur ​​Internet!</q></p>
 
-    <h2>Alerts</h2>
-
-    <p>Sometimes you want to make a paragraph stand out, especially if it provides important information to the reader. Use background colors, borders, and even a background icon to do that.</p>
-
-    <p class="alert alert-warning">This is a warning. Pay attention to me!</p>
-
-    <p class="alert alert-danger">Danger Will Robinson! Danger!</p>
-
     <h2>Custom Fonts</h2>
 
     <p class="fancy">This paragraph uses a custom font called "Bubbler One" from the <a href="http://www.google.com/fonts">Google Web Fonts collection</a>. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, autem, dolorem magnam aut suscipit animi repellendus blanditiis expedita nihil iste ipsa harum consectetur maiores! Voluptate labore dolores ipsam consequuntur rem.</p>
 
+    <h2>Hanging Indents</h2>
+
+    <p>It's common to format bibliographic entries as hanging indents. There is no single property to do this in CSS, but you can achieve this by combining a few settings in a tricky way.</p>
+
+    <p class="bib-entry">Stearns, David L. <cite>Electronic Value Exchange: Origins of the VISA Electronic Payment System</cite>, 1<sup>st</sup> edition, London: Springer 2011. Available online at http://www.springer.com/computer/general+issues/book/978-1-84996-138-7.</p>
+
     <h2>Revision Marks</h2>
 
-    <p>When important documents are revised, it's common for authors to display what text was removed, what text was added, and what text had open questions or comments. These can be achieved by wrapping the relevant bits of text in del, ins, and mark elements. Browsers have default formatting for these, but you can alter then in CSS. <del>This text was deleted.</del> <ins>This text was added.</ins> <mark title="This is the comment">This text has a comment assoicated with it.</mark></p>
+    <p>When important documents are revised, it's common for authors to display what text was removed, what text was added, and what text had open questions or comments. These can be achieved by wrapping the relevant bits of text in del, ins, and mark elements. Browsers have default formatting for these, but you can alter them in CSS. <del>This text was deleted.</del> <ins>This text was added.</ins> <mark title="This is the comment">This text has a comment assoicated with it.</mark></p>
 
 
 </body>
