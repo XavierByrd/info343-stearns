@@ -313,16 +313,22 @@ body > p:first-of-type:first-letter {...}
             <ol>
                 <li>Numerical units
                     <ol>
-                        <li>pixels (px), ems (em), and percentages (%) work best for screens</li>
+                        <li>pixels (px), ems (em, rem), and percentages (%) work best for screens</li>
+                        
                         <li>can also use points, picas, inches, centimeters, or millimeters</li>
+
+                        <li>Relative sizes (em, %) are relative to parent, not overall page; rem is absolute to body</li>
                     </ol>
                 </li>
 
                 <li>Colors
                     <ol>
                         <li>RGB (Red Green Blue): rgb(255,0,255);</li>
+                        
                         <li>Hex (RGB in hex form): #FF00FF</li>
+                        
                         <li>RGBA (RGB plus alpha transparency): rgba(255,0,255,0.5) </li>
+                        
                         <li>HSL (Hue Saturation Lightness): hsl(300,100%, 50%)</li>
                     </ol>
                 </li>
@@ -340,6 +346,46 @@ body > p:first-of-type:first-letter {...}
         <li><a href="../../examples/css-examples/tables.html">Styling Tables</a></li>
 
         <li>Inheritance and the Cascade
+            <ol>
+                <li>Inheritance
+                    <ol>
+                        <li>Most style attributes are inherited from parent elements, but some are not for obvious reasons (strong doesn't inherit font-weight from parent; it overrides that prop)</li>
+
+                        <li>Thus, it's generally good to specify your styles at the highest level that makes sense</li>
+
+                        <li>For example, specify font-family on body if nearly all text should use that font</li>
+
+                        <li>Or specify background color on tr instead of td, even though tr doesn't really have its own visible content</li>
+                    </ol>
+                </li>
+
+                <li>The Cascade
+                    <ol>
+                        <li>So what happens when there are multiple style rules that could apply to the same elements?</li>
+                        
+                        <li>Style settings are accumulated if they don't conflict</li>
+                        
+                        <li>If they do conflict, the order in which the rules are declared, and the specificity of the selector determine who wins</li>
+
+                        <li>If selectors are equally specific, last-one-defined wins (rule nearest the element)</li>
+
+                        <li>If selectors are not equally specific, most-specific wins (calculated using a point system)
+                            <ol>
+                                <li>Element selector worth 1 point</li>
+                                <li>Class selector worth 10 points</li>
+                                <li>ID selector (don't use) worth 100 points</li>
+                                <li>Inline styles in <code>style</code> attribute worth 1000 points (<code>style</code> attr always wins, but don't use it)</li>
+
+                                <li>Add up all points for all types of selectors used in selector expression</li>
+                                <li>In general, use class and element selectors for most rules</li>
+                            </ol>
+                        </li>
+
+                    </ol>
+                </li>
+
+                
+            </ol>
         </li>
 
     </ol>
