@@ -67,7 +67,7 @@
           <li><a href="slides/vcs/">Managing Your Files</a></li>
           <li><a href="slides/html/">Saying What You Mean: Diving into HTML 5</a></li>
           <li class="notes"><a href="notes/html/">Notes for Saying What You Mean</a></li>
-          <li>Adding Some Style: Intro to CSS 3</li>
+          <li class="notes"><a href="notes/basic-css">Adding Some Style: Intro to CSS 3</a></li>
           <li>Getting all Semantic: Microdata and Accessibility</li>
           <li>Adding your "37 Pieces of Flair": Advanced Styling</li>
           <li>Responding to the Device: Responsive Web Design</li>
@@ -100,6 +100,12 @@
         <ul class="examples">
           <li><a href="examples/html/reference.shtml">HTML Semantic Reference</a></li>
           <li><a href="examples/html/meta-data.shtml">HTML Meta-Data Reference</a></li>
+        </ul>
+
+        <h3><small>CSS</small></h3>
+        <ul class="examples">
+          <li><a href="examples/css-examples/text.html">Common Text Styling</a></li>
+          <li><a href="examples/css-examples/links.html">Common Link Styling</a></li>
         </ul>
        
 

@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Styling Links</title>
+
+		<style>
+		/* normally, this should go into a separate file, but I've 
+		included it here so that it's easier to see in conjunction
+		with the HTML markup */
+		
+		/* a very common link styling is to make them dark blue
+		and show the underline only when hovering over the link */
+		a:link, a:visited {
+			color: #000099;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		</style>
+	</head>
+	<body>
+		<p>A common styling for links is to make both visited and non-visited links dark blue, and underlined only when the mouse is hovering over them. View the source of this page to see how that is done.</p>
+
+		<p>A sample link to the <a href="http://courses.washington.edu/info343">INFO 343 Course Companion Site</a>.</p>
+	</body>
+</html>

@@ -197,7 +197,7 @@ paragraph.</pre>
                         <div class="entry-notes">These are useful for indicating how a document has been revised</div>
                         <div class="entry-example">
                             <p>This text has been <del>deleted</del>, and this text has been <ins>inserted</ins>.</p>
-                            <p>And I've <mark>marked this text for some reason</mark>.</p>
+                            <p>And I've <mark title="comment shown on hover">marked this text for some reason</mark>.</p>
                         </div>
                     </div>
 
