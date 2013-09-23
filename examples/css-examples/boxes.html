@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Styling Boxes</title>
+        <style>
+        /* normally, this should go into a separate file, but I've 
+        included it here so that it's easier to see in conjunction
+        with the HTML markup */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        /* a few styles to make the box model diagram look right */
+        .container, .border, .padding, .content {
+            padding: 10px;
+            margin: 10px;
+        }
+        .container {
+            background-color: #EEE;
+            border: 1px solid #DDD;
+        }
+        .border {
+            background-color: #EEF;
+            border: 1px solid #DDF;
+        }
+        .padding {
+            background-color: #EFE;
+            border: 1px solid #DFD;
+        }
+        .content {
+            background-color: #FEE;
+            border: 1px solid #FDD;
+        }
+
+        /* the tight and roomy boxes */
+        .tight {
+            padding: 0;
+            border: 1px solid #CCC;
+        }
+
+        .roomy {
+            padding: 20px;
+            border: 1px solid #CCC;
+        }
+
+        /* the alert box, alert with gradient, and alert with rounded corners */
+        .alert, .alert-rounded, .alert-gradient {
+            border: 1px solid #EEEE00;
+            background-color: #FFFF99;
+            padding: 10px;
+        }
+
+        .alert-gradient {
+            background-image: -webkit-linear-gradient(left, #FFFF99, #FFF);
+            background-image: -moz-linear-gradient(left, #FFFF99, #FFF);
+            background-image: -o-linear-gradient(left, #FFFF99, #FFF);
+            background-image: -ms-linear-gradient(left, #FFFF99, #FFF);
+            background-image: linear-gradient(left, #FFFF99, #FFF);
+        }
+
+        .alert-rounded {
+            border-radius: 5px;
+        }
+
+        /* how to add a background image, first a texture, and second an icon */
+        .textured {
+            background-image: url(img/ricepaper.png);
+            background-repeat: repeat;
+            padding: 10px;
+        }
+
+        .icon-left {
+            background-image: url(img/smiley.png);
+            background-position: left top;
+            background-repeat: no-repeat;
+            padding-left: 80px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            min-height: 52px;
+            border: 1px solid #CCC;
+        }
+
+        /* an box offset from the left by 150px */
+        .offset {
+            margin-left: 150px;
+            padding: 10px;
+            border: 1px solid #CCC;
+        }
+
+        </style>
+    </head>
+    <body>
+        <h1>Styling Boxes</h1>
+
+        <p>This page shows you a few of the common ways that developers style boxes on the page, that is, the areas that surround block elements. To see how these effects are accomplished, right-click on the page and choose "View Page Source" from the context menu.</p>
+
+        <h2>The Box Model</h2>
+
+        <p>Any element that displays as a block is contained within a box that you can style in several interesting ways. In order to understand this, however, you first need to visualize the CSS box model:</p>
+
+        <div class="container">
+            margin
+            <div class="border">
+                border
+                <div class="padding">
+                    padding
+                    <div class="content">
+                        content
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p>The margin value separates the box from other boxes in the same container. The border value defaults to 0, but can be set to any thickness and color you want. And the padding value controls how much space is betwen the border and the content of the element. Each of these values can be set for all sides at once, or controlled independently (e.g., set a bottom border, but not a left, top, nor right).</p>
+
+        <p class="tight">This box has no padding at all, so the content is right up against the border. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, provident, nisi ratione animi libero et veritatis sequi magnam tempore reprehenderit. Adipisci, quia, est odio quisquam debitis animi placeat in laborum.</p>
+
+        <p class="roomy">This box has lots of padding, so the content is separated from the border by white space. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor vitae molestiae deleniti asperiores hic quod doloribus numquam unde quas pariatur! Voluptatibus, dolore ipsa optio incidunt minima blanditiis quia ullam? Velit.</p>
+
+        <h2>Shaded Backgrounds</h2>
+
+        <p>In addition to a border, boxes can also have a background-color, which fills up to the inside edge of the border (including the padding). For example, important feedback for the user is often displayed in a paragraph with a pale yellow background-color and a slightly darker yellow border, and some padding around the content.</p>
+
+        <p class="alert">Hey, pay attention, this is important!</p>
+
+        <p>In contemporary browsers, you can also fill the box with a gradient shading. We'll discuss this more when we get to advanced CSS.</p>
+
+        <p class="alert-gradient">Hey, pay attention, this is important!</p>
+
+        <h2>Rounded Corners</h2>
+
+        <p>The corners of boxes can now be rounded as well. Use the border-radius property to set the rounding radius.</p>
+
+        <p class="alert-rounded">Hey, pay attention, this is important, and I have round corners!</p>
+
+        <h2>Background Images</h2>
+
+        <p>In addition to a color, you can also specify one or more background images for the box. Use this to add a texture, or an icon.</p>
+
+        <p class="textured">This box has an interesting background texture. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, officia, ab ad cum voluptate harum ratione atque modi vitae voluptates minima ea quidem odio ipsum veniam libero saepe inventore earum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, aliquam, atque sint molestias laudantium fugiat rem minima nobis explicabo ullam qui labore incidunt ipsa facilis illum dolor soluta optio a!</p>
+
+        <p class="icon-left">This box has an icon displayed on the left to help the user understand what it's about. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, molestias obcaecati libero dolorem quam neque optio voluptate ducimus mollitia illum quo odit sequi et hic quidem reprehenderit accusamus veniam nobis.</p>
+
+        <h2>Offsets</h2>
+
+        <p>You can use the margin property to offset a box within its container, creating an empty space between the box border and the container content area. This is useful for page layout, which we'll cover soon.</p>
+
+        <p class="offset">This box is offset from the left edge of its container's content area (the body). Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, recusandae, quasi, dicta iure perferendis neque harum dolorem dolor cumque dolore quisquam nisi est repellat hic eaque obcaecati aliquid perspiciatis facere. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, quibusdam, facilis quidem maxime porro earum libero illo sed officiis fugiat nulla perferendis hic blanditiis unde quo ut quos expedita voluptates!</p>
+
+
+    </body>
+</html>

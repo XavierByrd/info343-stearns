@@ -104,6 +104,7 @@
 
         <h3><small>CSS</small></h3>
         <ul class="examples">
+          <li><a href="examples/css-examples/boxes.html">Common Box Styling</a></li>
           <li><a href="examples/css-examples/text.html">Common Text Styling</a></li>
           <li><a href="examples/css-examples/links.html">Common Link Styling</a></li>
           <li><a href="examples/css-examples/lists.html">Common List Styling</a></li>

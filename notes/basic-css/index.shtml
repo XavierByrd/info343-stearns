@@ -73,6 +73,8 @@
 
                 <li>Once you've assigned a style class to an element, you can then provide specific formatting instructions for that class in your CSS</li>
 
+                <li>Note that you can assign more than one class to an element; when you do so, the element conceptually belongs to both classes, and will recieve both sets of formatting instructions.</li>
+
                 <li>You can also refer to all elements of that class in your scripts (more on that later in the course)</li>
             </ol>
         </li>
@@ -265,14 +267,13 @@ body > p:first-of-type:first-letter {...}
             </ol>
         </li>
 
-        <li>Styling Boxes</li>
+        <li><a href="../../examples/css-examples/boxes.html">Styling Boxes</a></li>
 
         <li><a href="../../examples/css-examples/text.html">Styling Text</a></li>
 
         <li><a href="../../examples/css-examples/links.html">Styling Links</a></li>        
 
         <li><a href="../../examples/css-examples/lists.html">Styling Lists</a></li>
-
 
         <li>Styling Tables</li>
 
