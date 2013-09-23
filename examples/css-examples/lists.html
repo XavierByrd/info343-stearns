@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Styling Lists</title>
+        <style>
+        /* normally, this should go into a separate file, but I've 
+        included it here so that it's easier to see in conjunction
+        with the HTML markup */
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            margin: 10px;
+        }
+
+        /* the following rules adjust the list-style-type 
+        at different levels of the outline. note the use
+        of direct child selectors rather than descendant
+        selectors. this allows us to target particular levels */
+        ol.outline  {
+            list-style-type: upper-roman;
+        }
+
+        ol.outline > li > ol {
+            list-style-type: decimal;
+        }
+
+        ol.outline > li > ol > li > ol {
+            list-style-type: lower-alpha;
+        }
+
+        /* this uses a custom image instead of the 
+        built-in bullet types for an unordered list.
+        this image is 26x16 pixels, so we set the line-height
+        to 20 to give it some padding on top and bottom, and
+        push the li text over by 40px to give a nice separation
+        between the image and the item text */
+        ul.labs li {
+            list-style: none;
+            background-image: url(img/bullet-email.png);
+            background-repeat: no-repeat;
+            background-position: left center;
+            line-height: 20px;
+            padding-left: 40px;
+        }
+
+        </style>
+    </head>
+    <body>
+        <h1>Styling Lists</h1> 
+
+        <p>Besides styling <a href="links.html">lists of navigation links to look like a navbar or tabs</a>, there are a few other ways in which developers often alter the look of lists. This page shows you a few examples. Like the others, right-click on the page and select "View Page Source" to see how this is done.</p>
+
+        <h2>Traditional Outline</h2>
+
+        <p>You can alter the list style at different levels to get a traditional topic outline look: upper-case Roman numerals at the first level; decimals at the second level; lower-case alpha at the third. Use child selectors to target different levels.</p>
+
+        <ol class="outline">
+            <li>Introduction
+                <ol>
+                    <li>Topic 1</li>
+                    <li>Topic 2</li>
+                </ol>
+            </li>
+            <li>Body
+                <ol>
+                    <li>Point 1
+                        <ol>
+                            <li>sub point 1.1</li>
+                            <li>sub point 1.2</li>
+                        </ol>
+                    </li>
+                    <li>Point 2
+                        <ol>
+                            <li>sub point 2.1</li>
+                            <li>sub-point 2.2</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>Conclusion
+                <ol>
+                    <li>Wrap up 1</li>
+                    <li>Wrap up 2</li>
+                </ol>
+            </li>
+        </ol>
+
+        <h2>Images for Bullets</h2>
+
+        <p>You can choose between a few different <a href="http://www.w3schools.com/cssref/pr_list-style-type.asp">built-in bullet shapes</a>, but you can also use <a href="https://www.iconfinder.com/">your own icons</a> as bullets as well. The best way to do this is using a background-image instead of list-style-image, as you can control the alignment more precisely. Just set the list-style to none, add the background-image (no repeat, left center), and add some padding-left to push the list item text over.</p>
+
+        <ul class="labs">
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+
+    </body>
+</html>

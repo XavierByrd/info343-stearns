@@ -259,24 +259,22 @@ body > p:first-of-type:first-letter {...}
                         <li>RGB (Red Green Blue): rgb(255,0,255);</li>
                         <li>Hex (RGB in hex form): #FF00FF</li>
                         <li>RGBA (RGB plus alpha transparency): rgba(255,0,255,0.5) </li>
-                        <li>HSL (Hue Saturation Lightness): hsl(354,100%, 50%)</li>
+                        <li>HSL (Hue Saturation Lightness): hsl(300,100%, 50%)</li>
                     </ol>
                 </li>
             </ol>
         </li>
 
+        <li>Styling Boxes</li>
+
         <li><a href="../../examples/css-examples/text.html">Styling Text</a></li>
 
         <li><a href="../../examples/css-examples/links.html">Styling Links</a></li>        
 
-        <li>Styling Lists
-        </li>
+        <li><a href="../../examples/css-examples/lists.html">Styling Lists</a></li>
 
-        <li>Styling Boxes
-        </li>
 
-        <li>Styling Tables
-        </li>
+        <li>Styling Tables</li>
 
         <li>Inheritance and the Cascade
         </li>
