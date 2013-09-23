@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Styling Text Examples</title>
+    <style>
+        /* normally, you should put these rules into a separate file, but I've included them here so that
+        it's easier for you to see the style rules and HTML source in one window */
+
+        /* some default font settings for the whole page 
+        size here will set the base size for normal text
+        tags like h1 will increase that by a percentage 
+        note that you can specify multiple font names and
+        the browser will use the first one that matches a font
+        installed on the system
+        font names with spaces in them go inside quotes*/
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            margin: 15px
+        }
+
+        /* give h1s and h2s a dusty black color, and h1s a subtle shadow */
+        h1, h2 {
+            color: rgb(51,51,51);
+        }
+
+        h1 {
+            text-shadow: 2px 2px rgba(200, 200, 200, 0.5);
+        }
+
+        /* general class for example paragraphs I want to indent slighty
+        from the explanatory text surrounding them */
+        .example {
+            margin-left: 10px;
+        }
+
+        /* create a drop cap on the first letter
+        of the first paragraph in the body */
+        body > p:first-of-type:first-letter {
+            float: left;
+            font-size: 75px;
+            line-height: 60px;
+            font-family: Georgia;
+            color: #990033;
+            padding-right: 4px;
+        }
+
+        /* give block quotes a shaded background with padding
+        make the "source" paragraph right aligned
+        and italicize the cite title */
+        blockquote {
+            background-color: #EEE;
+            border-left: 4px solid #999;
+            padding: 15px;
+            quotes: none;
+        }
+        blockquote .source {
+            text-align: right;
+        }
+        blockquote cite {
+            font-style: italic;
+        }
+
+        /* use curly quotes for English inline quotations */
+        q:lang(en) {
+            quotes: '‟' '”';
+        }
+
+        /* two kinds of alerts: warning and danger */
+        .alert {
+            padding: 10px;
+        }
+        .alert-warning {
+            background-color: #FFF8DC;
+        }
+        .alert-danger {
+            background-color: #DC143C;
+            color: #FFF;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Styling Text Example Page</h1>
+
+    <p>This page shows a number of common ways in which you might want to style your text. For example, this first paragraph has a drop cap, and the heading above uses a subtle shadow. To see how this is accomplished, right click on the page and choose "View Source" from the context menu in either Firefox or Chrome (or most other browsers as well). All styles are defined in a <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code> section of the document, which makes it easier for you to see the styles and HTML source in one place. Normally, you'd want to split your styles into a separate file and then link that file to the page using a <code>&lt;link&gt;</code> element.</p>
+
+    <p>Instead of showing you every single property that controls the appearance of text and paragraphs (see <a href="http://www.w3schools.com/css/css_text.asp">the CSS text formatting reference</a> for that), I'll use this page to show you how to do a few common things you might want to do that involve multiple settings.</p>
+
+    <h2>Blockquotes</h2>
+
+    <p>Browsers simply indent blockquotes by default, but it's common to add some additional formatting to call them out. Let's add a background color, left border, and some padding.</p>
+
+    <blockquote>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, consequatur, quae maxime quibusdam ducimus quas rem dicta optio dolor perspiciatis quo earum asperiores non facilis aspernatur libero voluptas aliquam magnam.</p>
+        <p class="source">Some Roman Guy, <cite>Some Book Title</cite>, p 4.</p>
+    </blockquote>
+
+    <h2>Inline Quotes</h2>
+
+    <p>Browsers will wrap inline quotes (&lt;q&gt;) with language-appropriate quotation marks, but you can override this to offer nicer-looking curly quotes using the quotes property.</p>
+
+    <p lang="en" class="example">As Abraham Lincoln was often fond of saying, <q>I don't think people quote me correctly on the Internet!</q></p>
+
+    <p lang="fr" class="example">Comme Abraham Lincoln était souvent coutume de dire, <q>je ne pense pas que les gens me citer correctement sur ​​Internet!</q></p>
+
+    <h2>Alerts</h2>
+
+    <p>Sometimes you want to make a paragraph stand out, especially if it provides important information to the reader. Use background colors, borders, and even a background icon to do that.</p>
+
+    <p class="alert alert-warning">This is a warning. Pay attention to me!</p>
+
+    <p class="alert alert-danger">Danger Will Robinson! Danger!</p>
+
+
+</body>
+</html>
