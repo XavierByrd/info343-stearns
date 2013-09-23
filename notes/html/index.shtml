@@ -132,6 +132,26 @@
                 <li>Run through <a href="../../examples/html/meta-data.html">HTML Meta-Data Reference</a> Page</li>
 
                 <li>Show <a href="http://dev.w3.org/html5/html-author/charref">HTML character entities</a> page</li>
+
+                <li>HTML 5 and older browsers
+                    <ol>
+                        <li>Older versions of most browsers will happily ignore elements they don't understand; they treat them like generic paragraphs, and they allow you to style them using CSS</li>
+
+                        <li>Unfortunately, IE versions 6 through 8 only went part way with this; they preserve the unknown elements, but they can't be styled with CSS</li>
+
+                        <li>Turns out that one can force these older versions of IE to recognize the new element names by simply creating an instance of one in memory using JavaScript</li>
+
+                        <li>Thus was born the very useful helper library, html5shiv.js</li>
+
+                        <li>Search for this on Google, download it, and use it like so:
+                            <pre><code>&lt;head&gt;
+...meta and title elements...
+&lt;script src=&quot;js/html5shiv.js&quot;&gt;&lt;/script&gt;
+...now add your stylesheet links...
+&lt;/head&gt;</code></pre>
+                        </li>
+                    </ol>
+                </li>
             </ol>
         </li> <!-- tour of HTML 5 -->
 

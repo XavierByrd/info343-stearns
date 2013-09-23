@@ -136,16 +136,157 @@
     font-family: Helvetica, Arial, sans-serif;
 }</code></pre>
                 </li>
+
             </ol>
         </li>
 
         <li>CSS Selectors
+            <ol>
+                <li>Following are the most commonly-used selectors; for a full list of possible selectors, see the w3schools <a href="http://www.w3schools.com/cssref/css_selectors.asp">selector reference</a></li>
+
+                <li>Element selectors
+                    <pre><code>/* applies to all &#039;p&#039; elements */
+p {...}</code></pre>
+                </li>
+
+                <li>Class selectors
+                    <pre><code>/* applies to all elements with class=&quot;motto&quot; */
+.motto {...}</code></pre>
+                </li>
+
+                <li>Combo element and class selector
+                    <pre><code>/* applies to all &lt;p class=&quot;motto&quot;&gt; elements */
+p.motto {...}</code></pre>
+                </li>
+
+                <li>ID selectors
+                    <pre><code>/* applies to the element with id=&quot;foo&quot; */
+#foo {...}</code></pre>
+                </li>
+
+                <li>Attribute selectors
+<pre><code>/* applies to all &lt;p lang=&quot;es&quot;&gt; elements */
+p[lang=es] {...}
+
+/* applies to all &lt;a&gt; elements whose  
+href attribute starts with &quot;http&quot; */
+a[href^=&quot;http&quot;]
+
+/* applies to all a elements whose
+href attribute ends with &quot;.pdf&quot; */
+a[href$=".pdf"] {...}
+
+/* applies to all &lt;img&gt; elements whose src
+attribute contains the characters &#039;flickr.com&#039; */
+img[src*="flickr.com"] {...}</code></pre>
+                </li>
+
+                <li>Group selectors (multiple selectors separated by comma)
+                    <pre><code>/* applies to all h1-4 elements */
+h1, h2, h3, h4 {...}</code></pre>
+                </li>
+
+                <li>Descendant selectors
+<pre><code>/* applies to all &lt;p&gt; elements that inside 
+elements with class=&quot;news&quot; but not to other &lt;p&gt; elements 
+elsewhere in the page */
+.news p {...}
+
+/* applies to all elements with class=&quot;foo&quot; that are descendants 
+of elements with class=&quot;bar&quot; that are descendants of elements 
+with class=&quot;ack&quot; */
+.ack .bar .foo {...}</code></pre>
+                </li>
+
+                <li>Child selectors
+<pre><code>/* applies to  all &lt;li&gt; elements that are immediate children 
+of &lt;ol&gt; elements as opposed to those that might be 
+descendants deeper down the tree */
+ol&gt;li {...}
+</code></pre>
+                </li>
+
+                <li>Next Sibling selector
+<pre><code>/* applies to all &lt;p&gt; elements immediately following 
+a &lt;blockquote&gt; element, but not other &lt;p&gt; elements */
+blockquote+p {...}
+</code></pre>
+                </li>
+
+                <li>Previous sibling selector
+<pre><code>/* selects all &lt;ul&gt; elements that have a
+&lt;p&gt; element for a previous sibling, even if other
+elements are in between */
+p~ul {...}</code></pre>
+                </li>
+
+                <li>Child pseudo selectors
+<pre><code>/* applies to the first &lt;p&gt; in the &lt;body&gt; */
+body>p:first-of-type {...}
+
+/* applies to the last &lt;p&gt; in the &lt;body&gt; */
+body>p:last-of-type {...}
+
+/* applies to every other table row 
+(useful for striping rows) */
+table tr:nth-of-type(2) {...}</code></pre>
+                </li>
+
+                <li>Hyperlink pseudo selectors
+<pre><code>/* applies to links the user is hovering over */
+a:hover {...}
+
+/* applies to links the user has already visited */
+a:visited {...}
+
+/* applies to links the user has not already visited */
+a:link {...}
+
+/* applies to links the user is actively selecting */
+a:active {...}</code></pre>
+                </li>
+
+                <li>Text pseudo selectors
+<pre><code>/* applies to the first line of each paragraph */
+p:first-line {...}
+
+/* applies to first letter of the first paragraph 
+(e.g., for a drop-cap effect) */
+p:first-child:first-letter {...}
+</code></pre>
+                </li>
+
+            </ol>
         </li>
 
         <li>CSS Units
+            <ol>
+                <li>Numerical units
+                    <ol>
+                        <li>pixels (px), ems (em), and percentages (%) work best for screens</li>
+                        <li>can also use points, picas, inches, centimeters, or millimeters</li>
+                    </ol>
+                </li>
+
+                <li>Colors
+                    <ol>
+                        <li>RGB (Red Green Blue): rgb(255,0,255);</li>
+                        <li>Hex (RGB in hex form): #FF00FF</li>
+                        <li>RGBA (RGB plus alpha transparency): rgba(255,0,255,0.5) </li>
+                        <li>HSL (Hue Saturation Lightness): hsl(354,100%, 50%)</li>
+                    </ol>
+                </li>
+            </ol>
         </li>
 
         <li>Styling Text
+            <ol>
+                <li>font-family = name of font</li>
+                <li>font-size = size of characters</li>
+                <li>font-style = normal, italic, oblique</li>
+                <li>font-variant = small-caps</li>
+                <li>font-weight = bold or 100-900</li>
+            </ol>
         </li>
 
         <li>Styling Lists
