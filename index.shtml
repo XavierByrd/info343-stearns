@@ -109,6 +109,7 @@
           <li><a href="examples/css-examples/links.html">Common Link Styling</a></li>
           <li><a href="examples/css-examples/lists.html">Common List Styling</a></li>
           <li><a href="examples/css-examples/tables.html">Common Table Styling</a></li>
+          <li><a href="examples/css-examples/fixed-width-layout.html">Fixed Width Page Layout</a></li>
         </ul>
        
 
