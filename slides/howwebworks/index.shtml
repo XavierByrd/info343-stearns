@@ -40,12 +40,18 @@
             </section>
 
             <section>
-                <p>For example, the IP address of the UW web server is 128.95.155.134, and it's listening for web requests on port 80.</p>
-                <p>Try entering this at the command line:</p>
+                <p>For example, one of the UW web servers is at 128.95.155.134, and it's listening for requests on port 80.</p>
+                
+                <p>If you're on Windows, start PuTTY, and follow along with me to connect to this server</p>
+                
+                <p>If your on OS X/Unix, just enter this at the command line:</p>
                 <pre><code>telnet 128.95.155.134 80</code></pre>
-                <p>And after you connect, enter this and hit return twice:</p>
+                
+                <p>After you connect, enter this and hit return twice:</p>
                 <pre><code>GET / HTTP/1.1
 Host: www.washington.edu</code></pre>
+
+                <p>Scroll back to the top, and what do you see?</p>
             </section>
 
             <section>
