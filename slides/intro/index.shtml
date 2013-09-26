@@ -46,15 +46,6 @@
             </section>
 
             <section>
-                <h2>The Course Sites</h2>
-                <p>All syllabus information, course schedule, assignments, grades, discussions, etc. are in <a href="https://canvas.uw.edu/courses" target="_blank">Canvas</a></p>
-                <div class="fragment">
-                    <p>Slides, examples, and detailed homework and lab instructions are on the <a href="http://courses.washington.edu/info343" target="_blank">course companion site</a>.</p>
-                    <p><code><a href="http://courses.washington.edu/info343" target="_blank">http://courses.washington.edu/info343</a></code></p>
-                </div>
-            </section>
-
-            <section>
                 <p>You can read <a target="_blank" href="https://canvas.uw.edu/courses">the syllabus</a> later; I'll answer the questions you really want answered now:</p>
                 <ul>
                     <li class="fragment">What's this course about?</li>
@@ -201,7 +192,7 @@
                 <h2>Get These Before Friday's Lab</h2>
                 <ul>
                     <li>A <a href="https://github.com/" target="_blank">GitHub Account</a></li>
-                    <li>An <a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/activating-shared-web-hosting/" target="_blank">UW Student Web Hosting Account</a></li>
+                    <li>A <a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/activating-shared-web-hosting/" target="_blank">UW Student Web Hosting Account</a></li>
                 </ul>
 
             </section>
@@ -235,6 +226,15 @@
                 <p class="fragment">Started developing for the web in 1996</p>
                 <p class="fragment">PhD in Science and Technology Studies from the University of Edinburgh in 2008</p>
             </section>                
+
+            <section>
+                <h2>The Course Sites</h2>
+                <p>All syllabus information, course schedule, assignments, grades, discussions, etc. are in <a href="https://canvas.uw.edu/courses" target="_blank">Canvas</a></p>
+                <div class="fragment">
+                    <p>Slides, examples, and detailed homework and lab instructions are on the <a href="http://courses.washington.edu/info343" target="_blank">course companion site</a>.</p>
+                    <p><code><a href="http://courses.washington.edu/info343" target="_blank">http://courses.washington.edu/info343</a></code></p>
+                </div>
+            </section>
 
             <section>
                 <h2>Questions About the Course?</h2>
