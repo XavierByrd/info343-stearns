@@ -20,3 +20,11 @@
 	font-style: italic;
 	background-color: #FFFF00;
 }
+figure figcaption {
+	font-style: italic;
+	font-size: 125%;
+}
+.screen-shot {
+	border: 1px solid #CCC;
+	padding: 10px;
+}

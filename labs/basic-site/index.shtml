@@ -12,7 +12,7 @@
 
     <link rel="stylesheet" href="../css/labs.css">
 
-    <title>Lab 1: Managing Your Files</title>
+    <title>Lab 2: Building a Basic Web Site</title>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -34,7 +34,7 @@
             <p class="lead">HTML, CSS, and Server-Side Includes</p>
         </div>
 
-        <p>In our previous lab, we practiced using various tools and techniques to manage our files, but we didn't worry all that much about what was <em>inside</em> those files. In this lab, you will practice the following skills, which we learned this week:</p>
+        <p>In our previous lab, we practiced using various tools and techniques for managing our files, but we didn't worry all that much about what was <em>inside</em> those files. In this lab, you will practice the following skills, which we learned this week:</p>
 
         <ul>
             <li>Writing a well-formed, semantically-correct series of related HTML files</li>
@@ -45,23 +45,97 @@
         <h2>General Instructions</h2>
         <ol>
             <li>If you get stuck at any point, search the Internet, ask your neighbor, or ask the TA for help.</li>
-            <li>At the end of the lab, submit your published site URL via the <a href="https://canvas.uw.edu/courses">Canvas assignment</a> for this lab.</li>
+
+            <li>At the end of the lab, submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288919">Section A</a>; <a href="https://canvas.uw.edu/courses/873608/assignments/2299187">Section B</a>).</li>
+
             <li>If you don't finish all the required tasks during our lab time, finish them over the weekend and submit your published site URL before 8:00am on Monday morning.</li>
+
             <li>If you finish all the required steps, go on and try some of the optional ones.</li>
         </ol>
 
         <h2>Required Steps</h2>
         <ol>
-            <li>Build your html pages, utilizing server-side includes where appropriate</li>
-            <li>Style your pages to look like the target screen shot</li>
-            <li>Publish your site to your student web hosting server and submit the site URL via Canvas</li>
+            <li><a href="#form">Fork the lab2 repository and clone to your lab machine</a></li>
+
+            <li><a href="#pages">Build and Style the HTML Pages</a></li>
+            
+            <li><a href="#publish">Publish your site to your student web hosting server and submit the site URL via Canvas</a></li>
         </ol>
 
-        <h3>Building the Pages</h3>
+        <h3 id="fork">Fork and Clone</h3>
 
-        <h3>Style your Pages</h3>
+        <p>Sign in to <a href="https://github.com">GitHub</a>.</p>
 
-        <h3>Publish your Site and Submit via Canvas</h3>
+        <p>Go to the <a href="https://github.com/drstearns/lab2">lab2 repository on GitHub</a>, and fork it. Yes, you read that correctly. I want you to fork my repo...seriously, web developers do talk like this.... Click the "Fork" button at the top-right of the page and follow the instructions. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the images you'll need, as well as a "reset.css" file, which you'll use to reset all the various browser styling defaults, giving you a clean and consistent starting point for your own styling.</p>
+
+        <p>Once you've forked the repository, clone it to your local lab machine using SourceTree. We did this in <a href="../filemgmt/">our previous lab</a>, so you should know how to do this. If you've forgotten, or didn't make it to the last lab, ask someone for help.</p>
+
+        <h3 id="pages">Build and Style the HTML Pages</h3>
+
+        <p>Now that you have a local clone of your repository, you'll now build and style the HTML pages for the site. You'll build three pages for the "Widgets-R-Us" corporate web site: a home page (index.html), a products page (products.html), and an about page (about.html). Each page should link to your main stylesheet ('css/styles.css') which I have started for you.</p>
+
+        <p>The main stylesheet has three @include directives at the top. The first two include the Google web fonts <a href="http://www.google.com/fonts#QuickUsePlace:quickUse/Family:Boogaloo">'Boogaloo'</a> and <a href="http://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans">'Open Sans'</a>. We'll use Boogaloo only for the corporation name (Widgets-R-Us), and we'll use Open Sans for all the rest of the text on the site.</p>
+
+        <p>The other @include directive adds another stylesheet named 'reset.css', which is quite handy. Different browsers have different defaults for things like margins, paddings, borders, and alignments, so this CSS file will reset all of those, giving you a clean slate upon which to apply your own styles.</p>
+
+        <p>Each of the three site pages will also have the same header and footer content, so we'll put those into separate files and include them in each page using server-side includes.</p>
+
+        <p>Let's start by building the include files. In your local repository, create a directory named 'inc'. This is where we'll put files with common content that we'll include into our main pages.</p>
+
+        <h4>Common Header Content</h4>
+        
+        <p>Create a new file in your text editor and save it in your 'inc' directory as 'header.html'. This will contain the following content shown at the top of each page:</p>
+
+        <p><img src="img/header-content.png" alt="Header content screen shot" class="img-responsive screen-shot"></p>
+
+        <p>The gears image is in your 'img' directory in the file name 'logo.png'.</p>
+
+        <p>The company name ('Widgets-R-Us') should use the 'Boogaloo' font in 36px, with the color #116189. All other text on the site should use 'Open Sans'.</p>
+
+        <p>The motto ('Making high-quality widgets since 1991') should be in italics and slightly larger than normal (120%).</p>
+
+        <p>The orange (#D74710) bar with 'Home', 'Products', and 'About' is a site navigation bar, and each one of those labels should be a hyperlink to its respective page (index.html, products.html, about.html). When the user hovers the mouse over the links, the background color should change to a lighter shade (#FF9D45).</p>
+
+        <h4>Common Footer Content</h4>
+
+        <p>Create a new file in your text editor and save it in your 'inc' directory as 'footer.html'. This will contain the following content shown at the bottom of each page:</p>
+
+        <p><img src="img/footer-content.png" alt="Footer content screen shot" class="img-responsive screen-shot"></p>
+
+        <p>The text in the footer should use the 'Open Sans' font in italics, and be sized at 80%.</p>
+
+        <h4>The Home Page</h4>
+
+        <p>Create a new file in your text editor and save it in the root directory of your repository as 'index.html'. This will contain the content for the following home page:</p>
+
+        <p><img src="img/home-screen.png" alt="Home screen shot" class="img-responsive screen-shot"></p>
+
+        <p>The background of this page is a texture already in your 'img' directory in the file 'texture-light.png'. Use this as the background-image for the body.</p>
+
+        <p>The main page content goes in a white box that should be sized to 80% of the body, and horizontally centered. It should also have a very subtle box shadow, as shown in the screen shot.</p>
+
+        <p>You've already created the common header and footer files, so use <a href="http://httpd.apache.org/docs/current/howto/ssi.html">server-side includes</a> to include those into the page at the appropriate place.</p>
+
+        <p>The picture of the factory is already in your 'img' directory in the file named 'factory.jpg'. The Free Shipping picture is also in your 'img' directory in the file named 'free-shipping.jpg'. These images should float to the left and right respectively, so that the text flows around them.</p>
+
+        <p>The rest of the text is just lorem ipsum text, which you can generate in Sublime (type 'lorem' and hit tab), or via a <a href="http://www.lipsum.com/">lorem ipsum generator site</a>.</p>
+
+        <h4>The Products Page</h4>
+
+        <p>Create a new file in your text editor and save it in the root directory of your repository as 'products.html'. This will contain the content for the following products page:</p>
+
+        <p><img src="img/products-screen.png" alt="Products screen shot" class="img-responsive screen-shot"></p>
+
+
+        <h4>The About Page</h4>
+
+        <p>Create a new file in your text editor and save it in the root directory of your repository as 'about.html'. This will contain the content for the following about page:</p>
+
+        <p><img src="img/about-screen.png" alt="About Us screen shot" class="img-responsive screen-shot"></p>
+
+
+
+        <h3 id="publish">Publish your Site and Submit via Canvas</h3>
 
 
         <h2>Optional Steps</h2>
