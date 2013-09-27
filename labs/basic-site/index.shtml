@@ -116,6 +116,10 @@
 
         <p><img src="img/home-screen.png" alt="Home screen shot" class="img-responsive screen-shot"></p>
 
+        <p>In the <code>&lt;head&gt;</code> section of the page, add the following tag, replacing 'your uw net id' with your UW NetID:
+            <pre><code>&lt;meta name=&quot;author&quot; content=&quot;your uw net id&quot;&gt;</code></pre>
+        </p>
+
         <p>The background of this page is a texture already in your 'img' directory in the file 'texture-light.png'. Use this as the background-image for the body.</p>
 
         <p>The main page content goes in a white box that should be sized to 80% of the body, and horizontally centered. It should also have a very subtle box shadow, similar to what is shown in the screen shot.</p>
@@ -132,6 +136,10 @@
 
         <p><img src="img/products-screen.png" alt="Products screen shot" class="img-responsive screen-shot"></p>
 
+        <p>In the <code>&lt;head&gt;</code> section of the page, add the following tag, replacing 'your uw net id' with your UW NetID:
+            <pre><code>&lt;meta name=&quot;author&quot; content=&quot;your uw net id&quot;&gt;</code></pre>
+        </p>
+
         <p>This page should have the same background and white content box as the home page.</p>
 
         <p>The ordering instructions banner message below the nav bar should use a background color of #FBEAE3, and the "Send us email" part of the text should be a hyperlink that when clicked, opens a new email message addressed to 'sales@widgetsrus.com'. The link should not be underlined until the user hovers the mouse over it.</p>
@@ -143,6 +151,10 @@
         <p>Create a new file in your text editor and save it in the root directory of your repository as 'about.html'. This will contain the content for the following about page:</p>
 
         <p><img src="img/about-screen.png" alt="About Us screen shot" class="img-responsive screen-shot"></p>
+
+        <p>In the <code>&lt;head&gt;</code> section of the page, add the following tag, replacing 'your uw net id' with your UW NetID:
+            <pre><code>&lt;meta name=&quot;author&quot; content=&quot;your uw net id&quot;&gt;</code></pre>
+        </p>
 
         <p>Again, the background and white content box should be the same as on the home and products pages.</p>
 
@@ -164,7 +176,7 @@
 
         <h2>Optional Steps</h2>
         <ol>
-            <li></li>
+            <li>Add a tag to all the pages to let the browser know that it should use the file 'img/logo-small.png' as the shortcut icon. If you do it right, this image should appear in the browser tab.</li>
             <li></li>
         </ol>
 
