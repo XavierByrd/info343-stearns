@@ -87,7 +87,7 @@
 <ol>
     <li>Download the <a href="template.html">basic HTML page template</a> to the local repository directory you created in the first step.</li>
 
-    <li>Rename the file you just downloaded to 'index.html'. Most web servers will look for a file named index.html and return it if the browser only requests the directory in which the file exists.</li>
+    <li>Rename the file you just downloaded to 'index.html' (all lower case). Most web servers will look for a file named index.html and return it if the browser only requests the directory in which the file exists.</li>
 
     <li>Open index.html in your preferred text editor. If you don't have a preferred editor, try <a href="http://www.sublimetext.com/">Sublime Text</a> if it is installed on your lab machine. This is a very powerful editor optimized for web development, and is currently quite popular amongst professional web developers.</li>
 
@@ -107,7 +107,10 @@
 
                 <li><a href="http://www.google.com/imghp">Find a picture of your character</a>, and download that picture file to your newly-created <code>img</code> directory.</li>
 
-                <li>Now <a href="http://www.w3schools.com/tags/tag_img.asp">add the picture</a> to your HTML page. If the picture is particularly large, add a <code>width</code> or <code>height</code> attribute to make it more appropriately-sized.</li>
+                <li>Now add the picture to your HTML page. The tag for this is like so:
+                    <pre><code>&lt;img src=&quot;img/<span class="token">pic-file-name.extension</span>&quot; alt=&quot;description of picture&quot;&gt;</code></pre>
+
+                    Replace the <span class="token">pic-file-name.extension</span> with the name and extension of the picture file you downloaded. The 'img/' part tells the browser to look for the file in the 'img' sub-directory. Make sure you use a forward slash, not a backslash.</li>
             </ol>
         </li>
 
