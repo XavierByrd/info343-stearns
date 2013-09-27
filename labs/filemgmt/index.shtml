@@ -91,6 +91,8 @@
 
     <li>Open index.html in your preferred text editor. If you don't have a preferred editor, try <a href="http://www.sublimetext.com/">Sublime Text</a> if it is installed on your lab machine. This is a very powerful editor optimized for web development, and is currently quite popular amongst professional web developers.</li>
 
+    <li>Find the <code>&lt;meta name="author" value="Your UW Net ID"&gt;</code> tag in the <code>&lt;head&gt;</code> section, and replace the 'Your UW Net ID' value with your UW Net ID.</li>
+
     <li>Find the <code>&lt;title&gt;</code> tag in the <code>&lt;head&gt;</code> section, and replace its content with the name of your character.</li>
 
     <li>Now add some textural content within the <code>&lt;body&gt;</code> tag:
