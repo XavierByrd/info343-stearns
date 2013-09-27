@@ -66,17 +66,19 @@
 
         <p>Sign in to <a href="https://github.com">GitHub</a>.</p>
 
-        <p>Go to the <a href="https://github.com/drstearns/lab2">lab2 repository on GitHub</a>, and fork it. Yes, you read that correctly. I want you to fork my repo...seriously, web developers do talk like this.... Click the "Fork" button at the top-right of the page and follow the instructions. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the images you'll need, as well as a "reset.css" file, which you'll use to reset all the various browser styling defaults, giving you a clean and consistent starting point for your own styling.</p>
+        <p>Go to the <a href="https://github.com/drstearns/lab2">lab2 repository on GitHub</a>, and fork it. Yes, you read that correctly. I want you to fork my repo...seriously, web developers do talk like this.... Click the "Fork" button at the top-right of the page and follow the instructions. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the images you'll need, as well as a "reset.css" file.</p>
 
-        <p>Once you've forked the repository, clone it to your local lab machine using SourceTree. We did this in <a href="../filemgmt/">our previous lab</a>, so you should know how to do this. If you've forgotten, or didn't make it to the last lab, ask someone for help.</p>
+        <p>Once you've forked the repository, clone it to your local lab machine using SourceTree. We did this in <a href="../filemgmt/">our previous lab</a>, so you should know how to do this. If you've forgotten, or didn't make it to the last lab, ask your neighbor or your TA for help.</p>
 
         <h3 id="pages">Build and Style the HTML Pages</h3>
 
-        <p>Now that you have a local clone of your repository, you'll now build and style the HTML pages for the site. You'll build three pages for the "Widgets-R-Us" corporate web site: a home page (index.html), a products page (products.html), and an about page (about.html). Each page should link to your main stylesheet ('css/styles.css') which I have started for you.</p>
+        <p>Now that you have a local clone of your repository, you'll next build and style the HTML pages for the site. You'll build three pages for the "Widgets-R-Us" corporate web site: a home page (index.html), a products page (products.html), and an about page (about.html). Each page should link to your main stylesheet ('css/styles.css') which I have started for you.</p>
 
         <p>The main stylesheet has three @include directives at the top. The first two include the Google web fonts <a href="http://www.google.com/fonts#QuickUsePlace:quickUse/Family:Boogaloo">'Boogaloo'</a> and <a href="http://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans">'Open Sans'</a>. We'll use Boogaloo only for the corporation name (Widgets-R-Us), and we'll use Open Sans for all the rest of the text on the site.</p>
 
         <p>The other @include directive adds another stylesheet named 'reset.css', which is quite handy. Different browsers have different defaults for things like margins, paddings, borders, and alignments, so this CSS file will reset all of those, giving you a clean slate upon which to apply your own styles.</p>
+
+        <p>I include sample screen shots below for the various pages and common content, and you should strive to get your versions looking as close to these screen shots as possible. They don't need to match <em>exactly</em> but try to get them as close as you can.</p>
 
         <p>Each of the three site pages will also have the same header and footer content, so we'll put those into separate files and include them in each page using server-side includes.</p>
 
@@ -94,7 +96,9 @@
 
         <p>The motto ('Making high-quality widgets since 1991') should be in italics and slightly larger than normal (120%).</p>
 
-        <p>The orange (#D74710) bar with 'Home', 'Products', and 'About' is a site navigation bar, and each one of those labels should be a hyperlink to its respective page (index.html, products.html, about.html). When the user hovers the mouse over the links, the background color should change to a lighter shade (#FF9D45).</p>
+        <p>The orange (#D74710) bar with 'Home', 'Products', and 'About' is a site navigation bar, and each one of those labels should be a hyperlink to its respective page (index.html, products.html, about.html). When the user hovers the mouse over the links, the background color should change to a lighter shade (#FF9D45). Note that the links are white and not underlined at all.</p>
+
+        <p>Note also that the navbar itself has slightly rounded corners.</p>
 
         <h4>Common Footer Content</h4>
 
@@ -112,7 +116,7 @@
 
         <p>The background of this page is a texture already in your 'img' directory in the file 'texture-light.png'. Use this as the background-image for the body.</p>
 
-        <p>The main page content goes in a white box that should be sized to 80% of the body, and horizontally centered. It should also have a very subtle box shadow, as shown in the screen shot.</p>
+        <p>The main page content goes in a white box that should be sized to 80% of the body, and horizontally centered. It should also have a very subtle box shadow, similar to what is shown in the screen shot.</p>
 
         <p>You've already created the common header and footer files, so use <a href="http://httpd.apache.org/docs/current/howto/ssi.html">server-side includes</a> to include those into the page at the appropriate place.</p>
 
@@ -126,6 +130,11 @@
 
         <p><img src="img/products-screen.png" alt="Products screen shot" class="img-responsive screen-shot"></p>
 
+        <p>This page should have the same background and white content box as the home page.</p>
+
+        <p>The ordering instructions banner message below the nav bar should use a background color of #FBEAE3, and the "Send us email" part of the text should be a hyperlink that when clicked, opens a new email message addressed to 'sales@widgetsrus.com'.</p>
+
+        <p>The gear images are in your 'img' directory, named 'basic-widget.png', 'super-widget.png', and 'super-duper-widget.png'.</p>
 
         <h4>The About Page</h4>
 
@@ -133,10 +142,23 @@
 
         <p><img src="img/about-screen.png" alt="About Us screen shot" class="img-responsive screen-shot"></p>
 
+        <p>Again, the background and white content box should be the same as on the home and products pages.</p>
 
+        <p>The content of this page is divided into two sections, 'Our Story' and 'Our Team'. The story can just be a couple of paragraphs of lorem text.</p>
 
-        <h3 id="publish">Publish your Site and Submit via Canvas</h3>
+        <p>The 'Our Team' section should appear similar to the screen shot, and the generic lego person image is in your 'img' directory as 'person.jpg'.</p>
 
+        <h3 id="publish">Commit, Publish, and Submit</h3>
+
+        <p>Once you have your pages looking like the screen shots, and the hyperlinks in the nav bar taking you to the correct pages, you're now ready to commit and push your files to GitHub, publish them to your student web hosting server, and submit the URL via the Canvas assignment for grading.</p>
+
+        <p>Use SourceTree to commit your files to the local repository, and then push those changes up to GitHub.</p>
+
+        <p>Use FileZilla to FTP your files to a new directory on your student web hosting server (e.g., /info343/lab2), or you can SSH to the server and use the <code>git clone</code> command to deploy your site.</p>
+
+        <p>After you've verified that your published site is working properly, copy and paste the site URL into the Canvas submission field for this lab assignment (<a href="https://canvas.uw.edu/courses/849701/assignments/2288919">Section A</a>; <a href="https://canvas.uw.edu/courses/873608/assignments/2299187">Section B</a>).</p>
+
+        <p>If you've finished early, go on and try some of the following optional steps.</p>
 
         <h2>Optional Steps</h2>
         <ol>
