@@ -328,6 +328,7 @@ paragraph.</pre>
                     <div class="entry">
                         <div class="entry-title">dl, dt, dd</div>
                         <div class="entry-description">Glossary or dictionary entries</div>
+                        <div class="entry-notes">This can be used anytime you are encoding a list of terms and related descriptions. You can also use multiple <code>&lt;dd&gt;</code> tags for each <code>&lt;dt&gt;</code> to supply alternate definitions.</div>
                         <div class="entry-example">
                             <dl>
                                 <dt>HTML</dt>
@@ -460,9 +461,9 @@ paragraph.</pre>
                             </article>
                             <footer>
                                 <address>
-                                    David Stearns
-                                    MGH 330N
-                                    University of Washington
+                                    David Stearns <br>
+                                    MGH 330N <br>
+                                    University of Washington <br>
                                     <a href="mailto:dlsinfo@uw.edu">dlsinfo@uw.edu</a>
                                 </address>
                             </footer>

@@ -57,7 +57,7 @@
             <h2>meta (charset)</h2>
             <p class="lead">Specifies the character set used when saving the page</p>
             <p>This tells the browser how to interpret the text in the page. In general, it's a good idea to use the UTF-8 character set, as it can handle most characters from all languages, but is more compact than UTF-16 when most of the text is in the ANSI range (Latin-based scripts).</p>
-            <pre><code>&lt;meta charset=&quot;utf-8&quot;/&gt;</code></pre>
+            <pre><code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></pre>
 
             <h2>meta (keywords)</h2>
             <p class="lead">Specifies keywords for the document</p>
