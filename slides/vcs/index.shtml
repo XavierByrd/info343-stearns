@@ -84,10 +84,10 @@
                 
                 <div class="two-column fragment">
                     <ul class="file-tree">
-                        <li class="folder folder-open">project/
+                        <li class="folder folder-open">myproject/
                             <ul>
                                 <li class="file">index.html</li>
-                                <li class="file">other.html</li>
+                                <li class="file">....html</li>
                                 <li class="folder">img/</li>
                                 <li class="folder">css/</li>
                                 <li class="folder">js/</li>
