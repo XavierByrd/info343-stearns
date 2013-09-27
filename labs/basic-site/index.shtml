@@ -108,6 +108,8 @@
 
         <p>The text in the footer should use the 'Open Sans' font in italics, and be sized at 80%.</p>
 
+        <p>Note that the "email us" part of the text should be a hyperlink that when clicked, opens a new email message addressed to 'sales@widgetsrus.com'. The link should be a dark blue color, and not be underlined until the user hovers the mouse over it.</p>
+
         <h4>The Home Page</h4>
 
         <p>Create a new file in your text editor and save it in the root directory of your repository as 'index.html'. This will contain the content for the following home page:</p>
@@ -132,7 +134,7 @@
 
         <p>This page should have the same background and white content box as the home page.</p>
 
-        <p>The ordering instructions banner message below the nav bar should use a background color of #FBEAE3, and the "Send us email" part of the text should be a hyperlink that when clicked, opens a new email message addressed to 'sales@widgetsrus.com'.</p>
+        <p>The ordering instructions banner message below the nav bar should use a background color of #FBEAE3, and the "Send us email" part of the text should be a hyperlink that when clicked, opens a new email message addressed to 'sales@widgetsrus.com'. The link should not be underlined until the user hovers the mouse over it.</p>
 
         <p>The gear images are in your 'img' directory, named 'basic-widget.png', 'super-widget.png', and 'super-duper-widget.png'.</p>
 
