@@ -5,3 +5,61 @@
 	padding-left: 80px;
 	min-height: 64px;
 }
+
+/* used on reference pages */
+.loading {
+    min-height: 100px;
+    background-color: #DDD;
+    background-image: url(../../img/loading.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.reference {
+    display: none;
+}
+
+.reference .section-title {
+    border-bottom: 1px solid #999;
+}
+
+.reference .section-title h2 {
+    color: #911111;
+}
+
+.reference .entry {
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 10px;
+}
+
+.reference .entry img {
+    max-width: 100%;
+    height: auto;
+}
+
+.reference cite {
+    font-style: italic;
+}
+
+.reference p[contenteditable="true"] {
+    border: 1px solid #CCC;
+    padding: 5px;
+}
+
+.reference .entry-source pre {
+    padding: 0;
+    background-color: inherit;
+    border: 0;
+}
+
+/* Bootstrap sets content explicitly on q:before and :after 
+as well as a quotes property for all languages
+so we need to override here to get back to default browser behavior */
+.reference q:before {
+    content: open-quote;
+}
+.reference q:after {
+    content: close-quote;
+}
+.reference q {
+    quotes: inherit;
+}

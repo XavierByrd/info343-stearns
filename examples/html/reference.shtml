@@ -20,47 +20,6 @@
             <script src="../../lib/html5shiv/html5shiv.js"></script>
         <![endif]-->
 
-        <style>
-            .loading {
-                min-height: 100px;
-                background-color: #DDD;
-                background-image: url(../../img/loading.gif);
-                background-position: center;
-                background-repeat: no-repeat;
-            }
-            .reference {
-                display: none;
-            }
-
-            .reference .entry {
-                border-top: 1px solid #EEE;
-                padding-bottom: 10px;
-            }
-
-            .reference .entry:first-of-type {
-                border-top: 0;
-            }
-
-            .reference h2 {
-                color: #5B46A0;
-            }
-
-            .reference .entry img {
-                max-width: 100%;
-                height: auto;
-            }
-
-            .reference cite {
-                font-style: italic;
-            }
-
-            .reference p[contenteditable="true"] {
-                border: 1px solid #CCC;
-                padding: 5px;
-            }
-
-        </style>
-
     </head>
     <body>
 
@@ -76,8 +35,10 @@
             <div class="reference-container loading">
                 <div class="reference">
 
-                    <h2>Paragraphs</h2>
-                    <p>These elements define paragraphs within the body of the document</p>
+                    <div class="section-title">
+                        <h2>Paragraphs</h2>
+                        <p class="lead">These elements define paragraphs within the body of the document</p>
+                    </div>
 
                     <div class="entry">
                         <div class="entry-title">p</div>
@@ -100,8 +61,10 @@ paragraph.</pre>
                         </div>
                     </div>
 
-                    <h2>Links</h2>
-                    <p>These elements define hyperlinks to other resources on the web</p>
+                    <div class="section-title">
+                        <h2>Links</h2>
+                        <p class="lead">These elements define hyperlinks to other resources on the web</p>                        
+                    </div>
 
                     <div class="entry">
                         <div class="entry-title">a</div>
@@ -118,13 +81,15 @@ paragraph.</pre>
                         </div>
                     </div>
 
-                    <h2>Phrasing</h2>
-                    <p>These elements add specific meaning to runs of text within paragraphs</p>
+                    <div class="section-title">
+                        <h2>Phrasing</h2>
+                        <p class="lead">These elements add specific meaning to runs of text within paragraphs</p>                        
+                    </div>
 
                     <div class="entry">
                         <div class="entry-title">em</div>
                         <div class="entry-description">Content should be emphasized</div>
-                        <div class="entry-notes">Although most agents will simply display the content in italics, use this for the meaning it conveys, not the default formatting it achieves.</div>
+                        <div class="entry-notes">Although most agents will display the content in italics, use this for the meaning it conveys, not the default formatting it achieves.</div>
                         <div class="entry-example">
                             <p><em>Nobody</em> expects the Spanish Inquisition!</p>
                         </div>
@@ -133,7 +98,7 @@ paragraph.</pre>
                     <div class="entry">
                         <div class="entry-title">strong</div>
                         <div class="entry-description">Content is important</div>
-                        <div class="entry-notes">Although most agents will simply display the content in bold text, use this for the meaning it conveys, not the default formatting it achieves.</div>
+                        <div class="entry-notes">Although most agents will display the content in bold text, use this for the meaning it conveys, not the default formatting it achieves.</div>
                         <div class="entry-example">
                             <p>This is an <strong>ex-parrot</strong>!</p>
                         </div>
@@ -162,7 +127,8 @@ paragraph.</pre>
                         <div class="entry-description">Content is a lengthy, or short quote</div>
                         <div class="entry-notes">Use <code>blockquote</code> for long quotes that should be set off from the main content, and <code>q</code> for short, inline quotes. Browsers wrap inline quotes in language-appropriate quotation marks, but you can adjust these in CSS.</div>
                         <div class="entry-example">
-                            <p>Abraham Lincoln once said, <q>"I don't think people quote me correctly on the Internet."</q></p>
+                            <p>Abraham Lincoln once said, <q>I don't think people quote me correctly on the Internet.</q></p>
+                            <p>Abraham Lincoln once said, <q lang="fr">Je ne pense pas que les gens me citer correctement sur Internet.</q></p>
                         </div>
                         <div class="entry-example">
                             <p>As Ben Franklin was fond of saying:</p>
@@ -257,8 +223,10 @@ paragraph.</pre>
                     </div>
 
 
-                    <h2>Line Breaking</h2>
-                    <p>These elements control or suggest line breaking within a paragraph</p>
+                    <div class="section-title">
+                        <h2>Line Breaking</h2>
+                        <p class="lead">These elements control or suggest line breaking within a paragraph</p>                        
+                    </div>
 
                     <div class="entry">
                         <div class="entry-title">br</div>
@@ -278,8 +246,10 @@ paragraph.</pre>
                         </div>
                     </div>
 
-                    <h2>Lists, Glossaries, and Tables</h2>
-                    <p>These elements define lists of related items</p>
+                    <div class="section-title">
+                        <h2>Lists, Glossaries, and Tables</h2>
+                        <p class="lead">These elements define lists of related items</p>                        
+                    </div>
 
                     <div class="entry">
                         <div class="entry-title">ol, ul, li</div>
@@ -370,15 +340,17 @@ paragraph.</pre>
                         </div>
                     </div>
 
-                    <h2>Embedded Content</h2>
-                    <p>These elements embed other kinds of content into the page</p>
+                    <div class="section-title">
+                        <h2>Embedded Content</h2>
+                        <p class="lead">These elements embed other kinds of content into the page</p>                        
+                    </div>
 
                     <div class="entry">
                         <div class="entry-title">img</div>
                         <div class="entry-description">Inserts an image into the document where the element appears</div>
                         <div class="entry-notes">Use the <code>alt</code> attribute to specify an alternate textural description. This is used by screen readers, and displayed if the image file cannot be found.</div>
                         <div class="entry-example">
-                            <p><img src="kitten.jpg" alt="cute kitten"></p>
+                            <p><img src="../img/kitten.jpg" alt="cute kitten"></p>
                         </div>
                     </div>
 
@@ -388,14 +360,16 @@ paragraph.</pre>
                         <div class="entry-notes">This is useful when you need to supply a caption for an image</div>
                         <div class="entry-example">
                             <figure>
-                                <img src="kitten.jpg" alt="cute kitten">
+                                <img src="../img/kitten.jpg" alt="cute kitten">
                                 <figcaption>Fig 1. An Increadibly Cute Kitten</figcaption>
                             </figure>
                         </div>
                     </div>
 
-                    <h2>Sectioning</h2>
-                    <p>These elements define major sections of the document and their related headings</p>
+                    <div class="section-title">
+                        <h2>Sectioning</h2>
+                        <p class="lead">These elements define major sections of the document and their related headings</p>                
+                    </div>
 
                     <div class="entry">
                         <div class="entry-title">article</div>
@@ -514,7 +488,9 @@ paragraph.</pre>
                         </div>
                     </div>
 
-                    <h2>Comments</h2>
+                    <div class="section-title">
+                        <h2>Comments</h2>
+                    </div>
 
                     <div class="entry">
                         <div class="entry-title">&lt;!-- --&gt;</div>
@@ -525,8 +501,10 @@ paragraph.</pre>
                         </div>
                     </div>
 
-                    <h2>Global Attributes</h2>
-                    <p>The following attributes may be used on any HTML element in the <code>&lt;body&gt;</code> section</p>
+                    <div class="section-title">
+                        <h2>Global Attributes</h2>
+                        <p class="lead">The following attributes may be used on any HTML element in the <code>&lt;body&gt;</code> section</p>
+                    </div>
 
                     <div class="entry">
                         <div class="entry-title">id</div>
@@ -652,7 +630,7 @@ paragraph.</pre>
                         html += '<div class="row">'; //start new row
 
                         //first col is html-encoded version of entry example
-                        html += '<div class="col-md-6"><pre><code>';
+                        html += '<div class="col-md-6 entry-source"><pre><code>';
                         html += htmlEncode(this.innerHTML).trim();
                         html += '</code></pre></div>';
 
