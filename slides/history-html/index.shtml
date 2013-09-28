@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Brief History of HTML</title>
+
+        <meta name="description" content="Brief History of HTML">
+        <meta name="author" content="David Stearns">
+
+        <!--#include virtual="../inc/common-head.html" -->
+    </head>
+  <body>
+      <div class="reveal">
+          <div class="slides">
+            <section>
+                <h2>Story Time!</h2>
+                <h3>A very brief history of HTML</h3>
+            </section>
+
+            <section>
+                <p>Tim Berners-Lee with an early web browser (CERN 1991)</p>
+                <p><img src="img/bernerslee.jpg" alt="Tim Berners-Lee"></p>
+            </section>
+
+            <section>
+                <div class="pic-quote">
+                    <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
+                    <blockquote>"Suppose all the information stored on computers everywhere were linked.... Suppose I could program my computer to create a space in which everything could be linked to anything. All the bits of information in every computer at CERN, and on the planet, would be available to me and to anyone else. There would be a single global information space."</blockquote>
+                </div>
+            </section>
+           
+            <section>
+                <div class="pic-quote">
+                    <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
+                    <blockquote>"Once a bit of information in that space was labeled with an address, I could tell my computer to get it. By being able to reference anything with equal ease, a computer could represent associations between things that might seem unrelated but somehow did, in fact, share a relationship. A web of information would form."</blockquote>
+                    <p class="source">Time Berners-Lee, <cite>Weaving the Web</cite>, p 4</p>
+                </div>                    
+            </section>
+
+            <section>
+                <div class="pic-quote">
+                    <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
+                    <blockquote>"In an extreme view, the world can be seen as only connections, nothing else. We think of a dictionary as the repository of meaning, but it defines words only in terms of other words. I liked the idea that a piece of information is really defined only by what it's related to, and how it's related. There really is little else to meaning. The structure is everything.</blockquote>
+                    <p class="source">Time Berners-Lee, <cite>Weaving the Web</cite>, p 12</p>
+                </div>                    
+            </section>
+          </div> <!-- .slides -->
+      </div> <!-- .reveal -->
+
+        <!--#include virtual="../inc/common-scripts.html" -->  
+    </body>
+</html>

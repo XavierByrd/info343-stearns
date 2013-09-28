@@ -10,12 +10,12 @@
 
         <!--#include virtual="../inc/common-head.html" -->
     </head>
-  <body>
-      <div class="reveal">
-          <div class="slides">
+    <body>
+        <div class="reveal">
+            <div class="slides">
 
-          </div> <!-- .slides -->
-      </div> <!-- .reveal -->
+            </div> <!-- .slides -->
+        </div> <!-- .reveal -->
 
         <!--#include virtual="../inc/common-scripts.html" -->  
     </body>

@@ -21,7 +21,7 @@
                                 <li>Read these before:</li>
                                 <li><a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/the-best-way-to-learn-css-2/">The Best Way to Learn CSS</a></li>
                                 <li><a href="http://alistapart.com/article/understandingprogressiveenhancement">Understanding Progressive Enhancement</a></li>
-                                <li><a href="http://www.smashingmagazine.com/2010/01/28/color-theory-for-designers-part-1-the-meaning-of-color/">Color Theory for Designers</a></li>
+                                <li><a href="http://www.smashingmagazine.com/2010/01/28/color-theory-for-designers-part-1-the-meaning-of-color/">Color Theory for Designers</a> <br> (Part I, II, and III)</li>
                             </ul>
                         </li>
                         <li>Friday Lab: Building a Basic Web Site</li>
@@ -30,50 +30,31 @@
 
                 <section>
                     <h2>Saying What You Mean</h2>
-                    <h3>Diving into HTML 5</h3>
-                    <p class="pull-right"><img src="../../img/html5.png" alt="HTML5 Logo"></p>
                     <ul>
-                        <li>A Bit of Historical Context</li>
-                        <li>Tour of the Semantic Parts of HTML 5</li>
-                        <li>Segmenting and Reusing Common Content</li>
+                        <li>Lab 1 Debrief and Review (10 min)</li>
+                        <li>Semantics vs Presentation (10 min)</li>
+                        <li>HTML Syntax and Structure Review (5 min)</li>
+                        <li>Tour of Semantic and Meta-Data Elements (20 min)</li>
+                        <li>Practice Using Semantic and Meta-Data Elements (20 min)</li>
+                        <li>Segmenting and Reusing Common Content (30 min)</li>
                     </ul>
+                    <p><img src="../../img/html5.png" alt="HTML5 Logo"></p>
                 </section>
 
                 <section>
-                    <h2>Story Time!</h2>
-                    <h3>A very brief history of HTML</h3>
+                    <h2>Lab 1 Debrief</h2>
+                    <p><em>Ask the person next to you...</em></p>
+                    <p>How did it go for you? Were you confused by anything?</p>
+                    <p><img src="../../img/lab-large.png" alt="Lab icon"></p>
+                </section>
+
+                <section>
+                    <h2>Semantics &ne; Presentation</h2>
                 </section>
 
                 <section>
                     <p>Tim Berners-Lee with an early web browser (CERN 1991)</p>
                     <p><img src="img/bernerslee.jpg" alt="Tim Berners-Lee"></p>
-                </section>
-
-                <section>
-                    <div class="pic-quote">
-                        <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
-                        <blockquote>"Suppose all the information stored on computers everywhere were linked.... Suppose I could program my computer to create a space in which everything could be linked to anything. All the bits of information in every computer at CERN, and on the planet, would be available to me and to anyone else. There would be a single global information space."</blockquote>
-                    </div>
-                </section>
-               
-                <section>
-                    <div class="pic-quote">
-                        <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
-                        <blockquote>"Once a bit of information in that space was labeled with an address, I could tell my computer to get it. By being able to reference anything with equal ease, a computer could represent associations between things that might seem unrelated but somehow did, in fact, share a relationship. A web of information would form."</blockquote>
-                        <p class="source">Time Berners-Lee, <cite>Weaving the Web</cite>, p 4</p>
-                    </div>                    
-                </section>
-
-                <section>
-                    <div class="pic-quote">
-                        <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
-                        <blockquote>"In an extreme view, the world can be seen as only connections, nothing else. We think of a dictionary as the repository of meaning, but it defines words only in terms of other words. I liked the idea that a piece of information is really defined only by what it's related to, and how it's related. There really is little else to meaning. The structure is everything.</blockquote>
-                        <p class="source">Time Berners-Lee, <cite>Weaving the Web</cite>, p 12</p>
-                    </div>                    
-                </section>
-
-                <section>
-                    <h2>Semantics &ne; Presentation</h2>
                 </section>
 
                 <section>
