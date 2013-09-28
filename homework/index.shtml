@@ -84,10 +84,10 @@
                                 <li>Our phone number (206-555-1212) and address (4306 University Way NE, Seattle, WA 98105)</li>
                                 <li>Our email address (dawgpizzaseattle@gmail.com) and make it so that when you click it, it opens a new email message to us.</li>
                                 <li>A link to our twitter feed (@DawgPizzaSea)</li>
-                                <li>This <a target="_blank" href="img/pizza1.jpg">picture of our pizza</a> (it's big, so you might need to make it smaller)</li>
+                                <li>This <a target="_blank" href="img/pizza1.jpg">picture of our pizza</a></li>
                             </ul>
                         </li>
-                        <li>The menu page should list out <a target="_blank" href="menu.txt">our various menu options</a>, and have this <a target="_blank" href="img/pizza2.jpg">picture of our pizza</a> on it.</li>
+                        <li>The menu page should list out <a target="_blank" href="menu.txt">our various menu options</a>, and have this <a target="_blank" href="img/pizza-order.jpg">picture of our order counter</a> on it.</li>
                         <li>The "about us" page should have this on it:
                             <ul>
                                 <li>This <a target="_blank" href="about.txt">text about our restaurant</a></li>
