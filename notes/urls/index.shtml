@@ -36,15 +36,25 @@
 
         <p>The case sensitivity of Unix means that if you want the web server to return your home page when the user requests only the domain name or root directory, it must be named 'index.html' (all lower case) and not 'Index.html' or 'index.HTML'. It also means that if you put your files in a directory on your web hosting server named 'info343/lab1/', the URL you type into your browser must also be '.../info343/lab1/' and not '.../INFO343/Lab1/'. The cases must match <em>exactly</em>.</p>
 
-        <p>As a result of this case sensitivity, most web developers simply use lower-case names for all their files and directories, and this is a good practice to follow. Plus, your pinkies get less tired because you don't need to hit the shift key!</p>
+        <p>As a result of this case sensitivity, <strong>most web developers simply use lower-case names for all their files and directories</strong>, and this is a good practice to follow. Plus, your pinkies get less tired because you don't need to hit the shift key!</p>
 
         <h2>Spaces in URLs</h2>
 
-        <p>URLs and spaces don't get along very well. According to the specifications, spaces in URLs must be encoded as '%20' or as '+'. So if you have a relative URL to an image, and you used a space in the image file name, your relative URL would need to look like 'img/my%20picture.png', which is kind of ugly and difficult to read. Most browsers will automatically handle this encoding for you, but HTML validators will flag un-encoded spaces as an error. So it's generally best to avoid using spaces in your file names. Most web developers use a dash (-) character instead of a space when it's really necessary to break up words in a file name (for example, 'darth-vader.png').</p>
+        <p>URLs and spaces don't get along very well. According to the specifications, spaces in URLs must be encoded as '%20' or as '+'. So if you have a relative URL to an image, and you used a space in the image file name, your relative URL would need to look like 'img/my%20picture.png', which is kind of ugly and difficult to read. Most browsers will automatically handle this encoding for you, but HTML validators will flag un-encoded spaces as an error. So <strong>it's generally best to avoid using spaces in your file names</strong>. Most web developers use a dash (-) character instead of a space when it's really necessary to break up words in a file name (for example, 'darth-vader.png').</p>
 
         <h2>Relative URLs</h2>
 
         <p>There are several HTML tags in which you specify a <dfn>relative URL</dfn> to some other file or resouce, such as the <code>src</code> attribute in the <code>&lt;img&gt;</code> tag. A relative URL is a path the browser should take from the current file to the target file. This should be a relative path (like 'img/mypicture.png'), and not an absolute path (like 'C:\mylab\img\mypicture.png') so that when you move your files up to a web server, the paths will still resolve correctly. And since these are URLs, they use forward slashes, and they are case-sensitive!</p>
+
+        <h2>File Extensions</h2>
+
+        <p>Windows often goes out of its way to hide file extensions from you, but these extensions are absolutely necessary when referring to files in your web pages. The file extension is the part of the name after the last period; for example, the file 'vader.png' has a file extension of '.png'. If you download a file from the Internet to use in one of your pages (e.g., a picture), you need to pay attention to what the file extension is, as you'll need to include that in the file name you put in the <code>src="...."</code> attribute of the <code>&lt;img&gt;</code> tag.</p>
+
+        <p>File extensions are used by Windows and Unix as a hint about what kind of information is in the file. A file with the extension '.png' is assumed to be an image in the Portable Network Graphics format. A file with the extension '.html' is assumed to be a text file containing HTML markup. Windows and Unix use this extension to determine which program it should launch when you double-click the file.</p>
+
+        <p>The Windows file explorer typically hides this extension from you so that you can't accidentally change the extension, thereby making the file impossible to open through a double-click. But you can make the file extensions visible by <a href="http://www.techtin.com/windows-8/how-to-show-hide-file-extension-in-windows-8/">adjusting the view settings in the Windows File Explorer</a>. It's a good idea to do this when you're doing web development.</p>
+
+        <p>Mac OS X will also hide file extensions by default, but you can <a href="http://support.apple.com/kb/PH10845">adjust your Finder preferences to show them</a>. It's a good idea to do this when you're doing web development.</p>
 
 
     </div> <!-- .container -->
