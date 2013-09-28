@@ -29,52 +29,52 @@
 
             <p>The elements listed here go in the <code>&lt;head&gt;</code> section of the document, providing meta-data about the document, and links to other files related to the document.</p>
 
-            <h2>title</h2>
+            <h2 id="title">title</h2>
             <p class="lead">Content should be used as the page title</p>
             <p>Browsers typically use this for the tab title, as well as a default title for a bookmark made to the page. Keep this short, but descriptive enough so that your reader can remember what the bookmark was to.</p>
             <pre><code>&lt;title&gt;HTML Meta-Data Reference&lt;/title&gt;</code></pre>
 
-            <h2>link (style sheet)</h2>
+            <h2 id="stylesheet">link (style sheet)</h2>
             <p class="lead">Link to a related style sheet</p>
             <p>You can include as many style sheets as you want, but the order in which they appear matters. Style sheets included later can override styles defined in sheets included earlier.</p>
             <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;</code></pre>
 
-            <h2>link (icon)</h2>
-            <p class="lead">Link to a page icon</p>
+            <h2 id="icon">link (shortcut icon)</h2>
+            <p class="lead">Link to a page shortcut icon</p>
             <p>Specify the URL to an icon file in the <code>href</code> attribute that should be used as the shortcut or favorite icon for this document. Browsers typically show this in the page tab, as well as any bookmarks made to the page.</p>
             <pre><code>&lt;link rel=&quot;shortcut icon&quot; href=&quot;https://ischool.uw.edu/favicon-small.png&quot;&gt;</code></pre>
 
-            <h2>link</h2>
+            <h2 id="link">link</h2>
             <p class="lead">Specify links to other related resources</p>
             <p>Besides style sheets and icons, the <code>&lt;link&gt;</code> element supports many other values for the <code>rel</code> attribute. For example, you can specify what page a reader will typically go to next, and browsers may choose to pre-fetch that page, or even offer a "Next" button. Support for several of these values are limited, however, but specifying them sets you up for whatever support may come in the future. See the <a href="http://www.w3schools.com/tags/tag_link.asp">full reference</a> for details.</p>
             <pre><code>&lt;link rel=&quot;next&quot; href=&quot;reference.html&quot;&gt;</code></pre>
 
-            <h2>script</h2>
+            <h2 id="script">script</h2>
             <p class="lead">Link to a related script file</p>
             <p>Browsers will download the file pointed to by the <code>src</code> attribute and execute it before parsing the document further. Alternatively, you may include JavaScript source between the start and end tags, but this should be avoided if possible in order to keep script and markup separated.</p>
             <pre><code>&lt;script src=&quot;http://code.jquery.com/jquery-1.10.1.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 
-            <h2>meta (charset)</h2>
+            <h2 id="charset">meta (charset)</h2>
             <p class="lead">Specifies the character set used when saving the page</p>
             <p>This tells the browser how to interpret the text in the page. In general, it's a good idea to use the UTF-8 character set, as it can handle most characters from all languages, but is more compact than UTF-16 when most of the text is in the ANSI range (Latin-based scripts).</p>
             <pre><code>&lt;meta charset=&quot;utf-8&quot;&gt;</code></pre>
 
-            <h2>meta (keywords)</h2>
+            <h2 id="keywords">meta (keywords)</h2>
             <p class="lead">Specifies keywords for the document</p>
             <p>This is mostly used by indexers and search engines to determine what keywords the author thinks are associated with the document.</p>
             <pre><code>&lt;meta name=&quot;keywords&quot; content=&quot;HTML, meta-data, reference&quot;&gt;</code></pre>
 
-            <h2>meta (author)</h2>
+            <h2 id="author">meta (author)</h2>
             <p class="lead">Specifies the name of the document author</p>
             <p>This is mostly used by indexers and search engines to determine the author of the document.</p>
             <pre><code>&lt;meta name=&quot;author&quot; content=&quot;David Stearns&quot;&gt;</code></pre>
 
-            <h2>meta (description)</h2>
+            <h2 id="description">meta (description)</h2>
             <p class="lead">Specifies a brief description of the document</p>
             <p>This is mostly used by indexers and search engines to determine a brief description of the document.</p>
             <pre><code>&lt;meta name=&quot;description&quot; content=&quot;INFO 343 HTML Meta-Data Reference&quot;&gt;</code></pre>
 
-            <h2>meta</h2>
+            <h2 id="meta">meta</h2>
             <p class="lead">Provides extra meta-data that may be used by browsers or other agents</p>
             <p>Besides the charset, the <code>&lt;meta&gt;</code> element can be used to specify any other name and value pair you wish to provide. Agents such as specialized browsers and search engines often define new meta values that you can include to get enhanced functionality.</p>
             <pre><code>&lt;meta name=&quot;foo&quot; content=&quot;bar&quot;&gt;</code></pre>

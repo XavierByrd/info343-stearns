@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notes on URLs">
+    <meta name="author" content="David Stearns">
+    <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
+
+    <title>Notes on URLs</title>
+
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/notes.css">
+
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+
+        <div class="page-header notes-header">
+            <h1>Notes on URLs</h1>
+            <p class="lead">Dr David Stearns, INFO 343, Autumn 2013</p>    
+        </div>
+
+        <p>The World Wide Web was invented by people who love Unix, so Windows users are often perplexed when they try to work with URLs and the file system on a Unix web hosting server (like Dante). There are two important things to realize right away:</p>
+
+        <ul>
+            <li>Both URLs and file paths on Unix use forward slashes (/) instead of backslashes (\) like Windows. Windows will generally accept both, but Unix will only accept forward slashes.</li>
+
+            <li>URLs, file names, and directory names on Unix are <strong>case-sensitive</strong>, meaning that 'Index.html' and 'index.html' are considered <strong>two different things</strong> on Unix. On Windows, file paths are case insensitive, which is often nice for the end-user, but on nearly all Unix distributions, they are case sensitive.</li>
+        </ul>
+
+        <h2>Case Sensitivity</h2>
+
+        <p>The case sensitivity of Unix means that if you want the web server to return your home page when the user requests only the domain name or root directory, it must be named 'index.html' (all lower case) and not 'Index.html' or 'index.HTML'. It also means that if you put your files in a directory on your web hosting server named 'info343/lab1/', the URL you type into your browser must also be '.../info343/lab1/' and not '.../INFO343/Lab1/'. The cases must match <em>exactly</em>.</p>
+
+        <p>As a result of this case sensitivity, most web developers simply use lower-case names for all their files and directories, and this is a good practice to follow. Plus, your pinkies get less tired because you don't need to hit the shift key!</p>
+
+        <h2>Spaces in URLs</h2>
+
+        <p>URLs and spaces don't get along very well. According to the specifications, spaces in URLs must be encoded as '%20' or as '+'. So if you have a relative URL to an image, and you used a space in the image file name, your relative URL would need to look like 'img/my%20picture.png', which is kind of ugly and difficult to read. Most browsers will automatically handle this encoding for you, but HTML validators will flag un-encoded spaces as an error. So it's generally best to avoid using spaces in your file names. Most web developers use a dash (-) character instead of a space when it's really necessary to break up words in a file name (for example, 'darth-vader.png').</p>
+
+        <h2>Relative URLs</h2>
+
+        <p>There are several HTML tags in which you specify a <dfn>relative URL</dfn> to some other file or resouce, such as the <code>src</code> attribute in the <code>&lt;img&gt;</code> tag. A relative URL is a path the browser should take from the current file to the target file. This should be a relative path (like 'img/mypicture.png'), and not an absolute path (like 'C:\mylab\img\mypicture.png') so that when you move your files up to a web server, the paths will still resolve correctly. And since these are URLs, they use forward slashes, and they are case-sensitive!</p>
+
+
+    </div> <!-- .container -->
+</body>
+</html>

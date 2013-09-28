@@ -64,13 +64,23 @@
 
         <h3 id="fork">Fork and Clone</h3>
 
-        <p>Sign in to <a href="https://github.com">GitHub</a>.</p>
+        <p>First, sign in to <a href="https://github.com" target="_blank">GitHub</a>.</p>
 
-        <p>Go to the <a href="https://github.com/drstearns/lab2">lab2 repository on GitHub</a>, and fork it. Yes, you read that correctly. I want you to fork my repo...seriously, web developers do talk like this.... Click the "Fork" button at the top-right of the page and follow the instructions. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the images you'll need, as well as a "reset.css" file.</p>
+        <p>Next, go to the <a href="https://github.com/drstearns/lab2" target="_blank">lab2 repository on GitHub</a>, and fork it. Yes, you read that correctly. I want you to fork my repo (seriously, web developers do talk like this). Click the "Fork" button at the top-right of the page and follow the instructions. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the images you'll need, as well as a "reset.css" file.</p>
 
-        <p>Once you've forked the repository, clone it to your local lab machine using SourceTree. We did this in <a href="../filemgmt/">our previous lab</a>, so you should know how to do this. If you've forgotten, or didn't make it to the last lab, ask your neighbor or your TA for help.</p>
+        <p>Once you've forked the repository, clone it to your local lab machine using SourceTree. We did this in our previous lab, but if you've forgotten how, follow these steps:</p>
+
+        <ol>
+            <li>In your forked lab2 repository on the GitHub site, copy the 'HTTPS Clone URL' on the right side of the screen</li>
+            <li>Run the SourceTree app</li>
+            <li>Click on the Clone/New button in the upper-left of the screen</li>
+            <li>Enter the GitHub HTTPS clone URL you copied into the Source URL box and click the 'Clone' button</li>
+            <li>If you get stuck, as your TA or a neighbor for help</li>
+        </ol>
 
         <h3 id="pages">Build and Style the HTML Pages</h3>
+
+        <p class="alert alert-info">I include sample screen shots below for the various pages and common content, and you should strive to get your versions looking as close to these screen shots as possible. They don't need to match <em>exactly</em> but try to get them as close as you can.</p>
 
         <p>Now that you have a local clone of your repository, you'll next build and style the HTML pages for the site. You'll build three pages for the "Widgets-R-Us" corporate web site: a home page (index.html), a products page (products.html), and an about page (about.html). Each page should link to your main stylesheet ('css/styles.css') which I have started for you.</p>
 
@@ -78,15 +88,13 @@
 
         <p>The other @include directive adds another stylesheet named 'reset.css', which is quite handy. Different browsers have different defaults for things like margins, paddings, borders, and alignments, so this CSS file will reset all of those, giving you a clean slate upon which to apply your own styles.</p>
 
-        <p>I include sample screen shots below for the various pages and common content, and you should strive to get your versions looking as close to these screen shots as possible. They don't need to match <em>exactly</em> but try to get them as close as you can.</p>
-
         <p>Each of the three site pages will also have the same header and footer content, so we'll put those into separate files and include them in each page using server-side includes.</p>
 
         <p>Let's start by building the include files. In your local repository, create a directory named 'inc'. This is where we'll put files with common content that we'll include into our main pages.</p>
 
         <h4>Common Header Content</h4>
         
-        <p>Create a new file in your text editor and save it in your 'inc' directory as 'header.html'. This will contain the following content shown at the top of each page:</p>
+        <p>Create a new file in your text editor and save it in your 'inc' directory as 'header.html' (in general, avoid using spaces in your file names, and keep them all lower-case). This will contain the following content shown at the top of each page:</p>
 
         <p><img src="img/header-content.png" alt="Header content screen shot" class="img-responsive screen-shot"></p>
 
@@ -176,7 +184,7 @@
 
         <h2>Optional Steps</h2>
         <ol>
-            <li>Add a tag to all the pages to let the browser know that it should use the file 'img/logo-small.png' as the shortcut icon. If you do it right, this image should appear in the browser tab.</li>
+            <li>Add a tag to all the pages to let the browser know that it should use the file 'img/logo-small.png' as <a href="http://localhost/~dave/stearns/examples/html/meta-data.shtml#icon">the shortcut icon</a>. If you do it right, this image should appear in the browser tab like this: <img src="img/shortcut-icon.png" alt="Shortcut icon in browser tab"></li>
             <li></li>
         </ol>
 

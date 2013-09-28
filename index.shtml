@@ -65,6 +65,7 @@
           <li><a href="slides/howwebworks">How the Web Works (Part I)</a></li>
           <li><a href="slides/firstpage">Your First Web Page</a></li>
           <li><a href="slides/vcs/">Managing Your Files</a></li>
+          <li class="notes"><a href="notes/urls/">Notes on URLs</a></li>
           <li><a href="slides/html/">Saying What You Mean: Diving into HTML 5</a></li>
           <li class="notes"><a href="notes/html/">Notes for Saying What You Mean</a></li>
           <li class="notes"><a href="notes/basic-css">Adding Some Style: Intro to CSS 3</a></li>
