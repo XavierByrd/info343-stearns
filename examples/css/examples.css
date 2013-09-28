@@ -45,7 +45,8 @@
     padding: 5px;
 }
 
-.reference .entry-source pre {
+.reference .entry-source pre,
+.meta-reference pre {
     padding: 0;
     background-color: inherit;
     border: 0;
@@ -63,3 +64,4 @@ so we need to override here to get back to default browser behavior */
 .reference q {
     quotes: inherit;
 }
+
