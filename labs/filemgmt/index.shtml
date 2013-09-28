@@ -105,14 +105,14 @@
 
         <li>Add a picture to the page:
             <ol>
-                <li>Create a sub-folder in your local repository directory called <code>img</code>.</li>
+                <li>Create a sub-folder in your local repository directory called <code>img</code> (all lower case).</li>
 
-                <li><a href="http://www.google.com/imghp">Find a picture of your character</a>, and download that picture file to your newly-created <code>img</code> directory.</li>
+                <li><a href="http://www.google.com/imghp">Find a picture of your character</a>, and save that picture file into your newly-created <code>img</code> directory. Pay attention to the name of the file, and it's file extension (.jpg, .jpeg, .gif, .png, etc.) as you'll need that in a second. If the name of your file has spaces in it, remove the spaces or replace the spaces with dashes.</li>
 
                 <li>Now add the picture to your HTML page. The tag for this is like so:
                     <pre><code>&lt;img src=&quot;img/<span class="token">pic-file-name.extension</span>&quot; alt=&quot;description of picture&quot;&gt;</code></pre>
 
-                    Replace the <span class="token">pic-file-name.extension</span> with the name and extension of the picture file you downloaded. The 'img/' part tells the browser to look for the file in the 'img' sub-directory. Make sure you use a forward slash, not a backslash.</li>
+                    Replace the <span class="token">pic-file-name.extension</span> with the name and extension of the picture file you downloaded. The 'img/' part tells the browser to look for the file in the 'img' sub-directory. Make sure you use a forward slash, not a backslash, and make sure the casing on the file name and extension match exactly what is in the file system.</li>
             </ol>
         </li>
 
@@ -144,6 +144,18 @@
 
 <p>I'll now walk you through using the SourceTree application to stage, commit, and push files to GitHub. Follow along, and do what I do. We'll also see how Git can save you when you make a horrible mistake....(eek!)</p>
 
+<p>The general workflow goes like this:</p>
+
+<ol>
+    <li>After you've saved all your changes, go back to the SourceTree application; you should see all the files that have been modified in the lower box (Files in the working tree), and all the changes made to those files on the right.</li>
+    <li>Drag files you want to commit (those that are all done) to the upper box (Files staged in the index)</li>
+    <li>Click the Commit button at the top of the SourceTree window, type in a commit message (something that explains what you've done), and click the Commit button at the bottom of the dialog box.</li>
+    <li>That commits your changes to the local repository; now push them up to GitHub by clicking the Push button at the top of the SourceTree window. If you haven't signed in yet, it will prompt you for your GitHub user name and password before pushing the changes to GitHub.</li>
+    <li>Verify that all the changes were pushed up by viewing your repository on <a href="https://github.com">the GitHub site</a>.</li>
+</ol>
+
+<p>You can do the above set of steps each time you finish making modifications to your files. In general, it's best to commit larger chunks of work that you think are good-to-go, and not every single tiny change you make.</p>
+
 <h3 id="step-ftp">Upload your Files to a Web Server via FTP</h3>
 
 <p>Now that you have created your page and managed your files in a version control system, you now need to push them to your target web server. Many teams use their version control system to do this (see <a href="#steps-optional">optional steps</a> below), but the way we will practice today is uploading them via FTP. We will use a graphical FTP tool, but note that you can also use FTP from the command line, which is useful when writing automated scripts.</p>
@@ -154,7 +166,24 @@
 
 <p>I will now walk you through using FileZilla to upload your files. Follow along, and do what I do....</p>
 
+<p>If you're doing this lab on your own, follow <a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/sftp/">these instructions written by UW IT</a> to connect to your UW student web hosting server using FileZilla. Once you have successfully connected, follow these steps:</p>
+
+<ul>
+    <li>FileZilla shows you files on your local hard drive in the left box, and files on the remote server in the right box.</li>
+    <li>In the right-side file listing box, double click the 'student_html' folder if you have one, otherwise double click the 'public_html' folder.</li>
+    <li>Right-click and choose 'Create Directory' to create a new directory. Name it 'info343' (all lower case).</li>
+    <li>Double click the 'info343' directory you just created.</li>
+    <li>Right-click again and choose 'Create Directory'. Name this new directory 'lab1' (all lower case).</li>
+    <li>Double-click the 'lab1' directory you just created.</li>
+    <li>Now in the left-side file-listing box, find your local repository on your hard drive where you web page and image are.</li>
+    <li>Select your 'index.html' file and your 'img' directory, and drag them from the left box to the right box.</li>
+</ul>
+
 <p>To verify that the files got to the server, open a web browser and enter the following URL into the address field, replacing <code><span class="token">your-netid</span></code> with your UW NetID: <code>http://students.washington.edu/<span class="token">your-netid</span>/info343/lab1/</code>. If you've done everything correctly, you should see your web page, including the image you added to the page.</p>
+
+<p>Note that <a href="../../notes/urls/">URLs are case sensitive and use forward slashes</a>!</p>
+
+<p>Also note that if you signed up for your web hosting account when you were employed as a staff member of the UW, you might need to use the URL <code>http://<strong>staff</strong>.washington.edu/<span class="token">your-netid</span>/info343/lab1/</code>. Similarly, if you signed up for web hosting services when you were employed as a faculty member, you might need to use the URL <code>http://<strong>faculty</strong>.washington.edu/<span class="token">your-netid</span>/info343/lab1/</code>.</p>
 
 <h3 id="step-submit">Submit Your Site URL via Canvas</h3>
 
