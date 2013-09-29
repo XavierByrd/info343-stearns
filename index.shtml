@@ -8,9 +8,9 @@
 
         <title>INFO 343 Sections A and B</title>
 
-        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" media="screen">
-        <link rel="stylesheet" href="css/main.css" media="screen">
-        <link rel="stylesheet" href="css/footer.css" media="screen">
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/footer.css">
 
         <link rel="shortcut icon" href="img/shortcut.png">
 
