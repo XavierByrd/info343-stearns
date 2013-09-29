@@ -79,6 +79,14 @@
             border: 1px solid #CCC; /* to make it easier to see dimensions */
         }
 
+        /* horizontal centering */
+        .centered {
+            margin: 0 auto; /* this is what makes it horizontally centered */
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #CCC;
+        }
+
         /* how to add a background image, first a texture, and second an icon */
         .textured {
             background-image: url(img/ricepaper.png);
@@ -181,6 +189,12 @@
         </div>
 
         <div class="absolute-width">This box has an absolute width of 200px, so it will remain that size regardless of how wide or narrow the browser gets.</div>
+
+        <h2>Horizontal Centering</h2>
+
+        <p>Once you create a box with a constrained width, you'll often find yourself wanting to center that box horizontally within its parent. This is done by adding <code>margin: 0 auto;</code> to the style rule.</p>
+
+        <p class="centered">This box has a width of 80% and is horizontally centered inside its parent element (in this case, the body).</p>
 
         <h2>Background Images</h2>
 
