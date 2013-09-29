@@ -52,6 +52,7 @@
                     <h2>Semantics &ne; Presentation</h2>
                     <p class="fragment">Separate meaning from formatting</p>
                     <p class="fragment">Separate data from representation</p>
+                    <p class="fragment">This is a basic programming principle</p>
                 </section>
 
                 <section>
@@ -73,19 +74,23 @@
                 <section>
                     <p>But then people started adding new tags to control formatting</p>
                     <pre><code>
-&lt;font face=&quot;Comic Sans&quot; size=&quot;3&quot; color=&quot;blue&quot;&gt;
-    Nice font, but how do I maintain this?
-&lt;/font&gt;
+&lt;body bgcolor=&quot;black&quot;&gt;
+    &lt;font face=&quot;Comic Sans&quot; size=&quot;3&quot; color=&quot;white&quot;&gt;
+        Nice font, but how do I maintain this?
+    &lt;/font&gt;
+&lt;/body&gt;
                     </code></pre>
                 </section>
 
                 <section>
                     <p>And other really stupid and annoying tags like <code>&lt;blink&gt;</code></p>
                     <pre><code>
-&lt;font face=&quot;Comic Sans&quot; size=&quot;3&quot; color=&quot;blue&quot;&gt;
-    &lt;blink&gt;Arrrrrrgggggghhhhhh!!!!! 
-    Who thought this was a good idea!&lt;/blink&gt;
-&lt;/font&gt;
+&lt;body bgcolor=&quot;black&quot;&gt;
+    &lt;font face=&quot;Comic Sans&quot; size=&quot;3&quot; color=&quot;white&quot;&gt;
+        &lt;blink&gt;Arrrrrrgggggghhhhhh!!!!! 
+        Who thought this was a good idea!&lt;/blink&gt;
+    &lt;/font&gt;
+&lt;/body&gt;
                     </code></pre>
                 </section>
 
@@ -97,10 +102,11 @@
                 <section>
                     <p>CSS separated presentation from semantics</p>
                     <pre><code>[css/styles.css]
+    body {background-color: black;}
     p {
         font-family: &#039;Comic Sans&#039;,
         font-size: 18px;
-        color: #0000FF;
+        color: white;
     }
 
 [index.html]
