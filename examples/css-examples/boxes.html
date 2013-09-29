@@ -65,6 +65,20 @@
             border-radius: 5px;
         }
 
+        /* controlling width */
+        .eighty {
+            width: 80%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #CCC; /* to make it easier to see dimensions */
+        }
+
+        .absolute-width {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #CCC; /* to make it easier to see dimensions */
+        }
+
         /* how to add a background image, first a texture, and second an icon */
         .textured {
             background-image: url(img/ricepaper.png);
@@ -155,6 +169,18 @@
         <p>The corners of boxes can now be rounded as well. Use the border-radius property to set the rounding radius.</p>
 
         <p class="alert-rounded">Hey, pay attention, this is important, and I have round corners!</p>
+
+        <h2>Controlling Width</h2>
+
+        <p>By default, boxes have a width of 100%, meaning they will expand to fill the entire width of their parent element. You can control this using the width property, which can be set to a percentage or absolute value. Although you can explicitly control the height of a box as well, it's generally not a good idea to do so. If you constrain the width and the height, the browser will either clip any content that extends beyond those dimensions, or display an internal scroll bar, which can be difficult for end-users to navigate.</p>
+
+        <div class="eighty">
+            this box has a width of 80%, meaning it will be 80% as wide as its parent (in this case, the document body). Try resizing the browser window and notice how the width adjusts.
+
+            <div class="eighty">This box is inside the other one, and also has a width of 80%. Note that this is relative whatever the parent's width is, so this inner box is actually 80% of 80%.</div>           
+        </div>
+
+        <div class="absolute-width">This box has an absolute width of 200px, so it will remain that size regardless of how wide or narrow the browser gets.</div>
 
         <h2>Background Images</h2>
 
