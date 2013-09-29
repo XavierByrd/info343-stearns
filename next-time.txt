@@ -2,5 +2,8 @@ Notes for Next Time
 ------------------------
 
 - On the first day, do overview of HTML and get them writing HTML pages after course intro. Save How the Web Works lecture for later.
+
+- During course intro, stress that you don't require any pre-existing knowledge of web dev, but if you've never written an HTML page before, you need to read what assign, and probably do some more reading on your own.
+
 - On first lab, give them a pre-done page and image to manage in the tools. Have them make minor edits to the page, but don't have them to write it from scratch. Also consider just dispensing with FileZilla and teach them how to deploy with ssh and git clone/pull. Much simpler.
 

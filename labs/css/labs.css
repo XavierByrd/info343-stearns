@@ -25,6 +25,6 @@ figure figcaption {
 	font-size: 125%;
 }
 .screen-shot {
-	border: 1px solid #CCC;
+	border: 1px dotted #CCC;
 	padding: 10px;
 }
