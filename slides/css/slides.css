@@ -101,3 +101,9 @@ ul.element-tree li {
 .reveal section .pic-quote .source cite {
 	font-style: italic;
 }
+
+.reveal .file-label {
+	text-align: left;
+	font-size: 80%;
+	font-style: italic;
+}

@@ -124,15 +124,20 @@
 
                 <section>
                     <p>CSS separated presentation from semantics</p>
-                    <pre><code>[css/styles.css]
-    body {background-color: black;}
+                    <p class="file-label">css/styles.css</p>
+                    <pre><code>
+    body {
+        background-color: black;
+    }
     p {
-        font-family: &#039;Comic Sans&#039;,
+        font-family: &#039;Comic Sans&#039;, sans-serif;
         font-size: 18px;
         color: white;
     }
+                    </code></pre>
 
-[index.html]
+                    <p class="file-label">index.html</p>
+                    <pre><code>
     &lt;head&gt;
     ...
         &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
@@ -380,15 +385,16 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
                 <section>
                     <p>The Apache web server makes it easy to be DRY</p>
                     <p>with <dfn>Server Side Includes (SSIs)</dfn></p>
+                    <p class="file-label">inc/header.html</p>
                     <pre><code>
-[inc/header.html]
     &lt;!-- just tags for header content, not full page --&gt;
     &lt;header&gt;
         &lt;h1&gt;My Common Header&lt;/h1&gt;
         &lt;p&gt;for my site&lt;/p&gt;        
     &lt;/header&gt;
-
-[index.shtml]
+                    </code></pre>
+                    <p class="file-label">index.shtml</p>
+                    <pre><code>
     &lt;!-- full page --&gt;
     &lt;html&gt;
     ...
