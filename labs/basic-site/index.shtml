@@ -245,17 +245,13 @@ body {
 
         <p><img src="img/products-screen.png" alt="Products screen shot" class="img-responsive screen-shot"></p>
 
-        <p>In the <code>&lt;head&gt;</code> section of the page, add the following tag, replacing 'your uw net id' with your UW NetID:
-            <pre><code>&lt;meta name=&quot;author&quot; content=&quot;your uw net id&quot;&gt;</code></pre>
-        </p>
-
         <p>This page should have the same background and white content box as the home page.</p>
 
         <p>The ordering instructions banner message below the nav bar should use a background color of #FBEAE3, and be sized so that it is 75% of the white content box. Note that it has slightly rounded corners, and is horizontally centered within the white content box.</p>
 
         <p>the "Send us email" part of the text in that banner should be a hyperlink that when clicked, opens a new email message addressed to 'sales@widgetsrus.com'. The link should not be underlined until the user hovers the mouse over it.</p>
 
-        <p>The gear images are in your 'img' directory, named 'basic-widget.png', 'super-widget.png', and 'super-duper-widget.png'.</p>
+        <p>The various gear images are in your 'img' directory, named 'basic-widget.png', 'super-widget.png', and 'super-duper-widget.png'. Note that they appear to the left of the product name, description, and price list.</p>
 
     </article>
     </div> <!-- .conatiner -->
