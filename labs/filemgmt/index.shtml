@@ -257,7 +257,7 @@
 
     <li>Change into the info343 directory (<code>cd info343</code>)</li>
     
-    <li>Now use git to clone your repository into a new sub-directory of public_html. To do that, Execute this command: <code>git clone <span class="token">your-clone-url</span> lab1-git</code>, replacing <span class="token">your-clone-url</span> with the URL you copied on the GitHub site. By default, git clone will create a directory with the same name as your GitHub repository, but since we've already created a directory with that name when FTPing the files, we use that last parameter to tell git to use a different directory name. In this case <code>lab1-git</code>.</li>
+    <li>Now use git to clone your repository into a new sub-directory. To do that, Execute this command: <code>git clone <span class="token">your-clone-url</span> lab1-git</code>, replacing <span class="token">your-clone-url</span> with the URL you copied on the GitHub site. By default, git clone will create a directory with the same name as your GitHub repository, but since we've already created a directory with that name when FTPing the files, we use that last parameter to tell git to use a different directory name. In this case <code>lab1-git</code>.</li>
 
     <li>You should see a number of messages fly by, with the final one being 'Resolving deltas: 100% ... done.'</li>
     

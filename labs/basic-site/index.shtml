@@ -50,7 +50,7 @@
 
             <li>If you don't finish all the required tasks during our lab time, finish them over the weekend and submit your published site URL before 8:00am on Monday morning.</li>
 
-            <li>If you finish all the required steps, go on and try some of the optional ones.</li>
+            <li>If you finish all the required steps, go on and try some of the <a href="#optional-steps">optional ones</a>. Remember that you have to do at least one of the optional steps in order to get 10/10 on the Completeness portion of your grade. If you do only the required steps, you'll get 9/10.</li>
         </ol>
 
         <h2>Required Steps</h2>
@@ -58,15 +58,15 @@
             <li><a href="#form">Fork the lab2 repository and clone to your lab machine</a></li>
 
             <li><a href="#pages">Build and Style the HTML Pages</a></li>
-            
+
             <li><a href="#publish">Publish your site to your student web hosting server and submit the site URL via Canvas</a></li>
         </ol>
 
         <h3 id="fork">Fork and Clone</h3>
 
-        <p>First, sign in to <a href="https://github.com" target="_blank">GitHub</a>.</p>
+        <p>First, go to <a href="https://github.com" target="_blank">GitHub</a> and sign into your account.</p>
 
-        <p>Next, go to the <a href="https://github.com/drstearns/lab2" target="_blank">lab2 repository on GitHub</a>, and fork it. Yes, you read that correctly. I want you to fork my repo (seriously, web developers do talk like this). Click the "Fork" button at the top-right of the page and follow the instructions. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the images you'll need, as well as a "reset.css" file.</p>
+        <p>Next, go to my <a href="https://github.com/drstearns/lab2" target="_blank">lab2 repository on GitHub</a>, and fork it. Yes, you read that correctly. I want you to fork my repo (seriously, web developers do talk like this). Click the "Fork" button at the top-right of the page and follow the instructions. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the images you'll need, as well as a "reset.css" file.</p>
 
         <p>Once you've forked the repository, clone it to your local lab machine using SourceTree. We did this in our previous lab, but if you've forgotten how, follow these steps:</p>
 
@@ -74,27 +74,31 @@
             <li>In your forked lab2 repository on the GitHub site, copy the 'HTTPS Clone URL' on the right side of the screen</li>
             <li>Run the SourceTree app</li>
             <li>Click on the Clone/New button in the upper-left of the screen</li>
-            <li>Enter the GitHub HTTPS clone URL you copied into the Source URL box and click the 'Clone' button</li>
+            <li>Enter the GitHub HTTPS clone URL you copied into the Source URL box</li>
+            <li>Hit tab, and SourceTree will automatically populate the Destination Path for you (usually a new folder named after your repository in the My Documents folder)</li>
+            <li>Click the 'Clone' button to clone the GitHub repository to your local machine</li>
             <li>If you get stuck, as your TA or a neighbor for help</li>
         </ol>
 
         <h3 id="pages">Build and Style the HTML Pages</h3>
 
-        <p class="alert alert-info">I include sample screen shots below for the various pages and common content, and you should strive to get your versions looking as close to these screen shots as possible. They don't need to match <em>exactly</em> but try to get them as close as you can.</p>
+        <p class="alert alert-info">I include sample screen shots below for the various pages and common content, and you should strive to get your versions looking as close to these screen shots as possible. They don't need to match <em>exactly</em> but try to get them as close as you can. In a professional project, you'll often get screen shots like these from a graphic designer, and your job as a web developer is to turn those into real live web pages.</p>
 
-        <p>Now that you have a local clone of your repository, you'll next build and style the HTML pages for the site. You'll build three pages for the "Widgets-R-Us" corporate web site: a home page (index.html), a products page (products.html), and an about page (about.html). Each page should link to your main stylesheet ('css/styles.css') which I have started for you.</p>
+        <p>Now that you have a local clone of your repository, you'll next build and style the HTML pages for the site. You'll build two pages for the "Widgets-R-Us" corporate web site: a home page (index.html), and an about page (about.html).</p>
 
-        <p>The main stylesheet has three @include directives at the top. The first two include the Google web fonts <a href="http://www.google.com/fonts#QuickUsePlace:quickUse/Family:Boogaloo">'Boogaloo'</a> and <a href="http://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans">'Open Sans'</a>. We'll use Boogaloo only for the corporation name (Widgets-R-Us), and we'll use Open Sans for all the rest of the text on the site.</p>
+        <p class="alert alert-info">If you finish early and want an extra challenge, try <a href="#products-page">adding a products page</a> as well, which is detailed in the <a href="#products-page">optional steps</a> below.</p>
+
+        <p>Each page you build should link to your main stylesheet ('css/styles.css'), which I have started for you. This stylesheet has three @include directives at the top. The first two include the Google web fonts <a href="http://www.google.com/fonts#QuickUsePlace:quickUse/Family:Boogaloo">'Boogaloo'</a> and <a href="http://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans">'Open Sans'</a>. We'll use Boogaloo only for the corporation name (Widgets-R-Us), and we'll use Open Sans for all the rest of the text on the site.</p>
 
         <p>The other @include directive adds another stylesheet named 'reset.css', which is quite handy. Different browsers have different defaults for things like margins, paddings, borders, and alignments, so this CSS file will reset all of those, giving you a clean slate upon which to apply your own styles.</p>
 
-        <p>Each of the three site pages will also have the same header and footer content, so we'll put those into separate files and include them in each page using server-side includes.</p>
-
-        <p>Let's start by building the include files. In your local repository, create a directory named 'inc'. This is where we'll put files with common content that we'll include into our main pages.</p>
+        <p>Each of the site pages will have the same header and footer content, so we'll put those into separate files and include them in each page using server-side includes.</p>
 
         <h4>Common Header Content</h4>
         
-        <p>Create a new file in your text editor and save it in your 'inc' directory as 'header.html' (in general, avoid using spaces in your file names, and keep them all lower-case). This will contain the following content shown at the top of each page:</p>
+        <p>Let's start by building the include files. In your local repository directory, create a sub-directory named 'inc'. This is where we'll put files with common content that we'll include into our main pages.</p>
+
+        <p>Create a new file in your text editor and save it in your 'inc' directory as 'header.html' (in general, avoid using spaces in your file names, and keep them all lower-case&mdash;remember that URLs are case-sensitive, and spaces must be encoded as '%20' to validate). This will contain the following content shown at the top of each page:</p>
 
         <p><img src="img/header-content.png" alt="Header content screen shot" class="img-responsive screen-shot"></p>
 
@@ -104,7 +108,9 @@
 
         <p>The motto ('Making high-quality widgets since 1991') should be in italics and slightly larger than normal (120%).</p>
 
-        <p>The orange (#D74710) bar with 'Home', 'Products', and 'About' is a site navigation bar, and each one of those labels should be a hyperlink to its respective page (index.html, products.html, about.html). When the user hovers the mouse over the links, the background color should change to a lighter shade (#FF9D45). Note that the links are white and not underlined at all.</p>
+        <p>The orange (#D74710) bar with 'Home' and 'About' is a site navigation bar, and each one of those labels should be a hyperlink to its respective page: index.html (or '.' to specify the containing directory); and about.html.</p>
+
+        <p>When the user hovers the mouse over the links, the background color should change to a lighter shade (#FF9D45). Note that the links are white and not underlined at all.</p>
 
         <p>Note also that the navbar itself has slightly rounded corners.</p>
 
@@ -116,7 +122,7 @@
 
         <p>The text in the footer should use the 'Open Sans' font in italics, and be sized at 80%.</p>
 
-        <p>Note that the "email us" part of the text should be a hyperlink that when clicked, opens a new email message addressed to 'sales@widgetsrus.com'. The link should be a dark blue color, and not be underlined until the user hovers the mouse over it.</p>
+        <p>Note that the "email us" part of the text should be a hyperlink that when clicked, opens a new email message addressed to 'sales@widgetsrus.com'. The link should initially appear with no underline, but should become underlined when the user hovers the mouse over the link.</p>
 
         <h4>The Home Page</h4>
 
@@ -124,23 +130,134 @@
 
         <p><img src="img/home-screen.png" alt="Home screen shot" class="img-responsive screen-shot"></p>
 
-        <p>In the <code>&lt;head&gt;</code> section of the page, add the following tag, replacing 'your uw net id' with your UW NetID:
-            <pre><code>&lt;meta name=&quot;author&quot; content=&quot;your uw net id&quot;&gt;</code></pre>
-        </p>
+        <p>Start by including the <a href="http://www.w3schools.com/tags/tag_doctype.asp">HTML5 doctype declaration</a>, and then create the basic <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> elements that all pages need to have.</p>
 
-        <p>The background of this page is a texture already in your 'img' directory in the file 'texture-light.png'. Use this as the background-image for the body.</p>
+        <p>In the <code>&lt;head&gt;</code> section, add all the necessary <a href="../../examples/html/meta-data.shtml">meta-data elements</a>. You'll need at least these:</p>
 
-        <p>The main page content goes in a white box that should be sized to 80% of the body, and horizontally centered. It should also have a very subtle box shadow, similar to what is shown in the screen shot.</p>
+        <pre><code>
+&lt;!-- tells the browser this file was saved in the UTF-8 character encoding --&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
 
-        <p>You've already created the common header and footer files, so use <a href="http://httpd.apache.org/docs/current/howto/ssi.html">server-side includes</a> to include those into the page at the appropriate place.</p>
+&lt;!-- tells the browser to get style information from styles.css in our 'css' sub-directory --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
+
+&lt;!-- title for the page --&gt;
+&lt;title&gt;Widgets-R-Us&lt;/title&gt;
+
+&lt;!-- REPLACE &#039;your uw net id&#039; with your UW net id --&gt;
+&lt;meta name=&quot;author&quot; content=&quot;your uw net id&quot;&gt;
+        </code></pre>
+
+        <p>You'll notice in the screen shot that the background of the page is a light-gray patterned texture. That texture already in your 'img' sub-directory in the file 'texture-light.png'. Use this as the background-image for the body. Remember that when specifying a URL in a stylesheet, the URL is a relative path <em>starting from the location of the css file</em>. Since our CSS file is in the 'css' sub-directory, and the texture is in a peer 'img' sub-directory, the relative path first needs to go up one level to the root directory (..) and then back down into the 'img' sub-directory. Here's what your body CSS rule should look like:</p>
+
+        <pre><code>
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    background-image: url(../img/texture-light.png);
+    background-repeat: repeat;
+    padding: 10px;
+}
+        </code></pre>
+
+        <p>The main page content goes in a white box that should be sized to 80% of the body, and horizontally centered. It should also have a very subtle box shadow, similar to what is shown in the screen shot. We covered how to do this in class, but if you've forgotten, look at the page source of the <a href="../../examples/css-examples/boxes.html">box styling example page</a>.</p>
+
+        <p>You've already created the common header and footer files, so use server-side includes to include those into the page at the appropriate place. The syntax looks like this:</p>
+
+        <pre><code>
+&lt;!--#include virtual=&quot;...relative url to include file...&quot; --&gt;
+        </code></pre>
 
         <p>The picture of the factory is already in your 'img' directory in the file named 'factory.jpg'. The Free Shipping picture is also in your 'img' directory in the file named 'free-shipping.jpg'. These images should float to the left and right respectively, so that the text flows around them.</p>
 
         <p>The rest of the text is just lorem ipsum text, which you can generate in Sublime (type 'lorem' and hit tab), or via a <a href="http://www.lipsum.com/">lorem ipsum generator site</a>.</p>
 
-        <h4>The Products Page</h4>
+        <h4>The About Page</h4>
 
-        <p>Create a new file in your text editor and save it in the root directory of your repository as 'products.html'. This will contain the content for the following products page:</p>
+        <p>Create a new file in your text editor and save it in the root directory of your repository as 'about.html'. This will contain the content for the following about page:</p>
+
+        <p><img src="img/about-screen.png" alt="About Us screen shot" class="img-responsive screen-shot"></p>
+
+        <p>Add the doctype declaration and basic document elements like you did when starting the home page (index.html file).</p>
+
+        <p>The body texture and the white content box should be the same as what you have on the home page.</p>
+
+        <p>The content of this page is divided into two sections, 'Our Story' and 'Our Team'. The story can just be a couple of paragraphs of lorem text.</p>
+
+        <p>The 'Our Team' section should appear similar to the screen shot, and the generic lego person image is in your 'img' directory as 'person.jpg'. Note that person image is floated to the left so that the person's name, title, and description all appear next to it.</p>
+
+        <h3 id="publish">Commit, Publish, and Submit</h3>
+
+        <p>Once you have your pages looking like the screen shots, and the hyperlinks in the nav bar taking you to the correct pages, you're now ready to stage, commit, and push your changes to GitHub. Go back to SourceTree and stage your files (drag/drop from lower box to upper box), commit your changes to the local repository, and then push that commit to your GitHub repository in the cloud.</p>
+
+        <p class="alert alert-info">In our last lab, I had you add a hyperlink to your GitHub repository so we could verify that you actually got it working, but there is no need to do that for this lab.</p>
+
+        <p>Next, publish your site to your UW student/staff/faculty web hosting server. You can do this either via FTP (using FileZilla), or via SSH and Git.</p>
+
+        <h4>Publish via FTP</h4>
+
+        <p>Follow <a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/sftp/">these instructions written by UW IT</a> to connect to your UW web hosting server using FileZilla. Once you have successfully connected, follow these steps:</p>
+
+        <ul>
+            <li>FileZilla shows you files on your local hard drive in the left box, and files on the remote server in the right box.</li>
+            <li>In the right-side file listing box, double click the 'student_html' folder if you have one, otherwise double click the 'public_html' folder.</li>
+            <li>If you don't already have a folder there named 'info343', right-click and choose 'Create Directory' to create a new directory. Name it 'info343' (all lower case).</li>
+            <li>Double click the 'info343' directory.</li>
+            <li>Right-click again and choose 'Create Directory'. Name this new directory 'lab2' (all lower case).</li>
+            <li>Double-click the 'lab2' directory you just created.</li>
+            <li>Now in the left-side file-listing box, find your local repository on your hard drive.</li>
+            <li>Select all your website files (don't include the .git folder) and drag-drop them from the left box to the right box.</li>
+        </ul>
+
+        <p>If everything went well, you should now be able to see your web site in a browser using the URL <code>http://[students|staff|faculty].washington.edu/<span class="token">your-net-id</span>/info343/lab2/</code>. Use 'students', 'staff' or 'faculty' depending on the affiliation you had when you activated your web publishing service, and replace <span class="token">your-net-id</span> with your UW net id.</p>
+
+        <h4>Publish via SSH/Git</h4>
+
+        <p>If you're comfortable at the command line, you can publish your site, and keep it updated quite easily by using SSH and Git. Follow these steps:</p>
+
+        <ul>
+            <li>Go to your repository on the <a href="https://github.com/">GitHub web site</a>. On your repository home page, there should be a box on the right entitled 'HTTPS clone URL'. Click the copy to clipboard button, or select the URL and copy it to your clipboard.</li>
+
+            <li>If you are on Mac OS X or Unix, open a Terminal window and SSH to the web server by entering the command <code>ssh <span class="token">your-netid</span >@dante.u.washington.edu</code>, replacing <code><span class="token">your-netid</span></code> with your UW Net ID. Enter your UW NetID password at the prompt.</li>
+
+            <li>If you're on one of the Windows lab machines, go to the home screen and click on the icon for 'Student Terminal (Dante)' in the 'Remote Access, FTP' section (far right). Enter your UW NetID and password when prompted.</li>
+
+            <li>Once connected, type <code>ls</code> and hit return to list the files and sub-directories in your home directory. If you have a directory named 'student_html' you'll want to use that. If not, use the 'public_html' directory.</li>
+
+            <li>Change to the student_html directory if you have one, otherwise change to the public_html directory (<code>cd student_html</code>, or <code>cd public_html</code>).</li>
+
+            <li>List the files again (<code>ls</code>) to see what you already have there. If you don't already have a directory named 'info343', create one: <code>mkdir info343</code></li>
+
+            <li>Change to the info343 directory (<code>cd info343</code>).</li>
+
+            <li>Now use Git to clone your repository into a new sub-directory. To do that, Execute this command: <code>git clone <span class="token">your-clone-url</span></code>, replacing <span class="token">your-clone-url</span> with the URL you copied on the GitHub site. By default, git clone will create a directory with the same name as your GitHub repository, which in this case should be 'lab2'.</li>
+
+            <li>You should see a number of messages fly by, with the final one being 'Resolving deltas: 100% ... done.'</li>
+
+            <li>Change to the directory just created (<code>cd lab2</code>) and list the files. You should see your web site files.</li>
+
+            <li>If you make any future changes to your files, commit them, and push to your GitHub repository, you can then quickly update your site on the UW web hosting server by executing <code>git pull</code> from within this 'lab2' directory. Git will pull down any changes made since the last time you cloned/pulled, and apply them.</li>
+        </ul>
+
+        <h4>Submit Your Site URL via Canvas</h4>
+
+        <p>After you've verified that your published site is working properly, copy and paste the site URL into the Canvas submission field for this lab assignment and submit it (<a href="https://canvas.uw.edu/courses/849701/assignments/2288919">Section A</a>; <a href="https://canvas.uw.edu/courses/873608/assignments/2299187">Section B</a>). If you're not sure how to submit an assignment via Canvas, ask someone around you, or your TA.</p>
+
+        <p>If you've finished early, go on and try some of the following optional steps.</p>
+
+        <h2 id="optional-steps">Optional Steps</h2>
+
+        <h3>Add a Shortcut Icon to Each Page</h3>
+
+        <p>Add a tag to all the pages to let the browser know that it should use the file 'img/logo-small.png' as <a href="../../examples/html/meta-data.shtml#icon">the shortcut icon</a>. If you do it right, this image should appear in the browser tab like this:</p>
+
+        <p><img src="img/shortcut-icon.png" alt="Shortcut icon in browser tab"></p>
+
+        <h3 id="products-page">Add a Products Page</h3>
+        
+        <p>First, add another link to the navigation bar called 'Products', and make the link point to a new page called 'products.html'.</p>
+
+        <p>Next, create a new file in your text editor and save it in the root directory of your repository as 'products.html'. This will contain the content for the following products page:</p>
 
         <p><img src="img/products-screen.png" alt="Products screen shot" class="img-responsive screen-shot"></p>
 
@@ -150,44 +267,11 @@
 
         <p>This page should have the same background and white content box as the home page.</p>
 
-        <p>The ordering instructions banner message below the nav bar should use a background color of #FBEAE3, and the "Send us email" part of the text should be a hyperlink that when clicked, opens a new email message addressed to 'sales@widgetsrus.com'. The link should not be underlined until the user hovers the mouse over it.</p>
+        <p>The ordering instructions banner message below the nav bar should use a background color of #FBEAE3, and be sized so that it is 75% of the white content box. Note that it has slightly rounded corners, and is horizontally centered within the white content box.</p>
+
+        <p>the "Send us email" part of the text in that banner should be a hyperlink that when clicked, opens a new email message addressed to 'sales@widgetsrus.com'. The link should not be underlined until the user hovers the mouse over it.</p>
 
         <p>The gear images are in your 'img' directory, named 'basic-widget.png', 'super-widget.png', and 'super-duper-widget.png'.</p>
-
-        <h4>The About Page</h4>
-
-        <p>Create a new file in your text editor and save it in the root directory of your repository as 'about.html'. This will contain the content for the following about page:</p>
-
-        <p><img src="img/about-screen.png" alt="About Us screen shot" class="img-responsive screen-shot"></p>
-
-        <p>In the <code>&lt;head&gt;</code> section of the page, add the following tag, replacing 'your uw net id' with your UW NetID:
-            <pre><code>&lt;meta name=&quot;author&quot; content=&quot;your uw net id&quot;&gt;</code></pre>
-        </p>
-
-        <p>Again, the background and white content box should be the same as on the home and products pages.</p>
-
-        <p>The content of this page is divided into two sections, 'Our Story' and 'Our Team'. The story can just be a couple of paragraphs of lorem text.</p>
-
-        <p>The 'Our Team' section should appear similar to the screen shot, and the generic lego person image is in your 'img' directory as 'person.jpg'.</p>
-
-        <h3 id="publish">Commit, Publish, and Submit</h3>
-
-        <p>Once you have your pages looking like the screen shots, and the hyperlinks in the nav bar taking you to the correct pages, you're now ready to commit and push your files to GitHub, publish them to your student web hosting server, and submit the URL via the Canvas assignment for grading.</p>
-
-        <p>Use SourceTree to commit your files to the local repository, and then push those changes up to GitHub.</p>
-
-        <p>Use FileZilla to FTP your files to a new directory on your student web hosting server (e.g., /info343/lab2), or you can SSH to the server and use the <code>git clone</code> command to deploy your site.</p>
-
-        <p>After you've verified that your published site is working properly, copy and paste the site URL into the Canvas submission field for this lab assignment (<a href="https://canvas.uw.edu/courses/849701/assignments/2288919">Section A</a>; <a href="https://canvas.uw.edu/courses/873608/assignments/2299187">Section B</a>).</p>
-
-        <p>If you've finished early, go on and try some of the following optional steps.</p>
-
-        <h2>Optional Steps</h2>
-        <ol>
-            <li>Add a tag to all the pages to let the browser know that it should use the file 'img/logo-small.png' as <a href="http://localhost/~dave/stearns/examples/html/meta-data.shtml#icon">the shortcut icon</a>. If you do it right, this image should appear in the browser tab like this: <img src="img/shortcut-icon.png" alt="Shortcut icon in browser tab"></li>
-            <li></li>
-        </ol>
-
 
     </article>
     </div> <!-- .conatiner -->
