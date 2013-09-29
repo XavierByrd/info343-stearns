@@ -16,7 +16,7 @@
                     <h2>Coming Up...</h2>
                     <p class="pull-right"><img src="../../img/css3.png" alt="CSS3 Logo"></p>
                     <ul>
-                        <li>Thursday: Overview of CSS
+                        <li>Thursday: Intro to CSS
                             <ul>
                                 <li>Read these before:</li>
                                 <li><a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/the-best-way-to-learn-css-2/">The Best Way to Learn CSS</a></li>
@@ -24,19 +24,24 @@
                                 <li><a href="http://www.smashingmagazine.com/2010/01/28/color-theory-for-designers-part-1-the-meaning-of-color/">Color Theory for Designers</a> <br> (Part I, II, and III)</li>
                             </ul>
                         </li>
-                        <li>Friday Lab: Building a Basic Web Site</li>
+                        <li>Friday Lab: Building a Basic Web Site
+                            <ul>
+                                <li>Don't forget to logoff of lab machines!</li>
+                            </ul>
+                        </li>
                     </ul>
                 </section>
 
                 <section>
+                    <h2>Today:</h2>
                     <h2>Saying What You Mean</h2>
                     <ul>
-                        <li>Lab 1 Debrief and Review (10 min)</li>
-                        <li>Semantics vs Presentation (10 min)</li>
-                        <li>HTML Syntax and Structure Review (5 min)</li>
-                        <li>Tour of Semantic and Meta-Data Elements (20 min)</li>
-                        <li>Practice Using Semantic and Meta-Data Elements (20 min)</li>
-                        <li>Segmenting and Reusing Common Content (30 min)</li>
+                        <li>Lab 1 Debrief and Review</li>
+                        <li>Semantics vs Presentation</li>
+                        <li>HTML Syntax and Structure Review</li>
+                        <li>Tour of Semantic and Meta-Data Elements</li>
+                        <li>Practice Using Semantic and Meta-Data Elements</li>
+                        <li>Segmenting and Reusing Common Content</li>
                     </ul>
                     <p><img src="../../img/html5.png" alt="HTML5 Logo"></p>
                 </section>
@@ -44,7 +49,7 @@
                 <section>
                     <h2>Lab 1 Debrief</h2>
                     <p><em>Ask the person next to you...</em></p>
-                    <p>How did it go for you? Were you confused by anything?</p>
+                    <p>Did you understand what the version control tools (SourceTree &amp; GitHub) were doing?</p>
                     <p><img src="../../img/lab-large.png" alt="Lab icon"></p>
                 </section>
 
@@ -61,12 +66,28 @@
                 </section>
 
                 <section>
+                    <div class="pic-quote">
+                        <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
+                        <blockquote>"Suppose all the information stored on computers everywhere were linked.... Suppose I could program my computer to create a space in which everything could be linked to anything. All the bits of information in every computer at CERN, and on the planet, would be available to me and to anyone else. There would be a single global information space."</blockquote>
+                    </div>
+                </section>
+               
+                <section>
+                    <div class="pic-quote">
+                        <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
+                        <blockquote>"Once a bit of information in that space was labeled with an address, I could tell my computer to get it. By being able to reference anything with equal ease, a computer could represent associations between things that might seem unrelated but somehow did, in fact, share a relationship. A web of information would form."</blockquote>
+                        <p class="source">Time Berners-Lee, <cite>Weaving the Web</cite>, p 4</p>
+                    </div>                    
+                </section>
+
+                <section>
                     <p>The <a href="http://www.w3.org/History/19921103-hypertext/hypertext/WWW/MarkUp/Tags.html">first version of HTML</a> was very simple and almost entirely semantic</p>
                     <pre><code>
-&lt;h1&gt;My Document&lt;/h1&gt;
-&lt;p&gt;This is my first paragraph&lt;/p&gt;
-&lt;p&gt;This is my second paragraph&lt;/p&gt;
-&lt;p&gt;Go to &lt;a href=&quot;http://home.web.cern.ch/&quot;&gt;CERN home page&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Tim Berners-Lee&lt;/h1&gt;
+&lt;p&gt;The guy who invented HTTP, HTML, and URLs&lt;/p&gt;
+&lt;p&gt;Did this while he worked at 
+    &lt;a href=&quot;http://home.web.cern.ch/&quot;&gt;CERN&lt;/a&gt;
+&lt;/p&gt;
                     </code></pre>
                 </section>
 
@@ -76,19 +97,21 @@
                     <pre><code>
 &lt;body bgcolor=&quot;black&quot;&gt;
     &lt;font face=&quot;Comic Sans&quot; size=&quot;3&quot; color=&quot;white&quot;&gt;
-        Nice font, but how do I maintain this?
+        &lt;p&gt;Nice font, but how do I maintain this?&lt;/p&gt;
     &lt;/font&gt;
 &lt;/body&gt;
                     </code></pre>
                 </section>
 
                 <section>
-                    <p>And other really stupid and annoying tags like <code>&lt;blink&gt;</code></p>
+                    <p>And other really stupid and annoying tags like <code>&lt;blink&gt;</code> and <code>&lt;marquee&gt;</code></p>
                     <pre><code>
 &lt;body bgcolor=&quot;black&quot;&gt;
     &lt;font face=&quot;Comic Sans&quot; size=&quot;3&quot; color=&quot;white&quot;&gt;
-        &lt;blink&gt;Arrrrrrgggggghhhhhh!!!!! 
-        Who thought this was a good idea!&lt;/blink&gt;
+        &lt;blink&gt;
+            &lt;p&gt;Arrrrrrgggggghhhhhh!!!!! 
+            Who thought this was a good idea!&lt;/p&gt;
+        &lt;/blink&gt;
     &lt;/font&gt;
 &lt;/body&gt;
                     </code></pre>
@@ -124,7 +147,8 @@
                 <section>
                     <p>XML enabled custom vocabularies with HTML-like syntax</p>
                     <pre><code>
-&lt;menu type=&quot;breakfast&quot;&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;menu type=&quot;breakfast&quot; xmlns=&quot;menus.com&quot;&gt;
     &lt;food&gt;
         &lt;name&gt;Pigs in Blanket&lt;/name&gt;
         &lt;price&gt;$9.95&lt;/price&gt;
@@ -132,13 +156,14 @@
             Sausages wrapped in pancakes
         &lt;/description&gt;
         &lt;calories&gt;1,000,000&lt;/calories&gt;
+        &lt;effects&gt;cardiac arrest likely&lt;/effects&gt;
     &lt;/food&gt;
 &lt;/menu&gt;
                     </code></pre>
                 </section>
 
                 <section>
-                    <p>Maybe HTML should just be an XML vocabulary?</p>
+                    <p>Maybe HTML should just be an XML vocabulary? XHTML!</p>
                     <pre><code>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE html
@@ -153,6 +178,7 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
 
     &lt;p&gt;One character out of place and your page won't load!&lt;/p&gt;
     &lt;p&gt;And who can remember all that crap at the beginning?&lt;/p&gt;
+    &lt;p&gt;Arrrrrrgggggghhhhhh!!!!!&lt;/p&gt;
     ...
 &lt;/html&gt;
                     </code></pre>
@@ -170,17 +196,20 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
                 </section>
 
                 <section>
-                    <h2>Doctype Directive</h2>
+                    <h2>Doctype Declaration</h2>
                     <p>Tells your browser what kind of document this is</p>
-                    <pre><code data-trim>&lt;!doctype html&gt;</code></pre>
+                    <pre><code>
+&lt;!doctype html&gt;
+                    </code></pre>
                     <p>This is the doctype for HTML5 documents</p>
+                    <p>Quite a bit nicer than the XHTML one!</p>
                 </section>
 
                 <section>
-                    <p>The rest of the document contains a hierarchical tree of <span class="term">elements</span></p>
-                    <p class="fragment">Each element may contain one or more <span class="term">attributes</span>, as well as <span class="term">content</span></p>
-                    <p class="fragment">Content may be plain text, or other elements</p>
-                    <p class="fragment">In general, extra white space is compressed to one space</p>
+                    <p>The rest of the document contains a hierarchical tree of <dfn>elements</dfn></p>
+                    <p class="fragment">Each element may contain one or more <dfn>attributes</dfn>, as well as <dfn>content</dfn></p>
+                    <p class="fragment">Content may be <dfn>plain text</dfn>, or other elements</p>
+                    <p class="fragment">Except for a few special cases, extra <dfn>white space</dfn> is ignored</p>
                 </section>
 
                 <section>
@@ -188,23 +217,27 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
                     <p>Give meaning to their content</p>
                     <p>Marked by a &lt;start-tag&gt; and an &lt;/end-tag&gt;</p>
                     <p>May contain sub-elements</p>
-                    <pre><code data-trim>
-&lt;tag-name&gt;
-    ...content...
-&lt;/tag-name&gt;
-&lt;tag-name&gt;...content...
-    &lt;sub-tag&gt;...content...&lt;/sub-tag&gt;
-    ...content...
-&lt;/tag-name&gt;
+                    <pre><code>
+&lt;p&gt;
+    As Abraham Lincoln was fond of saying:
+&lt;/p&gt;
+<blockquote>
+    <p>If I ever want to verify a quote, I 
+        <strong>
+            go look it up on 
+            <a href="http://www.google.com">Google!</a>
+        </strong>
+    </p>
+</blockquote>
                     </code></pre>
                 </section>
 
                 <section>
                     <h2>Elements</h2>
                     <p>Some elements do not require an end tag because they can't have any content</p>
-                    <p>These are often called "self-closing" or "quick-close" tags</p>
+                    <p>These are often called "self-closing" tags</p>
                     <pre><code>
-&lt;!-- img tag has no other content besides url to image file --&gt;
+&lt;!-- img tag may not contain any content --&gt;
 &lt;img src=&quot;img/cat.jpg&quot; alt=&quot;cute cat&quot;&gt;
                     </code></pre>
                 </section>
@@ -213,19 +246,21 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
                     <h2>Attributes</h2>
                     <p>Extends the element with additional information or options</p>
                     <p>Syntax: name="value"</p>
-                    <pre><code data-trim>
-&lt;name attribute="value" attribute="value"&gt;
+                    <pre><code>
+&lt;element attribute="value" attribute="value"&gt;
     ...content...
-&lt;/name&gt;</code></pre>
+&lt;/element&gt;
+                    </code></pre>
                 </section>
 
                 <section>
                     <h2>Attributes</h2>
                     <p>Some attributes are merely markers, and don't need a value</p>
-                    <pre><code data-trim>
+                    <pre><code>
 &lt;button id="mybutton" disabled&gt;
     ...content...
-&lt;/button&gt;</code></pre>
+&lt;/button&gt;
+                    </code></pre>
                 </section>
 
                 <section>
@@ -241,7 +276,8 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
 
                 <section>
                     <h2>Basic Document Structure</h2>
-                    <pre><code data-trim>&lt;!doctype html&gt;
+                    <pre><code>
+&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot;&gt;
     &lt;head&gt;
         ... non-visible info about the page ...
@@ -250,7 +286,49 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
     &lt;body&gt;
         ... visible content ...
     &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;/html&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Tree of Elements</h2>
+                    <div class="two-column">
+                        <pre><code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;My Page&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt; 
+            &lt;strong&gt;
+            Hello World!
+            &lt;/strong&gt;
+        &lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;                            
+                        </code></pre>
+
+                        <ul class="element-tree">
+                            <li>html
+                                <ul>
+                                    <li>head
+                                        <ul>
+                                            <li>title</li>
+                                        </ul>
+                                    </li>
+                                    <li>body
+                                        <ul>
+                                            <li>p
+                                                <ul>
+                                                    <li>strong</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </section>
 
 
@@ -301,6 +379,7 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
 
                 <section>
                     <p>The Apache web server makes it easy to be DRY</p>
+                    <p>with <dfn>Server Side Includes (SSIs)</dfn></p>
                     <pre><code>
 [inc/header.html]
     &lt;!-- just tags for header content, not full page --&gt;
@@ -332,11 +411,9 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
                 </section>
 
                 <section>
-                    <h2>Let's Practice SSIs</h2>
-                    <p>Build two pages: index.shtml and inc/header.html</p>
-                    <p>Add fragment content to inc/header.html</p>
-                    <p>Use SSI to include content into index.html</p>
-                    <p>Upload to student web server to test</p>
+                    <h2>Next Class</h2>
+                    <p><img src="img/css.jpg" alt="CSS Logo"></p>
+                    <p><strong>Don't forget to logoff!</strong></p>
                 </section>
 
             </div> <!-- .slides -->

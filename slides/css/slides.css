@@ -23,18 +23,22 @@
 .two-column > ul,
 .two-column > ol,
 .two-column > img,
+.two-column > pre,
 .two-column > p {
 	width: 40%;
 	display: inline-block;
+	vertical-align: top;
 }
 .three-column > div,
 .three-column > figure,
 .three-column > ul,
 .three-column > ol,
 .three-column > img,
+.three-column > pre,
 .three-column > p {
 	width: 30%;
 	display: inline-block;
+	vertical-align: top;
 }
 ul.no-bullets {
 	list-style: none;
@@ -69,6 +73,10 @@ ul.file-tree li.folder-open {
 }
 ul.file-tree-description li {
 	font-style: italic;
+}
+
+ul.element-tree li {
+	list-style: disc;
 }
 
 .reveal section .pic-quote img {
