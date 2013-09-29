@@ -1,25 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--#include virtual="../inc/common-head.html" -->
         <meta name="description" content="INFO 343 HTML Semantic Reference">
-        <meta name="author" content="David Stearns">
-        <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
-
-        <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
-
-        <!-- highligh.js for code highlighting -->
-        <link rel="stylesheet" href="../../lib/highlight/styles/zenburn.css">
-
-        <link rel="stylesheet" href="../css/examples.css">
-
         <title>HTML Semantic Reference</title>
-
-        <!--[if lt IE 9]>
-            <script src="../../lib/html5shiv/html5shiv.js"></script>
-        <![endif]-->
-
     </head>
     <body>
 

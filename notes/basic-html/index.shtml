@@ -1,17 +1,9 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--#include virtual="../inc/common-head.html" -->
     <meta name="description" content="Notes for Saying What You Mean Lecture">
-    <meta name="author" content="David Stearns">
-    <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
-
     <title>Saying What You Mean: Diving into HTML 5</title>
-
-    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/notes.css">
-
 </head>
 <body>
 

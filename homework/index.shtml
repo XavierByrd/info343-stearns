@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/homework.css" media="screen">
     <link rel="stylesheet" href="../css/footer.css" media="screen">
 
-    <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
+    <link rel="shortcut icon" href="../img/shortcut.png">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

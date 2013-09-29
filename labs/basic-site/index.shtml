@@ -1,26 +1,10 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--#include virtual="../inc/common-head.html" -->
+
     <meta name="description" content="INFO 343 Basic Site Lab">
-    <meta name="author" content="David Stearns">
-    <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
-
-    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" href="../../css/footer.css">
-
-    <link rel="stylesheet" href="../css/labs.css">
-
     <title>Lab 2: Building a Basic Web Site</title>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="../../lib/html5shiv/html5shiv.js"></script>
-      <script src="../../lib/respond/respond.min.js"></script>
-    <![endif]-->
-
-    
 </head>
 <body>
     <div class="container">

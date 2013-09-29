@@ -1,131 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Home page for Stearns's sections of INFO 343">
-    <meta name="author" content="David Stearns">
-    
-    <title>INFO 343 Sections A and B</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Home page for Stearns's sections of INFO 343">
+        <meta name="author" content="David Stearns">
 
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" media="screen">
-    <link rel="stylesheet" href="css/main.css" media="screen">
-    <link rel="stylesheet" href="css/footer.css" media="screen">
-    
-    <link rel="shortcut icon" href="https://ischool.uw.edu/favicon-small.png">
-    
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="lib/html5shiv/html5shiv.js"></script>
-      <script src="lib/respond/respond.min.js"></script>
-    <![endif]-->
+        <title>INFO 343 Sections A and B</title>
 
-  </head>
-  <body>
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" href="css/main.css" media="screen">
+        <link rel="stylesheet" href="css/footer.css" media="screen">
 
-    <div class="container">
+        <link rel="shortcut icon" href="img/shortcut.png">
 
-      <nav>
-        <ol class="breadcrumb">
-          <li><a href="..">INFO 343</a></li>
-          <li>Sections A &amp; B</li>
-        </ol>
-      </nav>
-      
-      <article>
-        <div class="page-header">
-          <h1>INFO 343 Sections A &amp; B</h1>
-          <p class="lead">Teaching materials used in Dr Stearns's sections</p>
-        </div>
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="lib/html5shiv/html5shiv.js"></script>
+          <script src="lib/respond/respond.min.js"></script>
+          <![endif]-->
+    </head>
+    <body>
 
-        <h2 id="homework">Homework Instructions</h2>
+        <div class="container">
 
-        <ul class="homework">
-          <li><a href="homework/">Homework Assignments</a></li>
-        </ul>
+            <nav>
+                <ol class="breadcrumb">
+                    <li><a href="..">INFO 343</a></li>
+                    <li>Sections A &amp; B</li>
+                </ol>
+            </nav>
 
-        <h2 id="labs">Lab Instructions</h2>
-      
-        <ul class="labs">
-          <li><a href="labs/filemgmt">Managing Your Files</a></li>
-          <li>Building a Basic Web Site</li>
-          <li>Skinning Your Site in Different Ways</li>
-          <li>Skinning Your Site with Bootstrap</li>
-          <li>Interacting with the Customer via Scripts</li>
-          <li>Gathering Information via Forms</li>
-          <li>Leveraging Existing Services and Content</li>
-          <li>Configuring and Customizing WordPress</li>
-          <li>Making Data Visible</li>
-        </ul>
+            <article>
+                <div class="page-header">
+                    <h1>INFO 343 Sections A &amp; B</h1>
+                    <p class="lead">Teaching materials used in Dr Stearns's sections</p>
+                </div>
 
-        <h2 id="slides">Slides &amp; Notes</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 id="homework">Homework Instructions</h2>
 
-        <ul class="slides">
-          <li><a href="slides/intro/">Course Introduction</a></li>
-          <li><a href="slides/howwebworks">How the Web Works (Part I)</a></li>
-          <li><a href="slides/firstpage">Your First Web Page</a></li>
-          <li><a href="slides/vcs/">Managing Your Files</a></li>
-          <li class="notes"><a href="notes/urls/">Notes on URLs</a></li>
-          <li><a href="slides/basic-html/">Saying What You Mean: Diving into HTML 5</a></li>
-          <li class="notes"><a href="notes/basic-html/">Notes for Saying What You Mean</a></li>
-          <li class="notes"><a href="notes/basic-css">Adding Some Style: Intro to CSS 3</a></li>
-          <li>Getting all Semantic: Microdata and Accessibility</li>
-          <li>Adding your "37 Pieces of Flair": Advanced Styling</li>
-          <li>Responding to the Device: Responsive Web Design</li>
-          <li>Don't Reinvent the Wheel: CSS Tools and Frameworks</li>
-          <li>JavaScript: The Good Parts</li>
-          <li>Your Friend, the jQuery Library</li>
-          <li>A Form of Madness: HTML5 Forms and Inputs</li>
-          <li>You can do that? Advanced HTML5 Scripting Features</li>
-          <li>The Brave New World: AJAX and Web 2.0</li>
-          <li>Standing on the Shoulders of Giants: Building Mashups</li>
-          <li>Putting it all Together: Web Applications</li>
-          <li>The Self-Service Web Site: Content Management Systems</li>
-          <li>Making Data Visible: Data Analysis and Visualization Apps</li>
-          <li>Tracking Records: Transactions Processing Apps</li>
-          <li>Special Topics</li>
-          <li>Going Mobile: Transforming a Web App into a Mobile App</li>
-          <li>Don't Break the Build! Automated Testing using Selenium</li>
-        </ul>
+                        <ul class="homework">
+                            <li><a href="homework/">Homework Assignments</a></li>
+                        </ul>
 
-        <h2 id="examples">Example Pages</h2>
+                        <h2 id="labs">Lab Instructions</h2>
 
-        <h3><small>Templates</small></h3>
+                        <ul class="labs">
+                            <li><a href="labs/filemgmt">Managing Your Files</a></li>
+                            <li>Building a Basic Web Site</li>
+                            <li>Skinning Your Site in Different Ways</li>
+                            <li>Skinning Your Site with Bootstrap</li>
+                            <li>Interacting with the Customer via Scripts</li>
+                            <li>Gathering Information via Forms</li>
+                            <li>Leveraging Existing Services and Content</li>
+                            <li>Configuring and Customizing WordPress</li>
+                            <li>Making Data Visible</li>
+                        </ul>            
 
-        <ul class="examples">
-          <li><a href="examples/templates/template.html">Basic HTML Template</a></li>
-        </ul>
+                        <h2 id="examples">Example Pages</h2>
 
-        <h3><small>HTML</small></h3>
+                        <h3><small>Templates</small></h3>
 
-        <ul class="examples">
-          <li><a href="examples/html/reference.shtml">HTML Semantic Reference</a></li>
-          <li><a href="examples/html/meta-data.shtml">HTML Meta-Data Reference</a></li>
-          <li><a href="http://www.w3schools.com/tags/ref_entities.asp">HTML Character Entities Reference</a></li>
-        </ul>
+                        <ul class="examples">
+                            <li><a href="examples/templates/template.html">Basic HTML Template</a></li>
+                        </ul>
 
-        <h3><small>CSS</small></h3>
-        <ul class="examples">
-          <li><a href="examples/css-examples/boxes.html">Common Box Styling</a></li>
-          <li><a href="examples/css-examples/text.html">Common Text Styling</a></li>
-          <li><a href="examples/css-examples/links.html">Common Link Styling</a></li>
-          <li><a href="examples/css-examples/lists.html">Common List Styling</a></li>
-          <li><a href="examples/css-examples/tables.html">Common Table Styling</a></li>
-          <li><a href="examples/css-examples/fixed-width-layout.html">Fixed Width Page Layout</a></li>
-        </ul>
-       
+                        <h3><small>HTML</small></h3>
 
-      </article>      
+                        <ul class="examples">
+                            <li><a href="examples/html/reference.shtml">HTML Semantic Reference</a></li>
+                            <li><a href="examples/html/meta-data.shtml">HTML Meta-Data Reference</a></li>
+                            <li><a href="http://www.w3schools.com/tags/ref_entities.asp">HTML Character Entities Reference</a></li>
+                        </ul>
 
-      <!--#include virtual="inc/footer.html" -->
+                        <h3><small>CSS</small></h3>
+                        <ul class="examples">
+                            <li><a href="examples/css-examples/boxes.html">Common Box Styling</a></li>
+                            <li><a href="examples/css-examples/text.html">Common Text Styling</a></li>
+                            <li><a href="examples/css-examples/links.html">Common Link Styling</a></li>
+                            <li><a href="examples/css-examples/lists.html">Common List Styling</a></li>
+                            <li><a href="examples/css-examples/tables.html">Common Table Styling</a></li>
+                            <li><a href="examples/css-examples/fixed-width-layout.html">Fixed Width Page Layout</a></li>
+                        </ul>
 
+                    </div> <!-- first col -->
 
-    </div> <!-- .container -->
+                    <div class="col-md-6">
+                        <h2 id="slides">Slides &amp; Notes</h2>
 
+                        <ul class="slides">
+                            <li><a href="slides/intro/">Course Introduction</a></li>
+                            <li><a href="slides/howwebworks">How the Web Works (Part I)</a></li>
+                            <li><a href="slides/firstpage">Your First Web Page</a></li>
+                            <li><a href="slides/vcs/">Managing Your Files</a></li>
+                            <li class="notes"><a href="notes/urls/">Notes on URLs</a></li>
+                            <li><a href="slides/basic-html/">Saying What You Mean: Diving into HTML 5</a></li>
+                            <li class="notes"><a href="notes/basic-html/">Notes for Saying What You Mean</a></li>
+                            <li class="notes"><a href="notes/basic-css">Adding Some Style: Intro to CSS 3</a></li>
+                            <li>Getting all Semantic: Microdata and Accessibility</li>
+                            <li>Adding your "37 Pieces of Flair": Advanced Styling</li>
+                            <li>Responding to the Device: Responsive Web Design</li>
+                            <li>Don't Reinvent the Wheel: CSS Tools and Frameworks</li>
+                            <li>JavaScript: The Good Parts</li>
+                            <li>Your Friend, the jQuery Library</li>
+                            <li>A Form of Madness: HTML5 Forms and Inputs</li>
+                            <li>You can do that? Advanced HTML5 Scripting Features</li>
+                            <li>The Brave New World: AJAX and Web 2.0</li>
+                            <li>Standing on the Shoulders of Giants: Building Mashups</li>
+                            <li>Putting it all Together: Web Applications</li>
+                            <li>The Self-Service Web Site: Content Management Systems</li>
+                            <li>Making Data Visible: Data Analysis and Visualization Apps</li>
+                            <li>Tracking Records: Transactions Processing Apps</li>
+                            <li>Special Topics</li>
+                            <li>Going Mobile: Transforming a Web App into a Mobile App</li>
+                            <li>Don't Break the Build! Automated Testing using Selenium</li>
+                        </ul>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  </body>
+                    </div> <!-- second col -->
+                </div> <!-- row -->
+            </article>      
+
+            <!--#include virtual="inc/footer.html" -->
+        </div> <!-- .container -->
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    </body>
 </html>
