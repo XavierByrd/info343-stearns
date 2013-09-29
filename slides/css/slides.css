@@ -42,8 +42,9 @@ ul.no-bullets {
 ul.no-bullets ul {
 	list-style: none;
 }
-.term {
+.term, dfn {
 	color: #DB8002;
+	font-style: normal;
 }
 ul.file-tree,
 ul.file-tree ul,

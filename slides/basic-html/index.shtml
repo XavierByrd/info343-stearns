@@ -160,6 +160,7 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
 
                 <section>
                     <h2>HTML 5 Syntax and Structure</h2>
+                    <p>HTML gives <em>meaning</em> to otherwise plain text</p>
                 </section>
 
                 <section>
@@ -173,19 +174,22 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
                     <p>The rest of the document contains a hierarchical tree of <span class="term">elements</span></p>
                     <p class="fragment">Each element may contain one or more <span class="term">attributes</span>, as well as <span class="term">content</span></p>
                     <p class="fragment">Content may be plain text, or other elements</p>
+                    <p class="fragment">In general, extra white space is compressed to one space</p>
                 </section>
 
                 <section>
                     <h2>Elements</h2>
                     <p>Give meaning to their content</p>
-                    <p class="fragment">Marked by a &lt;start-tag&gt; and an &lt;/end-tag&gt;</p>
-                    <p class="fragment">Content can be text and/or other elements.</p>
-                    <pre class="fragment"><code data-trim>
-&lt;name&gt;...content...&lt;/name&gt;
-&lt;name&gt;...content...
-    &lt;sub&gt;...content...&lt;/sub&gt;
+                    <p>Marked by a &lt;start-tag&gt; and an &lt;/end-tag&gt;</p>
+                    <p>May contain sub-elements</p>
+                    <pre><code data-trim>
+&lt;tag-name&gt;
     ...content...
-&lt;/name&gt;
+&lt;/tag-name&gt;
+&lt;tag-name&gt;...content...
+    &lt;sub-tag&gt;...content...&lt;/sub-tag&gt;
+    ...content...
+&lt;/tag-name&gt;
                     </code></pre>
                 </section>
 
@@ -193,7 +197,10 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
                     <h2>Elements</h2>
                     <p>Some elements do not require an end tag because they can't have any content</p>
                     <p>These are often called "self-closing" or "quick-close" tags</p>
-                    <pre><code>&lt;br&gt; &lt;!-- manual line break --&gt;</code></pre>
+                    <pre><code>
+&lt;!-- img tag has no other content besides url to image file --&gt;
+&lt;img src=&quot;img/cat.jpg&quot; alt=&quot;cute cat&quot;&gt;
+                    </code></pre>
                 </section>
 
                 <section>
@@ -218,7 +225,12 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
                 <section>
                     <h2>Comments</h2>
                     <p>Downloaded to client, but not interpreted nor displayed</p>
-                    <pre><code>&lt;!-- this is a comment --&gt;</code></pre>
+                    <pre><code>
+&lt;!-- this is a comment --&gt;
+&lt;!-- 
+    &lt;p&gt;This markup is commented out for testing&lt;/p&gt;
+--&gt;
+                    </code></pre>
                 </section>
 
                 <section>
@@ -237,18 +249,30 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
 
 
                 <section>
-                    <h2>HTML 5 Semantics</h2>
-                    <p><a target="_blank" href="../../examples/html/reference.html">HTML Semantic Reference</a></p>
+                    <h2>HTML 5 Semantic Tags</h2>
+                    <p><a target="_blank" href="../../examples/html/reference.shtml">HTML Semantic Reference</a></p>
                 </section>
 
                 <section>
-                    <h2>HTML 5 Meta-Data</h2>
-                    <p><a target="_blank" href="../../examples/html/meta-data.html">HTML Meta-Data Reference</a></p>
+                    <h2>HTML 5 Meta-Data Tags</h2>
+                    <p><a target="_blank" href="../../examples/html/meta-data.shtml">HTML Meta-Data Reference</a></p>
                 </section>
 
                 <section>
                     <h2>HTML 5 Character Entities</h2>
+                    <p>Enables literal use of reserved or extended characters and symbols</p>
+                    <pre><code>
+&lt;!-- will appear in the browser as &#039;100 &lt; 50&#039; --&gt;
+&lt;p&gt;100 &amp;gt; 50&lt;/p&gt;
+
+<!-- will appear as copyright symbol -->
+&lt;p&gt;&amp;copy;&lt;/p&gt;
+                    </code></pre>
                     <p><a target="_blank" href="http://dev.w3.org/html5/html-author/charref">HTML Character Entities Reference</a></p>
+                </section>
+
+                <section>
+                    <h2>Time to Practice!</h2>
                 </section>
 
                 <section>
@@ -256,6 +280,58 @@ PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot;
                     <p><a target="_blank" href="http://httpd.apache.org/docs/2.2/howto/ssi.html">Apache Server-Side Includes</a></p>
                 </section>
 
+                <section>
+                    <p>When building several related pages for a site, you often want to have the same bits of content on every page</p>
+                    <p class="fragment">Common headers, site navigation bars, and footers</p>
+                    <p class="fragment">Common sets of <code>&lt;link&gt;</code> or <code>&lt;meta&gt;</code> tags in the <code>&lt;head&gt;</code></p>
+                </section>
+
+                <section>
+                    <h2>The <dfn>DRY</dfn> Principle</h2>
+                    <p>Don't Repeat Yourself!</p>
+                    <p class="fragment">Common content should be defined only once</p>
+                    <p class="fragment">Basic principle of all programming, not just web programming</p>
+                </section>
+
+                <section>
+                    <p>The Apache web server makes it easy to be DRY</p>
+                    <pre><code>
+[inc/header.html]
+    &lt;!-- just tags for header content, not full page --&gt;
+    &lt;header&gt;
+        &lt;h1&gt;My Common Header&lt;/h1&gt;
+        &lt;p&gt;for my site&lt;/p&gt;        
+    &lt;/header&gt;
+
+[index.shtml]
+    &lt;!-- full page --&gt;
+    &lt;html&gt;
+    ...
+        &lt;body&gt;
+            &lt;!--#include virtual=&quot;inc/header.html&quot; --&gt;
+            ...rest of body...
+        &lt;/body&gt;
+    &lt;/html&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Using SSIs</h2>
+                    <ul>
+                        <li class="fragment">Put your common content in separate files in your 'inc' directory</li>
+                        <li class="fragment">Add SSI directive to pages where you want included content to go</li>
+                        <li class="fragment">Use '.shtml' extension for pages containing SSIs</li>
+                        <li class="fragment">Upload to web server and view in browser</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Let's Practice SSIs</h2>
+                    <p>Build two pages: index.shtml and inc/header.html</p>
+                    <p>Add fragment content to inc/header.html</p>
+                    <p>Use SSI to include content into index.html</p>
+                    <p>Upload to student web server to test</p>
+                </section>
 
             </div> <!-- .slides -->
         </div> <!-- .reveal -->
