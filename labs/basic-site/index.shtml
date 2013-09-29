@@ -182,7 +182,7 @@ body {
 
         <p>Follow <a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/sftp/">these instructions written by UW IT</a> to connect to your UW web hosting server using FileZilla. Once you have successfully connected, follow these steps:</p>
 
-        <ul>
+        <ol>
             <li>FileZilla shows you files on your local hard drive in the left box, and files on the remote server in the right box.</li>
             <li>In the right-side file listing box, double click the 'student_html' folder if you have one, otherwise double click the 'public_html' folder.</li>
             <li>If you don't already have a folder there named 'info343', right-click and choose 'Create Directory' to create a new directory. Name it 'info343' (all lower case).</li>
@@ -191,7 +191,7 @@ body {
             <li>Double-click the 'lab2' directory you just created.</li>
             <li>Now in the left-side file-listing box, find your local repository on your hard drive.</li>
             <li>Select all your website files (don't include the .git folder) and drag-drop them from the left box to the right box.</li>
-        </ul>
+        </ol>
 
         <p>If everything went well, you should now be able to see your web site in a browser using the URL <code>http://[students|staff|faculty].washington.edu/<span class="token">your-net-id</span>/info343/lab2/</code>. Use 'students', 'staff' or 'faculty' depending on the affiliation you had when you activated your web publishing service, and replace <span class="token">your-net-id</span> with your UW net id.</p>
 
@@ -199,7 +199,7 @@ body {
 
         <p>If you're comfortable at the command line, you can publish your site, and keep it updated quite easily by using SSH and Git. Follow these steps:</p>
 
-        <ul>
+        <ol>
             <li>Go to your repository on the <a href="https://github.com/">GitHub web site</a>. On your repository home page, there should be a box on the right entitled 'HTTPS clone URL'. Click the copy to clipboard button, or select the URL and copy it to your clipboard.</li>
 
             <li>If you are on Mac OS X or Unix, open a Terminal window and SSH to the web server by entering the command <code>ssh <span class="token">your-netid</span >@dante.u.washington.edu</code>, replacing <code><span class="token">your-netid</span></code> with your UW Net ID. Enter your UW NetID password at the prompt.</li>
@@ -221,7 +221,7 @@ body {
             <li>Change to the directory just created (<code>cd lab2</code>) and list the files. You should see your web site files.</li>
 
             <li>If you make any future changes to your files, commit them, and push to your GitHub repository, you can then quickly update your site on the UW web hosting server by executing <code>git pull</code> from within this 'lab2' directory. Git will pull down any changes made since the last time you cloned/pulled, and apply them.</li>
-        </ul>
+        </ol>
 
         <h4>Submit Your Site URL via Canvas</h4>
 
