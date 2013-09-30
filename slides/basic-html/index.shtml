@@ -36,7 +36,7 @@
                     <h2>Today:</h2>
                     <h2>Saying What You Mean</h2>
                     <ul>
-                        <li>Lab 1 Debrief and Review</li>
+                        <li>Lab 1 Debrief and More on VCS</li>
                         <li>Semantics vs Presentation</li>
                         <li>HTML Syntax and Structure Review</li>
                         <li>Tour of Semantic and Meta-Data Elements</li>
@@ -51,6 +51,52 @@
                     <p><em>Ask the person next to you...</em></p>
                     <p>Did you understand what the version control tools (SourceTree &amp; GitHub) were doing?</p>
                     <p><img src="../../img/lab-large.png" alt="Lab icon"></p>
+                </section>
+
+                <section>
+                    <h3>Version Control Systems (VCSs)</h3>
+                    <ul>
+                        <li>What was the VCS actually doing?</li>
+                        <li>How was that different from the FTP tool (FileZilla)?</li>
+                        <li>Why should I use a VCS? Why not just FTP?</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>VCSs manage files stored in <dfn>repositories</dfn>.</p>
+                    <p class="fragment">A repository is a database that tracks <dfn>changes</dfn> made to files within it. Changes are tracked at the <dfn>line</dfn> level.</p>
+                    <p class="fragment">Repositories record only the changes you explicitly <dfn>commit</dfn> to them. These changes are called a "<dfn>diff</dfn>."</p>
+                    <p class="fragment">Most VCSs allow you to commit changes from some files but not others. In Git, this is what the <dfn>staging</dfn> area is for.</p>
+                </section>
+
+                <section>
+                    <p>A <dfn>distributed VCS</dfn> like Git allows multiple repositories to be linked to each other.</p>
+                    <p class="fragment">Teams typically use a single shared repository on the network as their <dfn>master repository</dfn>, and all devs <dfn>clone</dfn> that repository to their local machines.</p>
+                    <p class="fragment">Commits can be <dfn>pushed</dfn> from local to remote or <dfn>pulled</dfn> from remote to local.</p>
+                    <p class="fragment"><dfn>GitHub</dfn> is a popular network repository service for open source development.</p>
+                </section>
+
+                <section>
+                    <p><img src="../vcs/img/vcs-distributed" alt="distributed vcs diagram"></p>
+                </section>
+
+                <section>
+                    <p>An <dfn>FTP tool</dfn> simply moves files from one machine to another.</p>
+                    <p class="fragment">Like Windows File Explorer with network drives, but works with Unix servers.</p>
+                    <p class="fragment">FTP doesn't track changes; it simply overwrites.</p>
+                    <p class="fragment">Unless you explicitly save previous versions, you can't rollback.</p>
+                    <p class="fragment">FTP can't coordinate changes made by multiple people.</p>
+                    <p class="fragment">FTP can't tell you which files have changed since your last copy, nor which files are out of date.</p>
+                </section>
+
+                <section>
+                    <p>So why should I use a VCS?</p>
+                    <ul class="fragment">
+                        <li>Tracks all committed changes throughout life of project</li>
+                        <li>Enables easy rollback to previous commit states</li>
+                        <li>Enables parallel team development with offsite backup</li>
+                        <li>Makes deployment (aka publishing) easier</li>
+                    </ul>
                 </section>
 
                 <section>
