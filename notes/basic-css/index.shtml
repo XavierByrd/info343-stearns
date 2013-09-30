@@ -43,9 +43,10 @@
                 </li>
                 <li>Typography
                     <ol>
-                        <li>Two basic categories of fonts: serif and sans-serif</li>
-                        <li>The former is generally better for screens, while the latter can be better for print</li>
-                        <li>Sans-Serif is generally good for headings if using serifed font in body</li>
+                        <li>Three basic categories of fonts: serif, sans-serif, and decorative</li>
+                        <li>Serifed fronts (think Times New Roman) are generally better for print, while sans-serif (think Helvetica) are generally better for screens</li>
+                        <li>Sans-serif is generally good for headings if using serifed font in body</li>
+                        <li>Decorative fonts (think handwriting fonts) can be effective if used <em>sparingly</em></li>
                         <li>Browsers guarantee something for 'serif' and 'sans-serif'; Helvetica and Arial are also pretty safe</li>
                         <li>Other fonts are not guaranteed (esp. on Linux clients), so it's best to be explicit and use a custom font</li>
                         <li><a href="http://www.google.com/fonts">Google Fonts</a> is an easy source for free, custom fonts</li>
