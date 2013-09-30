@@ -70,6 +70,14 @@
                 </section>
 
                 <section>
+                    <p><img src="img/commit.png" alt="diagram showing commit to a local repository"></p>
+                </section>
+
+                <section>
+                    <p><img src="img/checkout.png" alt="diagram showing recovery of previous commit"></p>
+                </section>
+
+                <section>
                     <p>A <dfn>distributed VCS</dfn> like Git allows multiple repositories to be linked to each other.</p>
                     <p class="fragment">Teams typically use a single shared repository on the network as their <dfn>master repository</dfn>, and all devs <dfn>clone</dfn> that repository to their local machines.</p>
                     <p class="fragment">Commits can be <dfn>pushed</dfn> from local to remote or <dfn>pulled</dfn> from remote to local.</p>
@@ -77,12 +85,12 @@
                 </section>
 
                 <section>
-                    <p><img src="../vcs/img/vcs-distributed" alt="distributed vcs diagram"></p>
+                    <p><img src="img/github.png" alt="diagram showing distributed development using Git and GitHub"></p>
                 </section>
 
                 <section>
                     <p>An <dfn>FTP tool</dfn> simply moves files from one machine to another.</p>
-                    <p class="fragment">Like Windows File Explorer with network drives, but works with Unix servers.</p>
+                    <p class="fragment">Similar to Windows File Explorer with network drives, but works with Unix servers.</p>
                     <p class="fragment">FTP doesn't track changes; it simply overwrites.</p>
                     <p class="fragment">Unless you explicitly save previous versions, you can't rollback.</p>
                     <p class="fragment">FTP can't coordinate changes made by multiple people.</p>
@@ -100,6 +108,14 @@
                 </section>
 
                 <section>
+                    <p><img src="img/publish-git.png" alt="diagram showing publishing site with git"></p>
+                </section>
+
+                <section>
+                    <p><img src="img/update-git.png" alt="diagram showing updating site with git"></p>
+                </section>
+
+                <section>
                     <h2>Semantics &ne; Presentation</h2>
                     <p class="fragment">Separate meaning from formatting</p>
                     <p class="fragment">Separate data from representation</p>
@@ -109,21 +125,6 @@
                 <section>
                     <p>Tim Berners-Lee with an early web browser (CERN 1991)</p>
                     <p><img src="img/bernerslee.jpg" alt="Tim Berners-Lee"></p>
-                </section>
-
-                <section>
-                    <div class="pic-quote">
-                        <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
-                        <blockquote>"Suppose all the information stored on computers everywhere were linked.... Suppose I could program my computer to create a space in which everything could be linked to anything. All the bits of information in every computer at CERN, and on the planet, would be available to me and to anyone else. There would be a single global information space."</blockquote>
-                    </div>
-                </section>
-               
-                <section>
-                    <div class="pic-quote">
-                        <img src="img/bernerslee-today.jpg" alt="Tim Berners-Lee">
-                        <blockquote>"Once a bit of information in that space was labeled with an address, I could tell my computer to get it. By being able to reference anything with equal ease, a computer could represent associations between things that might seem unrelated but somehow did, in fact, share a relationship. A web of information would form."</blockquote>
-                        <p class="source">Time Berners-Lee, <cite>Weaving the Web</cite>, p 4</p>
-                    </div>                    
                 </section>
 
                 <section>
