@@ -49,7 +49,7 @@
 
                         <ul class="labs">
                             <li><a href="labs/filemgmt">Managing Your Files</a></li>
-                            <li>Building a Basic Web Site</li>
+                            <li><a href="labs/basic-site">Building a Basic Web Site</a></li>
                             <li>Skinning Your Site in Different Ways</li>
                             <li>Skinning Your Site with Bootstrap</li>
                             <li>Interacting with the Customer via Scripts</li>

@@ -15,7 +15,7 @@
 
         <div class="page-header lab-title">
             <h1>Lab 2: Building a Basic Web Site</h1>
-            <p class="lead">HTML, CSS, and Server-Side Includes</p>
+            <p class="lead">HTML and CSS</p>
         </div>
 
         <p>In our previous lab, we practiced using various tools and techniques for managing our files, but we didn't worry all that much about what was <em>inside</em> those files. In this lab, you will practice the following skills, which we learned this week:</p>
