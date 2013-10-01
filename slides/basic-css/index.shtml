@@ -46,14 +46,105 @@
                     <h2>HTML Clarifications</h2>
                     <ul>
                         <li>Which elements need to be in a paragraph and which don't?</li>
-                        <li>Why should I use <code>&lt;dl&gt;,&lt;dt&gt;,&lt;dd&gt;</code> for a menu instead of a <code>&lt;ul&gt;</code> or <code>&lt;pre&gt;</code>?</li>
+                        <li>Why should I use <code>&lt;dl&gt;</code> for a menu instead of a <code>&lt;ul&gt;</code> or <code>&lt;pre&gt;</code>?</li>
                         <li>How do you properly nest <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code>?</li>
                         <li>Why do I need an <code>alt=""</code> attribute on an <code>&lt;img&gt;</code>?</li>
                     </ul>
                 </section>
 
                 <section>
-                    
+                    <h2>What goes inside a paragraph and what doesn't?</h2>
+                    <ul>
+                        <li><a href="../../examples/html/reference.shtml#phrasing">Phrasing elements</a> (em, strong, sub, sup, span, ...) always go inside paragraphs</li>
+                        <li><a href="../../examples/html/reference.shtml#hyperlinks">Hyperlinks</a> (a) can go inside or outside, but typically go inside</li>
+                        <li><a href="../../examples/html/reference.shtml#embedded">Images</a> (img) can go inside or outside</li>
+                        <li>Block elements (figure, blockquote, ol, ul, dl, table, div) act like paragraphs, so they go outside.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Why <code>&lt;dl&gt;</code> for a Menu?</h2>
+                    <p>Goal is to use the most semantically-correct elements; that is, the elements that are closest in meaning to the content</p>
+                    <p class="fragment">A two-level <code>&lt;ul&gt;</code> might give you a hierarchical <em>look</em>, but it <em>means</em> a list of <em>independent</em> items, not a set of <em>related</em> names and descriptions.</p>
+                    <p class="fragment">A <code>&lt;pre&gt;</code> might let you control spacing in the <em>presentation</em>, but it only means a general "pre-formatted paragraph," not a set of related names and descriptions.</p>
+                    <p class="fragment">A <code>&lt;dl&gt;</code> means a set of related terms and descriptions, which is closest in meaning to a menu.</p>
+                </section>
+
+                <section>
+                    <h2>Properly Nested Lists</h2>
+                    <p>A sub-list always goes <em>inside</em> the <code>&lt;li&gt;</code> to which it belongs</p>
+                    <pre><code data-trim>
+&lt;ul&gt;
+    &lt;li&gt;Item 1
+        &lt;ul&gt;
+            &lt;li&gt;Sub-item 1.1&lt;/li&gt;
+            &lt;li&gt;Sub-item 1.2&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Item 2
+        &lt;ul&gt;
+            &lt;li&gt;Sub-item 2.1&lt;/li&gt;
+            &lt;li&gt;Sub-item 2.2&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Why Does <code>&lt;img&gt;</code> Need <code>alt=""</code>?</h2>
+                    <p class="fragment">Because blind people use the web too!</p>
+                    <p class="fragment">Browsers display that text if user turns off images</p>
+                    <p class="fragment">Indexers and search engines use it to know what the image is about</p>
+                </section>
+
+                <section>
+                    <h2>Adding Some Style</h2>
+                    <img src="../../img/css3.png" alt="CSS3 Logo">
+                </section>
+
+                <section>
+                    <p>There are three places you can specify style rules:</p>
+                    <ul>
+                        <li>In a separate, linked "stylesheet" file (<strong>Best Option</strong>)</li>
+                        <li>In a <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code> section (OK for pages that travel)</li>
+                        <li>In a <code>style</code> attribute on an element (Evil! Don't do this!)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <p>Separate Stylesheet</p>
+                    <p class="file-label">css/styles.css</p>
+                    <pre><code>
+    body {
+        background-color: black;
+    }
+    p {
+        font-family: &#039;Helvetica&#039;, sans-serif;
+        font-size: 18px;
+        color: white;
+    }
+                    </code></pre>
+
+                    <p class="file-label">index.html</p>
+                    <pre><code>
+    &lt;head&gt;
+    ...
+        <!-- tells browser where to get style info -->
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
+    &lt;/head&gt;
+
+    &lt;body&gt;
+        &lt;p&gt;This is my paragraph&lt;/p&gt;
+    &lt;/body&gt;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>CSS Syntax</h2>
+                    <p>Stylesheets contain a set of styling <dfn>rules</dfn>.</p>
+                    <p class="fragment">Each rule starts with a <dfn>selector</dfn>, which specifies which elements the rule apples to.</p>
+                    <p class="fragment">Rest of rule specifies formatting <dfn>properties</dfn> to apply to selected elements.</p>
                 </section>
 
 

@@ -21,7 +21,7 @@
 
                     <p class="alert alert-warning">This page uses a stylesheet to make the content appear in an attractive and nicely-designed way. Browsers display the content of some of these elements in more plain-looking ways by default. We will learn how to completely style elements in our next class.</p>
 
-                    <section>
+                    <section id="paragraphs">
                         <div class="section-title">
                             <h2>Paragraphs</h2>
                             <p class="lead">These elements define paragraphs within the body of the document</p>
@@ -49,16 +49,16 @@ paragraph.</pre>
                         </div>
                     </section>
 
-                    <section>
+                    <section id="hyperlinks">
                         <div class="section-title">
-                            <h2>Links</h2>
-                            <p class="lead">These elements define hyperlinks to other resources on the web</p>                        
+                            <h2>Hyperlinks</h2>
+                            <p class="lead">These elements define hyperlinks to other resources on the web.</p>                        
                         </div>
 
                         <div class="entry">
                             <div class="entry-title">a</div>
                             <div class="entry-description">Content is a hyperlink to the URL specified in the <code>href</code> attribute.</div>
-                            <div class="entry-notes">The content may contain other elements (e.g., <a href="#img">img</a>), and all elements will be part of the link. Set the <code>target</code> attribute to "_blank" to automatically open the URL in a new browser tab. Note that you can use URLs with other schemes as well (ftp:, mailto:)</div>
+                            <div class="entry-notes">The content may contain other elements (e.g., <a href="#img">img</a>), and all elements will be part of the link. Set the <code>target</code> attribute to "_blank" to automatically open the URL in a new browser tab. Note that you can use URLs with other schemes as well (ftp:, mailto:). This element can exist inside or outside of a paragraph, but developers generally keep these inside a paragraph or other block element.</div>
                             <div class="entry-example">
                                 <a href="http://google.com">Google</a>
                             </div>
@@ -71,10 +71,10 @@ paragraph.</pre>
                         </div>
                     </section>
 
-                    <section>
+                    <section id="phrasing">
                         <div class="section-title">
                             <h2>Phrasing</h2>
-                            <p class="lead">These elements add specific meaning to runs of text within paragraphs</p>                        
+                            <p class="lead">These elements add specific meaning to runs of text <em>within</em> paragraphs and other block elements</p>                        
                         </div>
 
                         <div class="entry">
@@ -116,7 +116,7 @@ paragraph.</pre>
                         <div class="entry">
                             <div class="entry-title">blockquote, q</div>
                             <div class="entry-description">Content is a lengthy, or short quote</div>
-                            <div class="entry-notes">Use <code>blockquote</code> for long quotes that should be set off from the main content, and <code>q</code> for short, inline quotes (note that <code>blockquote</code> does not go inside a <code>p</code> element, only <code>q</code> does). Browsers wrap inline quotes in language-appropriate quotation marks, but you can adjust these in CSS.</div>
+                            <div class="entry-notes">Use <code>blockquote</code> for long quotes that should be set off from the main content, and <code>q</code> for short, inline quotes (note that <code>blockquote</code> is a paragraph-like element and thus does not go inside a <code>p</code> element; only <code>q</code> does). Browsers wrap inline quotes in language-appropriate quotation marks, but you can adjust these in CSS.</div>
                             <div class="entry-example">
                                 <p>Abraham Lincoln once said, <q>I don't think people quote me correctly on the Internet.</q></p>
                                 <p>Abraham Lincoln once said, <q lang="fr">Je ne pense pas que les gens me citer correctement sur Internet.</q></p>
@@ -212,7 +212,7 @@ paragraph.</pre>
                         </div>
                     </section>
 
-                    <section>
+                    <section id="line-breaking">
                         <div class="section-title">
                             <h2>Line Breaking</h2>
                             <p class="lead">These elements control or suggest line breaking within a paragraph</p>                        
@@ -237,10 +237,10 @@ paragraph.</pre>
                         </div>
                     </section>
 
-                    <section>
+                    <section id="lists">
                         <div class="section-title">
                             <h2>Lists, Glossaries, and Tables</h2>
-                            <p class="lead">These elements define lists of related items</p>                        
+                            <p class="lead">These elements define sets of related items. They all act like paragraphs, so they do not need to be within a paragraph.</p>
                         </div>
 
                         <div class="entry">
@@ -333,10 +333,10 @@ paragraph.</pre>
                         </div>
                     </section>
 
-                    <section>
+                    <section id="embedded">
                         <div class="section-title">
                             <h2>Embedded Content</h2>
-                            <p class="lead">These elements embed other kinds of content into the page</p>                        
+                            <p class="lead">These elements embed other kinds of content into the page. They may exist inside or outside of a paragraph.</p>                        
                         </div>
 
                         <div class="entry">
@@ -361,10 +361,10 @@ paragraph.</pre>
                         </div>
                     </section>
 
-                    <section>
+                    <section id="sectioning">
                         <div class="section-title">
                             <h2>Sectioning</h2>
-                            <p class="lead">These elements define major sections of the document and their related headings</p>                
+                            <p class="lead">These elements define major sections of the document and their related headings. These go around one or more paragraphs and other elements.</p>                
                         </div>
 
                         <div class="entry">
@@ -462,6 +462,7 @@ paragraph.</pre>
                         <div class="entry">
                             <div class="entry-title">h1 &ndash; h6</div>
                             <div class="entry-description">Content is a section heading</div>
+                            <div class="entry-notes">Use this to specify the heading for a given section of the document. These usually immediately precede a set of paragraphs that belong to the section.</div>
                             <div class="entry-example">
                                 <h1>Heading 1</h1>
                                 <h2>Heading 2</h2>
@@ -485,7 +486,7 @@ paragraph.</pre>
                         </div>
                     </section>
 
-                    <section>
+                    <section id="global-attrs">
                         <div class="section-title">
                             <h2>Global Attributes</h2>
                             <p class="lead">The following attributes may be used on any HTML element in the <code>&lt;body&gt;</code> section</p>
