@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>INFO 343 HTML</title>
+        <meta name="description" content="HTML Lecture">
+        <meta name="author" content="David Stearns">
+
+        <!--#include virtual="../inc/common-head.html" -->
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+                <section>
+                    <h2>Coming Up...</h2>
+                    <img class="pull-right" src="../../img/homework.png" alt="Homework icon">
+                    <ul>
+                        <li>Friday Lab: Building a Basic Web Site
+                            <ul>
+                                <li><strong>Don't Forget to logoff of lab machines!</strong></li>
+                            </ul>
+                        </li>
+                        <li>Tuesday: Accessibility &amp; Advanced Semantics
+                            <ul>
+                                <li><a href="../../homework/">Homework version 1.0</a> Due!</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Today: Adding Some Style</h2>
+                    <img class="pull-right" src="../../img/css3.png" alt="CSS3 Logo">
+                    <ul>
+                        <li>HTML Clarifications</li>
+                        <li>Basic Graphic Design</li>
+                        <li>How to Add Styling Rules</li>
+                        <li>Styling Boxes</li>
+                        <li>Styling Text</li>
+                        <li>Styling Links (Navigation bars)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>HTML Clarifications</h2>
+                    <ul>
+                        <li>Which elements need to be in a paragraph and which don't?</li>
+                        <li>Why should I use <code>&lt;dl&gt;,&lt;dt&gt;,&lt;dd&gt;</code> for a menu instead of a <code>&lt;ul&gt;</code> or <code>&lt;pre&gt;</code>?</li>
+                        <li>How do you properly nest <code>&lt;ol&gt;</code> and <code>&lt;ul&gt;</code>?</li>
+                        <li>Why do I need an <code>alt=""</code> attribute on an <code>&lt;img&gt;</code>?</li>
+                    </ul>
+                </section>
+
+                <section>
+                    
+                </section>
+
+
+                <section>
+                    <h2>Friday Lab</h2>
+                    <img src="../../img/lab.png" alt="Lab icon">
+                    <p>Building a Basic Web Site</p>
+                    <p><strong>Don't Forget to logoff of Lab Machines!</strong></p>
+                </section>
+
+            </div> <!-- .slides -->
+        </div> <!-- .reveal -->
+
+       <!--#include virtual="../inc/common-scripts.html" -->
+    </body>
+</html>
