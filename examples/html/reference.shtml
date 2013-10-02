@@ -172,17 +172,6 @@ paragraph.</pre>
                         </div>
 
                         <div class="entry">
-                            <div class="entry-title">address</div>
-                            <div class="entry-description">Content is contact information for the author</div>
-                            <div class="entry-example">
-                                <address>
-                                    <p>David Stearns</p>
-                                    <p><a href="mailto:dlsinfo@uw.edu">dlsinfo@uw.edu</a></p>
-                                </address>    
-                            </div>
-                        </div>
-
-                        <div class="entry">
                             <div class="entry-title">time</div>
                             <div class="entry-description">Content is a date/time value</div>
                             <div class="entry-notes">This is new in HTML 5, and provides a convenient way to supply a full date-time value for a contextual date/time description.</div>
@@ -439,6 +428,18 @@ paragraph.</pre>
                                 </footer>
                             </div>
                         </div>
+
+                        <div class="entry">
+                            <div class="entry-title">address</div>
+                            <div class="entry-description">Content is contact information for the author</div>
+                            <div class="entry-example">
+                                <address>
+                                    <p>David Stearns</p>
+                                    <p><a href="mailto:dlsinfo@uw.edu">dlsinfo@uw.edu</a></p>
+                                </address>    
+                            </div>
+                        </div>                       
+
 
                         <div class="entry">
                             <div class="entry-title">section</div>
