@@ -14,9 +14,9 @@
 
                 <section>
                     <h2>Coming Up...</h2>
-                    <img class="pull-right" src="../../img/homework.png" alt="Homework icon">
+                    <img class="pull-right" src="../../img/lab.png" alt="Lab icon">
                     <ul>
-                        <li>Friday Lab: Building a Basic Web Site
+                        <li>Friday Lab: <a href="../../labs/basic-site">Building a Basic Web Site</a>
                             <ul>
                                 <li><strong>Don't Forget to logoff of lab machines!</strong></li>
                             </ul>
@@ -54,13 +54,14 @@
                 </section>
 
                 <section>
-                    <h2>What goes inside a paragraph and what doesn't?</h2>
+                    <h2>HTML Content Types</h2>
                     <ul>
-                        <li><a href="../../examples/html/reference.shtml#phrasing">Phrasing elements</a> (em, strong, sub, sup, span, ...) always go inside paragraphs</li>
-                        <li><a href="../../examples/html/reference.shtml#hyperlinks">Hyperlinks</a> (a) can go inside or outside, but typically go inside</li>
-                        <li><a href="../../examples/html/reference.shtml#embedded">Images</a> (img) can go inside or outside</li>
-                        <li>Block elements (figure, blockquote, h1-4, ol, ul, dl, table, div) act like paragraphs, so they go outside.</li>
-                        <li><a href="../../examples/html/reference.shtml#sectioning">Sectioning</a> content wraps around one or more paragraphs</li>
+                        <li><a href="../../examples/html/reference.shtml#paragraphs">Paragraphs</a> (p, pre, blockquote)</li>
+                        <li class="fragment">Other Block elements (ol, ul, dl, figure, table, div, h1-6) are peers to paragraphs, but have more specialized content</li>
+                        <li class="fragment"><a href="../../examples/html/reference.shtml#phrasing">Phrasing elements</a> (em, strong, sub, sup, q, ...) add meaning to segments of text <em>within</em> paragraphs or other elements</li>
+                        <li class="fragment"><a href="../../examples/html/reference.shtml#embedded">Embedded content</a> (img) adds content in-line, meaning no explicit line break following</li>
+                        <li class="fragment"><a href="../../examples/html/reference.shtml#hyperlinks">Hyperlinks</a> (a) add linking to segments of text, images, or anything you choose to put inside</li>
+                        <li class="fragment"><a href="../../examples/html/reference.shtml#sectioning">Sectioning content</a> (article, nav, aside, header, footer, section) wraps around one or more paragraphs or block elements to define major sections of the page</li>
                     </ul>
                 </section>
 
@@ -106,63 +107,9 @@
                 </section>
 
                 <section>
-                    <p>There are three places you can specify style rules:</p>
-                    <ul>
-                        <li>In a separate, linked "stylesheet" file (<strong>Best Option</strong>)</li>
-                        <li>In a <code>&lt;style&gt;</code> element in the <code>&lt;head&gt;</code> section (OK for pages that need to travel, such as HTML email)</li>
-                        <li>In a <code>style</code> attribute on an element (Evil! Don't do this!)</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <p>Separate Stylesheet</p>
-                    <p class="file-label">css/styles.css</p>
-                    <pre><code>
-    /* formatting information */
-    body {
-        background-color: black;
-    }
-    p {
-        font-family: &#039;Helvetica&#039;, sans-serif;
-        font-size: 18px;
-        color: white;
-    }
-                    </code></pre>
-
-                    <p class="file-label">index.html</p>
-                    <pre><code>
-    &lt;head&gt;
-    ...
-        <!-- tells browser where to get style info -->
-        &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
-    &lt;/head&gt;
-
-    &lt;body&gt;
-        &lt;p&gt;This is my paragraph&lt;/p&gt;
-    &lt;/body&gt;
-                    </code></pre>
-                </section>
-
-                <section>
-                    <h2>CSS Syntax</h2>
-                    <p>Stylesheets contain a set of styling <dfn>rules</dfn>.</p>
-                    <p class="fragment">Each rule starts with a <dfn>selector</dfn>, which specifies which elements the rule apples to.</p>
-                    <p class="fragment">Rest of rule specifies formatting <dfn>properties</dfn> to apply to selected elements.</p>
-                </section>
-
-                <section>
-                    <h2>The CSS Box Model</h2>
-                    <p>Most elements create a "<dfn>box</dfn>"&mdash;that is, they occupy a rectangular area on the screen</p>
-                    <p class="fragment">You can control the <dfn>margin</dfn>, <dfn>border</dfn>, and <dfn>padding</dfn> of any box</p>
-                </section>
-
-                <section>
-                    <h2><a href="../../examples/css-examples/boxes.html">Styling Boxes</a></h2>
-                </section>
-
-                <section>
                     <h2>Demo!</h2>
                     <p>Let's make some pretty pages</p>
+                    <img src="../../img/css3.png" alt="CSS3 Logo">
                 </section>
 
                 <section>
