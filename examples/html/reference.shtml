@@ -47,6 +47,19 @@ pre-formatted
 paragraph.</pre>
                             </div>
                         </div>
+
+                        <div class="entry">
+                            <div class="entry-title">blockquote</div>
+                            <div class="entry-description">Content is a lengthy quote</div>
+                            <div class="entry-notes">Use for long quotes that should be set off from the main content. This element behaves like a paragraph, but most browsers will indent it by default. The stylesheet I'm using for this page also puts a gray border on the left to make it stand out more.</div>
+                            <div class="entry-example">
+                                <p>As Ben Franklin was fond of saying:</p>
+                                <blockquote>
+                                    We are all born ignorant, but one must work hard to remain stupid.
+                                </blockquote>
+                            </div>
+                        </div>
+
                     </section>
 
                     <section id="hyperlinks">
@@ -114,18 +127,12 @@ paragraph.</pre>
 
 
                         <div class="entry">
-                            <div class="entry-title">blockquote, q</div>
-                            <div class="entry-description">Content is a lengthy, or short quote</div>
-                            <div class="entry-notes">Use <code>blockquote</code> for long quotes that should be set off from the main content, and <code>q</code> for short, inline quotes (note that <code>blockquote</code> is a paragraph-like element and thus does not go inside a <code>p</code> element; only <code>q</code> does). Browsers wrap inline quotes in language-appropriate quotation marks, but you can adjust these in CSS.</div>
+                            <div class="entry-title">q</div>
+                            <div class="entry-description">Content is a short, inline quote</div>
+                            <div class="entry-notes">Use for shorter quotes that appear inline with other text in the paragraph. Browsers will wrap inline quotes in language-appropriate quotation marks by default.</div>
                             <div class="entry-example">
                                 <p>Abraham Lincoln once said, <q>I don't think people quote me correctly on the Internet.</q></p>
                                 <p>Abraham Lincoln once said, <q lang="fr">Je ne pense pas que les gens me citer correctement sur Internet.</q></p>
-                            </div>
-                            <div class="entry-example">
-                                <p>As Ben Franklin was fond of saying:</p>
-                                <blockquote>
-                                    We are all born ignorant, but one must work hard to remain stupid.
-                                </blockquote>
                             </div>
                         </div>
 
