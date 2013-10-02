@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="David Stearns">
+        <meta name="description" content="Links to helpful resources for INFO 343">
+
+        <title>Links to Helpful Resources</title>
+
+        <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">      
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="css/resources.css">
+
+        <link rel="shortcut icon" href="../img/shortcut.png">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+        <script src="../lib/html5shiv/html5shiv.js"></script>
+        <script src="../lib/respond/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <ol class="breadcrumb">
+                    <li><a href="../..">INFO 343</a></li>
+                    <li><a href="..">Sections A &amp; B</a></li>
+                    <li>Resources</li>
+                </ol>
+            </nav>
+
+            <article>
+                <div class="page-header resources-title">
+                    <h1>Helpful Resources</h1>
+                    <p class="lead">Links to helpful tools and references</p>
+                </div>
+            </article>
+
+            <div class="resources">
+
+                <h2>Color</h2>
+                <dl>
+                    <dt><a href="http://colorschemedesigner.com/">The Color Scheme Designer</a></dt>
+                    <dd>Handy tool for generating different types of color schemes given a starting color</dd>
+
+                    <dt><a href="https://kuler.adobe.com/create/color-wheel/">Adobe&reg; Kuler</a></dt>
+                    <dd>Another tool for generating color schemes, with <a href="https://kuler.adobe.com/explore/newest/">lots of example themes</a> to choose from</dd>
+
+                    <dt><a href="http://www.colourlovers.com/palettes">Colour Lovers Palette Gallery</a></dt>
+                    <dd>A large gallery of color palettes contributed and voted upon by artists</dd>
+
+                    <dt><a href="http://www.somacon.com/p142.php">Somacon Color Chart</a></dt>
+                    <dd>A nicely-organized general color reference</dd>
+                </dl>
+                
+                <h2>Textures</h2>
+                <dl>
+                    <dt><a href="http://subtlepatterns.com/">Subtle Patterns</a></dt>
+                    <dd>A collection of free subtle textures, useful for lightly-colored body backgrounds</dd>
+
+                    <dt><a href="http://lostandtaken.com/">Lost and Taken Textures</a></dt>
+                    <dd>A collection of high-resolution textures, most of which are more "grunge" than the subtle ones above</dd>
+                </dl>
+
+                <h2>Icons</h2>
+                <dl>
+                    <dt><a href="https://www.iconfinder.com/">Icon Finder</a></dt>
+                    <dd>A fabulous collection of icons, most of which are free and come in a variety of sizes</dd>
+                </dl>
+
+                <h2>Stock Photos</h2>
+                <dl>
+                    <dt><a href="http://www.morguefile.com/">Morgue File Free Photo Archive</a></dt>
+                    <dd>A handy archive of free stock photos</dd>
+                </dl>
+
+                <h2>Fonts</h2>
+                <dl>
+                    <dt><a href="http://www.google.com/fonts">Google Fonts</a></dt>
+                    <dd>A collection of free custom fonts that you can reference directly in your stylesheets or HTML pages. Click on the 'Quick-use' button next to any font to get the necessary HTML/CSS.</dd>
+                </dl>
+
+                <h2>CSS References</h2>
+                <dl>
+                    <dt><a href="http://www.w3schools.com/cssref/css_selectors.asp">CSS Selectors Reference</a></dt>
+                    <dd>A handy table showing all the various kinds of CSS selectors with examples and descriptions of what they select</dd>
+
+                    <dt><a href="http://www.w3schools.com/cssref/default.asp">CSS Properties Reference</a></dt>
+                    <dd>A complete reference for all the various CSS properties, organized by function</dd>
+
+                    <dt><a href="http://www.w3schools.com/cssref/css_units.asp">CSS Units Reference</a></dt>
+                    <dd>Short reference of the various unit measurements supported in CSS and their suffixes</dd>
+                </dl>
+
+                <h2>HTML References</h2>
+                <dl>
+                    <dt><a href="http://www.w3schools.com/tags/ref_byfunc.asp">General HTML 5 Reference</a></dt>
+                    <dd>A general reference for HTML 5 elements, organized by function. See also the <a href="http://www.w3schools.com/tags/default.asp">alphabetical reference</a></dd>
+
+                    <dt><a href="http://www.w3schools.com/tags/ref_standardattributes.asp">Global Attributes Reference</a></dt>
+                    <dd>A general reference for the global HTML attributes, which may be used on any element in the body section of your document</dd>
+
+                    <dt><a href="http://www.w3schools.com/tags/ref_entities.asp">HTML Character Entities</a></dt>
+                    <dd>A reference for all the various supported character entities. Use these to encode reserved characters and <a href="http://www.w3schools.com/tags/ref_symbols.asp">other symbols</a></dd>
+                </dl>
+
+
+            </div> <!-- .resources -->
+
+            <!--#include virtual="../inc/footer.html" -->            
+        </div> <!-- .container -->
+        
+
+    </body>
+</html>

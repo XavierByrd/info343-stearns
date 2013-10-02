@@ -1,0 +1,11 @@
+.resources-title {
+    background-image: url(../../img/resources.png);
+    background-size: 72px 72px;
+    background-repeat: no-repeat;
+    padding-left: 80px;
+}
+
+.resources dt {
+    font-size: 120%;
+    margin-top: 10px;
+}
