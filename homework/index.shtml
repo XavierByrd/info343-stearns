@@ -57,7 +57,7 @@
                 <p class="alert alert-danger">I want to stress that these are <strong>individual</strong> homework assignments, and this should be entirely your own work. Do not work on these sites together, and do not simply copy someone else's solution. You may use open-source CSS frameworks and JavaScript libraries developed by others, and you may search the Internet to learn how to do something, but <strong>your own code must be your own code</strong>. If you get stuck on a technical question, you may ask for help on our "Technical Help" Canvas discussion board, but don't expect anyone to reply after 5:00pm, or on weekends.</p>
 
                 <div class="page-header">
-                    <h2>Version 1.0 <small>Due by Oct 8</small></h2>
+                    <h2>Version 1.0 <small>Due by Oct 10</small></h2>
                 </div>
 
                 <p>Tony is working hard to get his pizzeria ready for their grand opening on October 8<sup>th</sup>, and he wants some kind of web presence by then. Below are his specific instructions. Remember that he isn't a web developer, so you'll need to interpret what he says and use the appropriate markup and styles. Fonts, color choices, and page layout are entirely up to you unless otherwise stated. You can also include additional images, background textures, or icons wherever you think they'd be helpful.</p>
@@ -111,7 +111,7 @@
                 <p>There is no one right way to layout these pages, but remember that a quarter of your grade is based on the quality of the site's user experience. If the site is looks sloppy, simplistic, unintuitive, or amateurish, you will get a low grade. This is your opportunity to build something that you can include in a portfolio you send to prospective employers, so take it seriously, be professional, and do good work.</p>
 
                 <div class="page-header">
-                    <h2 id="v2">Version 2.0 <small>Due by Oct 22</small></h2>
+                    <h2 id="v2">Version 2.0 <small>Due by Oct 24</small></h2>
                 </div>
 
                 <p>That quick site you built is the doing the job, but now that Dawg Pizza is open for business, Tony wants you to refresh the site with some better page layout and visual effects. He also wants to ensure that the site accessible to people with disabilities (they love pizza too), and that it looks good on smaller-screen devices like mobile phones and tablets. Lastly, he really wants the page to include the right meta-data so that Google and other search engines understand that this site is for a <a href="http://schema.org/Restaurant">restaurant</a>, and display it in search results with extra helpful information.</p>
@@ -143,7 +143,7 @@
                 </blockquote>
 
                 <div class="page-header">
-                    <h2 id="v3">Version 3.0 <small>Due by Nov 5</small></h2>
+                    <h2 id="v3">Version 3.0 <small>Due by Nov 7</small></h2>
                 </div>
 
                 <p>Your redesigned site really helped attract customers to Tony's restaurant! He's now getting so busy that he wants to enable customers to place their delivery orders via the web site instead of having to call. For this version, you'll add some forms and scripting to make that possible.</p>
@@ -239,7 +239,7 @@
 
 
                 <div class="page-header">
-                    <h2 id="v4">Version 4.0 <small>Due by Nov 19</small></h2>
+                    <h2 id="v4">Version 4.0 <small>Due by Nov 21</small></h2>
                 </div>
 
                 <p>Your online delivery order page was a huge success, so much so that Tony now wants increase his engagement with his online customers. Here are your instructions:</p>
