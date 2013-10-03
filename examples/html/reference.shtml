@@ -81,6 +81,11 @@ paragraph.</pre>
                             <div class="entry-example">
                                 <a href="mailto:help@uw.edu">New email to UW IT help</a>
                             </div>
+                            <div class="entry-example">
+                                <a href="../../#labs">
+                                    <img src="../../img/lab.png" alt="Lab Icon">
+                                </a>
+                            </div>
                         </div>
                     </section>
 
