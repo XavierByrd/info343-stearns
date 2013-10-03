@@ -224,9 +224,9 @@ body {
 
             <li>Change to the info343 directory (<code>cd info343</code>).</li>
 
-            <li>Now use Git to clone your repository into a new sub-directory. To do that, Execute this command: <code>git clone <span class="token">your-clone-url</span></code>, replacing <span class="token">your-clone-url</span> with the URL you copied on the GitHub site. By default, git clone will create a directory with the same name as your GitHub repository, which in this case should be 'lab2'.</li>
+            <li>Now use Git to clone your repository into a new sub-directory. To do that, Execute this command: <code>git clone <span class="token">your-clone-url</span></code>, replacing <span class="token">your-clone-url</span> with the URL you copied on the GitHub site. If you're using one of the Windows lab machines, use the right mouse button to paste the URL you copied from GitHub. If you're on a Mac, use the normal paste keyboard command (Cmd+v). By default, git clone will create a directory with the same name as your GitHub repository, which in this case should be 'lab2'.</li>
 
-            <li>You should see a number of messages fly by, with the final one being 'Resolving deltas: 100% ... done.'</li>
+            <li>You should see a number of messages fly by, with the final one being '100% ... done.' If you see an error message, read it to figure out what went wrong.</li>
 
             <li>Change to the directory just created (<code>cd lab2</code>) and list the files. You should see your web site files.</li>
 
@@ -235,7 +235,7 @@ body {
 
         <h3>Submit Your Site URL via Canvas</h3>
 
-        <p>After you've verified that your published site is working properly, copy and paste the site URL into the Canvas submission field for this lab assignment and submit it (<a href="https://canvas.uw.edu/courses/849701/assignments/2288919">Section A</a>; <a href="https://canvas.uw.edu/courses/873608/assignments/2299187">Section B</a>). If you're not sure how to submit an assignment via Canvas, ask someone around you, or your TA.</p>
+        <p>After you've verified that your published site is working properly, copy and paste the site URL into the Canvas submission field for this lab assignment and submit it (<a href="https://canvas.uw.edu/courses/849701/assignments/2288919">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299187">Section B</a>). If you're not sure how to submit an assignment via Canvas, ask someone around you, or your TA.</p>
 
         <p>If you've finished early, go on and try some of the following optional steps. Go ahead. I dare you.</p>
 
