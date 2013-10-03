@@ -82,6 +82,9 @@
                             <dl>
                                 <dt><a href="http://www.google.com/fonts">Google Fonts</a></dt>
                                 <dd>A collection of free custom fonts that you can reference directly in your stylesheets or HTML pages. Click on the 'Quick-use' button next to any font to get the necessary HTML/CSS.</dd>
+
+                                <dt><a href="http://www.lipsum.com/">Lorem Ipsum Generator</a></dt>
+                                <dd>A tool for generating any amount of "lorem ipsum" text. Web developers and designers use this to add dummy text to their pages in order to see how their font and page layout choices will look. If you use Sublime Text as your text editor, you can also generate this in the editor itself: type 'lorem' (all lower case) and then hit tab.</dd>
                             </dl>
                         </div> <!-- .col-md-6 -->
 

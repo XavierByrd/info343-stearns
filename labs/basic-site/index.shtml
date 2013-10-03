@@ -29,7 +29,7 @@
         <ol>
             <li>If you get stuck at any point, search the Internet, ask your neighbor, or ask the TA for help.</li>
 
-            <li>At the end of the lab, submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288919">Section A</a>; <a href="https://canvas.uw.edu/courses/873608/assignments/2299187">Section B</a>).</li>
+            <li>At the end of the lab, submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288919">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299187">Section B</a>).</li>
 
             <li>If you don't finish all the required tasks during our lab time, finish them over the weekend and submit your published site URL before 8:00am on Monday morning.</li>
 
@@ -51,12 +51,12 @@
 
         <p>First, go to <a href="https://github.com" target="_blank">GitHub</a> and sign into your account.</p>
 
-        <p>Next, go to my <a href="https://github.com/drstearns/lab2" target="_blank">lab2 repository on GitHub</a>, and fork it. Yes, you read that correctly. I want you to fork my repo (seriously, web developers do talk like this). Click the "Fork" button at the top-right of the page and follow the instructions. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the images you'll need, as well as a "reset.css" file.</p>
+        <p>Next, go to my <a href="https://github.com/drstearns/lab2" target="_blank">lab2 repository on GitHub</a>, and fork it. Yes, you read that correctly. I want you to fork my repo (seriously, web developers do talk like this). Click the "Fork" button at the top-right of the page and follow any instructions you receive. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the images you'll need, as well as a "reset.css" file.</p>
 
         <p>Once you've forked the repository, clone it to your local lab machine using SourceTree. We did this in our previous lab, but if you've forgotten how, follow these steps:</p>
 
         <ol>
-            <li>In your forked lab2 repository on the GitHub site, copy the 'HTTPS Clone URL' on the right side of the screen</li>
+            <li>In <strong>your forked lab2 repository</strong> (not my original one) on the GitHub site, copy the 'HTTPS Clone URL' on the right side of the screen</li>
             <li>Run the SourceTree app</li>
             <li>Click on the Clone/New button in the upper-left of the screen</li>
             <li>Enter the GitHub HTTPS clone URL you copied into the Source URL box</li>
@@ -154,7 +154,7 @@ body {
 
         <p><img src="img/footer-content.png" alt="footer content" class="img-responsive screen-shot"></p>
 
-        <p>The footer area should be separated from the main copy with a thin gray line. The text in the footer should be in italics, and sized at 80% of normal.</p>
+        <p>The footer area should be separated from the main copy with a thin gray line (<a href="http://www.w3schools.com/cssref/pr_border-top.asp">border-top CSS property</a>) . The text in the footer should be in italics, and sized at 80% of normal.</p>
 
         <p>Note that the "email us" part of the text should be a hyperlink that when clicked, opens a new email message addressed to 'sales@widgetsrus.com'. The link should initially appear with no underline, but should become underlined when the user hovers the mouse over the link.</p>
 
@@ -176,7 +176,7 @@ body {
 
         <p>The body texture and the white content box should be the same as what you have on the home page. The header and footer should also be the same. For now you can copy/paste this common header and footer content, but if you end up with extra time at the end, do the <a href="#ssi">server-side includes optional step</a> so that this content is defined only once.</p>
 
-        <p>The content of this page is divided into two sections, 'Our Story' and 'Our Team' with second-level headings. The text for 'Our Story' is just a couple of paragraphs of lorem text.</p>
+        <p>The content of this page is divided into two sections, 'Our Story' and 'Our Team' with <a href="../../examples/html/reference.shtml#h1 – h6">second-level headings</a>. The text for 'Our Story' is just a couple of paragraphs of lorem text.</p>
 
         <p>The 'Our Team' section should appear similar to the screen shot, and the generic lego person image is in your 'img' directory as 'person.jpg'. Note that person image is floated to the left so that the person's name, title, and description all appear next to it.</p>
 
