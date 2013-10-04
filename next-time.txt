@@ -1,6 +1,10 @@
 Notes for Next Time
 ------------------------
 
+Things to add or restructure:
+- Need to have a short unit on URLs and paths, or require that they read a note on it. Apparently they don't learn anything about file paths in CSE 142. 
+
+
 First Day:
 - On the first day, do overview of HTML and get them writing HTML pages after course intro. Save How the Web Works lecture for later.
 - During course intro, stress that you don't require any pre-existing knowledge of web dev, but if you've never written an HTML page before, you need to read what assign, and probably do some more reading on your own.
@@ -13,3 +17,5 @@ Basic HTML Lecture:
 - Instead of a self-directed in-class challenge on choosing the right semantics tags, consider doing it interactively with them, and make them decide as a group which tags should be used for which kinds of constructs.
 - Also make sure you cover block vs inline distinction, even though that can be changed in CSS, as validators will complain about misuse.
 
+Basic CSS lecture:
+- "Code with me" style worked really, really well. Do the HTML part this way next time as well. Covered a lot so maybe think hard about how to split this into the two different lectures.
