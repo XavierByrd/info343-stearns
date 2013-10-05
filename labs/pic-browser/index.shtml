@@ -120,6 +120,9 @@
 &lt;!-- tells the browser to get style information from styles.css in our 'css' sub-directory --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
 
+&lt;!-- shortcut icon for the page --&gt;
+&lt;link rel=&quot;shortcut icon&quot; href=&quot;img/logo.png&quot;&gt;
+
 &lt;!-- title for the page --&gt;
 &lt;title&gt;Photo Browser&lt;/title&gt;
 
@@ -272,15 +275,23 @@ transition: all 0.2s ease;
                 <section id="github">
                     <h2>Stage, Commit, and Push to GitHub</h2>
 
+                    <!--#include virtual="../inc/commit.html" -->
                 </section>
 
                 <section id="submit">
                     <h2>Publish Site and Submit URL via Canvas</h2>
 
+                    <!--#include virtual="../inc/publish.html" -->
                 </section>
 
                 <section id="optional-steps">
                     <h2>Optional Steps</h2>
+
+                    <p>If you finish early, or just want an extra challenge, try one or more of the following optional steps.</p>
+
+                    <h3>Add a Rotation Transform</h3>
+
+                    <h3>Animate the Logo on Hover</h3>
 
                 </section>
 

@@ -1,0 +1,49 @@
+<p>To finish, publish your site to your UW student/staff/faculty web hosting server. You can do this either via FTP (using FileZilla), or via SSH and Git. If you're not afraid of the command line, use the SSH/Git option. Follow the relevant steps below depending on your choice:</p>
+
+<h3 id="publish">Publish via FTP</h3>
+
+<p>Follow <a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/sftp/">these instructions written by UW IT</a> to connect to your UW web hosting server using FileZilla. Once you have successfully connected, follow these steps:</p>
+
+<ol>
+    <li>FileZilla shows you files on your local hard drive in the left box, and files on the remote server in the right box.</li>
+    <li>In the right-side file listing box, double click the 'student_html' folder if you have one, otherwise double click the 'public_html' folder.</li>
+    <li>If you don't already have a folder there named 'info343', right-click and choose 'Create Directory' to create a new directory. Name it 'info343' (all lower case--remember that URLs are case-sensitive).</li>
+    <li>Double click the 'info343' directory.</li>
+    <li>Right-click again and choose 'Create Directory'. Name this new directory 'lab<span class="token">N</span>', replacing <span class="token">N</span> with this lab number (e.g., lab1, lab2, lab3, etc.). Keep the 'lab' part all lower case.</li>
+    <li>Double-click the 'lab<span class="token">N</span>' directory you just created.</li>
+    <li>Now in the left-side file-listing box, find your local repository on your hard drive.</li>
+    <li>Select all your website files (don't include the .git folder) and drag-drop them from the left box to the right box.</li>
+</ol>
+
+<h3>Publish via SSH/Git</h3>
+
+<p>If you're not afraid of the command line, you can publish your site, and keep it updated quite easily by using SSH and Git. Follow these steps:</p>
+
+<ol>
+    <li>Go to your repository for this lab on the <a href="https://github.com/">GitHub web site</a>. On your repository home page, there should be a box on the right entitled 'HTTPS clone URL'. Click the copy to clipboard button, or select the URL and copy it to your clipboard.</li>
+
+    <li>If you are on Mac OS X or Unix, open a Terminal window and SSH to the web server by entering the command <code>ssh <span class="token">your-netid</span >@dante.u.washington.edu</code>, replacing <code><span class="token">your-netid</span></code> with your UW Net ID. Enter your UW NetID password at the prompt.</li>
+
+    <li>If you're on one of the Windows lab machines, go to the home screen and click on the icon for 'Student Terminal (Dante)' in the 'Remote Access, FTP' section (far right). Enter your UW NetID and password when prompted.</li>
+
+    <li>If you are on a non-lab Windows machine (say at home), <a href="http://www.washington.edu/itconnect/wares/uware/tera-term-software/">download and install Tera Term</a> and <a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/ssh/">configure it to connect to your web hosting server</a>.</li>
+
+    <li>Once connected, type <code>ls</code> and hit return to list the files and sub-directories in your home directory. If you have a directory named 'student_html' you'll want to use that. If not, use the 'public_html' directory.</li>
+
+    <li>Change to the student_html directory if you have one, otherwise change to the public_html directory (<code>cd student_html</code>, or <code>cd public_html</code>).</li>
+
+    <li>List the files again (<code>ls</code>) to see what you already have there. If you don't already have a directory named 'info343', create one: <code>mkdir info343</code></li>
+
+    <li>Change to the info343 directory (<code>cd info343</code>).</li>
+
+    <li>Now use Git to clone your repository into a new sub-directory. To do that, Execute this command: <code>git clone <span class="token">your-clone-url</span></code>, replacing <span class="token">your-clone-url</span> with the URL you copied on the GitHub site. If you're using Tera Term on a Windows machine, use the right mouse button to paste the URL you copied from GitHub. If you're on a Mac, use the normal paste keyboard command (Cmd+v). By default, git clone will create a directory with the same name as your GitHub repository, but you can also override that by adding a different name after your clone URL (e.g., <code>git clone https://.../xyz.git mylab</code>.</li>
+
+    <li>You should see a number of messages fly by, with the final one being '100% ... done.' If you see an error message, read it to figure out what went wrong.</li>
+
+    <li>Change to the directory just created and list the files. You should see the files from your GitHub repository.</li>
+
+    <li>If you make any future changes to your files, commit them, and push them your GitHub repository, you can then quickly update your site on the UW web hosting server by executing <code>git pull</code> from within the directory created when you cloned. Git will pull down any changes made since the last time you cloned/pulled, and apply them.</li>
+</ol>
+
+<p>If everything went well, you should now be able to see your web site in a browser using the URL <code>http://[students|staff|faculty].washington.edu/<span class="token">your-net-id</span>/info343/<span class="token">lab-dir</span>/</code>. Use 'students', 'staff' or 'faculty' depending on the affiliation you had when you activated your web publishing service. Replace <span class="token">your-net-id</span> with your UW net id, and replace <span class="token">lab-dir</span> with the name of the directory you created to hold these lab files.</p>
+
