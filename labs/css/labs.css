@@ -28,3 +28,7 @@ figure figcaption {
 	border: 1px dotted #CCC;
 	padding: 10px;
 }
+
+video.responsive {
+	width: 100%;
+}

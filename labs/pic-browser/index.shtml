@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+    <head>
+        <!--#include virtual="../inc/common-head.html" -->
+
+        <meta name="description" content="INFO 343 Basic Site Lab">
+        <title>Lab 3: Picture Browser</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <!--#include virtual="../inc/crumbtrail.html" -->
+
+            <article class="lab">
+
+                <section id="intro">
+                    <div class="page-header lab-title">
+                        <h1>Lab 3: Picture Browser</h1>
+                        <p class="lead">CSS Transforms, Transitions, and Overflow</p>
+                    </div>
+
+                    <p>In our previous lab, we practiced building a basic web site that employed navigation bars, floated images, and custom fonts. This week we will leverage some of those same techniques, but we'll also practice a few new things we learned this week in class:</p>
+
+                    <ul>
+                        <li>Constraining content to a fixed width and height and controlling what happens when it overflows</li>
+                        <li>Using transforms to scale elements on hover</li>
+                        <li>Using transitions to smoothly animate visual changes</li>
+                    </ul>
+
+                    <p>We will practice these techniques by building a simple photo browser page.</p>
+
+                    <h2>General Instructions</h2>
+                    <ol>
+                        <li>If you get stuck at any point, search the Internet, ask your neighbor, or ask the TA for help.</li>
+
+                        <li>At the end of the lab, submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288920">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299188">Section B</a>).</li>
+
+                        <li>If you don't finish all the required tasks during our lab time, finish them over the weekend and submit your published site URL before 8:00am on Monday morning.</li>
+
+                        <li>If you finish all the required steps, go on and try some of the <a href="#optional-steps">optional ones</a>. Remember that you have to do at least one of the optional steps in order to get 10/10 on the Completeness portion of your grade. If you do only the required steps, you'll get 9/10 on that portion.</li>
+                    </ol>
+
+                    <h2>Required Steps</h2>
+                    <ol>
+                        <li><a href="#fork">Fork my lab3 repository and clone to your lab machine</a></li>
+
+                        <li><a href="#pages">Build and Style the HTML Page</a></li>
+
+                        <li><a href="#github">Stage, Commit, and Push to GitHub</a></li>
+
+                        <li><a href="#submit">Publish your site to your web hosting server and submit the site URL via Canvas</a></li>
+                    </ol>
+                </section>
+
+                <section id="fork">
+                    <h2>Fork and Clone</h2>
+
+                    <p>First, go to <a href="https://github.com" target="_blank">GitHub</a> and sign into your account.</p>
+
+                    <p>Next, go to my <a href="https://github.com/drstearns/lab3" target="_blank">lab3 repository on GitHub</a>, and fork it. You did this in our previous lab, but in case you forgot how to do so, click the "Fork" button at the top-right of the page and follow any instructions you receive. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the images and other file stubs you'll need.</p>
+
+                    <p>Once you've forked the repository, clone it to your local lab machine using SourceTree. We've done this a few times now, but if you've forgotten how, follow these steps:</p>
+
+                    <ol>
+                        <li>In <strong>your forked lab3 repository</strong> (not my original one) on the GitHub site, copy the 'HTTPS Clone URL' on the right side of the screen</li>
+                        <li>Run the SourceTree app</li>
+                        <li>Click on the Clone/New button in the upper-left of the screen</li>
+                        <li>Enter the GitHub HTTPS clone URL you copied into the Source URL box</li>
+                        <li>Hit tab, and SourceTree will automatically populate the Destination Path for you (usually a new folder named after your repository in the My Documents folder)</li>
+                        <li>Click the 'Clone' button to clone the GitHub repository to your local machine</li>
+                        <li>If you get stuck, as your TA or a neighbor for help</li>
+                    </ol>
+                </section>
+
+                <section id="pages">
+
+                    <h2>Build and Style the Page</h2>
+
+                    <p class="alert alert-info">Strive to get your page looking as similar to the screen shots below as possible. In a professional project, you'll often get screen shots like these from a graphic designer, and your job as a web developer is to turn those into real live web pages.</p>
+
+                    <p>Now that you have a local clone of your repository, you'll next build and style the photo browser page. You'll be building only one page for this lab, but that page is more complicated than it may at first appear.</p>
+
+                    <p>I will lead you through building this page, step-by-step, but first I want to show you a few screen shots and a video so that you can get a sense of what it should look and feel like. This is what it should look like:</p>
+
+                    <p><img class="screen-shot img-responsive" src="img/wide.png" alt="screen shot of photo browser page"></p>
+
+                    <p>The pictures are displayed in a fixed size, and arranged in a grid that should respond to the browser width. So when you make your browser window narrower, the pictures should reflow like this:</p>
+
+                    <p><img class="screen-shot img-responsive" src="img/narrow.png" alt="screen shot of narrow photo browser page"></p>
+
+                    <p>But those pictures are not static; when the reader hovers the mouse over a picture, it should increase in size, allowing the reader to see the picture better, as shown in this video:</p>
+
+                    <video class="responsive" controls>
+                        <source src="https://courses.washington.edu/info343/stearns/captures/info343-lab3.mov" type="video/mp4">
+                        Unfortunately, your browser does not support playing embedded HTML 5 video. Try <a href="http://youtu.be/gr1s6B95vyI">viewing this on YouTube</a> instead.
+                    </video>
+
+                    <p>When hovering over an image, the reader can also click on the image to view it. This just navigates to the image file itself, allowing the reader to see the full image at its full resolution, and download the image if desired.</p>
+
+                    <p>And, as shown at the end of that video, the film logo on the top right should be slightly transparent at first, but become fully opaque when the reader hovers the mouse over it.</p>
+
+                    <p>Now let's build this page step-by-step.</p>
+
+                    <h3>Create the HTML File</h3>
+
+                    
+
+                    <h3>Add Static Style Rules</h3>
+
+                    <h3>Add Transitions and Transforms</h3>
+
+                </section>
+
+                <section id="github">
+                    <h2>Stage, Commit, and Push to GitHub</h2>
+
+                </section>
+
+                <section id="submit">
+                    <h2>Publish Site and Submit URL via Canvas</h2>
+
+                </section>
+
+
+
+            </article>
+        </div> <!-- .container -->
+    </body>
+</html>
