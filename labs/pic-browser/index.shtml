@@ -226,7 +226,7 @@
 
                     <p>By default, browsers display <code>&lt;figure&gt;</code> elements as blocks, meaning they stack on top of one another. We want them to appear side-by-side, just like the navigation bar list items you created in the previous lab. If you've forgotten how to do that, look at your solution for lab 2, or the <a href="../../examples/css-examples/links.html">styling links example page</a>.</p>
 
-                    <p>Give each <code>&lt;figure&gt;</code> a bit of padding, and a background color of white (#FFF). The <code>&lt;figure&gt;</code> element is a bit different in that it won't inherit the white background from the content box; instead it will be transparent, which will cause us problems later on when we add the zooming transform. So explicitly set the background color to white.</p>
+                    <p>Give each <code>&lt;figure&gt;</code> a bit of padding, and a background color of white (#FFF). Background colors don't inherit down the element tree, so the default background for our <code>&lt;figure&gt;</code> elements is transparent, which will cause us problems later on when we add the zooming transform.</p>
 
                     <p>For the <code>&lt;figcaption&gt;</code> we will use a light-weight version of the Open Sans font, so set the font-weight to 300 (normal weight is 400). Make the text horizontally-centered, and give it a top margin of 5px so there's a bit of separation between the frame and the caption.</p>
 
