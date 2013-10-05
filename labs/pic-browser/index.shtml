@@ -94,11 +94,13 @@
 
                     <p>This video shows this effect in action:</p>
 
+                    <iframe width="640" height="480" src="//www.youtube.com/embed/gr1s6B95vyI?rel=0" frameborder="0" allowfullscreen></iframe>
+<!-- 
                     <video class="responsive" controls>
                         <source src="https://courses.washington.edu/info343/stearns/captures/info343-lab3.mov" type="video/mp4">
                         Unfortunately, your browser does not support playing embedded HTML 5 video. Try <a href="http://youtu.be/gr1s6B95vyI">viewing this on YouTube</a> instead.
                     </video>
-
+ -->
                     <p>(if you have troubles viewing this video, try <a href="http://youtu.be/gr1s6B95vyI">viewing it on YouTube</a>)</p>
 
                     <p>When hovering over an image, the reader can also click on the image to view it. This just navigates to the image file itself, allowing the reader to see the full image at its full resolution, and download the image if desired.</p>
