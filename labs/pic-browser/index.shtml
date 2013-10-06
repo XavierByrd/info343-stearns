@@ -294,9 +294,9 @@ transition: all 0.2s ease;
 
                     <p>If you finish early, or just want an extra challenge, try one or more of the following optional steps.</p>
 
-                    <h3>Add a Rotation Transform</h3>
+                    <h3>Add a Rotation Thumb Transform</h3>
 
-                    <h3>Animate the Logo on Hover</h3>
+                    <h3>Make the Logo Pulse Using an Animation</h3>
 
                 </section>
 
