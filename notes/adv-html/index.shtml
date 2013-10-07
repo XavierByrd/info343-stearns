@@ -17,20 +17,210 @@
         </div>
 
         <ol class="lecture-outline">
-            <li>HTML 5 Sectioning Elements (and more pseudo-selectors)
+            <li>HTML 5 Sectioning Elements
                 <ol>
-                    <li>So far, we've talked about paragraph and paragraph-like elements, phrasing elements (which go inside paragraphs), and elements that embed content into the page (<code>&lt;img&gt;</code> and <code>&lt;figure&gt;</code>). Now we'll learn about another major type of semantic elements that is new to HTML5: sectioning elements.</li>
-                    <li>
-                        
+                    <li>So far, we've talked about paragraph elements, phrasing elements (which go inside paragraphs), grouping elements (like lists, glossaries and tables), and elements that embed content into the page (<code>&lt;img&gt;</code> and <code>&lt;figure&gt;</code>). Now we'll learn about another major type of semantic elements that is new to HTML5: <strong>sectioning elements</strong>.</li>
+                    
+                    <li><code>&lt;nav&gt;</code>
+                        <ol>
+                            <li>Used to wrap a list of navigation links</li>
+                            <li>May have several on the same page (site vs page-level navigation)</li>
+                            <li>Screen readers can use this to optionally skip over navigation links and get to the main page content</li>
+                            <li>Search engine indexers can use this to provide direct links to your various top-level pages</li>
+                        </ol>
                     </li>
-                    <li>
-                        
+
+                    <li><code>&lt;header&gt;</code>
+                        <ol>
+                            <li>Used to wrap page header content</li>
+                            <li>May also be used inside other sectioning elements that have their own header content</li>
+                            <li>Could be used to outline a page, hiding details</li>
+                        </ol>
+                    </li>
+
+                    <li><code>&lt;article&gt;</code>
+                        <ol>
+                            <li>Used to wrap content that could be syndicated (think RSS feed)</li>
+                            <li>Can be used not only for main body content, but also supporting content like reader comments</li>
+                            <li>Triggers the "Reader" button in Safari</li>
+                        </ol>
+                    </li>
+
+                    <li><code>&lt;main&gt;</code>
+                        <ol>
+                            <li>Similar to <code>&lt;article&gt;</code>, but for content that shouldn't be syndicated</li>
+                            <li>Very new! Not in original HTML 5.0 spec, but added to 5.1 and then backported to newest drafts of 5.0</li>
+                            <li>Pretty well supported by current browsers</li>
+                        </ol>
+                    </li>
+
+                    <li><code>&lt;aside&gt;</code>
+                        <ol>
+                            <li>Wraps content that is tangential to the article or main content</li>
+                            <li>Typically used for pull-quotes, figures, endorsements, or any other tangentially-related content that should appear outside the main flow of the article.</li>
+                            <li>Use CSS to float and style these</li>
+                        </ol>
+                    </li>
+
+                    <li><code>&lt;section&gt;</code>
+                        <ol>
+                            <li>Wraps a major section of the document</li>
+                            <li>Typically used within an article or main element to mark major sections</li>
+                            <li>A heading element (<code>&lt;h1&gt;</code>&ndash;<code>&lt;h6&gt;</code>) should follow to provide a heading for the section</li>
+                            <li>Each <code>&lt;section&gt;</code> resets the current heading level, so you start with <code>&lt;h1&gt;</code> inside each section and go down from there</li>
+                            <li>Very useful for CSS, as pseudo selectors like :first-of-type will match the first of type <em>within each section</em></li>
+                        </ol>
+                    </li>
+
+                    <li><code>&lt;footer&gt;</code>
+                        <ol>
+                            <li>Wraps footer content, which usually contains info about the article (author, publication details, links to social media, etc)</li>
+                            <li>Can go inside <code>&lt;article&gt;</code>, <code>&lt;main&gt;</code>, or <code>&lt;section&gt;</code> as a footer for those sections, or can be a footer for the entire page body</li>
+                            <li>Typically contains an <code>&lt;address&gt;</code> element for the author or organization who wrote the content</li>
+                        </ol>
+                    </li>
+
+                    <li><code>&lt;address&gt;</code>
+                        <ol>
+                            <li>Wraps contact info for the author or organization who wrote the content to which the footer was applied</li>
+                            <li>This element's content can be anything, but typically would include hyperlinks, email address, or postal address</li>
+                        </ol>
                     </li>
                 </ol>
             </li>
-            <li>Microdata
+
+            <li>Pseudo-selectors, Sectioning, and Adding Content via CSS
+                <ol>
+                    <li>Sectioning actually become more interesting when you combine it with the more advanced CSS pseudo-selectors</li>
+                    <li>DEMO!
+                        <ol>
+                            <li>Create demo folder, css sub-folder, img sub-folder</li>
+                            
+                            <li>Use IconFinder to download 16x16 icons for <a href="https://www.iconfinder.com/icons/3745/document_pdf_icon#size=16">pdf</a> and <a href="https://www.iconfinder.com/icons/65890/documento_docx_file_microsoft_word_icon#size=16">docx</a> to img sub-folder</li>
+                            
+                            <li>Create index.html in demo folder
+                                <ol>
+                                    <li>add doctype and basic doc outline</li>
+
+                                    <li>add <code>&lt;link&gt;</code> to 'css/styles.css'</li>
+                                    
+                                    <li>add <code>&lt;article&gt;</code> and <code>&lt;header&gt;</code> with an <code>&lt;h1&gt;</code></li>
+                                    
+                                    <li>add 4 <code>&lt;p&gt;</code> elements with two chunks of lorem text each</li>
+
+                                    <li>add an <code>&lt;h2&gt;</code> between second and third paragraphs</li>
+
+                                    <li>add <code>&lt;footer&gt;</code> with a byline in a <code>&lt;p&gt;</code> element</li>
+
+                                    <li>Save and show</li>
+                                </ol>
+                            </li>
+
+                            <li>Create a styles.css in the css folder
+                                <ol>
+                                    <li><code>body</code> rule
+                                        <ol>
+                                            <li><code>font-family: 'Calibri', sans-serif;</code></li>
+                                            <li><code>font-size: 18px;</code></li>
+                                        </ol>
+                                    </li>
+
+                                    <li><code>p:first-line</code> rule
+                                        <ol>
+                                            <li><code>font-variant: small-caps;</code></li>
+                                        </ol>
+                                    </li>
+
+                                    <li>save and refresh: first line of every paragraph is now in small caps</li>
+
+                                    <li>But really we only want the first line of the <em>first paragraph of each section</em> to be in small caps, not every paragraph</li>
+
+                                    <li>adjust <code>p:first-line</code> selector to <code>p:first-of-type:first-line</code></li>
+
+                                    <li>save and refresh: now only the first paragraph is affected, but not the first paragraph of each section. We can solve that by using the <code>&lt;section&gt;</code> element!</li>
+
+                                    <li>Wrap <code>&lt;section&gt;</code> element around first and second paragraphs, and another <code>&lt;section&gt;</code> element around the third and fourth.</li>
+
+                                    <li>Change <code>&lt;h2&gt;</code> to <code>&lt;h1&gt;</code>, since it's now in a separate section</li>
+
+                                    <li>save and refresh: now first line of first paragraph of each section is in small caps</li>
+
+                                    <li>We might want to scope this to just <code>&lt;p&gt;</code> elements within <code>&lt;section&gt;</code> elements, so change selector to <code>section p:first-of-type:first-line</code></li>
+
+                                </ol>
+                            </li>
+
+                            <li>Drop-Cap
+                                <ol>
+                                    <li>add <code>section p:first-of-type:first-letter</code> rule
+                                        <ol>
+                                            <li><code>float: left;</code></li>
+                                            <li><code>font-size: 300%;</code></li>
+                                            <li><code>font-family: 'Georgia', serif;</code></li>
+                                            <li><code>color: #900;</code></li>
+                                            <li><code>margin-right: 5px;</code></li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li>Attribute Selectors and Adding Content
+                                <ol>
+                                    <li>add another <code>&lt;p&gt;</code> after fourth paragraph with hyperlinks to "foo.pdf", "bar.docx", and "ack.pdf"</li>
+
+                                    <li>new <code>a[href $= '.pdf']:after</code> rule
+                                        <ol>
+                                            <li><code>content: url(../img/pdf.png);</code></li>
+                                        </ol>
+                                    </li>
+
+                                    <li>new <code>a[href $= '.docx']:after</code> rule
+                                        <ol>
+                                            <li><code>content: url(../img/docx.png);</code></li>
+                                        </ol>
+                                    </li>
+
+                                    <li>These two rules use a new kind of selector&mdash;attribute selectors&mdash;as well as the <code>:after</code> pseudo-selector</li>
+
+                                    <li>These attribute selectors apply to any <code>&lt;a&gt;</code> element where the <code>href</code> attribute ends with '.pdf' and '.docx' respectively. The <code>$=</code> operator means 'ends with', and there are other operators for 'equals', 'starts with', and 'contains'. See <a href="http://www.w3schools.com/cssref/css_selectors.asp">CSS selectors reference</a> for details.</li>
+
+                                    <li>The <code>:after</code> pseudo-selector allows you to add limited types of content to the end of the matched elements. There is also a <code>:before</code> for adding content at the beginning. Content is limited to simple strings, media addressable by a URL, counters, or language-sensitive open/close quotes. See the <a href="http://www.w3schools.com/cssref/pr_gen_content.asp">CSS content property reference</a> for details.</li>
+
+                                    <li>save and refresh: appropriate icons now appear after link based on file extension in href attribute</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
             </li>
+
+            <li>Microdata
+                <ol>
+                    <li>HTML 5 added a lot of new tags, but it's still a closed content model, meaning that you can't (or you're not supposed to) add your own tag names</li>
+                    
+                    <li>But search engines and other tools could be a lot smarter and more useful if they could get extra meta-data about your page, such as:
+                        <ol>
+                            <li>If this page is a review, what was the average review score?</li>
+                            <li>If this page is about an organization, what is its logo, address, main phone number, etc?</li>
+                            <li>If this page is about an event, when does it start and when does it end?</li>
+                            <li>If this page is about a creative work (e.g., a movie), who is the artist, and who directed or produced it?</li>
+                            <li>If this is an article written by an author, where can I find a picture of the author to show in the search results?</li>
+                        </ol>
+                    </li>
+                    
+                    <li>Luckily, HTML does allow the addition of non-standard <em>attributes</em> to standard elements, so various people have proposed schemes for encoding extra meta data using well-known attribute names</li>
+
+                    <li>The scheme that seems to have the most support at this point is called 'microdata' and it is defined by <a href="http://schema.org/docs/gs.html">schema.org</a></li>
+
+                    <li></li>
+
+                </ol>
+            </li>
+
             <li>Accessibility
+                <ol>
+                    <li>Guest presentation by Dan Comden, Manager of the UW Access Technology Center!</li>
+                </ol>
             </li>
         </ol>
 
