@@ -294,9 +294,59 @@ transition: all 0.2s ease;
 
                     <p>If you finish early, or just want an extra challenge, try one or more of the following optional steps.</p>
 
-                    <h3>Add a Rotation Thumb Transform</h3>
+                    <h3>Add a Rotation Transform</h3>
+
+                    <p>Scale is only one kind of transform you can add to your elements. Another interesting one is <code>rotate()</code>, which rotates the element by a specified number of degrees. Let's add a rotate transform to our existing scale transform.</p>
+
+                    <p>The transform (and vendor-prefixed versions of that property) can accept multiple transform functions on the same line, separate by spaces. So adding the rotate transform would make your properties look like this:</p>
+
+                    <pre><code>
+-webkit-transform: scale(1.5) rotate(-5deg);
+-moz-transform: scale(1.5) rotate(-5deg);
+-o-transform: scale(1.5) rotate(-5deg);
+-ms-transform: scale(1.5) rotate(-5deg);
+transform: scale(1.5) rotate(-5deg);
+                    </code></pre>
+
+                    <p>Here I'm just rotating the figure by -5 degrees (5 degrees to the left). You can set this to any number of degrees you want to. Once you have the <code>-5deg</code> version working, try setting it to <code>360deg</code>. That will make the figure spin around completely as it scales up!</p>
+
+                    <p>Note that as you increase the amount of rotation, you might need to also increase the speed of the transition. Our <code>transition</code> property (as well as the vendor-prefixed versions) were initially set to 0.2 seconds, but a full-360 spin would look better when animated over a full second (<code>1s</code>).</p>
 
                     <h3>Make the Logo Pulse Using an Animation</h3>
+
+                    <p>Transforms and transitions can get you quite far, but they can only animate a change between two states. CSS 3 also includes a more general mechanism for animating element state changes over a series of timepoints. Let's use that to do a simple and hopefully unobtrusive animation: making the logo image visually pulse.</p>
+
+                    <p>Animations are specified in your CSS file, but they require you to add two separate things: a named keyframes rule; and an animation property on the rule for the element(s) you want to animate.</p>
+
+                    <p>The named keyframes rule should be specified <em>before</em> any rule in which you want to refer to it. So it's best to specify your keyframe rule at the top of your CSS file, just after the @import directives. In this case, it should look like this:</p>
+
+                    <pre><code>
+@-webkit-keyframes pulse {
+    0%      {opacity: 0.3;}
+    50%     {opacity: 1;}
+    100%    {opacity: 0.3;}
+}
+@keyframes pulse {
+    0%      {opacity: 0.3;}
+    50%     {opacity: 1;}
+    100%    {opacity: 0.3;}
+}
+                    </code></pre>
+
+                    <p>Unfortunately, current versions of WebKit (the rendering engine used by Chrome and Safari) still require a vendor-prefixed version of @keyframes, so we have to specify our rule twice: once using the <code>@-webkit-keyframes</code> directive, and again using the standardized <code>@keyframes</code> directive.</p>
+
+                    <p>The second token in the directive is a name for the animation that you'll use later in the animation property, and in this case, we've named it 'pulse' since that's what it will do. Inside the keyframes block, you then specify a number of state transitions, from 0% to 100%. Each transition can specify any number of CSS properties. In this example, I've specified three states: a starting state (0%), a mid-way state (50%), and a final state (100%). For each state, I'm specifying only one property to keep this simple. We will be animating the opacity property from 0.3 to 1 and back to 0.3. For a full description of what you can do in keyframes rules, see the <a href="http://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp">CSS keyframes reference</a>. These can get quite complicated, moving elements around on the screen and even transforming them using the various transform functions.</p>
+
+                    <p>The keyframes rule declares the animation, but to use it, we need to add an <code>animation</code> property (as well as a webkit prefixed version) to the rule that applies to our logo image element. Add properties that looks like this:</p>
+
+                    <pre><code>
+-webkit-animation: pulse 5s infinite;
+animation: pulse 5s infinite;
+                    </code></pre>
+
+                    <p>This tells the browser to apply the 'pulse' animation we defined earlier to elements selected by the our rule, play that animation over the course of 5 seconds, and loop the animation infinitely. To see all the various settings you can use here, see the <a href="http://www.w3schools.com/cssref/css3_pr_animation.asp">CSS animation property reference</a>.</p>
+
+                    <p>If you did everything correctly, you should see the logo image visually pulse, starting at only 30% opacity, increasing to full opacity, and then fading back 30% again.</p>
 
                 </section>
 

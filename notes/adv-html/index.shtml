@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for Advanced HTML Lecture">
+    <title>Advanced HTML</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>AAdvanced HTML: Sectioning, Microdata, and Accessibility</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>    
+        </div>
+
+        <ol class="lecture-outline">
+            <li>HTML 5 Sectioning Elements (and more pseudo-selectors)
+                <ol>
+                    <li>So far, we've talked about paragraph and paragraph-like elements, phrasing elements (which go inside paragraphs), and elements that embed content into the page (<code>&lt;img&gt;</code> and <code>&lt;figure&gt;</code>). Now we'll learn about another major type of semantic elements that is new to HTML5: sectioning elements.</li>
+                    <li>
+                        
+                    </li>
+                    <li>
+                        
+                    </li>
+                </ol>
+            </li>
+            <li>Microdata
+            </li>
+            <li>Accessibility
+            </li>
+        </ol>
+
+    </div> <!-- .container -->
+</body>
+</html>
