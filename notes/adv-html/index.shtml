@@ -12,7 +12,7 @@
         <!--#include virtual="../inc/crumbtrail.html" -->
             
         <div class="page-header notes-header">
-            <h1>AAdvanced HTML: Sectioning, Microdata, and Accessibility</h1>
+            <h1>Advanced HTML: Sectioning, Microdata, and Accessibility</h1>
             <p class="lead">Dr David Stearns, Autumn 2013</p>    
         </div>
 
@@ -200,11 +200,11 @@
                     
                     <li>But search engines and other tools could be a lot smarter and more useful if they could get extra meta-data about your page, such as:
                         <ol>
-                            <li>If this page is a review, what was the average review score?</li>
-                            <li>If this page is about an organization, what is its logo, address, main phone number, etc?</li>
+                            <li>If this page is a <a href="https://www.google.com/search?q=review+of+pagliacci">review</a>, what was the average review score?</li>
+                            <li>If this page is about <a href="https://www.google.com/search?q=microsoft">an organization</a>, what is its logo, address, main phone number, etc?</li>
                             <li>If this page is about an event, when does it start and when does it end?</li>
-                            <li>If this page is about a creative work (e.g., a movie), who is the artist, and who directed or produced it?</li>
-                            <li>If this is an article written by an author, where can I find a picture of the author to show in the search results?</li>
+                            <li>If this page is about <a href="https://www.google.com/#q=gravity+movie">a creative work</a> (e.g., a movie), who is/are the artist(s), where can I find the poster or trailer, when does it release, who directed or produced it, etc?</li>
+                            <li>If this is <a href="https://www.google.com/#q=steven+levy+wired">an article written by an author</a>, where can I find a picture of the author to show in the search results?</li>
                         </ol>
                     </li>
                     
@@ -212,7 +212,7 @@
 
                     <li>The scheme that seems to have the most support at this point is called 'microdata' and it is defined by <a href="http://schema.org/docs/gs.html">schema.org</a></li>
 
-                    <li></li>
+                    <li><a href="http://schema.org/docs/gs.html">Code example</a></li>
 
                 </ol>
             </li>
