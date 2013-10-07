@@ -95,7 +95,7 @@
                     <p>This video shows this effect in action:</p>
 
                     <video class="responsive" controls preload="metadata">
-                        <source src="https://courses.washington.edu/info343/stearns/captures/info343-lab3.mov">
+                        <source src="https://courses.washington.edu/info343/stearns/captures/info343-lab3.mov" type="video/mp4">
                         <source src="https://courses.washington.edu/info343/stearns/captures/info343-lab3.webm">
                         <source src="https://courses.washington.edu/info343/stearns/captures/info343-lab3.ogv">
 
