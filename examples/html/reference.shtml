@@ -417,27 +417,29 @@ paragraph.</pre>
                             <div class="entry-example">
                                 <article>
                                     <p>I want to talk about why cats are awesome...</p>
+                                    <aside>"...cats are awesome..."</aside>
                                 </article>
-                                <aside>"...cats are awesome..."</aside>
                             </div>
                         </div>
 
                         <div class="entry">
                             <div class="entry-title">footer</div>
-                            <div class="entry-description">Content is a footer for the document</div>
-                            <div class="entry-notes">Use this for footer content shown after the article or at the bottom of the page.</div>
+                            <div class="entry-description">Content is a footer for an article, or entire document</div>
+                            <div class="entry-notes">Use this for footer content shown at the end of an article, or at the bottom of the entire page.</div>
                             <div class="entry-example">
                                 <article>
                                     <p>...</p>
+                                    <footer>
+                                        <address>
+                                            David Stearns <br>
+                                            MGH 330N <br>
+                                            University of Washington <br>
+                                            <a href="mailto:dlsinfo@uw.edu">
+                                                dlsinfo@uw.edu
+                                            </a>
+                                        </address>
+                                    </footer>
                                 </article>
-                                <footer>
-                                    <address>
-                                        David Stearns <br>
-                                        MGH 330N <br>
-                                        University of Washington <br>
-                                        <a href="mailto:dlsinfo@uw.edu">dlsinfo@uw.edu</a>
-                                    </address>
-                                </footer>
                             </div>
                         </div>
 
@@ -447,7 +449,9 @@ paragraph.</pre>
                             <div class="entry-example">
                                 <address>
                                     <p>David Stearns</p>
-                                    <p><a href="mailto:dlsinfo@uw.edu">dlsinfo@uw.edu</a></p>
+                                    <p><a href="mailto:dlsinfo@uw.edu">
+                                        dlsinfo@uw.edu
+                                    </a></p>
                                 </address>    
                             </div>
                         </div>                       
@@ -459,13 +463,15 @@ paragraph.</pre>
                             <div class="entry-notes">The exact meaning of this element is somewhat unclear, but most people tend to use it to mark significant sections of a document. In general, every section should have a heading associated with it.</div>
                             <div class="entry-example">
                                 <article>
-                                    <h1>Why Cats are Awesome</h1>
+                                    <header>
+                                        <h1>Why Cats are Awesome</h1>
+                                    </header>
                                     <section>
-                                        <h2>Cats Can Paint</h2>
+                                        <h1>Cats Can Paint</h1>
                                         <p>...</p>
                                     </section>
                                     <section>
-                                        <h2>Cats Can Be Painted</h2>
+                                        <h1>Cats Can Be Painted</h1>
                                         <p>...</p>
                                     </section>
                                 </article>
