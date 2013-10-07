@@ -139,23 +139,23 @@
 
                     <p>Just as in our last lab, the body of the page has a background texture. That texture is already in your 'img' sub-directory in the file named 'sandpaper.png'. Add a CSS rule for the <code>&lt;body&gt;</code> element that tells the browser to use this file as the background-image.</p>
 
-                    <p>Since the body has a texture, create a box in the <code>&lt;body&gt;</code> section of your HTML page for our main content. You could use an <code>&lt;article&gt;</code> element for this, assuming that our content is something that makes sense to syndicate independent of the rest of the page. Or you could just use a <code>&lt;div&gt;</code> element like you did last time. Regardless of which tag you use, the content box should have a width of 90% of its containing element (the <code>&lt;body&gt;</code>), a white background, top/bottom margins of 20px, and left/right margins that keep it horizontally centered within the body.</p>
+                    <p>Since the body has a texture, create a box in the <code>&lt;body&gt;</code> section of your HTML page for our main content. You could use an <code>&lt;article&gt;</code> element for this, assuming that our content is something that makes sense to syndicate independent of the rest of the page, or a <code>&lt;main&gt;</code> element. Or you could just use a <code>&lt;div&gt;</code> element like you did last time. Regardless of which tag you use, the content box should have a <a href="http://www.w3schools.com/cssref/pr_dim_width.asp">width</a> of 90% of its containing element (the <code>&lt;body&gt;</code>), a white <a href="http://www.w3schools.com/cssref/pr_background-color.asp">background</a>, top/bottom <a href="http://www.w3schools.com/cssref/pr_margin.asp">margins</a> of 20px, and left/right margins that keep it horizontally centered within the body.</p>
 
-                    <p>The base font for the body (which is inherited by all elements inside) should be 'Open Sans' at 16px.</p>
+                    <p>The base <a href="http://www.w3schools.com/cssref/pr_font_font.asp">font</a> for the body (which is inherited by all elements inside) should be 'Open Sans' at 16px.</p>
 
                     <h3>Add and style the header content</h3>
 
                     <p><img class="screen-shot img-responsive" src="img/header.png" alt="screen shot of header content"></p>
 
-                    <p>For the header content, use the HTML 5 <code>&lt;header&gt;</code> element we discussed in class this week. The header should have a background color of #907A46, and little bit of padding. The header contains two things: a film roll logo; and the text "Photo Browser".</p>
+                    <p>For the header content, use the HTML 5 <code>&lt;header&gt;</code> element we discussed in class this week. The header should have a <a href="http://www.w3schools.com/cssref/pr_background-color.asp">background color</a> of #907A46, and 10px of <a href="http://www.w3schools.com/cssref/pr_padding.asp">padding</a>. The header contains two things: a film roll logo; and the text "Photo Browser".</p>
 
-                    <p>The logo image is already in your 'img' directory in the file named 'logo.png'. Note that it is displayed over on the far right of the header area, and it is slightly transparent (opacity of 0.7). When the reader hovers the mouse over it, the logo should become entirely opaque (opacity: 1). This makes it appear initially a bit dimmed or washed-out, but then it becomes fully-saturated on hover.</p>
+                    <p>The logo image is already in your 'img' directory in the file named 'logo.png'. Note that it is <a href="http://www.w3schools.com/cssref/pr_class_float.asp">floated</a> over to the right of the header area, and it is slightly transparent (opacity: 0.7). When the reader hovers the mouse over it, the logo should become entirely opaque (opacity: 1). This makes it appear initially a bit dimmed or washed-out, but then it becomes fully-saturated on hover.</p>
 
-                    <p>The logo should also be a hyperlink; clicking on the logo should take the user to the URL <a href="http://www.morguefile.com/">http://www.morguefile.com/</a>, which is a free stock photography site. This is where I got the various pictures you'll add in the next step.</p>
+                    <p>The logo should also be a <a href="http://www.w3schools.com/tags/tag_a.asp">hyperlink</a>; clicking on the logo should take the user to the URL <a href="http://www.morguefile.com/">http://www.morguefile.com/</a>, which is a free stock photography site. This is where I got the various pictures you'll add in the next step.</p>
 
-                    <p>The text in the header should be in the Google web font 'Cantora One' (already included at the top of your styles.css file), and sized to be 200% of the base font size. Its color should be #EEEDEA. Since this is the title of the page, it would make sense to use a top-level heading element for this text.</p>
+                    <p>The text in the header should be in the Google web font 'Cantora One' (already included at the top of your styles.css file), and <a href="http://www.w3schools.com/cssref/pr_font_font-size.asp">sized</a> to be 200% of the base font size. Its <a href="http://www.w3schools.com/cssref/pr_text_color.asp">color</a> should be #EEEDEA. Since this is the title of the page, it would make sense to use a <a href="http://www.w3schools.com/tags/tag_hn.asp">top-level heading element</a> for this text.</p>
 
-                    <p>If you have troubles getting the text to be vertically centered in the header, remember that the line-height property can be used to vertically center a single line of text. Set the line-height to be the same height as the logo (60px), which is what you are trying to vertically center against.</p>
+                    <p>If you have troubles getting the text to be vertically centered in the header, remember that the <a href="http://www.w3schools.com/cssref/pr_dim_line-height.asp">line-height property</a> can be used to vertically center a single line of text. Set the line-height to be the same height as the logo (60px), which is what you are trying to vertically center against.</p>
 
                     <h3>Add and style the photo thumbnails and captions</h3>
 
@@ -163,7 +163,7 @@
 
                     <p>The thumbnails are 190px wide and 190px tall, but the photos themselves are not square, and some are in landscape orientation while others are in portrait orientation. To make all the images render as square thumbnails, we need to "frame" each image with another element, which we can style such that it clips off the part of the picture that might overflow the frame. There is no semantic tag for frames like these, so we'll just use a <code>&lt;div&gt;</code> with a <code>class</code> attribute set to 'frame'.</p>
 
-                    <p class="alert alert-info">Note that if we were developing an entire photo cataloging and browsing system, we would probably pre-process photos on upload to generate square thumbnails, but for this lab we'll just use this framing technique. It also gives you a chance to practice constraining the sizes of images in CSS.</p>
+                    <p class="alert alert-info">Note that if we were developing an entire photo cataloging and browsing system, we would probably pre-process photos on upload to generate separate square thumbnail images, but for this lab we'll just use this framing technique. It also gives you a chance to practice constraining the sizes of images in CSS.</p>
 
                     <p>The photos themselves should also be hyperlinks that when clicked, take the reader to the full image. In other words, the <code>href</code> attribute of the <code>&lt;a&gt;</code> tag should be the same as the <code>src</code> attribute of the <code>&lt;img&gt;</code> tag.</p>
 
@@ -178,7 +178,7 @@
 &lt;/figure&gt;
                     </code></pre>
 
-                    <p>Add the appropriate elements to display all eight of the following photos and captions:</p>
+                    <p>Add eight of these HTML blocks and then alter the <code>&lt;figcaption&gt;</code>, as well as the <code>src</code> and <code>href</code> attributes to match each Image URL and caption in the following table:</p>
 
                     <table class="table">
                         <thead>
@@ -225,15 +225,15 @@
 
                     <p>After you've added the pictures and captions, you now need to add some style rules to create the grid layout, size down the images, and clip off any part of the image that extends outside the frame.</p>
 
-                    <p>By default, browsers display <code>&lt;figure&gt;</code> elements as blocks, meaning they stack on top of one another. We want them to appear side-by-side, just like the navigation bar list items you created in the previous lab. If you've forgotten how to do that, look at your solution for lab 2, or the <a href="../../examples/css-examples/links.html">styling links example page</a>.</p>
+                    <p>By default, browsers display <code>&lt;figure&gt;</code> elements as blocks, meaning they stack on top of one another. We want them to appear side-by-side, just like the navigation bar items you created in the previous lab. To make that happen, add a <code>display: inline-block;</code> property to a CSS rule that applies to all <code>&lt;figure&gt;</code> elements.</p>
 
-                    <p>Give each <code>&lt;figure&gt;</code> a bit of padding, and a background color of white (#FFF). Background colors don't inherit down the element tree, so the default background for our <code>&lt;figure&gt;</code> elements is transparent, which will cause us problems later on when we add the zooming transform.</p>
+                    <p>Also give each <code>&lt;figure&gt;</code> 10px of padding, and a background color of white (#FFF). Background colors don't inherit down the element tree, so the default background for our <code>&lt;figure&gt;</code> elements is transparent, which will cause us problems later on when we add the zooming transform.</p>
 
-                    <p>For the <code>&lt;figcaption&gt;</code> we will use a light-weight version of the Open Sans font, so set the font-weight to 300 (normal weight is 400). Make the text horizontally-centered, and give it a top margin of 5px so there's a bit of separation between the frame and the caption.</p>
+                    <p>For the <code>&lt;figcaption&gt;</code> we will use a light-weight version of the Open Sans font, so set the <a href="http://www.w3schools.com/cssref/pr_font_weight.asp">font-weight</a> property to 300 (normal weight is 400). Make the <a href="http://www.w3schools.com/cssref/pr_text_text-align.asp">text horizontally-centered</a>, and give it a <a href="http://www.w3schools.com/cssref/pr_margin-top.asp">top margin</a> of 5px so there's a bit of separation between the frame and the caption.</p>
 
-                    <p>For the frames (<code>&lt;div class="frame"&gt;</code>), set the width to be 200px, with a 10px solid border in the color #EEE (light gray). Also make the background color that same #EEE so that the gray will fill in behind portrait-oriented photos. Since our landscape-oriented photos are not square, we next need to tell the frame to clip off any part of the image that extends beyond the frame border; to do that, set the overflow property to 'hidden'. Finally tell the frame to center-align the text inside it: this actually affects any inline elements as well, so this will center-align portrait-oriented photos in the frame.</p>
+                    <p>For the frames (<code>&lt;div class="frame"&gt;</code>), set the <a href="http://www.w3schools.com/cssref/pr_dim_width.asp">width</a> to be 200px, with a 10px solid <a href="http://www.w3schools.com/cssref/pr_border.asp">border</a> in the color #EEE (light gray). Also make the background color that same #EEE so that the gray will fill in behind portrait-oriented photos. Since our landscape-oriented photos are not square, we next need to tell the frame to clip off any part of the image that extends beyond the frame border; to do that, set the <a href="http://www.w3schools.com/cssref/pr_pos_overflow.asp">overflow</a> property to 'hidden'. Finally tell the frame to <a href="http://www.w3schools.com/cssref/pr_text_text-align.asp">center-align the text</a> inside it: this actually affects any inline elements as well, so this will center-align portrait-oriented photos in the frame.</p>
 
-                    <p>Finally, we need to size down the images themselves. Add a rule that sets the height of the images to 190px. We use height here instead of width so that landscape-oriented photos (which are most of them) fill the width of the frame. The bit that extends to the right of the frame will be clipped by that overflow setting we made to the frame itself.</p>
+                    <p>Finally, we need to size down the images themselves. Add a rule that sets the <a href="http://www.w3schools.com/cssref/pr_dim_height.asp">height</a> of the images to 190px. We use height here instead of width so that landscape-oriented photos (which are most of them) fill the width of the frame. The bit that extends to the right of the frame will be clipped by that overflow setting we made to the frame itself.</p>
 
                     <p class="alert alert-info">You could of course reverse this and set the width of the image to 190px and let the frame clip off the bottom of the portrait-oriented photos. This is really a matter of taste, but since most of our photos are landscape-oriented, controlling height seems like a better choice.</p>
 
@@ -241,7 +241,7 @@
 
                     <p>At this point, you should have a static page showing the pictures as thumbnails in a grid, and the thumbnails should reflow as you make your browser window wider or narrower. Now let's add that scaling effect when the mouse is hovered over an image.</p>
 
-                    <p>We want to scale the entire <code>&lt;figure&gt;</code> on hover, so add a new style rule that uses the ':hover' pseudo-selector on <code>&lt;figure&gt;</code> elements. In that rule, we want to apply two things: a scaling transform that makes the figure 1.5 times as large; and a box shadow.</p>
+                    <p>We want to scale the entire <code>&lt;figure&gt;</code> on hover, so add a new style rule that uses <a href="http://www.w3schools.com/cssref/sel_hover.asp">the ':hover' pseudo-selector</a> on <code>&lt;figure&gt;</code> elements. In that rule, we want to apply two things: a scaling transform that makes the figure 1.5 times as large; and a box shadow.</p>
 
                     <p>Currently, the scaling transform requires the use of vendor-specific properties as well as the now-standard 'transform' property. Most browsers are starting to support the standard transform property, but older versions still require the vendor-specific ones. Thankfully, we can just specify all of them, putting the standard one last, and our rule will continue to work both with older browsers and newer versions in the future. In a few more years, these vendor-specific properties probably won't be necessary anymore, but for now, you should include them. The properties in your rule should look like this:</p>
 
