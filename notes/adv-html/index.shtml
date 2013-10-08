@@ -17,6 +17,33 @@
         </div>
 
         <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Thursday Oct 10 
+                        <ol>
+                            <li>Advanced CSS 3: Transforms, Transitions, and Animations</li>
+                            <li><strong>Homework version 1.0 Due!</strong></li>
+                        </ol>
+                    </li>
+
+                    <li>Friday Oct 11
+                        <ol>
+                            <li>Lab 3: Picture Browser</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>Debrief Lab 2 and Early Feedback Survey</li>
+                    <li>New HTML 5 Sectioning Elements</li>
+                    <li>More CSS Pseudo-Selectors</li>
+                    <li>Microdata and Rich Snippets (if time)</li>
+                    <li>Guest Presentation on Accessibility!</li>
+                </ol>
+            </li>
+
             <li>HTML 5 Sectioning Elements
                 <ol>
                     <li>So far, we've talked about paragraph elements, phrasing elements (which go inside paragraphs), grouping elements (like lists, glossaries and tables), and elements that embed content into the page (<code>&lt;img&gt;</code> and <code>&lt;figure&gt;</code>). Now we'll learn about another major type of semantic elements that is new to HTML5: <strong>sectioning elements</strong>.</li>
@@ -84,6 +111,21 @@
                         <ol>
                             <li>Wraps contact info for the author or organization who wrote the content to which the footer was applied</li>
                             <li>This element's content can be anything, but typically would include hyperlinks, email address, or postal address</li>
+                        </ol>
+                    </li>
+
+                    <li>Sectioning elements and earlier versions of IE
+                        <ol>
+                            <li>Because the HTML standard is always progressing, browsers are supposed to just treat unknown tags as a <code>&lt;div&gt;</code> so that developers can start using new semantic tags right away</li>
+
+                            <li>Browsers are also supposed to let you style these new, unknown elements using element selectors, even if the browser doesn't know what the element means</li>
+
+                            <li>Unfortunately, IE 8 and earlier got the first part right, but messed up on the second part. It will treat unknown tags as a <code>&lt;div&gt;</code> but it won't let you style them!</li>
+
+                            <li>Luckily, a clever developer discovered that if you create a new instance of these elements in memory using JavaScript, IE 8 and earlier will suddenly start applying styles to those elements as well. Thus was born <a href="https://github.com/aFarkas/html5shiv">html5shiv.js</a></li>
+
+                            <li>Although we haven't covered JavaScript yet, I wanted you to be aware of this issue regarding the new HTML 5 sectioning elements and earlier versions of IE. If you have to build a site that supports IE 8 or earlier, and you want to use these new sectioning elements, you'll want to include html5shiv.js in your pages. See the <a href="https://github.com/aFarkas/html5shiv/blob/master/readme.md">usage instructions</a> on the <a href="https://github.com/aFarkas/html5shiv">html5shiv GitHub repository</a> site.</li>
+
                         </ol>
                     </li>
                 </ol>
