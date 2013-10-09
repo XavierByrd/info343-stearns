@@ -38,7 +38,6 @@
                     <li>Accessibility and the :focus Pseudo-Selector</li>
                     <li>Vertical Alignment Strategies</li>
                     <li>Opacity</li>
-                    <li>Resizing Images and Controlling Overflow</li>
                     <li>Transforms</li>
                     <li>Transitions</li>
                     <li>Animations</li>
@@ -186,12 +185,39 @@
             </li>
 
             <li>Opacity
-            </li>
+                <ol>
+                    <li>Another advanced visual effect that is availble now in CSS is transparency, or control over the "alpha channel"</li>
 
-            <li>Resize and Overflow
+                    <li>Two ways you can make things semi-transparent:
+                        <ol>
+                            <li>Use the <code>opacity</code> property; decimal ranging from 0 (completely transparent) to 1 (opaque)</li>
+                            <li>Use an <code>rgba()</code> color for something like the background-color property; rgba(255,255,255, 0.5); last value is same kind of decimal as opacity</li>
+                        </ol>
+                    </li>
+
+                    <li>Useful for overlaying text on a richly-colored background</li>
+
+                    <li>Also useful for fading elements in and out via transitions/animations or JavaScript</li>
+                </ol>
             </li>
 
             <li>Transforms
+                <ol>
+                    <li>CSS 3 added a powerful new feature that lets you graphically transform any element in a variety of ways</li>
+
+                    <li><a href="http://www.w3schools.com/css3/css3_2dtransforms.asp">2D transforms</a>:
+                        <ol>
+                            <li><code>translate()</code> shifts an element from its current position</li>
+                            <li><code>rotate()</code> rotates the element clockwise or counter-clockwise</li>
+                            <li><code>scale()</code> increases or decreases the size of the element (zoom in or out)</li>
+                            <li><code>skew()</code> turns the element on a give angle</li>
+                        </ol>
+                    </li>
+
+                    <li>Demo!
+                    </li>
+
+                </ol>
             </li>
 
             <li>Transitions
