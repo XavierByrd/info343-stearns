@@ -98,10 +98,9 @@
                         <source src="https://courses.washington.edu/info343/stearns/captures/info343-lab3.mp4">
                         <source src="https://courses.washington.edu/info343/stearns/captures/info343-lab3.webm">
 
-                        <iframe width="640" height="480" src="//www.youtube.com/embed/gr1s6B95vyI?rel=0" frameborder="0" allowfullscreen></iframe>
                     </video>
  
-                    <p class="alert alert-warning">If you have troubles viewing this video, try <a href="http://youtu.be/gr1s6B95vyI">viewing it on YouTube</a> instead.</p>
+                    <p class="alert alert-warning">If you have troubles viewing this video, try <a href="http://youtu.be/cfqLrlaKW1g">viewing it on YouTube</a> instead.</p>
 
                     <p>When hovering over an image, the reader can also click on the image to view the full-sized version. This just navigates to the full-sized image file itself, allowing the reader to see the image at its full resolution, and download the image if desired.</p>
 
