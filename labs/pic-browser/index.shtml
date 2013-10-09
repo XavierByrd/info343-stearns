@@ -84,7 +84,7 @@
 
                     <p><img class="screen-shot img-responsive" src="img/wide.png" alt="screen shot of photo browser page"></p>
 
-                    <p>The pictures are displayed in a fixed size, and arranged in a grid that should respond to the browser width. So when you make your browser window narrower, the pictures should reflow like this:</p>
+                    <p>The picture thumbnails are displayed in a fixed size, and arranged in a grid that should respond to the browser width. So when you make your browser window narrower, the pictures should reflow like this:</p>
 
                     <p><img class="screen-shot img-responsive" src="img/narrow.png" alt="screen shot of narrow photo browser page"></p>
 
@@ -104,7 +104,7 @@
  
                     <p class="alert alert-warning">If you have troubles viewing this video, try <a href="http://youtu.be/gr1s6B95vyI">viewing it on YouTube</a> instead.</p>
 
-                    <p>When hovering over an image, the reader can also click on the image to view it. This just navigates to the image file itself, allowing the reader to see the full image at its full resolution, and download the image if desired.</p>
+                    <p>When hovering over an image, the reader can also click on the image to view the full-sized version. This just navigates to the full-sized image file itself, allowing the reader to see the image at its full resolution, and download the image if desired.</p>
 
                     <p>And, as shown at the end of that video, the film logo on the top right should be slightly transparent at first, but become fully opaque when the reader hovers the mouse over it.</p>
 
@@ -139,7 +139,7 @@
 
                     <p>Just as in our last lab, the body of the page has a background texture. That texture is already in your 'img' sub-directory in the file named 'sandpaper.png'. Add a CSS rule for the <code>&lt;body&gt;</code> element that tells the browser to use this file as the <a href="http://www.w3schools.com/cssref/pr_background-image.asp">background-image</a>.</p>
 
-                    <p>Since the body has a texture, create a box in the <code>&lt;body&gt;</code> section of your HTML page for our main content. Since our content could be syndicated (i.e., it could be extracted from the surrounding page and redisplayed in another medium, like an email message or RSS reader), use the new <code>&lt;article&gt;</code> element I showed you in class. The content box should have a <a href="http://www.w3schools.com/cssref/pr_dim_width.asp">width</a> of 90% of its containing element (the <code>&lt;body&gt;</code>), a white <a href="http://www.w3schools.com/cssref/pr_background-color.asp">background</a>, top/bottom <a href="http://www.w3schools.com/cssref/pr_margin.asp">margins</a> of 20px, and left/right margins that keep it horizontally centered within the body (auto).</p>
+                    <p>Since the body has a texture, create a box in the <code>&lt;body&gt;</code> section of your HTML page for our main content. Since our content could be syndicated (i.e., it could be extracted from the surrounding page and redisplayed in another medium, like an email message or RSS reader), use the new <code>&lt;article&gt;</code> element I showed you in class. The <code>&lt;article&gt;</code> element should have a <a href="http://www.w3schools.com/cssref/pr_dim_width.asp">width</a> of 90% of its containing element (the <code>&lt;body&gt;</code>), a white <a href="http://www.w3schools.com/cssref/pr_background-color.asp">background</a>, top/bottom <a href="http://www.w3schools.com/cssref/pr_margin.asp">margins</a> of 20px, and left/right margins that keep it horizontally centered within the body (auto).</p>
 
                     <p>The base <a href="http://www.w3schools.com/cssref/pr_font_font.asp">font</a> for the body (which is inherited by all elements inside) should be 'Open Sans' at 16px.</p>
 
@@ -161,69 +161,72 @@
 
                     <p>Now that the header content is in place, let's add the the photo thumbnails and corresponding captions. You could simply use bare <code>&lt;img&gt;</code> and <code>&lt;p&gt;</code> elements for this, but there is a more semantically-appropriate set of elements for images with corresponding captions: <a href="../../examples/html/reference.shtml#figure,%20figcaption"><code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code></a>.</p>
 
-                    <p>The thumbnails are 190px wide and 190px tall, but the photos themselves are not square, and some are in landscape orientation while others are in portrait orientation. To make all the images render as square thumbnails, we need to "frame" each image with another element, which we can style such that it clips off the part of the picture that might overflow the frame. There is no semantic tag for frames like these, so we'll just use a <code>&lt;div&gt;</code> with a <code>class</code> attribute set to 'frame'.</p>
-
-                    <p class="alert alert-info">Note that if we were developing an entire photo cataloging and browsing system, we would probably pre-process photos on upload to generate separate square thumbnail images, but for this lab we'll just use this framing technique. It also gives you a chance to practice constraining the sizes of images in CSS.</p>
-
-                    <p>The photos themselves should also be hyperlinks that when clicked, take the reader to the full image. In other words, the <code>href</code> attribute of the <code>&lt;a&gt;</code> tag should be the same as the <code>src</code> attribute of the <code>&lt;img&gt;</code> tag.</p>
+                    <p>The <code>&lt;figure&gt;</code> element should contain an <code>&lt;img&gt;</code> element and a <code>&lt;figcaption&gt;</code> element. The content of the <code>&lt;figcaption&gt;</code> should be the caption listed in the table below, and the <code>src</code> attribute of the <code>&lt;img&gt;</code> element should be set to the thumbnail URL also listed in the table below. Wrap the <code>&lt;img&gt;</code> in an <code>&lt;a&gt;</code> element so that the reader can click the image, and set the <code>href</code> attribute to the full-sized image URL also listed in the table below.</p>
 
                     <p>The element structure for a thumbnail would thus look like this:</p>
 
                     <pre><code>
 &lt;figure&gt;
-    &lt;div class=&quot;frame&quot;&gt;
-        &lt;a href=&quot;img/bunny.jpg&quot;&gt;&lt;img src=&quot;img/bunny.jpg&quot; alt=&quot;bunny&quot;&gt;&lt;/a&gt;
-    &lt;/div&gt;
+    &lt;a href=&quot;img/bunny.jpg&quot;&gt;&lt;img src=&quot;img/bunny-thumb.jpg&quot; alt=&quot;bunny&quot;&gt;&lt;/a&gt;
     &lt;figcaption&gt;Bunny&lt;/figcaption&gt;
 &lt;/figure&gt;
                     </code></pre>
 
-                    <p>Add eight of these HTML blocks and then alter the <code>&lt;figcaption&gt;</code>, as well as the <code>src</code> and <code>href</code> attributes to match each Image URL and caption in the following table:</p>
+                    <p>Add eight of these HTML blocks and then alter the <code>&lt;figcaption&gt;</code>, as well as the <code>src</code> and <code>href</code> attributes to match the settings listed in the following table:</p>
 
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Image URL</th>
+                                <th>Thumnail URL</th>
+                                <th>Full-Sized URL</th>
                                 <th>Caption</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
+                                <td>img/bunny-thumb.jpg</td>
                                 <td>img/bunny.jpg</td>
                                 <td>Bunny</td>
                             </tr>
                             <tr>
-                                <td>img/trees.jpg</td>
-                                <td>Trees</td>
-                            </tr>
-                            <tr>
+                                <td>img/canoe-thumb.jpg</td>
                                 <td>img/canoe.jpg</td>
                                 <td>Canoe</td>
                             </tr>
                             <tr>
+                                <td>img/cat-thumb.jpg</td>
                                 <td>img/cat.jpg</td>
                                 <td>Cat</td>
                             </tr>
                             <tr>
+                                <td>img/dog-thumb.jpg</td>
                                 <td>img/dog.jpg</td>
                                 <td>Dog</td>
                             </tr>
                             <tr>
+                                <td>img/fruit-thumb.jpg</td>
+                                <td>img/fruit.jpg</td>
+                                <td>Fruit</td>
+                            </tr>
+                            <tr>
+                                <td>img/landscape-thumb.jpg</td>
                                 <td>img/landscape.jpg</td>
                                 <td>Landscape</td>
                             </tr>
                             <tr>
-                                <td>img/tiger.jpg</td>
-                                <td>Tiger</td>
-                            </tr>
-                            <tr>
+                                <td>img/raccoon-thumb.jpg</td>
                                 <td>img/raccoon.jpg</td>
                                 <td>Raccoon</td>
+                            </tr>
+                            <tr>
+                                <td>img/tiger-thumb.jpg</td>
+                                <td>img/tiger.jpg</td>
+                                <td>Tiger</td>
                             </tr>
                         </tbody>
                     </table>
 
-                    <p>After you've added the pictures and captions, you now need to add some style rules to create the grid layout, size down the images, and clip off any part of the image that extends outside the frame.</p>
+                    <p>After you've added the pictures and captions, you now need to add some style rules to create the grid layout, and size down the images.</p>
 
                     <p>By default, browsers display <code>&lt;figure&gt;</code> elements as blocks, meaning they stack on top of one another. We want them to appear side-by-side, just like the navigation bar items you created in the previous lab. To make that happen, add a <code>display: inline-block;</code> property to a CSS rule that applies to all <code>&lt;figure&gt;</code> elements.</p>
 
@@ -231,15 +234,11 @@
 
                     <p>For the <code>&lt;figcaption&gt;</code> we will use a light-weight version of the Open Sans font, so set the <a href="http://www.w3schools.com/cssref/pr_font_weight.asp">font-weight</a> property to 300 (normal weight is 400). Make the <a href="http://www.w3schools.com/cssref/pr_text_text-align.asp">text horizontally-centered</a>, and give it a <a href="http://www.w3schools.com/cssref/pr_margin-top.asp">top margin</a> of 5px so there's a bit of separation between the frame and the caption.</p>
 
-                    <p>For the frames (the HTML tag <code>&lt;div class="frame"&gt;</code>, so CSS selector would be '.frame'), set the <a href="http://www.w3schools.com/cssref/pr_dim_width.asp">width</a> and the <a href="http://www.w3schools.com/cssref/pr_dim_height.asp">height</a> properties to be 190px, and give it a 10px solid <a href="http://www.w3schools.com/cssref/pr_border.asp">border</a> in the color #EEE (light gray). Also make the background color that same #EEE so that the gray will fill in behind portrait-oriented photos. Since our landscape-oriented photos are not square, we next need to tell the frame to clip off any part of the image that extends beyond the frame border; to do that, set the <a href="http://www.w3schools.com/cssref/pr_pos_overflow.asp">overflow</a> property to 'hidden'. Finally tell the frame to <a href="http://www.w3schools.com/cssref/pr_text_text-align.asp">center-align the text</a> inside it: this actually affects any inline elements as well, so this will center-align portrait-oriented photos in the frame.</p>
-
-                    <p>Finally, we need to size down the images themselves. Add a rule that sets the <a href="http://www.w3schools.com/cssref/pr_dim_height.asp">height</a> of the images (<code>&lt;img&gt;</code> elements) to 190px. We use height here instead of width so that landscape-oriented photos (which are most of them) fill the width of the frame. The bit that extends to the right of the frame will be clipped by that overflow setting we made to the frame itself.</p>
-
-                    <p class="alert alert-info">You could of course reverse this and set the width of the image to 190px and let the frame clip off the bottom of the portrait-oriented photos. This is really a matter of taste, but since most of our photos are landscape-oriented, controlling height seems like a better choice.</p>
+                    <p>The thumbnail images are actually 300px by 300px so that they will still look good when we zoom them, so we need to reduce their width in their normal state. For the <code>&lt;img&gt;</code> elements inside the <code>&lt;figure&gt;</code> elements, set their <a href="http://www.w3schools.com/cssref/pr_dim_width.asp">width</a> to 200px, and give them a 10px solid <a href="http://www.w3schools.com/cssref/pr_border.asp">border</a> in the color #EEE (light gray). Also round the corners just slightly by using a 2px <a href="http://www.w3schools.com/cssref/css3_pr_border-radius.asp">border radius</a>.</p>
 
                     <h3>Add Transitions and Transforms</h3>
 
-                    <p>At this point, you should have a static page showing the pictures as thumbnails in a grid, and the thumbnails should reflow as you make your browser window wider or narrower. Now let's add that scaling effect when the mouse is hovered over an image.</p>
+                    <p>At this point, you should have a static page showing the pictures as 200px by 200px thumbnails in a grid, and the thumbnails should reflow as you make your browser window wider or narrower. Now let's add that scaling effect when the mouse is hovered over an image.</p>
 
                     <p>We want to scale the entire <code>&lt;figure&gt;</code> on hover, so add a new style rule that uses <a href="http://www.w3schools.com/cssref/sel_hover.asp">the ':hover' pseudo-selector</a> on <code>&lt;figure&gt;</code> elements. In that rule, we want to apply two things: a scaling transform that makes the figure 1.5 times as large; and a box shadow.</p>
 
