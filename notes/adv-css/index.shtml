@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for Advanced CSS Lecture">
+    <title>Advanced CSS</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>Advanced CSS: Transforms, Transitions, and Animations</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Friday Oct 11: Lab 3
+                        <ol>
+                            <li>Photo Browser</li>
+                        </ol>
+                    </li>
+                    <li>Tuesday Oct 15: Page Layout
+                        <ol>
+                            <li><a href="http://learnlayout.com/">Learn Layout Tutorial</a></li>
+                            <li><a href="http://coding.smashingmagazine.com/2011/01/12/guidelines-for-responsive-web-design/">Responsive Web Design</a></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>Accessibility and the :focus Pseudo-Selector</li>
+                    <li>Vertical Alignment Strategies</li>
+                    <li>Opacity</li>
+                    <li>Resizing Images and Controlling Overflow</li>
+                    <li>Transforms</li>
+                    <li>Transitions</li>
+                    <li>Animations</li>
+                </ol>
+            </li>
+
+            <li>Accessibility and :focus
+                <ol>
+                    <li>Dan Comden reminded us that to make our pages accessible, we need to do a few things:
+                        <ol>
+                            <li>avoid using pictures of text; use actual text and style it with CSS</li>
+                            <li>provide descriptive text in the <code>alt</code> of <code>&lt;img&gt;</code> elements</li>
+                            <li>keep our hyperlink text descriptive (i.e., avoid "click here" links)</li>
+                            <li>make graphical elements scale well when zoomed</li>
+                            <li>ensure that the page can be used without a mouse</li>
+                        </ol>
+                    </li>
+
+                    <li>This last one is often overlooked, and as he showed us, it's often difficult to determine where the focus is when you use the tab key to move from focusable element to focusable element</li>
+
+                    <li>You should also keep in mind that some reset stylesheets will also reset the focus indicator to nothing so that you can style it in a consistent way that makes sense for your site</li>
+
+                    <li>So let's learn how to style the focus indicator so that you can keep it consistent between browsers, and make it more obvious for those using only the keyboard</li>
+
+                    <li>Demo!
+                        <ol>
+                            <li>our normal setup: demo folder, css sub-folder, index.html in root, styles.css in css sub-folder</li>
+
+                            <li>download <a href="reset.css">reset.css file</a> into your css sub-folder</li>
+
+                            <li>note that this is the latest version of Eric Meyer's reset.css for HTML 5, and this is the one that also resets the focus selector (see the comment in the file source); we will add our own CSS rule to style the focus selector</li>
+
+                            <li>in index.html
+                                <ol>
+                                    <li>add doctype and basic document structure</li>
+                                    <li>add <code>&lt;link href="css/styles.css"&gt;</code> element to <code>&lt;head&gt;</code></li>
+                                    <li>add a <code>&lt;p&gt;</code> element to the <code>&lt;body&gt;</code> with at least two <code>&lt;a&gt;</code> elements</li>
+                                </ol>
+                            </li>
+
+                            <li>in css/styles.css
+                                <ol>
+                                    <li><code>@import url(reset.css);</code></li>
+                                    <li><code>@import url(http://fonts.googleapis.com/css?family=Open+Sans);</code></li>
+                                    <li>body
+                                        <ol>
+                                            <li>font-family: 'Open Sans', sans-serif;</li>
+                                            <li>font-size: 18px;</li>
+                                            <li>padding: 20px;</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li>save all, open in browser; note absence of focus highlighting on links</li>
+
+                            <li>You have two choices at this point: edit reset.css to restore default focus highlighting; or add your own focus highlighting</li>
+
+                            <li>back to styles.css
+                                <ol>
+                                    <li>add :focus rule (same as *:focus, which means focus state of all elements)
+                                        <ol>
+                                            <li>outline: #009 dotted 2px;</li>
+                                            <li>background-color: #FFF700;</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Vertical Alignment Strategies
+                <ol>
+                    <li>The CSS vertical-align property <a href="http://www.vanseodesign.com/css/vertical-centering/">doesn't actually work the way you might assume it would</a></li>
+                    
+                    <li>Really only works properly in table cells (replaced valign attribute) and on in-line images to control how they align with surrounding text</li>
+
+                    <li>But there is another property you can use to vertically align a single line of text, such as title: line-height</li>
+
+                    <li>Demo!
+                        <ol>
+                            <li>create a new 'img' sub-folder in demo folder</li>
+
+                            <li>Download <a href="https://www.iconfinder.com/icons/27856/exit_out_sign_out_icon#size=48">exit icon</a> to img sub-folder</li>
+
+                            <li>in index.html
+                                <ol>
+                                    <li>erase body content and set to:
+                                        <pre><code>
+&lt;header&gt;
+    &lt;img src=&quot;img/exit.png&quot; alt=&quot;logo&quot;&gt;
+    &lt;h1&gt;Some Title&lt;/h1&gt;                
+&lt;/header&gt;
+&lt;article&gt;
+    &lt;p&gt;testing&lt;/p&gt;
+&lt;/article&gt;                                            
+                                        </code></pre>
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>in styles.css
+                                <ol>
+                                    <li>header
+                                        <ol>
+                                            <li>width: 40%;</li>
+                                            <li>background-color: #EEE;</li>
+                                        </ol>
+                                    </li>
+                                    <li>header img
+                                        <ol>
+                                            <li>float: right;</li>
+                                        </ol>
+                                    </li>
+                                    <li>h1
+                                        <ol>
+                                            <li>font-size: 150%;</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li>save and show; note that title is top-aligned with image, but we want it vertically-aligned in the middle</li>
+
+                            <li>unfortunately, adding <code>vertical-align: middle;</code> doesn't work</li>
+
+                            <li>Simplest solution for a title like this is to set line-height to the image height</li>
+
+                            <li>back to styles.css
+                                <ol>
+                                    <li>h1
+                                        <ol>
+                                            <li>line-height: 48px; /* height of image */</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+
+                        </ol>
+                    </li>
+
+                    <li>There are <a href="http://www.vanseodesign.com/css/vertical-centering/">several other approaches to vertical-alignment of text</a> that you can read about on your own</li>
+                </ol>
+            </li>
+
+            <li>Opacity
+            </li>
+
+            <li>Resize and Overflow
+            </li>
+
+            <li>Transforms
+            </li>
+
+            <li>Transitions
+            </li>
+
+            <li>Animations
+            </li>
+
+        </ol>
+
+    </div>
+</body>
+</html>

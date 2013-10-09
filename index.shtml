@@ -106,8 +106,8 @@
                             <li class="notes"><a href="notes/basic-html/">Notes for Saying What You Mean</a></li>
                             <li><a href="slides/basic-css/">Adding Some Style: Intro to CSS 3</a></li>
                             <li class="notes"><a href="notes/basic-css">Notes for Intro to CSS 3</a></li>
-                            <li class="notes"><a href="notes/adv-html">Getting all Semantic: Sectioning, Microdata, and Accessibility</a></li>
-                            <li>Adding your "37 Pieces of Flair": Advanced Styling</li>
+                            <li class="notes"><a href="notes/adv-html/">Getting all Semantic: Sectioning, Microdata, and Accessibility</a></li>
+                            <li class="notes"><a href="notes/adv-css/">Adding your "37 Pieces of Flair": Advanced Styling</a></li>
                             <li>Responding to the Device: Responsive Web Design</li>
                             <li>Don't Reinvent the Wheel: CSS Tools and Frameworks</li>
                             <li>JavaScript: The Good Parts</li>
