@@ -283,7 +283,7 @@ transition: all 0.2s ease;
 
                     <!--#include virtual="../inc/publish.html" -->
 
-                    <p>After you've published your site and verified that it's working, submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288920">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299188">Section B</a>).</p>
+                    <p>After you've published your site and verified that it's working, <strong>submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288920">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299188">Section B</a>)</strong>.</p>
                 </section>
 
                 <section id="optional-steps">
