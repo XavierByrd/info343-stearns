@@ -130,7 +130,6 @@
                         <li>On the menu page, I'd like a two-column layout for the various pizzas, with the meat ones on the left and the veggie ones on the right. The drinks and desserts should be below that in just one column.</li>
                         <li>I want the whole site to look great on a mobile phone or tablet. The text needs to adjust size, pictures need to scale, etc. Also on pages like the menu, it needs to flip to a single-column layout when viewed on a phone screen so that customers don't have to scroll to the right to see the veggie pies.</li>
                         <li>I want the whole site to be accessible to people with disabilities.</li>
-                        <li>I want Google and other search engines to know that this site is for a <a href="http://schema.org/Restaurant">restaurant</a>, so that they'll show extra helpful info in the search results (map, logo, phone number, hours, cuisine, link to menu, etc.)</li>
                     </ul>
 
                     <p>If you get time, I'd also love one or more of these:</p>
@@ -139,6 +138,7 @@
                         <li>Some cool visual effects when people hover their mouse over various things.</li>
                         <li>It would be cool if the footer on all the pages was fixed on the bottom so that it stayed in place as you scrolled down the page.</li>
                         <li>Add a "Follow Us on Twitter" button that would automatically add the customer as a follower (provided the customer has a Twitter account of course).</li>
+                        <li>I want Google and other search engines to know that this site is for a <a href="http://schema.org/Restaurant">restaurant</a>, so that they'll show extra helpful info in the search results (map, logo, phone number, hours, cuisine, link to menu, etc.)</li>
                     </ul>
                 </blockquote>
 
