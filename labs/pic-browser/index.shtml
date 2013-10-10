@@ -295,7 +295,7 @@ transition: all 0.2s ease;
 
                     <p>Scale is only one kind of transform you can add to your elements. Another interesting one is <code>rotate()</code>, which rotates the element by a specified number of degrees. Let's add a rotate transform to our existing scale transform.</p>
 
-                    <p>The transform (and vendor-prefixed versions of that property) can accept multiple transform functions on the same line, separate by spaces. So adding the rotate transform would make your properties look like this:</p>
+                    <p>The transform (and vendor-prefixed versions of that property) can accept multiple transform functions on the same line, separated by spaces. So adding the rotate transform would make your properties look like this:</p>
 
                     <pre><code>
 -webkit-transform: scale(1.5) rotate(-5deg);
