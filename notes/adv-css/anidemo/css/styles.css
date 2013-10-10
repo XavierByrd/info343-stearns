@@ -1,0 +1,21 @@
+@-webkit-keyframes rainbow {
+    0% {background-color: #F0F8FF;}
+    10% {background-color: #FAEBD7;}
+    20% {background-color: #7FFFD4;}
+    30% {background-color: #F0FFFF;}
+    40% {background-color: #C1CDCD;}
+    50% {background-color: #F5F5DC;}
+    60% {background-color: #F5F5DC;}
+    70% {background-color: #FF7F50;}
+    80% {background-color: #FFB90F;}
+    90% {background-color: #CAFF70;}
+    100% {background-color: #BF3EFF;}
+}
+
+
+p {
+    font-weight: bold;
+    padding: 50px;
+    border: 1px solid #CCC;
+    -webkit-animation: rainbow 10s infinite;
+}

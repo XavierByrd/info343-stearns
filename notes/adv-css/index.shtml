@@ -35,6 +35,7 @@
 
             <li>Today
                 <ol>
+                    <li>Debrief Homework version 1.0</li>
                     <li>Accessibility and the :focus Pseudo-Selector</li>
                     <li>Vertical Alignment Strategies</li>
                     <li>Opacity</li>
@@ -81,7 +82,7 @@
                             <li>in css/styles.css
                                 <ol>
                                     <li><code>@import url(reset.css);</code></li>
-                                    <li><code>@import url(http://fonts.googleapis.com/css?family=Open+Sans);</code></li>
+                                    <li><code>@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);</code></li>
                                     <li>body
                                         <ol>
                                             <li>font-family: 'Open Sans', sans-serif;</li>
@@ -195,9 +196,57 @@
                         </ol>
                     </li>
 
-                    <li>Useful for overlaying text on a richly-colored background</li>
+                    <li>Useful for <a href="../../examples/css-examples/boxes.html">overlaying text on a richly-colored background</a></li>
 
                     <li>Also useful for fading elements in and out via transitions/animations or JavaScript</li>
+                </ol>
+            </li>
+
+            <li>Transitions
+                <ol>
+                    <li>CSS transitions let you smoothly transition from one set of formatting properties to another</li>
+                    
+                    <li>Like an animation, except it only moves from one state to another, and can't repeat without further reader interaction</li>
+
+                    <li>Common uses
+                        <ol>
+                            <li>smoothly change background and text color on hover</li>
+                            <li>smoothly alter opacity change on hover</li>
+                            <li>smoothly animate a 2d or 3d transform (see next section)</li>
+                        </ol>
+                    </li>
+
+                    <li>Works in all current browsers, including IE 10, but not IE 9 or earlier</li>
+
+                    <li>Demo!
+                        <ol>
+                            <li>in index.html, build a simple nav bar, like we did in labs and other classes</li>
+                            <li>in styles.css, style it so that it looks like a nav bar</li>
+                            <li>now add this to the <code>nav a</code> rule:
+                                <ol>
+                                    <li><code>transition: all 1s;</code></li>
+                                </ol>
+                            </li>
+
+                            <li>show the smooth transition</li>
+
+                            <li>the syntax of that property is <em>property-to-transition</em> <em>duration</em></li>
+
+                            <li>use 'all' to transition all properties, or name specific CSS properties to transition (comma separated)</li>
+
+                            <li>but wait, because this is so new, we need to add <dfn>vendor prefixes</dfn>:
+                                <ol>
+                                    <li>"vendor prefixes" are used by browser makers so they can start supporting a new feature before it's fully sanctioned in the official spec; they use the prefix to keep their implementation separate from however the official one ends up, and to remind developers that the feature is not yet cross-browser</li>
+
+                                    <li>after the official property is defined, browser makers switch to supporting that, but older versions of those browsers still require the vendor prefix</li>
+
+                                    <li>thankfully, there's a handy tool for generating the necessary prefixes: <a href="http://prefixr.com/">Prefixr</a></li>
+                                </ol>
+                            </li>
+
+                        </ol>
+                    </li>
+
                 </ol>
             </li>
 
@@ -214,16 +263,47 @@
                         </ol>
                     </li>
 
-                    <li>Demo!
+                    <li><a href="http://www.w3schools.com/css3/css3_3dtransforms.asp">3D transforms</a>
+                        <ol>
+                            <li><code>translateX(), translateY(), translateZ(), translate3d()</code>: translates element on x, y, or z axis, or all at once</li>
+                            <li><code>rotateX(), rotateY(), rotateZ(), rotate3d()</code>: rotates element on x, y, or z axis or all at once</li>
+                            <li><code>scaleX(), scaleY(), scaleZ(), scale3d()</code>: scales on x, y, or z axis, or all at once </li>
+                            <li><code>perspective()</code>: defines a perspective view of the 3d element</li>
+                        </ol>
+                    </li>
+
+                    <li>Demos on the Web:
+                        <ol>
+                            <li>Note that many of these also utilize JavaScript, which we'll get to soon. Without JavaScript, you can still do transforms and transitions in response to the :hover and :focus states, but with JavaScript, you can do a whole lot more.</li>
+
+                            <li><a href="http://webdesignerwall.com/trends/47-amazing-css3-animation-demos">47 Amazing CSS3 Animation Demos</a></li>
+                            <li><a href="http://www.hongkiat.com/blog/css3-animation-transition-demos/">38 Inspiring CSS3 Animation Demos</a></li>
+                            <li><a href="http://www.creativebloq.com/css3/animation-with-css3-712437">20 Stunning Examples of CSS3 Animation</a></li>
+                        </ol>
+                        
                     </li>
 
                 </ol>
             </li>
 
-            <li>Transitions
-            </li>
-
             <li>Animations
+                <ol>
+                    <li>Transitions combined with transforms create simple, two-state animations, but CSS 3 also has a mechanism for creating more complex, multi-state animations that can loop</li>
+
+                    <li>Define animations in two steps:
+                        <ol>
+                            <li>create a <code>@keyframes</code> rule
+                            </li>
+
+                            <li>add the animation property to the element you want to animate
+                            </li>
+
+                            <li>Let's look at the source of a <a href="anidemo/">simple example</a></li>
+
+                        </ol>
+                    </li>
+
+                </ol>
             </li>
 
         </ol>
