@@ -16,13 +16,13 @@
                 <section id="intro">
                     <div class="page-header lab-title">
                         <h1>Lab 3: Picture Browser</h1>
-                        <p class="lead">CSS Transforms, Transitions, and Overflow</p>
+                        <p class="lead">CSS Transforms, Transitions, and Animations</p>
                     </div>
 
                     <p>In our previous lab, we practiced building a basic web site that employed navigation bars, floated images, and custom fonts. This week we will leverage some of those same techniques, but we'll also practice a few new things we learned this week in class:</p>
 
                     <ul>
-                        <li>Constraining content to a fixed width and height and controlling what happens when it overflows</li>
+                        <li>Controlling the opacity of elements</li>
                         <li>Using transforms to scale elements on hover</li>
                         <li>Using transitions to smoothly animate visual changes</li>
                     </ul>
