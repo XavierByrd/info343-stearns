@@ -56,7 +56,7 @@
                         <ul class="labs">
                             <li><a href="labs/filemgmt">Managing Your Files</a></li>
                             <li><a href="labs/basic-site">Building a Basic Web Site</a></li>
-                            <li>Adding Transforms and Animations</li>
+                            <li><a href="labs/pic-browser">Adding Transforms, Transitions, and Animations</a></li>
                             <li>Skinning Your Site with Bootstrap</li>
                             <li>Interacting with the Customer via Scripts</li>
                             <li>Gathering Information via Forms</li>
