@@ -31,7 +31,7 @@ nav {
 }
 
 nav ul {
-    background-color: #FF9540;
+    background-color: rgba(255,149,64,0.9);
 }
 
 nav li {
@@ -64,7 +64,7 @@ footer {
     bottom: 0;
     left: 0;
     padding: 0.5em;
-    background-color: #FF9540;
+    background-color: rgba(255,149,64,0.9);
 }
 
 footer p {
