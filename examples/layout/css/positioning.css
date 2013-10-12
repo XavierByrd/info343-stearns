@@ -1,0 +1,94 @@
+@import url(reset.css);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    padding: 30px 1em;
+}
+
+h1 {
+    font-size: 150%;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+h2 {
+    font-size: 125%;
+    font-weight: bold;
+    margin: 0.8em 0;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+nav ul {
+    background-color: #FF9540;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    display: inline-block;
+    font-weight: bold;
+    color: #FFF;
+    font-size: 120%;
+    padding: 10px;
+    text-decoration: none;
+
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+
+nav a:hover {
+    background-color: #FF7100;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 0.5em;
+    background-color: #FF9540;
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+.overlay-caption {
+    position: relative;
+    z-index: -1; /* make this appear under fixed elements like nav bar */
+}
+
+.overlay-caption img {
+    width: 300px;
+}
+
+.overlay-caption figcaption {
+    font-weight: 300;
+    text-align: center;
+    background-color: rgba(255,255,255,0.7);
+
+    position: absolute;
+    padding: 5px;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+}
+

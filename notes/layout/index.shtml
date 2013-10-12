@@ -45,8 +45,9 @@
                     <li>Page Layout Terms and Concepts</li>
                     <li>Three Common Approaches to Whole Page Layout</li>
                     <li>Building Multi-Column Layouts</li>
-                    <li>Absolute and Relative Positioning</li>
-                    <li>Media Queries and Responsive Web Design</li>
+                    <li>Fixed, Relative, and Absolute Positioning</li>
+                    <li>Media Queries</li>
+                    <li>Responsive and Mobile-First Design</li>
                 </ol>
             </li>
 
@@ -102,7 +103,7 @@
                 <ol>
                     <li>Fixed Layout
                         <ol>
-                            <li>Uses a fixed-width content box that is then divided into a grid of fixed-width boxes</li>
+                            <li>Uses a fixed-width content box (~960px) that is then divided into a grid of fixed-width boxes</li>
                             
                             <li>Often used by newspaper sites, such as <a href="http://www.nytimes.com/">The New York Times</a></li>
                             
@@ -112,7 +113,7 @@
                         </ol>
                     </li>
 
-                    <li>Fluid Layout
+                    <li>Fluid (aka Liquid) Layout
                         <ol>
                             <li>Allows body content box to adjust to the viewport size, but left/top (and sometimes right or bottom) content remains fixed</li>
 
@@ -154,6 +155,8 @@
                                 <ol>
                                     <li>each column has <code>float: left;</code> and <code>width: xx%;</code></li>
                                     <li>next row (or element you want to appear under) has <code>clear: both;</code></li>
+                                    <li>if you want to shade or draw a border around the whole row or grid, you can need to use an advanced technique called a "micro-clear," which you can see in <a href="../../examples/layout/css/styles.css">the source CSS file for the multi-column layout example page</a> (see the ".grid-float .row:after" rule)</li>
+                                    <li>this technique has the widest browser support, and is commonly used by CSS frameworks</li>
                                 </ol>
                             </li>
 
@@ -161,6 +164,7 @@
                                 <ol>
                                     <li>each column has <code>display: inline-block;</code> and <code>width: xx%;</code></li>
                                     <li>also add <code>vertical-align: top;</code> to top-align content (actually works in this case!)</li>
+                                    <li>this technique <a href="http://caniuse.com/inline-block">works in all current browsers</a>, but has less support in older mobile browsers</li>
                                 </ol>
                             </li>
 
@@ -168,6 +172,7 @@
                                 <ol>
                                     <li>each column has <code>display: table-cell;</code> and <code>width: xx%;</code></li>
                                     <li>perfectly fine, but might freak out those who hate the idea of using tables for layout</li>
+                                    <li>this technique also has <a href="http://caniuse.com/#feat=css-table">good support in all current browsers</a></li>
                                 </ol>
                                 
                             </li>
@@ -177,13 +182,84 @@
                     <li>Regardless of which approach you use, <strong>you should set <code>box-sizing: border-box;</code> so that the browser includes the padding and border in the box width</strong>; otherwise, 33% would only refer to the content area of a column, so any padding or border would cause the column to wrap to the next line!</li>
 
                     <li>Firefox still requires <code>-moz-box-sizing: border-box;</code>, so include that as well</li>
+
                 </ol>
             </li>
 
-            <li>Relative and Absolute Positioning
+            <li><a href="../../examples/layout/positioning.html">Fixed, Relative, and Absolute Positioning</a>
                 <ol>
-                    <li></li>
-                    <li></li>
+                    <li>So far, all our content has been positioned in the flow of the page, or floated to the left or right</li>
+                    <li>But CSS lets you adjust the position of content in a few other ways as well via the <code>position</code> property</li>
+                    
+                    <li>Fixed Positioning
+                        <ol>
+                            <li><code>position: fixed;</code></li>
+
+                            <li>allows you to make an element fixed on the page so that it stays in the same place relative to the viewport even when scrolling</li>
+
+                            <li>most commonly used for fixed nav bars and footers, but can also be used for an image or tool bar that shouldn't scroll with the page</li>
+
+                            <li>use <code>left</code>, <code>top</code>, <code>right</code>, or <code>bottom</code> properties to specify where in the viewport the element should appear</li>
+
+                            <li>fixed block elements no longer have a 100% by default; use <code>width</code> and/or <code>height</code> to control width and height explicitly</li>
+                        </ol>
+                    </li>
+
+                    <li>Relative Positioning
+                        <ol>
+                            <li><code>position: relative;</code></li>
+
+                            <li>allows you to shift an element away from where it would normally be positioned</li>
+
+                            <li>use <code>left</code>, <code>top</code>, <code>right</code>, or <code>bottom</code> properties to specify a positive or negative offset from the element's "natural" position</li>
+
+                            <li>because margin can be used to shift elements as well, this is most commonly used to make a containing element a "positioned element" so that a contained element with <code>position: absolute;</code> can position relative to the parent's box coordinates</li>
+
+                            <li>positioned elements automatically get a higher z-order so they appear on top of other content; use <code>z-index</code> property to adjust this (e.g., <code>z-order: -1;</code>)</li>
+                        </ol>
+                    </li>
+                    
+                    <li>Absolute Positioning
+                        <ol>
+                            <li><code>position: absolute;</code></li>
+
+                            <li>allows you to place the element anywhere within the containing positioned element (i.e., an element with something other than <code>position: static;</code>)</li>
+
+                            <li>use <code>left</code>, <code>top</code>, <code>right</code>, or <code>bottom</code> properties to specify a position relative to the containing positioned element</li>
+
+                        </ol>
+                    </li>
+
+                </ol>
+            </li>
+
+            <li><a href="http://www.w3.org/TR/css3-mediaqueries/">Media Queries</a>
+                <ol>
+                    <li>You can use relative units (%, em) to achieve some amount of scaling, but CSS also allows you to apply a specific and different set of styles based on viewport size and other device capabilities</li>
+
+                    <li>Use them to define specific styles for print, phones, tablets, and large screens</li>
+
+                    <li>Most developers will use a base set of styles with relative units, but also define "breakpoints," or minimum viewport widths at which a new set of styles will apply (e.g., 400, 768, 990, and 1200px)</li>
+
+                    <li>Do this using "media queries"
+                        <ol>
+                            <li>syntax: <code>@media [screen|print] and (device-test) and (device-test) and ... { ...style rules... }</code> </li>
+                            <li>examples: <code>@media (min-width: 768px) { ...style rules... }</code>
+                                <ol>
+                                    <li>styles just for print: <code>@media print {...}</code></li>
+                                    <li>styles for screens smaller than 768: <code>@media screen and (max-width: 768px) {...}</code></li>
+                                    <li>styles for screens with high-def resolution: <code>@media screen and (min-resolution: 300dpi) {...}</code></li>
+                                </ol>
+                            </li>
+
+                            <li>CSS Frameworks (Bootstrap, Foundation) includes these for you, but you can build your own, or augment theirs</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Responsive and Mobile-First Design
+                <ol>
                     <li></li>
                 </ol>
             </li>

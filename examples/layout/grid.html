@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Grid Layout Example</title>
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/grid.css">
     </head>
     <body>
         
@@ -17,10 +17,14 @@
 
         <p>This example uses <code>float: left;</code> on the columns, and <code>clear: both;</code> on the row</p>
 
+        <!-- I use <div> tags for the grid, rows, and columns because there really isn't a more semantically 
+        appropriate set of tags to use here. one could use <article> for the grid and <section> for the rows
+        but only if the grid content would make sense to be syndicated (taken out of this page and shown on) 
+        it's own in some other kind of application) -->
         <div class="grid grid-float">
             <div class="row">
                 <div class="col">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quasi, incidunt molestiae voluptates sapiente laudantium temporibus ipsam nam eos voluptas asperiores cupiditate facere facilis et deleniti voluptatibus provident vitae dolorum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, eos, rem quod ducimus autem cumque corporis iusto in accusantium quia cum voluptas consectetur obcaecati dicta error ullam fugit quidem commodi.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>           
                 <div class="col">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, necessitatibus, aut, neque minus reiciendis maxime ad ipsam cupiditate quaerat exercitationem cumque quod illum eos consequatur quas velit itaque rerum alias.</p>
@@ -31,7 +35,7 @@
             </div>  <!-- .row -->
             <div class="row">
                 <div class="col">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quasi, incidunt molestiae voluptates sapiente laudantium temporibus ipsam nam eos voluptas asperiores cupiditate facere facilis et deleniti voluptatibus provident vitae dolorum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, eos, rem quod ducimus autem cumque corporis iusto in accusantium quia cum voluptas consectetur obcaecati dicta error ullam fugit quidem commodi.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div>           
                 <div class="col">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, necessitatibus, aut, neque minus reiciendis maxime ad ipsam cupiditate quaerat exercitationem cumque quod illum eos consequatur quas velit itaque rerum alias.</p>
@@ -49,7 +53,7 @@
         <div class="grid grid-iblock">
             <div class="row">
                 <div class="col">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quasi, incidunt molestiae voluptates sapiente laudantium temporibus ipsam nam eos voluptas asperiores cupiditate facere facilis et deleniti voluptatibus provident vitae dolorum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, eos, rem quod ducimus autem cumque corporis iusto in accusantium quia cum voluptas consectetur obcaecati dicta error ullam fugit quidem commodi.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div><div class="col">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, necessitatibus, aut, neque minus reiciendis maxime ad ipsam cupiditate quaerat exercitationem cumque quod illum eos consequatur quas velit itaque rerum alias.</p>
                 </div><div class="col">
@@ -58,7 +62,7 @@
             </div> <!-- .row -->  
             <div class="row">
                 <div class="col">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quasi, incidunt molestiae voluptates sapiente laudantium temporibus ipsam nam eos voluptas asperiores cupiditate facere facilis et deleniti voluptatibus provident vitae dolorum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, eos, rem quod ducimus autem cumque corporis iusto in accusantium quia cum voluptas consectetur obcaecati dicta error ullam fugit quidem commodi.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                 </div><div class="col">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, necessitatibus, aut, neque minus reiciendis maxime ad ipsam cupiditate quaerat exercitationem cumque quod illum eos consequatur quas velit itaque rerum alias.</p>
                 </div><div class="col">

@@ -89,6 +89,12 @@
                         </div> <!-- .col-md-6 -->
 
                         <div class="col-md-6">
+                            <h2>Browser Support</h2>
+                            <dl>
+                                <dt><a href="http://caniuse.com/">Can I Use...</a></dt>
+                                <dd>A site that tracks support for different CSS and HTML features across all major browsers (including mobile versions)</dd>
+                            </dl>
+
                             <h2>CSS References</h2>
                             <dl>
                                 <dt><a href="http://www.w3schools.com/cssref/css_selectors.asp">CSS Selectors Reference</a></dt>

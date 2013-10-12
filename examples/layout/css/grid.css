@@ -9,12 +9,14 @@ body {
 h1 {
     font-size: 200%;
     font-weight: bold;
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
 h2 {
     font-size: 150%;
     font-weight: bold;
+    margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
@@ -39,9 +41,14 @@ that way, you can set your column widths as percentages
 and then adjust padding however you'd like
 note the use of the -moz- prefix for Firefox (still required)
 */
-.row,.col {
+.grid, .row, .col {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+.grid {
+    /* uncomment to draw a border around the entire grid */
+    /*border: 1px dotted #CCC;*/
 }
 
 /* set the row width to whatever you want */
@@ -54,8 +61,12 @@ so set each column width to 33% */
 .col {
     width: 33%;
     padding: 10px;
+
     /* uncomment this to draw a border around each column */
     /*border: 1px dotted #CCC;*/
+
+    /* or uncomment to draw a background color */
+    /*background-color: #F9F9F9;*/
 }
 
 /* the float approach floats each column to the left
@@ -66,6 +77,21 @@ appears under the previous */
 }
 
 .grid-float .row {
+    clear: both;
+}
+
+/* this rule is an advanced technique called a "micro-clear that you can
+use if you want to shade or draw a border around the whole row or grid
+when using the float technique. because all columns are floated
+the containing row and grid do not expand to surround the 
+floated columns. using the :after pseudo-selector, we can
+inject a single space at the end of each row and tell the browser
+to display it as a table 
+if you don't want to shade or draw a border around rows or the whole
+grid, then you don't need this rule */
+.grid-float .row:after {
+    content: " ";
+    display: table;
     clear: both;
 }
 
