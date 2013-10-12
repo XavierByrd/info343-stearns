@@ -6,16 +6,21 @@ Things to add or restructure:
 
 
 First Day:
-- On the first day, do overview of HTML and get them writing HTML pages after course intro. Save How the Web Works lecture for later.
-- During course intro, stress that you don't require any pre-existing knowledge of web dev, but if you've never written an HTML page before, you need to read what assign, and probably do some more reading on your own.
+- On the first day, do overview of HTML and get them writing HTML pages after course intro. Save How the Web Works lecture for later. Or just explain what a "web server" is.
+- During course intro, stress that you don't require any pre-existing knowledge of web dev, but if you've never written an HTML page before, you need to read what is assigned, and probably do some more reading on your own. Give them titles of step-by-step books.
 
 First Lab:
-- If the quarter starts mid-week again, just teach a normal class on that first Friday, and make it about HTML syntax and semantics, not the VCS/FTP tools.
-- If you do the lab, give them a pre-done page and image to manage in the tools. Have them make minor edits to the page, but don't have them to write it from scratch. Also consider just dispensing with FileZilla and teach them how to deploy with ssh and git clone/pull. Much simpler.
+- If the quarter starts mid-week again, just teach a normal class on that first Friday, and teach the VCS tools.
+- If you do the lab, give them a pre-done page and image to manage in the tools. Have them make minor edits to the page, but don't have them to write it from scratch. Also consider just dispensing with FileZilla and teach them how to deploy with ssh and git clone/pull. Much simpler. Also have your TA do an edit while you're talking so you can show merging.
 
 Basic HTML Lecture:
 - Instead of a self-directed in-class challenge on choosing the right semantics tags, consider doing it interactively with them, and make them decide as a group which tags should be used for which kinds of constructs.
-- Also make sure you cover block vs inline distinction, even though that can be changed in CSS, as validators will complain about misuse.
+- Also make sure you cover block vs inline distinction, even though that can be changed in CSS.
 
 Basic CSS lecture:
 - "Code with me" style worked really, really well. Do the HTML part this way next time as well. Covered a lot so maybe think hard about how to split this into the two different lectures.
+- Consider mixing CSS and HTML in these two lectures. Students started to have a lot more fun when we changed fonts, colors, etc.
+
+Advanced HTML/CSS week:
+- Code with me worked really well--keep doing that. But think through what you really should cover in "basic" vs "advanced" HTML/CSS. Perhaps introduce page layout a little earlier?
+- Don't worry about microdata at this point--seems pretty esoteric.

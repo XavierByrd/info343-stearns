@@ -89,6 +89,7 @@
                             <li><a href="examples/css-examples/lists.html">Common List Styling</a></li>
                             <li><a href="examples/css-examples/tables.html">Common Table Styling</a></li>
                             <li><a href="examples/css-examples/fixed-width-layout.html">Fixed Width Page Layout</a></li>
+                            <li><a href="examples/layout/grid.html">Multi-Column, Grid-Based Layouts</a></li>
                         </ul>
 
                     </div> <!-- first col -->
@@ -108,7 +109,7 @@
                             <li class="notes"><a href="notes/basic-css">Notes for Intro to CSS 3</a></li>
                             <li class="notes"><a href="notes/adv-html/">Getting all Semantic: Sectioning, Microdata, and Accessibility</a></li>
                             <li class="notes"><a href="notes/adv-css/">Adding your "37 Pieces of Flair": Advanced Styling</a></li>
-                            <li>Responding to the Device: Responsive Web Design</li>
+                            <li class="notes"><a href="notes/layout/">Responding to the Device: Responsive Web Design</a></li>
                             <li>Don't Reinvent the Wheel: CSS Tools and Frameworks</li>
                             <li>JavaScript: The Good Parts</li>
                             <li>Your Friend, the jQuery Library</li>
