@@ -43,10 +43,10 @@
                 <ol>
                     <li>Debrief Lab</li>
                     <li>Page Layout Terms and Concepts</li>
+                    <li>Three Common Approaches to Whole Page Layout</li>
                     <li>Building Multi-Column Layouts</li>
                     <li>Absolute and Relative Positioning</li>
-                    <li>Three Common Approaches to Page Layout</li>
-                    <li>Responsive Web Design and Media Queries</li>
+                    <li>Media Queries and Responsive Web Design</li>
                 </ol>
             </li>
 
@@ -98,40 +98,6 @@
                 </ol>
             </li>
 
-            <li>Building <a href="../../examples/layout/grid.html">Multi-Column Layouts</a>
-                <ol>
-                    <li>A common layout technique is to a few boxes next to each other in a multi-column layout</li>
-                    
-                    <li>Two general approaches for doing this:
-                        <ol>
-                            <li>Floats
-                                <ol>
-                                    <li>each column has <code>float: left;</code> and <code>width: xx%;</code></li>
-                                    <li>next row (or element you want to appear under) has <code>clear: both;</code></li>
-                                </ol>
-                            </li>
-
-                            <li>Inline-Block
-                                <ol>
-                                    <li>each column has <code>display: inline-block;</code> and <code>width: xx%;</code></li>
-                                    <li>also add <code>vertical-align: top;</code> to top-align content (actually works in this case!)</li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </li>
-
-                    <li>Regardless of which approach you use, <strong>you should set <code>box-sizing: border-box;</code> so that the browser includes the padding and border in the box width</strong>; otherwise, 33% would only refer to the content area of a column, so any padding or border would cause the column to wrap to the next line!</li>
-                </ol>
-            </li>
-
-            <li>Relative and Absolute Positioning
-                <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-            </li>
-
             <li>Three Common Approaches to Whole Page Layout
                 <ol>
                     <li>Fixed Layout
@@ -173,6 +139,55 @@
                     </li>
                 </ol>
             </li>
+
+            <li>Building <a href="../../examples/layout/grid.html">Multi-Column Layouts</a>
+                <ol>
+                    <li>A common layout technique is to put a few boxes next to each other in a multi-column layout</li>
+
+                    <li>The old way of doing this (1990s) was to use a <code>&lt;table&gt;</code> element, but that is considered very bad form now because it's not semantically appropriate; the <code>&lt;table&gt;</code> element is for tabular data, not layout</li>
+
+                    <li>Use <code>&lt;div&gt;</code> elements instead with class attributes for grid, row, and column</li>
+                    
+                    <li>Three general approaches for doing this:
+                        <ol>
+                            <li>display: float
+                                <ol>
+                                    <li>each column has <code>float: left;</code> and <code>width: xx%;</code></li>
+                                    <li>next row (or element you want to appear under) has <code>clear: both;</code></li>
+                                </ol>
+                            </li>
+
+                            <li>display: inline-Block
+                                <ol>
+                                    <li>each column has <code>display: inline-block;</code> and <code>width: xx%;</code></li>
+                                    <li>also add <code>vertical-align: top;</code> to top-align content (actually works in this case!)</li>
+                                </ol>
+                            </li>
+
+                            <li>display: table-cell
+                                <ol>
+                                    <li>each column has <code>display: table-cell;</code> and <code>width: xx%;</code></li>
+                                    <li>perfectly fine, but might freak out those who hate the idea of using tables for layout</li>
+                                </ol>
+                                
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>Regardless of which approach you use, <strong>you should set <code>box-sizing: border-box;</code> so that the browser includes the padding and border in the box width</strong>; otherwise, 33% would only refer to the content area of a column, so any padding or border would cause the column to wrap to the next line!</li>
+
+                    <li>Firefox still requires <code>-moz-box-sizing: border-box;</code>, so include that as well</li>
+                </ol>
+            </li>
+
+            <li>Relative and Absolute Positioning
+                <ol>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ol>
+            </li>
+
 
         </ol>
     </div> <!-- .container -->

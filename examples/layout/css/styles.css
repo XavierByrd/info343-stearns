@@ -37,9 +37,11 @@ code {
 tells browser to include padding and border in box size 
 that way, you can set your column widths as percentages
 and then adjust padding however you'd like
+note the use of the -moz- prefix for Firefox (still required)
 */
-.row, .col {
-    box-sizing: border-box; 
+.row,.col {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* set the row width to whatever you want */
@@ -56,14 +58,6 @@ so set each column width to 33% */
     /*border: 1px dotted #CCC;*/
 }
 
-/* inline-block approach sets display to inline-block
-vertical-align actually controls vertical alignment 
-in this case, so set it to top */
-.grid-iblock .col {
-    display: inline-block;
-    vertical-align: top;
-}
-
 /* the float approach floats each column to the left
 and does a clear on the row so that the next row
 appears under the previous */ 
@@ -75,3 +69,31 @@ appears under the previous */
     clear: both;
 }
 
+/* inline-block approach sets display to inline-block
+vertical-align actually controls vertical alignment 
+in this case, so set it to top */
+.grid-iblock .col {
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+/* the table approach uses the table-
+display settings to mimic the way HTML tables layout
+without using the actual HTML table, tr, and td
+elements, which would not be semantically correct */
+
+/* these first two rules don't seem to be necessary 
+in current versions of Chrome and Firefox */ 
+.grid-table {
+    display: table;
+}
+
+.grid-table .row {
+    display: table-row;
+}
+
+/* this is the critical setting */ 
+.grid-table .col {
+    display: table-cell;
+}
