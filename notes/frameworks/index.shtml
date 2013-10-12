@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for CSS Tools and Frameworks Lecture">
+    <title>CSS Tools and Frameworks</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>Don't Reinvent the Wheel: CSS Tools and Frameworks</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Friday Oct 18
+                        <ol>
+                            <li>Lab 4: Skinning your Site with Bootstrap</li>
+                        </ol>
+                    </li>
+
+                    <li>Tuesday Oct 22
+                        <ol>
+                            <li>Intro to JavaScript</li>
+                            <li><em>Please read these</em>
+                                <ol>
+                                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">A Re-Introduction to JavaScript</a></li>
+                                    <li><a href="http://net.tutsplus.com/tutorials/javascript-ajax/javascript-and-the-dom-series-lesson-1/">JavaScript and the DOM</a></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Today: CSS Tools and Frameworks
+                <ol>
+                    <li>What is a Framework?</li>
+                    <li>Two Popular Frameworks: Bootstrap and Foundation</li>
+                    <li>Customizing and Extending a Framework</li>
+                </ol>
+            </li>
+
+            <li>What is a Framework?
+                <ol>
+                    <li>A set of CSS and JavaScript files that are pre-made by tallented and experienced designers</li>
+
+                    <li>CSS applies a base set of styles to HTML elements for attractive fonts, margins, padding, colors, etc.</li>
+
+                    <li>CSS also defines a set of style classes that you can apply to your HTML elements to get particular effects without having to write it yourself (<code>class="alert"</code>)</li>
+
+                    <li>Often include a set of user-interface "widgets" like navigation bars, drop-downs, modal dialogs, carousels, etc
+                        <ol>
+                            <li>you attach a style class and their JavaScript handles all the user-interaction</li>
+                        </ol>
+                    </li>
+
+                    <li>Built for and tested in all major browsers currently in service (though bugs are always a possibility)</li>
+
+                    <li>Many are now incorporating responsive and mobile-first designs</li>
+
+                    <li>So why did we learn raw CSS? Why not just use these from the beginning?
+                        <ol>
+                            <li>Frameworks are frameworks, not full solutions; you write additional CSS to customize, override, and extend</li>
+                            
+                            <li>Frameworks sometimes do things you don't want, so you need to know raw CSS to override</li>
+
+                            <li>Frameworks can increase load time for simple pages that don't need everything in the framework</li>
+
+                            <li>Frameworks can become a crutch or a straightjacket if you're not careful, limiting your ability to achieve novel designs</li>
+                        </ol>
+                    </li>
+
+                </ol>
+            </li>
+
+            <li>Using the <a href="http://getbootstrap.com/getting-started/">Bootstrap</a> Framework
+                <ol>
+                    <li>Bootstrap is made by the good folks at Twitter, and is freely available</li>
+
+                    <li>Version 3.0.0 was designed to be mobile-first and responsive</li>
+
+                    <li>Two ways to incude it
+                        <ol>
+                            <li>"Hot link" to their files on their <dfn>Content Delivery Network (CDN)</dfn>
+                                <pre><code>
+&lt;!-- add this link to their core stylesheet in your &lt;head&gt; section  --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
+
+&lt;!-- add this script link at the bottom of your &lt;body&gt; section
+(allows your page to render while the browser downloads and parses the JavaScript) --&gt;
+&lt;script src=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+                                </code></pre>
+                            </li>
+
+                            <li><a href="https://github.com/twbs/bootstrap/releases/download/v3.0.0/bootstrap-3.0.0-dist.zip">Download their distribution files</a> to a 'bootstrap-3.0.0' directory in your project's 'lib' sub-directory, add the same two elements, but point them towards your downloaded versions (these specific directory names are not required, but it's a good idea to keep framework files in a 'lib' sub-directory, and to include the version number in framework directory name so that new parts of your site can start using the next version without breaking your existing pages)
+                                <pre><code>
+&lt;!-- add this link to their core stylesheet in your &lt;head&gt; section  --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;lib/bootstrap-3.0.0/css/bootstrap.min.css&quot;&gt;
+
+&lt;!-- add this script link at the bottom of your &lt;body&gt; section
+(allows your page to render while the browser downloads and parses the JavaScript) --&gt;
+&lt;script src=&quot;lib/bootstrap-3.0.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+                                </code></pre>
+                            </li>
+
+                            <li>In either case, you are using their "<dfn>minified</dfn>" versions (.min.css and .min.js), which have extra white space removed, and JavaScript variables are all renamed to one or two letters to reduce file size</li>
+                        </ol>
+                    </li>
+
+                    <li>Once included, they will apply lots of base styles for fonts, colors, margins, spacing, hyperlinks, etc.</li>
+
+                    <li>But the real power comes when you start using <a href="http://getbootstrap.com/css/">their style classes</a>
+                        <ol>
+                            <li>Container
+                                <ol>
+                                    <li>Creates a cetered content box that resizes according to their breakpoints</li>
+
+                                    <li>Use a div with <code>class="container"</code></li>
+                                </ol>
+                            </li>
+
+                            <li><a href="http://getbootstrap.com/css/#grid">The Grid</a>
+                                <ol>
+                                    <li>12-column flexible and responsive layout system</li>
+
+                                    <li>columns sit side-by-side on large monitors and revert to stacked as the size reduces</li>
+
+                                    <li>columns can be nested if needed</li>
+                                </ol>
+                            </li>
+
+                            <li>A ton of really useful <a href="http://getbootstrap.com/components/">components</a></li>
+
+                            <li>A few useful <a href="http://getbootstrap.com/javascript/">interactive components</a></li>
+
+                        </ol>
+                    </li>
+
+                </ol>
+            </li>
+
+            <li>Using the Foundation Framework
+            </li>
+
+            <li>Customizing and Extending Frameworks
+                <ol>
+                    <li>The "Cascade" part of Cascading Style Sheets (CSS)
+                    </li>
+
+                    <li>Customizing via LESS/SASS                       
+                    </li>
+
+                    <li>Overriding and extending using your own styles                        
+                    </li>
+                </ol>
+            </li>
+
+
+        </ol>
+
+    </div> <!-- .container -->
+
+</body>
