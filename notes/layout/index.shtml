@@ -260,7 +260,21 @@
 
             <li>Responsive and Mobile-First Design
                 <ol>
-                    <li></li>
+                    <li>In the past, designers typically started with the large-screen version of their site, and only then considered how to make it usable on small-screen mobile deices</li>
+
+                    <li>"Mobile-First" design reverse that: you design for the mobile experience first, and only then consider how to enhance it for larger screens</li>
+
+                    <li>Responsive techniques are then used to make the site look and/or behave differently on different devices
+                        <ol>
+                            <li>percentage sizing for fluid layout and content scaling</li>
+
+                            <li>media queries at key breakpoints for changing styles</li>
+
+                            <li>replacing or hiding elements as the screen size shrinks (e.g., nav bar becomes drop-down or slide-out menu on tap)</li>
+
+                            <li>responding to mobile gestures like swipe and pinch (requires JavaScript)</li>
+                        </ol>
+                    </li>
                 </ol>
             </li>
 

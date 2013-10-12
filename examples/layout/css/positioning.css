@@ -71,13 +71,31 @@ footer p {
     margin-bottom: 0;
 }
 
+.new-item {
+    position: relative;
+    width: 300px;
+    z-index: -1;
+}
+
+.new-item img {
+    width: 100%;
+}
+
+.new-item:after {
+    content: url(../img/new.png);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
 .overlay-caption {
     position: relative;
+    width: 300px;
     z-index: -1; /* make this appear under fixed elements like nav bar */
 }
 
 .overlay-caption img {
-    width: 300px;
+    width: 100%;
 }
 
 .overlay-caption figcaption {

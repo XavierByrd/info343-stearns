@@ -90,6 +90,7 @@
                             <li><a href="examples/css-examples/tables.html">Common Table Styling</a></li>
                             <li><a href="examples/css-examples/fixed-width-layout.html">Fixed Width Page Layout</a></li>
                             <li><a href="examples/layout/grid.html">Multi-Column, Grid-Based Layouts</a></li>
+                            <li><a href="examples/layout/positioning.html">Fixed, Relative, and Absolute Positioning</a></li>
                         </ul>
 
                     </div> <!-- first col -->
