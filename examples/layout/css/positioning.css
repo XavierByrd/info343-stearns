@@ -34,6 +34,10 @@ nav ul {
     background-color: rgba(255,149,64,0.9);
 }
 
+nav ul:hover {
+    background-color: rgb(255,149,64);    
+}
+
 nav li {
     display: inline-block;
 }
@@ -65,6 +69,10 @@ footer {
     left: 0;
     padding: 0.5em;
     background-color: rgba(255,149,64,0.9);
+}
+
+footer:hover {
+    background-color: rgb(255,149,64);    
 }
 
 footer p {
