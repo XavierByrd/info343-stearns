@@ -1,0 +1,111 @@
+@import url(reset.css);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    padding: 1em;
+}
+
+h1 {
+    font-size: 150%;
+    font-weight: bold;
+    margin-bottom: 0.8em;
+}
+
+h2 {
+    font-size: 125%;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.motto {
+    font-size: 110%;
+    font-weight: 300;
+    white-space: nowrap;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFF;
+
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.site-nav ul {
+    background-color: #FF9540;
+    border: 1px solid #A65515;
+    border-radius: 2px;
+}
+
+.site-nav li {
+    display: inline-block;
+}
+
+.site-nav a {
+    display: inline-block;
+    padding: 10px;
+    font-size: 120%;
+    font-weight: bold;
+}
+
+.site-nav a:hover {
+    background-color: #FF7100;
+}
+
+.page-nav {
+    float: left;
+    width: 200px;
+    background-color: #279B97;
+    border: 1px solid #0D6561;
+    border-radius: 2px;
+}
+
+.page-nav a {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+}
+
+.page-nav a:hover {
+    background-color: #337472;
+}
+
+.content {
+    margin-top: 1em;
+}
+
+article {
+    margin-left: 220px;
+    min-width: 200px;
+}
+
+.pull-right {
+    float: right;
+    width: 30%;
+    max-width: 400px;
+    min-width: 200px;
+    margin-left: 1em;
+    margin-bottom: 1em;
+}
+
+aside {
+    float: right;
+    padding: 1em;
+    margin-left: 1em;
+    background-color: #FFC596;
+    border: 1px solid #FFAF70;
+}
