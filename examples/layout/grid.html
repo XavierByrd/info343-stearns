@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Grid Layout Example</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        
+        <h1>Multi-Column Layout Examples</h1>
+
+        <p>This page demonstrates two approaches to multi-column, grid-based layouts: using float, and using the display setting inline-block. The columns have explicit percentage-based widths, but their height is left to auto, so the column box will expand vertically to display all of its content.</p>
+
+        <p>If you want to constrain the height as well, you'd then have to decide what to do when the content overflows the fixed box size. The <code>overflow</code> property in CSS can be used to clip content that overflows, or display internal scroll bars.</p>
+
+        <h2>Float Approach</h2>
+
+        <p>This example uses <code>float: left;</code> on the columns, and <code>clear: both;</code> on the row</p>
+
+        <div class="grid grid-float">
+            <div class="row">
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quasi, incidunt molestiae voluptates sapiente laudantium temporibus ipsam nam eos voluptas asperiores cupiditate facere facilis et deleniti voluptatibus provident vitae dolorum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, eos, rem quod ducimus autem cumque corporis iusto in accusantium quia cum voluptas consectetur obcaecati dicta error ullam fugit quidem commodi.</p>
+                </div>           
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, necessitatibus, aut, neque minus reiciendis maxime ad ipsam cupiditate quaerat exercitationem cumque quod illum eos consequatur quas velit itaque rerum alias.</p>
+                </div>           
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, aperiam, expedita. Possimus, delectus, iusto at magni doloremque distinctio quas cumque aliquam natus ea recusandae quisquam quidem! Quibusdam minus est labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, explicabo obcaecati commodi cum at doloribus culpa asperiores autem voluptas magnam assumenda vel iusto harum facilis officiis quo voluptatum ab vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, dolor, illo, sapiente dolores aliquam nulla omnis excepturi ex odio repellendus a minima sit accusamus eius ut sed quo tempore reprehenderit?</p>
+                </div>           
+            </div>  <!-- .row -->
+            <div class="row">
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quasi, incidunt molestiae voluptates sapiente laudantium temporibus ipsam nam eos voluptas asperiores cupiditate facere facilis et deleniti voluptatibus provident vitae dolorum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, eos, rem quod ducimus autem cumque corporis iusto in accusantium quia cum voluptas consectetur obcaecati dicta error ullam fugit quidem commodi.</p>
+                </div>           
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, necessitatibus, aut, neque minus reiciendis maxime ad ipsam cupiditate quaerat exercitationem cumque quod illum eos consequatur quas velit itaque rerum alias.</p>
+                </div>           
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, aperiam, expedita. Possimus, delectus, iusto at magni doloremque distinctio quas cumque aliquam natus ea recusandae quisquam quidem! Quibusdam minus est labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, explicabo obcaecati commodi cum at doloribus culpa asperiores autem voluptas magnam assumenda vel iusto harum facilis officiis quo voluptatum ab vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, dolor, illo, sapiente dolores aliquam nulla omnis excepturi ex odio repellendus a minima sit accusamus eius ut sed quo tempore reprehenderit?</p>
+                </div>           
+            </div> <!-- .row -->
+        </div> <!-- .grid-float -->
+
+        <h2>Inline Block Approach</h2>
+
+        <p>This example uses <code>display: inline-block;</code> on the columns. Note that for this to work properly, you have to ensure that there is no white space between the end-tag of one column element and the begin-tag of the next.</p>
+
+        <div class="grid grid-iblock">
+            <div class="row">
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quasi, incidunt molestiae voluptates sapiente laudantium temporibus ipsam nam eos voluptas asperiores cupiditate facere facilis et deleniti voluptatibus provident vitae dolorum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, eos, rem quod ducimus autem cumque corporis iusto in accusantium quia cum voluptas consectetur obcaecati dicta error ullam fugit quidem commodi.</p>
+                </div><div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, necessitatibus, aut, neque minus reiciendis maxime ad ipsam cupiditate quaerat exercitationem cumque quod illum eos consequatur quas velit itaque rerum alias.</p>
+                </div><div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, aperiam, expedita. Possimus, delectus, iusto at magni doloremque distinctio quas cumque aliquam natus ea recusandae quisquam quidem! Quibusdam minus est labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, explicabo obcaecati commodi cum at doloribus culpa asperiores autem voluptas magnam assumenda vel iusto harum facilis officiis quo voluptatum ab vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, dolor, illo, sapiente dolores aliquam nulla omnis excepturi ex odio repellendus a minima sit accusamus eius ut sed quo tempore reprehenderit?</p>
+                </div>           
+            </div> <!-- .row -->  
+            <div class="row">
+                <div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, quasi, incidunt molestiae voluptates sapiente laudantium temporibus ipsam nam eos voluptas asperiores cupiditate facere facilis et deleniti voluptatibus provident vitae dolorum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, eos, rem quod ducimus autem cumque corporis iusto in accusantium quia cum voluptas consectetur obcaecati dicta error ullam fugit quidem commodi.</p>
+                </div><div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, necessitatibus, aut, neque minus reiciendis maxime ad ipsam cupiditate quaerat exercitationem cumque quod illum eos consequatur quas velit itaque rerum alias.</p>
+                </div><div class="col">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus, aperiam, expedita. Possimus, delectus, iusto at magni doloremque distinctio quas cumque aliquam natus ea recusandae quisquam quidem! Quibusdam minus est labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, explicabo obcaecati commodi cum at doloribus culpa asperiores autem voluptas magnam assumenda vel iusto harum facilis officiis quo voluptatum ab vitae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, dolor, illo, sapiente dolores aliquam nulla omnis excepturi ex odio repellendus a minima sit accusamus eius ut sed quo tempore reprehenderit?</p>
+                </div>           
+            </div> <!-- .row -->  
+        </div> <!-- .grid-iblock -->
+
+    </body>
+</html>

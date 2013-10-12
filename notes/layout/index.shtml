@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for Page Layout Lecture">
+    <title>Page Layout</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>Responding to the Device: Page Layout and Responsive Design</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Thurs Oct 17: CSS Frameworks
+                        <ol>
+                            <li><em>everyone please read through these...</em>
+                                <ol>
+                                    <li><a href="http://getbootstrap.com/getting-started/">Bootstrap Getting Started</a></li>
+                                    <li><a href="http://foundation.zurb.com/docs/">Foundation Getting Started</a></li>
+                                </ol>
+                            </li>
+                            <li><em>if you are interested in more advanced topics...</em>
+                                <ol>
+                                    <li><a href="http://lesscss.org/#docs">LESS Dynamic Stylesheet Language</a></li>
+                                    <li><a href="http://sass-lang.com/tutorial.html">SASS Tutorial</a></li>                                    
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>Friday Lab: Building a Site with Bootstrap</li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>Debrief Lab</li>
+                    <li>Page Layout Terms and Concepts</li>
+                    <li>Three Common Approaches to Page Layout</li>
+                    <li>Building Multi-Column Layouts</li>
+                    <li>Absolute and Relative Positioning</li>
+                    <li>Responsive Web Design and Media Queries</li>
+                </ol>
+            </li>
+
+            <li>Page Layout Terms and Concepts
+                <ol>
+                    <li><dfn>Boxes</dfn> and <dfn>Grids</dfn>
+                        <ol>
+                            <li>Every web page is divided into a nested set of boxes (i.e., rectangular areas on the screen filled with content</li>
+
+                            <li>The outer-most box is created by the <code>&lt;body&gt;</code> element</li>
+
+                            <li>Child elements create additional boxes <em>within</em> their parent element's box (parent box = "container")</li>
+
+                            <li>Percentage sizes on child boxes are relative to their container</li>
+                            
+                            <li>By default:
+                                <ol>
+                                    <li>each box automatically expands to display all of its contained content, including child boxes</li>
+                                    
+                                    <li><a href="../../examples/html/reference.shtml#paragraphs">paragraph</a>, <a href="../../examples/html/reference.shtml#sectioning">sectioning</a>, and <a href="../../examples/html/reference.shtml#lists">grouping</a> elements (p, pre, ul, ol, dl, table, article, main, section, h1-6, etc.) create boxes that fill the entire width of their containing box, and thus stack on top of one another&mdash;these are often called "block" elements</li>
+                                    
+                                    <li><a href="../../examples/html/reference.shtml#phrasing">phrasing</a> and <a href="../../examples/html/reference.shtml#hyperlinks">hyperlink</a> elements (a, em, strong, span, sup, sub, etc.) create boxes that are placed in-line with their surrounding content, and they can't be resized or padded</li>
+                                </ol>
+                            </li>
+
+                            <li>I say "by default" because <em>all of this</em> can be overridden in CSS
+                                <ol>
+                                    <li><code>display</code> property changes default layout behavior</li>
+                                    
+                                    <li>allows a few hybrid layout styles, like <code>inline-block</code>, which behaves like inline, but allows line-wrapping as well as size and padding adjustments</li>
+                                </ol>
+                            </li>
+
+                            <li>One common reason for overriding this is to create <a href="../../examples/layout/grid.html">multi-column, grid-based layouts</a>
+                                <ol>
+                                    <li>main content box is divided into rows and columns</li>
+                                    
+                                    <li>each row is a block element with <code>width: 100%;</code></li>
+                                    
+                                    <li>columns are child elements of row with <code>display: inline-block; width: <span class="token">xx</span>%;</code></li>
+
+                                    <li>or columns have <code>float: left;</code> and row has <code>clear: both;</code></li>
+
+                                    <li>in either case, use <code>box-sizing: border-box;</code> to make the browser include column padding and border in the width measurement</li>
+
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    
+                    <li><dfn>The Viewport</dfn>
+                        <ol>
+                            <li>The viewable area of the browser window is called the "viewport"</li>
+                            
+                            <li>Resizing windowed browser adjust viewport</li>
+                            
+                            <li>Viewport of full-screen mobile browser changes with portrait/landscape rotation, but zoom is separate</li>
+
+                            <li>You can apply different styles to different sizes of viewports using CSS <dfn>media queries</dfn></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Three Common Approaches to Page Layout
+                <ol>
+                    <li>Fixed Layout
+                        <ol>
+                            <li>Uses a fixed-width content box that is then divided into a grid of fixed-width boxes</li>
+                            
+                            <li>Often used by newspaper sites, such as <a href="http://www.nytimes.com/">The New York Times</a></li>
+                            
+                            <li>Gives precise control over the grid, with few surprises when content changes, but doesn't adapt to different viewport sizes</li>
+                            
+                            <li>Sites that use this approach typically build a separate 'm.' version of their site for mobile devices, or a separate native mobile app (especially if they want to charge for content)</li>
+                        </ol>
+                    </li>
+
+                    <li>Fluid Layout
+                        <ol>
+                            <li>Allows body content box to adjust to the viewport size, but left/top (and sometimes right or bottom) content remains fixed</li>
+
+                            <li>Used by many sites, including <a href="http://en.wikipedia.org/wiki/Main_Page">Wikipedia</a></li>
+                            
+                            <li>Content is also not typically scaled down for very small viewports, which can lead to excessive scrolling</li>
+                            
+                            <li>Sites that use this approach often build a separate 'm.' site, or build a native mobile app</li>
+                        </ol>
+                    </li>
+
+                    <li>Responsive Layout
+                        <ol>
+                            <li>Takes fluid to the next level: content scales, layout changes, and some elements are swapped out for more appropriate ones</li>
+
+                            <li>Many examples now: <a href="https://ischool.uw.edu/">UW iSchool</a>, <a href="http://www.nscs.org/">NSCS</a>, <a href="http://www.sketchin.ch/en/">Sketchin</a></li>
+                            
+                            <li>See also <a href="http://socialdriver.com/2013/06/50-best-responsive-website-design-examples-of-2013/">50 Best Responsive Site Examples</a></li>
+                            
+                            <li>One Site to Rule Them All!</li>
+
+                            <li>They are more difficult to build, but CSS frameworks (which we will discuss on Thursday) do a lot of the heavy lifting for you</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+        </ol>
+    </div> <!-- .container -->
+</body>
+</html>

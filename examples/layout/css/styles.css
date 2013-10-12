@@ -1,0 +1,77 @@
+@import url(reset.css);
+
+body {
+    padding: 20px;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+}
+
+h1 {
+    font-size: 200%;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 150%;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+code {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #c7254e;
+    white-space: nowrap;
+    background-color: #f9f2f4;
+    border-radius: 4px;
+}
+
+
+/* this is critical
+tells browser to include padding and border in box size 
+that way, you can set your column widths as percentages
+and then adjust padding however you'd like
+*/
+.row, .col {
+    box-sizing: border-box; 
+}
+
+/* set the row width to whatever you want */
+.row {
+    width: 100%;
+}
+
+/* we're doing a 3-column layout
+so set each column width to 33% */
+.col {
+    width: 33%;
+    padding: 10px;
+    /* uncomment this to draw a border around each column */
+    /*border: 1px dotted #CCC;*/
+}
+
+/* inline-block approach sets display to inline-block
+vertical-align actually controls vertical alignment 
+in this case, so set it to top */
+.grid-iblock .col {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* the float approach floats each column to the left
+and does a clear on the row so that the next row
+appears under the previous */ 
+.grid-float .col {
+    float: left;
+}
+
+.grid-float .row {
+    clear: both;
+}
+

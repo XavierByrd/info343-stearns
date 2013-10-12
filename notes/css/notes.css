@@ -6,13 +6,10 @@
 	min-height: 32px;
 }
 
-.lecture-outline li {
-	font-size: 18px;
-	line-height: 1.5em;
-}
-
 .lecture-outline {
 	list-style: upper-roman;
+	font-size: 150%;
+	line-height: 1.5em;
 }
 
 .lecture-outline > li > ol {
@@ -21,4 +18,14 @@
 
 .lecture-outline > li > ol > li > ol {
 	list-style: lower-alpha;
+}
+
+.token {
+	font-style: italic;
+	background-color: #FFFF40;
+}
+
+dfn {
+	color: #EE6500;
+	font-style: normal;
 }
