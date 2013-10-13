@@ -73,11 +73,13 @@
 
                     <p><img class="screen-shot img-responsive" src="img/desktop.png" alt="desktop monitor screen shot"></p>
 
-                    <p>And this is what it should look like when you've resized your browser window down to the size of a tablet-sized device&mdash;note how the three-column layout below the carousel has now become a one-column layout, with the various sections stacked on top of one another:</p>
+                    <p>The page has a Bootstrap navbar across the top, a carousel below that, and a three-column layout with content at the bottom.</p>
+
+                    <p>And this is what it should look like when you've resized your browser window down to the size of a tablet-sized device&mdash;note how the three-column layout below the carousel has now become a one-column layout, with the various sections stacked on top of one another, and the carousel has scaled down appropriately:</p>
 
                     <p><img class="screen-shot img-responsive" src="img/tablet.png" alt="tablet screen shot"></p>
 
-                    <p>And finally, this is what it will look like when you've resized your browser down to the size of a phone screen&mdash;note how the carousel has disappeared (this we will have to do ourselves):</p>
+                    <p>And finally, this is what it will look like when you've resized your browser down to the size of a phone screen&mdash;note how the navbar has collapsed into a menu button that will display the nav links as a drop-down menu:</p>
 
                     <p><img class="screen-shot img-responsive" src="img/phone.png" alt="phone screen shot"></p>
 
@@ -186,11 +188,149 @@
 
                     <p>We are defining four navbar links here&mdash;Home, Parks, Community Center, and Harvest Festival. The Home link has a style class of 'active', which will cause Bootstrap to highlight it as being the current page. All the links have an <code>href</code> attribute of '#', which we are using for testing as it just keeps on on the same page. In a real project, you'd of course change these to point towards the appropriate page.</p>
 
-                    <p>At this point, you should be able to save your files and see the navbar at the top of your page. If it all look good, go on to adding the carousel.</p>
+                    <p>At this point, you should be able to save your files and see the navbar at the top of your page. Try making your browser window narrow, and see how the navbar turns into a drop-down menu when it gets less than 768px. If it all look good, go on to adding the carousel.</p>
 
                     <h3>Add the Carousel</h3>
-                    
 
+                    <p>A "carousel" is a component that cycles through a series of images, showing one at a time. These components also provide controls that allow the reader to view the next image, previous image, or jump to any image in the series.</p>
+
+                    <p>Bootstrap provides a component for this, and theirs will cycle through a series of "slides." Each slide can have an image and an optional block of HTML which will be overlayed on the image as a caption.</p>
+
+                    <p>To add the carousel, add a <code>&lt;div id="pawnee-carousel" class="carousel slide"&gt;</code> to the page, under the <code>&lt;nav&gt;</code> element. The <code>id</code> attribute is used by Bootstrap to relate the carousel controls we'll add to this particular carousel (in case there is more than one on the page), so we'll give it an id of 'pawnee-carousel'.</p>
+
+                    <p>Inside the carousel <code>&lt;div&gt;</code>, we'll next add the slide indicators, which are those little dots shown at the bottom center that indicate which slide is being shown, and allow the reader to jump to a particular slide. These indicators are added as an ordered list of items with some special 'data-' attributes. The carousel <code>&lt;div&gt;</code> with indicator markup should look like this:</p>
+
+                    <pre><code>
+&lt;div id=&quot;pawnee-carousel&quot; class=&quot;carousel slide&quot;&gt;
+    &lt;!-- slide indicators --&gt;
+    &lt;ol class=&quot;carousel-indicators&quot;&gt;
+        &lt;li data-target=&quot;#pawnee-carousel&quot; data-slide-to=&quot;0&quot; class=&quot;active&quot;&gt;&lt;/li&gt;
+        &lt;li data-target=&quot;#pawnee-carousel&quot; data-slide-to=&quot;1&quot;&gt;&lt;/li&gt;
+        &lt;li data-target=&quot;#pawnee-carousel&quot; data-slide-to=&quot;2&quot;&gt;&lt;/li&gt;
+        &lt;li data-target=&quot;#pawnee-carousel&quot; data-slide-to=&quot;3&quot;&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+    ...more to come...         
+                    </code></pre>
+
+                    <p>The <code>data-target</code> and <code>data-slide-to</code> attributes are used by Bootstrap's JavaScript to know which carousel to adjust, and which slide to show, when the reader clicks directly on the indicators. The HTML 5 spec allows for these 'data-' attributes to be used by libraries and frameworks for their own purposes.</p>
+
+                    <p>The slides themselves are defined in a nested <code>&lt;div class="carousel-inner"&gt;</code> element. Each slide is then in yet another nested <code>&lt;div class="item"&gt;</code>. The markup for the first slide would thus look like this:</p>
+
+                    <pre><code>
+&lt;!-- slides --&gt; 
+&lt;div class=&quot;carousel-inner&quot;&gt;
+    &lt;!-- slide --&gt;
+    &lt;div class=&quot;item active&quot;&gt;
+        &lt;img src=&quot;img/summer-park.jpg&quot; alt=&quot;Summer in the Park&quot;&gt;
+        &lt;div class=&quot;carousel-caption&quot;&gt;
+            &lt;p&gt;Summer in our Parks&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    ...more slides...
+&lt;/div&gt; &lt;!-- .slides --&gt;
+                    </code></pre>
+
+                    <p>Each slide <code>&lt;div&gt;</code> simply contains the image to display, and an optional caption, wrapped in a <code>&lt;div class="carousel-caption"&gt;</code> element. These captions can contain any HTML markup you want, but we'll use a simple <code>&lt;p&gt;</code> element for now.</p>
+
+                    <p>The code snipped above shows the markup for the first slide. Add the markup for the other three slides, using the following image URLs and captions. Include the 'item' class on each slide, but <strong>don't include the 'active' class on the other slides</strong>, as only the first slide should be styled as active when the page first loads (Bootstrap will re-assign this active class via JavaScript as it advances the sldies).</p>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Image URL</th>
+                                <th>Caption</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>img/autumn-park.jpg</td>
+                                <td>Autumn in our Parks</td>
+                            </tr>
+                            <tr>
+                                <td>img/winter-park.jpg</td>
+                                <td>Winter in our Parks</td>
+                            </tr>
+                            <tr>
+                                <td>img/spring-park.jpg</td>
+                                <td>Spring in our Parks</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>After the slides, we need to add one last bit of markup for the next/previous controls (the arrows on the left and right side of the carousel). The markup for those looks like this:</p>
+
+                    <pre><code>
+&lt;!-- left-right controls --&gt;
+&lt;a class=&quot;left carousel-control&quot; href=&quot;#pawnee-carousel&quot; data-slide=&quot;prev&quot;&gt;
+    &lt;span class=&quot;icon-prev&quot;&gt;&lt;/span&gt;
+&lt;/a&gt;
+&lt;a class=&quot;right carousel-control&quot; href=&quot;#pawnee-carousel&quot; data-slide=&quot;next&quot;&gt;
+    &lt;span class=&quot;icon-next&quot;&gt;&lt;/span&gt;
+&lt;/a&gt;
+                    </code></pre>
+
+                    <p>The empty <code>&lt;span&gt;</code> tags end up getting their content from the style class assigned to them ('icon-prev' and 'icon-next'). Those style rules assign the appropriate image as the background-image of the span, and use other CSS attributes to place them on the left and right sides of the carousel.</p>
+
+                    <p>If you got all the markup correct, you should now be able to view the carousel in your browser, and advance the slides. Once you change slides the first time, the carousel will then start to cycle them in a loop.</p>
+
+                    <p>If the carousel isn't working, compare your markup to this <a href="carousel.html">full carousel example</a>.</p>
+
+                    <p>To cause the carousel to start cycling the images immediately on page load, add this bit of JavaScript to the very end of your <code>&lt;body&gt;</code> section, <strong>after the <code>&lt;script&gt;</code> element that includes the Bootstrap JavaScript file</strong>:</p>
+
+                    <pre><code>
+    ... &lt;script&gt; elements for jQuery and Bootstrap ...
+
+    &lt;!-- auto-play the carousel --&gt;
+    &lt;script&gt;
+        $(&#039;.carousel&#039;).carousel();
+    &lt;/script&gt;
+
+&lt;/body&gt;
+                    </code></pre>
+
+                    <p>We haven't covered JavaScript yet, so don't worry about understanding what that does at this point. I'll explain this when we learn the jQuery library.</p>
+
+                    <h3>Add the Responsive Multi-Column Content</h3>
+
+                    <p>Lastly, we need to add the responsive three-column layout content that appears below the carousel. To make this responsive, we'll use <a href="http://getbootstrap.com/css/#grid">Bootstrap's grid system</a>.</p>
+
+                    <p>Bootstrap grids use nested <code>&lt;div&gt;</code> elements, an outer div for each row, and inner divs for each column. In our case, we want one row, and three evenly-sized columns.</p>
+
+                    <p>Create a <code>&lt;div class="row"&gt;</code> for the row, and create three <code>&lt;div class="col-md-4"&gt;</code> elements for each column.</p>
+
+                    <p>In the first column, add an <code>&lt;h2&gt;</code> element with the content 'Parks', and wrap it in an <code>&lt;a&gt;</code> element. Then add an <code>&lt;img&gt;</code> element, setting the <code>src</code> attribute to 'img/parks.png'. Also add a <code>class="col-pic"</code> attribute so we can apply some styles to these pictures we add to each column. Finally add two runs of lorem text.</p>
+
+                    <p>The row and first column markup should look like this:</p>
+
+                    <pre><code>
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-4&quot;&gt;
+        &lt;h2&gt;&lt;a href=&quot;#&quot;&gt;Parks&lt;/a&gt;&lt;/h2&gt;
+        &lt;img src=&quot;img/parks.png&quot; alt=&quot;dog in park&quot; class=&quot;col-pic&quot;&gt;
+        &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi, amet, iure, numquam, consequuntur deleniti nam illum molestiae eos quis saepe perferendis dignissimos commodi architecto dolores quod suscipit qui animi voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem, officia possimus minus. Libero assumenda in voluptate excepturi repellendus quia maxime officia deserunt eum voluptatum! Quia dicta necessitatibus quisquam officia temporibus.&lt;/p&gt;
+    &lt;/div&gt;
+    ...two more columns...
+&lt;/div&gt; &lt;!-- .row --&gt;
+                    </code></pre>
+
+                    <p>The second column should have the same structure as the first, except the title should be 'Community Center' and the image <code>src</code> attribute should be 'img/community.jpg'.</p>
+
+                    <p>The third column should have the same structure as well, with the title being 'Harvest Festival' and the image <code>src</code> being 'img/harvest.jpg'.</p>
+
+                    <p>Finally, we need to add a style rule for the column images (.col-pic). I've included an empty styles.css file for you. You'll notice that it doesn't include the reset.css because Bootstrap already does that. So all you need to do is add a style rule with the selector '.col-pic' and apply the following styles:</p>
+
+                    <ul>
+                        <li><a href="http://www.w3schools.com/cssref/pr_class_float.asp">float</a> the image to the left</li>
+                        <li>set its <a href="http://www.w3schools.com/cssref/pr_dim_width.asp">width</a> to 100px</li>
+                        <li>set the <a href="http://www.w3schools.com/cssref/pr_margin-right.asp">right margin</a> to 1em</li>
+                        <li>set the <a href="http://www.w3schools.com/cssref/pr_margin-bottom.asp">bottom margin</a> to 1em</li>
+                    </ul>
+
+                    <h3>Test the Page</h3>
+
+                    <p>At this point, your page should look like the first screen shot. To see what the page will look like on the common device screen sizes, you can either resize your browser window, or use the Web Developer add-in on Firefox (should be pre-installed on your lab machines). On the Web Developer toolbar, click on the 'Resize' button and choose 'View Responsive Layouts' on the drop-down menu. This should open a new tab showing you how the page would look at the various screen sizes used by mobile devices.</p>
+
+                    <p>If all looks good, move on to committing your changes, publishing your site, and submitting your published site URL.</p>
 
                 </section>
 
@@ -210,6 +350,24 @@
 
                 <section id="optional-steps">
                     <h2>Optional Steps</h2>
+
+                    <p>If you get done early, or just want an extra challenge try one of these optional steps.</p>
+
+                    <h3>Hide the Carousel on Screens Narrower than 767px</h3>
+
+                    <p>The carousel is cool, but it takes up quite a bit of prime real estate on a phone screen. Ideally, we should hide the carousel on screens narrower than 767px. Although Bootstrap does not do this automatically, we can easily add a media rule to do it ourselves.</p>
+
+                    <p>In your styles.css file, add this media rule, which will be applied when the viewport is narrower than 767px:</p>
+                    
+                    <pre><code>
+@media screen and (max-width: 767px) {
+    /* styles to apply on very narrow screens */
+}
+                    </code></pre>
+
+                    <p>Now add a style rule inside this media rule for the class '.carousel', and set the <a href="http://www.w3schools.com/cssref/pr_class_display.asp">display property</a> to 'none'.</p>
+
+                    <p>If you did everything correctly, the carousel should now disappear when the viewport is narrower than 767px.</p>
 
             </article>
         </div>
