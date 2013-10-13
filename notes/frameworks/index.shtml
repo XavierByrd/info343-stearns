@@ -91,12 +91,12 @@
                             <li>"Hot link" to their files on their <dfn>Content Delivery Network (CDN)</dfn>
                                 <pre><code>
 &lt;!-- add this link to their core stylesheet in your &lt;head&gt; section  --&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
 
 &lt;!-- add these script links at the bottom of your &lt;body&gt; section
 (allows your page to render while the browser downloads and parses the JavaScript) --&gt;
 &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
                                 </code></pre>
                             </li>
 
