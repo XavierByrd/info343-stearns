@@ -125,11 +125,11 @@
                 <blockquote>
                     <p>Hey, that first site was great, but I want you to do a couple of things to make it more engaging and useful. Here are my must-haves:</p>
                     <ul>
-                        <li>On the home and about pages, I want our logo to be off to the left with the rest of the text next to it on the right.</li>
-                        <li>Embed <a target="_blank" href="http://www.youtube.com/watch?v=HWL__9yDu8I">this YouTube video</a> my friend made about tossing pizza dough on the home page.</li>
+                        <li>Our graphic designer made us <a href="img/logo.png">a new logo</a> that I want you to use instead of the old one.</li>
                         <li>On the menu page, I'd like a two-column layout for the various pizzas, with the meat ones on the left and the veggie ones on the right. The drinks and desserts should be below that in just one column.</li>
                         <li>I want the whole site to look great on a mobile phone or tablet. The text needs to adjust size, pictures need to scale, etc. Also on pages like the menu, it needs to flip to a single-column layout when viewed on a phone screen so that customers don't have to scroll to the right to see the veggie pies.</li>
                         <li>I want the whole site to be accessible to people with disabilities.</li>
+                        <li>Embed <a target="_blank" href="http://www.youtube.com/watch?v=HWL__9yDu8I">this YouTube video</a> my friend made about tossing pizza dough on the home page.</li>
                     </ul>
 
                     <p>If you get time, I'd also love one or more of these:</p>
