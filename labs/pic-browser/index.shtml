@@ -3,7 +3,7 @@
     <head>
         <!--#include virtual="../inc/common-head.html" -->
 
-        <meta name="description" content="INFO 343 Basic Site Lab">
+        <meta name="description" content="INFO 343 Photo Browser Lab">
         <title>Lab 3: Picture Browser</title>
     </head>
     <body>

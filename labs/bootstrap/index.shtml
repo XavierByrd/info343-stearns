@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+    <head>
+        <!--#include virtual="../inc/common-head.html" -->
+
+        <meta name="description" content="INFO 343 Bootstrap Lab">
+        <title>Lab 4: Bootstrap</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <!--#include virtual="../inc/crumbtrail.html" -->
+
+            <article class="lab">
+
+                <section id="intro">
+                    <div class="page-header lab-title">
+                        <h1>Lab 4: Building a Site with Bootstrap</h1>
+                        <p class="lead">CSS Frameworks and Responsive Design</p>
+                    </div>
+
+                    <p>In class this week we learned about complex page layouts, responsive web design, and CSS frameworks. In this lab, we will practice those skills by building a page using one of the more popular CSS frameworks out there: Bootstrap, brought to you by the good folks at Twitter.</p>
+
+                    <h2>General Instructions</h2>
+                    <ol>
+                        <li>If you get stuck at any point, search the Internet, ask your neighbor, or ask the TA for help.</li>
+
+                        <li>At the end of the lab, submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288921">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299189">Section B</a>).</li>
+
+                        <li>If you don't finish all the required tasks during our lab time, finish them over the weekend and submit your published site URL before 8:00am on Monday morning.</li>
+
+                        <li>If you finish all the required steps, go on and try some of the <a href="#optional-steps">optional ones</a>. Remember that you have to do at least one of the optional steps in order to get 10/10 on the Completeness portion of your grade. If you do only the required steps, you'll get 9/10 on that portion.</li>
+                    </ol>
+
+                    <h2>Required Steps</h2>
+                    <ol>
+                        <li><a href="#fork">Fork my lab4 repository and clone to your lab machine</a></li>
+
+                        <li><a href="#pages">Build and Style the HTML Page</a></li>
+
+                        <li><a href="#github">Stage, Commit, and Push to GitHub</a></li>
+
+                        <li><a href="#submit">Publish your site to your web hosting server and submit the site URL via Canvas</a></li>
+                    </ol>
+                </section>
+
+                <section id="fork">
+                    <h2>Fork and Clone</h2>
+
+                    <p>First, go to <a href="https://github.com" target="_blank">GitHub</a> and sign into your account.</p>
+
+                    <p>Next, go to my <a href="https://github.com/drstearns/lab4" target="_blank">lab4 repository on GitHub</a>, and fork it. You did this in our previous lab, but in case you forgot how to do so, click the "Fork" button at the top-right of the page and follow any instructions you receive. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the images and other file stubs you'll need.</p>
+
+                    <p>Once you've forked the repository, clone it to your local lab machine using SourceTree. We've done this a few times now, but if you've forgotten how, follow these steps:</p>
+
+                    <ol>
+                        <li>In <strong>your forked lab4 repository</strong> (not my original one) on the GitHub site, copy the 'HTTPS Clone URL' on the right side of the screen</li>
+                        <li>Run the SourceTree app</li>
+                        <li>Click on the Clone/New button in the upper-left of the screen</li>
+                        <li>Enter the GitHub HTTPS clone URL you copied into the Source URL box</li>
+                        <li>Hit tab, and SourceTree will automatically populate the Destination Path for you (usually a new folder named after your repository in the My Documents folder)</li>
+                        <li>Click the 'Clone' button to clone the GitHub repository to your local machine</li>
+                        <li>If you get stuck, as your TA or a neighbor for help</li>
+                    </ol>
+                </section>
+
+                <section id="pages">
+                    <h2>Build and Style the Page</h2>
+
+                    <p>Today we'll be building the home page for the <a href="http://www.nbc.com/parks-and-recreation/">City of Pawnee Parks Department</a>. They want a page that shows off their beautiful city parks, but still looks good on smaller mobile devices. Bootstrap is designed to make this kind of things relatively easy, so we'll use Bootstrap to build this.</p>
+
+                    <p>I'll take you through building such a page step-by-step, but first let's see the kind of page we're trying to build. This is how it will look on your desktop monitors:</p>
+
+                    <p><img class="screen-shot img-responsive" src="img/desktop.png" alt="desktop monitor screen shot"></p>
+
+                    <p>And this is what it should look like when you've resized your browser window down to the size of a tablet-sized device&mdash;note how the three-column layout below the carousel has now become a one-column layout, with the various sections stacked on top of one another:</p>
+
+                    <p><img class="screen-shot img-responsive" src="img/tablet.png" alt="tablet screen shot"></p>
+
+                    <p>And finally, this is what it will look like when you've resized your browser down to the size of a phone screen&mdash;note how the carousel has disappeared (this we will have to do ourselves):</p>
+
+                    <p><img class="screen-shot img-responsive" src="img/phone.png" alt="phone screen shot"></p>
+
+                    <p>Let's build this up, step-by-step.</p>
+
+                    <h3>Basic Page Structure and Head Section</h3>
+
+                    <p>Create a file named 'index.html' in your project's root folder. Add the standard HTML 5 doctype, as well as the required <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> elements.</p>
+
+                    <p>In the <code>&lt;head&gt;</code> section, we need to add the same sort of elements we've added in previous labs, but we also need to link to Bootstrap's minified stylesheet in addition to our own. Order matters in these stylesheet links; those that appear later in the page source can override styles defined in those that appear earlier, so we want to add Bootstrap first, and then our own. Most of the styles we'll use will come from Bootstrap, but we'll want to define a couple of our own.</p>
+
+                    <p>In order to make this look great on phone screens, we also need to add an extra <code>&lt;meta&gt;</code> element that tells the mobile browser how to setup the initial viewport. This is done by setting <code>name="viewport"</code> and <code>content="width=device-width, initial-scale=1.0"</code>. The first part of the content tells the mobile browser to use the entire screen width for the viewport, and the second part tells it to set the initial scaling factor to 1.0, which is like saying "don't zoom out by default."</p>
+
+                    <p>Your <code>&lt;head&gt;</code> section should look like this:</p>
+
+                    <pre><code>
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;description&quot; content=&quot;City of Pawnee Parks Department Home Page&quot;&gt;
+    &lt;meta name=&quot;author&quot; content=&quot;<span class="token">your-net-id</span>&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; 
+    &lt;link rel=&quot;shortcut icon&quot; href=&quot;img/logo.png&quot;&gt;
+    &lt;title&gt;Pawnee Parks Department&lt;/title&gt;
+    
+    &lt;!-- hot link to Bootstrap stylesheet --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
+
+    &lt;!-- our own stylesheet for overrides --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
+&lt;/head&gt;
+                    </code></pre>
+
+                    <h3>Add the Bootstrap JavaScript Links</h3>
+
+                    <p>The interactive components in Bootstrap also require their JavaScript file, and their JavaScript file depends upon the jQuery library, so we need to add both to our page.</p>
+
+                    <p>We haven't gotten to writing JavaScript yet, but adding a JavaScript file someone else has written already is easy; you simply add a <code>&lt;script&gt;</code> element, and set its <code>src</code> attribute to point to the script file.</p>
+
+                    <p>Since some of these script files are quite large, it's a good idea to add these <code>&lt;script&gt;</code> elements at the end of your page, just before the <code>&lt;/body&gt;</code> tag. That way, the content of the page can be parsed and displayed to the reader while the browser continues to download and parse the JavaScript files. Add the following elements to your page, just above the <code>&lt;/body&gt;</code> tag:</p>
+
+                    <pre><code>
+&lt;!-- hot links to Bootstrap JavaScript and jQuery (required by Bootstrap) --&gt;
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+                    </code></pre>
+
+                    <p>Order matters here as well. The jQuery library script must be included <em>before</em> the Bootstrap script, as the Bootstrap script will utilize functions and global variables defined in the jQuery script.</p>
+
+                    <h3>Add the Container</h3>
+
+                    <p>Bootstrap uses a content box approach similar to what we've been using in previous labs. Their content box is a bit smarter though. It uses media queries to resize itself as the viewport widens, growing to a maximum width and then centering on the screen. Thankfully, you get all of this for free by simply adding a <code>&lt;div class="container"&gt;</code> element inside your <code>&lt;body&gt;</code> element. All the rest of the page content should then go inside this <code>&lt;div class="container"&gt;</code>element.</p>
+
+                    <h3>Add the Navbar</h3>
+
+                    <p>The <a href="http://getbootstrap.com/components/#navbar">Bootstrap navbar</a> is a responsive component that looks like a normal navbar on desktop monitors, but condenses to a drop-down menu on smaller screens. Thus we need to add not only our typical navbar links, but also some markup for the drop-down menu button that appears on smaller screen.</p>
+
+                    <p>Add a <code>&lt;nav&gt;</code> element to hold the entire navbar content, and give it a <a href="http://www.w3schools.com/tags/att_global_class.asp">style class</a> of 'navbar navbar-default'. This actually attached two style classes to our <code>&lt;nav&gt;</code> element, the first makes it a navbar, and the second uses the default (light-colored) styling. Bootstrap also offers 'navbar-inverse' for an inverted, darkly-colored look.</p>
+
+                    <p>The <code>&lt;nav&gt;</code> element should then contain two child elements. The first should be a <code>&lt;div class="navbar-header"&gt;</code> element, and its contents should look like this:</p>
+
+                    <pre><code>
+&lt;nav class=&quot;navbar navbar-default&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;navbar-header&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.pawnee-navbar-menu&quot;&gt;
+            &lt;span class=&quot;sr-only&quot;&gt;Toggle Navigation&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;                        
+        &lt;/button&gt;
+        &lt;a class=&quot;navbar-brand&quot; href=&quot;index.html&quot;&gt;Pawnee Parks &lt;img src=&quot;img/logo.png&quot; alt=&quot;Parks logo&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+    ...more to come...
+&lt;/nav&gt;
+                    </code></pre>
+
+                    <p>The <code>&lt;button&gt;</code> element is the drop-down button shown on smaller screens, and those three <code>&lt;span class="icon-bar"&gt;</code> elements create the three stacked bars one typically sees on a menu button in a phone application. The <code>&lt;span class="sr-only"&gt;</code> is only visible to screen readers, and it announces that this button is for toggling the menu.</p>
+
+                    <p>The line after the <code>&lt;button&gt;</code> element is known as the "brand" area of the navbar. I've included some text "Pawnee Parks" and an image of their logo, both of which are wrapped in a hyperlink that would take one back to the home page. This brand area will be displayed on small screens, with the menu button off to the right.</p>
+
+                    <p>Now that we've added the navbar header markup, we now need to define our actual navbar items and where they should go. Add another <code>&lt;div&gt;</code> element to the <code>&lt;nav&gt;</code> element, and set its class attribute to 'collapse navbar-collapse pawnee-navbar-menu'. Notice that the last class name in that list is the same as the <code>data-target</code> attribute value of the <code>&lt;button&gt;</code> element above. Bootstrap's JavaScript uses this to hide and show the navbar menu when you tap/click that button.</p>
+
+                    <p>Inside our second <code>&lt;div&gt;</code> we need to add our standard <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> elements for our navigation links. Again, we need to apply some Bootstrap style classes, and the contents of your <code>&lt;nav&gt;</code> element should ultimately look like this:</p>
+
+                    <pre><code>
+&lt;nav class=&quot;navbar navbar-default&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;navbar-header&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.pawnee-navbar-menu&quot;&gt;
+            &lt;span class=&quot;sr-only&quot;&gt;Toggle Navigation&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;                        
+        &lt;/button&gt;
+        &lt;a class=&quot;navbar-brand&quot; href=&quot;index.html&quot;&gt;Pawnee Parks &lt;img src=&quot;img/logo.png&quot; alt=&quot;Parks logo&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;collapse navbar-collapse pawnee-navbar-menu&quot;&gt;
+        &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+            &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Parks&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Community Center&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Harvest Festival&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/nav&gt;
+                    </code></pre>
+
+                    <p>We are defining four navbar links here&mdash;Home, Parks, Community Center, and Harvest Festival. The Home link has a style class of 'active', which will cause Bootstrap to highlight it as being the current page. All the links have an <code>href</code> attribute of '#', which we are using for testing as it just keeps on on the same page. In a real project, you'd of course change these to point towards the appropriate page.</p>
+
+                    <p>At this point, you should be able to save your files and see the navbar at the top of your page. If it all look good, go on to adding the carousel.</p>
+
+                    <h3>Add the Carousel</h3>
+                    
+
+
+                </section>
+
+                <section id="github">
+                    <h2>Stage, Commit, and Push to GitHub</h2>
+
+                    <!--#include virtual="../inc/commit.html" -->
+                </section>
+
+                <section id="submit">
+                    <h2>Publish Site and Submit URL via Canvas</h2>
+
+                    <!--#include virtual="../inc/publish.html" -->
+
+                    <p>After you've published your site and verified that it's working, <strong>submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288921">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299189">Section B</a>)</strong>.</p>
+                </section>
+
+                <section id="optional-steps">
+                    <h2>Optional Steps</h2>
+
+            </article>
+        </div>
+    </body>
+</html>
