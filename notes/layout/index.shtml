@@ -275,7 +275,7 @@
 
                     <li>"Mobile-First" design reverses that: you design for the mobile experience first, and only then consider how to enhance it for larger screens</li>
 
-                    <li>Responsive techniques are then used to make the site look and/or behave differently on different devices
+                    <li><a href="../../examples/layout/responsive.html">Responsive techniques</a> are then used to make the site look and/or behave differently on different devices
                         <ol>
                             <li>percentage sizing for fluid layout and content scaling</li>
 
