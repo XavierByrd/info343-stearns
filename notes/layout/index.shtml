@@ -203,7 +203,7 @@
 
                             <li>use <code>left</code>, <code>top</code>, <code>right</code>, or <code>bottom</code> properties to specify where in the viewport the element should appear</li>
 
-                            <li>fixed block elements no longer have a 100% by default; use <code>width</code> and/or <code>height</code> to control width and height explicitly</li>
+                            <li>fixed block elements no longer have a 100% width by default; use <code>width</code> and/or <code>height</code> to control width and height explicitly</li>
                         </ol>
                     </li>
 
@@ -214,6 +214,8 @@
                             <li>allows you to shift an element away from where it would normally be positioned</li>
 
                             <li>use <code>left</code>, <code>top</code>, <code>right</code>, or <code>bottom</code> properties to specify a positive or negative offset from the element's "natural" position</li>
+
+                            <li>shifted elements leave a hole; other content does not float up like it does when you use <code>float</code></li>
 
                             <li>because margin can be used to shift elements as well, this is most commonly used to make a containing element a "positioned element" so that a contained element with <code>position: absolute;</code> can position relative to the parent's box coordinates</li>
 
@@ -229,6 +231,8 @@
 
                             <li>use <code>left</code>, <code>top</code>, <code>right</code>, or <code>bottom</code> properties to specify a position relative to the containing positioned element</li>
 
+                            <li>Useful for <a href="../../examples/layout/positioning.html">overlaying a "badge"</a> (like a "New!" icon), or overlaying some text on a foreground image</li>
+
                         </ol>
                     </li>
 
@@ -237,7 +241,7 @@
 
             <li><a href="http://www.w3.org/TR/css3-mediaqueries/">Media Queries</a>
                 <ol>
-                    <li>You can use relative units (%, em) to achieve some amount of scaling, but CSS also allows you to apply a specific and different set of styles based on viewport size and other device capabilities</li>
+                    <li>You can use relative units (%, em) to achieve some amount of content scaling, but CSS also allows you to apply a specific and different set of styles based on viewport size and other device capabilities</li>
 
                     <li>Use them to define specific styles for print, phones, tablets, and large screens</li>
 
@@ -245,8 +249,13 @@
 
                     <li>Do this using "media queries"
                         <ol>
-                            <li>syntax: <code>@media [screen|print] and (device-test) and (device-test) and ... { ...style rules... }</code> </li>
-                            <li>examples: <code>@media (min-width: 768px) { ...style rules... }</code>
+                            <li>syntax: 
+                                <pre><code>
+@media [screen|print] and (device-test) and (device-test) and ... {
+ ...style rules... 
+}</code></pre>
+                            </li>
+                            <li>examples:
                                 <ol>
                                     <li>styles just for print: <code>@media print {...}</code></li>
                                     <li>styles for screens smaller than 768: <code>@media screen and (max-width: 768px) {...}</code></li>
@@ -264,7 +273,7 @@
                 <ol>
                     <li>In the past, designers typically started with the large-screen version of their site, and only then considered how to make it usable on small-screen mobile deices</li>
 
-                    <li>"Mobile-First" design reverse that: you design for the mobile experience first, and only then consider how to enhance it for larger screens</li>
+                    <li>"Mobile-First" design reverses that: you design for the mobile experience first, and only then consider how to enhance it for larger screens</li>
 
                     <li>Responsive techniques are then used to make the site look and/or behave differently on different devices
                         <ol>
