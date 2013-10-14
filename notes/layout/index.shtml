@@ -155,7 +155,7 @@
                                 <ol>
                                     <li>each column has <code>float: left;</code> and <code>width: xx%;</code></li>
                                     <li>next row (or element you want to appear under) has <code>clear: both;</code></li>
-                                    <li>if you want to shade or draw a border around the whole row or grid, you need to use an advanced technique called a "micro-clear," which you can see in <a href="../../examples/layout/css/styles.css">the source CSS file for the multi-column layout example page</a> (see the ".grid-float .row:after" rule)</li>
+                                    <li>if you want to shade or draw a border around the whole row or grid, you need to use an advanced technique called a "micro-clear," which you can see in <a href="../../examples/layout/css/grid.css">the source CSS file for the multi-column layout example page</a> (see the ".grid-float .row:after" rule)</li>
                                     <li>this technique has the widest browser support, and is commonly used by CSS frameworks</li>
                                 </ol>
                             </li>
