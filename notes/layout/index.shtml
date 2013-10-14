@@ -89,7 +89,7 @@
                         <ol>
                             <li>The viewable area of the browser window is called the "viewport"</li>
                             
-                            <li>Resizing windowed browser adjust viewport</li>
+                            <li>Resizing windowed browser adjusts viewport</li>
                             
                             <li>Viewport of full-screen mobile browser changes with portrait/landscape rotation, but zoom is separate</li>
 
@@ -109,7 +109,7 @@
                             
                             <li>Gives precise control over the grid, with few surprises when content changes, but doesn't adapt to different viewport sizes</li>
                             
-                            <li>Sites that use this approach typically build a separate 'm.' version of their site for mobile devices, or a separate native mobile app (especially if they want to charge for content)</li>
+                            <li>Sites that use this approach typically build a separate 'm.' version of their site for mobile devices (<a href="http://mobile.nytimes.com/">mobile.nytimes.com</a>), or a separate native mobile app (especially if they want to charge for content)</li>
                         </ol>
                     </li>
 
@@ -155,7 +155,7 @@
                                 <ol>
                                     <li>each column has <code>float: left;</code> and <code>width: xx%;</code></li>
                                     <li>next row (or element you want to appear under) has <code>clear: both;</code></li>
-                                    <li>if you want to shade or draw a border around the whole row or grid, you can need to use an advanced technique called a "micro-clear," which you can see in <a href="../../examples/layout/css/styles.css">the source CSS file for the multi-column layout example page</a> (see the ".grid-float .row:after" rule)</li>
+                                    <li>if you want to shade or draw a border around the whole row or grid, you need to use an advanced technique called a "micro-clear," which you can see in <a href="../../examples/layout/css/styles.css">the source CSS file for the multi-column layout example page</a> (see the ".grid-float .row:after" rule)</li>
                                     <li>this technique has the widest browser support, and is commonly used by CSS frameworks</li>
                                 </ol>
                             </li>
@@ -164,6 +164,7 @@
                                 <ol>
                                     <li>each column has <code>display: inline-block;</code> and <code>width: xx%;</code></li>
                                     <li>also add <code>vertical-align: top;</code> to top-align content (actually works in this case!)</li>
+                                    <li>to avoid drops, you must remove all whitespace between end-tag of one column and start-tag of the next; inline-block is still inline, so whitespace causes gap between columns</li>
                                     <li>this technique <a href="http://caniuse.com/inline-block">works in all current browsers</a>, but has less support in older mobile browsers</li>
                                 </ol>
                             </li>
@@ -172,6 +173,7 @@
                                 <ol>
                                     <li>each column has <code>display: table-cell;</code> and <code>width: xx%;</code></li>
                                     <li>perfectly fine, but might freak out those who hate the idea of using tables for layout</li>
+                                    <li>CSS tables are about presentation, not semantics, but they still have the connotation of "using tables for layout"</li>
                                     <li>this technique also has <a href="http://caniuse.com/#feat=css-table">good support in all current browsers</a></li>
                                 </ol>
                                 
