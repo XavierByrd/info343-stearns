@@ -92,6 +92,7 @@
                             <li><a href="examples/layout/grid.html">Multi-Column, Grid-Based Layouts</a></li>
                             <li><a href="examples/layout/fluid.html">Fluid Page Layout</a></li>
                             <li><a href="examples/layout/positioning.html">Fixed, Relative, and Absolute Positioning</a></li>
+                            <li><a href="examples/layout/responsive.html">Responsive Layout</a></li>
                         </ul>
 
                     </div> <!-- first col -->

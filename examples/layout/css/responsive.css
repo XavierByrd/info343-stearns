@@ -1,0 +1,127 @@
+@import url(reset.css);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+
+/* this stylesheet shows how to use media queries to
+change the appearance of a page as the viewport size
+shrinks
+this starts with the desktop styles and then applies 
+different ones for narrower widths
+to be "mobile-first", you'd start with the mobile experience
+and then add specific styles for wider monitors
+the effect would be the same, but mobile-first design
+forces you to think about the mobile experience first and
+optimize for that, rather than seeing mobile as something to
+be accommodated
+*/
+
+/* use border-box sizing so that padding and margins
+are included in our measurements (critical for multi-col
+layout using percentages that add up to 100) */
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* start with 18px font--will drop size for phones */
+body {
+    font-family: 'Droid Sans', sans-serif;
+    font-size: 18px;
+}
+
+/* content box is 90% wide, centered, but only grows to 1200px */
+.content-box {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: #A75F02;
+}
+
+/* header styles to overlay h1 on image that is sized to 100% */
+header {
+    position: relative;
+}
+
+header img {
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Lobster', serif;
+    font-size: 200%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255,255,255,0.7);
+    line-height: 2em;
+    padding: 0 0.5em;
+}
+
+/* three-col layout below the header 
+since we have a background color and nothing
+after the three col layout, use the micro-clear
+approach so that the row expands around all 
+the floated columns */
+.row:after {
+    content: " ";
+    display: table;
+    clear: both;
+}
+
+.col {
+    float: left;
+    width: 33%;
+    padding: 2%;
+}
+
+.col-mid {
+    text-align: center;
+}
+
+.col-right {
+    text-align: right;
+}
+
+.welcome {
+    font-weight: bold;
+}
+
+.brands {
+    font-weight: bold;
+}
+
+
+/* styles for phone and tablet screens (<768px) */
+@media (max-width: 767px) {
+    .content-box {
+        width: 100%;
+    }
+
+    /* get rid of the header image
+    and replace with h1 banner */
+    header img {
+        display: none;
+    }
+
+    header h1 {
+        position: static;
+        background-color: #F3C803;
+        line-height: 2em;
+        text-align: center;
+    }
+
+    /* stack columns instead of side-by-side */
+    .col {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* styles for phone screens (<480px) */
+@media (max-width: 479px) {
+    /* drop base font size down to 16px */
+    body {
+        font-size: 16px;
+    }
+}
