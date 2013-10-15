@@ -44,6 +44,7 @@
                     <li>What is a Framework?</li>
                     <li>Two Popular Frameworks: Bootstrap and Foundation</li>
                     <li>Customizing and Extending a Framework</li>
+                    <li>In-Class Challenge!</li>
                 </ol>
             </li>
 
@@ -51,13 +52,15 @@
                 <ol>
                     <li>A set of CSS and JavaScript files that are pre-made by tallented and experienced designers</li>
 
-                    <li>CSS applies a base set of styles to HTML elements for attractive fonts, margins, padding, colors, etc.</li>
+                    <li>Their CSS applies a base set of styles to HTML elements for attractive fonts, margins, padding, colors, etc.</li>
 
-                    <li>CSS also defines a set of style classes that you can apply to your HTML elements to get particular effects without having to write it yourself (<code>class="alert"</code>)</li>
+                    <li>Their CSS also defines a set of style classes that you can apply to your HTML elements to get particular effects without having to write it yourself (<code>class="alert"</code>)</li>
 
                     <li>Often include a set of user-interface "widgets" like navigation bars, drop-downs, modal dialogs, carousels, etc
                         <ol>
                             <li>you attach a style class and their JavaScript handles all the user-interaction</li>
+
+                            <li>your own JavaScript can add or enhance base functionality</li>
                         </ol>
                     </li>
 
@@ -67,7 +70,7 @@
 
                     <li>So why did we learn raw CSS? Why not just use these from the beginning?
                         <ol>
-                            <li>Frameworks are frameworks, not full solutions; you write additional CSS to customize, override, and extend</li>
+                            <li>Frameworks are frameworks, not full solutions; you will want to write additional CSS to customize, override, and extend</li>
                             
                             <li>Frameworks sometimes do things you don't want, so you need to know raw CSS to override</li>
 
@@ -112,6 +115,10 @@
                                 </code></pre>
                             </li>
 
+                            <li>Hot link gets you latest-greatest version with bug fixes, but it also introduces a risk: what if their bug fix introduces a different problem in your site?</li>
+
+                            <li>Download to 'lib' directory gives you more control and consistency, but you have to manually patch if they release a bug fix</li>
+
                             <li>In either case, you are using their "<dfn>minified</dfn>" versions (.min.css and .min.js), which have extra white space removed, and JavaScript variables are all renamed to one or two letters to reduce file size</li>
                         </ol>
                     </li>
@@ -148,18 +155,79 @@
                 </ol>
             </li>
 
-            <li>Using the Foundation Framework
-            </li>
-
-            <li>Customizing and Extending Frameworks
+            <li>Customizing and Extending Bootstrap
                 <ol>
                     <li>The "Cascade" part of Cascading Style Sheets (CSS)
+                        <ul>
+                            <li>So far, we've been adding only one stylesheet to a given page, but you can actually add as many as you want
+                                <pre><code>
+&lt;!-- Bootstrap styles, applied first --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;lib/bootstrap-3.0.0/css/bootstrap.min.css&quot;&gt;
+&lt;!-- your custom styles, which can override or extend Bootstrap styles --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
+                                </code></pre>
+                            </li>
+                            
+                            <li>Browsers apply styles in the order they appear in the source files, accumulating and overriding property settings
+                                <ol>
+                                    <li>each <code>&lt;link rel="stylesheet" ...&gt;</code> is processed before the next one in the HTML source</li>
+
+                                    <li>all style rules in a given style sheet are evaluated and applied in the order they appear</li>
+
+                                    <li>new properties are added to the overall set of properties applied to a given element</li>
+
+                                    <li>properties already applied can be overridden by a rule appearing later in the sources</li>
+                                </ol>
+                            </li>
+                            
+                            <li>This means that you can extend or override any styles defined in Bootstrap, or define entirely new style classes that are particular to your site/application but can be combined with Bootstrap styles</li>
+                        </ul>
                     </li>
 
-                    <li>Customizing via LESS/SASS                       
+                    <li>Overriding and extending example: Better Bootstrap <code>alert</code> boxes
                     </li>
 
-                    <li>Overriding and extending using your own styles                        
+                    <li><a href="http://getbootstrap.com/customize/">Customizing via Bootstrap site</a>
+                        <ol>
+                            <li>adjust base properties (colors, fonts, margins, paddings, etc)</li>
+                            <li>omit parts of the framework you won't need for faster download</li>
+                        </ol>
+                    </li>
+
+                    <li>Customizing via LESS
+                        <ol>
+                            <li>Download <a href="https://github.com/twbs/bootstrap/archive/v3.0.0.zip">Bootstrap's full sources</a></li>
+                            <li>Customize files in the 'less' sub-directory</li>
+                            <li>Compile using LESS or <a href="http://twitter.github.io/recess/">Twitter Recess</a></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>In-Class Challenge!
+                <ol>
+                    <li>Build a page that uses Bootstrap</li>
+                    <li>Add one or more of the following components to your page
+                        <ol>
+                            <li>A <a href="http://getbootstrap.com/components/#breadcrumbs">Breadcrumb list (aka crumb trail)</a> in a paragraph with the items 'Home', 'CSS', 'Frameworks'. Just use '#' for the <code>href</code> attribute in the <code>&lt;a&gt;</code> elements wrapping the crumb trail items</li>
+
+                            <li>A <a href="http://getbootstrap.com/components/#page-header">Page Header</a> with the text 'Welcome to Bootstrap'.</li>
+
+                            <li>A <a href="http://getbootstrap.com/components/#jumbotron">Jumbotron</a> with whatever content you want to add. If you can't think of anything, copy and paste their example content and change the content in some way.</li>
+
+                            <li>Two <a href="http://getbootstrap.com/css/#buttons">Buttons</a> in a paragraph: one with the text 'Save' using the 'btn btn-primary' style class; and one with the text 'Delete' using the 'btn btn-danger' style class</li>
+
+                            <li>A <a href="http://getbootstrap.com/components/#btn-groups">Button Group</a> with buttons that read 'English', 'Español', 'Français'</li>
+
+                            <li>A <a href="http://getbootstrap.com/components/#btn-dropdowns">Dropdown Button</a> with the text 'Language' using the 'btn btn-default' style class that when clicked shows a drop-down menu with the items 'English', 'Español', 'Français'. Just use '#' for the <code>href</code> attributes in the <code>&lt;a&gt;</code> elements wrapping the menu items</li>
+
+                            <li>A <a href="http://getbootstrap.com/components/#list-group-badges">List Group with Badges</a>, with the items 'Inbox', 'Later', and 'Spam', each of which should have a badge with some number (like unread messages) as in the example.</li>
+
+                            <li>Once you've added all these, check out the <a href="http://getbootstrap.com/components/">rest of their components</a> and continue adding those you like. If you know a bit of JavaScript, you could also check out their <a href="http://getbootstrap.com/javascript/">interactive components</a>.</li>
+
+                            <li>When you're done, submit your page (just the .html file) via the In-Class Challenge assignment in Canvas (Section A | Section B)</li>
+
+                        </ol>
                     </li>
                 </ol>
             </li>
