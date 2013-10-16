@@ -86,9 +86,27 @@
                 <ol>
                     <li>Very similar to Java, C/C++, and other languages based on C/C++</li>
 
-                    <li>But, although it looks like it has block scope, it actually doesn't; all variables declared in a function are visible from <em>anywhere</em> in that function (common source of errors)</li>
+                    <li>But, although it looks like it has block scope, it actually doesn't; all variables declared in a function are visible from <em>anywhere</em> in that function (common source of errors)
+                        <pre><code>
+function foo() {
+    var x = 5;
+    for (var i = 0; i &lt; 1; ++i) {
+        var x = 10;     // ref to existing x, not a new one
+    }
+    alert(x); // now equal to 10
+}
+                        </code></pre>
+                    </li>
 
-                    <li>New option <code>"use strict;"</code> corrects a number of problems in the original language, so use it</li>
+                    <li>New option <code>"use strict;"</code> corrects a number of problems in the original language, so use it!
+                        <pre><code>
+function foo() {
+    &quot;use strict;&quot;
+    
+    ...function body...
+}
+                        </code></pre>
+                    </li>
                 </ol>
             </li>
 
