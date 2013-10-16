@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for Intro to JavaScript Lecture">
+    <title>Intro to JavaScript</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>JavaScript: The Good Parts</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Thursday, Oct 24
+                        <ol>
+                            <li>The jQuery Library</li>
+                            <li><em>Please read...</em>
+                                <ol>
+                                    <li><a href="http://learn.jquery.com/about-jquery/how-jquery-works/">How jQuery Works</a></li>
+                                    <li><a href="http://learn.jquery.com/using-jquery-core/">Using jQuery Core</a></li>
+                                    <li><a href="http://learn.jquery.com/events/">Catching Events in jQuery</a></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>Friday Lab, Oct 25
+                        <ol>
+                            <li>Interacting with the Reader via JavaScript</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Today:
+                <ol>
+                    <li>Debrief Lab 4</li>
+                    <li>What is JavaScript?</li>
+                    <li>Basic Syntax and Expressions</li>
+                    <li>Data Types and Variables</li>
+                    <li>Objects and Arrays</li>
+                    <li>Functions</li>
+                    <li>JavaScript and the Document Object Model (DOM)</li>
+                    <li>Debugging JavaScript in the Browser</li>
+                </ol>
+            </li>
+
+            <li>What is JavaScript?
+                <ol>
+                    <li>JavaScript is <strong>not</strong> Java!
+                        <ol>
+                            <li>Basic syntax and control-of-flow structures are similar, but that's about it</li>
+
+                            <li>Based more on Scheme and Self than Java</li>
+
+                            <li>The 'Java' part of the name was a marketing attempt to associate it with Java, which was very popular at the time</li>
+
+                            <li>Don't approach programming in JavaScript like you approach Java&mdash;it's a fundamentally different language!</li>
+                        </ol>
+                    </li>
+
+                    <li>JavaScript is...
+                        <ol>
+                            <li>a <dfn>loosely-typed</dfn> language: variables are not typed and can switch types as new values are assigned</li>
+
+                            <li>an objected-oriented language, but one based on <dfn>hash tables</dfn> and <dfn>prototypes</dfn> instead of classes and interfaces</li>
+
+                            <li>a very simple yet highly-expressive language</li>
+
+                            <li>full of really bad parts, but has some really good parts as well</li>
+
+                            <li>perhaps the most-loved and most-hated programming language in the world!</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Basic Syntax and Expressions
+                <ol>
+                    <li>Very similar to Java, C/C++, and other languages based on C/C++</li>
+
+                    <li>But, although it looks like it has block scope, it actually doesn't; all variables declared in a function are visible from <em>anywhere</em> in that function (common source of errors)</li>
+
+                    <li>New option <code>"use strict;"</code> corrects a number of problems in the original language, so use it</li>
+                </ol>
+            </li>
+
+
+        </ol>
+
+    </div> <!-- .container -->
+
+</body>
+</html>
