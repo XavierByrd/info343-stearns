@@ -57,7 +57,7 @@
                             <li><a href="labs/filemgmt/">Managing Your Files</a></li>
                             <li><a href="labs/basic-site/">Building a Basic Web Site</a></li>
                             <li><a href="labs/pic-browser/">Adding Transforms, Transitions, and Animations</a></li>
-                            <li>Skinning Your Site with Bootstrap</li>
+                            <li><a href="labs/bootstrap/">Skinning Your Site with Bootstrap</a></li>
                             <li>Interacting with the Customer via Scripts</li>
                             <li>Gathering Information via Forms</li>
                             <li>Leveraging Existing Services and Content</li>
@@ -113,7 +113,7 @@
                             <li class="notes"><a href="notes/adv-html/">Getting all Semantic: Sectioning, Microdata, and Accessibility</a></li>
                             <li class="notes"><a href="notes/adv-css/">Adding your "37 Pieces of Flair": Advanced Styling</a></li>
                             <li class="notes"><a href="notes/layout/">Responding to the Device: Responsive Web Design</a></li>
-                            <li class="notes">Don't Reinvent the Wheel: CSS Tools and Frameworks</li>
+                            <li class="notes"><a href="notes/frameworks/">Don't Reinvent the Wheel: CSS Tools and Frameworks</a></li>
                             <li>JavaScript: The Good Parts</li>
                             <li>Your Friend, the jQuery Library</li>
                             <li>A Form of Madness: HTML5 Forms and Inputs</li>
