@@ -42,8 +42,9 @@
             <li>Today: CSS Tools and Frameworks
                 <ol>
                     <li>What is a Framework?</li>
-                    <li>Two Popular Frameworks: Bootstrap and Foundation</li>
-                    <li>Customizing and Extending a Framework</li>
+                    <li>The Bootstrap Framework</li>
+                    <li>Customizing and Extending Bootstrap</li>
+                    <li>Other Interesting Frameworks</li>
                     <li>In-Class Challenge!</li>
                 </ol>
             </li>
@@ -115,7 +116,9 @@
                                 </code></pre>
                             </li>
 
-                            <li>Hot link gets you latest-greatest version with bug fixes, but it also introduces a risk: what if their bug fix introduces a different problem in your site?</li>
+                            <li>Hot link approach is good for browser caching; if reader has previously visited another page that hot links to Bootstrap then CSS and JavaScript files are already in the browser's cache</li>
+
+                            <li>Hot link also gets you latest-greatest version with bug fixes, but it also introduces a risk: what if their bug fix introduces a different problem in your site?</li>
 
                             <li>Download to 'lib' directory gives you more control and consistency, but you have to manually patch if they release a bug fix</li>
 
@@ -127,7 +130,7 @@
 
                     <li>But the real power comes when you start using <a href="http://getbootstrap.com/css/">their style classes</a>
                         <ol>
-                            <li>Container
+                            <li><a href="http://getbootstrap.com/css/#overview-container">Container</a>
                                 <ol>
                                     <li>Creates a cetered content box that resizes according to their breakpoints</li>
 
@@ -138,6 +141,8 @@
                             <li><a href="http://getbootstrap.com/css/#grid">The Grid</a>
                                 <ol>
                                     <li>12-column flexible and responsive layout system</li>
+
+                                    <li>each column you create can consume 1 to 12 of their available grid columns</li>
 
                                     <li>columns sit side-by-side on large monitors and revert to stacked as the size reduces</li>
 
@@ -201,6 +206,15 @@
                             <li>Compile using LESS or <a href="http://twitter.github.io/recess/">Twitter Recess</a></li>
                         </ol>
                     </li>
+                </ol>
+            </li>
+
+            <li>Other Interesting Frameworks
+                <ol>
+                    <li><a href="http://foundation.zurb.com/">Foundation</a>: similar to Bootstrap and getting to be just as popular</li>
+                    <li><a href="http://www.getskeleton.com/">Skeleton</a>: simpler than Bootstrap and Foundation, but also more lightweight</li>
+                    <li><a href="http://www.sencha.com/products/extjs">Ext.js</a>: designed for building complex web applications, more JavaScript-oriented</li>
+                    <li><a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>: really more of a basic template than a framework, but includes a few helper CSS classes and JavaScript libraries</li>
                 </ol>
             </li>
 

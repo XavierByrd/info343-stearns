@@ -69,11 +69,9 @@
 
                     <p>Today we'll be building the home page for the <a href="http://www.nbc.com/parks-and-recreation/">City of Pawnee Parks Department</a>. They want a page that shows off their beautiful city parks, but still looks good on smaller mobile devices. Bootstrap is designed to make this kind of things relatively easy, so we'll use Bootstrap to build this.</p>
 
-                    <p>I'll take you through building such a page step-by-step, but first let's see the kind of page we're trying to build. This is how it will look on your desktop monitors:</p>
+                    <p>I'll take you through building such a page step-by-step, but first let's see the kind of page we're trying to build. This is how it will look on your desktop monitors: the page has a carousel across the top, and a three-column layout with content below that.</p>
 
                     <p><img class="screen-shot img-responsive" src="img/desktop.png" alt="desktop monitor screen shot"></p>
-
-                    <p>The page has a Bootstrap navbar across the top, a carousel below that, and a three-column layout with content at the bottom.</p>
 
                     <p>And this is what it should look like when you've resized your browser window down to the size of a tablet-sized device&mdash;note how the three-column layout below the carousel has now become a one-column layout, with the various sections stacked on top of one another, and the carousel has scaled down appropriately:</p>
 
