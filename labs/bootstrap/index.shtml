@@ -158,9 +158,11 @@
 
                     <p>The <code>data-target</code> and <code>data-slide-to</code> attributes are used by Bootstrap's JavaScript to know which carousel to adjust, and which slide to show, when the reader clicks directly on the indicators. The HTML 5 spec allows for these 'data-' attributes to be used by libraries and frameworks for their own purposes.</p>
 
-                    <p>The slides themselves are defined in a nested <code>&lt;div class="carousel-inner"&gt;</code> element. Each slide is then in yet another nested <code>&lt;div class="item"&gt;</code>. The markup for the first slide would thus look like this:</p>
+                    <p>The slides themselves are defined in a nested <code>&lt;div class="carousel-inner"&gt;</code> element that should appear just after the carousel controls you just added. Each slide is then in yet another nested <code>&lt;div class="item"&gt;</code>. The markup for the first slide would thus look like this:</p>
 
                     <pre><code>
+...carousel indicators...
+
 &lt;!-- slides --&gt; 
 &lt;div class=&quot;carousel-inner&quot;&gt;
     &lt;!-- slide --&gt;
@@ -201,7 +203,7 @@
                         </tbody>
                     </table>
 
-                    <p>After the slides, we need to add one last bit of markup for the next/previous controls (the arrows on the left and right side of the carousel). The markup for those looks like this:</p>
+                    <p>After the slides, we need to add one last bit of markup for the next/previous controls (the arrows on the left and right side of the carousel). The markup for those looks like this, and it should appear after the slides <code>&lt;div&gt;</code>, but still within the overall carousel <code>&lt;div&gt;</code>:</p>
 
                     <pre><code>
 &lt;!-- left-right controls --&gt;
