@@ -97,7 +97,7 @@
 
                     <li>Two ways to incude it
                         <ol>
-                            <li>"Hot link" to their files on their <dfn>Content Delivery Network (CDN)</dfn>
+                            <li id="hotlink">"Hot link" to their files on their <dfn>Content Delivery Network (CDN)</dfn>
                                 <pre><code>
 &lt;!-- add this link to their core stylesheet in your &lt;head&gt; section  --&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css&quot;&gt;
@@ -214,18 +214,17 @@
                 </ol>
             </li>
 
-            <li>Other Interesting Frameworks
+            <li>Other Interesting CSS Frameworks
                 <ol>
                     <li><a href="http://foundation.zurb.com/">Foundation</a>: similar to Bootstrap and getting to be just as popular</li>
                     <li><a href="http://www.getskeleton.com/">Skeleton</a>: simpler than Bootstrap and Foundation, but also more lightweight</li>
-                    <li><a href="http://www.sencha.com/products/extjs">Ext.js</a>: designed for building complex web applications, more JavaScript-oriented</li>
                     <li><a href="http://html5boilerplate.com/">HTML5 Boilerplate</a>: really more of a basic template than a framework, but includes a few helper CSS classes and JavaScript libraries</li>
                 </ol>
             </li>
 
-            <li>In-Class Challenge!
+            <li id="icc">In-Class Challenge!
                 <ol>
-                    <li>Build a page that uses Bootstrap</li>
+                    <li>Build a page that uses Bootstrap <a href="#hotlink">via hotlinks</a></li>
                     <li>Add one or more of the following components to your page
                         <ol>
                             <li>A <a href="http://getbootstrap.com/components/#breadcrumbs">Breadcrumb list (aka crumb trail)</a> in a paragraph with the items 'Home', 'CSS', 'Frameworks'. Just use '#' for the <code>href</code> attribute in the <code>&lt;a&gt;</code> elements wrapping the crumb trail items</li>
@@ -244,7 +243,7 @@
 
                             <li>Once you've added all these, check out the <a href="http://getbootstrap.com/components/">rest of their components</a> and continue adding those you like. If you know a bit of JavaScript, you could also check out their <a href="http://getbootstrap.com/javascript/">interactive components</a>.</li>
 
-                            <li>When you're done, submit your page (just the .html file) via the In-Class Challenge assignment in Canvas (Section A | Section B)</li>
+                            <li>When you're done, submit your page (just the .html file) via the In-Class Challenge assignment in Canvas (<a href="https://canvas.uw.edu/courses/849701/assignments/2338042">Section A</a> | <a href="https://canvas.uw.edu/courses/873608/assignments/2338047">Section B</a>)</li>
 
                         </ol>
                     </li>
