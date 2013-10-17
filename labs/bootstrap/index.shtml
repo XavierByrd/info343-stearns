@@ -140,7 +140,7 @@
 
                     <p>Bootstrap provides a component for this, and theirs will cycle through a series of "slides." Each slide can have an image and an optional block of HTML which will be overlayed on the image as a caption.</p>
 
-                    <p>To add the carousel, add a <code>&lt;div id="pawnee-carousel" class="carousel slide"&gt;</code> to the page, under the <code>&lt;nav&gt;</code> element. The <code>id</code> attribute is used by Bootstrap to relate the carousel controls we'll add to this particular carousel (in case there is more than one on the page), so we'll give it an id of 'pawnee-carousel'.</p>
+                    <p>To add the carousel, add a <code>&lt;div id="pawnee-carousel" class="carousel slide"&gt;</code> to the page, inside the <code>&lt;div class="container&gt;</code> elements. The <code>id</code> attribute is used by Bootstrap to relate the carousel controls we'll add to this particular carousel (in case there is more than one on the page), so we'll give it an id of 'pawnee-carousel'.</p>
 
                     <p>Inside the carousel <code>&lt;div&gt;</code>, we'll next add the slide indicators, which are those little dots shown at the bottom center that indicate which slide is being shown, and allow the reader to jump to a particular slide. These indicators are added as an ordered list of items with some special 'data-' attributes. The carousel <code>&lt;div&gt;</code> with indicator markup should look like this:</p>
 
