@@ -225,7 +225,7 @@
             <li id="icc"><strong>In-Class Challenge!</strong>
                 <ol>
                     <li>Build a page that uses Bootstrap <a href="#hotlink">via hotlinks</a></li>
-                    <li>Add one or more of the following components to your page
+                    <li>Add a few of the following components to your page&mdash;add as many as you have time to do
                         <ol>
                             <li>A <a href="http://getbootstrap.com/components/#breadcrumbs">Breadcrumb list (aka crumb trail)</a> in a paragraph with the items 'Home', 'CSS', 'Frameworks'. Just use '#' for the <code>href</code> attribute in the <code>&lt;a&gt;</code> elements wrapping the crumb trail items</li>
 
@@ -241,12 +241,12 @@
 
                             <li>A <a href="http://getbootstrap.com/components/#list-group-badges">List Group with Badges</a>, with the items 'Inbox', 'Later', and 'Spam', each of which should have a badge with some number (like unread messages) as in the example.</li>
 
-                            <li>Once you've added all these, check out the <a href="http://getbootstrap.com/components/">rest of their components</a> and continue adding those you like. If you know a bit of JavaScript, you could also check out their <a href="http://getbootstrap.com/javascript/">interactive components</a>.</li>
-
-                            <li>When you're done, submit your page (just the .html file) via the In-Class Challenge assignment in Canvas (<a href="https://canvas.uw.edu/courses/849701/assignments/2338042">Section A</a> | <a href="https://canvas.uw.edu/courses/873608/assignments/2338047">Section B</a>)</li>
-
-                        </ol>
+                            <li>If you've added all these and still have time, check out the <a href="http://getbootstrap.com/components/">rest of their components</a> and continue adding those intrigue you. If you know a bit of JavaScript, you could also check out their <a href="http://getbootstrap.com/javascript/">interactive components</a>.</li>
+                       </ol>
                     </li>
+
+                    <li>When you're done, submit your page (just the .html file) via the In-Class Challenge assignment in Canvas (<a href="https://canvas.uw.edu/courses/849701/assignments/2338042">Section A</a> | <a href="https://canvas.uw.edu/courses/873608/assignments/2338047">Section B</a>)</li>
+
                 </ol>
             </li>
 
