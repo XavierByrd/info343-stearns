@@ -222,7 +222,7 @@
                 </ol>
             </li>
 
-            <li id="icc">In-Class Challenge!
+            <li id="icc"><strong>In-Class Challenge!</strong>
                 <ol>
                     <li>Build a page that uses Bootstrap <a href="#hotlink">via hotlinks</a></li>
                     <li>Add one or more of the following components to your page
