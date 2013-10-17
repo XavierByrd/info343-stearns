@@ -156,7 +156,7 @@
     
     ...more to come...
 
-&lt;/div&gt; <!-- carousel -->         
+&lt;/div&gt; &lt;!-- carousel --&gt;         
                     </code></pre>
 
                     <p>The <code>data-target</code> and <code>data-slide-to</code> attributes are used by Bootstrap's JavaScript to know which carousel to adjust, and which slide to show, when the reader clicks directly on the indicators. The HTML 5 spec allows for these 'data-' attributes to be used by libraries and frameworks for their own purposes.</p>
