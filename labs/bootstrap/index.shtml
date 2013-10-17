@@ -177,7 +177,7 @@
         &lt;/div&gt;
 
         ...more slides...
-        
+
     &lt;/div&gt; &lt;!-- .slides --&gt;
 
     ...more to come...
@@ -222,6 +222,8 @@
     &lt;a class=&quot;right carousel-control&quot; href=&quot;#pawnee-carousel&quot; data-slide=&quot;next&quot;&gt;
         &lt;span class=&quot;icon-next&quot;&gt;&lt;/span&gt;
     &lt;/a&gt;
+
+&lt;!-- end div for the entire carousel, which you&#039;ve already added --&gt;
 &lt;/div&gt; &lt;!-- carousel --&gt;
                     </code></pre>
 
