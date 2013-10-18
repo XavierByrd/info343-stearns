@@ -43,7 +43,6 @@
                 <ol>
                     <li>Debrief Lab 4</li>
                     <li>What is JavaScript?</li>
-                    <li>Basic Syntax and Expressions</li>
                     <li>Data Types and Variables</li>
                     <li>Objects and Arrays</li>
                     <li>Functions</li>
@@ -54,61 +53,125 @@
 
             <li>What is JavaScript?
                 <ol>
-                    <li>JavaScript is <strong>not</strong> Java!
+                    <li>JavaScript is <strong>not</strong> Java!</li>
+
+                    <li>Basic syntax and control-of-flow structures are similar, but that's about it</li>
+
+                    <li>Based more on Scheme and Self than Java</li>
+
+                    <li>The 'Java' part of the name was a marketing attempt to associate it with Java, which was very popular at the time</li>
+
+                    <li>Key Differences
                         <ol>
-                            <li>Basic syntax and control-of-flow structures are similar, but that's about it</li>
+                            <li>Java requires compilation; JavaScript is parsed and interpreted on-the-fly
+                                <ol>
+                                    <li>No compile step is convenient, but it also means that you don't get warnings or errors from the compiler</li>
 
-                            <li>Based more on Scheme and Self than Java</li>
+                                    <li>Enables some really interesting scenarios, such as self-modifying code</li>
+                                </ol>
+                            </li>
 
-                            <li>The 'Java' part of the name was a marketing attempt to associate it with Java, which was very popular at the time</li>
+                            <li>Java is strongly-typed; JavaScript is loosely-typed
+                                <ol>
+                                    <li>In Java, variables, parameters, and function return values all have explicit data types, and one must cast or convert when working with disparate data types</li>
 
-                            <li>Don't approach programming in JavaScript like you approach Java&mdash;it's a fundamentally different language!</li>
+                                    <li>In JavaScript, all variables, parameters and return values are variants; they have no explicit type, can hold values of any type, and data type conversion during operations is automatic (but not always how you might expect)</li>
+                                </ol>
+                            </li>
+
+                            <li>Java has block scope; JavaScript has function scope
+                                <ol>
+                                    <li>In Java, variables declared within a block ( {...} ) are visible only within that block</li>
+                                    <li>In JavaScript, variables declared anywhere in a function are visible <em>everywhere</em> in that function</li>
+                                </ol>
+                            </li>
+
+                            <li>Java is a class-based object-oriented language; JavaScript is a prototype-based object-oriented language
+                                <ol>
+                                    <li>Java classes are defined in a strict hierarchical type system, and can't be altered at runtime</li>
+
+                                    <li>JavaScript objects may have a "prototype," which is another object from which the object inherits properties and functions defined in the prototype, and which can be of any type, and which can change at runtime</li>
+
+                                    <li>JavaScript objects are also open, meaning that you can replace, delete, or add members to an any object at runtime</li>
+
+                                    <li>In general, JavaScript OO is not about create new types; rather it's about creating objects that can do specific things</li>
+                                </ol>
+                            </li>
+
+                            <li>Java has object member access control; JavaScript does not
+                                <ol>
+                                    <li>In Java, you can mark a property or method as being private or protected, which enables information encapsulation</li>
+
+                                    <li>JavaScript is more like Twitter; everything is public unless you go to great lengths to keep it hidden</li>
+                                </ol>
+                            </li>
+
+                            <li>JavaScript also supports a few useful things that Java does not
+                                <ol>
+                                    <li>Functions are Objects and can be passed around and manipulated as such</li>
+
+                                    <li>Because all objects are open and all members are public, you can enhance or extend the core objects</li>
+
+                                    <li>JavaScript enables "closures," which are functions defined within another function, and which have access to the containing function's stack variables at the time of the original call; this is useful for callback functions, which are heavily used in AJAX (next week)</li>
+                                </ol>
+                            </li>
                         </ol>
                     </li>
 
-                    <li>JavaScript is...
+                    <li>Where can you use JavaScript, and what can you do with it?
                         <ol>
-                            <li>a <dfn>loosely-typed</dfn> language: variables are not typed and can switch types as new values are assigned</li>
+                            <li>In the browser (desktop, laptop, and mobile)
+                                <ol>
+                                    <li>add a <code>&lt;script&gt;</code> element, which can either contain embedded JavaScript (OK), or can point to a separate script file via the <code>src</code> attribute (better)</li>
 
-                            <li>an objected-oriented language, but one based on <dfn>hash tables</dfn> and <dfn>prototypes</dfn> instead of classes and interfaces</li>
+                                    <li>can respond to user events (mouse, keyboard, touch-screen gestures)</li>
 
-                            <li>a very simple yet highly-expressive language</li>
+                                    <li>can modify page elements and styles</li>
 
-                            <li>full of really bad parts, but has some really good parts as well</li>
+                                    <li>can access some system services (geolocation, local storage, history, etc)</li>
 
-                            <li>perhaps the most-loved and most-hated programming language in the world!</li>
+                                    <li>can communicate and exchange data with web servers in the background (AJAX)</li>
+                                </ol>
+                            </li>
+
+                            <li>On a web server
+                                <ol>
+                                    <li><a href="http://nodejs.org/">Node.js</a> provides a hosting environment for JavaScript that can listen for network/web requests, read from and write to the file system, talk to database engines, etc.</li>
+
+                                    <li>Uses Google Chrome's V8 engine for fast execution</li>
+
+                                    <li>All I/O is asynchronous so it scales incredibly well</li>
+                                </ol>
+                            </li>
+
+                            <li>In databases
+                                <ol>
+                                    <li>CouchDB uses JavaScript for their map/reduce queries</li>
+                                </ol>
+                            </li>
+
+                            <li>In some consumer electronics
+                                <ol>
+                                    <li>Smart televisions and other consumer electronics are starting to host JavaScript interpreters</li>
+                                </ol>
+                            </li>
                         </ol>
                     </li>
                 </ol>
             </li>
 
-            <li>Basic Syntax and Expressions
+            <li>Data Types and Variables
                 <ol>
-                    <li>Very similar to Java, C/C++, and other languages based on C/C++</li>
+                    <li>Primitive types: Number, String, Boolean, Null, Undefined</li>
 
-                    <li>But, although it looks like it has block scope, it actually doesn't; all variables declared in a function are visible from <em>anywhere</em> in that function (common source of errors)
-                        <pre><code>
-function foo() {
-    var x = 5;
-    for (var i = 0; i &lt; 1; ++i) {
-        var x = 10;     // ref to existing x, not a new one
-    }
-    alert(x); // now equal to 10
-}
-                        </code></pre>
-                    </li>
+                    <li>Everything else is an "object," which is really just a HashTable (aka HashMap or Dictionary) of key/value pairs</li>
 
-                    <li>New option <code>"use strict;"</code> corrects a number of problems in the original language, so use it!
-                        <pre><code>
-function foo() {
-    &quot;use strict;&quot;
-    
-    ...function body...
-}
-                        </code></pre>
-                    </li>
+                    <li>Arrays are really just specialized HashTables with numeric keys and additional built-in methods</li>
+
+                    <li>Beyond Arrays, there are also a few other specialized built-in objects: Date, RegExp, Math, and a few Error objects</li>
                 </ol>
             </li>
+
 
 
         </ol>
