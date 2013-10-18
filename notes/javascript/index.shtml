@@ -44,7 +44,6 @@
                     <li>Debrief Lab 4</li>
                     <li>What is JavaScript?</li>
                     <li>Data Types and Variables</li>
-                    <li>Objects and Arrays</li>
                     <li>Functions</li>
                     <li>JavaScript and the Document Object Model (DOM)</li>
                     <li>Debugging JavaScript in the Browser</li>
@@ -155,26 +154,79 @@
                                     <li>Smart televisions and other consumer electronics are starting to host JavaScript interpreters</li>
                                 </ol>
                             </li>
+
+                            <li>The JavaScript language spec defines a few core objects and methods, but each hosting environment can make additional objects and functions available that are relevant to the context</li>
                         </ol>
                     </li>
                 </ol>
             </li>
 
-            <li>Data Types and Variables
+            <li>Core Language Data Types and Variables
                 <ol>
                     <li>Primitive types: Number, String, Boolean, Null, Undefined</li>
 
-                    <li>Everything else is an "object," which is really just a HashTable (aka HashMap or Dictionary) of key/value pairs</li>
+                    <li>Like Java, primitive types can be used implicitly with literals, or explicitly as objects
+                        <ol>
+                            <li>Creates a string literal and assigns it to x
+                                <pre><code>
+var x = &quot;Hello World!&quot;;
+var len = x.length;
+                                </code></pre>
+                            </li>
 
-                    <li>Arrays are really just specialized HashTables with numeric keys and additional built-in methods</li>
+                            <li>Creates a String object and assigns it to x
+                                <pre><code>
+var x = new String(&quot;Hello World!&quot;);
+var len = x.length;
+                                </code></pre>
+                            </li>
 
-                    <li>Beyond Arrays, there are also a few other specialized built-in objects: Date, RegExp, Math, and a few Error objects</li>
+                            <li>Results are slightly different, but not such that you would normally have to care</li>
+                        </ol>
+                    </li>
+
+                    <li>Everything else is an "object," which is really just a HashTable (aka HashMap or Dictionary) of key/value pairs
+                        <pre><code>
+var x = {foo: &#039;bar&#039;};   //creates a new object with property &#039;foo&#039;
+console.log(x.foo);     //writes &#039;bar&#039; to the log
+console.log(x[&#039;foo&#039;]);  //different syntax for &#039;x.foo&#039;
+x.ack = &#039;blech&#039;;        //adds prop &#039;ack&#039; with value &#039;blech&#039;
+                        </code></pre>
+                    </li>
+
+                    <li>Arrays are really just specialized HashTables with numeric keys and additional built-in methods
+                        <ol>
+                            <li>literal assignment uses [] instead of {}</li>
+                            <li>built-in <code>.length</code> property for upper-bound</li>
+                            <li><a href="http://www.w3schools.com/jsref/jsref_obj_array.asp">lots of built-in functions for manipulating array contents</a> (push, pop, shift, slice, sort, etc.)</li>
+                            <li>example:
+                                <pre><code>
+var x = [&#039;one&#039;, &#039;two&#039;, &#039;three&#039;];
+console.log(x[0]);      //writes &#039;one&#039;
+
+//loop over all items in the array
+for (var i = 0; i &lt; x.length; ++i) {
+    console.log(x[i]);
+}
+                                </code></pre>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>Beyond Arrays, there are also a few other specialized built-in objects: <a href="http://www.w3schools.com/jsref/jsref_obj_date.asp">Date</a>, <a href="http://www.w3schools.com/jsref/jsref_obj_regexp.asp">RegExp</a>, <a href="http://www.w3schools.com/jsref/jsref_obj_math.asp">Math</a>, and a few Error objects that can be thrown during errors</li>
+
+                    <li>All variables (as well as function parameters and return values) are typeless; they may hold any value of any type at any time</li>
+
+                    <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">typeof</a></code> operator can determine type for the most part, but arrays are reported as objects</li>
                 </ol>
+            </li>
+
+            <li>Functions
             </li>
 
 
 
-        </ol>
+        </ol> <!-- lecture -->
 
     </div> <!-- .container -->
 
