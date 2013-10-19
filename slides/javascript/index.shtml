@@ -16,8 +16,8 @@
 
                 <section>
                     <h2>Coming Up...</h2>
-                    <p>Thursday: The jQuery Library</p>
                     <p><img src="img/jquery.png" alt="jQuery logo"></p>
+                    <p>Thursday Oct 24: The jQuery Library</p>
                     <ul>
                         <li class="no-bullets"><em>What's due...</em></li>
                         <li><a href="../../homework/#v2">Homework Version 2.0</a></li>
@@ -148,12 +148,10 @@ function showMsgOnClick(button, message) {
                 </section>
 
                 <section>
-                    <h2>Where Can You Use JavaScript?</h2>
-                    <ul class="no-bullets">
-                        <li class="fragment">In the browser</li>
-                        <li class="fragment">On the server (<a href="http://nodejs.org/">Node.js</a>)</li>
-                        <li class="fragment">In some databases (e.g., <a href="http://couchdb.apache.org/">CouchDB</a>)</li>
-                    </ul>
+                    <h2>Where Can You Use It?</h2>
+                    <p class="fragment">In the Browser</p>
+                    <p class="fragment">On the Server via <a href="http://nodejs.org/">Node.js</a> or <a href="https://developer.mozilla.org/en-US/docs/Rhino">Rhino</a></p>
+                    <p class="fragment">In some databases (e.g., <a href="http://couchdb.apache.org/">CouchDB</a>)</p>
                 </section>
 
                 <section>
