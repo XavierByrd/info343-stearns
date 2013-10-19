@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title>Intro to JavaScript</title>
+
+        <meta name="description" content="Slides from Intro to JavaScript Lecture">
+        <meta name="author" content="David Stearns">
+
+        <!--#include virtual="../inc/common-head.html" -->
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+
+                <section>
+                    <h2>Coming Up...</h2>
+                    <p>Thursday: The jQuery Library</p>
+                    <p><img src="img/jquery.png" alt="jQuery logo"></p>
+                    <ul>
+                        <li class="no-bullets"><em>What's due...</em></li>
+                        <li><a href="../../homework/#v2">Homework Version 2.0</a></li>
+                        <li class="no-bullets"><em>Please read...</em></li>
+                        <li><a href="http://learn.jquery.com/about-jquery/how-jquery-works/">How jQuery Works</a></li>
+                        <li><a href="http://learn.jquery.com/using-jquery-core/">Using jQuery Core</a></li>
+                        <li><a href="http://learn.jquery.com/events/">Catching Events in jQuery</a></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Today: Intro to JavaScript</h2>
+                    <p><img src="img/javascript-logo.png" alt="JavaScript logo" class="pull-right"></p>
+                    <ul>
+                        <li>Debrief Lab 4</li>
+                        <li>What is JavaScript?</li>
+                        <li>Data Types, Variables, Operators</li>
+                        <li>Functions</li>
+                        <li>JavaScript and the<br>Document Object Model (DOM)</li>
+                        <li>Debugging JavaScript in the Browser</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Recommended Book</h2>
+                    <p>
+                        <a href="http://amzn.com/0596805527" target="_blank"><img src="../../img/js-flanagan.png" alt="Cover of book JavaScript: The Definitive Guide by Flanagan"></a>
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Top Things You Need to Know about JavaScript</h2>                    
+                </section>
+
+                <section>
+                    <h2>JavaScript is <strong>not</strong> Java!</h2>
+                    <p class="fragment">Syntax is similar, but the language constructs are <em>very</em> different</p>
+                    <p class="fragment">Based on Scheme and Self more than Java</p>
+                    <p class="fragment">Don't expect it to behave the same way</p>
+                </section>
+
+                <section>
+                    <h2>JavaScript is an Interpreted Language</h2>
+                    <p class="fragment">No compile step necessary</p>
+                    <p class="fragment">But no helpful errors/warnings from the compiler either</p>
+                </section>
+
+                <section>
+                    <h2>JavaScript is a Loosely-Typed Language</h2>
+                    <p class="fragment">All variables, parameters, and return values are variants</p>
+                    <p class="fragment">Can hold values of any type, and switch types at any time</p>
+                    <p class="fragment">Type casting is automatic, but not always what you might expect</p>
+                    <pre class="fragment"><code data-trim class="javascript">
+var x = 5;
+x = 'true';
+var y = true;
+alert(x == y);  //false--y converted to '1', which does not equal 'true'
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>JavaScript Uses Function Scope not Block Scope</h2>
+                    <p class="fragment">In Java and C++, variables declared in a block are visible only in the block</p>
+                    <p class="fragment">In JavaScript, all variables declared in a function are visible everywhere in that function</p>
+                    <pre class="fragment"><code data-trim class="javascript">
+function foo() {
+    var x = 5;
+    for (var idx = 0; idx &lt; 1; ++idx) {
+        var x = 10;
+        //...
+    }
+    alert(x);   //10
+    alert(idx); //1
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>JavaScript is a Prototype-Based OO Language</h2>
+                    <p class="fragment">In JavaScript, you don't define new types via classes</p>
+                    <p class="fragment">Instead, every object has a <dfn>prototype</dfn> object, from which it can inherit data and methods</p>
+                    <p class="fragment">Prototype can be re-assigned at runtime</p>
+                    <p class="fragment">JavaScript OO is about defining what an object can do at the moment, not about defining a type system</p>
+                </section>
+
+                <section>
+                    <h2>JavaScript has no Member Access Control</h2>
+                    <p class="fragment">No private, protected, public on data or methods</p>
+                    <p class="fragment">Like Twitter&mdash;everything is public unless you go out of your way to hide it</p>
+                    <p class="fragment">Object members can be changed or added to by other code at any time</p>
+                </section>
+
+                <section>
+                    <h2>JavaScript Functions are Objects</h2>
+                    <p class="fragment">Functions can be passed around and treated as objects</p>
+                    <pre class="fragment"><code data-trim class="javascript">
+function validateEmail(email) {
+    //...
+}
+
+//store our regular expression for valid emails
+//as a property of the function itself
+validateEmail.regexp = '...';
+
+//functions can be assigned to object properties
+var customer = {};
+customer.validateEmail = validateEmail;
+if (customer.validateEmail(&#039;john@doe.com&#039;)) {
+    //email is valid
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>JavaScript has Closures</h2>
+                    <p class="fragment">Functions defined within a function have access to outer stack at the time of invocation, which is very handy for event handler callbacks</p>
+                    <pre class="fragment"><code data-trim class="javascript">
+function showMsgOnClick(button, message) {
+    
+    //create a new anonymous function for the
+    //onclick event that displays the message
+    button.onclick = function() {
+        alert(message); //still has access to &#039;message&#039;
+    }
+
+}
+                    </code></pre>                    
+                </section>
+
+                <section>
+                    <h2>Where Can You Use JavaScript?</h2>
+                    <ul class="no-bullets">
+                        <li class="fragment">In the browser</li>
+                        <li class="fragment">On the server (<a href="http://nodejs.org/">Node.js</a>)</li>
+                        <li class="fragment">In some databases (e.g., <a href="http://couchdb.apache.org/">CouchDB</a>)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Let's Write Some JavaScript!</h2>
+                </section>
+
+            </div> <!-- .slides -->
+        </div> <!-- .reveal -->
+
+        <!--#include virtual="../inc/common-scripts.html" -->  
+
+        <script>
+        //just for development--remove when finished
+        Reveal.configure({history: true});
+        </script>
+    </body>
+</html>
