@@ -167,7 +167,7 @@ function showMsgOnClick(button, message) {
 
         <script>
         //just for development--remove when finished
-        Reveal.configure({history: true});
+        //Reveal.configure({history: true});
         </script>
     </body>
 </html>
