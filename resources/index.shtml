@@ -119,6 +119,12 @@
                                 <dd>A reference for all the various supported character entities. Use these to encode reserved characters and <a href="http://www.w3schools.com/tags/ref_symbols.asp">other symbols</a></dd>
                             </dl>
 
+                            <h2>JavaScript References</h2>
+                            <dl>
+                                <dt><a href="http://www.w3schools.com/jsref/">JavaScript and the DOM Reference</a></dt>
+                                <dd>A general reference for the core JavaScript language and the Document Object Model (DOM)</dd>
+                            </dl>
+
                             <h2>Validation Tools</h2>
                             <dl>
                                 <dt><a href="http://validator.w3.org/">W3C HTML Validation Service</a></dt>
@@ -126,6 +132,9 @@
 
                                 <dt><a href="http://jigsaw.w3.org/css-validator/">W3C CSS Validation Service</a></dt>
                                 <dd>Use this to validate your CSS pages. Browsers will just ignore invalid content in your CSS pages without any warnings, so you if you are having troubles getting your CSS to work, try validating your stylesheet to make sure you don't have an error.</dd>
+
+                                <dt><a href="http://www.jslint.com/">JS Lint</a></dt>
+                                <dd>Use this to detect potential problems in your JavaScript. This is a <em>very</em> aggressive lint tool, however, so take its advice with a grain of salt.</dd>
                             </dl>
                         </div> <!-- .col-md-6 -->
                     </div> <!-- .row -->
