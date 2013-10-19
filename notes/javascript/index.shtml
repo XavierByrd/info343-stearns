@@ -64,7 +64,7 @@
                         <ol>
                             <li>Java requires compilation; JavaScript is parsed and interpreted on-the-fly
                                 <ol>
-                                    <li>No compile step is convenient, but it also means that you don't get warnings or errors from the compiler</li>
+                                    <li>No compile step is convenient, but it also means that you don't get helpful warnings or errors from the compiler</li>
 
                                     <li>Enables some really interesting scenarios, such as self-modifying code</li>
                                 </ol>
@@ -80,7 +80,7 @@
 
                             <li>Java has block scope; JavaScript has function scope
                                 <ol>
-                                    <li>In Java, variables declared within a block ( {...} ) are visible only within that block</li>
+                                    <li>In Java, variables declared within a block such as <code>{...}</code> are visible only within that block</li>
                                     <li>In JavaScript, variables declared anywhere in a function are visible <em>everywhere</em> in that function</li>
                                 </ol>
                             </li>
@@ -194,6 +194,8 @@ x.ack = &#039;blech&#039;;        //adds prop &#039;ack&#039; with value &#039;b
                         </code></pre>
                     </li>
 
+                    <li>Object members (hashtable entries) can be either primitive data values, functions, arrays, or other objects</li>
+
                     <li>Arrays are really just specialized HashTables with numeric keys and additional built-in methods
                         <ol>
                             <li>literal assignment uses [] instead of {}</li>
@@ -218,10 +220,95 @@ for (var i = 0; i &lt; x.length; ++i) {
                     <li>All variables (as well as function parameters and return values) are typeless; they may hold any value of any type at any time</li>
 
                     <li><code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof">typeof</a></code> operator can determine type for the most part, but arrays are reported as objects</li>
+
+                    <li>JavaScript has the same set of operators as Java, but they add one more that is sometimes useful: <code>===</code> or "strict equal"
+                        <ol>
+                            <li>Because of loose-typing, normal equality operator (<code>==</code>) will convert types when the left and right sides are not the same type</li>
+
+                            <li>This can cause some strange behavior, especially when comparing a boolean to something else:
+                                <pre><code>
+var x = true;
+var y = "1";
+alert(x == y);      //true--boolean converted to string '1' and compared
+y = "true";
+alert (x == y);     //false--boolean converted to string '1', which doesn't match 'true'
+                                </code></pre>
+                            </li>
+
+                            <li>The strict equal operator (<code>===</code>) does not do type conversion, and considers disparate types to be unequal</li>
+                        </ol>
+                    </li>
                 </ol>
             </li>
 
             <li>Functions
+                <ol>
+                    <li>Like in Java or any other language, you write functions to encapsulate an algorithm so you can use it from multiple places in your code</li>
+
+                    <li>Basic syntax is similar to Java, but no data types for parameters nor return value:
+                        <pre><code>
+function foo(a, b, c) {
+    var ret;        //return value
+    
+    ...
+
+    return ret;
+}
+                        </code></pre>
+                    </li>
+
+                    <li>Functions can be assigned to obects properties to create methods:
+                        <pre><code>
+var myobj = {x: 'hello', m: foo};
+myobj.m(a, b, c);
+                        </code></pre>
+                    </li>
+                </ol>
+            </li>
+
+            <li>JavaScript and the DOM
+                <ol>
+                    <li>In the early 1990s, the only way you could alter the document in script was to use <code>document.write()</code> to write new content into the page</li>
+
+                    <li>In the mid-1990s, browser began exposing an API for manipulating the parsed, in-memory version of the document; that is, the tree of elements and their textual content</li>
+
+                    <li>This became known as the Document Object Model (DOM) standard, and in good web fashion, every browser vendor implemented <em>most</em> of the standard, but also changed bits they didn't like</li>
+
+                    <li>The APIs were also designed very quickly by browser developers who didn't really understand that APIs are like user interfaces for developers: they should be intuitive, consistent, and easy to use. The DOM is none of those!</li>
+
+                    <li>This is why most developers use a wrapper library like jQuery, which abstracts away any differences, and presents a more intuitive, consistent, and easy-to-use programming interface (more on jQuery next class)</li>
+
+                    <li>But just as it's good to know raw CSS even if you use a framework like Bootstrap, it's also good to know a bit about the raw DOM, even if you use jQuery</li>
+
+                    <li>Top things you need to know about the DOM:
+                        <ol>
+                            <li>The <code>window</code> object is the "global object" and is the root object of the DOM; it also represents the current browser window</li>
+
+                            <li>The <code>document</code> object represents the current document, and gives you methods for enumerating and getting specific elements in the document; it is also considered the root element of the document's element tree</li>
+
+                            <li>To get a specific element by id, use <code>var elem = document.getElementById()</code> (returns a single element or null if id doesn't exist)</li>
+
+                            <li>To get all elements with a specific style class name, use <code>var elems = document.getElementsByClassName()</code> (returns an array, which may be empty)</li>
+
+                            <li>For a given element, you can use <code>elem.children</code> to get the child elements, <code>elem.parentNode</code> to get the parent element, and <code>elem.innerHTML</code> to alter the element's contents</li>
+
+                            <li>Attributes are exposed as named properties (e.g., <code>elem.href</code>) and via <code>elem.getAttribute('attr-name')</code>, <code>elem.setAttribute('attr-name')</code> methods</li>
+
+                            <li>You can create new elements via <code>document.createElement('p')</code>, and insert them into the tree via <code>elem.appendChild()</code> or <code>elem.insertBefore()</code></li>
+
+                            <li>You can also remove elements via <code>elem.removeChild()</code>, or replace an element using <code>elem.replaceChild()</code></li>
+                        </ol>
+                    </li>
+
+                </ol>
+            </li>
+
+            <li>Debugging JavaScript in the Browser
+                <ol>
+                    <li>Just as with CSS, errors in your JavaScript will just cause the script to fail without any visible warning to the reader; to see these errors, use the Developer Tools in Chrome/Safari/IE, or the Firebug add-on in Firefox</li>
+
+                    <li>These tools also allow you to set breakpoints and step through your code, just like a Java debugger</li>
+                </ol>
             </li>
 
 
