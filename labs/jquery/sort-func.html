@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../../lib/highlight/styles/zenburn.css">
+        <title>Address Book Entries Sort Function</title>
+    </head>
+    <body>
+        <pre><code class="javascript">
+/* sortEntries()
+    sorts an array of objects by a given property name
+    arr = the array of objects to sort
+    prop = the property name to sort upon
+*/
+function sortEntries(arr, prop) {
+    arr.sort(function(a, b) {
+        return a[prop].localeCompare(b[prop]);
+    });        
+} //sortEntries()
+        </code></pre>
+    </body>
+</html>
