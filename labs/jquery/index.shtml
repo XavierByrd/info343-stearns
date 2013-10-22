@@ -71,7 +71,7 @@
 
                     <p>First, let's see what this page will look like when we are done:</p>
 
-                    <p><img src="img/address-book-lastname" alt="Address book page sorted by last name" class="screen-shot"></p>
+                    <p><img src="img/address-book-lastname.png" alt="Address book page sorted by last name" class="screen-shot"></p>
 
                     <p>If you look at the source for index.html, you will notice that the various address book entries are not actually in there. Instead, we will be generating the entries dynamically in JavaScript, based on a data structure that I have already populated for you.</p>
 
