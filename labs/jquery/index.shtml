@@ -178,9 +178,12 @@ function sortEntries(prop) {
 &lt;/div&gt;
                     </code></pre>
 
-                    <p>Note that the <code>&lt;div&gt;</code> surrounding the button group has the class 'sort-ui', and the individual buttons have a style class of 'btn' amongst others. Use these two style classes to select all the button elements via jQuery, and <a href="http://api.jquery.com/click/">register a single click event handler function</a> for all of them at once.</p>
+                    <p>Note that the <code>&lt;div&gt;</code> surrounding the button group has the class 'sort-ui', and the individual buttons have a style class of 'btn' amongst others. Use these two style classes to <a href="http://api.jquery.com/descendant-selector/">select all the button elements via jQuery</a>, and <a href="http://api.jquery.com/click/">register a single click event handler function</a> for all of them at once.</p>
 
-                    <p>In that click handler function, we need to know which property to sort upon, which is why I included an extra <code>data-sortby</code> attribute on each of the buttons.</p>
+                    <p>In that click handler function, we need to know which property to sort upon, which is why I included an extra <code>data-sortby</code> attribute on each of the buttons. In our event handler, the <code>this</code> variable will be a refence to the button element that was clicked, so you can get access to this attribute value and use it to sort the entries by the appropriate column.</p>
+
+                    
+
 
                 </section>
 
