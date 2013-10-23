@@ -116,7 +116,7 @@
                             <li class="notes"><a href="notes/frameworks/">Don't Reinvent the Wheel: CSS Tools and Frameworks</a></li>
                             <li><a href="slides/javascript/">JavaScript: The Good Parts</a></li>
                             <li class="notes"><a href="notes/javascript/">JavaScript Lecture Notes</a></li>
-                            <li class="notes"><a href="nodes/jquery/">Your Friend, the jQuery Library</a></li>
+                            <li class="notes"><a href="notes/jquery/">Your Friend, the jQuery Library</a></li>
                             <li>A Form of Madness: HTML5 Forms and Inputs</li>
                             <li>You can do that? Advanced HTML5 Scripting Features</li>
                             <li>The Brave New World: AJAX and Web 2.0</li>

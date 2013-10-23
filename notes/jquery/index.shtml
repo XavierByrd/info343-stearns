@@ -94,6 +94,10 @@
                     </li>
 
                     <li><a href="http://jquery.com/download/">Download the jQuery files</a>, add them to your project's 'lib' sub-folder, and set the <code>&lt;script&gt;</code> element's <code>src</code> attribute to point to your project's copy</li>
+
+                    <li>jQuery creates one function/object in the global space named <code><a href="http://api.jquery.com/">jQuery</a></code>, which has lots of methods, many of which I will show you as we go through class today</li>
+
+                    <li>They also define <code>$</code> as an alias for <code>jQuery</code>, so you can use that as a short-hand reference</li>
                 </ol>
             </li>
 
@@ -110,7 +114,7 @@
                     <li>Explicit syntax:
                         <pre><code>
 function onReady() {
-    //...
+    //...code to run on ready
 }
 
 $(document).ready(onReady);
@@ -118,14 +122,33 @@ $(document).ready(onReady);
                         or with an in-line anonymous function:
                         <pre><code>
 $(document).ready(function() {
-    //...
+    //...code to run on ready
 });                            
+                        </code></pre>
+                    </li>
+
+                    <li>Implicit (and shorter) syntax:
+                        <pre><code>
+$(function() {
+    //...code to run on ready 
+});
                         </code></pre>
                     </li>
                 </ol>
             </li>
 
             <li>Finding and Traversing
+                <ol>
+                    <li>Your code in the document ready function will generally want to find various elements on the page so that you can manipulate them or register events on them (e.g., click, keypress, hover, etc)</li>
+
+                    <li>The raw DOM encourages you to give these elements IDs and then get them using <code>document.getElementById()</code>, but jQuery is designed to work more like CSS selectors</li>
+
+                    <li>To get an element with the class name 'motto', you write:
+                        <pre><code>
+var elem = $(&#039;.motto&#039;);
+                        </code></pre>
+                    </li>
+                </ol>
             </li>
 
             <li>Handling Events
