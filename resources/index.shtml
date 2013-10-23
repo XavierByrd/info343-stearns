@@ -123,6 +123,9 @@
                             <dl>
                                 <dt><a href="http://www.w3schools.com/jsref/">JavaScript and the DOM Reference</a></dt>
                                 <dd>A general reference for the core JavaScript language and the Document Object Model (DOM)</dd>
+
+                                <dt><a href="http://api.jquery.com/">jQuery API Reference</a></dt>
+                                <dd>Detailed reference for the jQuery Library</dd>
                             </dl>
 
                             <h2>Validation Tools</h2>
