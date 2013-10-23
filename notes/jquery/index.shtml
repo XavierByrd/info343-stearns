@@ -97,7 +97,7 @@
 
                     <li>jQuery creates one function/object in the global space named <code><a href="http://api.jquery.com/">jQuery</a></code>, which has lots of methods, many of which I will show you as we go through class today</li>
 
-                    <li>They also define <code>$</code> as an alias for <code>jQuery</code>, so you can use that as a short-hand reference</li>
+                    <li>They also define <code>$</code> as an alias for <code>jQuery</code>, so you can use that as a short-hand reference (less typing)</li>
                 </ol>
             </li>
 
@@ -145,13 +145,43 @@ $(function() {
 
                     <li>To get an element with the class name 'motto', you write:
                         <pre><code>
-var elem = $(&#039;.motto&#039;);
+var jElems = $(&#039;.motto&#039;);
                         </code></pre>
                     </li>
+
+                    <li>To get a <code>button</code> element sitting inside a <code>&lt;div class="foo"&gt;</code> element, you write:
+                        <pre><code>
+var jElems = $('.foo button');        
+                        </code></pre>
+                    </li>
+
+                    <li>You can also use the pseudo-selectors like :first-of-type; see their full <a href="http://api.jquery.com/category/selectors/">selectors reference</a> for all the various selectors you can use</li>
+
+                    <li>Key is that these expressions will select all elements that match the selector, just like CSS</li>
+
+                    <li>The returned value is a jQuery object that represents all elements that matched the selector; all methods called on this object will effect <strong>all elements that were selected</strong></li>
+
+                    <li>This is especially handy when registering a common event handler function for a set of related objects (e.g., button group, or all fields in form)</li>
+
                 </ol>
             </li>
 
             <li>Handling Events
+                <ol>
+                    <li>JavaScript in the global scope is executed as soon as the file is parsed; the rest of your code execution is all event-based, meaning that you write code that runs when some event happens</li>
+
+                    <li>Most events are generated in response to user interaction (keypress, click, scroll, resize, etc.)
+                        <ol>
+                            <li>These events are raised from the element being interacted with</li>
+
+                            <li>You register a function to be called in response to this event, and the <code>this</code> keyword is set to refer to the element in question</li>
+                        </ol>
+                    </li>
+
+                    <li>Some events are generated in response to things happening in the system (timer fires, network request completes, etc)</li>
+
+                    <li></li>
+                </ol>
             </li>
 
             <li>Manipulating
