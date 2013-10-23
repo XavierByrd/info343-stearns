@@ -192,13 +192,16 @@ var Employees = {
 
                 <p>If you get done early, or just want the extra challenge, try some of these optional steps.</p>
 
-                <h3>Add Support for a Secondary Sort Property</h3>
+                <h3>Add a Fade-In Effect</h3>
 
-                <p>The supplied <code>sortObjArray()</code> function only sorts using one property, but if two objects have the same value for that property, it would be a good idea to then sort by a secondary property (e.g., if two people have the same last name, sort by first name).</p>
+                <p>The jQuery library provides a framework for animation effects, similar to the transitions and transforms we learned in CSS. In this optional step, we'll make the address book entries fade in after we have added them to the page.</p>
 
-                <p>Add another parameter to that function called <code>propName2</code> and in the comparison callback function, compare the values of that property if the values for <code>propName</code> happen to be equal.</p>
+                <p>In order to make something fade in, it first must be hidden. So at the start of your <code>render()</code> function, just before you use the <code>empty()</code> method on the address book element to clear it out, use the jQuery <code><a href="http://api.jquery.com/hide/">hide()</a></code> method to hide the entire address book element.</p>
 
-                <p>To test this, you'll have to add another object to the <code>Employees.entries</code> array that has the same value for <code>last</code> as some other entry. Then when you sort by name, pass both the <code>last</code> and <code>first</code> property names to your augmented <code>sortObjArray()</code> function.</p>
+                <p>Now at the very end of your <code>render()</code> method, after you have added all the address book entries, and just before you exit the function, use the jQuery <code><a href="http://api.jquery.com/fadeIn/">fadeIn()</a></code> method to make the populated address book slowly fade in rather than just appear suddenly.</p>
+
+                <p>The <code>fadeIn()</code> method accepts an optional settings object, which can use to control the speed and easing of the effect.</p>
+
 
             
 
