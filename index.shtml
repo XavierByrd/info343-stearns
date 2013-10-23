@@ -58,7 +58,7 @@
                             <li><a href="labs/basic-site/">Building a Basic Web Site</a></li>
                             <li><a href="labs/pic-browser/">Adding Transforms, Transitions, and Animations</a></li>
                             <li><a href="labs/bootstrap/">Skinning Your Site with Bootstrap</a></li>
-                            <li>Interacting with the Customer via Scripts</li>
+                            <li>Sortable Address Book</li>
                             <li>Gathering Information via Forms</li>
                             <li>Leveraging Existing Services and Content</li>
                             <li>Configuring and Customizing WordPress</li>
@@ -115,8 +115,8 @@
                             <li class="notes"><a href="notes/layout/">Responding to the Device: Responsive Web Design</a></li>
                             <li class="notes"><a href="notes/frameworks/">Don't Reinvent the Wheel: CSS Tools and Frameworks</a></li>
                             <li><a href="slides/javascript/">JavaScript: The Good Parts</a></li>
-                            <li class="notes"><a href="notes/javascript">JavaScript Lecture Notes</a></li>
-                            <li>Your Friend, the jQuery Library</li>
+                            <li class="notes"><a href="notes/javascript/">JavaScript Lecture Notes</a></li>
+                            <li class="notes"><a href="nodes/jquery/">Your Friend, the jQuery Library</a></li>
                             <li>A Form of Madness: HTML5 Forms and Inputs</li>
                             <li>You can do that? Advanced HTML5 Scripting Features</li>
                             <li>The Brave New World: AJAX and Web 2.0</li>

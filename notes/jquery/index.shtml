@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for Intro to jQuery Lecture">
+    <title>The jQuery Library</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>Your Friend, the jQuery Library</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Friday Oct 25
+                        <ol>
+                            <li>Lab 5: <a href="../../labs/jquery/">Sortable Address Book</a></li>
+                        </ol>
+                    </li>
+                    <li>Tues Oct 29
+                        <ol>
+                            <li>HTML Forms and Scripting</li>
+                            <li>Please Read...
+                                <ol>
+                                    <li><a href="http://www.htmldog.com/guides/html/beginner/forms/">Forms Tutorial</a></li>
+                                    <li><a href="http://diveintohtml5.info/forms.html">A Form of Madness</a></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>What is the jQuery Library?</li>
+                    <li>How do you use jQuery?</li>
+                    <li>Running Code when the Page is Ready</li>
+                    <li>Finding Elements and Traversing the Element Tree</li>
+                    <li>Handling Events</li>
+                    <li>Manipulating Elements, Attributes, and Styles</li>
+                    <li>Animation Effects in jQuery</li>
+                </ol>
+            </li>
+
+            <li>In-Class Coding Repository
+                <ol>
+                    <li><a href="https://github.com/drstearns/in-class-code-a">Section A (8:30)</a></li>
+                    <li><a href="https://github.com/drstearns/in-class-code-b">Section B (10:30)</a></li>
+                </ol>
+            </li>
+
+            <li>What is the jQuery Library?
+                <ol>
+                    <li>A big-ol' file containing a bunch of JavaScript</li>
+
+                    <li>Sits in between your code and the raw DOM API</li>
+
+                    <li>Provides a number of helpful features:
+                        <ol>
+                            <li>Consistent and easier-to-use API that works in all browsers</li>
+
+                            <li>Powerful methods for finding elements in the page that you want to adjust
+                                <ol>
+                                    <li>uses CSS selector syntax, which you already know!</li>
+
+                                    <li>no need to use <code>id</code> attributes; selection by <code>class</code> attribute is just as easy</li>
+                                </ol>
+                            </li>
+
+                            <li>Very powerful methods for adjusting sets of elements all at once</li>
+
+                            <li>Easy to register event handlers for all the common events</li>
+
+                            <li>Provides a few animation effecs to make your pages feel more responsive and playful</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Using jQuery
+                <ol>
+                    <li>Add a <code>&lt;script&gt;</code> element to your page, and set the <code>src</code> attribute to the jQuery CDN (https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js)
+                        <pre><code>
+&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+                        </code></pre>
+                    </li>
+
+                    <li><a href="http://jquery.com/download/">Download the jQuery files</a>, add them to your project's 'lib' sub-folder, and set the <code>&lt;script&gt;</code> element's <code>src</code> attribute to point to your project's copy</li>
+                </ol>
+            </li>
+
+            <li>Running Code Once the Page is Ready
+                <ol>
+                    <li>JavaScript at the global scope (i.e., not inside a function) will run as soon as it is parsed</li>
+
+                    <li>But that might be too early; not all the elements may be ready for manipulation at that point</li>
+
+                    <li>Browsers raise various events to signal that the DOM is ready, and jQuery gives you one handy document.ready event that works across all browsers</li>
+
+                    <li>You register a function you want jQuery to call when the document is ready</li>
+
+                    <li>Explicit syntax:
+                        <pre><code>
+function onReady() {
+    //...
+}
+
+$(document).ready(onReady);
+                        </code></pre>
+                        or with an in-line anonymous function:
+                        <pre><code>
+$(document).ready(function() {
+    //...
+});                            
+                        </code></pre>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Finding and Traversing
+            </li>
+
+            <li>Handling Events
+            </li>
+
+            <li>Manipulating
+            </li>
+
+            <li>Animation Effects
+            </li>
+
+        </ol> <!-- lecture -->
+
+    </div> <!-- .container -->
+
+</body>
+</html>
