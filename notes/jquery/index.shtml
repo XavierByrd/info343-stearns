@@ -137,7 +137,7 @@ $(function() {
                 </ol>
             </li>
 
-            <li>Finding and Traversing
+            <li>Finding
                 <ol>
                     <li>Your code in the document ready function will generally want to find various elements on the page so that you can manipulate them or register events on them (e.g., click, keypress, hover, etc)</li>
 
@@ -163,6 +163,27 @@ var jElems = $('.foo button');
 
                     <li>This is especially handy when registering a common event handler function for a set of related objects (e.g., button group, or all fields in form)</li>
 
+                    <li>To know how many elements are in the set, check the <code>length</code> property</li>
+
+                    <li>To get just the first element, use the <code>first()</code> method</li>
+
+                </ol>
+            </li>
+
+            <li>Traversing
+                <ol>
+                    <li>Once you've found one or more elements, you can also find and traverse the element tree from there</li>
+
+                    <li>Use <code>children()</code> to find for immediate child elements that match a selector</li>
+
+                    <li>Use <code>find()</code> to find all descendants that match a selector</li>
+
+                    <li>Use <code>siblings()</code> to find all siblings that match a selector</li>
+
+                    <li>Use <code>parent()</code> to get the immediate parent element(s) of the current set (optionally filtered using a selector)</li>
+
+                    <li>Use <code>parents()</code> to find all ancestors that match a selector</li>
+
                 </ol>
             </li>
 
@@ -174,20 +195,68 @@ var jElems = $('.foo button');
                         <ol>
                             <li>These events are raised from the element being interacted with</li>
 
-                            <li>You register a function to be called in response to this event, and the <code>this</code> keyword is set to refer to the element in question</li>
+                            <li>You register a function to be called in response to this event by calling a jQuery method with the same name as the event (click, keypress, scroll, resize, etc)
+                                <pre><code>
+$(&#039;.sort-button&#039;).click(function(evt){
+    //code to respond to the click event
+    //evt param is a jQuery Event object
+    //with info about the event itself
+});
+                                </code></pre>
+                            </li>
+
+                            <li>During the event handler function, the <code>this</code> keyword is set to refer to the element in question</li>
+
+                            <li>Note that <code>this</code> refers to the underlying DOM element, not a jQuery-wrapped version of that element, so you often will want to convert <code>this</code> to a jQuery object using <code>var jelem = $(this);</code></li>
+
+                            <li>Every event handler is passed a reference to the <a href="http://api.jquery.com/category/events/event-object/">jQuery Event object</a> as the first parameter; this provides lots of info about the event itself, such as which keys wee pressed, which mouse button was clicked, where the mouse is on the screen, etc.</li>
                         </ol>
                     </li>
 
-                    <li>Some events are generated in response to things happening in the system (timer fires, network request completes, etc)</li>
+                    <li>Other events are generated in response to things happening in the system (timer fires, network request completes, etc); we will investigate these more when we get to AJAX</li>
 
-                    <li></li>
                 </ol>
             </li>
 
             <li>Manipulating
+                <ol>
+                    <li>Once you find the element(s) you want, you can use jQuery methods to manipulate them in interesting ways</li>
+
+                    <li>Use <code>addClass()</code>, <code>removeClass()</code>, and <code>toggleClass()</code> to adjust the <code>class</code> attribute of the element(s)</li>
+
+                    <li>Use <code>css()</code> to alter individual style properties</li>
+
+                    <li>Use <code>attr()</code> to get or set other attributes on the element(s)</li>
+
+                    <li>Use <code>append()</code> to append new content to the element(s)</li>
+
+                    <li>Use <code>empty()</code> to completely clear out an element's content</li>
+
+                    <li>Use <code>html()</code> to change the element's HTML content; use <code>text()</code> to just change the text</li>
+
+                    <li>Use <code>hide()</code>, <code>show()</code>, and <code>toggle()</code> to hide/show the elements</li>
+
+                    <li>Use <code>clone()</code> to clone the element(s) and their descendants</li>
+
+                    <li>Use <code>position()</code> and <code>offset()</code> to get the element's position relative to its offset parent and the page respectively</li>
+
+                    <li>Use <code>scrollLeft()</code> and <code>scrollTop()</code> to determine current scroll position</li>
+
+                    <li>Use <code>width()</code> and <code>height()</code> to get width and height measurements of the element</li>
+
+                </ol>
             </li>
 
             <li>Animation Effects
+                <ol>
+                    <li>In addition to simple and immediate hiding and showing, jQuery offers a few animation effects as well</li>
+
+                    <li>Use <code>fadeIn()</code> and <code>fadeOut()</code> to fade elements in and out (adjusts opacity over a length of time)</li>
+
+                    <li>Use <code>slideDown()</code> and <code>slideUp()</code> to slide elements in from above or below</li>
+
+                    <li>Use <code>animate()</code> to do your own custom animations</li>
+                </ol>
             </li>
 
         </ol> <!-- lecture -->
