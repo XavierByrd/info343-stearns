@@ -61,7 +61,9 @@
                 <ol>
                     <li>A big-ol' file containing a bunch of JavaScript</li>
 
-                    <li>Sits in between your code and the raw DOM API</li>
+                    <li>Sits in between your code and the raw DOM API
+                        <img src="img/jquery.png" alt="jQuery block diagram" class="img-responsive">
+                    </li>
 
                     <li>Provides a number of helpful features:
                         <ol>
