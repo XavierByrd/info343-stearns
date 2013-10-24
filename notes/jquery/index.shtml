@@ -137,7 +137,7 @@ $(function() {
                 </ol>
             </li>
 
-            <li>Finding
+            <li><a href="http://api.jquery.com/category/selectors/">Finding</a>
                 <ol>
                     <li>Your code in the document ready function will generally want to find various elements on the page so that you can manipulate them or register events on them (e.g., click, keypress, hover, etc)</li>
 
@@ -170,7 +170,7 @@ var jElems = $('.foo button');
                 </ol>
             </li>
 
-            <li>Traversing
+            <li><a href="http://api.jquery.com/category/traversing/">Traversing</a>
                 <ol>
                     <li>Once you've found one or more elements, you can also find and traverse the element tree from there</li>
 
@@ -187,7 +187,7 @@ var jElems = $('.foo button');
                 </ol>
             </li>
 
-            <li>Handling Events
+            <li><a href="http://api.jquery.com/category/events/">Handling Events</a>
                 <ol>
                     <li>JavaScript in the global scope is executed as soon as the file is parsed; the rest of your code execution is all event-based, meaning that you write code that runs when some event happens</li>
 
@@ -218,7 +218,7 @@ $(&#039;.sort-button&#039;).click(function(evt){
                 </ol>
             </li>
 
-            <li>Manipulating
+            <li><a href="http://api.jquery.com/category/manipulation/">Manipulating</a>
                 <ol>
                     <li>Once you find the element(s) you want, you can use jQuery methods to manipulate them in interesting ways</li>
 
@@ -247,7 +247,7 @@ $(&#039;.sort-button&#039;).click(function(evt){
                 </ol>
             </li>
 
-            <li>Animation Effects
+            <li><a href="http://api.jquery.com/category/effects/">Animation Effects</a>
                 <ol>
                     <li>In addition to simple and immediate hiding and showing, jQuery offers a few animation effects as well</li>
 
