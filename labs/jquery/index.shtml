@@ -184,26 +184,61 @@ var Employees = {
                     <p>Adding the 'active' style class to the clicked button is relatively easy: just use jQuery's <code><a href="http://api.jquery.com/addClass/">addClass()</a></code> method on the clicked button.</p>
 
                 </section>
+                
+                <section id="github">
+                    <h2>Stage, Commit, and Push to GitHub</h2>
 
+                    <!--#include virtual="../inc/commit.html" -->
+                </section>
+
+                <section id="submit">
+                    <h2>Publish Site and Submit URL via Canvas</h2>
+
+                    <!--#include virtual="../inc/publish.html" -->
+
+                    <p>After you've published your site and verified that it's working, <strong>submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288923">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299190">Section B</a>)</strong>.</p>
+                </section>
 
                 <section id="optional-steps">
                     <h2>Optional Steps</h2>
-                </section>
 
-                <p>If you get done early, or just want the extra challenge, try some of these optional steps.</p>
+                    <p>If you get done early, or just want the extra challenge, try some of these optional steps.</p>
 
-                <h3>Add a Fade-In Effect</h3>
+                    <h3>Add a Fade-In Effect</h3>
 
-                <p>The jQuery library provides a framework for animation effects, similar to the transitions and transforms we learned in CSS. In this optional step, we'll make the address book entries fade in after we have added them to the page.</p>
+                    <p>The jQuery library provides a framework for animation effects, similar to the transitions and transforms we learned in CSS. In this optional step, we'll make the address book entries fade in after we have added them to the page.</p>
 
-                <p>In order to make something fade in, it first must be hidden. So at the start of your <code>render()</code> function, just before you use the <code>empty()</code> method on the address book element to clear it out, use the jQuery <code><a href="http://api.jquery.com/hide/">hide()</a></code> method to hide the entire address book element.</p>
+                    <p>In order to make something fade in, it first must be hidden. So at the start of your <code>render()</code> function, just before you use the <code>empty()</code> method on the address book element to clear it out, use the jQuery <code><a href="http://api.jquery.com/hide/">hide()</a></code> method to hide the entire address book element.</p>
 
-                <p>Next, at the very end of your <code>render()</code> method, after you have added all the address book entries, and just before you exit the function, use the jQuery <code><a href="http://api.jquery.com/fadeIn/">fadeIn()</a></code> method to make the populated address book slowly fade in rather than just appear suddenly.</p>
+                    <p>Next, at the very end of your <code>render()</code> method, after you have added all the address book entries, and just before you exit the function, use the jQuery <code><a href="http://api.jquery.com/fadeIn/">fadeIn()</a></code> method to make the populated address book slowly fade in rather than just appear suddenly.</p>
 
-                <p>Note that the <code>fadeIn()</code> method accepts an optional settings object, which can use to control the speed and easing of the effect.</p>
+                    <p>Note that the <code>fadeIn()</code> method accepts an optional settings object, which can use to control the speed and easing of the effect.</p>
 
+                    <h3>Add Bootstrap Popovers on Sort Buttons</h3>
 
+                    <p>In web user interfaces (UIs), it's often helpful to provide extra information about a command button when your reader hovers the mouse over it. Bootstrap has a couple of options for this, and in this optional step, we'll use their <a href="http://getbootstrap.com/javascript/#popovers">Popover component</a> to show a kind of tooltip.</p>
+
+                    <p>Bootstrap popups are attached to elements using JavaScript. For these popovers, Bootstrap actually creates what are known as jQuery plug-ins&mdash;that is, they extend the core jQuery object, adding a new popover() method that accepts a settings object.</p>
+
+                    <p>To attach a popover to our sorting buttons, we need to select the buttons using jQuery, and then call the <code>popover()</code> method on the resulting jQuery object. Put the following code into your document ready function:</p>
+
+                    <pre><code>
+    $(&#039;.sort-ui .btn&#039;).popover({
+        content: &#039;Click to Resort&#039;,
+        container: &#039;body&#039;,
+        trigger: &#039;hover&#039;,
+        placement: &#039;bottom&#039;
+    });
+
+                    </code></pre>
+
+                    <p>This will cause a popover to be displayed when hovering any of the sort buttons, with the message 'Click to Resort'. That's pretty good, but it would be even better if that message changed to indicate <em>how</em> the list will be resorted. That is, the content should say 'Click to Resort by Name' when hovering over the Name button, but say 'Click to Resort by Title' when hovering over the Title button.</p>
+
+                    <p>This can be done by providing an anonymous, in-line <code>function(){...}</code> for the <code>content</code> property instead of a simple string. Inside this function, the <code>this</code> keyword will refer to the button being hovered over. Note that The HTML content of that button contains the very word we want to append to our generic 'Click to Resort by ' message. Replace the static string we were using for the <code>content</code> property with a function that returns the expression <code>'Click to Resort by ' + $(this).html();</code>.</p>
+
+                    <p>If you do it correctly, the popover should read 'Click to Resort by Name' while hovering over the Name button, and 'Click to Resort by Title' while hovering over the title button.</p>
             
+                </section>
 
             </article>
 
