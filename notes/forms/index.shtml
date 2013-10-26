@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for HTML Forms Lecture">
+    <title>HTML Forms</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>HTML Forms</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>HTTP and Forms</li>
+                    <li>Inputs, Selects, Buttons, and Labels</li>
+                    <li>Checkboxes and Radio Buttons</li>
+                    <li>New HTML5 Inputs: Spinners, Sliders, Dates, Colors</li>
+                    <li>Styling Forms</li>
+                    <li>Scripting Forms</li>
+                </ol>
+            </li>
+
+            <li>HTTP and Forms
+            </li>
+
+            <li>Inputs, Selects, Buttons, and Labels
+            </li>
+
+            <li>Checkboxes and Radio Buttons
+            </li>
+
+            <li>New HTML 5 Inputs
+            </li>
+
+            <li>Styling Forms
+            </li>
+
+            <li>Scripting Forms
+            </li>
+
+        </ol> <!-- lecture -->
+
+    </div> <!-- .container -->
+
+</body>
+</html>
