@@ -32,6 +32,39 @@
             </li>
 
             <li>HTTP and Forms
+                <ol>
+                    <li>Normal interaction flow for page with hyperlinks:
+                        <img src="img/get-a-flow.png" alt="interaction flow for pages with hyperlinks" class="img-responsive">
+                        <ol>
+                            <li>Browser GETs first page</li>
+                            <li>Reader clicks a hyperlink to go to another page</li>
+                            <li>Browser GETs url in <code>href</code> attribute of hyperlink</li>
+                        </ol>
+                    </li>
+
+                    <li>Normal interaction flow for page with GET form
+                        <img src="img/get-form-flow.png" alt="interaction flow for pages with GET forms" class="img-responsive">
+                        <ol>
+                            <li>Browser GETs first page</li>
+                            <li>Reader enters value(s) into form and submits</li>
+                            <li>Browser GETs url in <code>action</code> attribute of <code>&lt;form&gt;</code>, appending form field names and values after a '?'</li>
+                            <li>Encoding syntax is <code>name=value&amp;name=value&amp;name=value</code></li>
+                            <li>'&amp;', '=', and spaces are encoded</li>
+                            <li>Overall limit for <em>entire URL</em> is 2048 characters</li>
+                        </ol>
+                    </li>
+
+                    <li>Normal interaction flow for page with POST form:
+                        <img src="img/get-a-flow.png" alt="interaction flow for pages with hyperlinks" class="img-responsive">
+                        <ol>
+                            <li>Browser GETs first page</li>
+                            <li>Reader enters value(s) into form and submits</li>
+                            <li>Browser POSTs to url in <code>action</code> attibute of <code>&lt;form&gt;</code>, sending encoded field values in post body</li>
+                            <li>Same encoding scheme, but sent in a different part of the request</li>
+                            <li>No size limit on post body (but some servers may enforce a very large limit)</li>
+                        </ol>
+                    </li>
+                </ol>
             </li>
 
             <li>Inputs, Selects, Buttons, and Labels
