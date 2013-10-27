@@ -74,17 +74,24 @@
                             <li>Reader enters value(s) into form and submits</li>
                             <li>Browser POSTs to url in <code>action</code> attibute of <code>&lt;form&gt;</code>, sending encoded field values in post body</li>
                             <li>Same encoding scheme, but sent in body rather than query string</li>
-                            <li>Encoding scheme is named in <code>Content-Type:</code> header</li>
+                            <li>Encoding scheme (application/x-www-form-urlencoded) is named in <code>Content-Type:</code> header</li>
                             <li>No explicit size limit on post body</li>
                         </ol>
                     </li>
                 </ol>
             </li>
 
+            <li>In-Class Coding Repository
+                <ol>
+                    <li><a href="https://github.com/drstearns/in-class-code-a">Section A (8:30)</a></li>
+                    <li><a href="https://github.com/drstearns/in-class-code-b">Section B (10:30)</a></li>
+                </ol>
+            </li>
+
             <li>Forms
                 <ol>
                     <li>Acts as a grouping element for a set of related form <dfn>fields</dfn></li>
-                    <li>Two key attributes: <code>method</code> and <code>action</code>
+                    <li>Two key attributes on <code>&lt;form&gt;</code> element
                         <ol>
                             <li><code>method</code> can be GET or POST</li>
                             <li><code>action</code> is URL to GET or POST to</li>
