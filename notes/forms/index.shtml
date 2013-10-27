@@ -23,8 +23,7 @@
                         <ol>
                             <li>Happy Halloween!</li>
                             <li><em>Please Read...</em></li>
-                            <li></li>
-                            <li></li>
+                            <li>Chapters 4, 5, 6, and 7 of <a href="http://diveintohtml5.info/">Dive Into HTML 5</a></li>
                         </ol>
                     </li>
                     <li>Fri, Nov 1
@@ -105,6 +104,8 @@
 
                     <li>Like all elements, fields may have an <code>id</code> and/or <code>class</code> attribute, but these are not sent to the server (used only for client-side CSS and JavaScript)</li>
 
+                    <li>Form fields can also have <code>readonly</code> and <code>disabled</code> attributes, which control whether the field is read-only and/or disabled</li>
+
                     <li>HTML5 defines a few other helpful attributes for fields
                         <ol>
                             <li><code>autofocus</code>: sets focus to field after page load (useful for login or search pages)</li>
@@ -118,8 +119,9 @@
 
                     <li>The <code>&lt;input&gt;</code> element is used for most kinds of fields
                         <ol>
-                            <li>use <code>type</code> attribute to specify type of input (text, checkbox, radio, email, tel, etc.)</li>
+                            <li>use <code>type</code> attribute to specify type of input (text, checkbox, radio, email, tel, url, etc.)</li>
                             <li>value entered into field is posted to server</li>
+                            <li>Example text field: <input type="text"></li>
                         </ol>
                     </li>
 
@@ -127,6 +129,23 @@
                         <ol>
                             <li>contains one or more <code>&lt;option&gt;</code> elements, each of which has a <code>value</code> attribute</li>
                             <li><code>value</code> attribute from selected option is sent to server</li>
+                            <li>Example: <select>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                                <option value="3">Option 3</option>
+                            </select></li>
+                        </ol>
+                    </li>
+
+                    <li>The <code>&lt;textarea&gt;</code> element is used for multi-line text entry
+                        <ol>
+                            <li>Use <code>rows</code> and <code>cols</code> attributes to specify initial height and width respectively (OK), or use CSS width and height props (better)</li>
+
+                            <li>Most browsers now let user resize the textarea via resize handle in lower-right corner</li>
+
+                            <li>Use <code>wrap</code> property to control how text wraps when submitted (hard or soft)</li>
+
+                            <li>Example: <textarea cols="40" rows="4"></textarea></li>
                         </ol>
                     </li>
 
@@ -134,6 +153,13 @@
                         <ol>
                             <li>Wrap around <code>&lt;input&gt;</code> or <code>&lt;select&gt;</code></li>
                             <li>Or use the <code>for</code> attribute to specify <code>id</code> of associated field (and of course, associated field must have an id attribute)</li>
+                        </ol>
+                    </li>
+
+                    <li>Note that fields can be used either <em>inside or outside</em> a <code>&lt;form&gt;</code> element
+                        <ol>
+                            <li>when inside, field value will be sent to server on form submit</li>
+                            <li>when outside, nothing is sent by browser, but your JavaScript can get the value and do something else with it (e.g., display elsewhere on the page, or send to a server via AJAX)</li>
                         </ol>
                     </li>
 
@@ -149,11 +175,96 @@
             </li>
 
             <li>New HTML 5 Inputs
+                <ol>
+                    <li>All of these are available in current browser versions, but will gracefully degrade to simple text inputs in older browsers</li>
+
+                    <li>There are many UI libraries that provide these sorts of controls for older browsers via JavaScript/CSS, so if you always want the controls shown, use those instead of the HTML 5 form controls</li>
+
+                    <li>But if you don't need to support the older browsers, or don't mind graceful degredation in older browsers, use these new controls as they will be faster and better supported over the long-run</li>
+
+                    <li>Numeric Spinners
+                        <ol>
+                            <li>Use <code>&lt;input type=&quot;number&quot;&gt;</code></li>
+                            <li>Include <code>min</code>, <code>max</code>, and <code>step</code> attributes to control range and stepping</li>
+                            <li>Example: <input type="number" min="0" max="100"></li>
+                        </ol>
+                    </li>
+
+                    <li>Numeric Sliders
+                        <ol>
+                            <li>Use <code>&lt;input type=&quot;range&quot;&gt;</code></li>
+                            <li>Include <code>min</code>, <code>max</code>, and <code>step</code> attributes to control range and stepping</li>
+                            <li>Example: <input type="range" min="0" max="100"></li>
+                        </ol>
+                    </li>
+
+                    <li>Date Pickers
+                        <ol>
+                            <li>Use <code>&lt;input type=&quot;date&quot;&gt;</code> (type can also be 'datetime-local' or just 'time' to get time portion as well, but not all browsers support datetime-local)</li>
+                            <li>Include <code>min</code> and <code>max</code> attributes to control range</li>
+                            <li>Exampe (date): <input type="date"></li>
+                            <li>Exampe (time): <input type="time"></li>
+                            <li>Exampe (datetime-local): <input type="datetime-local"></li>
+                        </ol>
+                    </li>
+
+                    <li>Search Box
+                        <ol>
+                            <li>Use <code>&lt;input type="search"&gt;</code></li>
+                            <li>Gives the box rounded corners on Mac, and a little clear button on the far right</li>
+                            <li>Many CSS frameworks, including Bootstrap, will reset these effects so it will look exactly like any other text input (hence why I won't show an example here)</li>
+                        </ol>
+                    </li>
+
+                    <li>Color Picker
+                        <ol>
+                            <li>Use <code>&lt;inpyt type="color"&gt;</code></li>
+                            <li>Value will be HEX version of color (suitable for CSS)</li>
+                            <li>Example: <input type="color"></li>
+                        </ol>
+                    </li>
+
+                </ol>
             </li>
 
             <li>Scripting Forms
                 <ol>
-                    <li>Validation</li>
+                    <li>Complex Validation
+                        <ol>
+                            <li>Use <code>required</code>, <code>pattern</code>, and <code>min/max</code> attributes for simple field-level validation</li>
+
+                            <li>But sometimes you need to do more complex multi-field validation (e.g., if Student license is selected, user must supply school name and student id number)</li>
+
+                            <li>Forms raise a submit event before sending form data to action url; you can catch this in JavaScript and return false to stop submission (using jQuery in this example):
+                                <pre><code>
+$(&#039;.address-form&#039;).submit(function(){
+    //validation code in here
+    //this will be a reference to the
+    //raw DOM form element
+
+    //return false to stop submit
+});                                  
+                                </code></pre>
+                            </li>
+
+                            <li>Up to you to display validation error messages: most sites display red text below or next to field(s) with problems</li>
+                        </ol>
+                    </li>
+
+                    <li>Submit Form via Code
+                        <li>Normally, forms are submitted when user clicks <code>&lt;button type="submit"&gt;</code>, but you can trigger form submission via JavaScript</li>
+
+                        <li>Code is almost the same as validation case:
+                            <pre><code>
+$(&#039;.address-form&#039;).submit();
+                            </code></pre>
+                        </li>
+
+                        <li>This isn't as necessary anymore since you can style buttons now, but used to be done quite a lot when people used graphical submit buttons</li>
+
+                    </li>
+
+
                 </ol>
             </li>
 
