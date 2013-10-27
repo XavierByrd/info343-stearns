@@ -18,16 +18,30 @@
 
         <ol class="lecture-outline">
             <li>Coming Up...
+                <ol>
+                    <li>Thurs, Oct 31
+                        <ol>
+                            <li>Happy Halloween!</li>
+                            <li><em>Please Read...</em></li>
+                            <li></li>
+                            <li></li>
+                        </ol>
+                    </li>
+                    <li>Fri, Nov 1
+                        <ol>
+                            <li>Lab 6: Forms and Scripting</li>
+                        </ol>
+                    </li>
+                </ol>
             </li>
 
             <li>Today
                 <ol>
                     <li>HTTP and Forms</li>
-                    <li>Inputs, Selects, Buttons, and Labels</li>
-                    <li>Checkboxes and Radio Buttons</li>
+                    <li>Fields and Labels</li>
+                    <li>The Oddities of Checkboxes and Radio Buttons</li>
                     <li>New HTML5 Inputs: Spinners, Sliders, Dates, Colors</li>
-                    <li>Styling Forms</li>
-                    <li>Scripting Forms</li>
+                   <li>Scripting Forms</li>
                 </ol>
             </li>
 
@@ -47,7 +61,7 @@
                         <ol>
                             <li>Browser GETs first page</li>
                             <li>Reader enters value(s) into form and submits</li>
-                            <li>Browser GETs url in <code>action</code> attribute of <code>&lt;form&gt;</code>, appending form field names and values after a '?'</li>
+                            <li>Browser GETs url in <code>action</code> attribute of <code>&lt;form&gt;</code>, appending form field names and values as a <dfn>query string</dfn> (bit after the '?')</li>
                             <li>Encoding syntax is <code>name=value&amp;name=value&amp;name=value</code></li>
                             <li>'&amp;', '=', and spaces are encoded</li>
                             <li>Overall limit for <em>entire URL</em> is 2048 characters</li>
@@ -60,26 +74,87 @@
                             <li>Browser GETs first page</li>
                             <li>Reader enters value(s) into form and submits</li>
                             <li>Browser POSTs to url in <code>action</code> attibute of <code>&lt;form&gt;</code>, sending encoded field values in post body</li>
-                            <li>Same encoding scheme, but sent in a different part of the request</li>
-                            <li>No size limit on post body (but some servers may enforce a very large limit)</li>
+                            <li>Same encoding scheme, but sent in body rather than query string</li>
+                            <li>Encoding scheme is named in <code>Content-Type:</code> header</li>
+                            <li>No explicit size limit on post body</li>
                         </ol>
                     </li>
                 </ol>
             </li>
 
-            <li>Inputs, Selects, Buttons, and Labels
+            <li>Forms
+                <ol>
+                    <li>Acts as a grouping element for a set of related form <dfn>fields</dfn></li>
+                    <li>Two key attributes: <code>method</code> and <code>action</code>
+                        <ol>
+                            <li><code>method</code> can be GET or POST</li>
+                            <li><code>action</code> is URL to GET or POST to</li>
+                        </ol>
+                    </li>
+                    <li>Like any element, <code>&lt;form&gt;</code> may have <code>id</code> and/or <code>class</code> attributes</li>
+                </ol>
+            </li>
+
+            <li>Fields
+                <ol>
+                    <li>Forms typically have one or more named fields</li>
+
+                    <li>HTML specifies a few different elements for fields depending on the type of control you want: input, select, textarea</li>
+
+                    <li>Each field should have a <code>name</code> attribute specifying the field name, which will be sent to the server</li>
+
+                    <li>Like all elements, fields may have an <code>id</code> and/or <code>class</code> attribute, but these are not sent to the server (used only for client-side CSS and JavaScript)</li>
+
+                    <li>HTML5 defines a few other helpful attributes for fields
+                        <ol>
+                            <li><code>autofocus</code>: sets focus to field after page load (useful for login or search pages)</li>
+                            <li><code>placeholder</code>: grayed text that should be displayed when field is empty; often suggests what kind of info to enter</li>
+                            <li><code>required</code>: browser enforces that field must have a value before submit</li>
+                            <li><code>pattern</code>: browser enforces that field value must match regular expression specified in this property</li>
+
+                            <li><strong>but</strong>, keep in mind that these are new and older browsers will simply ignore them; <strong>always validate on the server</strong> even if you also validate on the client</li>
+                        </ol>
+                    </li>
+
+                    <li>The <code>&lt;input&gt;</code> element is used for most kinds of fields
+                        <ol>
+                            <li>use <code>type</code> attribute to specify type of input (text, checkbox, radio, email, tel, etc.)</li>
+                            <li>value entered into field is posted to server</li>
+                        </ol>
+                    </li>
+
+                    <li>The <code>&lt;select&gt;</code> element is used for drop-down lists (choose option from list)
+                        <ol>
+                            <li>contains one or more <code>&lt;option&gt;</code> elements, each of which has a <code>value</code> attribute</li>
+                            <li><code>value</code> attribute from selected option is sent to server</li>
+                        </ol>
+                    </li>
+
+                    <li>The <code>&lt;label&gt;</code> element may be used for a field label
+                        <ol>
+                            <li>Wrap around <code>&lt;input&gt;</code> or <code>&lt;select&gt;</code></li>
+                            <li>Or use the <code>for</code> attribute to specify <code>id</code> of associated field (and of course, associated field must have an id attribute)</li>
+                        </ol>
+                    </li>
+
+                </ol>
             </li>
 
             <li>Checkboxes and Radio Buttons
+                <ol>
+                    <li>Checkboxes and Radio buttons use <code>&lt;input&gt;</code> element, but behavior is a little different</li>
+                    <li>For checkbox, browser posts a value of 'on' if checked; field not sent at all if unchecked</li>
+                    <li>For radio, use same <code>name</code> attribute for all radio buttons in the set and separate <code>value</code> attributes for each radio button; <code>value</code> of selected radio will be sent as value for common name</li>
+                </ol>
             </li>
 
             <li>New HTML 5 Inputs
             </li>
 
-            <li>Styling Forms
-            </li>
-
             <li>Scripting Forms
+                <ol>
+                    <li>Validation</li>
+                </ol>
             </li>
 
         </ol> <!-- lecture -->
