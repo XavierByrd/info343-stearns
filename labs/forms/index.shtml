@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+        <!--#include virtual="../inc/common-head.html" -->
+
+        <meta name="description" content="INFO 343 Forms and jQuery Lab">
+        <title>Lab 6: Ship-To/Bill-To Form</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <!--#include virtual="../inc/crumbtrail.html" -->
+
+            <article class="lab">
+
+                <section id="intro">
+                    <div class="page-header lab-title">
+                        <h1>Lab 6: Ship-To and Bill-To Form</h1>
+                        <p class="lead">Forms and jQuery</p>
+                    </div>
+
+                    <p>In class this week, we learned how to construct HTML forms to gather information from the reader, and manipualte those forms using JavaScript and jQuery. In this lab, we will practice those skills by building a typical ship-to and bill-to address form, similar to what you'd see when ordering a product online.</p>
+
+                    <h2>General Instructions</h2>
+                    <ol>
+                        <li>If you get stuck at any point, search the Internet, ask your neighbor, or ask the TA for help.</li>
+
+                        <li>At the end of the lab, submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288924">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299191">Section B</a>).</li>
+
+                        <li>If you don't finish all the required tasks during our lab time, finish them over the weekend and submit your published site URL before 8:00am on Monday morning.</li>
+
+                        <li>If you finish all the required steps, go on and try some of the <a href="#optional-steps">optional ones</a>. Remember that you have to do at least one of the optional steps in order to get 10/10 on the Completeness portion of your grade. If you do only the required steps, you'll get 9/10 on that portion.</li>
+                    </ol>
+
+                    <h2>Required Steps</h2>
+                    <ol>
+                        <li><a href="#fork">Fork my lab6 repository and clone to your lab machine</a></li>
+
+                        <li><a href="#code">Write the JavaScript to build the address book and resort it</a></li>
+
+                        <li><a href="#github">Stage, Commit, and Push to GitHub</a></li>
+
+                        <li><a href="#submit">Publish your site to your web hosting server and submit the site URL via Canvas</a></li>
+                    </ol>
+                </section>
+
+                <section id="fork">
+                    <h2>Fork and Clone</h2>
+
+                    <p>First, go to <a href="https://github.com" target="_blank">GitHub</a> and sign into your account.</p>
+
+                    <p>Next, go to my <a href="https://github.com/drstearns/lab6" target="_blank">lab5 repository on GitHub</a>, and fork it. You did this in our previous lab, but in case you forgot how to do so, click the "Fork" button at the top-right of the page and follow any instructions you receive. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the various images and file stubs you'll need.</p>
+
+                    <p>Once you've forked the repository, clone it to your local lab machine using SourceTree. We've done this a few times now, but if you've forgotten how, follow these steps:</p>
+
+                    <ol>
+                        <li>In <strong>your forked lab6 repository</strong> (not my original one) on the GitHub site, copy the 'HTTPS Clone URL' on the right side of the screen</li>
+                        <li>Run the SourceTree app</li>
+                        <li>Click on the Clone/New button in the upper-left of the screen</li>
+                        <li>Enter the GitHub HTTPS clone URL you copied into the Source URL box</li>
+                        <li>Hit tab, and SourceTree will automatically populate the Destination Path for you (usually a new folder named after your repository in the My Documents folder)</li>
+                        <li>Click the 'Clone' button to clone the GitHub repository to your local machine</li>
+                        <li>If you get stuck, as your TA or a neighbor for help</li>
+                    </ol>
+                </section>
+
+                <section id="code">
+                    <h2>Write the JavaScript</h2>
+
+                    
+                </section>
+
+                <section id="github">
+                    <h2>Stage, Commit, and Push to GitHub</h2>
+
+                    <!--#include virtual="../inc/commit.html" -->
+                </section>
+
+                <section id="submit">
+                    <h2>Publish Site and Submit URL via Canvas</h2>
+
+                    <!--#include virtual="../inc/publish.html" -->
+
+                    <p>After you've published your site and verified that it's working, <strong>submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288924">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299191">Section B</a>)</strong>.</p>
+                </section>
+
+                <section id="optional-steps">
+                    <h2>Optional Steps</h2>
+
+                    <p>If you get done early, or just want the extra challenge, try some of these optional steps.</p>
+
+            
+                </section>
+
+            </article>
+
+        </div> <!-- .container -->
+    </body>
+</html>
