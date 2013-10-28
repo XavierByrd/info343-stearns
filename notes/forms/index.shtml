@@ -126,8 +126,9 @@
 
                     <li>The <code>&lt;input&gt;</code> element is used for most kinds of fields
                         <ol>
-                            <li>use <code>type</code> attribute to specify type of input (text, checkbox, radio, email, tel, url, etc.)</li>
+                            <li>use <code>type</code> attribute to specify type of input (text, password, checkbox, radio, email, tel, url, hidden, etc.)</li>
                             <li>value entered into field is posted to server</li>
+                            <li><code>type=hidden</code> creates a field not visible to the reader, but still accessible by JavaScript; useful for passing extra info, or sending a bunch of data encoded in another format (e.g., JSON or XML)</li>
                             <li>Example text field: <input type="text"></li>
                         </ol>
                     </li>
