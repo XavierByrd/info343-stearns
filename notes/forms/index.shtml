@@ -36,11 +36,12 @@
 
             <li>Today
                 <ol>
+                    <li>Debrief Lab 6</li>
                     <li>HTTP and Forms</li>
                     <li>Fields and Labels</li>
                     <li>The Oddities of Checkboxes and Radio Buttons</li>
                     <li>New HTML5 Inputs: Spinners, Sliders, Dates, Colors</li>
-                   <li>Scripting Forms</li>
+                    <li>Scripting Forms</li>
                 </ol>
             </li>
 
