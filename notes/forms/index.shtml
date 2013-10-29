@@ -69,7 +69,7 @@
                     </li>
 
                     <li>Normal interaction flow for page with POST form:
-                        <img src="img/get-a-flow.png" alt="interaction flow for pages with hyperlinks" class="img-responsive">
+                        <img src="img/post-form-flow.png" alt="interaction flow for pages with POST Forms" class="img-responsive">
                         <ol>
                             <li>Browser GETs first page</li>
                             <li>Reader enters value(s) into form and submits</li>
