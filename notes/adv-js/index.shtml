@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for HTML 5 Scripting Lecture">
+    <title>HTML 5 Scripting Features</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>HTML 5 Scripting Features</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Fri, Nov 1
+                        <ol>
+                            <li><a href="../../labs/forms/">Lab 6: Forms and Scripting</a></li>
+                        </ol>
+                    </li>
+
+                    <li>Tues, Nov 5: AJAX and Web 2.0
+                        <ol>
+                            <li><em>Please Read:</em></li>
+                            <li><a href="http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications/">AJAX: A New Approach to Web Applications</a></li>
+                            <li><a href="http://learn.jquery.com/ajax/">AJAX in jQuery</a></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li><a href="../forms/">New HTML 5 Form Controls Contd.</a></li>                    
+                    <li>HTML 5 Geolocation API</li>
+                    <li>HTML 5 Local Storage API</li>
+                    <li>In-Class Challenge!</li>
+                </ol>
+            </li>
+
+            <li>Geolocation API
+                <ol>
+                    <li>Current HTML 5 browsers offer a function that can returns a <a href="http://diveintohtml5.info/geolocation.html">Position object</a>, which has properties for the current latitude, longitude, altitude, accuracy, heading, and speed.</li>
+
+                    <li>User must approve divulging their current position</li>
+
+                    <li><strong>Note:</strong> Chrome will block geolocation on pages loaded from the file system (file://)! Firefox doesn't seem to do this</li>
+
+                    <li>All HTML 5 browsers will provide values for latitude, longitude, and accuracy, but the other properties may not have values on some browsers/devices</li>
+
+                    <li>On desktop/laptop browsers, accuracy is very general; tends be based on the location of your ISP</li>
+
+                    <li>On mobile devices with GPS, accuracy can be quite precise</li>
+
+                    <li>The code:
+                        <pre><code>
+//the getCurrentPosition() method accepts a function
+//that will be called after the user approves, and the
+//geolocation has been ascertained
+if (navigator &amp;&amp; navigator.geolocation)
+    navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
+else
+    alert(&quot;Your browser doesn&#039;t appear to support geolocation!&quot;);
+
+function onGeoSuccess(position) {
+    //position is an object with properties (all numbers):
+    // coords.latitude, coords.longitude, coords.accuracy
+    // coords.altitude, coords.heading, coords.speed
+
+    alert("Your current coordinates are latitude=" 
+        + position.coords.latitude 
+        + ", longitude="
+        + position.coords.longitude);
+}
+
+function onGeoError(err) {
+    //err is an object with properties:
+    // code (number), message (string)
+    alert("Sorry, I was unabe to obtain your coordinates for the following reason: " 
+        + err.message);
+}
+                        </code></pre>
+                    </li>
+
+                    <li><button class="btn btn-primary btn-geoloc">Try It!</button></li>
+
+                    <li>Once you have the current lat/long, you can do several interesting things:
+                        <ol>
+                            <li>Plot the reader's position on a Google Map</li>
+                            
+                            <li>Auto-redirect to appropriate sub-site for a multi-national company</li>
+
+                            <li>Use a web service via AJAX to get the current city/region so you can customize content (i.e., news stories for your region, nearby businesses and attractions, etc.)</li>
+
+                            <li>Put coordinates into hidden form fields that get sent to the server and saved in the database for future geolocation analysis</li>
+                        </ol>
+                    </li>
+
+                    <li>Let's write the code for the first idea: plot the current position on a Google map
+                        <ol>
+                            <li><a href="https://developers.google.com/maps/documentation/javascript/tutorial">Google Maps offers an API</a>, but you have to signup as a developer and obtain an "API Key" in order to use the service</li>
+
+                            <li>This is free, but they limit your free usage to 25,000 requests a day; after that, you have to pay</li>
+
+                            <li></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Local Storage API
+                <ol>
+                    <li></li>
+                </ol>
+            </li>
+
+            <li>In-Class Challenge!
+            </li>
+
+        </ol> <!-- lecture -->
+
+    </div> <!-- .container -->
+
+    <!-- hot link to minified jQuery library, version 2.0.3 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <script src="js/demo.js"></script>
+
+</body>
+</html>
