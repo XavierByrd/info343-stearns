@@ -4,7 +4,7 @@
         <!--#include virtual="../inc/common-head.html" -->
 
         <meta name="description" content="INFO 343 Forms and jQuery Lab">
-        <title>Lab 6: Ship-To/Bill-To Form</title>
+        <title>Lab 6: Sign-Up Form</title>
     </head>
     <body>
         <div class="container">
@@ -15,7 +15,7 @@
 
                 <section id="intro">
                     <div class="page-header lab-title">
-                        <h1>Lab 6: Ship-To and Bill-To Form</h1>
+                        <h1>Lab 6: Sign-Up Form</h1>
                         <p class="lead">Forms and jQuery</p>
                     </div>
 
