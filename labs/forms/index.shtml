@@ -49,7 +49,7 @@
 
                     <p>First, go to <a href="https://github.com" target="_blank">GitHub</a> and sign into your account.</p>
 
-                    <p>Next, go to my <a href="https://github.com/drstearns/lab6" target="_blank">lab5 repository on GitHub</a>, and fork it. You did this in our previous lab, but in case you forgot how to do so, click the "Fork" button at the top-right of the page and follow any instructions you receive. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the various images and file stubs you'll need.</p>
+                    <p>Next, go to my <a href="https://github.com/drstearns/lab6" target="_blank">lab6 repository on GitHub</a>, and fork it. You did this in our previous lab, but in case you forgot how to do so, click the "Fork" button at the top-right of the page and follow any instructions you receive. This will create a copy of this repository in your own account so that you have something to start with. The repository contains the various images and file stubs you'll need.</p>
 
                     <p>Once you've forked the repository, clone it to your local lab machine using SourceTree. We've done this a few times now, but if you've forgotten how, follow these steps:</p>
 
