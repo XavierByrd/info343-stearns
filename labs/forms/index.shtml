@@ -19,7 +19,7 @@
                         <p class="lead">Forms and jQuery</p>
                     </div>
 
-                    <p>In class this week, we learned how to construct HTML forms to gather information from the reader, and manipualte those forms using JavaScript and jQuery. In this lab, we will practice those skills by building a typical ship-to and bill-to address form, similar to what you'd see when ordering a product online.</p>
+                    <p>In class this week, we learned how to construct HTML forms to gather information from the reader, and manipualte those forms using JavaScript and jQuery. In this lab, we will practice those skills by building a typical sign-up form that gathers contact detials from the reader.</p>
 
                     <h2>General Instructions</h2>
                     <ol>
@@ -36,7 +36,7 @@
                     <ol>
                         <li><a href="#fork">Fork my lab6 repository and clone to your lab machine</a></li>
 
-                        <li><a href="#code">Write the JavaScript to build the address book and resort it</a></li>
+                        <li><a href="#code">Write the JavaScript for the Form</a></li>
 
                         <li><a href="#github">Stage, Commit, and Push to GitHub</a></li>
 
@@ -67,6 +67,74 @@
                 <section id="code">
                     <h2>Write the JavaScript</h2>
 
+                    <p>Before you begin writing the JavaScript for the form, let's first take a look at the form itself. Open the 'index.html' file in the project root directory in your browser to see what it looks like. I've written the form markup for you, and have used Bootstrap's responsive style classes to lay it out. This is what the form should look like on a large monitor:</p>
+
+                    <p><img src="" alt="" class="screen-shot"></p>
+
+                    <p>And this is what it should look like on screens less than 768px:</p>
+
+                    <p><img src="" alt="" class="screen-shot"></p>
+
+                    <p>Notice how Bootstrap automatically re-lays out the form so that it fits properly on a small screen. Fields that were sitting side-by-side are now stacked, and the labels are moved to be on top of the inputs rather than on the left side.</p>
+
+                    <p>Our goal in this lab is to write JavaScript to accomplish the following things:</p>
+                    <ul>
+                        <li>Load the State <code>&lt;select&gt;</code> with the full list of US states and territories (data provided)</li>
+                        <li>Show and enable the <code>&lt;input name="refer-other&gt;</code> when the reader chooses "Other" in the "How did you hear about us?" <code>&lt;select&gt;</code>, and hide it when the reader chooses something besides "Other"</li>
+                        <li>Validate the form fields before they get submitted to the server</li>
+                        <li>Redirect the browser to another page when the reader clicks the "No Thanks!" button</li>
+                    </ul>
+
+                    <p class="alert alert-info">These will be our required steps, but if you get done early, or want the extra challange, see the <a href="#optional-steps">optional steps</a> below for other things you can add to this form.</p>
+
+                    <h3>Create a Document Ready Function</h3>
+
+                    <p>Start your text editor, and open the file 'js/sign-up.js'. This is where we will write or JavaScript for this lab.</p>
+
+                    <p>Whenever you want to write code that will manipulate elements on the page, you should always wait until the document is actually ready for manipulation. The browser will raise an event when the document is ready, and the jQuery library makes it easy to <a href="http://learn.jquery.com/using-jquery-core/document-ready/">supply a function that should be called when that event is raised</a>. The verbose way of doing this looks like so:</p>
+
+                    <pre><code>
+//onDocReady
+//called when the document is ready for manipulation
+function onDocReady() {
+    //document is now ready for manipulation
+    
+} //onDocReady()
+
+//tell jQuery to call the onDocReady function when 
+//the document ready event is raised
+jQuery(document).ready(onDocReady);
+                    </code></pre>
+
+                    <p>But you can instead use jQuery's more terse form for this, which looks like so:</p>
+
+<pre><code>
+//function that will be called when the 
+//document is ready for manipulation
+$(function(){
+    //document is now ready for manipulation
+
+}); //on document ready 
+</code></pre>
+
+                    <p>Whichever form you use, add your code just after the <code>//document is now ready for manipulation</code> comment.</p>
+
+                    <h3>Load the State Drop-Down</h3>
+
+                    <p>The HTML page contains only one <code>&lt;option&gt;</code> element in the state <code>&lt;select&gt;</code>, which says "select a state..." I've provided a JavaScript file in the 'js' sub-directory called 'us-states.js', which defines a global variable named <code>usStates</code>, which is an array of objects, one for each US state and territory. Each object has a <code>name</code> property, which is the state's full name, and an <code>abbreviation</code> property, which is the state's abbreviation. We will now write the code to dynamically add an <code>&lt;option&gt;</code> element for each of those US states and terrtiroies. We did this in class on Tuesday, so this should be somewhat familiar.</p>
+
+                    <p>The general algorithm is to loop over the <code>usStates</code> array, creating a new <code>&lt;option&gt;</code> element for each state, and adding that new <code>&lt;option&gt;</code> element to our state <code>&lt;select&gt;</code>.</p>
+
+                    <p>First, get a reference to the state <code>&lt;seleect&gt;</code> using the jQuery function (<code>$(...);</code>), and assign it to a variable. The basic syntax is:</p>
+
+                    <pre><code>
+var stateSelect = $('...css selector here...');
+                    </code></pre>
+
+                    <p>The state select already has a class name on it of 'us-states', so use the appropriate class selector sting, just like you would use if you were trying to apply style properties to that class.</p>
+
+                    
+
                     
                 </section>
 
@@ -88,6 +156,8 @@
                     <h2>Optional Steps</h2>
 
                     <p>If you get done early, or just want the extra challenge, try some of these optional steps.</p>
+
+                    <h3>Show a Confirmation Modal Before Abandoning Signup</h3>
 
             
                 </section>
