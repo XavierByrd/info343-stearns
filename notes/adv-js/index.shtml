@@ -46,6 +46,14 @@
                 </ol>
             </li>
 
+            <li>In-Class Coding Repository
+                <ol>
+                    <li><a href="https://github.com/drstearns/in-class-code-a">Section A (8:30)</a></li>
+                    <li><a href="https://github.com/drstearns/in-class-code-b">Section B (10:30)</a></li>
+                </ol>
+            </li>
+
+
             <li>Local Storage API
                 <ol>
                     <li>Allows you to save key/value pairs of information on the local machine, associated with the current page, which you can request again the next time the page is loaded</li>
@@ -136,11 +144,18 @@ function onGeoError(err) {
                 </ol>
             </li>
 
-            <li>In-Class Challenge! Plot your Location on a Google Map
+            <li id="icc">In-Class Challenge! Plot your Location on a Google Map
                 <ol>
                     <li><a href="geoloc-map/">Working example of what we will build</a></li>
 
                     <li>I will get you started, and depending on time, you can add more features</li>
+
+                    <li>At the end of class, submit <strong>only your geo-demo.js file</strong> via the Canvas assignement:
+                        <ol>
+                            <li><a href="https://canvas.uw.edu/courses/849701/assignments/2346323">Section A (8:30)</a></li>
+                            <li><a href="https://canvas.uw.edu/courses/873608/assignments/2346359">Section B (10:30)</a></li>
+                        </ol>
+                    </li>
                 </ol>
             </li>
 
