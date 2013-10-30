@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Geolocation Demo</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+
+        <p class="map-message"></p>
+
+        <!-- this div will be filled by the Google Maps API code with map tiles and markers-->
+        <div class="map-container"></div>
+        
+        <!-- hot link to minified jQuery library, version 2.0.3 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+        <!-- Google Maps API library -->
+        <!-- NOTE: the vale in the 'key' query string parameter is my API key
+                you should register for your own key and replace this value
+                go to https://code.google.com/apis/console
+        -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqnfFcZYL5k3Tav9kCUmZOSC-42yJupmc&sensor=true"></script>
+
+        <script src="js/geo-demo.js"></script>
+    </body>
+</html>

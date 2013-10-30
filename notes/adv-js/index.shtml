@@ -38,9 +38,34 @@
             <li>Today
                 <ol>
                     <li><a href="../forms/">New HTML 5 Form Controls Contd.</a></li>                    
-                    <li>HTML 5 Geolocation API</li>
                     <li>HTML 5 Local Storage API</li>
+                    <li>HTML 5 Geolocation API</li>
                     <li>In-Class Challenge!</li>
+                </ol>
+            </li>
+
+            <li>Local Storage API
+                <ol>
+                    <li>Allows you to save key/value pairs of information, associated with the current page, which you can request again the next time the page is loaded</li>
+
+                    <li>Supported by all current browsers, as well as a few versions back of each browser, even IE 8!</li>
+
+                    <li>But you should still test for support before trying to use it (use <a href="http://modernizr.com/">modernizr.js</a>)</li>
+
+                    <li>Size is limited to 5Mb for each <dfn>origin</dfn> (domain or sub-domain), but all data are stored as strings, so you may still run out of space</li>
+
+                    <li>If you do run out of space, JavaScript will throw an exception; use standard try/catch syntax to catch it</li>
+
+                    <li>Interface is available on <code>window.localStorage</code>
+                        <ol>
+                            <li><code>localStorage.setItem('key', value);</code></li>
+                            <li><code>var value = localStorage.getItem('key');</code></li>
+                            <li><code>localStorage.removeItem('key'); //removes specified value</code></li>
+                            <li><code>localStorage.clear(); //clears all values</code></li>
+                            <li><code>var numItems = localStorage.length;</code></li>
+                            <li><code>var key = localStorage.key(idx); //get key name at position idx</code></li>
+                        </ol>
+                    </li>
                 </ol>
             </li>
 
@@ -63,10 +88,13 @@
 //the getCurrentPosition() method accepts a function
 //that will be called after the user approves, and the
 //geolocation has been ascertained
-if (navigator &amp;&amp; navigator.geolocation)
-    navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError);
-else
+if (navigator &amp;&amp; navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(onGeoSuccess, onGeoError, 
+        {enableHighAccuracy: true});
+}
+else {
     alert(&quot;Your browser doesn&#039;t appear to support geolocation!&quot;);
+}
 
 function onGeoSuccess(position) {
     //position is an object with properties (all numbers):
@@ -101,26 +129,13 @@ function onGeoError(err) {
                             <li>Put coordinates into hidden form fields that get sent to the server and saved in the database for future geolocation analysis</li>
                         </ol>
                     </li>
-
-                    <li>Let's write the code for the first idea: plot the current position on a Google map
-                        <ol>
-                            <li><a href="https://developers.google.com/maps/documentation/javascript/tutorial">Google Maps offers an API</a>, but you have to signup as a developer and obtain an "API Key" in order to use the service</li>
-
-                            <li>This is free, but they limit your free usage to 25,000 requests a day; after that, you have to pay</li>
-
-                            <li></li>
-                        </ol>
-                    </li>
                 </ol>
             </li>
 
-            <li>Local Storage API
+            <li>In-Class Challenge! Plot your Location on a Google Map
                 <ol>
-                    <li></li>
+                    <li><a href="geoloc-map/">Working example of what we will build</a></li>
                 </ol>
-            </li>
-
-            <li>In-Class Challenge!
             </li>
 
         </ol> <!-- lecture -->

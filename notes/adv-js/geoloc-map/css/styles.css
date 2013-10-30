@@ -1,0 +1,17 @@
+/* by default, the html and body elements are only as high
+as the total height of all content within them
+if we want to make the map fill the viewport, we need to 
+explicitly set height on html and body to 100% */
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.map-container {
+    width: 100%;
+    height: 90%;
+    border: 1px dotted #999;
+}
