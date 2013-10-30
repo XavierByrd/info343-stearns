@@ -46,7 +46,9 @@
 
             <li>Local Storage API
                 <ol>
-                    <li>Allows you to save key/value pairs of information, associated with the current page, which you can request again the next time the page is loaded</li>
+                    <li>Allows you to save key/value pairs of information on the local machine, associated with the current page, which you can request again the next time the page is loaded</li>
+
+                    <li>Useful for storing information particular to the current device, or that you want to be available offline</li>
 
                     <li>Supported by all current browsers, as well as a few versions back of each browser, even IE 8!</li>
 
@@ -56,7 +58,7 @@
 
                     <li>If you do run out of space, JavaScript will throw an exception; use standard try/catch syntax to catch it</li>
 
-                    <li>Interface is available on <code>window.localStorage</code>
+                    <li>Interface is available on <code>window.localStorage</code> and since <code>window</code> is the global object in the browser, you can just use the <code>localStorage</code> object directly:
                         <ol>
                             <li><code>localStorage.setItem('key', value);</code></li>
                             <li><code>var value = localStorage.getItem('key');</code></li>
@@ -135,6 +137,8 @@ function onGeoError(err) {
             <li>In-Class Challenge! Plot your Location on a Google Map
                 <ol>
                     <li><a href="geoloc-map/">Working example of what we will build</a></li>
+
+                    <li>I will get you started, and depending on time, you can add more features</li>
                 </ol>
             </li>
 
