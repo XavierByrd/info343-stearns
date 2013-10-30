@@ -69,18 +69,17 @@
 
                     <p>Before you begin writing the JavaScript for the form, let's first take a look at the form itself. Open the 'index.html' file in the project root directory in your browser to see what it looks like. I've written the form markup for you, and have used Bootstrap's responsive style classes to lay it out. This is what the form should look like on a large monitor:</p>
 
-                    <p><img src="" alt="" class="screen-shot"></p>
+                    <p><img src="img/signup-wide.png" alt="Wide version of signup form screen shot" class="screen-shot img-responsive"></p>
 
                     <p>And this is what it should look like on screens less than 768px:</p>
 
-                    <p><img src="" alt="" class="screen-shot"></p>
+                    <p><img src="img/signup-narrow.png" alt="Narrow version of signup form screen shot" class="screen-shot img-responsive"></p>
 
                     <p>Notice how Bootstrap automatically re-lays out the form so that it fits properly on a small screen. Fields that were sitting side-by-side are now stacked, and the labels are moved to be on top of the inputs rather than on the left side.</p>
 
                     <p>Our goal in this lab is to write JavaScript to accomplish the following things:</p>
                     <ul>
                         <li>Load the State <code>&lt;select&gt;</code> with the full list of US states and territories (data provided)</li>
-                        <li>Show and enable the <code>&lt;input name="refer-other&gt;</code> when the reader chooses "Other" in the "How did you hear about us?" <code>&lt;select&gt;</code>, and hide it when the reader chooses something besides "Other"</li>
                         <li>Validate the form fields before they get submitted to the server</li>
                         <li>Redirect the browser to another page when the reader clicks the "No Thanks!" button</li>
                     </ul>
@@ -230,11 +229,13 @@ $(&#039;.cancel-signup&#039;).click(function(){
 
                     <h3>Show a Confirmation Modal Before Abandoning Signup</h3>
 
-                    <p>In the required steps, we implemented a click handler for the "No Thanks!" button that immediate takes the user to the Google home page. This is of course a bit jarring, and could result in the loss of work, so we really should confirm that the user really wants to leave the page before actually doing so.</p>
+                    <p>In the required steps, we implemented a click handler for the "No Thanks!" button that immediate takes the user to the Google home page. This is of course a bit jarring, and could result in the loss of work, so we really should confirm that the user really wants to leave the page before actually doing so. Our modal dialog will look like this:</p>
+
+                    <p><img src="img/modal.png" alt="Screen shot of modal confirmation dialog" class="img-responsive screen-shot"></p>
 
                     <p>Modern CSS frameworks like Bootstrap offer the ability to display a <code>&lt;div&gt;</code> of content as if it was a modal dialog box, and that <code>&lt;div&gt;</code> may contain any kind of HTML markup, and any sort of buttons you want to define. So instead of just sending the user to Google when he or she clicks the "No Thanks!" button, let's show the user a confirmation modal dialog and ask if he or she really wants to leave the page.</p>
 
-                    <p>I've already added the necessary markup to the page for you. It's in the <code>&lt;div class="modal fade cancel-signup-modal"&gt;</code> element at the bottom of the page. Here is what it looks like:</p>
+                    <p>I've already added the necessary markup to the page for you, as defined by Bootstrap. It's in the <code>&lt;div class="modal fade cancel-signup-modal"&gt;</code> element at the bottom of the page. Here is what it looks like:</p>
 
                     <pre><code>
 &lt;div class=&quot;modal fade cancel-signup-modal&quot;&gt;
