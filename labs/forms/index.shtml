@@ -91,7 +91,7 @@
 
                     <p>Start your text editor, and open the file 'js/sign-up.js'. This is where we will write or JavaScript for this lab.</p>
 
-                    <p>Whenever you want to write code that will manipulate elements on the page, you should always wait until the document is actually ready for manipulation. The browser will raise an event when the document is ready, and the jQuery library makes it easy to <a href="http://learn.jquery.com/using-jquery-core/document-ready/">supply a function that should be called when that event is raised</a>. The verbose way of doing this looks like so:</p>
+                    <p>Whenever you want to write code that will manipulate elements on the page, you should always wait until the document is actually ready for manipulation. The browser will raise an event when the document is ready, and the jQuery library makes it easy to <a href="http://learn.jquery.com/using-jquery-core/document-ready/">supply a function that should be called when that event is raised</a>. We call this function the "document ready function." The verbose way of doing this looks like so:</p>
 
                     <pre><code>
 //onDocReady
@@ -128,13 +128,84 @@ $(function(){
                     <p>First, get a reference to the state <code>&lt;seleect&gt;</code> using the jQuery function (<code>$(...);</code>), and assign it to a variable. The basic syntax is:</p>
 
                     <pre><code>
-var stateSelect = $('...css selector here...');
+var stateSelect = $(&#039;...appropriate css selector here...&#039;);
                     </code></pre>
 
                     <p>The state select already has a class name on it of 'us-states', so use the appropriate class selector sting, just like you would use if you were trying to apply style properties to that class.</p>
 
-                    
+                    <p>Once you have selected the state drop-down into a variable, you next need to loop over the <code>usStates</code> array. You can either use the standard JavaScript <code>for (...)</code> loop, or the jQuery <code><a href="http://api.jquery.com/jQuery.each/">$.each()</a></code> utility function. The standard for loop would look like this:</p>
 
+     
+                    <pre><code>
+var idx;
+var state;
+for (idx = 0; idx &lt; usStates.length; ++idx) {
+    state = usStates[idx];
+    //code to create new option element, populate, and append
+}
+                    </code></pre>
+
+                    <p>Whichever looping technique you choose, inside your loop you should create a new <code>&lt;option&gt;</code> element, set its <code>value</code> attribute to the state abbreviation, and set its HTML to the state name. Then <a href="http://api.jquery.com/append/">append</a> the new <code>&lt;option&gt;</code> element to the state <code>&lt;select&gt;</code> element.</p>
+
+                    <p>We did this in class, but if you're having troubles remembering how we did it, <a href="https://github.com/drstearns/in-class-code-b/blob/master/forms/js/forms-demo.js">review the code we wrote</a>.</p>
+
+                    <h3>Add Validation to the Form Fields</h3>
+
+                    <p>Next, we need to add some validation to our form fields so that we can help the user supply valid information. Our validation rules are as follows:</p>
+
+                    <ul>
+                        <li>The following fields are required: first-name, last-name, and email</li>
+                        <li>If the user has entered a value in the addr-1 field, the user must also enter something into the zip field</li>
+                    </ul>
+
+                    <p>The first rule can be accomplished by simply adding a <code>required</code> attribute to the first-name, last-name, and email <code>&lt;input&gt;</code> elements. Do that now.</p>
+
+                    <p class="alert alert-info">Since Safari and IE 9 and earlier don't actually support the <code>required</code> property, I've added an optional step you can do where you write some JavaScript to validate that these fields have values. If you want to do this optional step, <a href="#js-validate">see the description below</a>. If you don't want to do this optional step, just add the <code>required</code> attribute to the elements.</p>
+
+                    <p>The second rule requires some JavaScript to catch the form's submit event, and examine the fields. Let's add that now.</p>
+
+                    <p>In your document ready function, use jQuery to select our sign up form, and give it a function to call when the submit event on that form is raised. Our form has a style class on it called 'signup-form', which should make it rather easy to select into a jQuery object. You then need to pass a function to the <code>submit()</code> of that jQuery object. The syntax would look like this:</p>
+
+                    <pre id="form-submit-handler"><code>
+$(&#039;.signup-form&#039;).submit(function(){
+    //code to execute when the sign-up form is submitted
+    //this is the raw DOM form element
+    //wrap it in a jQuery object so we can use jQuery methods on it
+    var signupForm = $(this);
+
+});
+                    </code></pre>
+
+                    <p>In this function, you need to enforce the rule that if the addr-1 field has a value, the zip field must also have a value (but if the user has not entered anything into the addr-1 field, the zip may remain blank as well). To do this, you first need to get a reference to the addr-1 input element so you can test to see if it has a value. The <code>signupForm</code> variable in the above code snippet is a jQuery object, so that means you can use its <code>find()</code> method to find the <code>&lt;input name="addr-1"&gt;</code> element inside the sign-up form. The syntax for that would look like this:</p>
+
+                    <pre><code>
+    //select a descendant input element with the name &quot;addr-1&quot;
+    var addr1Input = signupForm.find(&#039;input[name=&quot;addr-1&quot;]&#039;);
+    var addr1Value = addrInput.val();
+                    </code></pre>
+
+                    <p>The addr1Value variable will contain the current value of the addr-1 input, and that will be a string containing whatever was typed into the field. If nothing has been typed into the field, it will be an empty string (length == 0).</p>
+
+                    <p>After you've gotten the value, test to see if its length > 0. If it is, you then need to get a reference to the <code>&lt;input name="zip"&gt;</code> element, and test whether it also has a value or not. If not, you should alert the user that a zip must be provided if an address is provided, and return false from the function to prohibit the form submission.</p>
+
+                    <p>Use the same <code>signupForm.find()</code> method to find the <code>&lt;input name="zip"&gt;</code> element, and use the same <code>val()</code> function to get its value.</p>
+
+                    <p>To alert the user, use the the global function <code>alert('...message to display....');</code>.</p>
+
+                    <h3>Handle the "No Thanks!" Button</h3>
+
+                    <p>Finally, we need to tell jQuery to call a function when the user clicks the "No Thanks!" button, and that function should redirect the browser back to some kind of home page. Since we building just one page and not the entire site, we will use http://www.google.com as our home page.</p>
+
+                    <p>In your document ready function, use jQuery to select the "No Thanks!" button, and provide a function to call when the user clicks that button. That button has a style class name of 'cancel-signup', so it's easily selectable using a class selector. We've done this several times in class, and you did it in your last lab, but if you've forgotten the syntax, it looks like this:</p>
+
+                    <pre><code>
+$(&#039;.cancel-signup&#039;).click(function(){
+    //code to run when user clicks &quot;No Thanks!&quot; button
+    
+}); //cancel-signup click
+                    </code></pre>
+
+                    <p>In this click handler function we want to redirect the browser to 'http://www.google.com'. That is easily done by setting the <code>window.location</code> property to a string containing this URL.</p>
                     
                 </section>
 
@@ -159,6 +230,118 @@ var stateSelect = $('...css selector here...');
 
                     <h3>Show a Confirmation Modal Before Abandoning Signup</h3>
 
+                    <p>In the required steps, we implemented a click handler for the "No Thanks!" button that immediate takes the user to the Google home page. This is of course a bit jarring, and could result in the loss of work, so we really should confirm that the user really wants to leave the page before actually doing so.</p>
+
+                    <p>Modern CSS frameworks like Bootstrap offer the ability to display a <code>&lt;div&gt;</code> of content as if it was a modal dialog box, and that <code>&lt;div&gt;</code> may contain any kind of HTML markup, and any sort of buttons you want to define. So instead of just sending the user to Google when he or she clicks the "No Thanks!" button, let's show the user a confirmation modal dialog and ask if he or she really wants to leave the page.</p>
+
+                    <p>I've already added the necessary markup to the page for you. It's in the <code>&lt;div class="modal fade cancel-signup-modal"&gt;</code> element at the bottom of the page. Here is what it looks like:</p>
+
+                    <pre><code>
+&lt;div class=&quot;modal fade cancel-signup-modal&quot;&gt;
+    &lt;div class=&quot;modal-dialog&quot;&gt;
+        &lt;div class=&quot;modal-content&quot;&gt;
+            &lt;div class=&quot;modal-header&quot;&gt;
+                &lt;h4 class=&quot;modal-title&quot;&gt;Abandon Signup?&lt;/h4&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-body&quot;&gt;
+                &lt;p&gt;Are you sure you don&#039;t want to signup to receive useless marketing spam for the rest of your life? I mean, this is a rare opportunity here. You&#039;d be a fool not to sign up!&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;modal-footer&quot;&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-default&quot; data-dismiss=&quot;modal&quot;&gt;No, Go Back to Signup Form&lt;/button&gt;
+                &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-abandon&quot;&gt;Yes, Get Me Out of Here!&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;&lt;!-- /.modal-content --&gt;
+    &lt;/div&gt;&lt;!-- /.modal-dialog --&gt;
+&lt;/div&gt;&lt;!-- /.modal --&gt;
+                    </code></pre>
+
+                    <p>This is a lot of markup, but it breaks down into a few logical sections. The outter-most <code>&lt;div&gt;</code> contains the entire modal dialog, and thus has the Bootstrap class name "modal". This div contains another div with the class name 'modal-dialog', and that in turn contains another div with the class name 'modal-content'. This modal content section is then divided into three main sections: the header, the body, and the footer. The header contains a title for the dialog; the body contains the main body message; and the footer contains a row of buttons.</p>
+
+                    <p>This markup will not be visible to the user until you call a Bootstrap JavaScript method to display it. This requires just one line of code, which you want to put inside the click event handler function you already wrote for the "No Thanks!" button:</p>
+
+                    <pre><code>
+$(&#039;.cancel-signup&#039;).click(function(){
+    //code to run when user clicks &quot;No Thanks!&quot; button
+    //show the modal confirmation dialog
+    //and don&#039;t reset window.location until the user clicks
+    //the &quot;Yes, Get Me Out of Here!&quot; button
+    $(&#039;.cancel-signup-modal&#039;).modal();
+}); //cancel-signup click
+                    </code></pre>
+
+                    <p>You should recognize the first part of the line: it uses the jQuery function to select the overall modal div, and it then calls the <code>modal()</code> method on the resulting jQuery object. That <code>modal()</code> method is actually provided by Bootstrap&mdash;their JavaScript file adds a few methods to the jQuery object to manipulate their user interface widgets. Thus is the magic of JavaScript: any JavaScript code can add methods to any object defined by another library!</p>
+
+                    <p>To finish this, we just need to catch the click event raised by the "Yes, Get Me Out of Here!" button in our modal dialog. This is just like catching the click of any other button, and I've already added a handy style class name to the button of 'btn-abandon' so it should be very easy to select using jQuery. The syntax would look like this, and you should add this at the end of your document ready function:</p>
+
+                    <pre><code>
+//add this at the end of your document ready function
+$(&#039;.btn-abandon&#039;).click(function(){
+    window.location = &#039;http://www.google.com&#039;;
+});
+                    </code></pre>
+
+                    <h3>Hide and Show the "Other" Input Based on Selection</h3>
+
+                    <p>One of the fields in the form is the "How did you hear about us?" drop-down. Next to that field is another input that can be used to specify a value if the user chooses the "Other" option. As the page exists, that input is always visible and enabled, even if the user has chosen something in the drop-down list besides "Other". In this step, we'll make the user experience better by hiding and disabling that extra input until the user actually selects "Other" in the drop-down list.</p>
+
+                    <p>Our first step is to make this input disabled and hidden by default. The first part of that is easy: simply add a <code>disabled</code> attribute to the <code>&lt;input name="refer-other"&gt;</code> element so that it will be disabled by default (disabled fields are not posted to the server). The second part of that can be done by adding a CSS style rule that applies to that element, and sets its <code>display</code> property to 'none'. In the 'css/styles.css' file, add the following style rule:</p>
+
+                    <pre><code>
+input[name=&quot;refer-other&quot;] {
+    display: none;
+}
+                    </code></pre>
+
+                    <p>The selector for this style rule reads as "apply these style properties to any <code>&lt;input&gt;</code> element that has a property called 'name' that is equal to the value 'refer-other'." That will match our <code>&lt;input name="refer-other"&gt;</code> element, and set its <code>display</code> property to 'none', making it hidden by default.</p>
+
+                    <p>Next, we need to ask jQuery to call a function every time the value of the <code>&lt;select name="refer"&gt;</code> changes. This is done similarly to how we've asked jQuery to call a function when some element is clicked: we first select the element using the jQuery function, and then pass a function to the relevant method (in this case, <code>change()</code>). The code, which should be added to your document ready function, should look like this:</p>
+
+                    <pre><code>
+$(&#039;select[name=&quot;refer&quot;]&#039;).change(function(){
+    //get a ref to the refer select
+    //add the refer-other input
+    var referSelect = $(this);
+    var otherInput = $(&#039;[name=&quot;refer-other&quot;]&#039;);
+
+    //if the refer select&#039;s value in lower case is equal to &quot;other&quot;...
+    if (&#039;other&#039; === referSelect.val().toLowerCase()) {
+        //remove the disabled attribute from the
+        //refer-other input, show it, and set focus to it
+        otherInput.removeAttr(&#039;disabled&#039;);
+        otherInput.show();
+        otherInput.focus()
+    }
+    else {
+        //otherwise, make the refer-other input disabled
+        //and hide it
+        otherInput.attr(&#039;disabled&#039;, true);
+        otherInput.hide();
+    }
+}); //refer change function
+                    </code></pre>
+
+
+                    <h3 id="js-validate">Validate Required Fields in JavaScript</h3>
+
+                    <p>In the required steps, you added the <code>required</code> attribute to a few fields that we wanted to make required: first-name, last-name, and email. These attributes work great in current versions of Chrome, Firefox, and IE, but they don't work in Safari or older versions of IE (version 9 and earlier). So to make sure that these fields are really required, we can add some more JavaScript to our <a href="#form-submit-handler">form submit event handler function</a>. This code will select each of these fields and verify that the field actually has a value.</p>
+
+                    <p>In your existing <a href="#form-submit-handler">form submit event handler function</a>, add code to find these three fields, and test their values. The syntax for finding the field and getting its value looks like this:</p>
+
+                    <pre><code>
+    var reqField;       //reference to a required field
+    var reqValue;       //the required field&#039;s value
+
+    //find the input with name=&quot;first-name&quot; and get its trimmed value
+    reqField = signupForm.find(&#039;input[name=&quot;first-name&quot;]&#039;);
+    reqValue = reqField.val().trim();
+    if (0 === reqValue.length) {
+        //field has no value
+        alert(&#039;You must enter a first name!&#039;);
+        return false;
+    }
+                    </code></pre>
+
+                    <p>Repeat this code fragment to test the 'last-name' and 'email' fields in the same way.</p>
             
                 </section>
 
