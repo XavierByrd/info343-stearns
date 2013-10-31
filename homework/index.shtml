@@ -150,6 +150,31 @@
                     <h2 id="v3">Version 3.0 <small>Due by Nov 7</small></h2>
                 </div>
 
+                <p>Your second version of the site really helped attract customers to Tony's restaurant! He now wants you to do two main things for the third version: make the menu page data-driven (i.e., populated from a data structure rather than static HTML); and run your design through a focus group and incorporate their feedback.</p>
+
+                <p>To make the menu data-driven, you'll use <a href="http://www.dawgpizza.com/orders/menu.js">a JavaScript file I've written</a>, which contains a data structure with information about the menu items. This data structure might easily come from a relational database, or could just exist in a file on the server that Tony can edit. In either case, this approach will allow Tony to change the menu items independently of your site design. He can add a new pizza, or change his prices, without having to change your complex HTML and CSS files.</p>
+
+                <p>Your job is to use this data structure to generate your menu HTML dynamically, rather than just typying it in statically. The best way to do this is to use a templating approach like we did in Lab 5 and in class. Add a block of HTML to your menu page for each kind of menu item (pizza, drink, dessert) and use that block as a template for each item in that category. For example, you'd create one block of HTML as a template for a pizza, with elements to hold the pizza name, description, and prices. Then you would loop over all the pizzas in the data structure, clone the template, populate it with the current pizza information, and finally add it to your page.</p>
+
+                <p>To get this menu data structure added to your page, include the following <code>&lt;script&gt;</code> element <strong>before</strong> your own JavaScript file that will use it:</p>
+
+                <pre><code>
+&lt;script src=&quot;http://www.dawgpizza.com/orders/menu.js&quot;&gt;&lt;/script&gt;
+                </code></pre>
+
+                <p>This script will define a global variable named <code>com.dawgpizza.menu</code>, which you can use in your script. That variable holds an object with three properties: <code>pizzas, drinks, and desserts</code>. Each of those properties contains an array of menu items objects. Each menu item object has the properties name and description. The pizza items have a property called prices, which is an array of 3 numbers representing the price for a small, medium and large version of that pizza. The drink and dessert items have a property named price, which is a single number representing the price of that item.</p>
+
+                
+
+
+
+                <p>The second thing you should do for this version is to put your site in front of a focus group.</p>
+
+
+                <div class="page-header">
+                    <h2 id="v4">Version 4.0 <small>Due by Nov 21</small></h2>
+                </div>
+
                 <p>Your redesigned site really helped attract customers to Tony's restaurant! He's now getting so busy that he wants to enable customers to place their delivery orders via the web site instead of having to call. For this version, you'll add some forms and scripting to make that possible.</p>
 
                 <p>Since we don't get into building databases and server-side processing in this course, you'll need to post the order to a page I've already built for you on the server. See the <a href="#order-post">posting instructions</a> below for details.</p>

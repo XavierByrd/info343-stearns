@@ -24,3 +24,7 @@ Basic CSS lecture:
 Advanced HTML/CSS week:
 - Code with me worked really well--keep doing that. But think through what you really should cover in "basic" vs "advanced" HTML/CSS. Perhaps introduce page layout a little earlier?
 - Don't worry about microdata at this point--seems pretty esoteric.
+
+HTML 5 Scripting
+- Should we cover local storage? Maybe not. If we do, avoid using Modernizr since their property name doesn't match the actual DOM object name.
+
