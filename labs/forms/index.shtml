@@ -180,7 +180,7 @@ $(&#039;.signup-form&#039;).submit(function(){
                     <pre><code>
     //select a descendant input element with the name &quot;addr-1&quot;
     var addr1Input = signupForm.find(&#039;input[name=&quot;addr-1&quot;]&#039;);
-    var addr1Value = addrInput.val();
+    var addr1Value = addr1Input.val();
                     </code></pre>
 
                     <p>The addr1Value variable will contain the current value of the addr-1 input, and that will be a string containing whatever was typed into the field. If nothing has been typed into the field, it will be an empty string (length == 0).</p>
