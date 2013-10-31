@@ -27,7 +27,7 @@ function onGeoSuccess(position) {
     //create a simple object for the map options
     var mapOptions = {
         center: ll,     //center the map on our current lat/long
-        zoom: 12,       //zoom level 12 (0 = whole earth)
+        zoom: 16,       //zoom level (0 = whole earth)
         mapTypeId: google.maps.MapTypeId.ROADMAP //roadmap type
     }
 
