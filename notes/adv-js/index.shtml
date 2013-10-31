@@ -148,7 +148,27 @@ function onGeoError(err) {
                 <ol>
                     <li><a href="geoloc-map/">Working example of what we will build</a></li>
 
-                    <li>I will get you started, and depending on time, you can add more features</li>
+                    <li>I will get you started, and depending on time, you can add more features:
+                        <ol>
+                            <li>Add <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-simple">a simple marker</a> to show your current position</li>
+                            
+                            <li>Show an <a href="https://developers.google.com/maps/documentation/javascript/examples/infowindow-simple">Info Window</a> when someone clicks on the marker</li>
+                            
+                            <li>Add an <a href="https://developers.google.com/maps/documentation/javascript/examples/marker-animations">animation to your marker</a></li>
+                            
+                            <li>Add a <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-traffic">Traffic layer</a> or <a href="https://developers.google.com/maps/documentation/javascript/examples/layer-transit">Transit Layer</a> to your map</li>
+                            
+                            <li>Try using a <a href="https://developers.google.com/maps/documentation/javascript/examples/icon-complex">Custom image for your marker</a></li>
+                            
+                        </ol>
+                    </li>
+
+                    <li>Links to Examples and References
+                        <ol>
+                            <li><a href="https://developers.google.com/maps/documentation/javascript/examples/">Code Examples</a></li>
+                            <li><a href="https://developers.google.com/maps/documentation/javascript/reference">Full Maps API Reference</a></li>
+                        </ol>
+                    </li>
 
                     <li>At the end of class, submit <strong>only your geo-demo.js file</strong> via the Canvas assignement:
                         <ol>
