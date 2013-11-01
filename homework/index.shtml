@@ -162,14 +162,49 @@
 &lt;script src=&quot;http://www.dawgpizza.com/orders/menu.js&quot;&gt;&lt;/script&gt;
                 </code></pre>
 
-                <p>This script will define a global variable named <code>com.dawgpizza.menu</code>, which you can use in your script. That variable holds an object with three properties: <code>pizzas, drinks, and desserts</code>. Each of those properties contains an array of menu items objects. Each menu item object has the properties name and description. The pizza items have a property called prices, which is an array of 3 numbers representing the price for a small, medium and large version of that pizza. The drink and dessert items have a property named price, which is a single number representing the price of that item.</p>
+                <p>This script will define a global variable named <code>com.dawgpizza.menu</code>, which you can use in your script. That variable holds an object with three properties: <code>pizzas, drinks, and desserts</code>. Each of those properties contains an array of menu items objects, but the pizza menu items have a different set of properties from the drink and dessert menu items. The pizza menu items have the properties: name, description, and prices, where prices is an array of 3 numbers representing the price for a small, medium and large version of that pizza. The drink and dessert items have the properties: name and price, where price is a single number representing the drink/dessert price.</p>
 
-                
+                <p>So for example, the code you would use to loop over the pizzas would look like this:</p>
 
+                <pre><code>
+var idx;
+var pizza;
+for (idx = 0; idx &lt; com.dawgpizza.menu.pizzas.length; ++idx) {
+    pizza = com.dawgpizza.menu.pizzas[idx];
 
+    //pizza.name = name of pizza
+    //pizza.description = description of pizza
+    //pizza.prices = array of three numbers, which are prices for small, medium, and large
+    //pizza.prices[0] = price for small
+    //pizza.prices[1] = price for medium
+    //pizza.prices[2] = price for large
 
-                <p>The second thing you should do for this version is to put your site in front of a focus group.</p>
+} //for each pizza
+                </code></pre>
 
+                <p>And the code to loop over the drinks would look like this:</p>
+
+                <pre><code>
+var idx;
+var drink;
+for (idx = 0; idx &lt; com.dawgpizza.menu.drinks.length; ++idx) {
+    drink = com.dawgpizza.menu.drinks[idx];
+
+    //drink.name = name of drink
+    //drink.price = price of drink
+
+} //for each drink
+                </code></pre>
+
+                <p>The code to loop over the desserts would be similar to the drinks example, except you would work with the <code>com.dawgpizza.menu.desserts</code> array instead of the <code>com.dawgpizza.menu.drinks</code> array.</p>
+
+                <p>The second thing you should do for this version is to put your site in front of a focus group. When building a professional site, it's always a good idea to assemble a group of target users and show them your site prototype, asking them for feedback. Is the site clear and engaging? Would they, as target customers, know where to look to get the information they need to know? Would they enjoy using this site, or could it be improved?</p>
+
+                <p>Since Tony's target customers are college students who like to eat pizza, it should be relatively easy for you to find 3 or more people to act as a focus group for you. Show them your current site and ask for their honest feedback. What would they think of this site if they ran across it on the Web? Would they think the restaurant is a good place to order a pizza from? What could make the site more appealing to them?</p>
+
+                <p>After you've gotten feedback from your focus group, incorporate that into your design. If you need to use different pictures, feel free to do so. If you need to change your colors or fonts, do so. If you need ot make some information more visible and obvious do that.</p>
+
+                <p>Remember that your goal is to create a professional-looking web site that you can show to a prospecitve employer as an example of your best work.</p>
 
                 <div class="page-header">
                     <h2 id="v4">Version 4.0 <small>Due by Nov 21</small></h2>
@@ -252,7 +287,7 @@
     ]
 }</code></pre>
 
-                <p>The <code>name</code>, <code>address1</code>, <code>zip</code>, and <code>phone</code> properties are required, but <code>address2</code>, <code>nextUrl</code>, and <code>nextCaption</code> are optional. If you supply a url in the <code>nextUrl</code> property, the confirmation page will show a button at the bottom that when clicked will take the customer to that url. The default caption for that button is "Back to Home Page," but you can override that by including a <code>nextCaption</code> property.</p>
+                <p>The <code>name</code>, <code>address1</code>, <code>zip</code>, and <code>phone</code> properties are required, but <code>address2</code>, <code>nextUrl</code>, and <code>nextCaption</code> are optional. If you supply a url in the <code>nextUrl</code> property, the confirmation page will show a button at the bottom that when clicked will take the customer to that url. The default caption for that button is 'Back to Home Page', but you can override that by including a <code>nextCaption</code> property.</p>
 
                 <p>The <code>items</code> array may contain any number of items, but you can include a <code>quantity</code> property on any item to order multiple of that same thing (e.g., 4 Cokes in the example above). Note that the <code>quantity</code> property is a number, and thus should not be in quotes. Each item needs to have a <code>type</code> property set to 'pizza', 'drink', or 'dessert'. The <code>name</code> property should match the menu item exactly (case sensitive). For pizzas, you must also include a <code>size</code> property set to 'small', 'medium', or 'large'.</p>
 
@@ -262,43 +297,7 @@
 
                 <p>The <code>json</code> variable would now contain a JSON-encoded string of your entire shopping cart, which should look like the sample above. Note that it's OK if there are other properties included in your JSON (e.g., price). Those extra properties will just be ignored on the server.</p>
 
-                <p>I'll leave it to you to figure out how to put that JSON string into an <code>&lt;input type="hidden" name="cart"&gt;</code> and submit the form.</p>
-
-                <p>Lastly, I've also built a helpful script file that you can use to quickly get the menu items into a convenient JavaScript data structure. This structure will make it easier not only to build your ordering user interface, but also to maintain the contents of the shopping cart. To use this file, <a href="placeorder/menu.js">download it</a>, and include it in your project.</p>
-
-
-                <div class="page-header">
-                    <h2 id="v4">Version 4.0 <small>Due by Nov 21</small></h2>
-                </div>
-
-                <p>Your online delivery order page was a huge success, so much so that Tony now wants increase his engagement with his online customers. Here are your instructions:</p>
-
-                <blockquote>
-                    <p>Hey, I loved how your order page made it easy for our cusotmers to interact with us via the site. Now I'd like to add a few more features to that ordering process, as well as some other kinds of interaction.</p>
-
-                    <p>We've been having some probems with customers entering invalid street addresses. Could you dynamically <a href="https://www.usps.com/business/web-tools-apis/address-information.htm">check the address they entered against the postal service records</a>? If the postal service doesn't think the address is valid, or has a cannonical suggestion, show that to the customer and have them verify the official version before you place the order.</p>
-
-                    <p>It would also be great to just fill out the customer's zip code for them based on the street address they enter. The postal service should be able to give you that. If you can't get the zip from the postal service, let the customer enter it.</p>
-
-                    <p>We already maintain a Twitter feed (@DawgPizzaSea), but I'd love to have those tweets <a href="https://dev.twitter.com/docs/embedded-timelines">displaying and updating live right on the home page</a>.</p>
-
-                    <p>I'd also love one of those <a href="https://developers.google.com/maps/documentation/javascript/tutorial">interactive Google maps</a> right on the home page that shows where we are located.</p>
-
-                    <p>Lastly, I'd like to include an interactive game on the site. This could be one of two things, depending on how much time you have, and how confident you feel. The first option would be a trivia quiz. Customers can test their pizza knowledge, and if they get 90% of the questions right, they get a coupon for a free pizza. I've written a few questions to get you started, but feel free to come up with some others of your own by searching the Internet.</p>
-
-                    <p>The second option would be a more graphical, interactive speed game. Players would start with a screen full of our various ingredients on the right, and a big "Start" button on the left. When they start the game, a series of pizza names from our menu should be displayed at the top, one at a time, and the player must respond by clicking the correct set of ingredients that go on that kind of pizza. As soon as the player clicks all the correct ingredients, you go on to the next pizza name. The game ends after 30 seconds, and if the player builds 8 or more pizzas within that time, the player gets a free pizza coupon.</p>
-
-                </blockquote>
-
-                <h3>Notes on APIs</h3>
-
-                <p>To use the Postal Service address APIs, you need to register to get a user id, which must be included in all requests (see <a href="https://www.usps.com/business/web-tools-apis/address-information.htm">their documentation</a>). This is very quick to do, but you do need to give them a valid email address, as they send you the user id via email.</p>
-
-                <p>For the twitter feed, you can use Twitter's Widget creator on your own account to create the necessary code, and then change the Twitter user name to @DawgPizzaSea.</p>
-
-                <h3>Notes on the Games</h3>
-
-                <p>You may implement either game (or both if you're really ambitious). The first game will be easier to implement, but remember to provide engaging visual and auditory feedback. The second game will be more challenging to implement, but ultimately more satisfying as well.</p>
+                <p>I'll leave it to you to figure out how to put that JSON string into an <code>&lt;input type="hidden" name="cart"&gt;</code> element and submit the form.</p>
 
             </article>
 
