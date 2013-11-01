@@ -185,11 +185,11 @@ $(&#039;.signup-form&#039;).submit(function(){
 
                     <p>The addr1Value variable will contain the current value of the addr-1 input, and that will be a string containing whatever was typed into the field. If nothing has been typed into the field, it will be an empty string (length == 0).</p>
 
-                    <p>After you've gotten the value, test to see if its length > 0. If it is, you then need to get a reference to the <code>&lt;input name="zip"&gt;</code> element, and test whether it also has a value or not. If not, you should alert the user that a zip must be provided if an address is provided, and return false from the function to prohibit the form submission.</p>
+                    <p>After you've gotten the value, test to see if its length > 0. If it is, you then need to get a reference to the <code>&lt;input name="zip"&gt;</code> element, and test whether it also has a value or not. If not, you should alert the user that a zip must be provided if an address is provided, and <strong>return false from the function to prohibit the form submission</strong>.</p>
 
                     <p>Use the same <code>signupForm.find()</code> method to find the <code>&lt;input name="zip"&gt;</code> element, and use the same <code>val()</code> function to get its value.</p>
 
-                    <p>To alert the user, use the the global function <code>alert('...message to display....');</code>.</p>
+                    <p>To alert the user, use the the global function <code>alert('...message to display....');</code>. Use an appropriate message so that the user knows what is wrong, and how to fix it.</p>
 
                     <h3>Handle the "No Thanks!" Button</h3>
 
@@ -204,7 +204,7 @@ $(&#039;.cancel-signup&#039;).click(function(){
 }); //cancel-signup click
                     </code></pre>
 
-                    <p>In this click handler function we want to redirect the browser to 'http://www.google.com'. That is easily done by setting the <code>window.location</code> property to a string containing this URL.</p>
+                    <p>In this click handler function we want to redirect the browser to 'http://www.google.com'. That is easily done by setting the <code>window.location</code> property to a string containing this URL (<code>window.location = 'http://www.google.com';</code>).</p>
                     
                 </section>
 
@@ -342,7 +342,7 @@ $(&#039;select[name=&quot;refer&quot;]&#039;).change(function(){
     }
                     </code></pre>
 
-                    <p>Repeat this code fragment to test the 'last-name' and 'email' fields in the same way.</p>
+                    <p>Repeat this code fragment to test the 'last-name' and 'email' fields in the same way. Or better yet, create an array with three string values, one for each of the required field names ('first-name', 'last-name', and 'email). Then write some code to loop over that array, using the current element value as a required field name to check.</p>
             
                 </section>
 
