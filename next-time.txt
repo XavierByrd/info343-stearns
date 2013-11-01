@@ -1,6 +1,12 @@
 Notes for Next Time
 ------------------------
 
+In general, consider Bob Boiko's idea of creating multiple paths through this class, with ways to demonstrate mastery that cause a student to "level up." Final 4.0 grade based on how high a level the student reaches. Possible paths:
+- Designer (focus on HTML/CSS and page design)
+- Developer (focus on interactivity and JavaScript)
+- Information Architect (focus on navigation, info categorization, etc)
+
+
 Things to add or restructure:
 - Need to have a short unit on URLs and paths, or require that they read a note on it. Apparently they don't learn anything about file paths in CSE 142. 
 
@@ -24,6 +30,10 @@ Basic CSS lecture:
 Advanced HTML/CSS week:
 - Code with me worked really well--keep doing that. But think through what you really should cover in "basic" vs "advanced" HTML/CSS. Perhaps introduce page layout a little earlier?
 - Don't worry about microdata at this point--seems pretty esoteric.
+
+JavaScript
+- Teach them the raw DOM and only teach jQuery as an option they might want to use (like Boostrap for CSS)
+- Spend a lot more time explaining the JavaScript language, especially literal object and array notation, iterating arrays and object properties
 
 HTML 5 Scripting
 - Should we cover local storage? Maybe not. If we do, avoid using Modernizr since their property name doesn't match the actual DOM object name.
