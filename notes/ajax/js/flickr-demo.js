@@ -34,7 +34,8 @@ function processJSON(data) {
         img = $(document.createElement('img'));
         img.attr({
             src: this.media.m,
-            alt: htmlEncode(this.title)
+            alt: htmlEncode(this.title),
+            title: htmlEncode(this.title)
         });
 
         a = $(document.createElement('a'));

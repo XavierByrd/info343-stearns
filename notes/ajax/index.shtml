@@ -191,6 +191,8 @@ $.getJSON(&quot;http://courses.washington.edu/info343/ajax/test.php&quot;, funct
 
                                     <li>Most sites allow you to specify the function name as a query string parameter in the <code>src</code> URL</li>
 
+                                    <li>Demo: <a href="flickr.html">Flickr Public Photo Feed</a></li>
+
                                     <li><strong>Use this only with sites you trust!</strong></li>
 
                                     <li>JSONP allows the site to return and execute any script it wants, and that script can do <em>anything</em> with the page, and your reader will have no idea that the script was not originally part of your page</li>
