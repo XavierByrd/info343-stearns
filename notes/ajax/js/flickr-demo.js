@@ -1,5 +1,5 @@
 
-var flickrFeedUrl = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=processJSON&format=json&tagmode=any";
+var flickrFeedUrl = "https://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=processJSON&format=json&tagmode=any";
 var container = $('.photos-container');
 
 //document ready function
