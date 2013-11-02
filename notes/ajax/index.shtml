@@ -89,6 +89,8 @@
 
                     <li>How Do I Use AJAX?
                         <ol>
+                            <li><img src="img/ajax.png" alt="AJAX flow"></li>
+                            
                             <li>You can use the raw DOM object XMLHttpRequest, but it is perhaps the worst-designed programming interface in the world...seriously...it's heinous</li>
 
                             <li>Libraries like jQuery wrap this object and provide <a href="http://api.jquery.com/category/ajax/">a much simpler programming interface </a>that handles a lot of the grunt-work for you</li>
