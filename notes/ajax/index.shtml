@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for AJAX Lecture">
+    <title>AJAX</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>AJAX</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Thurs, Nov 7: Building Mashups
+                        <ol>
+                            <li><em>please read:</em></li>
+                            <li><a href="http://en.wikipedia.org/wiki/Mashup_(web_application_hybrid)">Mashup Wikipedia Entry</a></li>
+                            <li><em>please browse:</em></li>
+                            <li><a href="http://www.programmableweb.com/apis/directory/">Programmable Web API Directory</a></li>
+                            <li><a href="http://www.programmableweb.com/mashups/directory">Example Mashups Directory</a></li>
+                        </ol>
+                    </li>
+
+                    <li>Friday, Nov 8: AJAX/Mashup Lab</li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>Debrief Lab 6</li>
+                    <li>Principles of Web Design by Example</li>
+                    <li>AJAX, JSON, and JSONP</li>
+                </ol>
+            </li>
+
+            <li>Web Design By Example
+                <ol>
+                    <li>Badly-Designed Sites
+                    </li>
+
+                    <li>Well-Designed Sites
+                    </li>
+                </ol>
+            </li>
+
+            <li>AJAX
+                <ol>
+                    <li>What is AJAX?
+                        <ol>
+                            <li>In the 1990s, the only way a web page could communicate with the server was to post an HTML <code>&lt;form&gt;</code>, but this resulted in a page navigation, and a loss of context</li>
+
+                            <li>In 1999, Microsoft added an interface to IE that allowed JavaScript to make an HTTP request and process the response without ever leaving the page; the interface was called IXMLHTTPRequest</li>
+
+                            <li>Mozilla soon copied this feature, but in true web style, they named the object slightly differently: XMLHttpRequest</li>
+
+                            <li>Other browser vendors copied Mozilla, and by 2005, it was widely supported, and soon became a standard</li>
+
+                            <li>Jesse James Garrett then published an influential article describing how to use this object to achieve a new kind of web programming model he called <a href="http://www.adaptivepath.com/ideas/ajax-new-approach-web-applications/">AJAX</a></li>
+
+                            <li>Originally, this was an acronym for "Asynchronous JavaScript and XML" (XML was really hot at that time, and everyone figured that it was really the only option for data encoding on the web)</li>
+
+                            <li>Basic idea is to send data to, or request data from, the web server via JavaScript, instead of posting HTML forms</li>
+
+                            <li>Simple approach is to just replace HTML form post with AJAX post; allows user to save but remain on the same page</li>
+
+                            <li>More complex approach is to download HTML template, request live data from server, and merge that with template; new data can then be requested every few seconds and merged again with template for dynamically-updating page</li>
+
+                            <li>Turns an ordinary web <em>site</em> into a web <em>application</em></li>
+                        </ol>
+                    </li>
+
+                    <li>Why use AJAX?
+                        <ol>
+                            <li>Provides a better user experience, even when using it to simply post form data</li>
+
+                            <li>Enables page to load and display new information dynamically (validating that a new user name is available, providing completion suggestions in an input field like Google search, displaying new information created by other users like new tweets, etc.)</li>
+
+                            <li>URL you request can be a server-side script that gets new data from a database or other storage medium</li>
+                        </ol>
+                    </li>
+
+                    <li>How Do I Use AJAX?
+                        <ol>
+                            <li>You can use the raw DOM object XMLHttpRequest, but it is perhaps the worst-designed programming interface in the world...seriously...it's heinous</li>
+
+                            <li>Libraries like jQuery wrap this object and provide <a href="http://api.jquery.com/category/ajax/">a much simpler programming interface </a>that handles a lot of the grunt-work for you</li>
+
+                            <li>For example, here's the jQuery code to load some JSON data:
+                                <pre><code>
+//the $.getJSON() method takes two parameters
+// - the URL to request
+// - a function to call once the request is complete
+//   and the response data is parsed
+//
+// the URL http://courses.washington.edu/info343/ajax/test.php will return a simple
+// JSON-encoded object with one property called &#039;message&#039;
+//
+$.getJSON(&quot;http://courses.washington.edu/info343/ajax/test.php&quot;, function(data){
+    //the parameter data now contains
+    //a parsed version of the JSON data
+    //returned from the server
+});
+                                </code></pre>
+                            </li>
+
+                            <li><button class="btn btn-primary try-ajax-demo">Try It!</button></li>
+
+                            <li>jQuery also gives you a lower-level method called <code><a href="http://api.jquery.com/jQuery.ajax/">$.ajax()</a></code>, which gives you more control over how the request is sent and how the results are processed</li>
+                        </ol>
+                    </li>
+
+                    <li>Response Formats
+                        <ol>
+                            <li>You can use AJAX to request any URL, but you can't really work with binary data in JavaScript, so the response needs to be in some kind of text format</li>
+
+                            <li>Currently, there are three encoding formats people tend to use:
+                                <ol>
+                                    <li>HTML
+                                        <ol>
+                                            <li>Used for pre-formatted HTML fragment that you add to your page</li>
+                                            <li>Obvious drawbacks are that client can't easily control appearance nor work with the raw data</li>
+                                        </ol>
+                                    </li>
+
+                                    <li><a href="http://www.w3schools.com/xml/">XML</a>
+                                        <ol>
+                                            <li>Powerful markup language that can be used to encode information</li>
+                                            <li>Supports schema definitions for data integrity</li>
+                                            <li>Support declarative transformation to other markup via XSLT</li>
+                                            <li>Total pain to work with in JavaScript! (open-source JavaScript libraries makes it somewhat easier)</li>
+                                        </ol>
+                                    </li>
+
+                                    <li><a href="http://www.json.org/">JSON</a>
+                                        <ol>
+                                            <li>Acronym for "JavaScript Object Notation"</li>
+                                            <li>Basically the same format as you use when declaring new objects and arrays in JavaScript</li>
+                                            <li>Easily parsed into native JavaScript objects and arrays</li>
+                                            <li>Natively supports objects, arrays, numbers, strings, booleans, and null</li>
+                                            <li>Sadly, no literal syntax for Date/Time values</li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </li>
+
+                            <li>Tide seems to be shifting away from XML towards JSON, but web services tend to still support both</li>
+                        </ol>
+                    </li>
+
+
+                </ol>
+            </li>
+
+            <li>AJAX, CORS, and JSONP
+                <ol>
+                    <li>By default, the browser will let you use AJAX to request resources <strong>only from the same origin</strong> as the current page (domain or sub-domain, as well as protocol)
+                        <ol>
+                            <li>For example, a page coming from http://foo.com may not make an AJAX request for a resource at http://bar.com&mdash;browser will block it</li>
+                            
+                            <li>Similarly, a page coming from http://foo.com may not make an AJAX request for a resource at <strong>https</strong>://foo.com</li>
+                        </ol>
+                    </li>
+
+                    <li>This restriction can be worked-around in two different ways now:
+                        <ol>
+                            <li>Cross-Origin Resource Sharing (CORS)
+                                <ol>
+                                    <li>If the server you are speaking to via AJAX returns the HTTP header "Access-Control-Allow-Origin: *", current browsers will allow the request</li>
+
+                                    <li>Very new, so <a href="http://caniuse.com/#search=cors">older browser versions don't support it</a> (IE 9 and earlier support only via a different object called XDomainRequest)</li>
+
+                                    <li>But, within a few years, this will likely be the standard way to do this</li>
+                                </ol>
+                            </li>
+
+                            <li>JSONP
+                                <ol>
+                                    <li>For older browsers, you can use a technique called JSONP, which standard for JSON with a Prefix</li>
+
+                                    <li>Instead of using AJAX, you use a <code>&lt;script&gt;</code> element, which can have an <code>src</code> attribute set to any origin (browsers don't deny cross-origin script elements)</li>
+
+                                    <li>The script returned by the server contains JSON with with a function call wrapped around it, so that data is sent to your function as a parameter</li>
+
+                                    <li>Most sites allow you to specify the function name as a query string parameter in the <code>src</code> URL</li>
+
+                                    <li><strong>Use this only with sites you trust!</strong></li>
+
+                                    <li>JSONP allows the site to return and execute any script it wants, and that script can do <em>anything</em> with the page, and your reader will have no idea that the script was not originally part of your page</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+
+                </ol>
+            </li>
+
+            <li>Security Concerns
+                <ol>
+                    <li><strong>Any time you merge data returned from a 3rd party server into your page, you should HTML-encode the values</strong></li>
+
+                    <li>What you might assume to be a simple "first name" value might actually be HTML markup with a <code>&lt;script&gt;</code> element that will try to steal information on the page or just deface the page for fun</li>
+
+                    <li>Sadly, there is no built-in HTML-encode function in JavaScript, but you can make the browser do this for you with code like this:
+                        <pre><code>
+//htmlEncode()
+// encodes the passed string of HTML so that it can
+// be safely added to a page without being interpreted
+// as HTML markup (with potentially harmful effects)
+// source: http://stackoverflow.com/questions/1219860/html-encoding-in-javascript-jquery
+// parameters:
+//  - s (string) value to html-encode
+//  - return value (string) encoded HTML value
+//
+function htmlEncode(s) {
+    //create an in-memory div element
+    var div = document.createElement(&#039;div&#039;);
+    //append the string to encode as a text node
+    div.appendChild(document.createTextNode(s));
+    //return the innerHTML property (which will be encoded)
+    return div.innerHTML;
+} //htmlEncode()
+                        </code></pre>
+                    </li>
+                </ol>
+            </li>
+
+
+
+        </ol> <!-- lecture -->
+
+    </div> <!-- .container -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="js/ajax-demo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+
+.photos-container img {
+    display: inline-block;
+    background-color: #EEE;
+    padding: 10px;
+    margin: 4px;
+    vertical-align: top;
+}
+
+.loading {
+    background-image: url(../img/loading.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100px;
+    background-color: #EEE;
+}
