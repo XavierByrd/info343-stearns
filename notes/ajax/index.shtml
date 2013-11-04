@@ -37,7 +37,7 @@
                 <ol>
                     <li>Debrief Lab 6</li>
                     <li>Principles of Web Design by Example</li>
-                    <li>Data-Driven Menu for Homework 3</li>
+                    <li>Data-Driven Menu for <a href="../../homework/#v3">Homework 3</a></li>
                     <li>AJAX, JSON, and JSONP</li>
                 </ol>
             </li>
@@ -96,11 +96,11 @@
 
                     <li>How Do I Use AJAX?
                         <ol>
-                            <li><img src="img/ajax.png" alt="AJAX flow"></li>
+                            <li>Basic data flow: <img src="img/ajax.png" alt="AJAX flow"></li>
                             
-                            <li>You can use the raw DOM object XMLHttpRequest, but it is perhaps the worst-designed programming interface in the world...seriously...it's heinous</li>
+                            <li>You can use the raw DOM object <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest">XMLHttpRequest</a>, but it is perhaps the worst-designed programming interface in the world...seriously...it's heinous</li>
 
-                            <li>Libraries like jQuery wrap this object and provide <a href="http://api.jquery.com/category/ajax/">a much simpler programming interface </a>that handles a lot of the grunt-work for you</li>
+                            <li>Libraries like jQuery wrap this object and provide <a href="http://api.jquery.com/category/ajax/">a much simpler programming interface</a> that handles a lot of the grunt-work for you</li>
 
                             <li>For example, here's the jQuery code to load some JSON data:
                                 <pre><code>
@@ -113,9 +113,10 @@
 // JSON-encoded object with one property called &#039;message&#039;
 //
 $.getJSON(&quot;http://courses.washington.edu/info343/ajax/test.php&quot;, function(data){
-    //the parameter data now contains
-    //a parsed version of the JSON data
+    //the parameter &#039;data&#039; now contains a parsed version of the JSON data
     //returned from the server
+    //this is an JavaScript object with one property called &#039;message&#039;
+    alert(data.message);
 });
                                 </code></pre>
                             </li>
@@ -198,7 +199,7 @@ $.getJSON(&quot;http://courses.washington.edu/info343/ajax/test.php&quot;, funct
 
                                     <li>The script returned by the server contains JSON with with a function call wrapped around it, so that data is sent to your function as a parameter</li>
 
-                                    <li>Most sites allow you to specify the function name as a query string parameter in the <code>src</code> URL</li>
+                                    <li>Most sites allow you to specify the function name to call as a query string parameter (e.g., <code>https://some/data?callback=handleData</code></li>
 
                                     <li>Demo: <a href="flickr.html">Flickr Public Photo Feed</a></li>
 
@@ -215,9 +216,11 @@ $.getJSON(&quot;http://courses.washington.edu/info343/ajax/test.php&quot;, funct
 
             <li>Security Concerns
                 <ol>
-                    <li><strong>Any time you merge data returned from a 3rd party server into your page, you should HTML-encode the values</strong></li>
+                    <li><strong>Any time you merge data entered by a user or returned from a 3rd party server into your page, you should HTML-encode the values</strong></li>
 
                     <li>What you might assume to be a simple "first name" value might actually be HTML markup with a <code>&lt;script&gt;</code> element that will try to steal information on the page or just deface the page for fun</li>
+
+                    <li>HTML-encoding means that HTML-specific characters like &lt;, &gt;, &amp;, and quotes are encoded into their equivallent character entities so they aren't interpreted as HTML markup (e.g., <code>&lt;</code> becomes <code>&amp;lt;</code>)</li>
 
                     <li>Sadly, there is no built-in HTML-encode function in JavaScript, but you can make the browser do this for you with code like this:
                         <pre><code>
