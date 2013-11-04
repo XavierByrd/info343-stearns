@@ -44,10 +44,16 @@
 
             <li>Web Design By Example
                 <ol>
-                    <li>Badly-Designed Sites
+                    <li><a href="http://www.webpagesthatsuck.com/">Badly-Designed Sites</a>
                     </li>
 
-                    <li>Well-Designed Sites
+                    <li><a href="http://www.thebestdesigns.com/">Well-Designed Sites</a>
+                        <ol>
+                            <li><a href="https://www.dropbox.com/">Dropbox</a></li>
+                            <li><a href="http://www.apple.com/">Apple</a></li>
+                            <li><a href="http://www.microsoft.com/en-us/default.aspx">Microsoft</a></li>
+                            <li><a href="http://www.zipcar.com/">Zipcar</a></li>
+                        </ol>
                     </li>
                 </ol>
             </li>
