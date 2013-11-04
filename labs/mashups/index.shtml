@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <!--#include virtual="../inc/common-head.html" -->
+
+        <meta name="description" content="INFO 343 AJAX and Mashups Lab">
+        <title>Lab 7: Recent Earthquakes Map</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <!--#include virtual="../inc/crumbtrail.html" -->
+
+            <article class="lab">
+
+                <section id="intro">
+                    <div class="page-header lab-title">
+                        <h1>Lab 7: Recent Earthquakes Map</h1>
+                        <p class="lead">AJAX and Mashups</p>
+                    </div>
+
+                    <p>In class this week, we learned how to dynamically fetch information from a web server while staying on the same web page (AJAX). Last week, we learned how to embed a live Google Map into our web page, centered on our current coordinates. In this lab, we will combine these two techniques to create a live map that displays recent earthquakes reported by the US Geological Survey site.</p>
+
+                    <h2>General Instructions</h2>
+                    <ol>
+                        <li>If you get stuck at any point, search the Internet, ask your neighbor, or ask the TA for help.</li>
+
+                        <li>At the end of the lab, submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288932">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299194">Section B</a>).</li>
+
+                        <li>If you don't finish all the required tasks during our lab time, finish them over the weekend and submit your published site URL before 8:00am on Monday morning.</li>
+
+                        <li>If you finish all the required steps, go on and try some of the <a href="#optional-steps">optional ones</a>. Remember that you have to do at least one of the optional steps in order to get 10/10 on the Completeness portion of your grade. If you do only the required steps, you'll get 9/10 on that portion.</li>
+                    </ol>
+
+                    <h2>Required Steps</h2>
+                    <ol>
+                        <li><a href="#fork">Fork my lab7 repository and clone to your lab machine</a></li>
+
+                        <li><a href="#code">Write the JavaScript for the Page</a></li>
+
+                        <li><a href="#github">Stage, Commit, and Push to GitHub</a></li>
+
+                        <li><a href="#submit">Publish your site to your web hosting server and submit the site URL via Canvas</a></li>
+                    </ol>
+                </section>
+
+                <section id="fork">
+                    <h2>Fork and Clone</h2>
+
+                    <p>First, go to <a href="https://github.com" target="_blank">GitHub</a> and sign into your account.</p>
+
+                    <p>Next, go to my <a href="https://github.com/drstearns/lab7" target="_blank">lab7 repository on GitHub</a>, and fork it. Then clone <strong>your forked repository</strong> to your local lab machine using SourceTree. You've done this several times now, but if you've forgotten how, refer to the instructions in <a href="../forms/">our previous lab</a>.</p>
+                </section>
+
+                <section id="code">
+                    <h2>Write the JavaScript</h2>
+
+                    <p>Our </p>
+                </section>
+
+                <section id="github">
+                    <h2>Stage, Commit, and Push to GitHub</h2>
+
+                    <!--#include virtual="../inc/commit.html" -->
+                </section>
+
+                <section id="submit">
+                    <h2>Publish Site and Submit URL via Canvas</h2>
+
+                    <!--#include virtual="../inc/publish.html" -->
+
+                    <p>After you've published your site and verified that it's working, <strong>submit your published site URL via the Canvas assignment for this lab (<a href="https://canvas.uw.edu/courses/849701/assignments/2288932">Section A</a> &diams; <a href="https://canvas.uw.edu/courses/873608/assignments/2299194">Section B</a>)</strong>.</p>
+                </section>
+
+                <section id="optional-steps">
+                    <h2>Optional Steps</h2>
+
+                    <p>If you get done early, or just want the extra challenge, try some of these optional steps.</p>
+                </section>
+
+            </article>
+
+        </div> <!-- .container -->
+    </body>
+</html>
