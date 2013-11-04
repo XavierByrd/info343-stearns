@@ -19,7 +19,7 @@
                         <p class="lead">AJAX and Mashups</p>
                     </div>
 
-                    <p>In class this week, we learned how to dynamically fetch information from a web server while staying on the same web page (AJAX). Last week, we learned how to embed a live Google Map into our web page, centered on our current coordinates. In this lab, we will combine these two techniques to create a live map that displays recent earthquakes reported by the US Geological Survey site.</p>
+                    <p>In class this week, we learned how to dynamically fetch information from a web server while staying on the same web page (AJAX). Last week, we learned how to embed a live Google Map into our web page, centered on our current coordinates. In this lab, we will combine these two techniques to create a live map that plots sample earthquake data provided by the US Geological Survey, which we will fetch using AJAX.</p>
 
                     <h2>General Instructions</h2>
                     <ol>
@@ -55,7 +55,56 @@
                 <section id="code">
                     <h2>Write the JavaScript</h2>
 
-                    <p>Our </p>
+                    <p>Before we get to writing code, let's look at the page we will be building today:</p>
+
+                    <p><img class="screen-shot img-responsive" src="img/quake-map.png" alt="screen shot of quake map page"></p>
+
+                    <p>This page uses AJAX to get the set of recent earthquakes, and the Google Maps API to plot them on an interactive map. The earthquake data is provided by the USGS, though I should admit that this is not actually <em>live</em> data&mdash;instead, this is sample data returned by the <a href="http://dev.socrata.com/consumers/getting-started">Socrata Open Data API (SODA)</a>, which they use as demo data for their service. SODA provides programmatic access to lots of open public datasets, so the techniques you learn in this lab should enable you to do something similar with <a href="https://data.seattle.gov/">other datasets they offer</a>.</p>
+
+                    <p>In addition to plotting the quakes on the Google Map, we will also write the code to show an information window with details about the quake when the user clicks on the marker. This will look like so:</p>
+
+                    <p><img class="screen-shot img-responsive" src="img/quake-info.png" alt="screen shot of quake info window"></p>
+
+                    <p class="alert alert-info">As per usual, there are some optional steps for this lab, one of which involves adding a minimum magnitude filter and refresh button. See the <a href="#optional-steps">optional steps</a> for more details.</p>
+
+                    <p>Let's build this page, step-by-step.</p>
+
+                    <h3>Review the HTML File</h3>
+
+                    <p>Before we start writing JavaScript, let's take a quick look at the 'index.html' file in the project's root folder. I've provided the markup for you, as there's not all that much that needs to be included. The visible content in the <code>&lt;body&gt;</code> section is this:</p>
+
+                    <pre><code>
+&lt;h1&gt;Earthquakes Recorded Over the Last 7 Days&lt;/h1&gt;
+&lt;p class=&quot;data-description&quot;&gt;&lt;/p&gt;
+
+&lt;div class=&quot;map-container&quot;&gt;&lt;/div&gt;
+                    </code></pre>
+
+                    <p>There is an empty paragraph with the class 'data-description', and this will be used to show some information to the reader after we've plotted the quakes on the map.</p>
+
+                    <p>The empty <code>&lt;div&gt;</code> element is where we will put the Google map, and we've given it a class name of 'map-container'.</p>
+
+                    <p>There are also a few <code>&lt;script&gt;</code> elements, the first of which is for the Google Maps library:</p>
+
+                    <pre><code>
+&lt;!-- Google Maps API library --&gt;
+&lt;!-- NOTE: the vale in the &#039;key&#039; query string parameter is my API key
+        you should register for your own key and replace this value
+        go to https://code.google.com/apis/console
+--&gt;
+&lt;script src=&quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyAqnfFcZYL5k3Tav9kCUmZOSC-42yJupmc&amp;amp;sensor=false&quot;&gt;&lt;/script&gt;
+                    </code></pre>
+
+                    <p>As I noted in the commetns, the key query string parameter value is my Google API Key. If you've <a href="https://code.google.com/apis/console">created your own Google API key</a>, you might want to replace the key currently in this url with yours. Google limits the number of map requests to 25,000 per key per day, so using your own key will enable you to have many more requests than using my shared key.</p>
+
+                    <h3>Write a Document Ready Function</h3>
+
+                    <h3>Write a Function to Get the Earthquake Data</h3>
+
+                    <h3>Write a Function to Build the Map and Add the Markers</h3>
+
+                    <h3>Add Code to Show the Info Windows</h3>
+
                 </section>
 
                 <section id="github">
