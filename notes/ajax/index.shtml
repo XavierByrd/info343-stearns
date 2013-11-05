@@ -175,7 +175,7 @@ $.getJSON(&quot;http://courses.washington.edu/info343/ajax/test.php&quot;, funct
                         <ol>
                             <li>For example, a page coming from http://foo.com may not make an AJAX request for a resource at http://bar.com&mdash;browser will block it</li>
                             
-                            <li>Similarly, a page coming from http://foo.com may not make an AJAX request for a resource at <strong>https</strong>://foo.com</li>
+                            <li>Similarly, a page coming from <strong>http</strong>://foo.com may not make an AJAX request for a resource at <strong>https</strong>://foo.com</li>
                         </ol>
                     </li>
 
@@ -183,7 +183,7 @@ $.getJSON(&quot;http://courses.washington.edu/info343/ajax/test.php&quot;, funct
                         <ol>
                             <li>Cross-Origin Resource Sharing (CORS)
                                 <ol>
-                                    <li>If the server you are speaking to via AJAX returns the HTTP header "Access-Control-Allow-Origin: *", current browsers will allow the request</li>
+                                    <li>If the server you are speaking to via AJAX returns the HTTP header <code>Access-Control-Allow-Origin: *</code>, current browsers will allow the request</li>
 
                                     <li>Very new, so <a href="http://caniuse.com/#search=cors">older browser versions don't support it</a> (IE 9 and earlier support only via a different object called XDomainRequest)</li>
 
@@ -193,7 +193,7 @@ $.getJSON(&quot;http://courses.washington.edu/info343/ajax/test.php&quot;, funct
 
                             <li>JSONP
                                 <ol>
-                                    <li>For older browsers, you can use a technique called JSONP, which standard for JSON with a Prefix</li>
+                                    <li>For older browsers, you can use a technique called JSONP, which stands for JSON with a Prefix</li>
 
                                     <li>Instead of using AJAX, you use a <code>&lt;script&gt;</code> element, which can have an <code>src</code> attribute set to any origin (browsers don't deny cross-origin script elements)</li>
 
