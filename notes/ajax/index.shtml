@@ -175,7 +175,7 @@ $.getJSON(&quot;http://courses.washington.edu/info343/ajax/test.php&quot;, funct
                         <ol>
                             <li>For example, a page coming from http://foo.com may not make an AJAX request for a resource at http://bar.com&mdash;browser will block it</li>
                             
-                            <li>Similarly, a page coming from http://foo.com may not make an AJAX request for a resource at <strong>https</strong>://foo.com</li>
+                            <li>Similarly, a page coming from <strong>http</strong>://foo.com may not make an AJAX request for a resource at <strong>https</strong>://foo.com</li>
                         </ol>
                     </li>
 
@@ -193,7 +193,7 @@ $.getJSON(&quot;http://courses.washington.edu/info343/ajax/test.php&quot;, funct
 
                             <li>JSONP
                                 <ol>
-                                    <li>For older browsers, you can use a technique called JSONP, which standard for JSON with a Prefix</li>
+                                    <li>For older browsers, you can use a technique called JSONP, which stands for JSON with a Prefix</li>
 
                                     <li>Instead of using AJAX, you use a <code>&lt;script&gt;</code> element, which can have an <code>src</code> attribute set to any origin (browsers don't deny cross-origin script elements)</li>
 
