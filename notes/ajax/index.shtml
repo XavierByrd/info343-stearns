@@ -183,7 +183,7 @@ $.getJSON(&quot;http://courses.washington.edu/info343/ajax/test.php&quot;, funct
                         <ol>
                             <li>Cross-Origin Resource Sharing (CORS)
                                 <ol>
-                                    <li>If the server you are speaking to via AJAX returns the HTTP header "Access-Control-Allow-Origin: *", current browsers will allow the request</li>
+                                    <li>If the server you are speaking to via AJAX returns the HTTP header <code>Access-Control-Allow-Origin: *</code>, current browsers will allow the request</li>
 
                                     <li>Very new, so <a href="http://caniuse.com/#search=cors">older browser versions don't support it</a> (IE 9 and earlier support only via a different object called XDomainRequest)</li>
 
