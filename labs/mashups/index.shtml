@@ -82,7 +82,7 @@
 
                     <p>There is an empty paragraph with the class 'data-description', and this will be used to show some information to the reader after we've plotted the quakes on the map.</p>
 
-                    <p>The empty <code>&lt;div&gt;</code> element is where we will put the Google map, and we've given it a class name of 'map-container'.</p>
+                    <p>The empty <code>&lt;div&gt;</code> element is where we will put the Google map, and we've given it a class name of 'map-container'. There is a style rule for this class defined in <code>css/styles.css</code>, which sets the width to 100% and the height to 600px.</p>
 
                     <p>There are also a few <code>&lt;script&gt;</code> elements, the first of which is for the Google Maps library:</p>
 
@@ -95,15 +95,133 @@
 &lt;script src=&quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyAqnfFcZYL5k3Tav9kCUmZOSC-42yJupmc&amp;amp;sensor=false&quot;&gt;&lt;/script&gt;
                     </code></pre>
 
-                    <p>As I noted in the commetns, the key query string parameter value is my Google API Key. If you've <a href="https://code.google.com/apis/console">created your own Google API key</a>, you might want to replace the key currently in this url with yours. Google limits the number of map requests to 25,000 per key per day, so using your own key will enable you to have many more requests than using my shared key.</p>
+                    <p>As I noted in the comments, the key query string parameter value is my Google API Key. If you've <a href="https://code.google.com/apis/console">created your own Google API key</a>, you might want to replace the key currently in this url with yours. Google limits the number of map requests to 25,000 per key per day, so using your own key will enable you to have many more requests per day than using my shared key.</p>
 
                     <h3>Write a Document Ready Function</h3>
 
+                    <p>As with all scripted web pages, we first need to register a function that should be called when the document in ready for manipulation. The <a href="http://learn.jquery.com/using-jquery-core/document-ready/">jQuery library makes this quite easy</a>, but if you've forgotten the syntax, it looks like this:</p>
+
+                    <pre><code>
+//function to call when document is ready
+$(function(){
+    //document is ready for manipulation
+    
+}); //doc ready
+                    </code></pre>
+
+                    <p>Inside this function, you should call a function that you will write in the next step: <code>getQuakes()</code>.</p>
+
                     <h3>Write a Function to Get the Earthquake Data</h3>
+
+                    <p>Create a new function in your JavaScript file called <code>getQuakes()</code> that takes no parameters (in an optional step, we'll add one but for now, keep the parameter list empty). The syntax for this would look like:</p>
+
+                    <pre><code>
+//getQuakes()
+//queries the server for the list of recent quakes
+//and plots them on a Google map
+function getQuakes(minMagnitude) {
+
+
+} //getQuakes()
+                    </code></pre>
+
+                    <p>Inside the function, you should use jQuery's <a href="http://api.jquery.com/jQuery.getJSON/">getJSON()</a> method to request the URL stored in the global variable <code>gov.usgs.quakesUrl</code> (defined at the top of this file). This method takes two parameters: the URL to request; and a function to call with the parsed results. That callback function will be passed a few parameters, but the first one is the only one we need to care about: a referenced to the parsed JSON data, which in our case will be an array of objects, each of which represents an earthquake.</p>
+
+                    <p>The syntax for requesting the URL, and supplying a function to call with the results, looks like this:</p>
+
+                    <pre><code>
+$.getJSON(gov.usgs.quakesUrl, function(quakes){
+    //quakes is an array of objects, each of which represents info about a quake
+    //see data returned from:
+    //https://soda.demo.socrata.com/resource/earthquakes.json?$$app_token=Hwu90cjqyFghuAWQgannew7Oi
+
+    //set our global variable to the current set of quakes
+    //so we can reference it later in another event
+    gov.usgs.quakes = quakes;
+
+}); //handle returned data function
+                    </code></pre>
+
+                    <p>Note how we are caching the quakes array in our global variable <code>gov.usgs.quakes</code>. This will allow us to reference the quakes array later in another event, which we will do if you choose to do the optional steps.</p>
+
+                    <p>Inside this function, we want to create a new <code><a href="https://developers.google.com/maps/documentation/javascript/reference">google.maps.Map</a></code> object and then add markers for each quake in our dataset. We've already written <a href="https://github.com/drstearns/in-class-code-a/blob/master/geoloc/js/geo-demo.js">the code to create a Google Map based on or current location</a>, so we'll use that as a starting point. Instead of a road map, we'll use <a href="https://developers.google.com/maps/documentation/javascript/reference#MapTypeId">a terrain map</a>. And instead of centering the map on our current coordinates, we'll center it on Lat/Long 0/0, as this is world-wide data. Finally, we'll disable the Street View control, as that wouldn't make much sense for this application.</p>
+
+                    <p>The code to create the map would look like this:</p>
+
+                    <pre><code>
+gov.usgs.quakesMap = new google.maps.Map($(&#039;.map-container&#039;)[0], {
+    center: new google.maps.LatLng(0,0),        //centered on 0/0
+    zoom: 2,                                    //zoom level 2
+    mapTypeId: google.maps.MapTypeId.TERRAIN,   //terrain map
+    streetViewControl: false                    //no street view
+});
+                    </code></pre>
+
+                    <p>Note that we are assigning the new map object to our global variable gov.usgs.quakesMap, and we are passing the map options as an inline object.</p>
+
+                    <p>After creating the map, your next line of code should call the function we will write in the next step: <code>addQuakeMarkers(quakes, map)</code>, passing the quakes array as the first parameter, and the map we just created as the second.</p>
 
                     <h3>Write a Function to Build the Map and Add the Markers</h3>
 
+                    <p>Add a new function to your JavaScript file called <code>addQuakeMarkers(quakes, map)</code></p>
+
+                    <pre><code>
+//addQuakeMarkers()
+//parameters
+// - quakes (array) array of quake data objects
+// - map (google.maps.Map) Google map we can add markers to
+// no return value
+function addQuakeMarkers(quakes, map) {
+    //loop over the quakes array and add a marker for each quake
+    //quakes[0].location.latitude = latitude of first quake
+    //quakes[0].location.longitude = longitude of first quake
+    
+} //addQuakeMarkers()
+                    </code></pre>
+
+                    <p>Inside this function, you should loop over the quakes array and create a new <code><a href="https://developers.google.com/maps/documentation/javascript/reference#Marker">google.maps.Marker</a></code> for each quake in the array.</p>
+
+                    <p class="alert alert-warning">Note that some quake objects might not have a <code>location</code> property containing the exact latitude and longitude of the quake, so you should test if this property is present before creating the Marker.</p>
+
+                    <p>When creating the new <code>google.maps.Marker</code> object, you need to provide a simple JavaScript object for the <a href="https://developers.google.com/maps/documentation/javascript/reference#MarkerOptions">marker options</a>, and that object should contain the following properties: map and position. The map property should contain a reference to our <code>google.maps.Map</code> object, and the position property should contain a new <code>google.maps.LatLng</code> object, initialized to the quake's <code>location.latitude</code> and <code>location.longitude</code> properties. The syntax would look like this:</p>
+
+                    <pre><code>
+//assuming that the variable 'quake' is set to 
+//the current quake object within the quakes array...
+quake.mapMarker = new google.maps.Marker({
+    map: map,
+    position: new google.maps.LatLng(quake.location.latitude, quake.location.longitude)
+});
+                    </code></pre>
+
+                    <p>Note that we are assigning this new <code>google.maps.Marker</code> object to a new property on the quake object called <code>mapMarker</code>. This will allow us to remove the marker later if you choose to do the optional steps.</p>
+
+                    <p>At this point, if you've coded everything correctly, you should be able to open the index.html file in your browser, and see the various quakes plotted on the map using markers. If you don't see the markers, open your Developer Tools (or Firebug on Firefox) and look in the Console tab for error messages.</p>
+
                     <h3>Add Code to Show the Info Windows</h3>
+
+                    <p>Now that you have the markers showing the locations of all the quakes, our final step is to show a <code><a href="https://developers.google.com/maps/documentation/javascript/reference#InfoWindow">google.maps.InfoWindow</a></code> with detailed information about the quake when the user clicks on a given marker.</p>
+
+                    <p>If you added an InfoWindow during our in-class challenge, this will be somewhat familiar for you. To show an InfoWindow, you need to use the Google map API to register a click event handler function for each marker you create. Since the <code>google.maps.Marker</code> class is specific to the Google Maps API, you need to use their event registration function, which looks like this:</p>
+
+                    <pre><code>
+google.maps.event.addListener(quake.mapMarker, 'click', function(){
+    //code that runs when user clicks on a marker
+
+}); //click handler for marker
+                    </code></pre>
+
+                    <p>These lines of code to should be right after you create each new marker. Note that the marker passed to the first parameter of the <code>addListener()</code> method is the variable <code>quake.mapMarker</code>, which we assigned when we created the marker for a given quake object. The second parameter is the name of the event ('click' in this case), and the third parameter is a function to call when the user clicks on the marker.</p>
+
+                    <p>Inside this function, you should create a new <code><a href="https://developers.google.com/maps/documentation/javascript/reference#InfoWindow">google.maps.InfoWindow</a></code> object. This object's constructor accepts a simple options object, and we need to specify only one property: <code>content</code>. The content property should be set to a string listing information about the quake: when it occurred, its magnitude, and its depth. You can use a string expression such as:</p>
+
+                    <pre><code>
+new google.maps.InfoWindow({
+    content: new Date(quake.datetime).toLocaleString() + 
+        ': magnitude ' + quake.magnitude + ' at depth of ' + 
+        quake.depth + ' meters'
+});
+                    </code></pre>
 
                 </section>
 
@@ -125,6 +243,8 @@
                     <h2>Optional Steps</h2>
 
                     <p>If you get done early, or just want the extra challenge, try some of these optional steps.</p>
+
+                    <h3 id="min-mag-filter">Add a Minimum Magnitude Filter</h3>
                 </section>
 
             </article>
