@@ -156,13 +156,17 @@
 
                 <p>Your job is to use this data structure to generate your menu HTML dynamically, rather than just typying it in statically. The best way to do this is to use a templating approach like we did in Lab 5 and in class. Add a block of HTML to your menu page for each kind of menu item (pizza, drink, dessert) and use that block as a template for each item in that category. For example, you'd create one block of HTML as a template for a pizza, with elements to hold the pizza name, description, and prices. Then you would loop over all the pizzas in the data structure, clone the template, populate it with the current pizza information, and finally add it to your page.</p>
 
-                <p>To get this menu data structure added to your page, include the following <code>&lt;script&gt;</code> element <strong>before</strong> your own JavaScript file that will use it:</p>
+                <p>To get this menu data structure added to your page, include the following <code>&lt;script&gt;</code> element in your HTML file <strong>before</strong> a script element for your own JavaScript file (which will end up using the menu data structure):</p>
 
                 <pre><code>
+&lt;!-- direct link to menu script --&gt;
 &lt;script src=&quot;http://www.dawgpizza.com/orders/menu.js&quot;&gt;&lt;/script&gt;
+&lt;!-- my own JavaScript file, which will use the menu data structure
+    (replace file name with the name of your script file) --&gt;
+&lt;script src=&quot;js/my-own-script-file.js&quot;&gt;&lt;/script&gt;
                 </code></pre>
 
-                <p>This script will define a global variable named <code>com.dawgpizza.menu</code>, which you can use in your script. That variable holds an object with three properties: <code>pizzas, drinks, and desserts</code>. Each of those properties contains an array of menu items objects, but the pizza menu items have a different set of properties from the drink and dessert menu items. The pizza menu items have the properties: name, description, and prices, where prices is an array of 3 numbers representing the price for a small, medium and large version of that pizza. The drink and dessert items have the properties: name and price, where price is a single number representing the drink/dessert price.</p>
+                <p>This menu.js script will define a global variable named <code>com.dawgpizza.menu</code>, which you can use in your script. That variable holds an object with three properties: <code>pizzas, drinks, and desserts</code>. Each of those properties contains an array of menu items objects, but the pizza menu items have a different set of properties from the drink and dessert menu items. The pizza menu items have the properties: name, description, and prices, where prices is an array of 3 numbers representing the price for a small, medium and large version of that pizza. The drink and dessert items have the properties: name and price, where price is a single number representing the drink/dessert price.</p>
 
                 <p>So for example, the code you would use to loop over the pizzas would look like this:</p>
 
