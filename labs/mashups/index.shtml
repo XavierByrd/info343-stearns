@@ -216,12 +216,16 @@ google.maps.event.addListener(quake.mapMarker, 'click', function(){
                     <p>Inside this function, you should create a new <code><a href="https://developers.google.com/maps/documentation/javascript/reference#InfoWindow">google.maps.InfoWindow</a></code> object. This object's constructor accepts a simple options object, and we need to specify only one property: <code>content</code>. The content property should be set to a string listing information about the quake: when it occurred, its magnitude, and its depth. You can use a string expression such as:</p>
 
                     <pre><code>
-new google.maps.InfoWindow({
+gov.usgs.iw = new google.maps.InfoWindow({
     content: new Date(quake.datetime).toLocaleString() + 
         ': magnitude ' + quake.magnitude + ' at depth of ' + 
         quake.depth + ' meters'
 });
                     </code></pre>
+
+                    <p>If you've coded everything correctly, you should now be able to refresh your page, click on a marker, and see the info window appear with additional information about the quake.</p>
+
+                    <p class="alert alert-info">Note that we haven't yet added the code to automatically close the previous InfoWindow before showing the next one, so when you click each marker, it will open a new InfoWindow that you have to close manually. To close the previous one automatically, see <a href="#hide-prev-iw">the optional steps</a>.</p>
 
                 </section>
 
@@ -244,7 +248,12 @@ new google.maps.InfoWindow({
 
                     <p>If you get done early, or just want the extra challenge, try some of these optional steps.</p>
 
+                    <h3 id="hide-prev-iw">Hide Previous Info Window Before Showing Next</h3>
+
+                    <h3>Add Visual Feedback During AJAX Request</h3>
+
                     <h3 id="min-mag-filter">Add a Minimum Magnitude Filter</h3>
+
                 </section>
 
             </article>
