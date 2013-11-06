@@ -12,16 +12,85 @@
         <!--#include virtual="../inc/crumbtrail.html" -->
             
         <div class="page-header notes-header">
-            <h1>Creating Mashups</h1>
+            <h1>AJAX and Mashups</h1>
             <p class="lead">Dr David Stearns, Autumn 2013</p>
         </div>
 
         <ol class="lecture-outline">
             <li>Coming Up...
+                <ol>
+                    <li>Friday, Nov 8
+                        <ol>
+                            <li><a href="../../labs/mashups/">AJAX and Mashups Lab</a></li>
+                        </ol>
+                    </li>
+
+                    <li>Tues, Nov 12: Intro to Web Applications
+                        <ol>
+                            <li><em>Please read...</em></li>
+                            <li><a href="http://en.wikipedia.org/wiki/Web_application">Web Applications Defined</a></li>
+                        </ol>
+                    </li>
+                </ol>
             </li>
 
             <li>Today
+                <ol>
+                    <li>Debrief Homework v3.0</li>
+                    <li>Posting via AJAX</li>
+                    <li>Mashups</li>
+                    <li>Final Project Groups</li>
+                </ol>
             </li>
+
+            <li>In-Class Coding Repository
+                <ol>
+                    <li><a href="https://github.com/drstearns/in-class-code-a">Section A (8:30)</a></li>
+                    <li><a href="https://github.com/drstearns/in-class-code-b">Section B (10:30)</a></li>
+                </ol>
+            </li>
+
+            <li>Posting via AJAX
+                <ol>
+                    <li>In our last class we requested data from a server via AJAX by using jQuery's <code>$.getJSON()</code> method</li>
+
+                    <li>But you can also post data to a server that wants it by using jQuery's <code><a href="http://api.jquery.com/jQuery.post/">$.post()</a></code> method
+                        <ol>
+                            <li>First param is URL to post to (string)</li>
+                            <li>Second param is data you want to post (string, object, or array)</li>
+                            <li>Third param is callback function for response</li>
+                            <li>Optional fourth param is the format of the data you want to send (by default it will guess)</li>
+                        </ol>
+                    </li>
+
+                    <li>If you pass a JavaScript object for the data, jQuery will assume that those are form fields, and will post data in the same format that a form submit would</li>
+
+                    <li>But you can turn that object into JSON, and send it as such, using the strangely-named but built-in method <code>JSON.stringify()</code></li>
+
+                    <li>If the server responds with JSON, jQuery will parse that for you automatically, and send the resulting JavaScript object/array to your callback function as the first parameter</li>
+
+                    <li>Although jQuery calls this for you when using the <code>$.getJSON()</code> method, you can also use <code>JSON.parse()</code> to parse any JSON you might have in string form into a JavaScript object or array</li>
+
+                    <li>Demo!</li>
+
+                </ol>
+            </li>
+
+            <li>Mashups
+                <ol>
+                    <li>A "mashup" is a page that combines existing data, services, and components into a custom solution</li>
+
+                    <li>The idea is that you can construct something quickly without having to write anything on the server-side</li>
+
+                    <li>A really simple mashup might be a page that displays the live <a href="http://www.wsdot.com/traffic/seattle/">Seattle traffic camera images</a> along your particular commute route (I did this in the mid-1990s for my route over the 520 bridge).</li>
+
+                    <li>Or, you might combine <a href="http://data.seattle.gov/resource/kzjm-xkqj.json">real-time Fire 911 Dispatch data</a> from city of Seattle site with a <a href="https://developers.google.com/maps/documentation/javascript/tutorial">Google Map</a>, plotting each incident with a marker</li>
+
+                    <li>Demo!</li>
+                </ol>
+            </li>
+
+
         </ol> <!-- lecture -->
 
     </div> <!-- .container -->
