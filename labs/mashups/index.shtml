@@ -290,6 +290,46 @@ $(&#039;.message&#039;).html(&#039;Loading... &lt;img src=&quot;img/loading.gif&
 
                     <h3 id="min-mag-filter">Add a Minimum Magnitude Filter</h3>
 
+                    <p>So far, our page only does one request for data on load, and never updates that data. In this step, we'll add some user interface elements that will let the user specify a minimum magnitude filter, as well as the code to refresh the dataset and map with that filter applied.</p>
+
+                    <p>First, let's add the filtering UI to our index.html page. Add this markup just after the <code>&lt;h1&gt;</code> and before the <code>&lt;p class=&quot;message&quot;&gt;</code></p>
+
+                    <pre><code>
+&lt;p class=&quot;filters&quot;&gt;Minimum Magnitude: 
+    &lt;input type=&quot;number&quot; class=&quot;min-magnitude&quot; value=&quot;0&quot; min=&quot;0&quot; max=&quot;10&quot; step=&quot;0.1&quot;&gt; 
+    &lt;button class=&quot;refresh-button&quot;&gt;Refresh&lt;/button&gt;
+&lt;/p&gt;
+                    </code></pre>
+
+                    <p>Here we are using an <code>&lt;input type=&quot;number&quot;&gt;</code> to let the user specify a minimum magnitude, and a refresh button the user can click to refresh the data and map.</p>
+                    
+                    <p>Return to the earthquakes.js file and add a click event handler for the refresh button inside your document ready function. Inside your click event handler function, use jQuery to get a reference to the <code>&lt;input&gt;</code> element by its class name (min-magnitude) and use the <code>val()</code> function to get its current value. Then call your <code>getQuakes()</code> function, passing the current input value as a parameter.</p>
+
+                    <p>Next, add a parameter to your <code>getQuakes()</code> function called <code>minMagnitude</code>. This will be an optional parameter, so we will test whether the caller passed a value, and if so, we will append a filter expression to the URL we request. Add this code to the start of your <code>getQuakes()</code> function:</p>
+
+                    <pre><code>
+function getQuakes(minMagnitude) {
+    //if minMagnitude was specified, add that as a filter
+    var url = gov.usgs.quakesUrl;
+    if (minMagnitude)
+        url += &#039;&amp;$where=magnitude&gt;=&#039; + minMagnitude;
+
+    //...rest of your existing code...
+
+} //getQuakes()
+                    </code></pre>
+
+                    <p>This code starts with the same URL we've been using (<code>gov.usgs.quakesUrl</code>), but appends an extra query string parameter if <code>minMagnitude</code> was supplied. The query string filter syntax is defined by the Socrata web site, and they use a parameter named <code>$where</code> set to a SQL where clause expression.</p>
+
+                    <p>Next, change your <code>$.getJSON()</code> call so that it uses this new variable <code>url</code> instead of the global <code>gov.usgs.quakesUrl</code> variable.</p>
+
+                    <p>All of this will get us new data, filtered by a minimum magnitude, but to complete this feature, we also need to remove the existing map markers before we add new ones for the updated dataset. Sadly, the Google Map object doesn't have a single method to do this (like <code>clearMarkers()</code> or <code>reset()</code>). Instead, we need to call the <code>setMap()</code> method on each of our existing markers, passing null for the map. This will cause the marker to be removed from our map.</p>
+
+                    <p>While creating the markers, I had you assign each new marker to a new property of the quake data object that we called <code>mapMarker</code>. Since we have a global variable that references the current dataset, we can simply loop over that dataset, and use the <code>mapMarker</code> property on each quake to call the associated marker's <code>setMap()</code> method passing null as the first and only parameter. Add that code to your AJAX callback function, just before you set the global <code>gov.usgs.quakes</code> variable to the new dataset returned by the server.</p>
+
+                    <p>Lastly, you need to add a quick <code>if()</code> test around the code that creates your Google Map. If we are just refreshing the data with a filter applied, we don't need to create a new Map object. Since we are setting the global variable <code>gov.usgs.quakesMap</code> to be a reference to our existing map, check this variable before you create the Map, and only create the Map if that variable is undefined. Remember that in JavaScript, undefined will evaluate to false in an if() check.</p>
+
+
                 </section>
 
             </article>
