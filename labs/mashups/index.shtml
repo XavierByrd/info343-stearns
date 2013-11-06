@@ -144,7 +144,9 @@ $.getJSON(gov.usgs.quakesUrl, function(quakes){
 
                     <p>Note how we are caching the quakes array in our global variable <code>gov.usgs.quakes</code>. This will allow us to reference the quakes array later in another event, which we will do if you choose to do the optional steps.</p>
 
-                    <p>Inside this function, we want to create a new <code><a href="https://developers.google.com/maps/documentation/javascript/reference">google.maps.Map</a></code> object and then add markers for each quake in our dataset. We've already written <a href="https://github.com/drstearns/in-class-code-a/blob/master/geoloc/js/geo-demo.js">the code to create a Google Map based on or current location</a>, so we'll use that as a starting point. Instead of a road map, we'll use <a href="https://developers.google.com/maps/documentation/javascript/reference#MapTypeId">a terrain map</a>. And instead of centering the map on our current coordinates, we'll center it on Lat/Long 0/0, as this is world-wide data. Finally, we'll disable the Street View control, as that wouldn't make much sense for this application.</p>
+                    <p>After setting the global variable, the next thing we want to do is update the HTML of our <code>&lt;p class=&quot;message&quot;&gt;</code> element to let the user know how many quakes were returned. Use jQuery to select that element by its class name, and update its HTML to the expression <code>'Displaying ' + quakes.length + ' earthquakes'</code>.</p>
+
+                    <p>Inside this callback function that receives the data, we want to create a new <code><a href="https://developers.google.com/maps/documentation/javascript/reference">google.maps.Map</a></code> object and then add markers for each quake in our dataset. We've already written <a href="https://github.com/drstearns/in-class-code-a/blob/master/geoloc/js/geo-demo.js">the code to create a Google Map based on or current location</a>, so we'll use that as a starting point. Instead of a road map, we'll use <a href="https://developers.google.com/maps/documentation/javascript/reference#MapTypeId">a terrain map</a>. And instead of centering the map on our current coordinates, we'll center it on Lat/Long 0/0, as this is world-wide data. Finally, we'll disable the Street View control, as that wouldn't make much sense for this application.</p>
 
                     <p>The code to create the map would look like this:</p>
 
@@ -172,16 +174,26 @@ gov.usgs.quakesMap = new google.maps.Map($(&#039;.map-container&#039;)[0], {
 // - map (google.maps.Map) Google map we can add markers to
 // no return value
 function addQuakeMarkers(quakes, map) {
+    
     //loop over the quakes array and add a marker for each quake
-    //quakes[0].location.latitude = latitude of first quake
-    //quakes[0].location.longitude = longitude of first quake
+    var quake;      //current quake data
+    var idx;        //loop counter
+
+    for (idx = 0; idx &lt; quakes.length; ++idx) {
+        quake = quakes[idx];
+
+        //latitude of current quake = quake.location.latitude 
+        //longitutde of current quake = quake.location.longitude
+
+    }
+
     
 } //addQuakeMarkers()
                     </code></pre>
 
                     <p>Inside this function, you should loop over the quakes array and create a new <code><a href="https://developers.google.com/maps/documentation/javascript/reference#Marker">google.maps.Marker</a></code> for each quake in the array.</p>
 
-                    <p class="alert alert-warning">Note that some quake objects might not have a <code>location</code> property containing the exact latitude and longitude of the quake, so you should test if this property is present before creating the Marker.</p>
+                    <p class="alert alert-warning">Note that some quake objects might not have a <code>location</code> property containing the exact latitude and longitude of the quake, so you should test if this property is present before creating the Marker using code like <code>if (quake.location) { ... }</code>.</p>
 
                     <p>When creating the new <code>google.maps.Marker</code> object, you need to provide a simple JavaScript object for the <a href="https://developers.google.com/maps/documentation/javascript/reference#MarkerOptions">marker options</a>, and that object should contain the following properties: map and position. The map property should contain a reference to our <code>google.maps.Map</code> object, and the position property should contain a new <code>google.maps.LatLng</code> object, initialized to the quake's <code>location.latitude</code> and <code>location.longitude</code> properties. The syntax would look like this:</p>
 
@@ -250,7 +262,31 @@ gov.usgs.iw = new google.maps.InfoWindow({
 
                     <h3 id="hide-prev-iw">Hide Previous Info Window Before Showing Next</h3>
 
+                    <p>In the required steps we added an info window that is shown when the user clicks a marker, but the user also had to manually close that window. In this optional step, we will close the previous info window before showing the next.</p>
+
+                    <p>To accomplish this, you need to assign the <code>google.maps.InfoWindow</code> object you create during the click event function to a global variable so that the next time that event fires, you can test whether that global variable has a value and if so, call the <code>close()</code> method to close the previous window.</p>
+
+                    <p>If you used my sample code above, you are already assigning a reference to the InfoWindow to a global variable called <code>gov.usgs.iw</code>. If you didn't use that code, assign the new <code>google.maps.InfoWindow</code> object to some global variable that you can reference the next time the click event handler function is called.</p>
+
+                    <p>Next, add two lines of code to the beginning of the click event handler function in which you create the InfoWindow. The first line should test whether your global variable has a value (<code>if (gov.usgs.iw) { ... }</code>). The second line should go inside the <code>if</code> block, and use your global variable to call the <code>close()</code> method of the previous InfoWindow. Remember that your global variable is holding a reference to the previous InfoWindow you created, so you'd call this method on your global variable.</p>
+
                     <h3>Add Visual Feedback During AJAX Request</h3>
+
+                    <p>When making an AJAX request to the server for data, it's often good to show the user some visual feedback in case that request ends up taking a while due to network traffic or a slow server. In this optional step, we'll add a loading message to our <code>&lt;p class=&quot;message&quot;&gt;</code> element so that the user knows we are actively loading data. If the request completes quickly, the user will likely never see this message, but if it happens to take a while, the message will let the user know something is actually happening.</p>
+
+                    <p>Loading messages usually involve a bit of text (e.g., 'Loading...'), as well as an animated icon. I've included a suitable icon in your 'img' directory named 'loading.gif'.</p>
+
+                    <p>The easiest way to add both is to just update the HTML of the <code>&lt;p class=&quot;message&quot;&gt;</code> element to include both the text and an <code>&lt;img src="img/loading.gif&gt;</code> element. The jQuery <code>html()</code> method accepts a string that can contain HTML tags as well as plain text. For example:</p>
+
+                    <pre><code>
+$(&#039;.message&#039;).html(&#039;Loading... &lt;img src=&quot;img/loading.gif&quot;&gt;&#039;);
+                    </code></pre>
+
+                    <p>This message will get replaced once the data returns, as you've already written the code to update the <code>&lt;p class=&quot;message&quot;&gt;</code> element with the number of quakes being displayed.</p>
+
+                    <p>Adding HTML markup via strings will work, but it's also a bit error-prone&mdash;it's easy to omit an important character and then your page will suddenly render incorrectly. A safer and more elegant way to do this would be to add a style class to the element (e.g., 'loading') and create a CSS rule using the selector <code>.loading:after { ... }</code>. The <code><a href="http://www.w3schools.com/cssref/sel_after.asp">:after</a></code> pseudo-selector allows you to add new text content to an element via the <code>content</code> CSS property, and you can also specify a <code>background-image</code> property for the loading.gif image. If you want the extra-extra challenge, try adding the loading message using this technique.</p>
+
+                    <p>Note that if the data returns quickly, you won't be able to see this message, as the browser will never get a chance to actually display it on screen. To test that this is working correctly, use the Developer Tools (or Firebug on Firefox) to set a breakpoint on the line of code where you assign the returned <code>quakes</code> array to the global variable. This pauses your script, and you should be able to see your loading message.</p>
 
                     <h3 id="min-mag-filter">Add a Minimum Magnitude Filter</h3>
 
