@@ -97,6 +97,12 @@
 
                     <p>As I noted in the comments, the key query string parameter value is my Google API Key. If you've <a href="https://code.google.com/apis/console">created your own Google API key</a>, you might want to replace the key currently in this url with yours. Google limits the number of map requests to 25,000 per key per day, so using your own key will enable you to have many more requests per day than using my shared key.</p>
 
+                    <h3>Preview the Data Returned From the Server</h3>
+
+                    <p>You will be requesting data from the following URL: <a href="https://soda.demo.socrata.com/resource/earthquakes.json?$$app_token=Hwu90cjqyFghuAWQgannew7Oi" target="_blank">https://soda.demo.socrata.com/resource/earthquakes.json?$$app_token=Hwu90cjqyFghuAWQgannew7Oi</a>. Click on that link now to see what kind of data is returned (this should open a new browser tab).</p>
+
+                    <p>Note that the returned data is an array of objects, where each object contains information about a particular earthquake. Each earthquake object has a property called <code>location</code>, which contains another object with the properties <code>latitude</code> and <code>longitude</code>. That will give us the latitude and longitude of the quake. There are also a few other properties that we will use in an information window: <code>datetime</code> (date and time of the quake); <code>magnitude</code>; and <code>depth</code>.</p>
+                    
                     <h3>Write a Document Ready Function</h3>
 
                     <p>As with all scripted web pages, we first need to register a function that should be called when the document in ready for manipulation. The <a href="http://learn.jquery.com/using-jquery-core/document-ready/">jQuery library makes this quite easy</a>, but if you've forgotten the syntax, it looks like this:</p>
