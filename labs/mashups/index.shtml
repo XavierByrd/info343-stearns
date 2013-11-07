@@ -119,7 +119,7 @@ $(function(){
 //getQuakes()
 //queries the server for the list of recent quakes
 //and plots them on a Google map
-function getQuakes(minMagnitude) {
+function getQuakes() {
 
 
 } //getQuakes()
