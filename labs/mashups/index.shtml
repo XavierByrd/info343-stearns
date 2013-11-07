@@ -234,11 +234,15 @@ google.maps.event.addListener(quake.mapMarker, 'click', function(){
                     <p>Inside this function, you should create a new <code><a href="https://developers.google.com/maps/documentation/javascript/reference#InfoWindow">google.maps.InfoWindow</a></code> object. This object's constructor accepts a simple options object, and we need to specify only one property: <code>content</code>. The content property should be set to a string listing information about the quake: when it occurred, its magnitude, and its depth. You can use a string expression such as:</p>
 
                     <pre><code>
+//create an info window with the quake info
 gov.usgs.iw = new google.maps.InfoWindow({
     content: new Date(quake.datetime).toLocaleString() + 
-        ': magnitude ' + quake.magnitude + ' at depth of ' + 
-        quake.depth + ' meters'
+        &#039;: magnitude &#039; + quake.magnitude + &#039; at depth of &#039; + 
+        quake.depth + &#039; meters&#039;
 });
+
+//open the info window
+gov.usgs.iw.open(map, this);
                     </code></pre>
 
                     <p>If you've coded everything correctly, you should now be able to refresh your page, click on a marker, and see the info window appear with additional information about the quake.</p>
