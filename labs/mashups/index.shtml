@@ -184,6 +184,7 @@ function addQuakeMarkers(quakes, map) {
     //loop over the quakes array and add a marker for each quake
     var quake;      //current quake data
     var idx;        //loop counter
+    var infoWindow; //InfoWindow for quake
 
     for (idx = 0; idx &lt; quakes.length; ++idx) {
         quake = quakes[idx];
@@ -220,30 +221,41 @@ quake.mapMarker = new google.maps.Marker({
 
                     <p>Now that you have the markers showing the locations of all the quakes, our final step is to show a <code><a href="https://developers.google.com/maps/documentation/javascript/reference#InfoWindow">google.maps.InfoWindow</a></code> with detailed information about the quake when the user clicks on a given marker.</p>
 
-                    <p>If you added an InfoWindow during our in-class challenge, this will be somewhat familiar for you. To show an InfoWindow, you need to use the Google map API to register a click event handler function for each marker you create. Since the <code>google.maps.Marker</code> class is specific to the Google Maps API, you need to use their event registration function, which looks like this:</p>
+                    <p>Within your for loop, just after you create the Marker, add this code to create an InfoWindow object with the assoicated quake information:</p>
 
                     <pre><code>
-google.maps.event.addListener(quake.mapMarker, 'click', function(){
-    //code that runs when user clicks on a marker
-
-}); //click handler for marker
-                    </code></pre>
-
-                    <p>These lines of code to should be right after you create each new marker. Note that the marker passed to the first parameter of the <code>addListener()</code> method is the variable <code>quake.mapMarker</code>, which we assigned when we created the marker for a given quake object. The second parameter is the name of the event ('click' in this case), and the third parameter is a function to call when the user clicks on the marker.</p>
-
-                    <p>Inside this function, you should create a new <code><a href="https://developers.google.com/maps/documentation/javascript/reference#InfoWindow">google.maps.InfoWindow</a></code> object. This object's constructor accepts a simple options object, and we need to specify only one property: <code>content</code>. The content property should be set to a string listing information about the quake: when it occurred, its magnitude, and its depth. You can use a string expression such as:</p>
-
-                    <pre><code>
-//create an info window with the quake info
-gov.usgs.iw = new google.maps.InfoWindow({
+infoWindow = new google.maps.InfoWindow({
     content: new Date(quake.datetime).toLocaleString() + 
-        &#039;: magnitude &#039; + quake.magnitude + &#039; at depth of &#039; + 
-        quake.depth + &#039; meters&#039;
+                ': magnitude ' + quake.magnitude + ' at depth of ' + 
+                quake.depth + ' meters'
 });
-
-//open the info window
-gov.usgs.iw.open(map, this);
                     </code></pre>
+
+                    <p>This creates the InfoWindow, but now we need to register a click event handler for the marker, and open this window in the callback function. But we have a problem: by the time the callback function is called, we will have already exited our loop, and we won't have a way to refer to the current InfoWindow we just created. The way to solve this problem in JavaScript is to use a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures">closure</a>.</p>
+
+                    <p>Whenever you create an anonymous in-line function (like we have for event handler functions), the inner function has a reference to all the variables and parameters of the outer function. But in the case of our loop variables, by the time the inner function is actually called, those variables will be pointing to the last element in the array, and not the current one. But we can create another closure to hold on to those current values by calling another function just after we create the InfoWindow.</p>
+
+                    <p>On the line after you create the InfoWindow, and still within the for loop, make a call to a new function we will implement next:</p>
+                    
+                    <pre><code>
+registerInfoWindow(map, quake.mapMarker, infoWindow);
+                    </code></pre>
+
+                    <p>Here we are calling our new function, passing a reference to the map, the current Marker, and the current InfoWindow.</p>
+
+                    <p>Now let's implement that function. This should appear outside and after your <code>addQuakeMarkers()</code> function:</p>
+
+                    <pre><code>
+function registerInfoWindow(map, marker, infoWindow) {
+    google.maps.event.addListener(marker, 'click', function(){
+
+        infoWindow.open(map, marker);
+
+    });                
+} //registerInfoWindow()
+                    </code></pre>
+
+                    <p>This function adds a click event handler for the current Marker, and when the handler function is called, it opens the current InfoWindow, passing a reference to the map and the current Marker. The event handler function creates a closure so that we can refer to the values of the <code>map</code>, <code>marker</code>, and <code>infoWindow</code> variables at the time this <code>registerInfoWindow</code> function was called.</p>
 
                     <p>If you've coded everything correctly, you should now be able to refresh your page, click on a marker, and see the info window appear with additional information about the quake.</p>
 
@@ -274,11 +286,22 @@ gov.usgs.iw.open(map, this);
 
                     <p>In the required steps we added an info window that is shown when the user clicks a marker, but the user also had to manually close that window. In this optional step, we will close the previous info window before showing the next.</p>
 
-                    <p>To accomplish this, you need to assign the <code>google.maps.InfoWindow</code> object you create during the click event function to a global variable so that the next time that event fires, you can test whether that global variable has a value and if so, call the <code>close()</code> method to close the previous window.</p>
+                    <p>To accomplish this, you need to assign the InfoWindow object you open during the Marker's click event function to a global variable so that the next time that event fires, you can test whether that global variable has a value and if so, call the <code>close()</code> method to close the previous window.</p>
 
-                    <p>If you used my sample code above, you are already assigning a reference to the InfoWindow to a global variable called <code>gov.usgs.iw</code>. If you didn't use that code, assign the new <code>google.maps.InfoWindow</code> object to some global variable that you can reference the next time the click event handler function is called.</p>
+                    <p>For the global variable, you can easily use a new property on the <code>gov.usgs</code> global object declared at the top of the file. Call this new property <code>iw</code> and assign the InfoWindow to it like so:</p>
 
-                    <p>Next, add two lines of code to the beginning of the click event handler function in which you create the InfoWindow. The first line should test whether your global variable has a value (<code>if (gov.usgs.iw) { ... }</code>). The second line should go inside the <code>if</code> block, and use your global variable to call the <code>close()</code> method of the previous InfoWindow. Remember that your global variable is holding a reference to the previous InfoWindow you created, so you'd call this method on your global variable.</p>
+                    <pre><code>
+function registerInfoWindow(map, marker, infoWindow) {
+    google.maps.event.addListener(marker, 'click', function(){
+
+        gov.usgs.iw = infoWindow;
+        infoWindow.open(map, marker);
+    });                
+} //registerInfoWindow()
+                        
+                    </code></pre>
+
+                    <p>Next, add two lines of code to the beginning of the click event handler function in which you open the InfoWindow. The first line should test whether your global variable has a value (<code>if (gov.usgs.iw) { ... }</code>). The second line should go inside the <code>if</code> block, and use your global variable to call the <code>close()</code> method of the previous InfoWindow. Remember that your global variable is holding a reference to the previous InfoWindow you created, so you'd call this method on your global variable.</p>
 
                     <h3>Add Visual Feedback During AJAX Request</h3>
 
