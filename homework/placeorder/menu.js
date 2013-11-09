@@ -87,7 +87,7 @@ com.dawgpizza.menu = {
         {
             type: 'pizza',
             name: 'Mr Green',
-            description: 'Roasted Chicken with Romano on a Basil Pesto sauce',
+            description: 'Roasted Tofu with Romano on a Basil Pesto sauce',
             prices: [13,16,19],
             vegetarian: true
 
