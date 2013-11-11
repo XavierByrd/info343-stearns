@@ -160,7 +160,7 @@
 
                 <pre><code>
 &lt;!-- direct link to menu script --&gt;
-&lt;script src=&quot;http://www.dawgpizza.com/orders/menu.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://www.dawgpizza.com/orders/menu.js&quot;&gt;&lt;/script&gt;
 &lt;!-- my own JavaScript file, which will use the menu data structure
     (replace file name with the name of your script file) --&gt;
 &lt;script src=&quot;js/my-own-script-file.js&quot;&gt;&lt;/script&gt;
@@ -252,7 +252,7 @@ for (idx = 0; idx &lt; com.dawgpizza.menu.drinks.length; ++idx) {
 
                 <h3 id="order-post">Order Posting Instructions</h3>
 
-                <p>Since this class is limited to the client side of web development, I've supplied a server-side page for you that can receive the data posted by your form, and echo back to the customer an order confirmation and receipt. The URL for this page is <code>http://dawgpizza.com/orders/</code>. It will only accept an HTTP POST (not a GET) so make sure you set the method on your form correctly.</p>
+                <p>Since this class is limited to the client side of web development, I've supplied a server-side page for you that can receive the data posted by your form, and echo back to the customer an order confirmation and receipt. The URL for this page is <code>https://dawgpizza.com/orders/</code>. It will only accept an HTTP POST (not a GET) so make sure you set the method on your form correctly.</p>
 
                 <p>Shopping carts are typically too complicated for traditional HTML forms, so instead of building a <code>form</code> with lots of <code>input</code> and <code>select</code> elements, we will instead use a different technique that has become quite common now. You will maintain the shopping cart in JavaScript objects/arrays, and when you're ready to submit the order, you'll serialize those objects/arrays into a data-interchange format known as <a href="http://www.json.org/">JSON</a>. You'll then put this JSON into a single hidden <code>input</code> named <code>"cart"</code> and submit the form.</p>
 
