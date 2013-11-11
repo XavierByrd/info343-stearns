@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for Web Applications Intro Lecture">
+    <title>Web Applications</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>Introduction to Web Applications</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Thurs, Nov 14: Transactional Applications
+                        <ol>
+                            <li><em>please read:</em></li>
+                            <li><a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-View-Controller Pattern</a></li>
+                            <li><a href="http://javascript.crockford.com/prototypal.html">Prototypal Inheritance in JavaScript</a></li>
+                        </ol>
+                    </li>
+
+                    <li>Fri, Nov 15
+                        <ol>
+                            <li>Shopping Cart Lab</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>Types of Web Applications</li>
+                    <li>Typical Web Deveopment Team Structure</li>
+                    <li>Team Development Using Git/GitHub</li>
+                    <li>Object-Oriented JavaScript</li>
+                </ol>
+            </li>
+
+            <li>Types of Web Applications
+                <ol>
+                    <li>Transactional (will discuss in detail on Thursday)
+                        <ol>
+                            <li>Sometimes referred to as OLTP (Online Transactional Processing)</li>
+
+                            <li>Manages structured or semi-structured data (e.g., database records) through a series of controlled state transitions</li>
+
+                            <li>Most systems you use that involve filling out and submitting forms are transactional applications</li>
+                            
+                            <li>Typically use <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-View-Controller architecture</a></li>
+
+                            <li>Typically built on a <dfn>CRUD</dfn> model: user can <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate, and <strong>D</strong>elete each kind of record, depending on security permissions</li>
+
+                            <li>In Web 2.0 design, CRUD actions are provided by a RESTful web service, which client JavaScript calls via AJAX (details on Thursday)</li>
+                        </ol>
+                    </li>
+
+                    <li>Data Visualization and Reporting (will discuss in detail next Tuesday)
+                        <ol>
+                            <li>Sometimes referred to as OLAP (Online Analytical Processing)</li>
+
+                            <li>Visualizes and tabulates data for the purpose of analysis, insight, and decision making</li>
+
+                            <li>JavaScript libraries are available to do everything from simple charting to complex information graphics</li>
+                        </ol>
+                    </li>
+
+                    <li>Content Management (will discuss in detail next Thursday)
+                        <ol>
+                            <li>Manages relatively unstructured content (text) through a publication and archival process</li>
+
+                            <li>Similar to Transactional systems, but the unstructured nature of the information allows people to build generic applications that can do most of the work for you (WordPress, Drupal, Joomla, etc.)</li>
+
+                            <li>Key challenge with these CMSs is figuring out how to customize and extend them; some are more open than others</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Typical Web Development Team
+                <ol>
+                    <li>Project Manager: responsible for overall project, client interaction, schedule, resources, etc.</li>
+
+                    <li>Information Architect(s): responsible for organizaing the information tracked by the system and the way it is presented to users; define data models, controlled vocabularies, categories; design overall site navigation</li>
+
+                    <li>Graphic and UX Designers: define how the application looks and behaves; create graphical assets, design page layouts, and define user interaction</li>
+
+                    <li>Content Authors: write non-graphical content for the site/application</li>
+
+                    <li>Developers: implement the design; in larger teams, they tend to specialize in client vs server-side development</li>
+
+                    <li>Testers: test the application, report bugs, and verify fixes</li>
+
+                    <li>User Educator(s): write help, how-to, FAQ topics if the system requires them</li>
+
+                    <li>System Administrator(s): responsible for the production and testing infrastructures (servers, networks, code repositories, etc)</li>
+                </ol>
+            </li>
+
+            <li>Team Development using Git/GitHub
+                <ol>
+                    <li></li>
+                </ol>
+            </li>
+
+            <li>In-Class Coding Repository
+                <ol>
+                    <li><a href="https://github.com/drstearns/in-class-code-a">Section A (8:30)</a></li>
+                    <li><a href="https://github.com/drstearns/in-class-code-b">Section B (10:30)</a></li>
+                </ol>
+            </li>
+
+            <li>Object-Oriented JavaScript
+                <ol>
+                    <li></li>
+                </ol>
+            </li>
+
+
+
+        </ol> <!-- lecture -->
+
+    </div> <!-- .container -->
+
+</body>
+</html>
