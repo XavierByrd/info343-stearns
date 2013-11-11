@@ -121,10 +121,10 @@
                             <li class="notes"><a href="notes/adv-js/">You can do that? Advanced HTML5 Scripting Features</a></li>
                             <li class="notes"><a href="notes/ajax/">The Brave New World: AJAX and Web 2.0</a></li>
                             <li class="notes"><a href="notes/mashups/">Standing on the Shoulders of Giants: Building Mashups</a></li>
-                            <li>Putting it all Together: Web Applications</li>
-                            <li>The Self-Service Web Site: Content Management Systems</li>
-                            <li>Making Data Visible: Data Analysis and Visualization Apps</li>
-                            <li>Tracking Records: Transactions Processing Apps</li>
+                            <li class="notes"><a href="notes/apps-intro/">Putting it all Together: Web Applications</a></li>
+                            <li>Transactions Processing Apps and the Model-View-Controller Pattern</li>
+                            <li>Data Analysis and Visualization Apps</li>
+                            <li>Content Management Systems</li>
                             <li>Special Topics</li>
                             <li>Going Mobile: Transforming a Web App into a Mobile App</li>
                             <li>Don't Break the Build! Automated Testing using Selenium</li>

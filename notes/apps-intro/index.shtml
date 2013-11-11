@@ -54,7 +54,7 @@
 
                             <li>Most systems you use that involve filling out and submitting forms are transactional applications</li>
                             
-                            <li>Typically use <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-View-Controller architecture</a></li>
+                            <li>Typically use <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">Model-View-Controller architecture</a> (MVC)</li>
 
                             <li>Typically built on a <dfn>CRUD</dfn> model: user can <strong>C</strong>reate, <strong>R</strong>ead, <strong>U</strong>pdate, and <strong>D</strong>elete each kind of record, depending on security permissions</li>
 
@@ -76,15 +76,15 @@
                         <ol>
                             <li>Manages relatively unstructured content (text) through a publication and archival process</li>
 
-                            <li>Similar to Transactional systems, but the unstructured nature of the information allows people to build generic applications that can do most of the work for you (WordPress, Drupal, Joomla, etc.)</li>
+                            <li>Similar to Transactional systems, but the unstructured nature of the information allows people to build generic applications/systems/frameworks that can do most of the work for you (WordPress, Drupal, Joomla, etc.)</li>
 
-                            <li>Key challenge with these CMSs is figuring out how to customize and extend them; some are more open than others</li>
+                            <li>Key challenge with these Content Management Systems (CMSs) is figuring out how to customize and extend them; some are more open than others</li>
                         </ol>
                     </li>
                 </ol>
             </li>
 
-            <li>Typical Web Development Team
+            <li>Typical Web Development Team Roles
                 <ol>
                     <li>Project Manager: responsible for overall project, client interaction, schedule, resources, etc.</li>
 
@@ -106,20 +106,79 @@
 
             <li>Team Development using Git/GitHub
                 <ol>
-                    <li></li>
+                    <li><strong>Demo!</strong> Using Git/SourceTree/GitHub for team development</li>
                 </ol>
             </li>
 
-            <li>In-Class Coding Repository
-                <ol>
-                    <li><a href="https://github.com/drstearns/in-class-code-a">Section A (8:30)</a></li>
-                    <li><a href="https://github.com/drstearns/in-class-code-b">Section B (10:30)</a></li>
-                </ol>
-            </li>
 
             <li>Object-Oriented JavaScript
                 <ol>
-                    <li></li>
+                    <li>In-Class Coding Repository
+                        <ol>
+                            <li><a href="https://github.com/drstearns/in-class-code-a">Section A (8:30)</a></li>
+                            <li><a href="https://github.com/drstearns/in-class-code-b">Section B (10:30)</a></li>
+                        </ol>
+                    </li>
+
+                    <li>JavaScript and OOP
+                        <ol>
+                            <li>Web applications often involve a lot of code, and you'll generally want to organize that code into an object-oriented architecture of some kind</li>
+
+                            <li>JavaScript is object-oriented, but not in the same way as Java</li>
+
+                            <li>Java OO is <dfn>class-based</dfn>
+                                <ol>
+                                    <li>You define new classes, which are new types, each of which extends some other class</li>
+                                    <li>You can specialize sub-classes and override methods</li>
+                                    <li>You create object instances of those classes at run time</li>
+                                    <li>Objects are polymorphic, as they can act like their own type or any ancestor type</li>
+                                </ol>
+                            </li>
+
+                            <li>JavaScript OO is <dfn>prototype-based</dfn>
+                                <ol>
+                                    <li>There are no classes in JavaScript; object instances inherit directly from other object instances</li>
+                                    <li>Every object instance has a reference to a <dfn>prototype</dfn> object instance</li>
+                                    <li>When client code accesses a member of the object, the interpreter looks for it first on the object; if not found, it then looks for it on objects in the prototype chain</li>
+                                </ol>
+                            </li>
+
+                            <li>But, JavaScript can also ape a class-based OO style...sort of...
+                                <ol>
+                                    <li>Any function can be treated as a <dfn>constructor</dfn> for new objects of a given type (<code>var p = new Person()</code>)</li>
+                                    
+                                    <li>The <code>prototype</code> property of the function (remember functions are objects and can have their own properites) will become the prototype object for any object created by the function</li>
+                                    
+                                    <li>To do inheritance, you set the prototype property of the constructor function to be an instance of an object returned from some other constructor function</li>
+
+                                    <li>You can override methods, but calling the super-class version of the method requires some tricky code</li>
+
+                                    <li>Thankfully, libraries like <a href="http://prototypejs.org/">Prototype.js</a> provide nice wrapper functions to hide all this tricky code, creating the illusion of a class-based OO language (albeit with a very stange syntax)</li>
+
+                                    <li>You can information hiding, but it takes a lot of effort, and the code gets very hard to read/understand</li>
+                                </ol>
+                            </li>
+
+                            <li>And JavaScript also easily supports capability-style OO
+                                <ol>
+                                    <li>Instead of defining types (which defines what an object <em>is</em>), you define <dfn>capabilities</dfn>, that is, things an object can <em>do</em></li>
+
+                                    <li>A capability is implemented as a function that accepts any object as a parameter, and adds a set of properties and methods to that object to support the capability</li>
+
+                                    <li>Example: function that adds the ability to raise events and register listener callback functions for those events; that capability can be added to any kind of object</li>
+
+                                    <li>Similar to adding interfaces to a Java class, but capabilities can provide functionality as well as the method signatures</li>
+                                </ol>
+                            </li>
+
+                        </ol>
+                    </li>
+
+                    <li><strong>Demo!</strong> Code examples of Classical Class-Based, Prototypal, and Mix-In/Capability style OOP in JavaScript</li>
+
+                    <li>Which style is best? There are sharp disagreements about this in the JavaScript community. Some favor classical class-based OOP using libraries like Prototype. Others think this is working against the real nature of the language, so prototypal style is better. Still others think that capability style is the only one that makes sense given JavaScript's lack of type checking and casting.</li>
+
+                    <li>My opinion is that you should use whatever style helps you write simple, clear, and efficient code; spend more time thinking about your application architecture, and less time worrying about syntax and OOP style</li>
                 </ol>
             </li>
 
