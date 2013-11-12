@@ -19,7 +19,7 @@
                         <p class="lead">Object-Oriented JavaScript and MVC</p>
                     </div>
 
-                    <p>In class this week, we learned .</p>
+                    <p>In class this week, we learned how to do object-oriented programming in Java, and how to use the Model-View-Controller (MVC) design pattern to build interactive, transactional web applications. In this lab, you'll apply both of those skills to complete the code for a typical shopping cart application.</p>
 
                     <h2>General Instructions</h2>
                     <ol>
@@ -36,7 +36,11 @@
                     <ol>
                         <li><a href="#fork">Fork my lab8 repository and clone to your lab machine</a></li>
 
-                        <li><a href="#code">Write the JavaScript for the Page</a></li>
+                        <li><a href="#review">Review the Supporting Code and Data</a></li>
+
+                        <li><a href="#cart">Implement the Cart Model and View</a></li>
+
+                        <li><a href="#controller">Implement the Controller</a></li>
 
                         <li><a href="#github">Stage, Commit, and Push to GitHub</a></li>
 
@@ -49,12 +53,61 @@
 
                     <p>First, go to <a href="https://github.com" target="_blank">GitHub</a> and sign into your account.</p>
 
-                    <p>Next, go to my <a href="https://github.com/drstearns/lab8" target="_blank">lab8 repository on GitHub</a>, and fork it. Then clone <strong>your forked repository</strong> to your local lab machine using SourceTree. You've done this several times now, but if you've forgotten how, refer to the instructions in <a href="../forms/">our previous lab</a>.</p>
+                    <p>Next, go to my <a href="https://github.com/drstearns/lab8" target="_blank">lab8 repository on GitHub</a>, and fork it. Then clone <strong>your forked repository</strong> to your local lab machine using SourceTree. You've done this several times now, but if you've forgotten how, refer to the instructions in <a href="../forms/">one of our previous labs</a>.</p>
                 </section>
 
-                <section id="code">
-                    <h2>Write the JavaScript</h2>
+                <section id="review">
+                    <h2>The Application</h2>
 
+                    <p>Before we start coding, let's first take a look at the application we'll be building, review the data behind it, and look through the supporting code I've provided for you. This is what the page will look like when you're done, and have added a few things to the cart:</p>
+
+                    <p><img class="screen-shot img-responsive" src="img/shopping-cart.png" alt="Shopping cart page in action"></p>
+
+                    <p>Down the left are a series of movies, with buttons next to each that when clicked, will add the corresponding movie in the corresponding format to the user's shopping cart, which is shown on the right. Each click will add a new item to the cart, and the cart will re-render to show not only its contents, but also a total price. Each item in the cart has a small button next to it, which can be clicked to remove that item from the cart.</p>
+
+                    <p>The 'Place My Order' button will get the contents of the current cart as a JSON string, and write that to the console. As an optional step, you can post this JSON to a URL I've created and it will respond back with a confirmation message you can display to the user. In another optional step, you can save the current cart to local storage when the user leaves the page (or closes the browser window), and reload it when the user returns.</p>
+
+                    <h2>Review the Data</h2>
+
+                    <p>Now that you know what the page should look like and do, we next need to look at the data structure for the list of movies and their prices. We will load that data from the URL <a href="https://courses.washington.edu/info343/ajax/movies/" target="_blank">https://courses.washington.edu/info343/ajax/movies/</a>. Click on that link now so you can see the data in new browser tab.</p>
+
+                    <p>This URL returns an array of objects in JSON, and each object has the properties <code>id</code>, <code>title</code>, <code>pic</code>, and <code>prices</code>. The last of these is actually a sub-object with the properties <code>dvd</code> and <code>bluray</code>, representing the price for the DVD and Blu-Ray versions of the movie respectively.</p>
+
+                    <p>Your controller will fetch this JSON and use the MoviesView (already implemented in moviesView.js) to render each movie's information and add-to-cart buttons. The MovieView will then trigger 'addToCart' events every time one of those buttons is clicked. Your controller will catch those events and add the selected movie and format to the Cart model as a new item. This will automatically re-render the CartView (which you will also implement) to show the newly-expanded contents of the cart.</p>
+
+                    <h2>Review the Supporting Code</h2>
+
+                    <p>So that you can complete this lab in a reasonable amount of time, I've included implementations of a basic ListModel, TemplateListView, and TemplateView that you can build upon. Let's look at those now.</p>
+
+                    <p>Open the file <code>js/models.js</code> and look through the code. The <code>createListModel()</code> function creates an object that knows how to do a few things:</p>
+
+                    <ul>
+                        <li>hold an array of objects, which are referred to as 'items'</li>
+                        <li>return all the items</li>
+                        <li>return one specific item given an id</li>
+                        <li>add an item to the array and trigger a 'change' event</li>
+                        <li>remove an item from array and trigger a 'change' event</li>
+                    </ul>
+
+                    <p>Your Cart model will build upon this basic ListModel, adding a method to calculate the total price of the cart, and produce a JSON representation of the cart items.</p>
+
+                    <p>Now open the file <code>js/views.js</code> and look through the code. The <code>createTemplateListView()</code> function towards the bottom of the file creates an object that knows how to render a ListModel by merging each object in the model with an HTML template and appending the populated clones to a container element (sound familiar?). It also has code that listens for the model's 'change' event, and automatically re-renders the view.</p>
+
+                    <p>You CartView will build upon this TemplateListView, adding code to update the total price element, and remove items when the user clicks on one of the remove buttons.</p>
+                    
+                </section>
+
+                <section id="cart">
+                    <h2>Implement the Cart Model</h2>
+
+
+                    <h2>Implement the Cart View</h2>
+
+
+                </section>
+
+                <section id="controller">
+                    <h2>Implement the Controller</h2>
 
 
                 </section>
@@ -78,7 +131,9 @@
 
                     <p>If you get done early, or just want the extra challenge, try some of these optional steps.</p>
 
+                    <h3>Post the Cart JSON</h3>
 
+                    <h3>Save and Restore the Cart Between Page Views</h3>
 
                 </section>
 
