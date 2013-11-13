@@ -131,7 +131,7 @@ return totalPrice.toFixed(2);
 
                     <p>The second method we need to add to this model object is <code>toJSON()</code>, which should return a JSON representation of the cart items. Use the sample code above to add this second method. The code inside the new function should simply return the result of <code>JSON.stringify(this.items)</code>. The <code>JSON.stringify()</code> method is built-in to the browser's JavaScript interpreter, and will produce a JSON representation of whatever is passed to it as the first parameter.</p>
 
-                    <p>Now that we've created the model object and added the two new methods to it, the last step is to return the new model object from the function. Write the line of code to return your <code>model</code> variable.</p>
+                    <p>Now that we've created the model object and added the two new methods to it, the last step is to return the new model object from the <code>createCartModel()</code> function. Write the line of code to return your <code>model</code> variable.</p>
 
                     
 
@@ -156,7 +156,7 @@ var view = createTemplateView(config);
 clonedTemplate.find(&#039;.remove-item&#039;).data(&#039;item&#039;, this.model);
                     </code></pre>
 
-                    <p>Finally, return the <code>view</code> variable from the function so that the caller can get the new view instance.</p>
+                    <p>Finally, return the <code>view</code> variable from the <code>createCartItemView()</code> function so that the caller can get the new view instance.</p>
 
 
 
@@ -211,6 +211,10 @@ this.container.find(&#039;.remove-item&#039;).click(function(){
 
                 <section id="controller">
                     <h2>Implement the Controller</h2>
+
+                    <p>We've now implemented all the models and views we need, so our last task is to implement the controller that stitches all the pieces together.</p>
+
+                    <p>Open the file <code>js/controller.js</code>. This is where you will implement the controller. </p>
 
 
                 </section>
