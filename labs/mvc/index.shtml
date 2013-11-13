@@ -91,18 +91,121 @@
 
                     <p>Your Cart model will build upon this basic ListModel, adding a method to calculate the total price of the cart, and produce a JSON representation of the cart items.</p>
 
-                    <p>Now open the file <code>js/views.js</code> and look through the code. The <code>createTemplateListView()</code> function towards the bottom of the file creates an object that knows how to render a ListModel by merging each object in the model with an HTML template and appending the populated clones to a container element (sound familiar?). It also has code that listens for the model's 'change' event, and automatically re-renders the view.</p>
+                    <p>Now open the file <code>js/views.js</code> and look through the code. The <code>createTemplateListView()</code> function towards the bottom of the file creates an object that knows how to render a ListModel by merging each object in the model with an HTML template and appending the populated clones to a container element (sound familiar?). It also has code that listens for the model's 'change' event, and automatically re-renders the view. This TemplateListView uses another object, a TemplateView (defined at the top of the file), to handle merging a single object with the template.</p>
 
-                    <p>You CartView will build upon this TemplateListView, adding code to update the total price element, and remove items when the user clicks on one of the remove buttons.</p>
+                    <p>You CartView will build upon these TemplateView and TemplateListView objects, adding code to update the total price element, and remove items when the user clicks on one of the remove buttons.</p>
+
+                    <p>Both the <code>createListModel()</code> and <code>createTemplateListView()</code> functions accept a single parameter called <code>config</code>. This should be an plain JavaScript object with any properties you want to set on the newly created object. The comments above both of those functions explains what properties should be included in that config object.</p>
                     
                 </section>
 
                 <section id="cart">
                     <h2>Implement the Cart Model</h2>
 
+                    <p>Open the file <code>js/cart.js</code>. This is where you will implement the Cart model object by completing the function <code>createCartModel()</code>. This is a prototypal-style factory function that should build and return an object instance that inherits from a ListModel object instance, adding two extra methods.</p>
+
+                    <p>Start by calling <code>createListModel(config)</code> and assigning the return value of that function to a new variable called <code>model</code>. This will create a new ListModel object instance, to which you can add the new methods:</p>
+
+                    <pre><code>
+var model = createListModel(config);
+                    </code></pre>
+
+                    <p>Next, add a method to the <code>model</code> called <code>getTotalPrice()</code>. Remember that a 'method' in JavaScript is really just a function that has been assigned to a property of the object, so the syntax for adding a new method looks like this:</p>
+
+                    <pre><code>
+model.getTotalPrice = function() {
+    
+}; //getTotalPrice()
+                    </code></pre>
+
+                    <p>The code inside this new function should loop over the model's items array (<code>this.items</code>), adding up the prices of each item (<code>this.items[idx].price</code>) and returning the total price, formatted to 2 decimal places (<code>totalPrice.toFixed(2)</code>). Try to implement this routine yourself, but if you get stuck, the code should look something like this:</p>
+
+                    <pre><code>
+var idx;
+var totalPrice = 0;
+for (idx = 0; idx &lt; this.items.length; ++idx) {
+    totalPrice += this.items[idx].price;
+}
+return totalPrice.toFixed(2);
+                    </code></pre>
+
+                    <p>The second method we need to add to this model object is <code>toJSON()</code>, which should return a JSON representation of the cart items. Use the sample code above to add this second method. The code inside the new function should simply return the result of <code>JSON.stringify(this.items)</code>. The <code>JSON.stringify()</code> method is built-in to the browser's JavaScript interpreter, and will produce a JSON representation of whatever is passed to it as the first parameter.</p>
+
+                    <p>Now that we've created the model object and added the two new methods to it, the last step is to return the new model object from the function. Write the line of code to return your <code>model</code> variable.</p>
+
+                    
+
+
+                    <h2>Implement the Cart Item View</h2>
+
+                    <p>Now that we have a model object for the cart, we next need to implement the two view objects to display the model on screen. The first is the view that knows how to render a single item in the cart. This TemplateView I provided can do most of the work for us, but we need to do one extra thing after it renders: associate the current cart item with the remove item button, so that when that button is clicked, we can remove the item from the cart model.</p>
+
+                    <p>Open the file <code>js/cartItemView.js</code>. This is where you will implement the CartItemView object by completing the function <code>createCartItemView()</code>. This is a prototypal-style factory function that should build and return an object instance that inherits from a TemplateView object instance, adding one extra method.</p>
+
+                    <p>Start this function by calling <code>createTemplateView(config)</code> and setting the return value to a new variable called <code>view</code>:</p>
+
+                    <pre><code>
+var view = createTemplateView(config);
+                    </code></pre>
+
+                    <p>This will create a new TemplateView instance that we can now augment by adding an extra method: afterRender(). The TemplateView object will call this method (if it exists) after it has rendered the object using the template, and it will pass a reference to the cloned template HTML as the first parameter. We can implement this function and write a line of code that finds the remove button in the cloned template HTML, and associates the current item with the button.</p>
+
+                    <p>Use the sample code above to add a new method to the <code>view</code> object called <code>afterRender</code>. The function should take one parameter called <code>clonedTemplate</code>. Inside that new function, we'll use jQuery's <code>find()</code> method to find the remove item button by its class name, and then use jQuery's <code>data()</code> method to associate the current cart item with the button. The code should look like this:</p>
+
+                    <pre><code>
+clonedTemplate.find(&#039;.remove-item&#039;).data(&#039;item&#039;, this.model);
+                    </code></pre>
+
+                    <p>Finally, return the <code>view</code> variable from the function so that the caller can get the new view instance.</p>
+
+
+
 
                     <h2>Implement the Cart View</h2>
 
+                    <p>We've implemented the model object for the cart, and the view object that can render a single item in the cart, but now we need to implement the view that will display all the items in the cart, as well as the total price. The TemplateListView object can do the former for us, but we will have to add the code to do the latter.</p>
+
+                    <p>Open the <code>js/cartView.js</code> file. This is where you will implement the CartView object by completing the function <code>createCartView()</code>. This is a prototypal-style factory function that should build and return an object instance that inherits from a TemplateListView object instance, adding one extra method.</p>
+
+                    <p>Before we call <code>createTemplateListView()</code>, we first need to add a property to the <code>config</code> object that is passed to our function, and which we will in turn pass to the <code>createTemplateListView()</code> method. The TemplateListView object requires a property on the config object called <code>templateView</code>, and that should be set to an instance of a TemplateView-derived object that knows how to render a single model item using the template. We just implemented the function that creates just such an object: <code>createCartItemView()</code>. So the first line of code in our function needs to be this:</p>
+
+                    <pre><code>
+config.templateView = createCartItemView(config);
+                    </code></pre>
+
+                    <p>Next, call <code>createTemplateListView(config)</code> and assign the return value to a new variable called <code>view</code>:</p>
+
+                    <pre><code>
+var view = createTemplateListView(config);
+                    </code></pre>
+
+                    <p>I've written TemplateListView such that it will call the method <code>afterRender()</code> after it renders the view (if the derived object doesn't implement this method, it will just skip this). If we implement this method, we can update the total price, as well as register a click event handler for the remove item buttons. Let's add that method now:</p>
+
+                    <pre><code>
+view.afterRender = function() {
+
+}; //afterRender()
+                    </code></pre>
+
+                    <p>Inside that method, we need to add code to update the total price element, and register click event handlers for the remove button. We already added a method to our Cart model that can give us the total price (<code>this.model.getTotalPrice()</code>). When we create this view in our controller (next step) we will set a property on it called <code>totalPrice</code>, which will be a jQuery object containing the total price HTML element. Therefore, updating the total price can be done with code like this:</p>
+
+                    <pre><code>
+this.totalPrice.html(this.model.getTotalPrice());
+                    </code></pre>
+
+                    <p>Next, and still inside the <code>afterRender()</code> method, we need to add a click event handler for all the remove item buttons, and remove the corresponding item from the cart when a button is clicked. The jQuery library makes it easy for us to register one event handler for a set of related buttons&mdash;we just select all the buttons using their common class name, and use the <code>click()</code> method of the resulting jQuery object to register an event handler function:</p>
+
+                    <pre><code>
+this.container.find(&#039;.remove-item&#039;).click(function(){
+    view.model.removeItem($(this).data(&#039;item&#039;));
+});
+                    </code></pre>
+
+                    <p>This code finds all elements with the class 'remove-item' and registers a click event handler function. When this handler function is called, the <code>this</code> keyword will be set to the raw DOM button element, so we wrap this in a jQuery object and use its <code>data()</code> method to retrieve the cart item we stashed during the <code>afterRender()</code> method we added to the CartItemView object. We then pass that to the <code>removeItem()</code> method of the view's model, which will remove the item from the Cart model.</p>
+
+                    <p>The model's <code>removeItem()</code> method is implemented on the prototype object ListModel, from which the Cart model inherits. The prototype's implementation will automatically trigger a 'change' event after removing the item. The CartView's prototype object (TemplateListView) is listening for that 'change' event, and will automatically call the <code>render()</code> method again to re-render the view. So once you remove the item from the cart, the view should automatically re-render to show the remaining items. Thus is the power of a good MVC architecture!</p>
+
+                    <p>Lastly, remember to return your <code>view</code> variable from the <code>createCartView()</code> function so that the caller gets a reference to the new view.</p>
 
                 </section>
 
