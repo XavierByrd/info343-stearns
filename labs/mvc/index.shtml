@@ -89,11 +89,11 @@
                         <li>remove an item from array and trigger a 'change' event</li>
                     </ul>
 
-                    <p>Your Cart model will build upon this basic ListModel, adding a method to calculate the total price of the cart, and produce a JSON representation of the cart items.</p>
+                    <p>Your Cart model will inherit from this basic ListModel, adding a method to calculate the total price of the cart, and produce a JSON representation of the cart items.</p>
 
                     <p>Now open the file <code>js/views.js</code> and look through the code. The <code>createTemplateListView()</code> function towards the bottom of the file creates an object that knows how to render a ListModel by merging each object in the model with an HTML template and appending the populated clones to a container element (sound familiar?). It also has code that listens for the model's 'change' event, and automatically re-renders the view. This TemplateListView uses another object, a TemplateView (defined at the top of the file), to handle merging a single object with the template.</p>
 
-                    <p>You CartView will build upon these TemplateView and TemplateListView objects, adding code to update the total price element, and remove items when the user clicks on one of the remove buttons.</p>
+                    <p>You CartView will inherit from this TemplateListView object, adding code to update the total price element. You will also implement a CartItemView object, which will inherit from TemplateView, and handle the remove item button click.</p>
 
                     <p>Both the <code>createListModel()</code> and <code>createTemplateListView()</code> functions accept a single parameter called <code>config</code>. This should be an plain JavaScript object with any properties you want to set on the newly created object. The comments above both of those functions explains what properties should be included in that config object.</p>
                     
