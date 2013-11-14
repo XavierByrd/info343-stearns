@@ -319,7 +319,65 @@ moviesView.on(&#039;addToCart&#039;, function(data){
 
                     <h3>Post the Cart JSON</h3>
 
+                    <p>In the required steps, I just have you split the cart JSON to the console log when the user clicks the place order button. In this optional step, we'll post that JSON to a web server, and notify the user of the response.</p>
+
+                    <p>Remove the code from the existing place order button click event handler function. We'll replace it with an AJAX call.</p>
+
+                    <p>To do the post, you should use the jQuery method <code>$.ajax()</code>. This is a more flexible and powerful method than <code>$.post()</code>, which we've used before in class. The <code>$.ajax()</code> method takes one parameter, which is an object with a set of properties:</p>
+
+                    <pre><code>
+$.ajax({
+    url: &#039;https://courses.washington.edu/info343/ajax/movies/orders/&#039;,
+    type: &#039;POST&#039;,
+    data: cartModel.toJSON(),
+    contentType: &#039;application/json&#039;,
+    success: function(responseData) {
+        //code to run after successful post
+
+    },
+    error: function(jqXHR, status, errorThrown) {
+        //error with post--alert user
+        alert(errorThrown || status);
+    }
+}); //ajax()
+
+                    </code></pre>
+
+                    <p>The <code>url</code> property specifies the URL to post to, and the <code>type</code> property specifies that this should be done as a POST rather than a GET. The <code>data</code> property is set to our cart JSON, and the <code>contentType</code> property is set to the official MIME type for JSON ('application/json'). This content type will be passed as the <code>Content-Type</code> HTTP header when the POST is made to the server, which will let the server know that the post body content is JSON and not something else.</p>
+
+                    <p>The <code>success</code> property is set to a callback function that is called by jQuery after a successful response from the server. The jQuery library will pass a parameter to this function, which will be the parsed data returned by the server. In this case, that responseData will be a JavaScript object with one property: message.</p>
+
+                    <p>In the success callback function, write the code to display the <code>responseData.message</code> to the user in an <code>alert()</code>. Or if you're feeling adventurous, add a <code>&lt;p class=&quot;message&quot;&gt;</code> to the top of the page that is initially hidden (create a new style rule for <code>.message</code> with <code>display: none</code>), set that paragraphs HTML to be the response message and use jQuery's <code>fadeIn()</code> method to show it.</p>
+
+                    <p>Lastly, once you've got a success message back from the server, you should clear out the items in the current cart (since that order has now been posted). This is easily done using <code>cartModel.setItems([]);</code>. That will reset the items array to an empty one, and the model will trigger its change event, causing the cart view to re-render.</p>
+
+
                     <h3>Save and Restore the Cart Between Page Views</h3>
+
+                    <p>If the user leaves our current page and returns to it later, any items in the user's cart will be gone. But we can save the current cart JSON to local storage when it's changed, and recreate the cart items when the page is loaded again.</p>
+
+                    <p>Our first step is to save the current cart JSON to local storage whenever it changes. Fortunately, models trigger a 'change' event when they are changed, so our controller can listen for this event, and react accordingly.</p>
+
+                    <p>At the bottom of your document ready function in controller.js, use the <code>cartModel.on()</code> method to register an event handler callback function for the model's change event:</p>
+
+                    <pre><code>
+cartModel.on('change', function(){
+    localStorage.setItem('cart', cartModel.toJSON());
+});
+                    </code></pre>
+
+                    <p>Now we are saving the current cart JSON to local storage whenever it changes, under the key 'cart'.</p>
+
+                    <p>Next, add this code in your controller's document ready function, <strong>just after</strong> you create the cart view and model:</p>
+
+                    <pre><code>
+var cartJSON = localStorage.getItem('cart');
+if (cartJSON &amp;&amp; cartJSON.length &gt; 0) {
+    cartModel.setItems(JSON.parse(cartJSON));
+}
+                    </code></pre>
+
+                    <p>This block will get the cart JSON out of local storage, and if there was any, it will parse that and pass the results to the cart model's <code>setItems()</code> method. This will reset the cart items and trigger a change event, which the cart view will hear, causing it to re-render the cart.</p>
 
                 </section>
 
