@@ -131,14 +131,14 @@ return totalPrice.toFixed(2);
 
                     <p>The second method we need to add to this model object is <code>toJSON()</code>, which should return a JSON representation of the cart items. Use the sample code above to add this second method. The code inside the new function should simply return the result of <code>JSON.stringify(this.items)</code>. The <code>JSON.stringify()</code> method is built-in to the browser's JavaScript interpreter, and will produce a JSON representation of whatever is passed to it as the first parameter.</p>
 
-                    <p>Now that we've created the model object and added the two new methods to it, the last step is to return the new model object from the <code>createCartModel()</code> function. Write the line of code to return your <code>model</code> variable.</p>
+                    <p>Now that we've created the model object and added the two new methods to it, the last step is to return the new model object from the <code>createCartModel()</code> function. Write the line of code to return your <code>model</code> variable from the function.</p>
 
                     
 
 
                     <h2>Implement the Cart Item View</h2>
 
-                    <p>Now that we have a model object for the cart, we next need to implement the two view objects to display the model on screen. The first is the view that knows how to render a single item in the cart. This TemplateView I provided can do most of the work for us, but we need to do one extra thing after it renders: associate the current cart item with the remove item button, so that when that button is clicked, we can remove the item from the cart model.</p>
+                    <p>Now that we have a model object for the cart, we next need to implement the two view objects to display the model on screen. The first is the view that knows how to render a single item in the cart. This TemplateView I provided can do most of the work for us, but we need to do one extra thing after it renders: handle the click of the remove item button, and remove the relevant item from the cart.</p>
 
                     <p>Open the file <code>js/cartItemView.js</code>. This is where you will implement the CartItemView object by completing the function <code>createCartItemView()</code>. This is a prototypal-style factory function that should build and return an object instance that inherits from a TemplateView object instance, adding one extra method.</p>
 
@@ -192,7 +192,7 @@ config.templateView = createCartItemView(config);
 var view = createTemplateListView(config);
                     </code></pre>
 
-                    <p>I've written TemplateListView such that it will call the method <code>afterRender()</code> after it renders the view (if the derived object doesn't implement this method, it will just skip this). If we implement this method, we can update the total price, as well as register a click event handler for the remove item buttons. Let's add that method now:</p>
+                    <p>I've written TemplateListView such that it will call the method <code>afterRender()</code> after it renders the view (if the derived object doesn't implement this method, it will just skip this). If we implement this method, we can update the total price. Let's add that method now:</p>
 
                     <pre><code>
 view.afterRender = function() {
