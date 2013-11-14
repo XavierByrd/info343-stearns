@@ -73,7 +73,7 @@
 
                     <p>This URL returns an array of objects in JSON, and each object has the properties <code>id</code>, <code>title</code>, <code>pic</code>, and <code>prices</code>. The last of these is actually a sub-object with the properties <code>dvd</code> and <code>bluray</code>, representing the price for the DVD and Blu-Ray versions of the movie respectively.</p>
 
-                    <p>Your controller will fetch this JSON and use the MoviesView (already implemented in moviesView.js) to render each movie's information and add-to-cart buttons. The MovieView will then trigger 'addToCart' events every time one of those buttons is clicked. Your controller will catch those events and add the selected movie and format to the Cart model as a new item. This will automatically re-render the CartView (which you will also implement) to show the newly-expanded contents of the cart.</p>
+                    <p>Your controller will fetch this JSON and use the MoviesView (already implemented in moviesView.js) to render each movie's information and add-to-cart buttons. The MovieView will then trigger 'addToCart' events every time one of those buttons is clicked. Your controller will catch those events and add the selected movie and format to the Cart model (which you will implement) as a new item. This will automatically re-render the CartView (which you will also implement) to show the newly-expanded contents of the cart.</p>
 
                     <h2>Review the Supporting Code</h2>
 
