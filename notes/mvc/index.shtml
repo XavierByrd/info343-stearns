@@ -83,7 +83,11 @@
             <li><a href="../../todo/">Sample to-do list application</a>
             </li>
 
-            <li><a href="../../twatter">Sample MVC application that uses Parse.com for storage</a></li>
+            <li><a href="../../twatter">Sample MVC application that uses Parse.com for storage</a>
+                <ol>
+                    <li><a href="https://github.com/drstearns/mvc-demo">GitHub Repository</a></li>
+                </ol>
+            </li>
 
 
         </ol> <!-- lecture -->
