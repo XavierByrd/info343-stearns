@@ -61,7 +61,7 @@
                             <li><a href="labs/jquery/">Sortable Address Book</a></li>
                             <li><a href="labs/forms/">Gathering Information via Forms</a></li>
                             <li><a href="labs/mashups/">Leveraging Existing Services and Content</a></li>
-                            <li>Shopping Carts</li>
+                            <li>Creating a Shopping Cart</li>
                             <li>Making Data Visible</li>
                         </ul>            
 
@@ -122,7 +122,7 @@
                             <li class="notes"><a href="notes/ajax/">The Brave New World: AJAX and Web 2.0</a></li>
                             <li class="notes"><a href="notes/mashups/">Standing on the Shoulders of Giants: Building Mashups</a></li>
                             <li class="notes"><a href="notes/apps-intro/">Putting it all Together: Web Applications</a></li>
-                            <li>Transactions Processing Apps and the Model-View-Controller Pattern</li>
+                            <li class="notes"><a href="notes/mvc/">Transactions Processing Apps and the Model-View-Controller Pattern</a></li>
                             <li>Data Analysis and Visualization Apps</li>
                             <li>Content Management Systems</li>
                             <li>Special Topics</li>

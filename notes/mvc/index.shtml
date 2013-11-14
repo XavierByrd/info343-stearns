@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for Transactional Apps Lecture">
+    <title>Transactional Web Applications</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>Transactional Web Applications</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Fri, Nov 15
+                        <ol>
+                            <li>Shopping Cart Lab</li>
+                        </ol>
+                    </li>
+                    <li>Tues, Nov 19
+                        <ol>
+                            <li>Data Visualization Applications
+                                <ol>
+                                    <li><em>Please Read/Watch:</em></li>
+                                    <li><a href="http://www.ted.com/talks/hans_rosling_shows_the_best_stats_you_ve_ever_seen.html">Hans Rosling: The Best Stats You've Ever Seen</a></li>
+                                    <li><a href="http://www.cnn.com/2011/OPINION/04/19/sexy.data/">How to Make Data Look Sexy</a></li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>The Model-View-Controller Design Pattern</li>
+                    <li>Building a <a href="../../todo/">To-Do List Web Application</a></li>
+                    <li>Using the <a href="http://parse.com">Parse.com</a> Web Service for <a href="../../twatter">Easy Data Storage</a></li>
+                </ol>
+            </li>
+
+            <li>The Model-View-Controller Pattern
+                <ol>
+                    <li>Originally developed by those who created the Smalltalk programming language</li>
+                    
+                    <li>Basic idea is to keep data and presentations of those data separate from one another, and to develop loosely-coupled, reusable components that can be mixed and matched to build a full application</li>
+
+                    <li>Models:
+                        <ol>
+                            <li>Objects that contain data and manage changes to those data</li>
+                            <li>Enforce validation rules and business logic</li>
+                            <li>Raise events when data in the model changes</li>
+                        </ol>
+                    </li>
+
+                    <li>Views:
+                        <ol>
+                            <li>Make the data in models visible in some specific way (list, forms, cards, chart, map, etc.)</li>
+                            <li>Each model might have many kinds of views that know how to render the model data in different ways</li>
+                            <li>Views listen for change events raised by model and automatically re-render</li>
+                        </ol>
+                    </li>
+
+                    <li>Controllers:
+                        <ol>
+                            <li>Stitch together models and views to create a complete application</li>
+                            <li>Handle user interaction outside of the views (main menu, toolbar, resizing, etc.)</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>In-Class Coding Repository
+                <ol>
+                    <li><a href="https://github.com/drstearns/in-class-code-a">Section A (8:30)</a></li>
+                    <li><a href="https://github.com/drstearns/in-class-code-b">Section B (10:30)</a></li>
+                </ol>
+            </li>
+
+            <li><a href="../../todo/">Sample to-do list application</a>
+            </li>
+
+            <li><a href="../../twatter">Sample MVC application that uses Parse.com for storage</a></li>
+
+
+        </ol> <!-- lecture -->
+
+    </div> <!-- .container -->
+
+</body>
+</html>
