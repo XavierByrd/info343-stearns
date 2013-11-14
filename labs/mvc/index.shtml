@@ -148,13 +148,19 @@ return totalPrice.toFixed(2);
 var view = createTemplateView(config);
                     </code></pre>
 
-                    <p>This will create a new TemplateView instance that we can now augment by adding an extra method: afterRender(). The TemplateView object will call this method (if it exists) after it has rendered the object using the template, and it will pass a reference to the cloned template HTML as the first parameter. We can implement this function and write a line of code that finds the remove button in the cloned template HTML, and associates the current item with the button.</p>
+                    <p>This will create a new TemplateView instance that we can now augment by adding an extra method: afterRender(). The TemplateView object will call this method (if it exists) after it has rendered the model object using the template. It will pass a reference to the cloned template HTML as the first parameter, and a reference to the current model object as the second parameter. We can implement this method to handle the remove-item button click, removing the associated cart item from the cart model.</p>
 
-                    <p>Use the sample code above to add a new method to the <code>view</code> object called <code>afterRender</code>. The function should take one parameter called <code>clonedTemplate</code>. Inside that new function, we'll use jQuery's <code>find()</code> method to find the remove item button by its class name, and then use jQuery's <code>data()</code> method to associate the current cart item with the button. The code should look like this:</p>
+                    <p>Use the sample code above to add a new method to the <code>view</code> object called <code>afterRender</code>. The function should take two parameters called <code>clonedTemplate</code> and <code>model</code>. Inside that new function, we'll use jQuery's <code>find()</code> method to find the remove-item button by its class name, and then use jQuery's <code>click()</code> method to catch the button click, and remove the current item from the cart. The code should look like this:</p>
 
                     <pre><code>
-clonedTemplate.find(&#039;.remove-item&#039;).data(&#039;item&#039;, this.model);
+view.afterRender = function(clonedTemplate, model) {
+    clonedTemplate.find(&#039;.remove-item&#039;).click(function(){
+        view.cartModel.removeItem(model);
+    });
+};
                     </code></pre>
+
+                    <p>The <code>view.cartModel</code> property is a reference to the Cart model you implemented in the previous step, and this reference will be set by the CartView you will implement in the next step. The removeItem() method of the cart model is inherited from ListModel, and this method will trigger a 'change' event each time an item is removed from the model. The prototype object we'll use for the overall cart view will be listening for this event, and automatically re-render the view when it receives it. Thus is the power of an MVC architecture!</p>
 
                     <p>Finally, return the <code>view</code> variable from the <code>createCartItemView()</code> function so that the caller can get the new view instance.</p>
 
@@ -167,9 +173,16 @@ clonedTemplate.find(&#039;.remove-item&#039;).data(&#039;item&#039;, this.model)
 
                     <p>Open the <code>js/cartView.js</code> file. This is where you will implement the CartView object by completing the function <code>createCartView()</code>. This is a prototypal-style factory function that should build and return an object instance that inherits from a TemplateListView object instance, adding one extra method.</p>
 
-                    <p>Before we call <code>createTemplateListView()</code>, we first need to add a property to the <code>config</code> object that is passed to our function, and which we will in turn pass to the <code>createTemplateListView()</code> method. The TemplateListView object requires a property on the config object called <code>templateView</code>, and that should be set to an instance of a TemplateView-derived object that knows how to render a single model item using the template. We just implemented the function that creates just such an object: <code>createCartItemView()</code>. So the first line of code in our function needs to be this:</p>
+                    <p>Before we call <code>createTemplateListView()</code>, we first need to add a couple of properties to the <code>config</code> object that is passed to our function, and which we will in turn pass to the <code>createCartItemView()</code> and <code>createTemplateListView()</code> methods.</p>
+
+                    <p>The first property to add is called <code>cartModel</code>, and it should be set to <code>config.model</code>. This is the property that we used in the cart item view when the user clicks on the remove-item button.</p>
+
+                    <p>The second property is called <code>templateView</code>, and it should be set to an instance of a cart item view, which you can create using the <code>createCartItemView()</code> function you just implemented. The TemplateListView requires this property in order to know which object it should use to render each item in the list.</p>
+
+                    <p>The first two lines of your function should thus look like this:</p>
 
                     <pre><code>
+config.cartModel = config.model;
 config.templateView = createCartItemView(config);
                     </code></pre>
 
@@ -187,23 +200,12 @@ view.afterRender = function() {
 }; //afterRender()
                     </code></pre>
 
-                    <p>Inside that method, we need to add code to update the total price element, and register click event handlers for the remove button. We already added a method to our Cart model that can give us the total price (<code>this.model.getTotalPrice()</code>). When we create this view in our controller (next step) we will set a property on it called <code>totalPrice</code>, which will be a jQuery object containing the total price HTML element. Therefore, updating the total price can be done with code like this:</p>
+                    <p>Inside that method, we need to add code to update the total price element. We already added a method to our Cart model that can give us the total price (<code>this.model.getTotalPrice()</code>). When we create this view in our controller (next step) we will set a property on it called <code>totalPrice</code>, which will be a jQuery object containing the total price HTML element. Therefore, updating the total price can be done with code like this:</p>
 
                     <pre><code>
 this.totalPrice.html(this.model.getTotalPrice());
                     </code></pre>
 
-                    <p>Next, and still inside the <code>afterRender()</code> method, we need to add a click event handler for all the remove item buttons, and remove the corresponding item from the cart when a button is clicked. The jQuery library makes it easy for us to register one event handler for a set of related buttons&mdash;we just select all the buttons using their common class name, and use the <code>click()</code> method of the resulting jQuery object to register an event handler function:</p>
-
-                    <pre><code>
-this.container.find(&#039;.remove-item&#039;).click(function(){
-    view.model.removeItem($(this).data(&#039;item&#039;));
-});
-                    </code></pre>
-
-                    <p>This code finds all elements with the class 'remove-item' and registers a click event handler function. When this handler function is called, the <code>this</code> keyword will be set to the raw DOM button element, so we wrap this in a jQuery object and use its <code>data()</code> method to retrieve the cart item we stashed during the <code>afterRender()</code> method we added to the CartItemView object. We then pass that to the <code>removeItem()</code> method of the view's model, which will remove the item from the Cart model.</p>
-
-                    <p>The model's <code>removeItem()</code> method is implemented on the prototype object ListModel, from which the Cart model inherits. The prototype's implementation will automatically trigger a 'change' event after removing the item. The CartView's prototype object (TemplateListView) is listening for that 'change' event, and will automatically call the <code>render()</code> method again to re-render the view. So once you remove the item from the cart, the view should automatically re-render to show the remaining items. Thus is the power of a good MVC architecture!</p>
 
                     <p>Lastly, remember to return your <code>view</code> variable from the <code>createCartView()</code> function so that the caller gets a reference to the new view.</p>
 
@@ -214,8 +216,85 @@ this.container.find(&#039;.remove-item&#039;).click(function(){
 
                     <p>We've now implemented all the models and views we need, so our last task is to implement the controller that stitches all the pieces together.</p>
 
-                    <p>Open the file <code>js/controller.js</code>. This is where you will implement the controller. </p>
+                    <p>Open the file <code>js/controller.js</code>. This is where you will implement the controller. A controller is very similar to the code you've been writing for web pages so far&mdash;it starts with a jQuery document ready function:</p>
 
+                    <pre><code>
+$(function(){
+
+}); //doc ready()
+                    </code></pre>
+
+                    <p>Inside the document ready function, we first need to create an object that will translate between the format codes for our movies ('dvd' and 'bluray') to nicer-looking labels ('DVD' and 'Blu-Ray'). That object would look like this:</p>
+
+                    <pre><code>
+var formatLabels = {
+    dvd: &#039;DVD&#039;,
+    bluray: &#039;Blu-Ray&#039;
+};
+                    </code></pre>
+
+                    <p>After that little object, we should now create our cart model and view. Use the <code>createCartModel()</code> function to create the cart, and the <code>createCartView()</code> function to create the cart view. The latter function will require a configuration object with these properties:</p>
+
+                    <pre><code>
+var cartModel = createCartModel();
+
+var cartView = createCartView({
+    model: cartModel,
+    template: $(&#039;.cart-item-template&#039;),
+    container: $(&#039;.cart-items-container&#039;),
+    totalPrice: $(&#039;.total-price&#039;)
+});
+                    </code></pre>
+                    
+                    <p>Here we set the <code>model</code> property to the cart model we create, and the <code>template</code>, <code>container</code>, and <code>totalPrice</code> properties are set to jQuery objects containing their respective page elements.</p>
+
+                    <p>Next, we need to create the movies model and view, which I already implemented for you. The code to create them looks like this:</p>
+
+                    <pre><code>
+var moviesModel = createMoviesModel({
+    url: &#039;https://courses.washington.edu/info343/ajax/movies/&#039;
+});
+
+var moviesView = createMoviesView({
+    model: moviesModel,
+    template: $(&#039;.movie-template&#039;),
+    container: $(&#039;.movies-container&#039;)
+});
+
+//refresh to get movies from server
+moviesModel.refresh();
+                    </code></pre>
+
+                    <p>The movies model is initialized with a <code>url</code> property containing the URL for the movies JSON data. The movies view is initialized with a reference to the movies model, its template element, and container element. Finally, we call the <code>refresh()</code> method on the model to load the movies data from the URL.</p>
+
+                    <p>At this point, you should be able to open the index.html page in your browser and see the movies listed down the left, and an empty cart displayed on the right. If you don't see that, look in the Browser's developer tools console for error messages, and correct any errors you might have made.</p>
+
+                    <p>Next, we need to respond to the add-to-cart buttons shown next to each movie, and add a corresponding item to the cart. The movies view will trigger an 'addToCart' event when the user clicks on one of those buttons, passing a data object that contains two properties: the movie ID, and the format code ('dvd' or 'bluray'). We need to listen for this event, and use the passed data to add a new item to the shopping cart. The code would look like this:</p>
+
+                    <pre><code>
+//when the movies view triggers &#039;addToCart&#039;
+//add a new item to the cart, using the supplied
+//movieID and format
+moviesView.on(&#039;addToCart&#039;, function(data){
+    var movie = moviesModel.getItem(data.movieID);
+    if (!movie)
+        throw &#039;Invalid movie ID &quot;&#039; + movieID + &#039;&quot;!&#039;; 
+
+    cartModel.addItem({
+        id: movie.id,
+        title: movie.title,
+        format: data.format,
+        formatLabel: formatLabels[data.format],
+        price: movie.prices[data.format]
+    });
+}); //addToCart event
+                    </code></pre>
+
+                    <p>This code uses the <code>on()</code> method supported by any event source to register a handler function for the 'addToCart' event. This function is passed one parameter, which is a data object containing the properties <code>movieID</code> and <code>format</code>. We first use the movies model <code>getItem()</code> method to find the movie by its ID, and then add a new item to the cart using the various movie properties. Note how we use the <code>formatLabels</code> object we created earlier to translate between the format code and a nicer label we can show to the user.</p>
+
+                    <p>Our final step is to handle the place-order button click. For now, we'll just write the cart JSON to the <code>console.log</code>. If you choose to do <a href="#optional-steps">the optional steps</a>, you can write the code to post that JSON to another URL and get a confirmation message.</p>
+
+                    <p>Use the jQuery function to select the button by its class name ('.place-oder'), and use the <code><a href="http://api.jquery.com/click/">click()</a></code> method on the resulting jQuery object to register a click event handler. In that event handler function, call the method <code>cartModel.toJSON()</code> and write the return value to the console using <code>console.log()</code>.</p>
 
                 </section>
 
