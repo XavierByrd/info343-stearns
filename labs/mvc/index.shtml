@@ -294,7 +294,7 @@ moviesView.on(&#039;addToCart&#039;, function(data){
 
                     <p>Our final step is to handle the place-order button click. For now, we'll just write the cart JSON to the <code>console.log</code>. If you choose to do <a href="#optional-steps">the optional steps</a>, you can write the code to post that JSON to another URL and get a confirmation message.</p>
 
-                    <p>Use the jQuery function to select the button by its class name ('.place-oder'), and use the <code><a href="http://api.jquery.com/click/">click()</a></code> method on the resulting jQuery object to register a click event handler. In that event handler function, call the method <code>cartModel.toJSON()</code> and write the return value to the console using <code>console.log()</code>.</p>
+                    <p>Use the jQuery function to select the button by its class name ('.place-order'), and use the <code><a href="http://api.jquery.com/click/">click()</a></code> method on the resulting jQuery object to register a click event handler. In that event handler function, call the method <code>cartModel.toJSON()</code> and write the return value to the console using <code>console.log()</code>.</p>
 
                 </section>
 
