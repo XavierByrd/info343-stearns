@@ -19,12 +19,11 @@
         <ol class="lecture-outline">
             <li>Coming Up...
                 <ol>
-                    <li>Thurs, Nov 21: Content Management Systems
+                    <li>Thurs, Nov 21: Data Visualization, Part II
                         <ol>
                             <li><em>please read:</em></li>
-                            <li><a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/using-mysql-on-shared-uw-hosting/install-mysql/">Installing MySQL on your UW Student Web Host</a></li>
-                            <li><a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/installing-wordpress/">Installing WordPress on your UW Student Web Host</a></li>
-                            <li><a href="http://codex.wordpress.org/Getting_Started_with_WordPress">Getting Started with WordPress</a></li>
+                            <li><a href="http://d3js.org/">Intro to D3</a></li>
+                            <li><a href="http://bost.ocks.org/mike/bar/">D3 Bar Chart Tutorial</a></li>
                         </ol>
                     </li>
                     <li>Fri, Nov 22: Data Visualization with D3 Lab
@@ -34,10 +33,12 @@
 
             <li>Today
                 <ol>
-                    <li>Transactional Recap: Free and Easy Cloud Storage using Parse.com</li>
+                    <li>Debrief Lab 8</li>
+                    <li>Check in on Homework v4.0</li>
+                    <li>Check in on Final Projects</li>
+                    <li>Transactional Apps Recap: Free and Easy Cloud Storage using Parse.com</li>
                     <li>Drawing in the Browser: SVG and the Canvas Element</li>
                     <li>Simple Charting with the Chart.js library</li>
-                    <li>Complex Data Visualizations with the D3 library</li>
                 </ol>
             </li>
 
@@ -45,6 +46,41 @@
                 <ol>
                     <li><a href="https://github.com/drstearns/in-class-code-a">Section A (8:30)</a></li>
                     <li><a href="https://github.com/drstearns/in-class-code-b">Section B (10:30)</a></li>
+                </ol>
+            </li>
+
+            <li>Transactional App Data Storage using Parse.com
+                <ol>
+                    <li>Our Task List application didn't save the task list anywhere, but a real transactional app would need to persist the data somewhere, preferably on a server so that it would be accessible from everywhere</li>
+
+                    <li>Traditionally, a transactional app would also require developing some code on the server-side:
+                        <ol>
+                            <li>PHP script or CGI program to respond to GET and POST requests</li>
+
+                            <li>Relational database for storing and querying the structured data</li>
+
+                            <li>Traditional server-side stack was known as LAMP: Linux (OS), Apache (web server), MySql (relational database), and PHP or Python or Perl (script responding to GET and POST web requests)</li>
+
+                            <li>New options such as Node.js have surfaced in recent years to replace Apache and PHP/Perl/Python</li>
+                        </ol>
+                    </li>
+
+                    <li>But with the establishment of cloud computing techniques, new services have sprung up that can do all of this for you in a generic way so that <em>you don't have to write any server-side code at all</em></li>
+
+                    <li>Both Amazon S3 and Google Cloud Storage provide these services</li>
+
+                    <li>A relatively new and very well-designed storage service is <a href="https://parse.com/">Parse.com</a>
+                        <ol>
+                            <li>Built on top of Amazon's S3 cloud infrastructure and Backbone.js's MVC architecture</li>
+
+                            <li>Adds user accounts, authentication, and access control (security)</li>
+
+                            <li>Allows persistence and querying of related, linked objects (e.g., order with order line items)</li>
+                        </ol>
+                    </li>
+
+                    <li>Demo! The Task List on Parse.com</li>
+
                 </ol>
             </li>
 
@@ -111,43 +147,6 @@
                     <li>Demo! Simple charting via Chart.js</li>
                 </ol>
             </li>
-
-            <li>Complex Data Visualization with <a href="http://d3js.org/">D3</a>
-                <ol>
-                    <li>General JavaScript framework for manipulating the DOM using data</li>
-
-                    <li>Very powerful, and very complex!</li>
-
-                    <li>Essentially, it's jQuery meets data; select nodes using CSS selector syntax (just like jQuery), but you can also create sets of nodes based on data values</li>
-
-                    <li>Nodes can be HTML, but more commonly used to create and manipulate SVG</li>
-
-                    <li>Data Loading and Management
-                        <ol>
-                            <li>Built-in support for loading data via AJAX</li>
-                            <li>Can parse TSV and CSV as well as JSON</li>
-                            <li>General functions for sorting, filtering, and tabulating arrays of numbers or objects</li>                          
-                        </ol>
-                    </li>
-
-                    <li>Scales
-                        <ol>
-                            <li>Flexible set of functions for translating between data scale and graphical scale</li>
-                            <li>For example, data range may be 0 to 100, but graphical range is 0 to 800; d3 helps your define a function to map a data value to a graphical unit value</li>
-                            <li>Scales can be linear, log, sqrt, power, quantiles etc.</li>
-                        </ol>
-                    </li>
-
-                    <li>Support for building common visualization elements like axes</li>
-
-                    <li>Powerful layout features</li>
-
-                    <li><a href="https://github.com/mbostock/d3/wiki/Gallery">Examples Gallery</a></li>
-
-                </ol>
-
-            </li>
-
 
 
         </ol> <!-- lecture -->
