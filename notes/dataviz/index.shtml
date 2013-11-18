@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for Data Visualization in the Web Lecture">
+    <title>Data Visualization Web Applications</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>Data Analysis and Visualization Applications</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Thurs, Nov 21: Content Management Systems
+                        <ol>
+                            <li><em>please read:</em></li>
+                            <li><a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/using-mysql-on-shared-uw-hosting/install-mysql/">Installing MySQL on your UW Student Web Host</a></li>
+                            <li><a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/installing-wordpress/">Installing WordPress on your UW Student Web Host</a></li>
+                            <li><a href="http://codex.wordpress.org/Getting_Started_with_WordPress">Getting Started with WordPress</a></li>
+                        </ol>
+                    </li>
+                    <li>Fri, Nov 22: Data Visualization with D3 Lab
+                    </li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>Transactional Recap: Free and Easy Cloud Storage using Parse.com</li>
+                    <li>Drawing in the Browser: SVG and the Canvas Element</li>
+                    <li>Simple Charting with the Chart.js library</li>
+                    <li>Complex Data Visualizations with the D3 library</li>
+                </ol>
+            </li>
+
+            <li>In-Class Coding Repository
+                <ol>
+                    <li><a href="https://github.com/drstearns/in-class-code-a">Section A (8:30)</a></li>
+                    <li><a href="https://github.com/drstearns/in-class-code-b">Section B (10:30)</a></li>
+                </ol>
+            </li>
+
+            <li>Drawing in the Browser
+                <ol>
+                    <li>Data visualizations require the ability to draw things like lines, curves, rectangles, points, circles, and polygons directly to the screen</li>
+
+                    <li>Two ways to do this now: the <code>&lt;canvas&gt;</code> element and SVG</li>
+
+                    <li>The <code>&lt;<a href="http://www.w3schools.com/tags/ref_canvas.asp">canvas</a>&gt;</code> element
+                        <ol>
+                            <li>New to HTML 5, but widely supported</li>
+
+                            <li>General drawing surface that is more like an operating system window than a document element</li>
+
+                            <li>Drawing accomplished through <a href="http://www.w3schools.com/tags/ref_canvas.asp">JavaScript API</a> only, not through additional tags</li>
+
+                            <li>Both geometry and aesthetic styling is done entirely through code; can't use CSS because there are no child elements to select</li>
+
+                            <li>Since there are no elements inside, you have to do your own hit testing to figure out what the user clicks on or hovers over</li>
+
+                            <li>Higher performance and more memory efficient than SVG, but much harder to manipulate, animate, or interact with</li>
+
+                            <li>Script can get the current image data as a base-64 encoded string, so you can save the results of your drawing and reload it again later</li>
+                        </ol>
+                    </li>
+
+                    <li><a href="http://www.w3schools.com/svg/svg_intro.asp">Scalable Vector Graphics (SVG)</a>
+                        <ol>
+                            <li>Uses child elements to specify shapes and text that should be drawn inside the containing <code>&lt;svg&gt;</code> element</li>
+
+                            <li>Child elements represent shapes, lines, curves, text, etc.</li>
+
+                            <li>Child elements, like other document elements, can have style class names and ids</li>
+
+                            <li>Geometry of child elements is specified via attributes, but aesthetics (colors, borders, etc.) can be specified via CSS</li>
+
+                            <li>Because they are elements, you can refer to them in script, manipulate them, and respond to events triggered by them (e.g., click, hover)</li>
+
+                            <li>Tends to use more memory than <code>&lt;canvas&gt;</code>, but you can embed some or all of your drawing content directly in the document, and manipulate it the same way you'd manipulate other parts of the document</li>
+
+                            <li>Not as good support on older mobile browsers (iOS 5+ and Android 3+), but this is quickly becoming a non-issue</li>
+
+                        </ol>
+                    </li>
+
+                    <li>Demo! Simple Canvas and SVG drawing</li>
+
+                </ol>
+            </li>
+
+            <li>Simple Charting with <a href="http://www.chartjs.org/">Chart.js</a>
+                <ol>
+                    <li>You could create basic charts using the canvas API or SVG elements directly, but there are a few JavaScript libraries that make this much, much easier to do</li>
+
+                    <li>For simple bar, line, radar, pie, and doughnut charts, use a library like  <a href="http://www.chartjs.org/">Chart.js</a></li>
+
+                    <li><a href="http://www.chartjs.org/docs/">Code to create these kinds of charts</a> is <em>very</em> simple, but dataset must be arranged in a specific structure defined by the library</li>
+
+                    <li>Uses the <code>&lt;canvas&gt;</code> element, so they are quick and memory efficient, but do not yet offer any kind of interactivity besides basic build animations</li>
+
+                    <li>Lots of control over appearance of labels, grid lines, data points, etc., but titles and legends have to be placed outside the <code>&lt;canvas&gt;</code> or drawn on via your own code</li>
+
+                    <li>Demo! Simple charting via Chart.js</li>
+                </ol>
+            </li>
+
+            <li>Complex Data Visualization with <a href="http://d3js.org/">D3</a>
+                <ol>
+                    <li>General JavaScript framework for manipulating the DOM using data</li>
+
+                    <li>Very powerful, and very complex!</li>
+
+                    <li>Essentially, it's jQuery meets data; select nodes using CSS selector syntax (just like jQuery), but you can also create sets of nodes based on data values</li>
+
+                    <li>Nodes can be HTML, but more commonly used to create and manipulate SVG</li>
+
+                    <li>Data Loading and Management
+                        <ol>
+                            <li>Built-in support for loading data via AJAX</li>
+                            <li>Can parse TSV and CSV as well as JSON</li>
+                            <li>General functions for sorting, filtering, and tabulating arrays of numbers or objects</li>                          
+                        </ol>
+                    </li>
+
+                    <li>Scales
+                        <ol>
+                            <li>Flexible set of functions for translating between data scale and graphical scale</li>
+                            <li>For example, data range may be 0 to 100, but graphical range is 0 to 800; d3 helps your define a function to map a data value to a graphical unit value</li>
+                            <li>Scales can be linear, log, sqrt, power, quantiles etc.</li>
+                        </ol>
+                    </li>
+
+                    <li>Support for building common visualization elements like axes</li>
+
+                    <li>Powerful layout features</li>
+
+                    <li><a href="https://github.com/mbostock/d3/wiki/Gallery">Examples Gallery</a></li>
+
+                </ol>
+
+            </li>
+
+
+
+        </ol> <!-- lecture -->
+
+    </div> <!-- .container -->
+
+</body>
+</html>
