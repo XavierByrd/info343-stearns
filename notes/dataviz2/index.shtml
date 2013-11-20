@@ -68,7 +68,7 @@
 </svg>                                                    
                     </li>
 
-                    <li>Child elements can be <code>&lt;rect&gt;</code>, <code>&lt;circle&gt;</code>, <code>&lt;ellipse&gt;</code>, <code>&lt;line&gt;</code>, <code>&lt;polyline&gt;</code>, <code>&lt;polygon&gt;</code> or <code>&lt;path&gt;</code></li>
+                    <li>Child elements can be <code>&lt;rect&gt;</code>, <code>&lt;circle&gt;</code>, <code>&lt;ellipse&gt;</code>, <code>&lt;line&gt;</code>, <code>&lt;polyline&gt;</code>, <code>&lt;polygon&gt;</code>, <code>&lt;path&gt;</code>, or <code>&lt;text&gt;</code></li>
 
                     <li>Special <code>&lt;g&gt;</code> element for grouping a set of related elements (kind of like <code>&lt;div&gt;</code> in HTML)</li>
 
@@ -79,6 +79,8 @@
                             <li>Most shapes have <code>x</code> and <code>y</code> attributes for specifying their position</li>
 
                             <li>Circles and Ellipses use <code>cx</code> and <code>cy</code> attributes, as well as <code>r</code> for radius</li>
+
+                            <li>Lines use <code>x1</code>, <code>x2</code>, <code>y1</code>, and <code>y2</code> to specify start and end x/y</li>
 
                             <li>You can also use <code>dx</code> and <code>dy</code> attributes to specify an offset from a parent element's position (mostly useful when combined with <code>&lt;g&gt;</code> element)</li>
                         </ol>
@@ -109,6 +111,18 @@
                         </ol>
                     </li>
 
+                    <li>Text can be added via the <code>&lt;text&gt;</code> element
+                        <ol>
+                            <li>Use <code>x</code> and <code>y</code> attributes to specify position</li>
+
+                            <li>Use <code>text-anchor</code> attribute or CSS property to specify which part of the text should be positioned at the x/y coordinates (start, middle or end)</li>
+                            
+                            <li>Supports same <code>fill</code> and <code>stroke</code> CSS formatting properties</li>
+
+                            <li>Also supports all the various transformations, including rotate(), which is useful for rotating a vertical axis label</li>
+                        </ol>
+                    </li>
+
                     <li>Existing raster images can also be included via the <code>&lt;image&gt;</code> element, and transformed using the <code>transform</code> attribute</li>
 
                     <li>In general, elements that appear first are drawn first, so later elements can overlay earlier ones</li>
@@ -125,7 +139,9 @@
                         </ol>
                     </li>
 
-                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">SVG Tutorial</a></li>
+                    <li><a href="http://tutorials.jenkov.com/svg/index.html">A straightforward SVG Tutorial</a></li>
+
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">Another good SVG Tutorial</a></li>
 
                     <li><a href="http://www.w3.org/TR/SVG/">SVG 1.1 Specification</a></li>
                 </ol>
