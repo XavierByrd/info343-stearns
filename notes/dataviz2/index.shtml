@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for Data Visualization in the Web Part IILecture">
+    <title>Data Visualization Part II</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>Data Analysis and Visualization Applications, Part II</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Fri, Nov 22: Homework v4.0 Lab</li>
+
+                    <li>Tues, Nov 26: Content Management Systems
+                        <ol>
+                            <li><em>please read...</em></li>
+                            <li><a href="http://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/using-mysql-on-shared-uw-hosting/install-mysql/">Installing MySQL on UW Student Web Hosts</a></li>
+                            <li><a href="https://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/installing-wordpress/">Installing WordPress on UW Student Web Hosts</a></li>
+                            <li><a href="https://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/installing-drupal/">Installing Drupal on UW Student Web Hosts</a></li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>Check in on Homework v4.0</li>
+                    <li>Check in on Final Projects</li>
+                    <li>Examples of Complex Data Visualizations using D3.js</li>
+                    <li>Drawing in the Browser Part II: SVG</li>
+                    <li>Using D3.js</li>
+                </ol>
+            </li>
+
+            <li><a href="https://github.com/mbostock/d3/wiki/Gallery">Examples of Complex Information Graphics using D3</a></li>
+
+            <li>In-Class Coding Repository
+                <ol>
+                    <li><a href="https://github.com/drstearns/in-class-code-a">Section A (8:30)</a></li>
+                    <li><a href="https://github.com/drstearns/in-class-code-b">Section B (10:30)</a></li>
+                </ol>
+            </li>
+
+            <li>Drawing in the Browser Part II: <a href="http://www.w3schools.com/svg/svg_intro.asp">SVG</a>
+                <ol>
+                    <li>Uses special document elements to specify shapes and text that should be drawn inside the containing <code>&lt;svg&gt;</code> element
+                        <pre><code>
+&lt;svg width=&quot;300&quot; height=&quot;200&quot;&gt;
+  &lt;rect width=&quot;100%&quot; height=&quot;100%&quot; fill=&quot;red&quot; /&gt;
+  &lt;circle cx=&quot;150&quot; cy=&quot;100&quot; r=&quot;80&quot; fill=&quot;green&quot; /&gt;
+  &lt;text x=&quot;150&quot; y=&quot;125&quot; font-size=&quot;60&quot; text-anchor=&quot;middle&quot; fill=&quot;white&quot;&gt;SVG&lt;/text&gt;
+&lt;/svg&gt;                            
+                        </code></pre>
+<svg width="300" height="200">
+  <rect width="100%" height="100%" fill="red" />
+  <circle cx="150" cy="100" r="80" fill="green" />
+  <text x="150" y="125" font-size="60" text-anchor="middle" fill="white">SVG</text>
+</svg>                                                    
+                    </li>
+
+                    <li>Child elements can be <code>&lt;rect&gt;</code>, <code>&lt;circle&gt;</code>, <code>&lt;ellipse&gt;</code>, <code>&lt;line&gt;</code>, <code>&lt;polyline&gt;</code>, <code>&lt;polygon&gt;</code> or <code>&lt;path&gt;</code></li>
+
+                    <li>Special <code>&lt;g&gt;</code> element for grouping a set of related elements (kind of like <code>&lt;div&gt;</code> in HTML)</li>
+
+                    <li>Geometry of child elements is specified via attributes
+                        <ol>
+                            <li>Coordinate system starts at upper-left and increases as you move down or right</li>
+
+                            <li>Most shapes have <code>x</code> and <code>y</code> attributes for specifying their position</li>
+
+                            <li>Circles and Ellipses use <code>cx</code> and <code>cy</code> attributes, as well as <code>r</code> for radius</li>
+
+                            <li>You can also use <code>dx</code> and <code>dy</code> attributes to specify an offset from a parent element's position (mostly useful when combined with <code>&lt;g&gt;</code> element)</li>
+                        </ol>
+                    </li>
+
+                    <li>Aesthetics of shapes can be specified in CSS
+                        <ol>
+                            <li>All SVG elements can have a <code>class</code> attribute, just like HTML elements, which lets you write style rules for them</li>
+
+                            <li>Fill color controlled by the <code>fill</code> and <code>fill-opacity</code> CSS properties</li>
+
+                            <li>Borders are controlled by the <code>stroke</code>, <code>stroke-width</code>, <code>stroke-opacity</code>, and <code>stroke-linecap</code> CSS properties</li>
+
+                        </ol>
+                    </li>
+
+                    <li>In addition to basic x/y positioning, you can also transform shapes in various ways via the <code>transform</code> attribute
+                        <ol>
+                            <li>Similar to the transform CSS property we learned earlier</li>
+
+                            <li><code>transform="translate(10,10)"</code> shifts the element from its base position by the x/y specified</li>
+
+                            <li><code>tansform="rotate(90)"</code> rotates the element by a given number of degrees</li>
+
+                            <li><code>transform="scale(1.5)"</code> will increase or decrease the size of the element</li>
+
+                            <li><code>transform="skewX()"</code> will skew the shape on the X axis; skewY() does the same on the Y axis</li>
+                        </ol>
+                    </li>
+
+                    <li>Existing raster images can also be included via the <code>&lt;image&gt;</code> element, and transformed using the <code>transform</code> attribute</li>
+
+                    <li>In general, elements that appear first are drawn first, so later elements can overlay earlier ones</li>
+
+                    <li>Manipulation in Code
+                        <ol>
+                            <li>You can type out all your various SVG elements right into the document, but the real power of SVG comes when you start generating and manipulating these elements in JavaScript</li>
+
+                            <li>Because they are all elements with tag names, <code>class</code> and <code>id</code> attributes, you can use JavaScript to select and alter existing elements, just like you have done to HTML elements</li>
+
+                            <li>You can also use JavaScript to generate new SVG elements based on data, just as you have done with HTML elements</li>
+
+                            <li>But instead of using jQuery to do this, most developers use <a href="http://d3js.org/">the D3 library</a> instead, as it has special features for working with graphics and manipulating SVG elements</li>
+                        </ol>
+                    </li>
+
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">SVG Tutorial</a></li>
+
+                    <li><a href="http://www.w3.org/TR/SVG/">SVG 1.1 Specification</a></li>
+                </ol>
+            </li>
+
+            <li><a href="http://d3js.org/">The D3 library</a>
+                <ol>
+                    <li>Very powerful, but also <em>very complex</em> JavaScript library</li>
+
+                    <li>Similar to jQuery in that you can select sets of elements using CSS selectors and manipulate the entire set at once</li>
+
+                    <li>But it also adds a number of key features that are useful for data visualizations:
+                        <ol>
+                            <li>Functions to read TSV and CSV data files as well as JSON</li>
+
+                            <li>Ability to generate new elements based on the number of data values you happen to have</li>
+
+                            <li>Scaling functions that translate your data values into pixel coordinates or colors based on the difference in numerical ranges</li>
+
+                            <li>Helper functions for defining common charting elements, such as axes with tick marks and labels, or filled areas</li>
+
+                            <li>Force layout routines for different sorts of complex visualizations</li>
+
+                            <li>Geographic layout routines</li>
+
+                            <li>Zooming and animation routines for smoothly-animated transitions</li>
+
+                            <li>Array, math, interpolation, and number/date formatting helper functions</li>
+
+                            <li>And much, much more...seriously...you could spend an entire 10 weeks exploring this one library</li>
+                        </ol>
+                    </li>
+
+                    <li>D3 has a very steep learning curve, and the framework is actually quite low-level, so other libraries have been created to layer on top of D3 and make it easier to build standard chart types:
+                        <ol>
+                            <li><a href="http://nvd3.org/">The NVD3 library</a></li>
+                            <li><a href="http://tenxer.github.io/xcharts/">The xCharts Library</a></li>
+                            <li><a href="http://dimplejs.org/">Dimple.js</a></li>
+                            <li><a href="https://github.com/trifacta/vega/wiki">The Vega Library</a></li>
+                        </ol>
+                    </li>
+
+                    <li>Other libraries build on top of D3 to provide sophisticated interactions
+                        <ol>
+                            <li><a href="http://square.github.io/crossfilter/">Crossfilter</a> enables cross-view filtering and update</li>
+                            <li><a href="http://square.github.io/cubism/">Cubism.js</a> for animated time-series visualization</li>
+                            <li><a href="http://felix-kling.de/JSNetworkX/">JSNetworkX</a> for interactive network diagrams</li>
+                        </ol>
+                    </li>
+
+                    <li>And yet other libraries exist to help you make D3 visualizations from other languages:
+                        <ol>
+                            <li><a href="http://ramnathv.github.io/rCharts/">rCharts</a> allows you to generate D3-based charts from with in the R language</li>
+                            <li><a href="https://github.com/mikedewar/d3py">d3py</a> allows you to create D3-based charts from with Python</li>
+                        </ol>
+                    </li>
+
+                </ol>
+            </li>
+
+            <li>Summary:
+                <ol>
+                    <li>Use SVG to create interactive, scalable data visualizations</li>
+                    <li>Use D3 to make the creation and manipulation of SVG elements easier</li>
+                    <li>Use a higher-level library on top of D3 to make standard types of charts or diagrams quickly</li>
+                </ol>
+            </li>
+
+
+        </ol> <!-- lecture -->
+
+    </div> <!-- .container -->
+
+</body>
+</html>

@@ -124,6 +124,7 @@
                             <li class="notes"><a href="notes/apps-intro/">Putting it all Together: Web Applications</a></li>
                             <li class="notes"><a href="notes/mvc/">Transactions Processing Apps and the Model-View-Controller Pattern</a></li>
                             <li class="notes"><a href="notes/dataviz/">Data Analysis and Visualization Apps</a></li>
+                            <li class="notes"><a href="notes/dataviz2/">Data Analysis and Visualization Apps, Part II</a></li>
                             <li>Content Management Systems</li>
                             <li>Special Topics</li>
                             <li>Going Mobile: Transforming a Web App into a Mobile App</li>
