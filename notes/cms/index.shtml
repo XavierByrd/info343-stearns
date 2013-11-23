@@ -19,15 +19,15 @@
         <ol class="lecture-outline">
             <li>Coming Up...
                 <ol>
-                    <li>Thurs, Nov 28: Happy Thanksgiving!
+                    <li>Thurs, Nov 28: Happy Thanksgiving! No Class.
                     </li>
-                    <li>Fri, Nov 29: Happy Black Friday!
+                    <li>Fri, Nov 29: Happy Black Friday! No Lab.
                     </li>
                     <li>Tues, Dec 3: Special Topics
                         <ol>
                             <li><em>Your choice of...</em></li>
                             <li>Angular.js (library for building easy data-bound views)</li>
-                            <li>Node.js (framework for running JavaScript on the server)</li>
+                            <li>Node.js (implement a web server in JavaScript)</li>
                             <li>Sass and LESS (CSS Preprocessors)</li>
                         </ol>
                     </li>
@@ -41,25 +41,95 @@
                     <li>Debrief Homework v4.0</li>
                     <li>Check in on Final Projects</li>
                     <li>Overview of Content Management Systems</li>
-                    <li>Installing and Customizing WordPress</li>
+                    <li>Drupal vs WordPress</li>
+                    <li>Building a Site in WordPress</li>
+                    <li>Customizing WordPress</li>
                 </ol>
             </li>
 
             <li>Content Management Systems (CMSs)
                 <ol>
-                    <li>CMSs manage relatively unstructured content through a publication and archival process</li>
+                    <li>Basic definition: <strong>CMSs manage relatively unstructured content through a collaborative publication and archival process</strong></li>
 
-                    <li>CMS may support several kinds of content, but each kind typically consists of a blob of text with accompanying meta-data</li>
+                    <li>That definition breaks down into a few sub-areas:
+                        <ol>
+                            <li>"Relatively unstructured content"
+                                <ol>
+                                    <li>Transactional systems manage structured data, meaning records with several discrete fields</li>
 
-                    <li>Publication process tracks the content through several stages: create, edit, review, publish, collaborate, archive</li>
+                                    <li>In contrast, CMSs manage relatively unstructured "content," meaning large blobs of text (blog post, article, etc.) or binary data (images, binary documents) with accompanying meta-data fields.</li>
 
-                    <li>Security can be applied throughout the process so that only certain people are allowed to do a given task at a given time in a given context (e.g., an author might be able to create a new document, but only publishers are allowed to publish, and only managers can archive)</li>
+                                    <li>Nearly all CMSs will allow you to categorize that content using a controlled vocabulary to enable browsing</li>
 
-                    <li>Content can be categorized for easy browsing</li>
+                                    <li>Most CMSs will also index the content to enable searching</li>
 
-                    <li>Content can be searched for easy finding</li>
+                                    <li>Some CMSs will track multiple versions of the content, enabling audit history and rollback</li>
+                                </ol>
+                            </li>
 
+                            <li>"Collaborative"
+                                <ol>
+                                    <li>CMSs use a centralized web server and database to track content that is managed by multiple users</li>
 
+                                    <li>CMSs handle user account creation, authentication, and security policy enforcement</li>
+
+                                    <li>Some CMSs can also send notifications to users when particular events occur (new content published, new comment, new subscription, etc.)</li>
+
+                                    <li>Most CMSs allow identified or anonymous readers to interact with published content by making comments, giving ratings, sharing on social networks, etc.</li>
+                                </ol>
+                            </li>
+
+                            <li>"Publication and Archival Process"
+                                <ol>
+                                    <li>Most CMSs were designed for the publishing industry, so they model a typical publication process</li>
+
+                                    <li>New content is authored and saved as drafts, then published, and finally archived</li>
+
+                                    <li>Security enforces who is allowed to generate new content, who is allowed to publish, and who is allowed to archive</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>Typical CMS Architecture
+                        <ol>
+                            <li>Some kind of centralized database to track the content, versions, categories, users, etc.</li>
+
+                            <li>Core server functions for user accounts and authentication, categorization, core content types</li>
+
+                            <li>Plug-in modules that define and manage new kinds of content, or add new functionality</li>
+
+                            <li>Template engine that merges content with various templates that comprise a "theme" (keeps content separate from presentation!)</li>
+                        </ol>
+                    </li>
+
+                    <li>Hosted Blogging Platforms and CMSs
+                        <ol>
+                            <li>All hosted blogging platforms are CMSs, but most focus on a limited set of content types, and may not offer much in the way of customization</li>
+
+                            <li>However, the software that runs those platforms can often be installed on your own server, and customized in much more powerful ways</li>
+
+                            <li>For example, WordPress.com offers hosted WordPress blogs, but your ability to customize is quite limited unless you upgrade to a paid account</li>
+
+                            <li>But you can install the WordPress code on any hosted web server (it's open source), install any plug-ins you want, and create your own child themes</li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Drupal vs WordPress
+                <ol>
+                    <li>Two very popular CMSs these days are WordPress and Drupal, and although they do similar things, they are quite different from one another</li>
+
+                    <li>As the Drupal folks like to describe it, WordPress is like that toy truck that you used to love playing with, but it had a limited range of possibility: it really always remained a truck. Drupal is more like a set of general-purpose Legos that you can use to assemble all kinds of different things</li>
+
+                    <li>In other words, Drupal is more of a content management framework than a pre-packaged content management system</li>
+
+                    <li>WordPress comes "out of the box" configured as a blogging platform&mash;if that's what you want, then great, but if not, you'll have to do some work to reconfigure it into a general web site platform</li>
+
+                    <li>Drupal comes "out of the box" without any specific configuration&mdash;you have to put the relevant pieces together to make it a web site, blogging, or other kind of platform</li>
+
+                    <li>Drupal is much more flexible, but that also means you have to have more of an idea of what you want to build; otherwise, it's just a bunch of general-purpose Legos sitting in a bucket.</li>
                 </ol>
             </li>
 
