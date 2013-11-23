@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for Data Visualization in the Web Lecture">
+    <title>Data Visualization Web Applications</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>Data Analysis and Visualization Applications</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Thurs, Nov 28: Happy Thanksgiving!
+                    </li>
+                    <li>Fri, Nov 29: Happy Black Friday!
+                    </li>
+                    <li>Tues, Dec 3: Special Topics
+                        <ol>
+                            <li><em>Your choice of...</em></li>
+                            <li>Angular.js (library for building easy data-bound views)</li>
+                            <li>Node.js (framework for running JavaScript on the server)</li>
+                            <li>Sass and LESS (CSS Preprocessors)</li>
+                        </ol>
+                    </li>
+                    <li>Thurs, Dec 5: Playing Nicely with Mobile Devices</li>
+                    <li>Fri, Dec 6: Work on Final Projects</li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>Debrief Homework v4.0</li>
+                    <li>Check in on Final Projects</li>
+                    <li>Overview of Content Management Systems</li>
+                    <li>Installing and Customizing WordPress</li>
+                </ol>
+            </li>
+
+            <li>Content Management Systems (CMSs)
+                <ol>
+                    <li>CMSs manage relatively unstructured content through a publication and archival process</li>
+
+                    <li>CMS may support several kinds of content, but each kind typically consists of a blob of text with accompanying meta-data</li>
+
+                    <li>Publication process tracks the content through several stages: create, edit, review, publish, collaborate, archive</li>
+
+                    <li>Security can be applied throughout the process so that only certain people are allowed to do a given task at a given time in a given context (e.g., an author might be able to create a new document, but only publishers are allowed to publish, and only managers can archive)</li>
+
+                    <li>Content can be categorized for easy browsing</li>
+
+                    <li>Content can be searched for easy finding</li>
+
+
+                </ol>
+            </li>
+
+
+
+        </ol> <!-- lecture -->
+
+    </div> <!-- .container -->
+
+</body>
+</html>
