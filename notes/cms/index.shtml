@@ -41,9 +41,9 @@
                     <li>Debrief Homework v4.0</li>
                     <li>Check in on Final Projects</li>
                     <li>Overview of Content Management Systems</li>
-                    <li>Drupal vs WordPress</li>
                     <li>Building a Site in WordPress</li>
                     <li>Customizing WordPress</li>
+                    <li>Drupal vs WordPress</li>
                 </ol>
             </li>
 
@@ -95,7 +95,7 @@
                         <ol>
                             <li>Some kind of centralized database to track the content, versions, categories, users, etc.</li>
 
-                            <li>Core server functions for user accounts and authentication, categorization, core content types</li>
+                            <li>Core server functions for user accounts and authentication, categorization, core content types, site navigation</li>
 
                             <li>Plug-in modules that define and manage new kinds of content, or add new functionality</li>
 
@@ -117,19 +117,111 @@
                 </ol>
             </li>
 
+            <li>Building a Site in WordPress
+                <ol>
+                    <li>Installing WordPress
+                        <ol>
+                            <li>If you're using a commercial web host (e.g., <a href="http://www.a2hosting.com/">A2 Hosting</a>), installing WordPress is super easy&mdash;just click on the Softaculous installer and follow the on-screen instructions</li>
+
+                            <li>If you're installed on your own server or your <a href="https://www.washington.edu/itconnect/connect/web-publishing/shared-hosting/installing-wordpress/">UW student web hosting server</a>, you need to do a few things:
+                                <ol>
+                                    <li>Download and install the <a href="http://dev.mysql.com/downloads/mysql/">MySQL relational database engine</a> on your web server, or some other server your web server can communicate with</li>
+                                    
+                                    <li>Download and uncompress <a href="http://wordpress.org/download/">the WordPress files</a> into a sub-directory of your web server's public_html directory&mdash;or in the public_html folder itself if you want the root of your site to be a WordPress installation</li>
+
+                                    <li><a href="http://codex.wordpress.org/Installing_WordPress">Open your browser and request the directory into which you unzipped the files</a>; you should then see a configuration page where you can specify the connection information for the MySQL database, and a few options for your new site</li>
+
+                                    <li>Once you submit the configuration options, your site will be live and ready for further configuration and and content</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </li>
+
+                    <li>Configuring WordPress
+                        <ol>
+                            <li>The <a href="http://codex.wordpress.org/Administration_Panels">WordPress dashboard and administration screens</a> allow you to set general options for your site</li>
+
+                            <li>The appearance settings allow you to choose a theme from a large set of pre-packaged themes (some are free, others can be purchased)</li>
+
+                        </ol>
+                    </li>
+
+                    <li>Writing Content
+                        <ol>
+                            <li>WordPress supports two main kinds of content: posts and pages</li>
+
+                            <li>Posts are timely and transient; they are for content that is current right now like a news story or announcement</li>
+
+                            <li>Pages are timeless and are more like regular web site pages (about me, or policy statements)</li>
+
+                            <li>Both pages and posts can have comments enabled or disabled, but only posts can be assigned to categories</li>
+
+                            <li>Pages can be organized into a hierarchy, and the default site navigation bar displays all pages as a menu</li>
+                        </ol>
+                    </li>
+
+                    <li>Customizing via Plug-Ins
+                        <ol>
+                            <li>WordPress has a wide array of plug-ins that add various functionality to your site</li>
+                        </ol>
+                    </li>
+
+                    <li>Customizing via Child Themes
+                        <ol>
+                            <li>A child theme customizes another theme by overriding particular CSS styles</li>
+
+                            <li>Create a new directory in the /themes/ directory for your child theme</li>
+
+                            <li>Create a file in that new directory named "style.css" and put the following at the top:
+                                <pre><code>
+/*
+ Theme Name:     Twenty Thirteen Child
+ Theme URI:      http://example.com/twenty-thirteen-child/
+ Description:    Twenty Thirteen Child Theme
+ Author:         John Doe
+ Author URI:     http://example.com
+ Template:       twentythirteen
+ Version:        1.0.0
+*/
+
+@import url(&quot;../twentythirteen/style.css&quot;);
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+                                </code></pre>
+                            </li>
+
+                            <li>The <code>template:</code> value should be set to the name of the theme you are modifying (in this case, the twentythireen theme); this is the <strong>directory name</strong> in which the parent theme files exist (peer to child theme's directory)</li>
+
+                            <li>The other header values should of course be adjusted to something appropriate for your new child theme</li>
+
+                            <li>The <code>@import url(....)</code> should import the <code>style.css</code> in the parent theme's directory</li>
+
+                            <li>After this block, specify style rules that override those in the parent theme's style.css</li>
+
+                            <li>Remember to check for style overrides in their media queries as well! Otherwise you might override only the desktop appearance</li>
+
+                            <li>Can also create custom PHP pages for home, different kinds of content, author info, 404, etc.</li>
+
+                            <li>Parent theme can either be a standard theme, or a <a href="http://wp.tutsplus.com/articles/the-wordpress-theme-frameworks-starter-guide/">theme framework</a>, which is a set of theme pages and CSS pieces designed to be used as building blocks</li>
+                        </ol>
+                    </li>
+
+
+                </ol>
+            </li>
+
             <li>Drupal vs WordPress
                 <ol>
-                    <li>Two very popular CMSs these days are WordPress and Drupal, and although they do similar things, they are quite different from one another</li>
-
                     <li>As the Drupal folks like to describe it, WordPress is like that toy truck that you used to love playing with, but it had a limited range of possibility: it really always remained a truck. Drupal is more like a set of general-purpose Legos that you can use to assemble all kinds of different things</li>
 
-                    <li>In other words, Drupal is more of a content management framework than a pre-packaged content management system</li>
+                    <li>In other words, Drupal is more of a content management <em>framework</em> than a pre-packaged content management <em>system</em></li>
 
-                    <li>WordPress comes "out of the box" configured as a blogging platform&mash;if that's what you want, then great, but if not, you'll have to do some work to reconfigure it into a general web site platform</li>
+                    <li>WordPress comes "out of the box" configured as a blogging platform&mash;if that's what you want, then great; but if not, you'll have to do some work to reconfigure it into a general web site management platform</li>
 
-                    <li>Drupal comes "out of the box" without any specific configuration&mdash;you have to put the relevant pieces together to make it a web site, blogging, or other kind of platform</li>
+                    <li>Drupal comes "out of the box" without any specific configuration&mdash;you have to put the relevant pieces together to make it a web site, blogging, or other kind of platform (some pre-packaged templates make this a bit easier)</li>
 
-                    <li>Drupal is much more flexible, but that also means you have to have more of an idea of what you want to build; otherwise, it's just a bunch of general-purpose Legos sitting in a bucket.</li>
+                    <li>Drupal is much more flexible, but that also means you have to have more of an idea of what you want to build; otherwise, it's just a bunch of general-purpose Legos sitting in a bucket!</li>
                 </ol>
             </li>
 
