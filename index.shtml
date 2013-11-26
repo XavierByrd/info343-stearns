@@ -125,7 +125,7 @@
                             <li class="notes"><a href="notes/mvc/">Transactions Processing Apps and the Model-View-Controller Pattern</a></li>
                             <li class="notes"><a href="notes/dataviz/">Data Analysis and Visualization Apps</a></li>
                             <li class="notes"><a href="notes/dataviz2/">Data Analysis and Visualization Apps, Part II</a></li>
-                            <li>Content Management Systems</li>
+                            <li class="notes"><a href="notes/cms/">Content Management Systems</a></li>
                             <li>Special Topics</li>
                             <li>Going Mobile: Transforming a Web App into a Mobile App</li>
                             <li>Don't Break the Build! Automated Testing using Selenium</li>
