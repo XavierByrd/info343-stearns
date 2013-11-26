@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <!--#include virtual="../inc/common-head.html" -->
-    <meta name="description" content="Notes for Data Visualization in the Web Lecture">
-    <title>Data Visualization Web Applications</title>
+    <meta name="description" content="Notes for Content Management Systems Lecture">
+    <title>CMSs</title>
 </head>
 <body>
 
@@ -12,7 +12,7 @@
         <!--#include virtual="../inc/crumbtrail.html" -->
             
         <div class="page-header notes-header">
-            <h1>Data Analysis and Visualization Applications</h1>
+            <h1>Content Management Systems</h1>
             <p class="lead">Dr David Stearns, Autumn 2013</p>
         </div>
 
