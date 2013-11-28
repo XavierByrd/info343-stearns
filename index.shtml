@@ -62,7 +62,6 @@
                             <li><a href="labs/forms/">Gathering Information via Forms</a></li>
                             <li><a href="labs/mashups/">Leveraging Existing Services and Content</a></li>
                             <li><a href="labs/mvc/">Creating a Shopping Cart</a></li>
-                            <li>Making Data Visible</li>
                         </ul>            
 
                         <h2 id="examples">Example Pages</h2>
@@ -126,9 +125,7 @@
                             <li class="notes"><a href="notes/dataviz/">Data Analysis and Visualization Apps</a></li>
                             <li class="notes"><a href="notes/dataviz2/">Data Analysis and Visualization Apps, Part II</a></li>
                             <li class="notes"><a href="notes/cms/">Content Management Systems</a></li>
-                            <li>Special Topics</li>
                             <li>Going Mobile: Transforming a Web App into a Mobile App</li>
-                            <li>Don't Break the Build! Automated Testing using Selenium</li>
                         </ul>
 
                     </div> <!-- second col -->
