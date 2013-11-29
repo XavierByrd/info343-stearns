@@ -2,7 +2,8 @@ ul.slides,
 ul.examples,
 ul.labs,
 ul.homework,
-ul.resources {
+ul.resources,
+ul.repos {
 	list-style: none;
 }
 
@@ -10,7 +11,8 @@ ul.slides li,
 ul.examples li,
 ul.labs li,
 ul.homework li,
-ul.resources li {
+ul.resources li,
+ul.repos li {
 	padding-left: 40px;
 	padding-bottom: 5px;
 	padding-top: 5px;
@@ -42,4 +44,8 @@ ul.homework li {
 
 ul.resources li {
 	background: url(../img/bullet-resources.png) no-repeat left center;
+}
+
+ul.repos li {
+	background: url(../img/bullet-repos.png) no-repeat left center;
 }
