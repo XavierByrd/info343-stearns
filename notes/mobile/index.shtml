@@ -37,13 +37,14 @@
                 <ol>
                     <li><a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag/">Viewport Meta Tag: sets initial scaling and width</a>
                         <pre><code>
-&lt;!-- viewport width = device width, and initial scale set to 1 (100%) --&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;!-- viewport initial scale set to 1 (100%) --&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1&quot;&gt;
 
 &lt;!-- disable user scaling entirely --&gt;
-&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot; /&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;initial-scale=1, user-scalable=no&quot; /&gt;
                         </code></pre>
                     </li>
+                    <li>See also <a href="https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html">Apple's article on the viewport</a> <code>&lt;meta&gt;</code> tag</li>
                 </ol>
             </li>
             <li><a href="https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Meta-Data for iOS Safari</a>
