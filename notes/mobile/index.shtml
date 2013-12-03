@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!--#include virtual="../inc/common-head.html" -->
+    <meta name="description" content="Notes for Mobile Web Sites Lecture">
+    <title>Mobile Web Sites</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <!--#include virtual="../inc/crumbtrail.html" -->
+            
+        <div class="page-header notes-header">
+            <h1>Playing Nicely with Mobile Browsers</h1>
+            <p class="lead">Dr David Stearns, Autumn 2013</p>
+        </div>
+
+        <ol class="lecture-outline">
+            <li>Coming Up...
+                <ol>
+                    <li>Next Week: Present Final Projects</li>
+
+                    <li>Happy Holidays!</li>
+                </ol>
+            </li>
+
+            <li>Today
+                <ol>
+                    <li>Course Wrap-Up</li>
+                    <li>Meta-Data for Mobile Browsers</li>
+                    <li>Responding to Touch Gestures</li>
+                </ol>
+            </li>
+
+            <li>Meta-Data for All Mobile Browsers
+                <ol>
+                    <li><a href="http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag/">Viewport Meta Tag: sets initial scaling and width</a>
+                        <pre><code>
+&lt;!-- viewport width = device width, and initial scale set to 1 (100%) --&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+
+&lt;!-- disable user scaling entirely --&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, user-scalable=no&quot; /&gt;
+                        </code></pre>
+                    </li>
+                </ol>
+            </li>
+            <li><a href="https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Meta-Data for iOS Safari</a>
+                <ol>
+                    <li>Tags that allow you to hide iOS Safari's address and status bars so that your site fills the entire screen:
+                        <pre><code>
+&lt;meta name=&quot;apple-mobile-web-app-capable&quot; content=&quot;yes&quot;&gt;
+&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black&quot;&gt;
+                        </code></pre>
+                    </li>
+
+                    <li>Tags listing images that should be used when user adds page to Home Screen
+                        <pre><code>
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;touch-icon-iphone.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;76x76&quot; href=&quot;touch-icon-ipad.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;120x120&quot; href=&quot;touch-icon-iphone-retina.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; sizes=&quot;152x152&quot; href=&quot;touch-icon-ipad-retina.png&quot;&gt;
+                        </code></pre>
+                    </li>
+
+                    <li>Image to show when user starts page from Home Screen icon
+                        <pre><code>
+&lt;link rel=&quot;apple-touch-startup-image&quot; href=&quot;/startup.png&quot;&gt;
+                        </code></pre>
+                    </li>
+
+                    <li>Allow users to tap a phone number to call it:
+                        <pre><code>
+&lt;a href=&quot;tel:1-408-555-5555&quot;&gt;Call me&lt;/a&gt;
+                        </code></pre>
+                    </li>
+                </ol>                
+            </li>
+
+            <li><a href="http://msdn.microsoft.com/en-us/library/ie/dn255024(v=vs.85).aspx">Meta-Data for Mobile IE</a>
+                <ol>
+                    <li>Tile settings for "pinned" sites
+                        <pre><code>
+&lt;!-- tile color, image, tooltip --&gt;
+&lt;meta name=&quot;msapplication-TileColor&quot; content=&quot;#FF3300&quot;&gt;
+&lt;meta name=&quot;msapplication-TileImage&quot; content=&quot;images\tileimage.jpg&quot;&gt;
+&lt;meta name=&quot;msapplication-tooltip&quot; content=&quot;Example Tooltip Text&quot;&gt;
+
+&lt;!-- tile logos --&gt;
+&lt;meta name=&quot;msapplication-square70x70logo&quot; content=&quot;images/tinylogo.png&quot;&gt;
+&lt;meta name=&quot;msapplication-square150x150logo&quot; content=&quot;images/logo.png&quot;&gt;
+&lt;meta name=&quot;msapplication-square310x310logo&quot; content=&quot;images/largelogo.png&quot;&gt;
+&lt;meta name=&quot;msapplication-wide310x150logo&quot; content=&quot;images/widelogo.png&quot;&gt;
+
+&lt;!-- live badge polling URL and frequency--&gt;
+&lt;meta name=&quot;msapplication-badge&quot; content=&quot;frequency=30; polling-uri=http://example.com/id45453245/polling.xml&quot;&gt;
+                        </code></pre>
+                    </li>
+                </ol>
+            </li>
+
+            <li>Responding to Touch Screen Gestures
+                <ol>
+                    <li>Tap on touch screen triggers click, but what about all those other, multi-finger gestures?</li>
+
+                    <li>Mobile browsers raise very simple events for 'touchStart', 'touchMove', 'touchEnd' and 'touchCancel' with information about number of fingers, coordinates, etc.</li>
+
+                    <li>Several libraries have been developed that interpret these basic events into complex gesture events like 'swipeLeft', 'pinch', and 'rotate'.</li>
+
+                    <li><a href="http://eightmedia.github.io/hammer.js/">Hammer.js</a>: gets award for tackiest name for a JavaScript library! But it does provide gesture events.</li>
+
+                    <li><a href="http://quojs.tapquo.com/">Quo.js</a>: small library that raises gesture events, but also provides simple jQuery-like DOM manipulation</li>
+
+                    <li><a href="http://jquerymobile.com/">jQuery Mobile</a>: much larger library from the jQuery folks that also provides useful widgets and animations (e.g., panels that slide in from left/right)</li>
+
+                </ol>
+            </li>
+
+
+        </ol> <!-- lecture -->
+
+    </div> <!-- .container -->
+
+</body>
+</html>
