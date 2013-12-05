@@ -30,6 +30,7 @@
                     <li>Course Wrap-Up</li>
                     <li>Meta-Data for Mobile Browsers</li>
                     <li>Responding to Touch Gestures</li>
+                    <li>Responding to Accelerometer Events</li>
                 </ol>
             </li>
 
@@ -115,6 +116,13 @@
 
                     <li><a href="http://jquerymobile.com/">jQuery Mobile</a>: much larger library from the jQuery folks that also provides useful widgets and animations (e.g., panels that slide in from left/right)</li>
 
+                </ol>
+            </li>
+
+            <li>Responding to Accelerometer Events
+                <ol>
+                    <li><a href="http://menscher.com/teaching/woaa/examples/html5_accelerometer.html">Example Page</a></li>
+                    <li><a href="http://www.albertosarullo.com/blog/javascript-accelerometer-demo-source">Short Tutorial</a></li>
                 </ol>
             </li>
 
